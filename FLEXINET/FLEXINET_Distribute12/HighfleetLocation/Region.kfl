@@ -1,0 +1,16 @@
+; Copyright 2008 HIGHFLEET, Inc. All rights reserved.
+
+:Name "Region"
+:Description "A definition of region"
+:Use MLO
+
+; author: kohl
+; date: 1-11-2008
+; depends on: ULO
+
+:Prop Region
+:Inst Type
+:sup  Object
+:name "Region"
+:lex  "?1 is a region"
+:rem  "A region is an <sym>Object</sym> that can possess a boundary by fiat.  That is, its boundary can be determined by a decision."

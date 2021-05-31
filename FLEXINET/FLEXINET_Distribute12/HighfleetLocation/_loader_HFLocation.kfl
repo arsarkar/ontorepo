@@ -1,0 +1,12 @@
+;; Loader file for Location information.
+;;; The files used are those of the Highfleet Spatial Relations ontology module which is based on the 1984 World Geodetic System and 9-intersection model standards
+
+:Load "9Intersection.kfl"
+:Load "9IntRCCBridge.kfl"
+:Load "Geocoding.kfl"
+:Load "GeographicBodies.kfl"
+:Load "Region.kfl"
+:Load "RegionConnection.kfl"
+
+
+

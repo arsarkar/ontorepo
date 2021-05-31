@@ -1,0 +1,47 @@
+; Copyright 2001 HIGHFLEET, Inc. All rights reserved.
+
+:Name "9-Intersection / RCC Bridge"
+:Description "Rules that map the 9-intersection theory on to the qualitative spatial model."
+:Use MLO
+
+; author: kohl
+; date: 3-26-2007
+; depends on:  9Intersection.kfl, RegionConnection.kfl
+
+(=> (nineI.disjoint ?a ?b)
+	(holdsIn (Span Start Now) (disconnectedFrom ?a ?b)))
+:rem "If two spatial objects A and B are <sym>MLO.disjont</sym> in the 9-intersection model, then A is <sym>MLO.disconnectedfrom</sym> B in the region connection calculus model."
+
+(=> (nineI.contains ?x ?y)
+	(holdsIn (Span Start Now) (insideOf ?y ?x)))
+:rem "If spatial object A <sym>MLO.contains</sym> spatial object B in the 9-intersection model, then A is <sym>MLO.disconnectedfrom</sym> B in the region connection calculus model."
+
+
+(=> (nineI.inside ?x ?y)
+	(holdsIn (Span Start Now) (insideOf ?x ?y)))
+:rem "If spatial object A is <sym>MLO.inside</sym> spatial object B in the 9-intersection model, then A is <sym>MLO.insideOf</sym> B in the region connection calculus model."
+
+(=> (nineI.equal ?a ?b)
+	(holdsIn (Span Start Now) (spatiallyEqualTo ?a ?b)))
+:rem "If spatial object A is <sym>MLO.inside</sym> spatial object B in the 9-intersection model, then A is <sym>MLO.insideOf</sym> B in the region connection calculus model."
+
+
+(=> (nineI.meet ?x ?y)
+	(holdsIn (Span Start Now) (externallyConnectedTo ?x ?y)))
+:rem "If spatial object A <sym>MLO.meet</sym>s spatial object B in the 9-intersection model, then A is <sym>MLO.externallyConnectedTo</sym> B in the region connection calculus model."
+
+
+(=> (nineI.covers ?x ?y)
+	(holdsIn (Span Start Now) (interiorBorderingPartOf ?y ?x)))
+:rem "If spatial object A <sym>MLO.covers</sym> spatial object B in the 9-intersection model, then A is an <sym>MLO.interiorBorderingPartOf</sym> B in the region connection calculus model."
+
+
+(=> (nineI.coveredBy ?x ?y)
+	(holdsIn (Span Start Now) (interiorBorderingPartOf ?x ?y)))
+:rem "If spatial object A is <sym>MLO.coveredBy</sym> spatial object B in the 9-intersection model, then A is an <sym>MLO.interiorBorderingPartOf</sym> B in the region connection calculus model."
+
+
+(=> (nineI.overlap ?x ?y)
+	(holdsIn (Span Start Now) (partiallyOverlaps ?x ?y)))
+:rem "If spatial object A <sym>MLO.overlaps</sym> spatial object B in the 9-intersection model, then A <sym>MLO.partiallyOverlaps</sym> B in the region connection calculus model."
+

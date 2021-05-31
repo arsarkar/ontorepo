@@ -1,0 +1,16 @@
+:Name "Level 2 Designed Systems - Resource Factor Properties"
+:Description "Resource Factor subset of Internal Factor Indicator Properties."
+
+:Use ../2DSCtx
+
+:Prop InformationSystems
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ResourceFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop Productivity
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ResourceFactor
+:rem "Balanced ScoreCard example St. Gallen"

@@ -1,0 +1,95 @@
+:Name "4PSCOMS - Axioms"
+:Use ../4PSPCtx
+
+;2. A ManufacturedProductService is always associated to a Benefit
+(=> 
+     (ManufacturedProductService ?ps)
+      (exists (?benefit)
+       (and (Benefit ?benefit)
+                (productHasAssociatedBenefit ?ps ?benefit))))
+:IC soft "ManufacturedProductService ?ps does not have an associated Benefit."
+
+;3. If there is an Idea and its status is Accepted, there wil be at least a keyword associated to it
+(=>
+       (and
+         (ProductServiceIdea ?idea)
+	     (Accepted ?accepted)
+		 (ideaHasStatus ?idea ?accepted) )
+         (and (Keyword ?t)
+                (count (ideaHasAssociatedKeyword ?idea ?t) ?nt)
+                (RootCtx.lteNum 1 ?nt) ) )
+:IC soft "ProductServiceIdea ?Idea does not have an associated keyword."
+
+;4. A keyword is always associated to at least one Idea
+(=>
+       (Keyword ?t)
+       (and (ProductServiceIdea ?idea)
+            (count (ideaHasAssociatedKeyword ?idea ?t) ?ni)
+            (RootCtx.lteNum 1 ?ni) ) )
+:IC soft "Keyword ?t does not have an associated idea."
+
+;5. A Concept is always associated to at least one Idea
+(=>
+     (ProductServiceConcept ?con)
+     (and (ProductServiceIdea ?idea)
+              (count (conceptHasAssociatedIdea ?con ?idea) ?ni)
+              (RootCtx.lteNum 1 ?ni) ) )
+:IC soft "ProductServiceConcept ?con does not have an associated idea."
+
+;6. A Requirement is always associated to at least one Concept
+(=>
+       (ProductServiceRequirement ?req)
+       (and (ProductServiceConcept ?con)
+                (count(Concept ?req ?con) ?ncon)
+                 (RootCtx.lteNum  1 ?ncon) ) )
+:IC soft "ProductServiceRequirement ?req does not have an associated concept."
+
+
+;7. If there is a ManufacturedProductService, then it has an associated Life Cycle
+(=>
+       (ManufacturedProductService ?ps)
+			(exists (?lc)
+				(and
+					(ProductServiceLifeCycle ?lc)
+					(productHasAssociatedLifeCycle ?ps ?lc) ) ))
+:IC soft "ManufacturedProductService ?ps does not have an associated lifecycle."
+
+;9. If there is a Concept, then there is an associated Product
+  (=>
+         (ProductServiceConcept ?con)
+            (exists (?ps)
+				(and
+					(2DSCtx.Product ?ps)
+					(productHasAssociatedConcept  ?ps ?con)) ))
+:IC soft "ProductServiceConcept ?con does not have an associated <sym>Product</sym>."
+
+
+;10. If there is a Requirement, then there is an associated ManufacturedProductService
+  (=>
+         (ProductServiceRequirement ?req)
+            (exists (?ps)
+				(and
+                   (ManufacturedProductService ?ps)
+                   (productHasAssociatedRequirement ?ps ?req))))
+:IC soft "ProductServiceRequirement ?req does not have an associated ManufacturedProductService."
+
+;11. If there a Support System, then there is a ManufacturedProductService that uses it
+(=>
+         (SupportSystem ?ss)
+			(exists (?ps)
+				(and
+					(ManufacturedProductService ?ps)
+                    (productUsesSupportSystem ?ps ?ss)) ))
+
+:IC soft "SupportSystem ?ss does not have a a ManufacturedProductServices that uses it."
+
+
+;If an idea is accepted, there is a KeywordType associated which can have two possible values: Business or Product
+ 			
+(=> 	(ProductServiceIdea ?idea)
+		(or (ProductIdea ?idea)
+			(BusinessIdea ?idea))
+)
+:IC soft "A ProductServiceIdea must be a ProductIdea or a Business Idea but ?idea is not." 
+
+

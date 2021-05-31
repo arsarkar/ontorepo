@@ -1,0 +1,33 @@
+:Name "Level 2 Designed Systems - Risk Properties"
+:Description "This file contains the definition of risk properties which occur at the Designed Systems level of the FLEXINET Project reference ontology but is placed within a separate folder called 2DS_Risk as they form a specialised subset of level 2. More Risk properties are defined at level 4PSP."
+
+:Use ../2DSCtx
+
+:Prop RiskFactor
+:Inst Type
+:sup Information
+:sup MLO.Object
+:rem "An internal or external factor that may influence a Global Production Network adversely."
+:referenceRem "2014 FLEXINET D2.1"
+
+:Prop FacilitySpecificRiskFactor
+:Inst Type
+:sup RiskFactor
+
+:Prop RegionalSpecificRiskFactor
+:Inst Type
+:sup RiskFactor
+
+:Prop LocationSpecificRiskFactor
+:Inst Type
+:sup RiskFactor
+
+:Prop Incident
+:Inst MLO.EventType
+:sup MLO.Event
+
+:Prop Resilience
+:Inst Type
+:sup Metric
+:rem "Resilience is the ability of a Global Production network node to react to the disruptive event and its agility to compensate for inoperability that has arisen"
+:referenceRem "2014 FLEXINET D2.1"

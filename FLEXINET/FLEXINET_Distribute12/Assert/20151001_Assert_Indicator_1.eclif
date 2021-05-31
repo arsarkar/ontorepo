@@ -1,0 +1,88 @@
+(2DSCtx.Country France)
+(GDP GDP_France)
+(locationHasExternalFactor France GDP_France)
+(hasIndicatorValue GDP_France ($3000))
+(hasIndicatorFuzzyError GDP_France (fuzzyErrorFN(%4)(%5)))
+(hasIndicatorEvaluationMethod  GDP_France "monthly test")
+
+(PumpPriceForDieselFuel PumpP_France)
+(locationHasExternalFactor France PumpP_France)
+(hasIndicatorValue  PumpP_France (dollar/liter 3))
+(IndustrialElectricityPrices electprice)
+(locationHasExternalFactor France  electprice)
+(hasIndicatorValue  electprice (euro/kWh 35))
+
+(AirTransportFreight FrAirTran)
+(locationHasExternalFactor France  FrAirTran)
+(hasIndicatorValue  FrAirTran (tonnesPerKm 3))
+
+
+(2DSCtx.Department Franco)
+(Input input_F)
+(Output output_F)
+(requiresA  input_F Franco)
+(requiresA  output_F Franco)
+(ownsIndicator Franco  GDP_France)
+(hasEvaluationUpdatePeriod GDP_France (years 13))
+
+
+(2DSCtx.Facility TestF)
+(Input input_TestF)
+(Output output_TestF)
+(requiresA  input_TestF  TestF)
+(requiresA  output_TestF TestF)
+
+(InternalFactor testRisk)
+(facilityHasInternalFactor TestF testRisk)
+
+(FacilitySpecificRiskFactor FoodSafety)
+(riskFactorAppliesToFacility FoodSafety TestF)
+(internalFactorContainsFacilityRiskFactor testRisk FoodSafety)
+(hasIndicatorFuzzyValue testRisk (fuzzyValLinguisticCoupleFN 2DSCtx.VeryHigh 2DSCtx.Low))
+
+
+(EmissionOfHazardousSubstancesTotheEnvironment emitlevel)
+(facilityHasInternalFactor TestF emitlevel)
+(hasIndicatorValue emitlevel (tonCO2/MillionEuroSales 67))
+
+(MarketShare mShare)
+(facilityHasInternalFactor TestF mShare)
+(hasIndicatorValue mShare (% 70))
+
+(NumberOfProductsInMarket  numProd)
+(facilityHasInternalFactor TestF numProd)
+(hasIndicatorValue numProd (percentProducts 90))
+
+(OverallCustomerSatisfcation CUSatifify)
+(facilityHasInternalFactor TestF CUSatifify)
+(hasIndicatorValue CUSatifify (scaleAndvalue 1 10 5))
+
+(AverageTimeBetweenFirstContactWithTheCustomerAndSigningOfAgreement CUAvTime)
+(facilityHasInternalFactor TestF CUAvTime)
+(hasIndicatorValue CUAvTime (2DSCtx.days 90)) 
+
+(MarketShare mShare)
+(facilityHasInternalFactor TestF mShare)
+(hasIndicatorValue mShare (% 70))
+
+(NumberOfProductsInMarket  numProd)
+(facilityHasInternalFactor TestF numProd)
+(hasIndicatorValue numProd (percentProducts 90))
+
+(OverallCustomerSatisfcation CUSatifify)
+(facilityHasInternalFactor TestF CUSatifify)
+(hasIndicatorValue CUSatifify (scaleAndvalue 1 10 5))
+
+
+(AverageTimeBetweenFirstContactWithTheCustomerAndSigningOfAgreement CUAvTime)
+(facilityHasInternalFactor TestF CUAvTime)
+(hasIndicatorValue CUAvTime (2DSCtx.days 90))
+
+
+;;(min ?y (hasIndicatorValue ?x (% ?y)) ?min)
+;;(minTerm ?y (hasIndicatorValue ?x ?y) ?min)
+;;(exists (?y)(hasIndicatorValue GDP_France (?f ?y)))
+
+
+
+

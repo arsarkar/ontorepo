@@ -1,0 +1,399 @@
+:Name " Level 5 Reference Ontology - Relationships for Pump Industry"
+:Description "This file contains the definition of the relations related to specific enterprise ontology for pump industry in level 5 of the reference ontology in the context of the Flexinet Project"
+
+:Use 5KSBCtx
+;;;==================================================
+
+:Rel 5KSB_Defines_FunctionalElements
+:Inst BinaryRel
+:Inst RigidRel
+;;:Inst AsymmetricBR
+:Sig 5KSB_FunctionalSpecificationBook 5KSB_FunctionalElements
+:Args "5KSB_FunctionalSpecificationBook" "5KSB_FunctionalElements"
+:lex "?1 defines ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+
+:Rel 5KSB_Realise_TemplateSpecificationBook
+:Inst BinaryRel
+:Inst RigidRel
+;;:Inst AsymmetricBR
+:Sig 5KSB_FunctionalSpecificationBook 5KSB_TemplateSpecificationBook
+:Args "functionalSpecificationBook" "templateSpecificationBook"
+:lex "?1 realises ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+
+:Rel 5KSB_BusinessIdeaDefinesBusinessModel
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 5KSB_BusinessIdea 5KSB_BusinessModel
+:Args "businessIdea" "businessModel"
+:lex "?1 defines ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+
+:Rel 5KSB_RegionComposedByLocations
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 5KSB_Region Location
+:Args "region" "location"
+:lex "?1 composed by ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+
+:Rel 5KSB_BusinessModelDefinition
+:Inst QuaternaryRel
+:Inst RigidRel
+:Sig 5KSB_BusinessModel 5KSB_Parameter 5KSB_Objective 5KSB_Application
+:Args "businessmodel" "parameter" "Objective" "application"
+:lex "?1 has ?2 ?3 ?4"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+
+:Rel 5KSB_BusinessModelHasParameter
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 5KSB_BusinessModel 5KSB_Parameter
+:Args "businessmodel" "parameter"
+:lex "?1 has ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+
+:Rel 5KSB_BusinessModelHasObjective
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 5KSB_BusinessModel 5KSB_Objective
+:Args "businessmodel" "objective"
+:lex "?1 has ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+
+:Rel 5KSB_BusinessModelHasIndicator
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 5KSB_BusinessModel 5KSB_Indicator
+:Args "businessmodel" "ksbIndicator"
+:lex "?1 has ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+:Rel 5KSB_StrategyDevelopsBusinessModel
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Strategy 5KSB_BusinessModel
+:Args  "strategy" "businessmodel"
+:lex "?1 develops ?2"
+:rem "Within the development of a strategy a business model is developed."
+
+;;;==================================================
+:Rel 5KSB_StrategyHasOpportunities
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Strategy 5KSB_BusinessModel
+:Args  "strategy" "businessmodel"
+:lex "?1 develops ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+:Rel 5KSB_StrategyHasCompetencies
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Strategy 5KSB_BusinessModel
+:Args  "strategy" "businessmodel"
+:lex "?1 develops ?2"
+:rem "FlEXINET - KSB Specific Relations."
+;;;==================================================
+:Rel 5KSB_StrategyInfluencedByKSBLegacySystems
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Strategy 5KSB_BusinessModel
+:Args  "strategy" "businessmodel"
+:lex "?1 develops ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+:Rel 5KSB_StrategyInfluencedByCustomerAnalysis
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Strategy 5KSB_BusinessModel
+:Args  "strategy" "businessmodel"
+:lex "?1 develops ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+:Rel 5KSB_StrategyInfluencedByCompetitiveAnalysis
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Strategy 5KSB_BusinessModel
+:Args  "strategy" "businessmodel"
+:lex "?1 develops ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+;;;==================================================
+:Rel StrategyInfluencedByStrenghtsAndWeaknessAnalysis
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Strategy 5KSB_BusinessModel
+:Args  "strategy" "businessmodel"
+:lex "?1 develops ?2"
+:rem "FlEXINET - KSB Specific Relations."
+
+
+;;;==================================================
+:Rel 5KSB_cheduleHasDeliveryTime
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Schedule 5KSB_DeliveryTime
+:Args  "ksbschedule" "deliverytime"
+:lex "?1 has ?2"
+:rem "."
+
+
+;;;==================================================
+:Rel 5KSB_ScheduleHasDaylyProduction
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Schedule 5KSB_DaylyProduction
+:Args  "schedule" "daylyproduction"
+:lex "?1 ksbschedule ?2"
+:rem "."
+
+;;;==================================================
+:Rel 5KSB_ScheduleHasProductionTime
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Schedule 5KSB_ProductionTime
+:Args  "ksbschedule" "productiontime"
+:lex "?1 has ?2"
+:rem "."
+
+
+
+
+;;;==================================================
+:Rel 5KSB_MarketHasRegion
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Market 5KSB_Region
+:Args  "KSBMarket" "region"
+:lex "?1 has ?2"
+:rem "Markets have associate regions. "
+
+;;;==================================================
+:Rel 5KSB_PartnerIsLocalOrganisation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Partner 5KSB_LocalOrganisations
+:Args  "KSBPartner" "LocalOrganisations"
+:lex "?1 has ?2"
+:rem "Local Organisations to be KSB Partners"
+
+;;;==================================================
+:Rel  5KSB_ServiceAssociatesWithBusinessProduct
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Service 5KSB_BusinessProduct
+:Args  "KSBService" "BusinessProduct"
+:lex "?1 is involved in ?2"
+:rem ""
+:functionalArg  2
+
+;;;==================================================
+:Rel  5KSB_ProductAssociatesWithBusinessProduct
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Product 5KSB_BusinessProduct
+:Args  "ksbproduct" "businessproduct"
+:lex "?1 is involved in ?2"
+:rem ""
+:functionalArg  2
+
+;;;==================================================
+:Rel  5KSB_HasProductionProcess
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Organisation 5KSB_ProductionProcess
+:Args  "Organisation" "ProductionProcess"
+:lex "?1 is has in ?2"
+:rem ""
+
+;;;==================================================
+:Rel  5KSB_ProductNeedsTechnology
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Product 5KSB_Technology
+:Args  "KSBProduct" "5KSB_Technology"
+:lex "?1 needs ?2"
+:rem ""
+
+;;;==================================================
+:Rel  5KSB_ServiceNeedsTechnology
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Service 5KSB_Technology
+:Args  "KSBService" "5KSB_Technology"
+:lex "?1 needs ?2"
+:rem ""
+
+;;;==================================================
+:Rel  ExternalFactorHasLocation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_ExternalFactors Location
+:Args  "KSBExternalFactors" "Location"
+:lex "?1 in ?2"
+:rem "a factor is related to a location."
+
+;;;==================================================
+:Rel  5KSB_ExpertInFacility
+:Inst TernaryRel
+:Inst RigidRel
+:Sig  5KSB_Expert 5KSB_Technology Facility 
+:Args  "Expert" "Technology" "Facility"
+:lex "?1 in ?2 in ?3"
+:rem "Relation representing an expert in a Facility(Location) in a technology."
+
+;;;==================================================
+:Rel  5KSB_HRHasExpert
+:Inst TernaryRel
+:Inst RigidRel
+:Sig  5KSB_HumanResources 5KSB_Expert 5KSB_Technology
+:Args  "HumanResources" "Expert" "Technology"
+:lex "?1 Has ?2 in ?3"
+:rem "Relation: Experts in Technology belong to a HR department."
+
+;;;==================================================
+:Rel  5KSB_FacilityHasHR
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Facility 5KSB_HumanResources 
+:Args  "Facility" "HumanResources"
+:lex "?1 Has ?2"
+:rem "Relation: A facility has a HR department."
+
+
+;;;==================================================
+
+:Rel  5KSB_StrategyHasTarget
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Strategy Target 
+:Args  "Strategy" "Target"
+:lex "?1 Has ?2"
+:rem "Relation: Strategy influenced by a Target"
+
+
+;;;==================================================
+:Rel  5KSB_ProductDefinition
+:Inst TernaryRel
+:Inst RigidRel
+:Sig  5KSB_Product 5KSB_Application List
+:Args  "5KSB_Product" "5KSB_Application" "List"
+:lex "?1 characterized by ?2, ?3, ?4"
+:rem "Relation to describe the definition of a product."
+(listOfKind 5KSB_ProductDefinition 3 5KSB_ProductData).
+
+
+;;;==================================================
+:Rel  5KSB_ProductData
+:Inst TernaryRel
+:Inst RigidRel
+:Sig  5KSB_Product 5KSB_TechnicalData 5KSB_Data
+:Args "5KSB_Product" "5KSB_TechnicalData" "5KSB_Data"
+:lex "?1 characterized by ?2"
+:rem ""
+
+;;;==================================================
+;;;@deprecated
+;:Rel 5KSB_ProductDefinition
+;:Inst TernaryRel
+;:Inst RigidRel
+;:Sig  5KSB_Product 5KSB_Application List
+;:Args  "5KSB_Product" "5KSB_Application" "List"
+;:lex "?1 characterized by ?2, ?3"
+;:rem "Relation to describe the definition of a product."
+;(listOfKind 5KSB_ProductDefinition 3 5KSB_ProductData).
+
+
+
+;;;==================================================
+:Rel 5KSB_AddCharacteristicToProduct
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Product 5KSB_Characteristic 
+:Args  "5KSB_Product" "5KSB_Characteristic"
+:lex "?2 is a characteristic added to ?2"
+:rem "Relation to describe new characteristics to a product"
+
+
+;;;==================================================
+:Rel 5KSB_AddTechnologyToProduct
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  5KSB_Product 5KSB_Technology
+:Args  "5KSB_Product" "Technology"
+:lex "?1 has department ?2"
+:rem "Relation to describe how to relate a technology to a product"
+
+;;;==================================================
+;;;@deprecated
+:Rel 5KSB_OrganisationHasDepartment
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Organisation Department
+:Args  "Organisation" "Department"
+:lex "?1 has department ?2"
+:rem "Relation to describe that a Organisation has departments."
+
+
+;;;==================================================
+:Rel 5KSB_BussinesIdeaProductDefinition
+:Inst TernaryRel
+:Inst RigidRel
+:Sig  5KSB_BusinessIdea Product 5KSB_Application
+:Args "5KSB_BusinessIdea" "Product" "5KSB_Application"
+:lex "?1 has department ?2"
+:rem ""
+
+;;;==================================================
+:Rel 5KSB_BussinesIdeaServiceDefinition
+:Inst TernaryRel
+:Inst RigidRel
+:Sig  5KSB_BusinessIdea Service 5KSB_Application
+:Args "5KSB_BusinessIdea" "Service" "5KSB_Application"
+:lex "?1 has department ?2"
+:rem ""
+
+:Rel ProcessRequiresInput
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  System Role
+:Args "System" "Role" 
+:lex "?1 requires ?2"
+:rem "A process requires a basic playing the role Input"
+
+:Rel ProcessProduceOutput
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  System Role
+:Args "System" "Role" 
+:lex "?1 produces ?2"
+:rem "A process produces a basic playing the role Output"
+
+:Rel ProcessUsesResource
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  System Role
+:Args "System" "Role" 
+:lex "?1 uses ?2"
+:rem "A process produces a basic playing the role Resource"
+
+

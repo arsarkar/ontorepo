@@ -1,0 +1,16 @@
+;; Loader file for complete FLEXINET ontology
+
+;;;loads location information provided by Highfleet
+:Load "HighfleetLocation/_loader_HFLocation.kfl"
+
+:Load "1SYS/_loader_1SYS.kfl"
+:Load "2DS/_loader_2DS.kfl"
+:Load "3MBS/_loader_3MBS.kfl"
+:Load "4PSLS/_loader_4PSLS.kfl"
+:Load "4PSP/_loader_4PSP.kfl"
+:Load "5IND/_loader_5IND.kfl"
+:Load "5CD/_loader_5CD.kfl"
+:Load "5KSB/_loader_5KSB.kfl"
+
+;;;;loads Scenarios specialised subsets of the above levels
+:Load "View/_loader_ViewAll.kfl"

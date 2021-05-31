@@ -1,0 +1,130 @@
+
+:Name "Level 2 Axioms"
+:Description "PNES: Services. This file contains the definition of the axioms identified at level 2 in the context of the FLEXINET Project"
+
+;;;LU added Flow axiom 19/08/2015
+
+:Use 2DSCtx
+
+(=>  (flow ?source ?target ?scenario)
+	 (or (and (Input ?source)
+		  (Output ?target))
+		  (and (Output ?source)
+		  (Input ?target))
+	  )
+)		 
+:IC hard "A flow can only exist between an Input and an Output or an Output and an Input.  This does not occur in the relation (flow  ?source  ?target ?scenario)."	
+
+;(=>  (flow ?source ?target ?scenario)
+;	   (and (playsRole ?basic1 ?source ?scenario)
+;	   (playsRole ?basic2 ?target ?scenario)
+;	   (/= ?basic1 ?basic2)	)  
+;)		 
+;:IC hard "In a flow relation the same basic must flow from source to target. ?basic1 plays the role of source ;?source but does not play the role of target ?target which is played by ?basic2."
+
+;;;LU made all axioms soft and commented out PNES_2_2_3, PNES_2_2_4, PNES_2_2_4 pending further work
+
+; GPN Configuration
+; List of Identified Axioms 
+;; ====  AXIOMS  === 
+
+;There exists at least one network on the knowledge base. 
+(=>  (System ?x) 
+		( and (count 	(Network ?net) ?nSys)
+			  (RootCtx.lteNum 1 ?nSys)))
+;:IC hard "Axiom PNES_2_1_1: if there is system/s in the knowledge base, one of them must be at least a ?network."
+:IC soft "Axiom PNES_2_1_1: if there is system/s in the knowledge base, one of them must be at least a ?network."
+
+;Every system in the network must have a location or ZoneType.
+(=> (and (System ?x) 
+		(not (Network ?x)))
+	(or (systemLocatedAt ?x ?y ?z ?k)
+		(locatedIn ?x ?somewhere))) 
+:IC soft "Axiom PNES_2_1_2: Every system in the network should have a location or ZoneType. Networks excluded."
+
+; Every system belongs to a network or to a Facility or an organisation. There is no isolate systems in the knowledge base. 
+(=> (and (System ?x) 
+		(not (Network ?x)))
+		( and (basicContainsBasic ?y ?x) 
+			  (or (Network ?y) (Facility ?y)(Organisation ?y))))	
+;:IC hard "Axiom PNES_2_1_3: Every system belongs to a network, a Facility or to an organisation. There is no isolate systems in the knowledge base."
+:IC soft "Axiom PNES_2_1_3: Every system belongs to a network, a Facility or to an organisation. There is no isolate systems in the knowledge base."
+
+(=> (System ?x)	
+	(and (Input in)		
+		 (requiresA in ?x)
+		 (playsRole ?basic ?in ?)		 
+		 (not  ( and (Output ?out) 
+					 (System ?y)
+					 (requiresA ?out ?y)
+					 (/= ?y ?x)
+					 (playsRole ?basic ?out ?)		 
+					 (basicContainsBasic ?net ?x)
+					 (basicContainsBasic ?net ?y)))))				
+					 
+:IC soft "Axiom PNES_2_1_4: There exists a system within the network that contains an Input that it is not output of any other system of the network, that is, this Input is an output coming from outside the network."
+;;:IC soft"Axiom PNES_2_1_5: There is a system within the network that contains an Output that it is not input of any other system of the network, that is, this Output is an Input to a System outside the network. 
+
+;; A Facility has a type and a state.
+;(=> (Facility ?f)	
+;	(and (systemHasType ?f ?t)
+;		 (systemHasState ?f ?s)))
+;:IC soft "Axiom PNES_2_1_6: A Facility should have a type and a state."
+
+(=> (and (Role ?r) 
+		 (not (Input ?r))(not (Output ?r))(not (Resource ?r))
+		 (playsRole ?basic ?r ?))	 
+	 (or  (and (Input ?in)(playsRole ?basic ?in ?))
+		  (and (Output ?out)(playsRole ?basic ?out ?))
+		  (and (Resource ?re)(playsRole ?basic ?re ?))
+		  (and (Control ?c)(playsRole ?basic ?c ?))))
+:IC soft "Axiom PNES_2_1_7: a basic playing a role ?r, playsRole also as Input, or playsRole as Output or as a Resource or as a Control in a given system." 			
+
+;;;Axiom altered by LU to avoid IC soft constraints 
+;;;"Relations with 'mode' definitions narrowed to support clauses with head variables that are not used in the clause body:"
+
+;; ========================================================================================
+;; List of axioms applicable to the Technology Effect Analyser
+;; ====  AXIOMS TEA === 
+
+;; 	A Technology Has at least one dimension. 
+(=> (Technology ?t)
+	(exists (?d)
+	(and (Dimension ?d)
+		 (technologyHasDimension ?t ?d))))
+:IC soft "Axiom PNES_2_2_1: A Technology Has at least one dimension."
+
+(=> (Technology ?t)
+	(exists (?trl)
+	(and (TechnologyReadinessLevel ?trl)
+		 (technologyHasDimension ?t ?trl))))
+:IC soft "Axiom PNES_2_2_2: A technology Has the dimension TRL. "
+
+;;A role input, output and resource is described in terms of their characteristics. "
+;(=> (Input ?in)
+;	(exists (?c)
+;	(and (Characteristic ?c)
+;		(roleHasCharacteristic ?in ?c))))
+;:IC soft "Axiom PNES_2_2_3: An Input should have at least one Characteristic"
+
+;(=> (Output ?out)
+;	(exists (?c)
+;	(and (Characteristic ?c)
+;		(roleHasCharacteristic ?out ?c))))
+;:IC soft "Axiom PNES_2_2_4: An Output should have least one Characteristic" 
+
+;(=> (Resource ?re)
+;	(exists (?c)
+;	(and (Characteristic ?c)
+;		(roleHasCharacteristic ?re ?c))))
+;:IC soft "Axiom PNES_2_2_5: A Resource should have at least one Characteristic"
+
+
+(=> (and (Technology ?t)
+		 (playsRole ?basic ?t ?))
+			(exists(?r)
+			 (and (playsRole ?basic ?r ?)
+				  (or (Input ?r)(Output ?r)(Resource ?r)(Control ?r)))))				
+:IC soft "Axiom PNES_2_2_6: A basic playing role of  technology in a System, playsRole also as Input, or Output or Resource or Control in the same system. "
+
+

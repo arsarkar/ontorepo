@@ -1,0 +1,39 @@
+:Name "Level 4 Product Service Production - Indicator Properties"
+:Description "This file contains the definition of Indicators which occur at the Product Service Production level of the FLEXINET Project reference ontology but is placed within a separate folder called 4PSP_Indicator as they form a specialised subset of level 2."
+
+:Use ../4PSPCtx
+
+;;;only the internal indicator Production Factor and it's subtypes have been identified as indicators at level 4
+
+:Prop ProductionFactor
+:Inst MaterialRole
+:sup InternalFactor
+:rem "An influence resulting from the action or process of making goods from components or raw materials."
+:referenceRem "Oxford English Dictonary http://www.oed.com/view/Entry/151994?redirectedFrom=production#eid (modified)"
+(disjointSubProps ProductionFactor)
+
+:Prop CycleTimeOfProduction
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ProductionFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop RatioOfTimelyCompletedOrders
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ProductionFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop ExpensesRelatedNewProducts
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ProductionFactor
+:rem "Expenses related to preparations and study of new products in the total amount of expenses."
+:referenceRem "Balanced ScoreCard example St. Gallen"
+
+:Prop OrderFulfilmentLeadTime
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ProductionFactor
+:rem "Balanced ScoreCard example St. Gallen"
+

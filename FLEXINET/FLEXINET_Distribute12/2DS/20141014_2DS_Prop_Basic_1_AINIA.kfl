@@ -1,0 +1,383 @@
+;;; Flexinet - W3.2 - Level 2 Ontology definition
+;;; Basics, AINIA Technology Center, date: 29-09-2014
+;;;LU added sub properties of Location, date:10-12-2014 
+;;;LU added Catalogue and Idea at request of AINIA 12/03/2015
+;;;LU moved Business Model to Business Folder 15/06/2015
+;;;LU added Dimension, TechnologyComposition, TechnologyReadinessLevel created by ITIS 29/06/2015
+;;;LU added  imported CommunicationProtocol, FunctionInformation, Service Infrastructure, Communication Infrastructure when rationalising Level 3 to a level providing context and checking level 4 2/07/2015
+;;;LU added Concept 09/07/2015
+;;;LU added Benefit, Identifier derived from PSCOMS work of AINIA 16/07/2015
+;;;LU added KeywordType, comment derived from PSCOMS work of AINIA 10/12/2015
+;;;LU added Part and Component to capture Manufacturing information 14/12/2015
+
+:Name "Level 2 Reference Ontology - Basics"
+:Description "Level 2 properties (Information, Material, Energy)- Derived from Level 1 Basics property"
+:Use 2DSCtx
+
+;;Derived from Hastilow/IMKS. note: Ideally a level 0 concept. Is feature a sub-category of material. Don't think so it applies to material
+:Prop Feature
+:Inst Type
+:sup  MLO.Object
+:name "Feature"
+:rem  "A distinctive attribute or aspect of something"
+:referenceRem "Oxford Dictionaries. http://www.oxforddictionaries.com/definition/english/feature"
+:disjointWith Role
+:disjointWith Scenario
+:disjointWith Project
+
+:Prop InformationStructure
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Information Structure"
+:rem  "The arrangement of and relations between the parts or elements of something complex (related to information)"
+:referenceRem "Oxford Dictionaries. http://www.oxforddictionaries.com/"
+
+;;Derived from Esmond data type. We don't need to model data itself (we just assert it).
+:Prop InformationType
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Information Type"
+:rem  "A category of information having common characteristics."
+:referenceRem "Oxford Dic. (interpreted)"
+
+:Prop Status
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Status"
+:rem  "Current state of affairs. - Business Dic."
+:referenceRem "http://www.businessdictionary.com/definition/status.html"
+
+:Prop TimeStamp
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Time Stamp"
+:rem  "A timestamp is a sequence of characters or encoded information identifying when a certain event occurred, usually giving date and time of day, sometimes accurate to a small fraction of a second."
+:referenceRem "Wikipedia"
+
+:Prop TraceabilityItem
+:Inst Type
+:sup  Information
+:sup MLO.Object
+:name "Traceability Item"
+:rem  "An item or an object whose application, location, and/or history of an activity has been traced by means of recorded data."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Prediction
+:Inst Type
+:sup  Information
+:sup MLO.Object
+:name "Prediction"
+:rem  "Estimate or forecast of conditions and events in the project's future based on information and knowledge available at the time of the prediction."
+:referenceRem "PMP 7: Project Cost Management and WSDOT Glossary for Cost Risk Estimating Management"
+(disjointSubProps Prediction)
+
+:Prop Estimate
+:Inst Type
+:sup  Prediction
+:name "Estimate"
+:rem  "An approximate judgment or calculation, as of the value, amount, time, size, or weight of something"
+:referenceRem "PMP 7: Project Cost Management and WSDOT Glossary for Cost Risk Estimating Management"
+
+:Prop Quote
+:Inst Type
+:sup  Prediction
+:name "Quote"
+:rem  "An estimation of what a cost or price is likely to be"
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Decision
+:Inst Type
+:sup  Information
+:sup MLO.Object
+:name "Decision"
+:rem  "A judgment, conclusion, or resolution reached or given; verdict"
+:referenceRem "Collins Dictionary. http://collinsdictionary.com"
+(disjointSubProps Decision)
+
+:Prop Agreement
+:Inst Type
+:sup  Decision
+:name "Agreement"
+:rem  "An arrangement (typically one which is legally binding) made between two or more parties and agreed by mutual consent. Also: a document or instrument embodying this"
+:referenceRem "Oxford English Dictionary. http://www.oed.com"
+
+:Prop SupplyAgreement
+:Inst Type
+:sup  Agreement
+:name "Supply Agreement"
+:rem  "A supply agreement states the terms and conditions under which one company (manufacturer) will manufacture and supply goods to another (buyer). A supply contract may be exclusive or non-exclusive, include standards on product quality, and should state how product orders will be handled"
+:referenceRem "http://contracts.onecle.com/type/183.shtml"
+
+:Prop Visualisation
+:Inst Type
+:sup  Information
+:sup MLO.Object
+:name "Visualisation"
+:rem  "Is the set of (interactive) visual representations of abstract data to reinforce human cognition."
+:referenceRem "http://en.wikipedia.org/wiki/Information_visualization"
+
+:Prop Report
+:Inst Type
+:sup  Visualisation
+:name "Report"
+:rem  "A document containing information organized in a narrative, graphic, or tabular form, prepared on ad hoc, periodic, recurring, regular, or as required basis. Reports may refer to specific periods, events, occurrences, or subjects, and may be communicated or presented in oral or written form."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Standard
+:Inst Type
+:sup  Information
+:sup MLO.Object
+:name "Standard"
+:rem  "set of mandatory requirements established by consensus and maintained by a recognized body to prescribe a disciplined uniform approach or specify a product, that is, mandatory conventions and practices."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop Equipment
+:Inst Type
+:sup  Material
+:name "Equipment"
+:rem  "A set of tools, materials, devices, kit, etc, assembled for a specific purpose"
+:referenceRem "Wordreference Dic."
+
+:Prop Plan
+:Inst Type
+:sup  Information
+:sup MLO.Object
+:name "Plan"
+:rem  "Written account of intended future course of action (scheme) aimed at achieving specific goal(s) or objective(s) within a specific timeframe. It explains in detail what needs to be done, when, how, and by whom, and often includes best case, expected case, and worst case scenarios."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop BusinessPlan
+:Inst Type
+:sup  Plan
+:name "Business Plan"
+:rem  "Set of documents prepared by a firm's management to summarize its operational and financial objectives for the near future (usually one to three years) and to show how they will be achieved."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Response
+:Inst Type
+:sup  Information
+:name "Response"
+:rem  "Reaction to an event, occurrence, or situation, aimed at its containment or control."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop MarketInformation
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Market Information"
+:rem  "Information compiled from internal and external sources about a target group of consumers. The type of market intelligence most useful to a marketing department might include data on existing clients, targeted consumer habits, product and market trends, and what the competition is doing (market intelligence)"
+:referenceRem "http://www.businessdictionary.com/definition/market-intelligence.html"            
+
+:Prop CustomerDemand
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Customer Demand"
+:rem  "Desire for certain good or service supported by the capacity to purchase it."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop CustomerSatisfaction
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Customer Satisfaction"
+:rem  "a measure of how happy customers feel when they do business with a company." 
+:referenceRem "http://dictionary.cambridge.org/dictionary/business-english/customer-satisfaction"
+
+:Prop HumanFactors
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Human Factors"
+:rem  "The characteristics of human beings that are applicable to the design of systems and devices of all kinds."
+:referenceRem "http://www.mistakeproofing.com/glossary.html#H"
+
+:Prop Skills
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Skills"
+:rem  "Something, especially a trade or technique, requiring special training or proficiency."
+:referenceRem "Collins Dic."
+
+:Prop DeliveryModel
+:Inst Type
+:sup  Information
+:sup MLO.AbstractEntity
+:name "Delivery Model"
+:rem  "Model to represent the act of delivering or distributing goods, services, etc."
+:referenceRem "Collins Dic. (interpreted)"
+
+:Prop Catalogue
+:Inst Type
+:sup  Information
+:sup MLO.Object
+:name "Catalogue"
+:rem  "List of goods or services on sale with their description and prices published as a printed document, or as an electronic document (e-catalog) on internet or on a diskette, CD, DVD, etc."
+:referenceRem "http://www.businessdictionary.com/definition/catalog.html"
+
+:Prop 	Idea						
+:Inst	Type
+:sup	Information
+:sup MLO.AbstractEntity
+:name	"Idea"
+:rem	"A thought or collection of thoughts that generate in the mind. An idea is usually generated with intent, but can also be created unintentionally. Ideas often form during brainstorming sessions or through discussions."
+:referenceRem "http://www.businessdictionary.com/definition/idea.html"
+
+:Prop 	Concept						
+:Inst	Type
+:sup	Information
+:sup MLO.AbstractEntity
+:name	"Concept"
+:rem	"Concept is a clear, detailed description of the attributes and benefits of a new product that addresses the needs of the targeted customers."
+:referenceRem "FLEXINET 3.3"
+
+:Prop Dimension
+:Inst Type
+:sup Information
+:rem "Dimension definiton from D4.1 ??"
+
+:Prop TechnologyComposition
+:Inst Type
+:sup Dimension
+:rem ""
+
+:Prop TechnologyReadinessLevel
+:Inst Type
+:sup Dimension
+:rem "Technology Readiness Levels (TRL) are a method of estimating technology maturity of Critical Technology Elements (CTE) of a program during the acquisition process. "
+:referenceRem "Wikipedia"
+
+:Prop CommunicationProtocol
+:Inst Type
+:sup Standard
+:rem "Communication protocols are formal descriptions of digital message formats and rules. They are required to exchange messages in or between computing systems and are required in telecommunications.
+Communications standards - derived from Indesit requirement."
+:referenceRem "http://www.techopedia.com/definition/25705/communication-protocol"
+
+:Prop ServiceInfrastructure
+:Inst Type
+:sup Information
+:sup MLO.Object
+:name "Service Infrastructure"
+:rem "The resources required for a ... <sym>2DSCtx.Service</sym>"
+:referenceRem "http://www.merriam-webster.com/dictionary/infrastructure"
+
+:Prop CommunicationInfrastructure
+:Inst Type
+:sup Information
+:sup MLO.Object
+:name "Communication Infrastructure"
+:rem "The resources required for ... the means of sending or receiving information."
+:referenceRem "http://www.merriam-webster.com/dictionary/infrastructure;http://www.oxforddictionaries.com/us/definition/american_english/communication"
+
+:Prop FunctionInformation
+:Inst Type
+:sup  Information
+:name "Function Information"
+:rem  "Information on an action performed by a device, department, or person that produces a result."
+:referenceRem "http://www.businessdictionary.com/definition/function.html - modified"
+
+:Prop Prototype
+:Inst Type
+:sup  Material
+:name "Prototype"
+:rem  "Pre-production model of a product."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Benefit
+:Inst Type
+:sup  Information
+:name "Benefit"
+:rem  "1.General: Advantage, privilege, right, or financial reimbursement.
+2.Finance: Desirable and measurable outcome or result from an action, investment, project, resource, or technology.
+3.Marketing: Desirable attribute of a good or service, which a customer perceives he or she will get from purchasing."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Identifier
+:Inst Type
+:Inst NonLogicalFunctor
+:sup Information
+:sup MLO.AbstractEntity
+:name "Identifier"
+:rem "Linguistics: A linguistic element that has an identifying function.Computing: A sequence of characters arbitrarily devised to identify or refer to a set of data, a location in a store, or a point in a program."
+:referenceRem "http://www.oxforddictionaries.com"
+
+:Prop KeywordType
+:Inst Type
+:sup  Information
+:rem "Type of a Keyword"
+
+:Prop Comment
+:Inst Type
+:sup Information
+:rem "A written or spoken remark giving an opinion"
+:referenceRem "http://www.macmillandictionary.com/dictionary/british/comment_1"
+
+:Prop Part
+:Inst Type
+:sup Material
+:rem "one of the smaller individual pieces that a machine or vehicle is made of"
+:referenceRem "http://www.macmillandictionary.com/dictionary/american/part_1#part_14"
+
+:Prop Component
+:Inst Type
+:sup Material
+:rem "A raw material, ingredient or subassembly that goes into a higher level assembly, compound, or part."
+:referenceRem "http://www.engineering-dictionary.org/component (modified)."
+
+:Prop Location
+:Inst Type
+:sup  Information
+:sup MLO.Object
+:name "Location"
+:rem  "A site or position; situation"
+:referenceRem "Collins Dic."
+
+;;;==================================================
+;;;metaproperty - needed to refer to types of location in risk section of ontology
+:Prop ZoneType
+:Inst MetaProperty
+:sup Type
+:name "Measure of Position in Geographical Hierarchy"
+:metaPropFor Location
+
+;;;properties below needed to extend the Highfleet definitions of geographic bodies to fit with the risk section of the ontology.
+:Prop {Area/City}
+:Inst ZoneType
+:sup Location
+:sup MLO.City
+:rem  "urban areas"
+:referenceRem "Oxford English Dictionary. www.oed.com"
+
+:Prop {State/Province}
+:Inst ZoneType
+:sup Region  
+:rem  "one of many areas into which some countries are divided"
+:referenceRem "http://www.macmillandictionary.com/"
+
+:Prop Country
+:Inst ZoneType
+:sup Location
+:sup MLO.Country
+:rem  "The territory of a nation; a region constituting an independent state, or a region, province, etc., which was once independent and is still distinct in institutions, language, etc."
+:referenceRem "Oxford English Dictionary. www.oed.com"
+
+:Prop Region
+:Inst ZoneType
+:sup Location
+:sup MLO.Region    
+:rem  "A subdivision of the earth. Differs to definition of <sym>MLO.Region</sym>"
+:referenceRem "Oxford English Dictionary. www.oed.com"
+
+:Prop Global
+:Inst ZoneType
+:sup Location
+:sup MLO.Region  
+:rem  "Of, relating to, or involving the whole world, worldwide."
+:referenceRem "Oxford English Dictionary. www.oed.com"
+

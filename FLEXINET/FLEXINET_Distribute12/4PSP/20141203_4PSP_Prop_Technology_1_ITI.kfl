@@ -1,0 +1,57 @@
+:Name "Level 4 Reference Ontology "
+:Description "This file contains the definitions of materials related with technology in level 4"
+
+;;;note by LU - we could also define systems perform the work of the tools defined here, e.g. a milling system, drilling etc.
+
+:Use 4PSPCtx
+
+:Prop SoftwareTechnology
+:Inst Type
+:sup ProductionEquipment
+:rem "Computer Aided Design (CAD), Computer Aided Manufacturing (CAM), Computer Numerical Control (CNC), 
+Direct Numerical Control (DNC), Programmable Logic Control (PLC), Numerical Control (NC), 
+program optimization software, and systems integration software"
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop MaterialRemoval
+:Inst Type
+:sup ProductionEquipment
+:rem "Turning, milling, drilling, grinding, tapping, electrical discharge machines (EDM), broaching, sawing, water jet cutting equipment, and laser process equipment."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop MaterialForming
+:Inst Type
+:sup ProductionEquipment
+:rem "Stamping, bending, joining, hydro-forming, presses, shearing, cold and hot forming equipment."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop WorkHolding
+:Inst Type
+:sup ProductionEquipment
+:rem "Computer Chucks, fixtures, clamps, blocks, angle plates, and tooling columns."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop Tooling 
+:Inst Type
+:sup ProductionEquipment
+:rem "Drills, taps, reamers, boring bars, dies, punches, and grinding wheels."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop MaterialHandling  
+:Inst Type
+:sup ProductionEquipment
+:rem "Conveyors, automated wire guided vehicles, die handling equipment, robots, pallet changers, and bar feed equipment."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop AutomatedSystems
+:Inst Type
+:sup ProductionEquipment
+:rem "Transfer machines, assembly systems, automated systems and cells, and Flexible Manufacturing Systems (FMS)."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+
+
+
+
+
+

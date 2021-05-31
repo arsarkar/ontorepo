@@ -1,0 +1,306 @@
+;;;Cider production network using facilities and one supplier role instance
+(4PSPCtx.ProjectWorld CustomDrinksCiderProductionNetwork)
+(1SYSCtx.Input input_f)
+(1SYSCtx.Output output_f)
+
+(1SYSCtx.requiresA  input_f CustomDrinksCiderProductionNetwork)
+(1SYSCtx.requiresA  output_f CustomDrinksCiderProductionNetwork)
+
+(2DSCtx.StartEvent GPN_StartEvent)
+(2DSCtx.EndEvent GPN_EndEvent)
+(1SYSCtx.basicContainsBasic CustomDrinksCiderProductionNetwork GPN_StartEvent)
+(1SYSCtx.basicContainsBasic CustomDrinksCiderProductionNetwork GPN_EndEvent)
+
+
+;;;Network Roles 
+(2DSCtx.Supplier CiderNetworkSupplier)
+(4PSPCtx.Producer BottledCiderMaker)
+(4PSPCtx.Customer CiderCustomer)
+(4PSPCtx.ManufacturedProduct CompanyProduct)
+
+;;;Defining contexts for the Network Roles
+(1SYSCtx.requiresA CiderNetworkSupplier CustomDrinksCiderProductionNetwork)
+(1SYSCtx.requiresA  BottledCiderMaker CustomDrinksCiderProductionNetwork)
+(1SYSCtx.requiresA  CiderCustomer CustomDrinksCiderProductionNetwork)
+(1SYSCtx.requiresA CompanyProduct CustomDrinksCiderProductionNetwork)
+
+;;;Defining the GPNScenario
+(4PSPCtx.GPNScenario GPNetwork1)
+
+;;creating a product
+(1SYSCtx.Material Bottledrink)
+
+;;;Defining Roles within the GPN Scenario
+(2DSCtx.playsRoleActor Ullama CiderNetworkSupplier GPNetwork1)
+(2DSCtx.playsRoleActor Lopez_Pampin CiderNetworkSupplier GPNetwork1)
+(2DSCtx.playsRoleActor Casado CiderNetworkSupplier GPNetwork1)
+(2DSCtx.playsRoleActor Agrovin CiderNetworkSupplier GPNetwork1)
+(2DSCtx.playsRoleActor Conlesa CiderNetworkSupplier GPNetwork1)
+(2DSCtx.playsRoleActor Verallia CiderNetworkSupplier GPNetwork1)
+(2DSCtx.playsRoleActor Castrillo CiderNetworkSupplier GPNetwork1)
+(2DSCtx.playsRoleActor CustomDrinks BottledCiderMaker GPNetwork1)
+(2DSCtx.playsRoleActor Rivera_Japan CiderCustomer GPNetwork1)
+(2DSCtx.playsRoleActor Sunset CiderCustomer GPNetwork1)
+(1SYSCtx.playsRole Bottledrink CompanyProduct GPNetwork1)
+
+
+(4PSPCtx.NodeInterDependency DeptLPOnUllama)
+(4PSPCtx.nodeInterDependencyOnNode Lopez_Pampin DeptLPOnUllama  Ullama)
+(4PSPCtx.nodeInterDependencyHasValue DeptLPOnUllama (fuzzyValLinguisticCoupleFN 2DSCtx.VeryLow 2DSCtx.Low))
+
+;;;only giving Interdependency Rating for one NodeInterDependency within the network just as an example.
+(4PSPCtx.InterDependencyRating rating1)
+(4PSPCtx.nodeInterDependencyHasRating DeptLPOnUllama rating1)
+(4PSPCtx.ratingHasConfidence rating1 2DSCtx.Low)
+(4PSPCtx.ratingHasCriterium rating1 4PSPCtx.TradeVolume)
+(4PSPCtx.ratingHasOrdinal rating1 2DSCtx.VeryLow)
+
+;;;reverse dependency
+(4PSPCtx.NodeInterDependency DeptUllamaonLP)
+(4PSPCtx.nodeInterDependencyOnNode  Ullama DeptUllamaonLP Lopez_Pampin )
+(4PSPCtx.nodeInterDependencyHasValue DeptUllamaonLP (fuzzyValLinguisticCoupleFN 2DSCtx.VeryLow 2DSCtx.VeryHigh))
+
+(4PSPCtx.NodeInterDependency DeptUllamaOnCustomDrinks)
+(4PSPCtx.nodeInterDependencyOnNode Ullama DeptUllamaOnCustomDrinks CustomDrinks)
+(4PSPCtx.nodeInterDependencyHasValue DeptUllamaOnCustomDrinks (riskFuzzyValTripleFN 0.6 0.7 0.9))
+
+;;;Reverse dependency
+(4PSPCtx.NodeInterDependency DeptCustomDrinksOnUllama)
+(4PSPCtx.nodeInterDependencyOnNode CustomDrinks DeptCustomDrinksOnUllama Ullama)
+(4PSPCtx.nodeInterDependencyHasValue DeptCustomDrinksOnUllama (riskFuzzyValTripleFN 0.3 0.4 0.5))
+
+(4PSPCtx.NodeInterDependency DeptCasadoOnCustomDrinks)
+(4PSPCtx.nodeInterDependencyOnNode Casado DeptCasadoOnCustomDrinks CustomDrinks)
+(4PSPCtx.nodeInterDependencyHasValue DeptCasadoOnCustomDrinks (riskFuzzyValTripleFN 0.2 0.5 0.8))
+
+;;;Reverse dependency
+(4PSPCtx.NodeInterDependency DeptCustomDrinksOnCasado)
+(4PSPCtx.nodeInterDependencyOnNode CustomDrinks  DeptCustomDrinksOnCasado Casado)
+(4PSPCtx.nodeInterDependencyHasValue DeptCustomDrinksOnCasado(fuzzyValLinguisticCoupleFN 2DSCtx.VeryLow 2DSCtx.High))
+
+(4PSPCtx.NodeInterDependency DeptAgrovinOnCustomDrinks)
+(4PSPCtx.nodeInterDependencyOnNode Agrovin DeptAgrovinOnCustomDrinks CustomDrinks)
+(4PSPCtx.nodeInterDependencyHasValue DeptAgrovinOnCustomDrinks (riskFuzzyValTripleFN 0.21 0.51 0.81))
+
+;;;Reverse dependency
+(4PSPCtx.NodeInterDependency DeptCustomDrinksOnAgrovin)
+(4PSPCtx.nodeInterDependencyOnNode CustomDrinks  DeptCustomDrinksOnAgrovin Agrovin)
+(4PSPCtx.nodeInterDependencyHasValue DeptCustomDrinksOnAgrovin (riskFuzzyValTripleFN 0.11 0.61 0.91))
+
+(4PSPCtx.NodeInterDependency DeptConlesaOnCustomDrinks)
+(4PSPCtx.nodeInterDependencyOnNode Conlesa DeptConlesaOnCustomDrinks CustomDrinks)
+(4PSPCtx.nodeInterDependencyHasValue DeptConlesaOnCustomDrinks (riskFuzzyValTripleFN 0.22 0.52 0.82))
+
+;;;Reverse dependency
+(4PSPCtx.NodeInterDependency DeptCustomDrinksOnConlesa)
+(4PSPCtx.nodeInterDependencyOnNode CustomDrinks  DeptCustomDrinksOnConlesa Conlesa)
+(4PSPCtx.nodeInterDependencyHasValue DeptCustomDrinksOnConlesa (riskFuzzyValTripleFN 0.12 0.62 0.92))
+
+(4PSPCtx.NodeInterDependency DeptVeralliaOnCustomDrinks)
+(4PSPCtx.nodeInterDependencyOnNode Verallia DeptVeralliaOnCustomDrinks CustomDrinks)
+(4PSPCtx.nodeInterDependencyHasValue DeptVeralliaOnCustomDrinks (riskFuzzyValTripleFN 0.23 0.53 0.83))
+
+;;;Reverse dependency
+(4PSPCtx.NodeInterDependency DeptCustomDrinksOnVerallia)
+(4PSPCtx.nodeInterDependencyOnNode CustomDrinks  DeptCustomDrinksOnVerallia Verallia)
+(4PSPCtx.nodeInterDependencyHasValue DeptCustomDrinksOnVerallia (riskFuzzyValTripleFN 0.13 0.63 0.93))
+
+(NodeInterDependency DeptCastrilloOnCustomDrinks)
+(nodeInterDependencyOnNode Castrillo DeptCastrilloOnCustomDrinks CustomDrinks)
+(nodeInterDependencyHasValue DeptCastrilloOnCustomDrinks (riskFuzzyValTripleFN 0.24 0.54 0.84))
+
+;;;Reverse dependency
+(4PSPCtx.NodeInterDependency DeptCustomDrinksOnCastrillo)
+(4PSPCtx.nodeInterDependencyOnNode CustomDrinks DeptCustomDrinksOnCastrillo Castrillo)
+(4PSPCtx.nodeInterDependencyHasValue DeptCustomDrinksOnCastrillo (riskFuzzyValTripleFN 0.14 0.64 0.94))
+
+(4PSPCtx.NodeInterDependency DeptRivera_JapanOnCustomDrinks)
+(4PSPCtx.nodeInterDependencyOnNode Rivera_Japan DeptRivera_JapanOnCustomDrinks CustomDrinks)
+(4PSPCtx.nodeInterDependencyHasValue DeptRivera_JapanOnCustomDrinks (riskFuzzyValTripleFN 0.34 0.55 0.85))
+
+;;;Reverse dependency
+(4PSPCtx.NodeInterDependency DeptCustomDrinksOnRivera_Japan)
+(4PSPCtx.nodeInterDependencyOnNode CustomDrinks DeptCustomDrinksOnRivera_Japan Rivera_Japan)
+(4PSPCtx.nodeInterDependencyHasValue DeptCustomDrinksOnRivera_Japan (riskFuzzyValTripleFN 0.15 0.65 0.95))
+
+(4PSPCtx.NodeInterDependency DeptSunsetOnCustomDrinks)
+(4PSPCtx.nodeInterDependencyOnNode Sunset DeptSunsetOnCustomDrinks CustomDrinks)
+(4PSPCtx.nodeInterDependencyHasValue DeptSunsetOnCustomDrinks (riskFuzzyValTripleFN 0.35 0.56 0.86))
+
+;;;Reverse dependency
+(4PSPCtx.NodeInterDependency DeptCustomDrinksOnSunset)
+(4PSPCtx.nodeInterDependencyOnNode CustomDrinks DeptCustomDrinksOnSunset Sunset)
+(4PSPCtx.nodeInterDependencyHasValue DeptCustomDrinksOnSunset (riskFuzzyValTripleFN 0.17 0.670.97))
+
+;;;Roles to model Risk Values
+(1SYSCtx.Input AppleSupplierIn)
+(1SYSCtx.Input AppleProducerIn)
+(1SYSCtx.Input SugarSupplierIn)
+(1SYSCtx.Input AscorbicAcidSupplierIn)
+(1SYSCtx.Input LabelSupplierIn)
+(1SYSCtx.Input GlassSupplierIn)
+(1SYSCtx.Input CartonSupplierIn)
+(1SYSCtx.Input BottledCiderMakerIn)
+(1SYSCtx.Input CustomerInternalIn)
+(1SYSCtx.Input CustomerExternalIn)
+
+(1SYSCtx.Output AppleSupplierOut)
+(1SYSCtx.Output AppleProducerOut)
+(1SYSCtx.Output SugarSupplierOut)
+(1SYSCtx.Output AscorbicAcidSupplierOut)
+(1SYSCtx.Output LabelSupplierOut)
+(1SYSCtx.Output GlassSupplierOut)
+(1SYSCtx.Output CartonSupplierOut)
+(1SYSCtx.Output BottledCiderMakerOut)
+(1SYSCtx.Output CustomerInternalOut)
+(1SYSCtx.Output CustomerExternalOut)
+
+;;;Contexts for the Risk Roles
+(1SYSCtx.requiresA AppleSupplierIn Ullama)
+(1SYSCtx.requiresA AppleProducerIn Lopez_Pampin)
+(1SYSCtx.requiresA SugarSupplierIn Casado)
+(1SYSCtx.requiresA AscorbicAcidSupplierIn Agrovin)
+(1SYSCtx.requiresA LabelSupplierIn Conlesa)
+(1SYSCtx.requiresA GlassSupplierIn Verallia)
+(1SYSCtx.requiresA CartonSupplierIn Castrillo)
+(1SYSCtx.requiresA BottledCiderMakerIn CustomDrinks)
+(1SYSCtx.requiresA CustomerInternalIn Rivera_Japan)
+(1SYSCtx.requiresA CustomerExternalIn Sunset)
+
+(1SYSCtx.requiresA AppleSupplierOut Ullama)
+(1SYSCtx.requiresA AppleProducerOut Lopez_Pampin)
+(1SYSCtx.requiresA SugarSupplierOut Casado)
+(1SYSCtx.requiresA AscorbicAcidSupplierOut Agrovin)
+(1SYSCtx.requiresA LabelSupplierOut Conlesa)
+(1SYSCtx.requiresA GlassSupplierOut Verallia)
+(1SYSCtx.requiresA CartonSupplierOut Castrillo)
+(1SYSCtx.requiresA BottledCiderMakerOut CustomDrinks)
+(1SYSCtx.requiresA CustomerInternalOut Rivera_Japan)
+(1SYSCtx.requiresA CustomerExternalOut Sunset)
+
+
+;;;Defining the Risk Scenario
+;;;same as old CiderGPN risk scenario
+(4PSPCtx.RiskScenario Risk1)
+(1SYSCtx.Scenario GPNetwork1+Risk1)
+(4PSPCtx.gpnScenarioInScenario GPNetwork1 GPNetwork1+Risk1)
+(4PSPCtx.riskScenarioInScenario Risk1 GPNetwork1+Risk1)
+
+;;;Defining Risk values and linking them to roles within the RiskScenario 
+(4PSPCtx.Perturbation Perturb1)
+(4PSPCtx.perturbationHasValue Perturb1 (fuzzyValLinguisticCoupleFN 2DSCtx.VeryLow 2DSCtx.Medium))
+(4PSPCtx.perturbationHasStartPeriod Perturb1 3)
+(4PSPCtx.perturbationHasLength Perturb1 6)
+(1SYSCtx.playsRole Perturb1 AppleSupplierIn Risk1)
+
+(4PSPCtx.Perturbation Perturb2)
+(4PSPCtx.perturbationHasValue Perturb2 (riskFuzzyValTripleFN 0.3 0.5 0.7))
+(4PSPCtx.perturbationHasStartPeriod Perturb2 5)
+(4PSPCtx.perturbationHasLength Perturb2 8)
+(1SYSCtx.playsRole Perturb2 AppleProducerIn Risk1)
+
+(4PSPCtx.Perturbation Perturb3)
+(4PSPCtx.perturbationHasValue Perturb3 (riskFuzzyValTripleFN 0.4 0.5 0.7))
+(4PSPCtx.perturbationHasStartPeriod Perturb3 6)
+(4PSPCtx.perturbationHasLength Perturb3 7)
+(1SYSCtx.playsRole Perturb3 SugarSupplierIn Risk1)
+
+(4PSPCtx.Perturbation Perturb4)
+(4PSPCtx.perturbationHasValue Perturb4 (riskFuzzyValTripleFN 0.3 0.5 0.6))
+(4PSPCtx.perturbationHasStartPeriod Perturb4 1)
+(4PSPCtx.perturbationHasLength Perturb4 4)
+(1SYSCtx.playsRole Perturb4 AscorbicAcidSupplierIn Risk1)
+
+(4PSPCtx.Perturbation Perturb5)
+(4PSPCtx.perturbationHasValue Perturb5 (riskFuzzyValTripleFN 0.32 0.52 0.62))
+(4PSPCtx.perturbationHasStartPeriod Perturb5 4)
+(4PSPCtx.perturbationHasLength Perturb5 8)
+(1SYSCtx.playsRole Perturb5 LabelSupplierIn Risk1)
+
+(4PSPCtx.Perturbation Perturb6)
+(4PSPCtx.perturbationHasValue Perturb6 (riskFuzzyValTripleFN 0.36 0.56 0.66))
+(4PSPCtx.perturbationHasStartPeriod Perturb6 6)
+(4PSPCtx.perturbationHasLength Perturb6 8)
+(1SYSCtx.playsRole Perturb6 GlassSupplierIn Risk1)
+
+(4PSPCtx.Perturbation Perturb7)
+(4PSPCtx.perturbationHasValue Perturb7 (riskFuzzyValTripleFN 0.37 0.57 0.67))
+(4PSPCtx.perturbationHasStartPeriod Perturb7 7)
+(4PSPCtx.perturbationHasLength Perturb7 8)
+(1SYSCtx.playsRole Perturb7 CartonSupplierIn Risk1)
+
+(4PSPCtx.Perturbation Perturb8)
+(4PSPCtx.perturbationHasValue Perturb8 (riskFuzzyValTripleFN 0.38 0.58 0.68))
+(4PSPCtx.perturbationHasStartPeriod Perturb8 8)
+(4PSPCtx.perturbationHasLength Perturb8 9)
+(1SYSCtx.playsRole Perturb8 BottledCiderMakerIn Risk1)
+
+(4PSPCtx.Perturbation Perturb9)
+(4PSPCtx.perturbationHasValue Perturb9 (riskFuzzyValTripleFN 0.39 0.59 0.69))
+(4PSPCtx.perturbationHasStartPeriod Perturb9 9)
+(4PSPCtx.perturbationHasLength Perturb9 7)
+(1SYSCtx.playsRole Perturb9 CustomerInternalIn Risk1)
+
+(4PSPCtx.Perturbation Perturb10)
+(4PSPCtx.perturbationHasValue Perturb10 (riskFuzzyValTripleFN 0.69 0.69 0.69))
+(4PSPCtx.perturbationHasStartPeriod Perturb10 2)
+(4PSPCtx.perturbationHasLength Perturb10 5)
+(1SYSCtx.playsRole Perturb9 CustomerExternalIn Risk1)
+
+
+(4PSPCtx.Inoperability Inop1)
+(4PSPCtx.inoperabilityHasValue Inop1 (fuzzyValLinguisticCoupleFN 2DSCtx.Medium 2DSCtx.Medium))
+(4PSPCtx.inoperabilityHasTimePeriod Inop1 2)
+(1SYSCtx.playsRole Inop1 AppleProducerOut Risk1)
+
+(4PSPCtx.Inoperability Inop2)
+(4PSPCtx.inoperabilityHasValue Inop2 (riskFuzzyValTripleFN 0.12 0.22 0.32))
+(4PSPCtx.inoperabilityHasTimePeriod Inop2 4)
+(1SYSCtx.playsRole Inop2 AppleSupplierOut Risk1)
+
+(4PSPCtx.Inoperability Inop3)
+(4PSPCtx.inoperabilityHasValue Inop3 (riskFuzzyValTripleFN 0.16 0.27 0.39))
+(4PSPCtx.inoperabilityHasTimePeriod Inop3 7)
+(1SYSCtx.playsRole Inop3 SugarSupplierOut Risk1)
+
+(4PSPCtx.Inoperability Inop4)
+(4PSPCtx.inoperabilityHasValue Inop4 (riskFuzzyValTripleFN 0.13 0.23 0.33))
+(4PSPCtx.inoperabilityHasTimePeriod Inop4 1)
+(1SYSCtx.playsRole Inop4 AscorbicAcidSupplierOut Risk1)
+
+(4PSPCtx.Inoperability Inop5)
+(4PSPCtx.inoperabilityHasValue Inop5 (riskFuzzyValTripleFN 0.14 0.24 0.34))
+(4PSPCtx.inoperabilityHasTimePeriod Inop5 2)
+(1SYSCtx.playsRole Inop5 LabelSupplierOut Risk1)
+
+(4PSPCtx.Inoperability Inop6)
+(4PSPCtx.inoperabilityHasValue Inop6 (riskFuzzyValTripleFN 0.15 0.25 0.35))
+(4PSPCtx.inoperabilityHasTimePeriod Inop6 7)
+(1SYSCtx.playsRole Inop6 GlassSupplierOut Risk1)
+
+(4PSPCtx.Inoperability Inop7)
+(4PSPCtx.inoperabilityHasValue Inop7 (riskFuzzyValTripleFN 0.16 0.26 0.36))
+(4PSPCtx.inoperabilityHasTimePeriod Inop7 5)
+(1SYSCtx.playsRole Inop7 CartonSupplierOut Risk1)
+
+(4PSPCtx.Inoperability Inop8)
+(4PSPCtx.inoperabilityHasValue Inop8 (riskFuzzyValTripleFN 0.17 0.27 0.37))
+(4PSPCtx.inoperabilityHasTimePeriod Inop8 4)
+(1SYSCtx.playsRole Inop8 BottledCiderMakerOut Risk1)
+
+(4PSPCtx.Inoperability Inop9)
+(4PSPCtx.inoperabilityHasValue Inop9 (riskFuzzyValTripleFN 0.18 0.28 0.38))
+(4PSPCtx.inoperabilityHasTimePeriod Inop9 7)
+(1SYSCtx.playsRole Inop9 CustomerInternalOut Risk1)
+
+(4PSPCtx.Inoperability Inop10)
+(4PSPCtx.inoperabilityHasValue Inop10 (riskFuzzyValTripleFN 0.19 0.29 0.39))
+(4PSPCtx.inoperabilityHasTimePeriod Inop10 5)
+(1SYSCtx.playsRole Inop10 CustomerExternalOut Risk1)
+
+
+;;;just modelling one UnitLossOfInoperability
+(4PSPCtx.IntendedRevenue intendRev1)
+(4PSPCtx.intendedRevenueHasValue intendRev1(fuzzyValLinguisticCoupleFN 2DSCtx.VeryHigh 2DSCtx.Low))
+(holdsIn (RootCtx.Span (RootCtx.Date "2002") (RootCtx.Date "2024"))(4PSPCtx.IntendedRevenue intendRev1))
+(1SYSCtx.playsRole intendRev1 BottledCiderMakerOut Risk1)

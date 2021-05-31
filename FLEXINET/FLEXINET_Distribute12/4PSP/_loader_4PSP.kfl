@@ -1,0 +1,45 @@
+;; Loader file for 4PSP
+
+; Basics Concepts in Level 4PSP
+:Load "20141022_4PSP_Ctx_1_LU.kfl"
+
+:Load "20141024_4PSP_Prop_Basic_1_LU.kfl"
+; Systems Concepts in Level 4PSP
+:Load "20141024_4PSP_Prop_System_1_LU.kfl"
+;Concepts of materials associated with technology
+:Load "20141203_4PSP_Prop_Technology_1_ITI.kfl"
+
+
+; Roles Concepts in Level 4PSP
+:Load "20141022_4PSP_Prop_Role_1_ITI.kfl"
+
+;Relations in Level 4PSP
+:Load "20141203_4PSP_Rel_1_LU.kfl"
+
+;Axioms in level 4PSP
+:Load "20141203_4PSP_Axiom_1_ITI.kfl"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Risk Section
+:Load "4PSP_Risk/20141205_4PSP_Prop_Risk_1_LU.kfl"
+:Load "4PSP_Risk/20141205_4PSP_Rel_Risk_1_LU.kfl"
+:Load "4PSP_Risk/20141217_4PSP_Axiom_Risk_1_LU.kfl"
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Indicator Section
+:Load "4PSP_Indicator/20150713_4PSP_Prop_Indicator_1_LU.kfl"
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Business Section
+
+:Load "4PSP_Business/20150911_4PSP_Prop_Business_1_LU.kfl"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;PSCOMS Section
+:Load "4PSP_PSCOMS/20150427_4PSP_Prop_PSCOMS_1_AINIA.kfl"
+:Load "4PSP_PSCOMS/20150429_4PSP_Rel_PSCOMS_1_AINIA.kfl"
+:Load "4PSP_PSCOMS/20150716_4PSP_Axiom_PSCOMS_1_AINIA.kfl"
+:Load "4PSP_PSCOMS/20150716_4PSP_Rule_PSCOMS_1_AINIA.kfl"
+:Load "4PSP_PSCOMS/20160209_4PSP_Function_PSCOMS_1_LU.kfl"

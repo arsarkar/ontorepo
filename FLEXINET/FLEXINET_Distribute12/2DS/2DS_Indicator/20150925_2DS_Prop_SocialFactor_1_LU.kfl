@@ -1,0 +1,126 @@
+:Name "Level 2 Designed Systems - Social Factor Properties"
+:Description "Social Factor subset of External Factor Indicator Properties."
+
+:Use ../2DSCtx
+
+:Prop LifeExpectancyAtBirthTotal
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Life expectancy at birth indicates the number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life."
+:referenceRem "http://data.worldbank.org/indicator/SP.DYN.LE00.IN"
+
+:Prop LiteracyRateAdultTotal
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Adult (15+) literacy rate (%). Total is the percentage of the population age 15 and above who can, with understanding, read and write a short, simple statement on their everyday life. Generally, ‘literacy’ also encompasses ‘numeracy’, the ability to make simple arithmetic calculations. This indicator is calculated by dividing the number of literates aged 15 years and over by the corresponding age group population and multiplying the result by 100."
+:referenceRem "http://data.worldbank.org/indicator/SE.ADT.LITR.ZS"
+
+:Prop LiteracyRateYouthTotal
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Youth (15-24) literacy rate (%). Total is the number of people age 15 to 24 years who can both read and write with understanding a short simple statement on their everyday life, divided by the population in that age group. Generally, ‘literacy’ also encompasses ‘numeracy’, the ability to make simple arithmetic calculations."
+:referenceRem "http://data.worldbank.org/indicator/SE.ADT.1524.LT.ZS"
+
+:Prop CPIATransparencyAccountabilityAndCorruptionInThePublicSectorRating
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Transparency, accountability, and corruption in the public sector assess the extent to which the executive can be held accountable for its use of funds and for the results of its actions by the electorate and by the legislature and judiciary, and the extent to which public employees within the executive are required to account for administrative decisions, use of resources, and results obtained. The three main dimensions assessed here are the accountability of the executive to oversight institutions and of public employees for their performance, access of civil society to information on public affairs, and state capture by narrow vested interests."
+:referenceRem "http://data.worldbank.org/indicator/IQ.CPA.TRAN.XQ"
+
+:Prop AccessToElectricity
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Access to electricity is the percentage of population with access to electricity."
+:referenceRem "http://data.worldbank.org/indicator/EG.ELC.ACCS.ZS"
+
+:Prop AccessToNonSolidFuel
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Access to non-solid fuel is the percentage of population with access to non-solid fuel."
+:referenceRem "http://data.worldbank.org/indicator/EG.NSF.ACCS.ZS"
+
+:Prop TechniciansInResearchAndDesign
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Technicians in R&D and equivalent staff are people whose main tasks require technical knowledge and experience in engineering, physical and life sciences (technicians), or social sciences and humanities (equivalent staff). They participate in R&D by performing scientific and technical tasks involving the application of concepts and operational methods, normally under the supervision of researchers."
+:referenceRem "http://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+
+:Prop PopulationAged0-14
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Population, age 0-14 (% of total) is the population between the ages of 0 and 14 as a percentage of the total population."
+:referenceRem "http://data.worldbank.org/indicator/SP.POP.0014.TO.ZS"
+
+:Prop PopulationAged15-64
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Total population between the ages 15 to 64 is the number of people who could potentially be economically active. Population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship--except for refugees not permanently settled in the country of asylum, who are generally considered part of the population of the country of origin.."
+:referenceRem "http://data.worldbank.org/indicator/SP.POP.1564.TO.ZS"
+
+:Prop LabourForceWithPrimaryEducation
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Labor force with primary education is the share of the total labor force that attained or completed primary education as the highest level of education."
+:referenceRem "http://data.worldbank.org/indicator/SL.TLF.PRIM.ZS"
+
+:Prop LabourForceWithSecondaryEducation
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Labor force with secondary education is the share of the total labor force that attained or completed secondary education as the highest level of education."
+:referenceRem "http://data.worldbank.org/indicator/SL.TLF.SECO.ZS"
+
+:Prop FemaleChildrenInEmployment
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Children in employment refer to children involved in economic activity for at least one hour in the reference week of the survey."
+:referenceRem "http://data.worldbank.org/indicator/SL.TLF.0714.FE.ZS"
+
+:Prop MaleChildrenInEmployment
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Children in employment refer to children involved in economic activity for at least one hour in the reference week of the survey."
+:referenceRem "http://data.worldbank.org/indicator/SL.TLF.0714.MA.ZS"
+
+:Prop LabourForceParticipation_Aged15-24
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Labor force participation rate is the proportion of the population ages 15-24 that is economically active: all people who supply labor for the production of goods and services during a specified period. The participation rates are harmonized to account for differences in national data collection and tabulation methodologies as well as for other country-specific factors such as military service requirements. The series includes both nationally reported and imputed data and only estimates that are national, meaning there are no geographic limitations in coverage."
+:referenceRem "http://data.worldbank.org/indicator/SL.TLF.ACTI.1524.ZS"
+
+:Prop LabourForceParticipation_Aged15Plus
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Labor force participation rate is the proportion of the population ages 15 and older that is economically active: all people who supply labor for the production of goods and services during a specified period."
+:referenceRem "http://data.worldbank.org/indicator/SL.TLF.CACT.ZS"
+
+:Prop LabourForceParticipation_Aged15-64
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+:rem "Labor force participation rate is the proportion of the population ages 15-64 that is economically active: all people who supply labor for the production of goods and services during a specified period."
+:referenceRem "http://data.worldbank.org/indicator/SL.TLF.ACTI.ZS"
+
+:Prop Strike
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor
+
+:Prop InternalDispute
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SocialFactor

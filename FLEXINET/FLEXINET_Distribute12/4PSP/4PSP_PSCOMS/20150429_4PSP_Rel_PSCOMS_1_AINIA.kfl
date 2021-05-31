@@ -1,0 +1,281 @@
+:Name "4PSCOMS - Relations"
+:Description "PSCOMS Relations"
+:Use ../4PSPCtx
+
+;;;LU added ideaHasDescription, conceptHasStatus, conceptHasPilotProductionStatus, conceptHasGPNConfigurationStatus,   conceptHasBusinessModelScenarioStatus 12/02/2016
+
+;; :Rel productComp
+;; :Inst BinaryRel
+;; :Inst RigidRel
+;; :Sig  ManufacturedProductService Product
+;; :rem "ManufacturedProductService is compound of Product"
+
+;; :Rel serviceComp
+;; :Inst BinaryRel
+;; :Inst RigidRel
+;; :Sig ManufacturedProductService ServiceProduct
+;; :rem "ManufacturedProductService is compound of Service"
+
+;;;not sure these relations are correct.
+;;;A manufacturedProductService is a manufactured product containing a service.
+;;;The ontology contains the relation mpContainsService
+
+:Rel  productHasAssociatedBenefit
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 2DSCtx.Product Benefit
+:rem  "A product has an associated benefit"
+
+:Rel  productUsesSupportSystem
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  2DSCtx.Product SupportSystem
+:rem  "Product uses Support System"
+
+:Rel productHasAssociatedIdea
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 2DSCtx.Product ProductServiceIdea
+:rem "A product has an associated idea"
+
+:Rel productHasAssociatedConcept
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 2DSCtx.Product ProductServiceConcept
+:rem "A product has an associated Concept"
+
+:Rel productHasAssociatedRequirement
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  2DSCtx.Product ProductServiceRequirement
+:rem "A product has an associated Requirement"
+
+;;An stakeholder is a person or group that has an investment, share, or interest in something, as a business or industry. 
+
+:Rel stakeholderSetsRequirement
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Stakeholder ProductServiceRequirement
+:rem "An Stakeholder sets a requirement"
+
+
+:Rel stakeholderContributesToConcept
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Stakeholder ProductServiceConcept
+:rem "A stakeholder creates or contributes in some way to a concept"
+
+:Rel stakeholderContributesToIdea
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Stakeholder ProductServiceIdea
+:rem "A stakeholder creates or contributes in some way to an idea"
+
+:Rel  conceptHasAssociatedRequirement
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  ProductServiceConcept ProductServiceRequirement
+:rem "A concept has an associated requirement"
+
+:Rel  conceptHasAssociatedIdea
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceConcept ProductServiceIdea
+:rem "A concept has an associated idea"
+
+:Rel  ideaHasAssociatedKeyword
+:Inst BinaryRel
+:Sig ProductServiceIdea Keyword
+:rem "An idea has associated keywords"
+
+:Rel  ideaHasAssociatedEvaluationScheme
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceIdea EvaluationScheme
+:rem "An idea has an associated EvaluationScheme"
+
+
+:Rel  supportSystemContainsSupportNetwork
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  SupportSystem SupportNetwork
+:rem  "A support system contains a support network"
+
+:Rel supportSystemContainsInfrastructure
+:Inst BinaryRel
+:Inst RigidRel
+:Sig SupportSystem Infrastructure
+:rem "A support system contains an infrastructure"
+
+:Rel infrastructureContainsSoftware
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Infrastructure Software
+:rem "an infrastructure contains Software"
+
+:Rel infrastructureContainsHardware
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Infrastructure Hardware
+:rem "an infrastructure contains hardware"
+
+
+:Rel ideaHasId
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceIdea IntegerNumber
+:functionalArg 2
+:rem "An Idea has an identifier"
+
+:Rel ideaHasStatus
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceIdea Status
+:rem "A ProductServiceIdea idea has an status"
+
+:Rel ideaHasComment
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceIdea Comment
+:rem "An Idea has a comment"
+
+:Rel commentHasValue
+:Inst BinaryRel
+:Inst RigidRel
+:functionalArg 2
+:Sig Comment String
+:rem "Value of the comment"
+
+:Rel ideaHasOwner
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceIdea Owner
+:functionalArg 2 
+:rem "An Idea has an Owner"
+
+:Rel ideaHasContributor
+:Inst BinaryRel
+:Inst RigidRel 
+:Sig ProductServiceIdea Contributor
+:rem "An idea has contributors"
+
+:Rel ideaHasDescription
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceIdea String
+:Args "ProductServiceIdea" "Description of Idea"
+:lex "?1 has a description ?2" 
+
+;:Rel keywordHasType
+;:Inst BinaryRel
+;:Inst RigidRel
+;:Sig Keyword KeywordType
+;:rem "A Keyword has a type"
+
+:Rel  ideaHasKeywordType
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  ProductServiceIdea KeywordType
+:rem  "sets the possible KeywordTypes for the Keywords associated to an Idea"
+
+:Rel  keywordHasValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Keyword String
+:functionalArg 2
+:rem "String value of the Keyword"
+
+:Rel  keywordTypeHasValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig KeywordType String
+:functionalArg 2
+:rem "String value of the Keyword Type"
+
+:Rel conceptHasStatus
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceConcept Status
+:rem "A ProductServiceConcept has a <sym>4PSPCtx.Status</sym>"
+
+:Rel conceptHasPilotProductionStatus
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceConcept Status
+:rem "A ProductServiceConcept has Pilot Production <sym>4PSPCtx.Status</sym>"
+
+:Rel conceptHasGPNConfigurationStatus
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceConcept Status
+:rem "A ProductServiceConcept has a GPN Configuration <sym>4PSPCtx.Status</sym>"
+
+:Rel conceptHasBusinessModelScenarioStatus
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceConcept Status
+:rem "A ProductServiceConcept has a Business Model Scenario <sym>4PSPCtx.Status</sym>"
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Lifecycle information 
+
+:Rel productHasAssociatedLifeCycle
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 2DSCtx.Product ProductServiceLifeCycle
+:rem "A product has an associated life cycle"
+
+:Rel lifeCycleStatusSetAsDemandIdentification
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceLifeCycle DemandIdentification
+:rem "It sets the status of a life cycle as DemandIdentification"
+
+:Rel  lifeCycleStatusSetAsFeasibilityStudy
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceLifeCycle FeasibilityStudy
+:rem "It sets the status of a life cycle as FeasibilityStudy"
+
+:Rel lifeCycleStatusSetAsConceptDevelopment
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceLifeCycle ConceptDevelopment
+:rem "It sets the status of a life cycle as ConceptDevelopment"
+
+:Rel  lifeCycleStatusSetAsConfiguration
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  ProductServiceLifeCycle Configuration
+:rem  "It sets the status of a life cycle as Configuration"
+
+:Rel  lifeCycleStatusSetAsRealisation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceLifeCycle Realisation
+:rem "It sets the status of a life cycle as Realisation"
+
+:Rel  lifeCycleStatusSetAsMaintenance
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  ProductServiceLifeCycle Maintenance
+:rem "It sets the status of a life cycle as Maintenance"
+
+:Rel  lifeCycleStatusSetAsTesting
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceLifeCycle Testing
+:rem "It sets the status of a life cycle asTesting"
+
+:Rel  lifeCycleStatusSetAsInService
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceLifeCycle InService
+:rem "It sets the status of a life cycle as InService"
+
+:Rel  lifeCycleStatusSetAsUserExperience
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProductServiceLifeCycle UserExperience
+:rem "It sets the status of a life cycle as UserExperience"

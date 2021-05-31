@@ -1,0 +1,35 @@
+:Name "Level 2 Designed Systems - Axioms to check Metric functions"
+:Description "This file contains the definition of Metric axioms which occur at the Designed Systems level of the FLEXINET Project reference ontology but is placed within a separate folder called 2DS_Metric as they form a specialised subset of level 2."
+
+:Use ../2DSCtx
+
+;;;;axioms relating to Fuzzy numbers
+;;copied from examples supplied by Lindsey Spratt
+;;;==================================================
+
+;;;axioms applying to a fuzzy number in arg2 of any binary relation
+(=>
+	(?relation ?var1 (fuzzyValTripleFN ?l ?m ?h))
+	(and (lteNum ?l ?m)
+		(lteNum ?m ?h)))
+:IC hard "In relation ?relation ?var1 has a Fuzzy value. In a Fuzzy value triple ?l must be <= ?m must be <= ?h."
+;;copied from an example supplied by Lindsey Spratt
+
+;;;==================================================
+;;;axioms applying to a fuzzy number in arg2 of any ternary relation
+(=>
+	(?relation ?var1 (fuzzyValTripleFN ?l ?m ?h) ?var2)
+	(and (lteNum ?l ?m)
+		(lteNum ?m ?h)))
+:IC hard "In relation ?relation a Fuzzy value exists between ?var1 and ?var2. In a Fuzzy value triple ?l must be <= ?m must be <= ?h."
+
+;;;==================================================
+(=>
+	(?relation ?var1 (scaleAndvalue ?bottom ?top ?value))
+	(inInterval ?value (interval in ?bottom ?top in))
+)
+:IC hard "Relation ?relation ?var1 has an IntervalScale value. Value ?value must be within the interval [?bottom , ?top]."
+
+
+
+

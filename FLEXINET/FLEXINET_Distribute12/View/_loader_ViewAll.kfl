@@ -1,0 +1,15 @@
+;; Loader file for the FLEXINET Scenario section
+
+:Load "View_1SYS/_loader_View1SYS.kfl"
+:Load "View_2DS/_loader_View2DS.kfl"
+:Load "View_3MBS/_loader_View3MBS.kfl"
+
+:Load "View_4PSP/_loader_View4PSP.kfl"
+:Load "View_4PSLS/_loader_View4PSLS.kfl"
+
+:Load "View_5IND/_loader_View5IND.kfl"
+:Load "View_5CD/_loader_View5CD.kfl"
+:Load "View_5KSB/_loader_View5KSB.kfl"
+
+
+

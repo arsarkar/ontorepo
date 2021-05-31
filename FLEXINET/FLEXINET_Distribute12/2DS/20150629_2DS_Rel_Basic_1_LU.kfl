@@ -1,0 +1,121 @@
+:Name "Level 2 Designed Systems - Basic Relations"
+:Description "This file contains the relations concerned with properties which are subproperties of Basic in the Designed Systems level of the FLEXINET Project reference ontology"
+
+;;;File created by LU, relations supplied by ITI
+;;;LU added Market relations 15/07/2015
+;;;Lu added partContains to capture Manufacturing information 15/12/2015
+
+:Use 2DSCtx
+
+:Rel partContains
+:Inst BinaryRel
+:Inst NonRigidRel
+:supRel basicContainsBasic
+:Sig  Part Component
+:Args "Part" "Component" 
+:lex "A part ?1 contains ?2. "
+:rem "A <sym>2DSCtx.Part</sym> contains a <sym>2DSCtx.Component</sym>."
+
+;;;commented out role has characteristic, basic has characteristic, basicHasType for time-being LU 20/06/2015
+
+:Rel systemHasType
+:Inst BinaryRel
+:Inst NonRigidRel
+:Sig  System System
+:Args "System" "SystemType" 
+:lex "A system ?1 is of Type ?2. "
+:rem "A system has a type (System) not defined  within the reference ontology."
+
+;:Rel basicHasCharacteristic
+;:Inst BinaryRel
+;:Inst RigidRel
+;:Sig  Basic Characteristic
+;:Args "Basic" "Characteristic"
+;:lex "?1 basic Has Characteristic ?2"
+;:rem "A basic is defined by a one or more characteristics or restrictions, e.g. Size, volume."
+
+;:Rel roleHasCharacteristic
+;:Inst BinaryRel
+;:Inst RigidRel
+;:Sig  Role Characteristic
+;:Args "Role" "Characteristic"
+;:lex "?1 role Has Characteristic ?2"
+;:rem "A role is defined by a one or more characteristics or restrictions, e.g. Size, volume."
+
+:Rel systemHasState
+:Inst BinaryRel
+:Inst NonRigidRel
+:Sig  System Information
+:Args "System" "Information" 
+:lex "A system ?1 has State  ?2. "
+:rem "A system has a state."
+
+:Rel  technologyHasDimension
+:Inst BinaryRel
+:Inst RigidRel
+;:supRel  roleHasCharacteristic
+:Sig  Technology Dimension
+:Args  "Technology" "Dimension"
+:lex "?1 Has ?2"
+:rem ""
+
+:Rel  technologyHasTRLevel
+:Inst BinaryRel
+:Inst RigidRel
+:supRel technologyHasDimension
+:Sig  Technology TechnologyReadinessLevel
+:Args  "Technology" "TechnologyReadinessLevel"
+:lex "?1 Has ?2"
+:rem ""
+
+;;?necessary?  A product needs an input and resources, these can be technologies. 
+:Rel  basicDependsOnBasic
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Basic List
+:Args  "Basic" "List"
+:lex "?1 depends on a list of basic (usually technologies) ?2"
+:rem ""
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Market relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+:Rel marketHasALocation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Market Location
+:Args "Market" "Location"
+:lex "?1 has location ?2"
+:rem "A <sym>2DSCtx.Market</sym> may only have one <sym>2DSCtx.Location</sym>."
+(functionalArg marketHasALocation 2)
+
+:Rel marketcontainsOrganisation
+:Inst BinaryRel
+:Inst RigidRel
+:supRel basicContainsBasic
+:Sig Market Organisation
+:Args "Market" "Organisation"
+:lex "?1 contains ?2"
+:rem "A <sym>2DSCtx.Market</sym> contains <sym>2DSCtx.Organisation</sym>s, e.g. suppliers, customers etc."
+
+:Rel businessPlanRelatesMarket
+:Inst BinaryRel
+:Inst RigidRel
+:Sig BusinessPlan Market
+:Args "BusinessPlan" "Market"
+:lex "?1 relates to ?2"
+:rem "A <sym>2DSCtx.BusinessPlan</sym> must relate to at least one <sym>2DSCtx.Market</sym>."
+(totalArg businessPlanRelatesMarket 1)
+
+:Rel businessPlanDerivedFromCanvas
+:Inst BinaryRel
+:Inst RigidRel
+:Sig BusinessPlan BusinessModelCanvas
+:Args "BusinessPlan" "BusinessModelCanvas"
+:lex "?1 is derived from ?2"
+:rem "A <sym>2DSCtx.BusinessPlan</sym> is derived from <sym>2DSCtx.BusinessModelCanvas</sym>. At most one Business Plan is derived from a Business Canvas Model"
+(functionalArg businessPlanDerivedFromCanvas 1)
+
+
+

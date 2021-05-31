@@ -1,0 +1,39 @@
+:Name "Level 5 Product Service LifeCycle Systems - Relations specific to Enterprise Indesit"
+
+:Use ../5INDCtx
+
+
+:Rel hasTemperatureStatistics
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  DryerCycleInformation TemperatureStatistics
+:lex "?1 has temperature statistics ?2"
+:rem "Dryer CycleInformation may only have one Temperature Statistic."
+(functionalArg hasTemperatureStatistics 2)
+
+:Rel hasEnergyConsumptionStatistics
+:Inst BinaryRel
+:Inst RigidRel
+:Sig DryerCycleInformation EnergyConsumptionStatistics
+:lex "?1 has energy consumption statistics ?2"
+:rem "DryerCycleInformation may only have one Energy Consumption Statistic."
+(functionalArg hasEnergyConsumptionStatistics 2)
+
+:Rel partOfComponent
+:Inst BinaryRel
+:Inst RigidRel
+:Inst AntisymmetricBR
+:supRel basicContainsBasic
+:Sig  5INDCtx.Component 5INDCtx.Component
+:lex "?1 is part Of ?2"
+:rem "A product equipment sub-component is part of a product equipment component"
+
+:Rel usesCommunicationProtocol
+:Inst BinaryRel
+:Inst RigidRel
+:supRel basicContainsBasic
+:Sig  Software CommunicationProtocol
+:lex "Software ?1 uses protocol ?2"
+:rem "Software uses the communication protocol"
+
+

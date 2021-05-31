@@ -1,0 +1,312 @@
+:Name "Level 2 Designed Systems - Business Rules"
+:Description "This file contains the definition of Business Rules which occur at the Designed Systems level of the FLEXINET Project reference ontology but is placed within a separate folder called 2DS_Business as they form a specialised subset of level 2."
+
+:Use ../2DSCtx
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;defining acceptable rule set
+
+;;;defining rules for mismatching Supplier
+(=>	
+	(and (systemLocatedAt ?potentialSupplier ?co-ord ?area ?locationofCountry)
+	     (hasMisMatchingSupplierLocation ?companySpecifying ?locationofCountry)	
+	)
+	(hasMisMatchingSupplier ?companySpecifying ?potentialSupplier)
+)
+:rem "If an organisation is located in a country which is an mismatching supplier Location for ?companySpecifying then the organisation is an mismatching supplier for ?companySpecifying."
+;;;NB Currently modelling Location based on Country as this is used in the systemLocatedAt relation. I'm using this as we have no developed geographic knowledge base, i.e. we can't infer Paris is in France etc.
+
+;;;defining rules for mis/matching Supplier location
+(=>	
+  (and
+	(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)	
+	(instDirect ?externalfactor ?indicatorType)
+	(specifiesBusinessPolicy ?companySpecifying ?policy)
+	(inst ?policy LocationFactorforSupplier)
+	(ifExistsThenElse  (?indUnitX ?threshUnitX ?indValueX ?thresholdX ?threshValueX)
+		(and
+			(hasIndicatorValue ?externalfactor (?indUnitX ?indValueX))
+			(hasThresholdValueForIndicator ?policy ?indicatorType ?thresholdX (?threshUnitX ?threshValueX)))
+		(and
+			(/= ?indUnitX ?threshUnitX)
+			(= ?indUnit ?indUnitX)
+			(= ?threshUnit ?threshUnitX)
+			(= ?indValue ?indValueX)
+			(= ?threshold ?thresholdX)
+			(= ?threshValue ?threshValueX))
+		(= 0 1)))
+	(hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If  ?companySpecifying has a business policy which has an indicator of type ?indicatortype with a value which has a UNARY function unitType ?unitType and an location has an instance of this type of external factor with a value which has a UNARY unitType NOT the same as ?unitType (i.e. the unitTypes don't match) then the location is an MisMatching Supplier Location for ?companySpecifying."
+;;;N.B. this rule is using ifExistsThen to force the evaluation of (/= ?indUnitX ?threshUnitX) to occur after the rest of the literals of interest. There is a bug in Highfleet. 
+
+(=>	
+(and
+	(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)	
+	(instDirect ?externalfactor ?indicatorType)
+	(specifiesBusinessPolicy ?companySpecifying ?policy)
+	(inst ?policy LocationFactorforSupplier)
+	(ifExistsThenElse (?indUnitX ?threshUnitX ?indScaleLX ?indScaleUX ?indValueX ?thresholdX ?threshScaleLX ?threshScaleUX ?threshValueX)
+		(and
+			(hasIndicatorValue ?externalfactor (?indUnitX ?indScaleLX ?indScaleUX ?indValueX))
+			(hasThresholdValueForIndicator ?policy ?indicatorType ?thresholdX (?threshUnitX ?threshScaleLX ?threshScaleUX ?threshValueX)))
+		(and
+			(/= ?indUnitX ?threshUnitX)
+			(= ?indUnit ?indUnitX)
+			(= ?threshUnit ?threshUnitX)
+			(= ?indValue ?indValueX)
+			(= ?threshold ?thresholdX)
+			(= ?indScaleL ?indScaleLX)
+			(= ?indScaleU ?indScaleUX)	
+			(= ?threshValue ?threshValueX)
+			(= ?threshScaleL ?threshScaleLX)
+         (= ?threshScaleU ?threshScaleUX))
+		(= 0 1))
+)
+	(hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If  ?companySpecifying has a business policy which has an indicator of type ?indicatortype with a  value which has a TERNARY function unitType ?unitType and an location has an instance of this type of external factor with a value which has a TERNARY unitType NOT the same as ?unitType (i.e. the unitTypes don't match) then the location is an MisMatching Supplier Location for ?companySpecifying."
+
+(=>	
+(and
+        (specifiesBusinessPolicy ?companySpecifying ?policy)
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?threshold (?threshUnit ?threshScaleL ?threshScaleU ?threshValue))
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indValue))
+        (instDirect ?externalfactor ?indicatorType)
+)
+	(hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If ?companySpecifying has a business policy which has an indicator of type ?indicatortype with a value which has a TERNARY function unitType and a location has an instance of this type of external factor with a value which has a UNARY function unitType (i.e. the unitTypes don't match) then the location is an MisMatching Supplier Location for ?companySpecifying."
+
+(=>	
+(and
+        (specifiesBusinessPolicy ?companySpecifying ?policy)
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?thresholdX (?threshUnit ?threshValue)) 
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indScaleL ?indScaleU ?indValue))
+        (instDirect ?externalfactor ?indicatorType)
+)
+	(hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If ?companySpecifying has a business policy which has an indicator of type ?indicatortype with a value which has a UNARY function unitType and a location has an instance of this type of external factor with a value which has a TERNARY function unitType (i.e. the unitTypes don't match) then the location is an MisMatching Supplier Location for ?companySpecifying."
+
+
+(=> 
+	(and 
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indScaleL ?indScaleU ?indValue))
+		(hasIndicatorValue ?externalfactor ?indicatorValue)
+		(specifiesBusinessPolicy ?companySpecifying ?policy)
+		(inst ?policy LocationFactorforSupplier)
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?threshold (?threshUnit ?threshScaleL ?threshScaleU ?threshValue))
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?threshold ?thresholdValue)
+		(instDirect  ?externalfactor  ?indicatorType)
+		(= ?indUnit ?threshUnit)
+		(instDirect ?indicatorValue IntervalScale)
+		(/=  ?indScaleL ?threshScaleL)
+	 )
+	(hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If a location has an instance of external factor IntervalScale and ?companySpecifying has a business policy which has an indicator of this type, the units of the externalfactor value and the business policy indicator value are equal and the LOWER Scale value of the external factor interval scale is not equal to the LOWER Scale value of the business policy  interval scale then the location is an MisMatching Supplier Location for ?companySpecifying (i.e. both values must use the same scale range)."
+
+(=> 
+	(and 
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indScaleL ?indScaleU ?indValue))
+		(hasIndicatorValue ?externalfactor ?indicatorValue)
+		(specifiesBusinessPolicy ?companySpecifying ?policy)
+		(inst ?policy LocationFactorforSupplier)
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?threshold (?threshUnit ?threshScaleL ?threshScaleU ?threshValue))
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?threshold ?thresholdValue)
+		(instDirect  ?externalfactor  ?indicatorType)
+		(= ?indUnit ?threshUnit)
+		(instDirect ?indicatorValue IntervalScale)
+		(/=  ?indScaleU ?threshScaleU)
+	 )
+	(hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If a location has an instance of external factor IntervalScale and ?companySpecifying has a business policy which has an indicator of this type, the units of the externalfactor value and the business policy indicator value are equal and the UPPER Scale value of the external factor interval scale is not equal to the
+the UPPER Scale value of the business policy  interval scale then the location is an MisMatching Supplier Location for ?companySpecifying (i.e. both values must use the same scale range)."
+
+(=>
+	(and 
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indValue))
+		(specifiesBusinessPolicy ?companySpecifying ?policy)
+		(inst ?policy LocationFactorforSupplier)
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?threshold (?threshUnit ?threshValue))
+		(instDirect  ?externalfactor  ?indicatorType)
+		(= ?indUnit ?threshUnit)
+		(= ?threshold 2DSCtx.>/=)
+		(ltNum ?indValue ?threshValue)
+	 )
+    (hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If a location has an external factor which is less than the minimum threshold value specified by the company ?companySpecifying for this type of external factor then the location is a misMatching Supplier location for ?companySpecifying. Units of metrics are of same UNARY type"
+
+(=>
+	(and 
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indValue))
+		(specifiesBusinessPolicy ?companySpecifying ?policy)
+		(inst ?policy LocationFactorforSupplier)
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?threshold (?threshUnit ?threshValue))
+		(instDirect  ?externalfactor  ?indicatorType)
+		(= ?indUnit ?threshUnit)
+		(= ?threshold 2DSCtx.</=)
+		(not(lteNum ?indValue ?threshValue))
+	 )
+    (hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If a location has has an external factor which is NOT less than/equal to the maximum threshold value specified by the company ?companySpecifying for this type of external factor then the location is an MisMatching Supplier location for ?companySpecifying. Units of metrics are of same UNARY type"
+
+(=>
+	(and 
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indScaleL ?indScaleU ?indValue))
+		(specifiesBusinessPolicy ?companySpecifying ?policy)
+		(inst ?policy LocationFactorforSupplier)
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?threshold (?threshUnit ?threshScaleL ?threshScaleU ?threshValue))
+		(instDirect  ?externalfactor  ?indicatorType)
+		(= ?indUnit ?threshUnit)
+		(= ?threshold 2DSCtx.>/=)
+		(ltNum ?indValue ?threshValue)
+	 )
+    (hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If a location has has an external factor  which is less than the minimum to the maximum threshold value specified by the company ?companySpecifying for this type of external factor then the location is an MisMatching Supplier location for ?companySpecifying. Units of metrics are assumed to be of same TERNARY type"
+
+(=>(and 
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indScaleL ?indScaleU ?indValue))
+		(specifiesBusinessPolicy ?companySpecifying ?policy)
+		(inst ?policy LocationFactorforSupplier)
+		(hasThresholdValueForIndicator ?policy ?indicatorType ?threshold (?threshUnit ?threshScaleL ?threshScaleU ?threshValue))
+		(instDirect  ?externalfactor  ?indicatorType)
+		(= ?indUnit ?threshUnit)
+		(= ?threshold 2DSCtx.</=)
+		(not(lteNum ?indValue ?threshValue))
+	 )
+    (hasMisMatchingSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If a location has has an external factor  which is NOT less than/equal minimum to the maximum threshold value specified by the company ?companySpecifying for this type of external factor then the location is an MisMatching Supplier location for ?companySpecifying. Units of metrics are  of same TERNARY type"
+
+(=>	
+	(and (and (LocationFactorforSupplier ?locationFactor)
+    	  (specifiesBusinessPolicy ?companySpecifying ?locationFactor)       
+          (hasThresholdValueForIndicator ?locationFactor ?indicatortype ?threshold ?value)
+		)
+		(and (2DSCtx.Country ?locationOfpotentialSupplier)
+	     (setofx ?externalfactorType (?externalfactorType ?externalfactor) 
+	     (and (locationHasExternalFactor  ?locationOfpotentialSupplier ?externalfactor)    
+              (instAsserted ?externalfactor ?externalfactorType))          
+	     ?listExternalfactors)
+		)
+		(not(item ?listExternalfactors ?indicatortype))
+	)
+    (hasMisMatchingSupplierLocation ?companySpecifying  ?locationOfpotentialSupplier)	
+)	
+:rem "If there is an Location Supplier factor which has a location factor and a country doesn’t have a value for this external factor then the country is an MisMatching Supplier Location.  I.e. if ?companyspecifying specifies a location factor for a Supplier location which is not a member of the list of external factors for a country then this country is an mismatching supplier Location for ?companySpecifying."
+;;;in this rule need to compare have a metaproperty in the hasThresholdValueForIndicator relation so need to find the property (using instAsserted) of the locationHasExternalFactor relation.  Currently modelling Location based on Country.
+
+(=>
+	(and 
+		(and
+		(specifiesBusinessPolicy ?companySpecifying ?locationFactor)
+		(inst ?locationFactor LocationFactorforSupplier)
+		(hasThresholdValueForIndicator ?locationFactor ?indicatorType ?threshold ?threshValue)
+		(setofx ?misMatchingSupplierLocation (?misMatchingSupplierLocation) 
+		(hasMisMatchingSupplierLocation ?companySpecifying ?misMatchingSupplierLocation) ?listMisMatchingSupplierLocations)
+		)
+		(2DSCtx.Country ?potentialSupplierLocation)
+		(not (item ?listMisMatchingSupplierLocations ?potentialSupplierLocation))
+	)
+	(hasMatchingSupplierLocation ?companySpecifying ?potentialSupplierLocation)	
+)
+:rem "If a country for a potential supplier is not mismatching for ?companySpecifying (a member of the list of misMatchingSupplierLocations) then it is matching supplier Location."
+;;;NB Currently modelling Location based on Country
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;defining Preferred Rule set
+;;;defining rules for preferred Supplier 
+
+(=>	
+	(and (systemLocatedAt ?potentialpreferredSupplier ?co-ord ?area ?locationofCountry)
+	     (hasUnDesiredSupplierLocation ?companySpecifying ?locationofCountry)	
+	)
+	(hasUnDesiredSupplier ?companySpecifying ?potentialpreferredSupplier)
+)
+:rem "If an organisation is located in a country which is an undesired supplier Location for ?companySpecifying then the organisation is an undesired supplier for ?companySpecifying."
+;;;NB Currently modelling Location based on Country as this is used in the systemLocatedAt relation. I'm using this as we have no developed geographic knowledge base, i.e. we can't infer Paris is in France etc.
+
+;;;defining rules for un/desired Supplier Location
+(=>
+	(and 
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indValue))
+		(specifiesBusinessPolicy ?companySpecifying ?policy)
+		(inst ?policy LocationFactorforSupplier)
+		(hasPreferredThresholdValueForIndicator ?policy ?indicatorType ?threshold (?threshUnit ?threshValue))
+		(instDirect  ?externalfactor  ?indicatorType)
+		(= ?indUnit ?threshUnit)
+		(= ?threshold 2DSCtx.>/=)
+		(ltNum ?indValue ?threshValue)
+	 )
+    (hasUnDesiredSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If a location has an external factor which is less than the minimum threshold value specified by the company ?companySpecifying for this type of external factor then the location is an UnDesired Supplier location for ?companySpecifying. Units of metrics are assumed to be of same type"
+
+(=>
+	(and 
+		(locationHasExternalFactor ?locationOfpotentialSupplier ?externalfactor)
+		(hasIndicatorValue ?externalfactor (?indUnit ?indValue))
+		(specifiesBusinessPolicy ?companySpecifying ?locationFactor)
+		(inst ?locationFactor LocationFactorforSupplier)
+		(hasPreferredThresholdValueForIndicator ?locationFactor ?indicatorType ?threshold (?threshUnit ?threshValue))
+		(instDirect  ?externalfactor  ?indicatorType)
+		(= ?indUnit ?threshUnit)
+		(= ?threshold 2DSCtx.</=)
+		(not(lteNum ?indValue ?threshValue))
+	 )
+    (hasUnDesiredSupplierLocation ?companySpecifying ?locationOfpotentialSupplier )
+)
+:rem "If a location has has an external factor which is NOT less than/equal to the maximum threshold value specified by the company ?companySpecifying for this type of external factor then the location is an UnDesired Supplier location for ?companySpecifying. Units of metrics are assumed to be of same type"
+
+(=>	
+	(and (and (LocationFactorforSupplier ?locationFactor)
+    	  (specifiesBusinessPolicy ?companySpecifying ?locationFactor)       
+          (hasPreferredThresholdValueForIndicator ?locationFactor ?indicatortype ?threshold ?value)
+		)
+		(and (2DSCtx.Country ?locationOfpotentialSupplier)
+	     (setofx ?externalfactorType (?externalfactorType ?externalfactor) 
+	     (and (locationHasExternalFactor  ?locationOfpotentialSupplier ?externalfactor)    
+              (instAsserted ?externalfactor ?externalfactorType))          
+	     ?listExternalfactors)
+		)
+		(not(item ?listExternalfactors ?indicatortype))
+	)
+    (hasUnDesiredSupplierLocation ?companySpecifying  ?locationOfpotentialSupplier)	
+)	
+:rem "If there is an Location Supplier factor which has a location factor and a country doesn’t have a value for this external factor then the country is an UnDesired Supplier Location.  I.e. if ?companyspecifying specifies a location factor for a Preferred Supplier location which is not a member of the list of external factors for a country then this country is an UnDesired supplier Location for ?companySpecifying."
+
+(=>
+	(and 
+		(and
+		(specifiesBusinessPolicy ?companySpecifying ?locationFactor)
+		(inst ?locationFactor LocationFactorforSupplier)
+		(hasPreferredThresholdValueForIndicator ?locationFactor ?indicatorType ?threshold ?threshValue)
+		(setofx ?unDesiredSupplierLocation (?unDesiredSupplierLocation) 
+		(hasUnDesiredSupplierLocation ?companySpecifying ?unDesiredSupplierLocation) ?listUnDesiredSupplierLocations)
+		)
+		(2DSCtx.Country ?potentialSupplierLocation)
+		(not (item ?listUnDesiredSupplierLocations ?potentialSupplierLocation))
+		(hasMatchingSupplierLocation ?companySpecifying ?potentialSupplierLocation)
+		;(hasAcceptableSupplierLocation ?companySpecifying ?potentialSupplierLocation)
+	)
+	(hasDesiredSupplierLocation ?companySpecifying ?potentialSupplierLocation)	
+)
+:rem "If a country for a potential supplier is not unDesired for ?companySpecifying (a member of the list of UnDesiredSupplierLocations) and is matching then it is Desired."
+;;;See 20151308_2DS_Axiom_Business_1_LU.kfl for axioms which ensure preferred indicator values are correctly specified.
+;;;NB Currently modelling Location based on Country
+
+

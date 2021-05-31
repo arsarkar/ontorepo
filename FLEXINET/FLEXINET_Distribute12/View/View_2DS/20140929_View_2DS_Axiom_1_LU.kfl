@@ -1,0 +1,9 @@
+:Name "View2DS - Scenario Axioms"
+:Description "Axioms pertaining to modelling Scenarios - specialised subset of Designed Systems"
+:Use 2DSCtx
+
+
+(=> (projecthasChosenScenario ?proj ?scen)
+	(projectContainsScenario ?proj ?scen)
+)
+:IC hard "The chosen scenario for the project must be contained by the project. Project ?proj has chosen scenario ?scen but does not contain ?scen."

@@ -1,0 +1,193 @@
+:Name "Level 4 Risk Relations"
+:Description "This file contains the definition of the risk relations identified at level 4 in the context of the FLEXINET Project - placed in folder 4PSP_Risk as they form a specialised subset of the reference ontology. Risk relations are defined at this level as they play Roles with Risk and GPN Scenarios which occur at this level."
+
+;;; LU added relations nodeInterDependencyOnNode, nodeInterDependencyHasRating, nodeInterDependencyHasValue 20/01/2016 to enable risk ontology to fit with PNES application 
+;;;add intendedRevenueHasValue to fit with name change from UnitLossOfInoperability requested by CU
+
+:Use ../4PSPCtx
+;;;==================================================
+;;;Relations of RiskScenario Property
+
+:Rel riskScenarioHasLikelihood
+:Inst BinaryRel
+:Inst RigidRel
+:Sig RiskScenario FuzzyMeasure
+:Args "Resilience" "Likelihood Value"
+:lex "?1 has LikeliHood Value ?2"
+:rem "RiskScenario has one Likelihood value."
+:exampleRem "(riskScenarioHasLikelihood riskS1 (fuzzyValTripleFN 0.1 0.2 0.3)) or (riskScenarioHasLikelihood riskS1(fuzzyValLinguisticCoupleFN 2DSCtx.VeryHigh 2DSCtx.Low))"
+(functionalArg riskScenarioHasLikelihood 2)
+
+;;;the Description of the RiskScenario can be modelled using the defScenario relation inherited from Scenario.
+;;;The name relation is a MLO default relation.
+
+;;;==================================================
+;;;Relations of GPNScenario Property
+
+:Rel gpnScenariohasTotalLossforAllRiskScenarios
+:Inst BinaryRel
+:Inst RigidRel
+:Sig GPNScenario FuzzyMeasure
+:Args "Resilience" "Value of TotalLossforAllRiskScenarios"
+:lex "?1 has TotalLossforAllRiskScenarios Value ?2"
+:rem "GPNScenario has one Total Loss Value."
+:exampleRem "(gpnScenariohasTotalLossforAllRiskScenarios GPNS1 (fuzzyValTripleFN 0.1 0.2 0.3))"
+(functionalArg gpnScenariohasTotalLossforAllRiskScenarios 2)
+
+;;;==================================================
+;;;Relations of RiskFactor Property
+
+:Rel riskFactorInfluencesPerturbation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  RiskFactor Perturbation
+:Args "RiskFactor" "Perturbation"
+:lex "?1 influences Perturbation ?2"
+:rem "One RiskFactor influences Perturbation(s)."
+(functionalArg riskFactorInfluencesPerturbation 1)
+
+;;;==================================================
+;;;Relations of Perturbation Property
+
+:Rel perturbationHasValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Perturbation FuzzyMeasure
+:Args "Perturbation" "Perturbation Value"
+:lex "?1 has Perturbation Value ?2"
+:rem "Perturbation has one Perturbation value."
+:exampleRem "(perturbationHasValue perturb1 (fuzzyValTripleFN 0.1 0.2 0.3)) or (4PSPCtx.perturbationHasValue Perturb1 (fuzzyValLinguisticCoupleFN 2DSCtx.VeryLow 2DSCtx.Medium)"
+(functionalArg perturbationHasValue 2)
+
+:Rel perturbationHasStartPeriod
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Perturbation IntegerNumber
+:Args "Perturbation" "Start Period"
+:lex "?1 has Start Period ?2"
+:rem "Perturbation has one Start Period."
+(functionalArg perturbationHasStartPeriod 2)
+
+:Rel perturbationHasLength
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Perturbation IntegerNumber
+:Args "Perturbation" "Length"
+:lex "?1 has Length ?2"
+:rem "Perturbation has one Length."
+(functionalArg perturbationHasLength 2)
+
+:Rel perturbationAppliesToLocation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Perturbation 2DSCtx.Location
+:Args "Perturbation" "Location"
+:lex "Perturbation ?1 Perturbation applies to ?2"
+:rem "One Perturbation applies to a Location."
+(functionalArg perturbationAppliesToLocation 1)
+
+;;;==================================================
+;;;Relations of Inoperability Property
+
+:Rel inoperabilityHasValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Inoperability FuzzyMeasure
+:Args "Inoperability" "Inoperability Value"
+:lex "?1 has Inoperability Value ?2"
+:rem "Inoperability has one Inoperability value."
+:exampleRem "(inoperabilityHasValue inop1 (fuzzyValTripleFN 0.1 0.2 0.3)) or (4PSPCtx.inoperabilityHasValue Inop1 (fuzzyValLinguisticCoupleFN 2DSCtx.Medium 2DSCtx.Medium)"
+(functionalArg inoperabilityHasValue 2)
+
+:Rel inoperabilityHasTimePeriod
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Inoperability IntegerNumber
+:Args "Inoperability" "TimePeriod"
+:lex "?1 has TimePeriod ?2"
+:rem "Inoperability has one TimePeriod."
+(functionalArg inoperabilityHasTimePeriod 2)
+
+;;;==================================================
+;;;Relations of IntendedRevenue Property
+
+:Rel intendedRevenueHasValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig IntendedRevenue FuzzyMeasure
+:Args "Intended Revenue" "IntendedRevenue Value"
+:lex "?1 has IntenededRevenue Value ?2"
+:rem "IntendedRevenue has one IntendedRevenue value."
+:exampleRem "(intendedRevenueHasValue UnitInop1 (fuzzyValTripleFN 0.1 0.2 0.3)) or (4PSPCtx.intendedRevenueHasValue intendRev1(fuzzyValLinguisticCoupleFN 2DSCtx.VeryHigh 2DSCtx.Low)"
+(functionalArg intendedRevenueHasValue 2)
+
+;;;The TimeHorizon attribute is modelled for IntendedRevenue by declaring this property as a MaterialRole
+;;;and using the HoldsIn Relation. e.g. (holdsIn (Date "2003") (IntendedRevenue UnitLossEg))
+
+;;;==================================================
+;;;Relations of NodeInterDependency Property
+
+
+:Rel nodeInterDependencyHasValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig NodeInterDependency  FuzzyMeasure
+:Args "NodeInterDependency" "NodeInterDependency Value"
+:lex "?1 has ActorInterDependency Value ?2"
+:rem "NodeInterDependency has one NodeInterDependency value."
+:exampleRem "(nodeInterDependencyHasValue nodeInd1 (fuzzyValTripleFN 0.1 0.2 0.3)) or 4PSPCtx.nodeInterDependencyHasValue nodeInd1 (fuzzyValLinguisticCoupleFN 2DSCtx.VeryLow 2DSCtx.VeryHigh)"
+(functionalArg nodeInterDependencyHasValue 2)
+
+:Rel nodeInterDependencyHasRating
+:Inst BinaryRel
+:Inst RigidRel
+:Sig NodeInterDependency InterDependencyRating
+:Args "nodeInterDependency" "InterDependencyRating"
+:lex "?1 has InterDependencyRating ?2"
+:rem "NodeInterDependency has InterDependencyRating(s)."
+
+
+;;;==================================================
+;;;Relations of InterDependencyRating Property
+
+:Rel ratingHasConfidence
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  InterDependencyRating HMLType
+:Args "InterDependencyRating" "Linguistic label very low to very high"
+:lex "?1 has a ?2 confidence value"
+:rem "InterDependencyRating has One Confidence value."
+:exampleRem "(ratingHasConfidence ratingEx 2DSCtx.Low)"
+(functionalArg ratingHasConfidence 2)
+
+:Rel ratingHasCriterium
+:Inst BinaryRel
+:Inst RigidRel
+:Sig InterDependencyRating  CriteriaType
+:Args "InterDependencyRating" "Criterium used"
+:lex "?1 uses ?2 as a criterium"
+:rem "InterDependencyRating has One Criterium."
+:exampleRem "(ratingHasCriterium ratingEx 4PSPCtx.TradeVolume)"
+(functionalArg ratingHasCriterium 2)
+
+:Rel ratingHasOrdinal
+:Inst BinaryRel
+:Inst RigidRel
+:Sig InterDependencyRating  HMLType
+:Args "InterDependencyRating" "Measure of High Medium Low"
+:lex "?1 has a ordinal value of ?2"
+:rem "InterDependencyRating has One Ordinal value. An ordinal is an ordered category."
+:exampleRem "(ratingHasConfidence ratingEx 2DSCtx.Low)"
+(functionalArg ratingHasConfidence 2)
+
+;;;==================================================
+
+;;;Relations of node in risk network (facilities pertaining to Risk Ontology)
+:Rel nodeInterDependencyOnNode
+:Inst TernaryRel
+:Inst RigidRel
+:Sig Facility NodeInterDependency Facility
+:Args "Facility" "NodeInterDependency" "Facility"
+:lex "?1 has NodelInterDependency ?2 upon ?3"
+:rem "A Facility has a NodeInterDependency upon an Facility. There is only one NodeInterDependency property for a given pair of Facilities."
+(functionalArg nodeInterDependencyOnNode 2)

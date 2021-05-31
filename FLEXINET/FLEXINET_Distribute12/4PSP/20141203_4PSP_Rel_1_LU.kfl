@@ -1,0 +1,36 @@
+:Name "4PSP - Relations"
+:Description "This file contains the definition of the relations for the Product Service Production Systems level which is a sublevel of the Product Service Lifecycle Systems Level of the FLEXINET Project reference ontology"
+;;;LU imported ManufacturerProduceManufacturedProduct when rationalising Level 3 to a level providing context 2/07/2015
+;;;LU added ManufacturedProductService relations 13/07/2015
+
+
+:Use 4PSPCtx
+
+:Rel ManufacturerProduceManufacturedProduct
+:Inst TernaryRel
+:Inst NonRigidRel
+:Sig Manufacturer ManufacturedProduct Scenario
+:Args "Manufacturer" "ManufacturedProduct" "Scenario"
+:lex "Manufacturer ?1 produce ManufacturedProduct?2 in Scenario ?3" 
+:rem "A Manufacturer produces a ManufacturedProduct."
+
+;;;relations concerning Manufactured Product and Manufactured Product Service
+:Rel hasABOM
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  ManufacturedProduct BOM
+:Args "ManufacturedProduct" "Bill of Material" 
+:lex "ManufacturedProduct ?1 has a BOM ?2"
+:rem "A <sym>4PSPCtx.ManufacturedProduct</sym> has at most one <sym>4PSPCtx.BOM</sym>."
+(functionalArg hasABOM 2)
+
+:Rel mpContainsService
+:Inst BinaryRel
+:Inst RigidRel
+:supRel 2DSCtx.pContainsService
+:Sig ManufacturedProductService ServiceProduct
+:Args "ManufacturedProductService" "Service" 
+:lex "A Manufactured Product Service ?1 contains a Service ?2"
+:rem "A <sym>4PSPCtx.ManufacturedProductService</sym> contains at least one <sym>2DSCtx.ServiceProduct</sym>."
+;;;inherits cardinality contraints from level 2 relation
+

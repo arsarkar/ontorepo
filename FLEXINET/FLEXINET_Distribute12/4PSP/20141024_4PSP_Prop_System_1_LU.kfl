@@ -1,0 +1,107 @@
+;;;LU altered definition of ProductionNetwork and added ProjectWorld 17/02/2015
+;;;LU added Stage and Operation at request of AINIA 12/03/2015
+;;;LU altered Facility hierarchy 29/04/2015
+;;;and added Operate, ProductionDepartment  - generalisations derived from Indesit ontology 
+;;;LU added imported ManufacturingOrganisation, Manufacturing Virtualisation and added ProductionAutomation, Production Control when rationalising level 3 to a level providing context 2/07/2015
+
+:Name "4PSP - System Properties"
+:Description "This file contains the definition of the System properties for the Product Service Production Systems level which is a sublevel of the Product Service Lifecycle Systems Level of the FLEXINET Project reference ontology"
+:Use 4PSPCtx
+:Prop Facility
+:Inst Type
+:sup 2DSCtx.Facility
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Facility</sym>."
+
+:Prop ProductFacility
+:Inst Type
+:sup  2DSCtx.ProductFacility
+:name "Product Facility"
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.ProductFacility</sym>."
+
+:Prop ServiceFacility
+:Inst Type
+:sup  2DSCtx.ServiceFacility
+:name "Service Facility"
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.ServiceFacility</sym>."
+
+:Prop ProductionNetwork
+:Inst Type
+:sup 2DSCtx.Network
+:name "Production Network"
+:rem "A specialism of a <sym>2DSCtx.Network</sym> which is concerned with producing a <sym>4PSPCtx.ManufacturedProduct</sym>."
+;;need to remove in BrightNet
+
+:Prop ProjectWorld
+:Inst Type
+:sup ProductionNetwork
+:name "Project Production Network Domain"
+:rem "A specialism of a <sym>4PSPCtx.ProductionNetwork</sym> which contains <sym>1SYSCtx.Role</sym>s played by globally dispersed <sym>1SYSCtx.System</sym>s.  Identifies all the potential contributors within the Ecosystem to a global production network for a particular project."
+;;need to alter this in BrightNet
+
+:Prop ProductionMethod
+:Inst Type
+:sup System
+:name "Production Method"
+:rem "Processes and techniques that are used to manufacture a <sym>2DSCtx.Product</sym>."
+:referenceRem "http://encyclopedia2.thefreedictionary.com/Production+methods"
+
+:Prop 	Stage
+:Inst	Type
+:sup 	System
+:name	"Stage"
+:rem	"A step or degree in a process, development, or series."
+:referenceRem "http://www.wordreference.com/definition/stage?s=line%20stage"
+
+:Prop 	Operation
+:Inst	Type
+:sup 	System
+:name	"Operation"
+:rem	"Series of functions and tasks that are involved in a single process. For example, a manufacturing operation."
+:referenceRem "http://www.businessdictionary.com/definition/operation.html"
+
+:Prop Operate
+:Inst Type
+:sup 2DSCtx.Operate
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Operate</sym>."
+
+:Prop ProductionDepartment
+:Inst Type
+:sup 2DSCtx.Department
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Department</sym>."
+
+:Prop Transport
+:Inst Type
+:sup 2DSCtx.Transport
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Transport</sym>."
+
+:Prop ProductionSoftware
+:Inst Type
+:sup 2DSCtx.Software
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.ManufacturingSoftware</sym>."
+
+:Prop ManufacturingOrganisation
+:Inst Type
+:sup  Organisation
+:name "Manufacturing Organisation"
+:rem  "Organisation for the production of goods, esp by industrial processes"
+:referenceRem "http://www.wordreference.com/definition/manufacturing" 
+
+:Prop ProductionAutomation
+:Inst Type
+:sup  Automation
+:name "Manufacturing Automation"
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Automation</sym>."
+
+:Prop ProductionControl
+:Inst Type
+:sup  ControlSystems
+:name "Production Control"
+:rem  "Activities involved in handling materials, parts, assemblies, and subassemblies, from their raw or initial stage to the finished product stage in an organized and efficient manner. It may also include activities such as planning, scheduling, routing, dispatching, storage, etc."
+:referenceRem "http://www.businessdictionary.com/definition/production-control.html" 
+
+:Prop ManufacturingVirtualisation
+:Inst Type
+:sup  Virtualisation
+:name "Manufacturing Virtualisation"
+:rem  "Constructing and manipulating abstract (mathematical and/or graphical) representations of manufacturing situations, simulated with the help of a computer system. Also called computer simulation."
+:referenceRem "http://www.businessdictionary.com/definition/computer-modeling.html"

@@ -1,0 +1,113 @@
+:Name "4PSP - Axioms"
+:Description "This file contains the definition of axioms at level 4 for the Product Service Production Systems level which is a sublevel of the Product Service Lifecycle Systems Level of the FLEXINET Project reference ontology"
+
+;;;LU added  imported axiom 4.0 when rationalising Level 3 to a level providing context 2/07/2015
+
+:Use 4PSPCtx
+
+;(=> (ProductionNetwork ?pnetwork) 
+;	(exists (?mProductRole)
+;		(and	(ManufacturedProduct ?mProductRole)
+;				(systemContainsRole ?pnetwork ?mProductRole))))
+;:IC hard "Axiom 4.0: A Production Network must contain the role ManufacturedProduct."
+
+;  =============================================================
+;(=> (ProductionNetwork ?pNetwork)
+;		(exists (?startEvent ?ee)
+;		(and 
+;			(StartEvent ?startEvent)
+;			(EndEvent ?ee)
+;			(basicContainsBasic ?pNetwork ?startEvent) 
+;			(basicContainsBasic ?pNetwork ?ee))))
+;:IC hard "Axiom4.1: A Production Network must have a Start Event and an End Event.(the required ;presence of an end Event prevents infinite loops forming in the network, by providing a breakpoint)."   
+
+;  =============================================================
+(=> (and (Basic ?basic)
+		(playsRole ?basic ?roleProductRequest ?Scene1)
+		(ProductRequest ?roleProductRequest))
+	(exists (?startEventRole)
+		(and	(Output ?startEventRole)
+				(StartEvent ?startEvent)
+				(startEventRel ?startEvent ?startEventRole)	
+				(ProductionNetwork ?pNetwork)				
+				(basicContainsBasic ?pNetwork ?startEvent)
+				(playsRole ?basic ?startEventRole ?Scene1))))	 		 	
+:IC hard "Axiom4.4.1: The Basic playing the role of a Product Request WILL also play the role of the Start Event Output (Trigger) in a Production Network. (I.C. Soft)"
+
+;  =============================================================
+(=> (and (Basic ?basic)
+	(playsRole ?basic ?roleOrder ?Scene1)
+	(Order ?roleOrder))
+	(exists (?startEventRole)
+		(and	(Output ?startEventRole)
+				(StartEvent ?startEvent)
+				(startEventRel ?startEvent ?startEventRole)	
+				(ProductionNetwork ?pNetwork)				
+				(basicContainsBasic ?pNetwork ?startEvent)
+				(playsRole ?basic ?startEventRole ?Scene1)))) 	
+:IC hard "Axiom4.4.2:  The Basic playing the role of a Customer Order WILL also play the role of the Start Event Output (Trigger) in a Production Network. (I.C. Soft)"
+;  =============================================================
+
+;(=> (and (Basic ?basic)
+;	(playsRole ?basic ?roleProduct ?Scene1)
+;	(Product ?roleProduct))
+;	(exists (?endEventRole)
+;		(and	(Input ?endEventRole)
+;				(EndEvent ?endEvent)
+;				(endEventRel ?endEvent ?endEventRole)	
+;				(ProductionNetwork ?pNetwork)				
+;				(basicContainsBasic ?pNetwork ?endEvent)
+;				(playsRole ?basic ?endEventRole ?Scene1))))			
+;:IC hard "Axiom 4.5.1: The basic playing the role of a Product(-Service) must also play the role of an ;End Event Input in a Production Network.  (This is saying that one of the outputs in a Production ;network must be a product, as this is what a production network is concerned with producing)."
+;;; A Product concept encompasses ProductService.
+;  =============================================================
+
+;(=> (ProductionNetwork ?pNetwork) 
+;	(exists (?producer)
+;		(and	(Producer ?producer)
+;				(systemContainsRole ?pNetwork ?producer))))
+;:IC hard "Axiom4.6: A Production Network must contain the role Producer"
+
+;  =============================================================
+(=> (ProductionNetwork ?pNetwork) 
+	(exists (?supplier)
+		(and	(Supplier ?supplier)
+				(systemContainsRole ?pNetwork ?supplier))))
+:IC soft "Axiom4.7: A Production Network WILL contain the role Supplier (I.C. Soft)"
+
+;  =============================================================
+(=> (ProductionNetwork ?pNetwork) 
+	(exists (?customer)
+		(and	(Customer ?customer)
+				(systemContainsRole ?pNetwork ?customer))))
+:IC soft "Axiom4.8: A Production Network WILL contain the role Customer (I.C. Soft)"
+;  =============================================================
+(=> (ProductionNetwork ?pNetwork) 
+	(exists (?consumer)
+		(and	(Consumer ?consumer)
+				(systemContainsRole ?pNetwork ?consumer))))
+:IC soft "Axiom4.9: A Production Network WILL contain the role Consumer (I.C. Soft)"
+
+;  =============================================================
+(=> (and 
+		(ProjectWorld ?gpn)
+		(System ?system)
+		(Role ?role)
+		(playsRole ?system ?role  ?Scene1)
+		(basicContainsBasic ?gpn ?system))
+		(exists (?env)
+				(and	(ExternalFactor ?env)
+						(basicContainsBasic ?system ?env))))
+:IC soft "Axiom4.10: A System playing a role within a GPN must have ExternalFactors. (A local network can also have ExternalFactors, but a GPN must have them)."
+
+;  =============================================================
+(=> (and 
+		(ProjectWorld ?gpn)
+		(System ?system)
+		(Role ?role)
+		(playsRole ?system ?role  ?Scene1)
+		(basicContainsBasic ?gpn ?system))
+		(exists (?env)
+			(and	(LocationSpecificRiskFactor ?env)
+					(basicContainsBasic ?s1 ?env))))
+:IC soft "Axiom4.11: A System playing a role within a GPN must have Location Specific Risk Factors."

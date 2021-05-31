@@ -1,0 +1,6 @@
+;; Loader file for Scenario View_4PSP
+
+:Load "20141106_View_4PSP_Prop_1_LU.kfl"
+:Load "20141106_View_4PSP_Rel_1_LU.kfl"
+:Load "20141106_View_4PSP_Axiom_1_LU.kfl"
+:Load "20141210_View_4PSP_Rule_1_LU.kfl"

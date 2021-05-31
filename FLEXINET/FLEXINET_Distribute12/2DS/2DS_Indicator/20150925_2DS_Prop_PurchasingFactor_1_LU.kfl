@@ -1,0 +1,10 @@
+:Name "Level 2 Designed Systems - Purchasing Factor Properties"
+:Description "Purchasing Factor subset of Internal Factor Indicator Properties."
+
+:Use ../2DSCtx
+
+:Prop SupplierOnTimeDeliveryPerformance
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PurchasingFactor
+:rem "Balanced ScoreCard example St. Gallen"

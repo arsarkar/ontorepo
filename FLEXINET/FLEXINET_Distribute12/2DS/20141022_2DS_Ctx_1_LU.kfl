@@ -1,0 +1,12 @@
+:Name "2DS - Context"
+:Description "This file contains the contexts applicable to the Designed Systems level of the FLEXINET Project reference ontology."
+
+:Use ../1SYSCtx
+
+:Ctx 2DSCtx
+:Inst UserContext
+:supCtx ../1SYSCtx
+
+:Ctx 2DSEnvironCtx
+:Inst UserContext
+:supCtx ../1SYSCtx

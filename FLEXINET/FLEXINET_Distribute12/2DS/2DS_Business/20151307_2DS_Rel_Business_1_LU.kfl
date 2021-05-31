@@ -1,0 +1,385 @@
+:Name "Level 2 Designed Systems - Business Relations"
+:Description "This file contains the definition of Business relations which occur at the Designed Systems level of the FLEXINET Project reference ontology but is placed within a separate folder called 2DS_Business as they form a specialised subset of level 2."
+
+:Use ../2DSCtx
+
+;;;LU altered signature hasStrategicValue from "Organisation" "StrategicValue" to "Facility" "StrategicValue" to ensure all applications are consistent
+
+:Rel projectContainsProduct
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Project Product
+:Args "Project" "Product" 
+:lex " ?1 projectContainsProduct ?2"
+:rem "A <sym>2DSCtx.Project</sym> contains a <sym>2DSCtx.Product</sym>"
+
+:Rel projectContainsConcept
+:Inst BinaryRel
+:Inst RigidRel
+:supRel basicContainsBasic
+:Sig  Project Concept
+:Args "Project" "Concept" 
+:lex " ?1 projectContainsConcept ?2"
+:rem "A <sym>2DSCtx.Project</sym>contains a <sym>2DSCtx.Concept</sym>." 
+:referenceRem "A project can be comprised of several strictly correlated concepts developed consistently together (a product series, for example, where the same base product is pre-packaged with a different set of otherwise optional accessories) - Holonix"
+
+:Rel projectWorldContainsProject
+:supRel basicContainsBasic
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProjectWorld  2DSCtx.Project
+:Args "Project World" "Project" 
+:lex "Project World ?1 contains Project ?2"
+:rem "A <sym>4PSPCtx.ProjectWorld</sym> contains a <sym>2DSCtx.Project</sym>." 
+
+;;;other relations involving product categories can be modelled using the level 1 basicContainsbasic relation
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Balanced ScoreCard relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:Rel hasStrategicValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Facility StrategicValue 
+:Args "Facility" "StrategicValue" 
+:lex " ?1 has Strategic Value ?2"
+:rem "An <sym>2DSCtx.Facility</sym> has a Strategic value or values which apply only to it.  A Strategic value must be possessed by an organisation."
+(functionalArg hasStrategicValue 1)
+(totalArg hasStrategicValue 2)
+
+:Rel strategicValueHasID
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  StrategicValue String
+:Args "StrategicValue" "Identifier" 
+:lex " ?1 has identifier ?2"
+:rem "A <sym>2DSCtx.StrategicValue</sym> may only have one identifier"
+(functionalArg strategicValueHasID 2)
+
+:Rel strategicValuehasValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  StrategicValue FuzzyMeasure
+:Args "StrategicValue" "FuzzyMeasure" 
+:lex " ?1 has value ?2"
+:rem "A <sym>2DSCtx.StrategicValue</sym> must have one value."
+(functionalArg strategicValuehasValue 2)
+(totalArg strategicValuehasValue 1)
+
+:Rel strategicValuecontainsBSCView
+:Inst BinaryRel
+:Inst RigidRel
+:supRel basicContainsBasic
+:Sig  StrategicValue BSCView
+:Args "StrategicValue" "Balanced Score Card View" 
+:lex " ?1 contains BSC View ?2"
+:rem "A <sym>2DSCtx.StrategicValue</sym> contains between 1 and 5 <sym>2DSCtx.BSCView</sym>s. A BSCView must be contained by one Strategic Value."
+(cardinalityConstraint strategicValuecontainsBSCView 2 inInterval(interval in 1 5 in))
+(totalArg strategicValuecontainsBSCView 2)
+
+:Rel bSCviewHasID
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  BSCView String
+:Args "BSCView" "Identifier" 
+:lex " ?1 has identifier ?2"
+:rem "A <sym>2DSCtx.BSCView</sym> may only have one identifier."
+(functionalArg bSCviewHasID 2)
+
+:Rel bSCViewhasWeighting
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  BSCView Percent
+:Args "BSCView" "Percent" 
+:lex " ?1 has weighting ?2"
+:rem "A <sym>2DSCtx.BSCView</sym> may only have one weighting."
+(functionalArg bSCViewhasWeighting 2)
+
+:Rel bSCViewhasUncertainty
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  BSCView FuzzyError
+:Args "BSCView" "Uncertainty" 
+:lex " ?1 has Uncertainty ?2"
+:rem "A <sym>2DSCtx.BSCView</sym> may only have one uncertainty. The Uncertainty consists of a lower percentage uncertainty and an upper percentage uncertainty"
+(functionalArg bSCViewhasUncertainty 2)
+
+:Rel bSCViewcontainsKPI
+:Inst BinaryRel
+:Inst RigidRel
+:supRel basicContainsBasic
+:Sig BSCView KPI
+:Args "BSC View" "Key Performance Indicator" 
+:lex " ?1 contains BSC View ?2"
+:rem "A <sym>2DSCtx.BSCView</sym> contains more than one <sym>2DSCtx.KPI</sym>. A Key Performance Indicator must be contained by one BSCView."
+(cardinalityConstraint bSCViewcontainsKPI 2 gtNum 1)
+(totalArg bSCViewcontainsKPI 2)
+
+:Rel kPIHasID
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  KPI String
+:Args "Key Performance Indicator" "Identifier" 
+:lex " ?1 has identifier ?2"
+:rem "A <sym>2DSCtx.KPI</sym> may only have one identifier."
+(functionalArg kPIHasID 2)
+
+:Rel kPIhasWeighting
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  KPI Percent
+:Args "Key Performance Indicator" "Percent" 
+:lex " ?1 has weighting ?2"
+:rem "A <sym>2DSCtx.KPI</sym> may only have one weighting."
+(functionalArg kPIhasWeighting 2)
+
+:Rel kPIcontainsPI
+:Inst BinaryRel
+:Inst RigidRel
+:supRel basicContainsBasic
+:Sig  KPI PI
+:Args "BSC View" "Key Performance Indicator" 
+:lex " ?1 contains BSC View ?2"
+:rem "A <sym>2DSCtx.KPI</sym> contains more than one <sym>2DSCtx.PI</sym>. A Performance Indicator must be contained by one Key Performance Indicator."
+(cardinalityConstraint kPIcontainsPI 2 gtNum 1)
+(totalArg kPIcontainsPI 2)
+
+:Rel pIhasWeighting
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  PI Percent
+:Args "Performance Indicator" "Percent" 
+:lex " ?1 has weighting ?2"
+:rem "A <sym>2DSCtx.PI</sym> may only have one weighting."
+(functionalArg pIhasWeighting 2)
+
+:Rel pIappliesIndicator
+:Inst BinaryRel
+:Inst RigidRel
+:supRel basicContainsBasic
+:Sig  PI Indicator
+:Args "Performance Indicator" "Indicator" 
+:lex " ?1 applies Indicator ?2"
+:rem "A <sym>2DSCtx.PI</sym> applies to one <sym>2DSCtx.Indicator</sym>. A Performance Indicator must apply an Indicator."
+(cardinalityConstraint pIappliesIndicator 2 eqNum 1)
+(totalArg pIappliesIndicator 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Business Information for Rules relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:Rel specifiesBusinessPolicy
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation BusinessPolicy
+:Args "Organisation" "Business Policy"
+:lex "Organisation ?1 specifies Business Policy ?2"
+:rem "An <sym>2DSCtx.Organisation</sym> specifies a <sym>2DSCtx.BusinessPolicy</sym>. A Business Policy may be specified by only one organisation."
+(functionalArg specifiesBusinessPolicy 1)
+
+:Rel hasThresholdValueForIndicator
+:Inst QuaternaryRel
+:Inst RigidRel
+:Sig  BusinessPolicy IndicatorType ThresholdType Metric 
+:Args "Business Policy" "IndicatorType" "Min or Max threshold" "Metric" 
+:lex  "?1 specifies a value of ?2 ?3 ?4"
+:rem "A <sym>2DSCtx.BusinessPolicy</sym> specifies a minimum or maximum threshold value for an <sym>2DSCtx.Indicator</sym>. Indicatortype and Threshold type are metaproperties. A Business Policy must specify a threshold value."
+(totalArg hasThresholdValueForIndicator 1)
+
+:Rel hasPreferredThresholdValueForIndicator
+:Inst QuaternaryRel
+:Inst RigidRel
+:Sig  BusinessPolicy IndicatorType ThresholdType Metric 
+:Args "Business Policy" "IndicatorType" "Min or Max threshold" "Metric" 
+:lex  "?1 specifies a value of ?2 ?3 ?4"
+:rem "A <sym>2DSCtx.BusinessPolicy</sym> specifies a minimum or maximum threshold Preferred value for an <sym>2DSCtx.Indicator</sym>. Indicatortype and Threshold type are metaproperties. "
+
+;;;;Supplier relations
+:Rel hasAcceptableSupplier
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation 2DSCtx.Facility
+:Args "Organisation" "Facility"
+:lex "?2 is an acceptable Supplier for ?l"
+:rem "An <sym>2DSCtx.Organisation</sym> has an acceptable Supplier. The supplier is viewed as acceptable even if it does not match all the acceptability criteria."
+
+:Rel hasMisMatchingSupplier
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation 2DSCtx.Facility
+:Args "Organisation" "Facility"
+:lex "?2 is an mismatching Supplier for ?l"
+:rem "An <sym>2DSCtx.Organisation</sym> has a mismatching Supplier with reference to its acceptability criteria."
+
+:Rel hasMatchingSupplierLocation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation Location
+:Args "Organisation" "Location"
+:lex "Organisation ?1 has a matching Supplier Location ?2"
+:rem "An <sym>2DSCtx.Organisation</sym> has a matching Supplier <sym>2DSCtx.Location</sym>(a supplier location that meets its acceptability criteria)."
+
+:Rel hasMisMatchingSupplierLocation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation Location
+:Args "Organisation" "Location"
+:lex "Organisation ?1 has a mismatched Supplier Location ?2"
+:rem "An <sym>2DSCtx.Organisation</sym> has a mismatched Supplier <sym>2DSCtx.Location</sym> (a supplier location that does NOT meet its acceptability criteria)."
+
+:Rel hasPreferredSupplier
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation 2DSCtx.Facility
+:Args "Organisation" "Facility"
+:lex "?2 is a preferred Supplier for ?l"
+:rem "An <sym>2DSCtx.Organisation</sym> has a preferred Supplier.The supplier is viewed as preferred even if it does not match all the preferred criteria." 
+
+:Rel hasDesiredSupplier
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation 2DSCtx.Facility
+:Args "Organisation" "Facility"
+:lex "?2 is a preferred Supplier for ?l"
+:rem "An <sym>2DSCtx.Organisation</sym> has a desired Supplier (one that meets its preferred criteria)."
+
+:Rel hasUnDesiredSupplier
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation 2DSCtx.Facility
+:Args "Organisation" "Facility"
+:lex "?2 is an  undesired Supplier for ?l"
+:rem "An <sym>2DSCtx.Organisation</sym> has an undesired Supplier (one that does NOT meet its preferred criteria)."
+
+:Rel hasDesiredSupplierLocation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation Location
+:Args "Organisation" "Location"
+:lex "Organisation ?1 has a desired Supplier Location ?2"
+:rem "An <sym>2DSCtx.Organisation</sym> has a desired Supplier <sym>2DSCtx.Location</sym>(a supplier location that meets its preferred criteria)."
+
+:Rel hasUnDesiredSupplierLocation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation Location
+:Args "Organisation" "Location"
+:lex "Organisation ?1 has an undesired Supplier Location ?2"
+:rem "An <sym>2DSCtx.Organisation</sym> has an  undesired Supplier <sym>2DSCtx.Location</sym> (a supplier location that does NOT meet its preferred criteria)."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Business Model Canvas relations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+:Rel canvasDerivesCost
+:Inst BinaryRel
+:Inst RigidRel
+:Sig BusinessModelCanvas CostStructure
+:Args "BusinessModelCanvas" "CostStructure"
+:lex "?1 derives Cost Structure ?2"
+:rem "A <sym>2DSCtx.BusinessModelCanvas</sym> derives a <sym>2DSCtx.CostStructure</sym>."
+
+:Rel canvas_systemContainsKeyResource
+:Inst BinaryRel
+:Inst RigidRel
+:supRel systemContainsRole
+:Sig BMC_System KeyResource
+:Args "Business Model Canvas System" "Key Resource"
+:lex "?1 contains Key Resource ?2"
+:rem "A <sym>2DSCtx.BMC_System</sym> contains at least one <sym>2DSCtx.KeyResource</sym>."
+(cardinalityConstraint canvas_systemContainsKeyResource 2 gteNum 1)
+
+:Rel canvas_systemContainsKeyPartner
+:Inst BinaryRel
+:Inst RigidRel
+:supRel systemContainsRole
+:Sig BMC_System KeyPartner
+:Args "Business Model Canvas System" "Key Partner"
+:lex "?1 contains Key Partner ?2"
+:rem "A <sym>2DSCtx.BMC_System</sym> contains at least one <sym>2DSCtx.KeyPartner</sym>."
+(cardinalityConstraint canvas_systemContainsKeyPartner 2 gteNum 1)
+
+:Rel canvas_systemContainsKeyActivity
+:Inst BinaryRel
+:Inst RigidRel
+:supRel systemContainsRole
+:Sig BMC_System KeyActivity
+:Args "Business Model Canvas System" "Key Activity"
+:lex "?1 contains Key Activity ?2"
+:rem "A <sym>2DSCtx.BMC_System</sym> contains at least one <sym>2DSCtx.KeyActivity</sym>."
+(cardinalityConstraint canvas_systemContainsKeyActivity 2 gteNum 1)
+
+:Rel canvas_systemContainsCustomerRelationship
+:Inst BinaryRel
+:Inst RigidRel
+:supRel systemContainsRole
+:Sig BMC_System CustomerRelationship
+:Args "Business Model Canvas System" "Customer Relationship"
+:lex "?1 contains Customer Relationship ?2"
+:rem "A <sym>BMC_System</sym> contains at least one <sym>2DSCtx.CustomerRelationship</sym>."
+(cardinalityConstraint canvas_systemContainsCustomerRelationship 2 gteNum 1)
+
+:Rel canvas_SystemContainsValueProposition
+:Inst BinaryRel
+:Inst RigidRel 
+:supRel systemContainsRole
+:Sig BMC_System ValueProposition
+:Args "Business Model Canvas System" "ValueProposition"
+:lex "?1 contains Value Proposition ?2"
+:rem "A <sym>2DSCtx.BMC_System</sym> contains at least one <sym>2DSCtx.ValueProposition</sym>."
+(cardinalityConstraint canvas_SystemContainsValueProposition 2 gteNum 1)
+
+:Rel canvas_SystemContainsRevenueStream
+:Inst BinaryRel
+:Inst RigidRel 
+:supRel systemContainsRole
+:Sig BMC_System RevenueStream
+:Args "Business Model Canvas System" "RevenueStream"
+:lex "?1 contains Revenue Stream ?2"
+:rem "A <sym>2DSCtx.BMC_System</sym> contains at least one <sym>2DSCtx.RevenueStream</sym>."
+(cardinalityConstraint canvas_SystemContainsRevenueStream 2 gteNum 1)
+
+:Rel canvas_SystemContainsCustomerSegment
+:Inst BinaryRel
+:Inst RigidRel 
+:supRel systemContainsRole
+:Sig BMC_System CustomerSegment
+:Args "Business Model Canvas System" "CustomerSegment"
+:lex "?1 contains Customer Segment ?2"
+:rem "A <sym>2DSCtx.BMC_System</sym> contains at least one <sym>2DSCtx.CustomerSegment</sym>."
+(cardinalityConstraint canvas_SystemContainsCustomerSegment 2 gteNum 1)
+
+:Rel canvas_SystemContainsDistributionChannel
+:Inst BinaryRel
+:Inst RigidRel 
+:supRel systemContainsRole
+:Sig BMC_System DistributionChannel
+:Args "Business Model Canvas System" "DistributionChannel"
+:lex "?1 contains Distribution Channel ?2"
+:rem "A <sym>2DSCtx.BMC_System</sym> contains at least one <sym>2DSCtx.DistributionChannel</sym>."
+(cardinalityConstraint canvas_SystemContainsDistributionChannel 2 gteNum 1)
+
+:Rel driverHasViewOfCanvas
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Driver BusinessModelCanvas
+:Args "Driver" "BusinessModelCanvas"
+:lex "?1 has view of ?2"
+:rem "A <sym>2DSCtx.Driver</sym> has a view of a <sym>2DSCtx.BusinessModelCanvas</sym>."
+
+:Rel objectiveHasDriver
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Objective Driver 
+:Args "Objective" "Driver"
+:lex "?1 has a ?2"
+:rem "An <sym>2DSCtx.Objective</sym> has a <sym>2DSCtx.Driver</sym>."
+(cardinalityConstraint objectiveHasDriver 2 gteNum 1)
+
+:Rel definesBMC_System
+:Inst BinaryRel
+:Inst RigidRel
+:Sig BusinessModelCanvas BMC_System
+:Args "BusinessModelCanvas" "Business Model Canvas System"
+:lex "?1 defines a ?2"
+:rem "An <sym>2DSCtx.BusinessModelCanvas</sym> defines one <sym>2DSCtx.BMC_System</sym>."
+:functionalArg 2

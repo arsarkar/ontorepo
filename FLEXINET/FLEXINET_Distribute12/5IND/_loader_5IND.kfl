@@ -1,0 +1,5 @@
+;; Loader file for 5IND
+
+:Load "20141022_5IND_Ctx_1_LU.kfl"
+:Load "20140819_5IND_Prop_1_LU.kfl"
+:Load "20140819_5IND_Rel_1_LU.kfl"

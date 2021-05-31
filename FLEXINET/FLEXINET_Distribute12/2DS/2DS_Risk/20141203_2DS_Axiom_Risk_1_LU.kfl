@@ -1,0 +1,9 @@
+:Name "Level 2 Designed Systems - Risk Axioms"
+:Description "Axioms pertaining to generic Risk relations. Placed at a high level (2DS as generic)."
+:Use 2DSCtx
+
+;;;==================================================
+(=> (riskFactorDeptValueOnRF ?factor1 ?fuzzyMeasure ?factor2)
+	(/= ?factor1 ?factor2)
+)
+:IC hard "A risk factor cannot depend on itself, but ?factor1 does."

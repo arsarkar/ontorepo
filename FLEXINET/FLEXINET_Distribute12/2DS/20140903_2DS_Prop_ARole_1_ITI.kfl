@@ -1,0 +1,182 @@
+:Name " Level 2 Reference Ontology - Actor Roles"
+:Description "This file contains the definition of the properties related to Actor roles in the level 2 of the reference ontology in the context of the FLEXINET Project"
+
+;;;LU added metaproperties 04/12/2014 as these are required by the Risk section of the ontology
+;;;15/12/2014 LU added the properties Intermediary and Consumer as these are required by the Risk section of the ontology
+;;;23/12/2014 LU added the property ServiceProvider
+;;;LU changed Service to ServiceProduct and added ServiceUsingProduct
+;;;LU added Stakeholder, Owner, Contributor - derived from IDEAs work 16/07/2015
+
+:Use 2DSCtx
+
+:Prop Actor
+:Inst Type
+:sup Role
+:rem "An Actor is a <sym>1SYSCtx.Role</sym> which is able to fulfil a non-functional requirement. Actors are processes that perform functions. 
+A Actor is played by a <sym>1SYSCtx.System</sym> which is a subtype of <sym>1SYSCtx.Basic</sym>."
+(disjointSubProps Actor)
+
+;;;metaproperty - needed to refer to types of actor in risk section of ontology
+:Prop ActorType
+:Inst MetaProperty
+:sup Type
+:name "Type of the Actor"
+:metaPropFor Actor
+
+:Prop Order
+:Inst ActorType
+:sup Actor
+:rem "A confirmed request by one party to another to buy, sell, deliver, or receive goods or services under specified terms and conditions."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Offer
+:Inst ActorType
+:sup Order
+:rem "Voluntary but conditional promise submitted by a buyer or seller (offeror) to another (offeree) for acceptance, and which becomes legally enforceable if accepted by the offer."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Technology
+:Inst ActorType
+:sup Actor
+:rem "The purposeful application of information in the design, production, and utilization of goods and services, and in the organization of human activities."
+:referenceRem "http://www.businessdictionary.com/"
+
+
+:Prop Employee
+:Inst ActorType
+:sup Actor
+:rem "An individual who works part-time or full-time under a contract of employment, whether oral or written, express or implied, and has recognized rights and duties. Also called worker."
+:referenceRem "http://www.businessdictionary.com/"
+
+
+:Prop Supervisor
+:Inst ActorType
+:sup Actor
+:rem "Person in the first-line management who monitors and regulates employees in their performance of assigned or delegated tasks."
+:referenceRem "http://www.businessdictionary.com/"
+
+
+:Prop Competitor
+:Inst ActorType
+:sup Actor
+:rem "Any person or entity which is a rival against another. In business, a company in the same industry or a similar industry which offers a similar product or service. "
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Customer
+:Inst ActorType
+:sup Actor
+:rem "party that receives or consumes products (goods or services) and has the ability to choose between different products and suppliers. "
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Partner
+:Inst ActorType
+:sup Actor
+:rem "Individual who joins with other individuals (partners) in an arrangement (partnership) where gains and losses, risks and rewards, are shared among the partners."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Supplier
+:Inst ActorType
+:sup Actor
+:rem "A party that supplies goods or services. A supplier may be distinguished from a contractor or subcontractor, who commonly adds specialized input to deliverables. Also called vendor."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop FinancePerson
+:Inst ActorType
+:sup Actor
+:rem "a person in charge? of the financial affairs of an organization"
+
+:Prop ServiceProduct
+:Inst ActorType
+:sup Actor
+:rem "A Service Product refers to an offering, e.g. maintenance, repair, insurance"
+:referenceRem "FLEXINET D3.3"
+
+:Prop ServiceUsingProduct
+:Inst ActorType
+:sup Actor
+:rem "An offering that employs a product."
+:referenceRem "FLEXINET D3.3"
+
+:Prop MaintenanceEngineer
+:Inst ActorType
+:sup Actor
+:rem "Engineer who maintains a system."  
+
+:Prop Designer
+:Inst ActorType
+:sup Actor
+:rem "a person who devises and executes designs, as for works of art, clothes, machines, etc"
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop Operator
+:Inst ActorType
+:sup Actor
+:rem  "Individual or organization that operates the system;  entity that performs the operation of a system."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop LogisticsPerson
+:Inst ActorType
+:sup Actor
+:rem ""
+:rem "Person involved in Logistics activities"
+:referenceRem "¿¿"
+
+:Prop MaterialControlPerson
+:Inst ActorType
+:sup Actor
+:rem ""
+:referenceRem ""
+
+:Prop Delivery
+:Inst ActorType
+:sup Actor
+:rem "Formal and voluntary transfer of possession by actual (physical) delivery, constructive delivery (by an agreement or understanding), or symbolic delivery (by documents) Also called presentation or presentment."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Solution
+:Inst ActorType
+:sup Actor
+:rem "Answer(s) suggested or implemented to try and solve a question or problem. "
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Intermediary
+:Inst ActorType
+:sup Actor
+:rem "Firm or person (such as a broker or consultant) who acts as a mediator on a link between parties to a business deal, investment decision, negotiation, etc."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Consumer
+:Inst ActorType
+:sup Actor
+:rem "An end user, and not necessarily a purchaser, in the distribution chain of a good or service."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop ServiceProvider
+:Inst ActorType
+:sup Actor
+:rem "Organization, business or individual which offers service to others in exchange for payment."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Stakeholder
+:Inst Type
+:sup Actor
+:name "Stakeholder"
+:rem "A person, company, etc., with a concern or (esp. financial) interest in ensuring the success of an organization, business, system, etc."
+:referenceRem "Oxford English Dictionary http://www.oed.com/view/Entry/246856?redirectedFrom=stakeholder#eid"
+
+:Prop Owner
+:Inst Type
+:sup Stakeholder
+:name "Owner"
+:rem "A person or organization that owns something: "
+:referenceRem "http://dictionary.cambridge.org/dictionary/business-english/owner"
+
+:Prop Contributor
+:Inst Type
+:sup Stakeholder
+:name "Contributor"
+:rem "Someone or something that is one of the causes of a situation, event, "
+:referenceRem "http://www.macmillandictionary.com/dictionary/american/contributor#contributor_6"
+
+
+

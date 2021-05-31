@@ -1,0 +1,83 @@
+:Name "Level 4 - Risk Properties"
+:Description "This file contains the definition of risk properties which occur at the Product Service Production Systems level which is a sublevel of the Product Service Lifecycle Systems Level of the Flexinet Project reference ontology but is placed within a separate folder called 4PSP_Risk as they form a specialised subset of level 4.
+Risk properties are defined at this level as they playRoles in level 4 scenarios."
+;;;LU added NodeInterDependency 20/01/2016 to enable Risk ontology to fit with PNES application. 
+;;;There is a need to consider the facility playing the node rather than the actor role itself as
+;;;the PNES application only allows one supplier role instance andone customer role instance in GPNScenario. Added IntendedRevenue to fit with name change from UnitLossOfInoperability  requested by CU
+
+
+
+:Use ../4PSPCtx
+
+:Prop Perturbation
+:Inst Type
+:sup Metric
+:rem "The direct effect of disruption on a Global Production Network node."
+:referenceRem "2014 FLEXINET D2.1"
+
+:Prop Inoperability
+:Inst Type
+:sup Metric
+:rem "The reduced percentage of operability of a Global Production Network node as a result of the original disruption and propagation of that original disruption, compared with the expected level of operability. A value of 0% represents the normal operation of a node while a value of 100% express the total and complete suspension of activities in a node."
+:referenceRem "2014 FLEXINET D2.1"
+
+:Prop IntendedRevenue
+:Inst MaterialRole
+:sup Metric
+:rem "An average of inoperability over a time horizon. Modelled as a MaterialRole so a TimeHorizon can be applied to this property."
+:referenceRem "??"
+
+:Prop NodeInterDependency
+:Inst Type
+:sup Metric
+:rem "The interdependency coefficient that presents a probability of a disruption propagation from node j (facility j playing role in GPNScenario) to node i."
+:referenceRem "2014 FLEXINET D2.1"
+
+:Prop InterDependencyRating
+:Inst Type
+:sup Metric
+
+;;;==================================================
+;;;Criteria Type enumeration
+
+:Prop CriteriaType
+:Inst MetaProperty
+:sup Type
+:rem "The relationships between the network nodes."
+:referenceRem "2014 FLEXINET D2.1"
+
+:Prop TradeVolume
+:Inst CriteriaType
+:sup QualitativeMeasure 
+
+:Prop Inventory
+:Inst CriteriaType
+:sup QualitativeMeasure 
+
+:Prop SecurityOfInformationFlow
+:Inst CriteriaType
+:sup QualitativeMeasure 
+
+:Prop SuitabilityOfProduct
+:Inst CriteriaType
+:sup QualitativeMeasure 
+
+:Prop CompatibilityOfITSystems
+:Inst CriteriaType
+:sup QualitativeMeasure 
+
+:Prop {Distance/LeadTime}
+:Inst CriteriaType
+:sup QualitativeMeasure 
+
+:Prop {SuitabilityOfSupplier/Customer}
+:Inst CriteriaType
+:sup QualitativeMeasure 
+
+:Prop InformationTransparency
+:Inst CriteriaType
+:sup QualitativeMeasure 
+
+:Prop CollaborationAgreement
+:Inst CriteriaType
+:sup QualitativeMeasure 

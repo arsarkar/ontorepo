@@ -1,0 +1,52 @@
+:Name "View_4PSP - Scenario Properties"
+:Description "This file contains the definition specialised scenarios relating to the Product Service Produce level of the reference ontology in the context of the Flexinet Project but placed within a separate folder called View_4PSP as they form a specialised subset.  DependentScenarios are placed at this level as they depend on Global Production Network Scenarios."
+:Use 4PSPCtx
+
+:Prop BusinessModelScenario
+:Inst Type
+:sup Scenario
+:rem "A Business Model Scenario provides a view on a <sym>2DSCtx.BusinessModel</sym>."
+
+:Prop ProductScenario
+:Inst Type
+:sup Scenario
+:rem "A Product Scenario provides a view of the systems concerned with a Product <sym>2DSCtx.Product</sym>."
+
+:Prop NetworkScenario
+:Inst Type
+:sup Scenario
+:rem "A specialisation of a Scenario which provides a view of flows with a network."
+
+:Prop ProductDesignScenario
+:Inst Type
+:sup ProductScenario
+:rem "A specialisation of a Product Scenario which provides a view of design aspects."
+
+:Prop ProductionNetworkScenario
+:Inst Type
+:sup ProductScenario
+;:sup NetworkScenario
+:rem "Provides a view of production networks, inheriting from both Product and Network scenarios."
+
+:Prop GPNScenario
+:Inst Type
+:sup ProductionNetworkScenario
+:rem "A GPNscenario is a global specialisation of a </sym>ProductionNetworkScenario</sym>."
+
+:Prop DependentScenario
+:Inst Type
+:sup Scenario
+:rem "A DependentScenario is contained within another <sym>1SYSCtx.Scenario</sym> and is dependent on the structure of a <sym>4PSPCtx.GPNScenario</sym>." 
+
+:Prop RiskScenario
+:Inst Type
+:sup DependentScenario
+:rem "A RiskScenario provides a view of risk factors upon a <sym>4PSPCtx.ProjectWorld</sym> system."
+
+:Prop BalancedScoreCardScenario
+:Inst Type
+:sup DependentScenario
+:rem "A BalancedScordCardScenario provides a view of qualitative and quantitative cost factors upon a <sym>4PSPCtx.ProjectWorld</sym> system or a <sym>2DSCtx.BusinessModel</sym>."
+
+
+

@@ -1,0 +1,73 @@
+:Name "Level 2 Reference Ontology - Systems"
+:Description "This file contains the definition of the relations identified at level 2 in Systems and Participated Roles in the context of the FLEXINET Project"
+
+;;;ITI updates added 30/04/2015
+:Use 2DSCtx
+
+;;;==================================================
+
+:Rel organisationComposedOfFacility
+:supRel basicContainsBasic
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Organisation Facility
+:Args "organisation" "facility"
+:lex "?1 is composedOf ?2"
+:rem "An organisation is composed of facilities."   
+
+;;;==================================================
+:Rel facilityHasDepartment
+:supRel basicContainsBasic
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Facility Department
+:Args "facility" "department"
+:lex "?1 has ?2"
+:rem "Relation to describe that a facility has a department."
+;;;==================================================
+
+:Rel facilityContainsProcess
+:supRel basicContainsBasic
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Facility System
+:Args "Facility" "System" 
+:lex "?1 contains ?2"
+:rem "Relation to express that the processes of a facility."
+
+;;;==================================================
+;;;not a system but leaving here as only one relation of this type - LU
+:Rel regionList
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Region List
+:Args "Region" "List" 
+:lex "Region ?1 is composed by ?2 Countries"
+:rem ""
+(listOfKind regionList 2 Country)
+
+;;;==================================================
+:Rel systemLocatedAt
+:Inst RootCtx.QuaternaryRel
+:Inst NonRigidRel
+:Sig System Coordinates {Area/City} 2DSCtx.Country 
+:Args "System" "Location" "City" "Country" 
+:lex "?1 LocatedAt ?2"
+:rem "Relation to describe that a System is Located at a Location."
+
+;;;==================================================
+:Rel facilityLocatedAt
+:Inst RootCtx.QuaternaryRel
+:Inst NonRigidRel
+:supRel systemLocatedAt
+:Sig Facility Coordinates {Area/City} 2DSCtx.Country 
+:Args "Facility" "Location" "City" "Country" 
+:lex "?1 LocatedAt ?2"
+:rem "Relation to describe that a facility is Located at a Location."
+
+
+
+
+
+
+

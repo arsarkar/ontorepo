@@ -1,0 +1,186 @@
+; Copyright 2001 HIGHFLEET, Inc. All rights reserved.
+
+:Name "9-Intersection Model"
+:Description "A spatial theory based on the 9-intersection model that concludes qualitative spatial facts from quantitative coordinate facts"
+:Use MLO
+
+; author: kohl
+; date: 3-14-2007
+; depends on: ULO
+
+; The 9-intersection model categorizes binary topological relations between points, 
+; lines, and polygons.
+; 
+; Each spatial object has an interior, a boundary, and an exterior. The boundary consists of points or 
+; lines that separate the interior from the exterior. The boundary of a line consists of its end-points. 
+; The boundary of a polygon is the line that describes its perimeter. The interior consists of points that 
+; are in the object but not on its boundary and the exterior consists of those points that are not in the object.
+;
+; Given that an object A has three components -- a boundary Ab, an interior Ai, and an exterior Ae, 
+; any pair of objects will have nine possible interactions between their components. 
+; Pairs of components will have an empty, or a non-empty set intersection. 
+; The set of interactions between two geometries is represented by a 9-intersection matrix that specifies 
+; which pairs of components intersect and which do not.
+;
+; If the boundaries of the Concrete Entities are recorded as described in Geocoding.kfl, their interactions will be calculated by the model.
+
+:Ctx  nineI
+:Inst UserContext
+:supCtx MLO
+:name "9-Intersection Context"
+
+
+:Use nineI
+
+:Prop NineIntersectionRel
+:Inst MetaRelation
+:Inst FixedExtentRel
+:sup  BinaryRel
+:sup  RigidRel
+:name "9-Intersection Relation"
+:lex  "?1 is a 9-Intersection relation"
+:rem "The 9-intersection model categorizes binary topological relations between points, 
+lines, and polygons.<br />
+<br />
+Each spatial object has an interior, a boundary, and an exterior. The boundary consists of points or 
+lines that separate the interior from the exterior. The boundary of a line consists of its end-points. 
+The boundary of a polygon is the line that describes its perimeter. The interior consists of points that 
+are in the object but not on its boundary and the exterior consists of those points that are not in the object. <br />
+<br />
+Given that an object A has three components -- a boundary Ab, an interior Ai, and an exterior Ae, 
+any pair of objects will have nine possible interactions between their components. 
+Pairs of components will have an empty, or a non-empty set intersection. 
+The set of interactions between two geometries is represented by a 9-intersection matrix that specifies 
+which pairs of components intersect and which do not." 
+
+:Builtin "com.highfleet.pique.builtin.geo.GeoDisjoint"
+
+:Rel disjoint
+:Inst NineIntersectionRel
+:Inst RigidRel
+:Inst IrreflexiveBR
+:Sig ConcreteEntity ConcreteEntity
+:name "9-I disjoint"
+:lex "?1 and ?2 are spatially disjoint"
+
+(<= (disjoint ?region1 ?region2)
+	(and
+		(WGS84.coordinates ?region1 ?coords1)
+		(WGS84.coordinates ?region2 ?coords2)
+		(disjointGeometry ?coords1 ?coords2)))
+
+:Builtin "com.highfleet.pique.builtin.geo.GeoContains"
+
+:Rel contains
+:Inst NineIntersectionRel
+:Inst RigidRel
+:Inst IrreflexiveBR
+:Sig ConcreteEntity ConcreteEntity
+:name "9-I contains"
+:lex "?1 spatially contains ?2"
+
+(<= (contains ?region1 ?region2)
+	(and
+		(WGS84.coordinates ?region1 ?coords1)
+		(WGS84.coordinates ?region2 ?coords2)
+		(containsGeometry ?coords1 ?coords2)))
+		
+:Builtin "com.highfleet.pique.builtin.geo.GeoInside"
+
+:Rel inside
+:Inst NineIntersectionRel
+:Inst RigidRel
+:Inst IrreflexiveBR
+:Sig ConcreteEntity ConcreteEntity
+:name "9-I inside"
+:lex "?1 is inside ?2"
+
+(<= (inside ?region1 ?region2)
+	(and
+		(WGS84.coordinates ?region1 ?coords1)
+		(WGS84.coordinates ?region2 ?coords2)
+		(insideGeometry ?coords1 ?coords2)))
+		
+:Builtin "com.highfleet.pique.builtin.geo.GeoEqual"
+
+:Rel equal
+:Inst NineIntersectionRel
+:Inst RigidRel
+:Inst BinaryRel
+:Sig ConcreteEntity ConcreteEntity
+:name "9-I equal"
+:lex "?1 is equal to ?2"
+
+(<= (equal ?region1 ?region2)
+	(and
+		(WGS84.coordinates ?region1 ?coords1)
+		(WGS84.coordinates ?region2 ?coords2)
+		(equalGeometry ?coords1 ?coords2)))
+		
+		
+:Builtin "com.highfleet.pique.builtin.geo.GeoMeet"
+
+:Rel meet
+:Inst NineIntersectionRel
+:Inst RigidRel
+:Inst IrreflexiveBR
+:Sig ConcreteEntity ConcreteEntity
+:name "9-I meet"
+:lex "?1 and ?2 meet"
+
+(<= (meet ?region1 ?region2)
+	(and
+		(WGS84.coordinates ?region1 ?coords1)
+		(WGS84.coordinates ?region2 ?coords2)
+		(meetGeometry ?coords1 ?coords2)))
+		
+		
+:Builtin "com.highfleet.pique.builtin.geo.GeoCovers"
+
+:Rel covers
+:Inst NineIntersectionRel
+:Inst RigidRel
+:Inst IrreflexiveBR
+:Sig ConcreteEntity ConcreteEntity
+:name "9-I covers"
+:lex "?1 spatially covers ?2"
+
+(<= (covers ?region1 ?region2)
+	(and
+		(WGS84.coordinates ?region1 ?coords1)
+		(WGS84.coordinates ?region2 ?coords2)
+		(coversGeometry ?coords1 ?coords2)))
+		
+		
+:Builtin "com.highfleet.pique.builtin.geo.GeoCoveredBy"
+
+:Rel coveredBy
+:Inst NineIntersectionRel
+:Inst RigidRel
+:Inst IrreflexiveBR
+:Sig ConcreteEntity ConcreteEntity
+:name "9-I covers"
+:lex "?1 spatially covers ?2"
+
+(<= (coveredBy ?region1 ?region2)
+	(and
+		(WGS84.coordinates ?region1 ?coords1)
+		(WGS84.coordinates ?region2 ?coords2)
+		(coveredByGeometry ?coords1 ?coords2)))
+		
+		
+:Builtin "com.highfleet.pique.builtin.geo.GeoOverlap"
+
+:Rel overlap
+:Inst NineIntersectionRel
+:Inst RigidRel
+:Inst IrreflexiveBR
+:Sig ConcreteEntity ConcreteEntity
+:name "9-I covers"
+:lex "?1 spatially covers ?2"
+
+(<= (overlap ?region1 ?region2)
+	(and
+		(WGS84.coordinates ?region1 ?coords1)
+		(WGS84.coordinates ?region2 ?coords2)
+		(overlapGeometry ?coords1 ?coords2)))

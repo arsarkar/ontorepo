@@ -1,0 +1,3 @@
+:Name  "View_2DS - Scenario Properties"
+:Description "This file contains properties related to modelling scenarios located in the Designed Systems level of the reference ontology in the context of the FLEXINET Project but placed within a separate folder called View_2DS as they form a specialised subset of level 2."
+:Use 2DSCtx

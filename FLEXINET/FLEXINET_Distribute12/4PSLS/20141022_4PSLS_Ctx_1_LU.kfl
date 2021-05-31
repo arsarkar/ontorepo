@@ -1,0 +1,9 @@
+:Name "4PSLS - Context"
+:Description "This file contains the context for the Product Service LifeCycle Systems level within the Flexinet Project reference ontology"
+
+:Use ../3MBSCtx
+
+:Ctx 4PSLSCtx
+:Inst UserContext
+:supCtx ../3MBSCtx
+

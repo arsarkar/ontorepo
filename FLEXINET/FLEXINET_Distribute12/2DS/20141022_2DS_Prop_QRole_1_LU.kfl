@@ -1,0 +1,155 @@
+:Name "Level 2 Designed Systems - Qualifier Role Properties"
+
+:Use 2DSCtx
+;;;12/03/2015 LU added Compatibility at request of AINIA
+;;;LU added ServiceSustainability, ProductSustainability, ServiceEnergyConsumption, ProductEnergyConsumption when rationalising ontology
+;;;and removed the Risk role and its subroles as these are not used 2/07/2015
+
+:Prop Qualifier
+:Inst Type
+:sup Role
+:rem "A Qualifier is a <sym>1SYSCtx.Role</sym> which is able to fulfil a non-functional requirement. 
+Qualifiers define how a <sym>1SYSCtx.System</sym> will operate by controlling the system processes. A Qualifier is played by <sym>1SYSCtx.Information</sym> which is a subtype of <sym>1SYSCtx.Basic</sym>."
+:referenceRem "2014 FLEXINET D3.1"
+(disjointSubProps Qualifier)
+
+:Prop Robustness
+:Inst Type
+:sup Qualifier
+:rem "the degree to which a system or component can function correctly in the presence 
+stressful environmental conditions."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop Mitigation
+:Inst Type
+:sup Qualifier
+:rem "An effort to reduce the impact and likelihood of risk"
+:referenceRem "2014 FLEXINET D2.1"
+
+:Prop Capacity
+:Inst Type
+:sup Qualifier
+:rem ""
+:referenceRem "2013 Hastilow, N. Manufacturing Systems Interoperability in Dynamic Change Environments. PhD Thesis Loughborough University."
+
+:Prop Capability
+:Inst Type
+:sup Qualifier
+:rem "process capability is a characterization of the ability of a process to meet current or projected business goals."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop Functionality
+:Inst Type
+:sup Capability
+:rem  "The capabilities of the various computational, user interface, input, output, data management and other features provided by a product."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop Availability
+:Inst Type
+:sup Qualifier
+:rem "Derived from Hastilow Thesis - performance metric.
+1. The degree to which a system or component is operational and accessible when required for use.
+2. ability of a component or service to perform its required function at a stated instant or over a stated period of time."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop Reliability
+:Inst Type
+:sup Qualifier
+:rem "The ability of a system or component to perform its required functions under stated conditions for a specified 
+period of time."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop Solvency
+:Inst Type
+:sup Reliability
+:rem ""
+
+:Prop Consistency
+:Inst Type
+:sup Qualifier
+:rem "Derived from Hastilow Thesis - quality metric.
+The degree of uniformity, standardization, and freedom from contradiction among the documents or parts of 
+a system or component."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop Compliance
+:Inst Type
+:sup Qualifier
+:rem "The state or fact of according with or meeting rules or standards."
+:referenceRem "Oxford Dictionaries Online. http://www.oxforddictionaries.com/us/definition/american_english/compliance."
+
+:Prop Sustainability
+:Inst Type
+:sup Qualifier
+:rem "Able to be maintained at a certain rate or level."
+:referenceRem "Oxford Dictionaries Online. http://www.oxforddictionaries.com/us/definition/american_english/sustainable#sustainable."
+
+
+:Prop ProductEnergyConsumption
+:Inst Type
+:sup EnergyConsumption 
+:rem "the amount of energy used by a Product."
+:referenceRem "http://www.collinsdictionary.com"
+
+:Prop ServiceEnergyConsumption
+:Inst Type
+:sup EnergyConsumption 
+:rem "the amount of energy used by a Service."
+:referenceRem "http://www.collinsdictionary.com"
+
+:Prop EnergyConsumption
+:Inst Type
+:sup Qualifier
+:rem "the amount of energy used."
+:referenceRem "Collins English Dictionary. http://www.collinsdictionary.com/dictionary/english/energy-consumption." 
+
+:Prop ProductSustainability
+:Inst Type
+:sup Sustainability
+:rem "Ability to maintain or support a product over the long term."
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop ServiceSustainability
+:Inst Type
+:sup Sustainability
+:rem "Ability to maintain or support a service over the long term."
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop FeasibilityStudy
+:Inst Type
+:sup Qualifier
+:rem "Derived from Custom Drinks.
+A study to identify and analyze a problem and its potential solutions in order to determine their viability, 
+costs, and benefits."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop Performance
+:Inst Type
+:sup Qualifier
+:rem " the degree to which a system or component accomplishes its designated functions within given constraints, 
+such as speed, accuracy, or memory usage."
+:referenceRem "BS ISO/IEC IEEE 24765:2010" 
+
+:Prop Quality
+:Inst Type
+:sup Qualifier
+:rem "1. the degree to which a system, component, or process meets specified requirements.
+2. ability of a product, service, system, component, or process to meet customer or user needs, expectations, or requirements.
+3. the totality of characteristics of an entity that bear on its ability to satisfy stated and implied needs.
+4. conformity to user expectations, conformity to user requirements, customer satisfaction, reliability, and level of defects present.
+5. the degree to which a set of inherent characteristics fulfils requirements. 
+6. the degree to which a system, component, or process meets customer or user needs or expectations."
+:referenceRem "BS ISO/IEC IEEE 24765:2010" 
+
+:Prop Uncertainty
+:Inst Type
+:sup Qualifier
+:rem "the result of not having accurate or sufficient knowledge of a situation."
+:referenceRem "BS ISO/IEC IEEE 24765:2010" 
+
+:Prop Compatibility
+:Inst Type
+:sup Qualifier
+:rem "Ability of two or more systems or their components to work together without user intervention or modification."
+:referenceRem "http://www.businessdictionary.com/definition/compatibility.html" 
+

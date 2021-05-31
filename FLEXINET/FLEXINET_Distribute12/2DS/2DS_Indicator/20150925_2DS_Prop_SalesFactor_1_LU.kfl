@@ -1,0 +1,95 @@
+:Name "Level 2 Designed Systems - Sales Factor Properties"
+:Description "Sales Factor subset of Internal Factor Indicator Properties."
+
+:Use ../2DSCtx
+
+:Prop InnovationPotential
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "St. Gallen spreadsheet of Indicators"
+
+:Prop NumberOfProductsInMarket
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "St. Gallen spreadsheet of Indicators"
+
+:Prop MarketShare
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop AverageAmountOfProductsShippedToOneCustomerLocalMarket
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop AverageAnnualExpensesToServeOneCustomer
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop AverageTimeBetweenFirstContactWithTheCustomerAndSigningOfAgreement
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop ExpensesPerCustomer
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop ChangeInMarketShare
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "St. Gallen spreadsheet of Indicators"
+
+:Prop LaunchOfNewProducts
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "St. Gallen spreadsheet of Indicators"
+
+:Prop MarketingExpensesPerCustomer
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop MarketingExpensesRatioOfSales
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop NumberOfAdvertisingCampaigns
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop NumberOfLostCustomers
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop OverallCustomerSatisfcation
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop TrademarkIndex
+:Inst MaterialRole
+:Inst IndicatorType
+:sup SalesFactor
+:rem "Balanced ScoreCard example St. Gallen"
+

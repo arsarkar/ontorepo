@@ -1,0 +1,18 @@
+:Name "Level 4 Product Service Production - Business Properties"
+:Description "This file contains the definition of Business Properties which occur at Product Service Production level of the FLEXINET Project reference ontology but is placed within a separate folder called 4PSP_Business as they form a specialised subset of level 4."
+
+:Use ../4PSPCtx
+
+;;;At level 4 the business properties relate to the producer.
+
+:Prop LocationFactorforProducer
+:Inst Type
+:sup  2DSCtx.LocationFactor
+:name "Threshold Values for Producer Location Factors"
+:rem  "Minimum and preferredvalues for factors specified by an organisation describing a <sym>2DSCtx.Location</sym> whose <sym>4PSPCtx.Producer</sym>s it is willing to do business with."
+
+:Prop PolicyAboutProducer
+:Inst Type
+:sup  2DSCtx.BusinessPolicy
+:name "Threshold Values for Business Policies for a Producer"
+:rem  "Threshold values for factors specified by an organisation describing a <sym>4PSPCtx.Producer</sym> with which it is willing to do business, i.e. factors which control the choice of a producer."

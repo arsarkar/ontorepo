@@ -1,0 +1,87 @@
+:Name "1SYS - Properties"
+:Description "This file contains the definition of the properties for the Systems level of the FLEXINET Project reference ontology"
+;;;LU altered Control to by subsumed by Input, as a Control is also an Input 17/12/2015
+
+:Use 1SYSCtx
+
+:Prop Basic
+:Inst Type
+:Inst NonLogicalFunctor
+:sup Particular
+:rem "A Basic concept is independent of the <sym>1SYSCtx.System</sym> or context, its definition does not depend on another concept. 
+At the Systems level a Basic can be classified as <sym>1SYSCtx.System</sym> or <sym>1SYSCtx.Entity</sym>."
+
+:Prop System
+:Inst Type
+:sup Basic
+:sup MLO.Object
+:rem "A group of inter-related objects played by <sym>1SYSCtx.Role</sym>s."
+:referenceRem "2014 FLEXINET D3.1"
+(disjointSubProps System)
+
+:Prop Entity
+:Inst Type
+:Inst NonLogicalFunctor
+:sup Basic
+:partitionedBy (listof Energy Material Information)
+:rem "A <sym>1SYSCtx.Basic</sym> which is not a <sym>1SYSCtx.System</sym>."
+
+:Prop Energy
+:Inst Type
+:Inst NonLogicalFunctor
+:sup Entity
+:rem "The capacity of a body or <sym>1SYSCtx.System</sym> to do work. Could be an integer so modelled as a <sym>MLO.NonLogicalFunctor</sym>.
+Properties subsumed by Energy should also be subsumed by <sym>MLO.ConcreteEntity</sym> or <sym>MLO.AbstractEntity</sym>"
+:referenceRem "Collins English Dictionary. http://www.collinsdictionary.com/dictionary/english/energy." 
+(disjointSubProps Energy)
+
+:Prop Material
+:Inst Type
+:sup Entity
+:sup MLO.Object
+:rem "A physical substance that things can be made from. An <sym>MLO.Object</sym> is anything that has a location in time and space."
+:referenceRem  "Cambridge Dictionaries Online. http://dictionary.cambridge.org/dictionary/british/material."
+(disjointSubProps Material)
+
+:Prop Information
+:Inst Type
+:Inst NonLogicalFunctor
+:sup Entity
+:rem "Information is data put in context; it is related to other pieces of data. Could be a number so modelled as  a <sym>MLO.NonLogicalFunctor</sym>. Properties subsumed by Information should also
+be subsumed by <sym>MLO.ConcreteEntity</sym> or <sym>MLO.AbstractEntity</sym>."
+:referenceRem "Liew,A. 2007. Understanding Data, Information, Knowledge And Their Inter-Relationships. Journal of Knowledge Management Practice, Vol. 8, No. 2"
+(disjointSubProps Information)
+
+:Prop Role
+:Inst Type
+:sup MLO.AbstractEntity
+:disjointWith Basic
+:rem "The Role type includes all of the types of <sym>MLO.AbstractEntity</sym> terms that participate in systems. 
+A Role cannot exist without a context. A <sym>1SYSCtx.System</sym> provides a context for the Roles it contains.
+To aid efficiency all Roles are declared as pairwise disjoint. A Basic can play more than one role."
+:referenceRem "2014 FLEXINET D3.1"
+(disjointSubProps Role)
+
+:Prop Input
+:Inst Type
+:sup Role
+:rem "An input represents what is brought into and is transformed or consumed by the system to produce outputs."
+:referenceRem "2014 FLEXINET D3.1"
+
+:Prop Output
+:Inst Type
+:sup Role
+:rem "An output represents what is brought out from or is produced by the <sym>1SYSCtx.System</sym>."
+:referenceRem "2014 FLEXINET D3.1"
+
+:Prop Resource
+:Inst Type
+:sup Role
+:rem "A resource is used by or supports the execution of the <sym>1SYSCtx.System</sym>. "
+:referenceRem "2014 FLEXINET D3.1"
+
+:Prop Control
+:Inst Type
+:sup Input
+:rem "A control is a condition required to produce correct system <sym>1SYSCtx.Output</sym>. A control is also an input."
+:referenceRem "2014 FLEXINET D3.1"

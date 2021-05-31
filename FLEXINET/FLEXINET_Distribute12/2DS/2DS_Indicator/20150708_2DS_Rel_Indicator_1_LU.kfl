@@ -1,0 +1,138 @@
+:Name "Level 2 Designed Systems - Indicator Relations"
+:Description "This file contains the definition of the Indicator relations identified at level 2 in the context of the FLEXINET Project - placed in folder 2DS_Indicator as they form a specialised subset of the reference ontology."
+:Use ../2DSCtx
+
+;;;;LU altered organisationHasInternalFactor to facilityHasInternalFactor to ensure all applications are consistent 15/02/2016
+
+;;;; Will be updated further in line with Business model.
+:Rel hasIndicatorID
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Indicator String
+:Args "Indicator" "ID"
+:lex "?1 has identifier ?2"
+:rem "An <sym>2DSCtx.Indicator</sym> may only have one identifier."
+(functionalArg hasIndicatorID 2)
+
+:Rel hasIndicatorDescription
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Indicator String
+:Args "Indicator" "Description"
+:lex "?1 is described by ?2"
+:rem "An <sym>2DSCtx.Indicator</sym> may only have one description."
+(functionalArg hasIndicatorDescription 2)
+
+;;; modelling the hasDataPeriod attribute by declaring Indicator as a ULO MaterialRole
+;;; and using the ULO builtin HoldsIn Relation.
+;;;e.g.(holdsIn (Date "2002 Jan"  "2007 Jan" ) (Indicator CustomerIndex))
+
+:Rel hasIndicatorValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Indicator Metric
+:Args "Indicator" "Metric"
+:lex "?1 has value ?2"
+:rem "A certain value is provided by <sym>2DSCtx.Indicator</sym> that can be used for risk assessment or economic valuation purposes. An Indicator may only have one value. An Indicator must specify a threshold value." 
+(functionalArg hasIndicatorValue 2)
+(totalArg hasIndicatorValue 1)
+;;subrelationships will be created for the sub properties of Indicator constraining the metric types if necessary.
+;;E.g IndustrialElectricityPrices hasValue EnergyCost(€/kWh).
+
+:Rel hasIndicatorTargetValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Indicator Metric
+:Args "Indicator" "Metric"
+:lex "?1 has Target value ?2"
+:rem "Required evolution (Target) represents the value to be achieved. An Indicator may only have one Target value."
+:referenceRem "FLEXINET 4.1" 
+(functionalArg hasIndicatorTargetValue 2)
+
+:Rel hasIndicatorFuzzyValue
+:Inst BinaryRel
+:Inst RigidRel
+:supRel hasIndicatorValue
+:Sig Indicator FuzzyMeasure
+:Args "Indicator" "FuzzyMeasure"
+:lex "?1 has fuzzy value ?2"
+:rem "<sym>2DSCtx.Indicator</sym> has a <sym>2DSCtx.FuzzyMeasure</sym>. An Indicator may only have one Fuzzy value."
+(functionalArg hasIndicatorFuzzyValue 2)
+
+:Rel hasIndicatorFuzzyError
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Indicator FuzzyError
+:Args "Indicator" "FuzzyError"
+:lex "?1 has fuzzy error ?2"
+:rem "An <sym>2DSCtx.Indicator</sym> has a <sym>FuzzyError</sym>. An Indicator may only have one Fuzzy error."
+(functionalArg hasIndicatorFuzzyError 2)
+
+:Rel hasIndicatorEvaluationMethod
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Indicator String
+:Args "Indicator" "Evaluation Method"
+:lex "?1 has Evaluation Method ?2"
+:rem "Calculation Processing represents the evaluation method for the indicator."
+:referenceRem "FLEXINET 4.1" 
+
+:Rel ownsIndicator
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 2DSCtx.Department Indicator 
+:Args "Organisation Unit" "Indicator" 
+:lex "?1 owns the indicator ?2"
+:rem "The owner (Who measures) points to the responsible organisation unit. An indicator may only have one owner."
+:referenceRem "FLEXINET 4.1" 
+(functionalArg ownsIndicator 1)
+
+:Rel hasEvaluationUpdatePeriod
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Indicator DurationMetric
+:Args "Indicator" "Evaluation Period" 
+:lex "?1 has evaluation period ?2"
+:rem "Period is the time span required to evaluate the indicator. An Indicator may only have one evaluation period. (E.g. Repeat evaluation every month, quarter etc.)"
+:referenceRem "FLEXINET 4.1" 
+(functionalArg  hasEvaluationUpdatePeriod 2)
+
+:Rel facilityHasInternalFactor
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 2DSCtx.Facility InternalFactor
+:Args "facility" "InternalFactor"
+:lex "?1 has Internal Factor ?2"
+:rem "An <sym>2DSCtx.Facility</sym> has <sym>2DSCtx.InternalFactor</sym>s which affect it. The internal factors only apply to one specific facility. An internal factor must have an facility."
+(functionalArg facilityHasInternalFactor 1)
+(totalArg facilityHasInternalFactor 2)
+
+:Rel locationHasExternalFactor
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Location ExternalFactor
+:Args "Location" "ExternalFactor"
+:lex "?1 has External Factor ?2"
+:rem "A <sym>2DSCtx.Location</sym> has <sym>2DSCtx.ExternalFactor</sym>s which apply to it. The external factors only apply to one specific location (which can be global, city, etc. An external factor must have a location."
+(functionalArg locationHasExternalFactor 1)
+(totalArg locationHasExternalFactor 2)
+
+:Rel internalFactorContainsFacilityRiskFactor
+:Inst BinaryRel
+:Inst RigidRel
+:supRel basicContainsBasic
+:Sig InternalFactor FacilitySpecificRiskFactor
+:Args "InternalFactor" "FacilitySpecificRiskFactor"
+:lex "?1 has risk factor ?2"
+:rem "An <sym>2DSCtx.InternalFactor</sym> may encompass one <sym>2DSCtx.FacililtySpecificRiskFactor.</sym>"
+(functionalArg internalFactorContainsFacilityRiskFactor 2)
+
+:Rel externalFactorContainsLocationRiskFactor
+:Inst BinaryRel
+:Inst RigidRel
+:supRel basicContainsBasic
+:Sig ExternalFactor LocationSpecificRiskFactor
+:Args "ExternalFactor" "LocationSpecificRiskFactor"
+:lex "?1 has risk factor ?2"
+:rem "An <sym>2DSCtx.ExternalFactor</sym> may encompass one <sym>2DSCtx.LocationSpecificRiskFactor</sym>"
+(functionalArg externalFactorContainsLocationRiskFactor 2)

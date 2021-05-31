@@ -1,0 +1,19 @@
+:Name "View_2DS - Scenario Rules"
+:Description "Rules pertaining to level 2 relations contained within Scenarios"
+:Use 2DSCtx
+
+(=> 
+	(and
+		(inScenario ?component ?compound)
+		(playsRoleActor ?role ?basic ?component)
+	)
+	(playsRoleActor ?role ?basic ?compound))
+;:rem "if a component scenario is contained within (inScenario) a compound scenario, a playsRoleActor relation which applies in the component scenario also applies in the compound scenario."
+
+(=> 
+	(and
+		(inScenario ?component ?compound)
+		(playsRoleQualifier ?role ?basic ?component)
+	)
+	(playsRoleQualifier ?role ?basic ?compound))
+;:rem "if a component scenario is contained within (inScenario) a compound scenario, a playsRoleQualifier relation which applies in the component scenario also applies in the compound scenario."

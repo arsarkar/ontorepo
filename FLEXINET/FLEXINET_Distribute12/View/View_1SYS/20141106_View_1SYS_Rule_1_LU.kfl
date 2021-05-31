@@ -1,0 +1,11 @@
+:Name "View_1SYS - Scenario Rule"
+:Description "Rule pertaining to a Scenario - This rule applies to all Scenarios so is located at Level 1 Systems"
+:Use 1SYSCtx
+
+(=> 
+	(and
+		(inScenario ?component ?compound)
+		(playsRole ?role ?basic ?component)
+	)
+	(playsRole ?role ?basic ?compound))
+;:rem "if a component scenario is contained within (inScenario) a compound scenario, a playsRole relation which applies in the component scenario also applies in the compound scenario."

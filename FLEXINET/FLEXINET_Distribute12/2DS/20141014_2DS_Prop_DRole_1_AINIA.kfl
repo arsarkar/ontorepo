@@ -1,0 +1,76 @@
+;;; Flexinet - W3.2 - Level 2 Ontology definition
+;;; Disparate Roles, AINIA Technology Center, date: 29-09-2014
+;;;LU altered definition of product 17/02/2015
+;;;LU added Physical Product, Product Service 9/07/2015
+;;;LU added Objective 15/07/2015
+;;;LU deleted Component 15/12/2015 to fit with Manufacturing Information Updates
+
+:Name "Level 2 Reference Ontology - Disparate Roles"
+:Description "Level 2 Roles - Disparate roles"
+:Use 2DSCtx
+
+:Prop Target
+:Inst Type
+:sup Role
+:rem "result, level, or situation that an organization or group wants or plans to achieve"
+:referenceRem "http://dictionary.cambridge.org/dictionary/business-english/target_1"
+
+:Prop Requirements
+:Inst Type
+:sup 1SYSCtx.Role
+:rem "a condition or capability that must be met or possessed by a system, system component, product, or service to satisfy an agreement, standard, specification, or other formally imposed documents."
+:referenceRem "BS ISO/IEC IEEE 24765:2010"
+
+:Prop Product
+:Inst Type
+:sup 1SYSCtx.Role
+:rem "A product is a process output."
+
+:Prop PhysicalProduct
+:Inst Type
+:sup 2DSCtx.Product
+:rem "A Physical Product is a material artefact, e.g. car, boat, plane."
+:referenceRem "FlEXINET D3.3"
+
+:Prop ProductService
+:Inst Type
+:sup 2DSCtx.PhysicalProduct
+:rem "An integrated product and service offering that delivers value in use."
+:referenceRem "FlEXINET D3.3"
+
+
+:Prop ProductRequest
+:Inst Type
+:sup Role
+:rem "The act of asking for some product to be given or done"
+:referenceRem "WordReference Dic.(interpreted)"
+
+:Prop ProductHistory
+:Inst Type
+:sup Role
+:rem "A continuous, systematic telling of past events to get a product"
+:referenceRem "WordReference Dic. (interpreted)"
+
+:Prop Asset
+:Inst Type
+:sup Role
+:rem "Something valuable that an entity owns, benefits from, or has use of, in generating income."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Storage
+:Inst Type
+:sup Role
+:rem "Space or area reserved for storing"
+:referenceRem "Collins Dic."
+
+:Prop Specification
+:Inst Type
+:sup Role
+:rem "A detailed description of the criteria for the constituents, construction, appearance, performance, etc, of a material, apparatus, etc, or of the standard of workmanship required in its manufacture"
+:referenceRem "Collins Dic."
+
+:Prop Objective
+:Inst Type
+:sup Role
+:rem "A future state which is desired to be accomplished and/or maintained by a corporation."
+:referenceRem "FLEXINET 2.2."

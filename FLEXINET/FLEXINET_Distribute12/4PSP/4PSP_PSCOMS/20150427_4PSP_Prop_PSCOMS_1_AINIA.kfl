@@ -1,0 +1,205 @@
+:Name "4PSCOMS - Properties"
+:Description "PSCOMS TYpes"
+:Use ../4PSPCtx
+
+;;;LU added ProductIdea and BusinessIdea 12/02/2016
+
+:Prop ProductServiceLifeCycle
+:Inst Type
+:sup 2DSCtx.Lifecycle
+:name "Product Service LifeCycle"
+:rem "An integration and connection of the life cycles of products and services to a common life cycle."
+
+:Prop SupportSystem
+:Inst Type
+:sup 1SYSCtx.System
+:name "Support System"
+:rem "Elements which are used to assist in delivering the PSP systems offerings: infrastructure (hard and soft) and support network (provider, property, QoPS)"
+
+:Prop SupportNetwork
+:Inst Type
+:sup 2DSCtx.Network
+:name "Support Network"
+:rem "A network is a series of points or nodes interconnected by communication paths supporting the data transmission among nodes http://searchnetworking.techtarget.com/definition/network"
+:rem ""
+
+:Prop Infrastructure
+:Inst Type
+:sup 2DSCtx.Infrastructure
+:name "Infrastructure"
+:rem "The basic systems and services, such as transport and power supplies, that a country or organization uses in order to work effectively http://dictionary.cambridge.org"
+
+:Prop Hardware
+:Inst Type
+:sup 2DSCtx.Equipment
+:name "Hardware"
+:rem "The physical and electronic parts of a system http://dictionary.cambridge.org"
+
+:Prop Software
+:Inst Type
+:sup 2DSCtx.Software
+:name "Software"
+:rem " the instructions that control what a computer does; computer programs. http://dictionary.cambridge.org"
+
+:Prop Benefit
+:Inst Type
+:sup 2DSCtx.Benefit
+:name "Benefit"
+:rem "results and expectations of the ProductService over the economic, social and environment."
+
+:Prop DemandIdentification
+:Inst Type
+:sup 2DSCtx.CustomerDemand
+:name "DemandIdentification"
+:rem "The desire of consumers, clients, employers, etc. for a particular commodity, service, or other item. http://www.oxforddictionaries.com"
+
+:Prop FeasibilityStudy
+:Inst Type
+:sup 2DSCtx.FeasibilityStudy
+:name "FeasibilityStudy"
+:rem "An analysis and evaluation of a proposed project to determine if it (1) is technically feasible, (2) is feasible within the estimated cost, and (3) will be profitable. Feasibility studies are almost always conducted  where large sums are at stake. Also called feasibility analysis. See also cost benefit analysis. Read more: http://www.businessdictionary.com/definition/feasibility-study.html#ixzz3bo2jh7nz"
+
+:Prop ConceptDevelopment
+:Inst Type
+:sup 2DSCtx.ConceptDevelopment
+:name "ConceptDevelopment"
+:rem "Concept development is a set of activities that are carried out early in the systems engineering life cycle to collect and prioritize operational needs and challenges, develop alternative concepts to meet the needs, and select a preferred one as the basis for subsequent system or capability development and implementation.  http://www.mitre.org/publications/systems-engineering-guide/se-lifecycle-building-blocks/concept-development"
+
+:Prop Configuration
+:Inst Type
+:sup 2DSCtx.ProductConfiguration
+:name "ProductServiceConfiguration"
+:rem "Product/Service Configuration can cover a wide variety of situations.  To some it means Guided Selling.  To others Parametric Configuration.  Yet others might think of it as Make-to-order or Engineer-to-order.  Whatever your spin on it, product and service configuration means taking the legwork out of quoting, specifying, making and/or delivering your products and/or services. http://dominicsystems.com/services/Product-Service-Configuration"
+
+:Prop Realisation
+:Inst Type
+:sup 2DSCtx.ProductRealisation
+:name "Product Service Realisation"
+:rem "Product realization is the term used to describe the work that the organization goes through to develop, manufacture, and deliver the finished goods or services. http://www.simplyquality.org/2000%20Summary/req_7-0.html"
+
+:Prop Maintenance
+:Inst Type
+:sup 2DSCtx.Maintenance
+:name "ProductServiceMaintenance"
+:rem "Activities required or undertaken to conserve as nearly, and as long, as possible the original condition of an asset or resource while compensating for normal wear and tear.
+Read more: http://www.businessdictionary.com/definition/maintenance.html#ixzz3bo6biln9"
+
+:Prop Testing
+:Inst Type
+:sup 2DSCtx.Inspection
+:name "Product Service Testing"
+:rem "Quality control means by which the capability of a manufactured item to meet its specified requirements is determined and documented by subjecting the item to a set of operating conditions.
+Read more: http://www.businessdictionary.com/definition/testing.html#ixzz3bo6uOp46"
+
+:Prop InService
+:Inst Type
+:sup ProductServiceLifeCycle
+:name "Product Service-In Service"
+:rem "Product-Service has been deployed and it is in action"
+
+:Prop UserExperience
+:Inst Type
+:sup ProductServiceLifeCycle
+:name "Product Service UserExperience"
+:rem "The overall experience of a person using a product service, especially in terms of how easy or pleasing it is to use. http://www.oxforddictionaries.com"
+
+:Prop ProductServiceRequirement
+:Inst Type
+:sup 2DSCtx.Requirements
+:name "Product Service Requirement"
+:rem "Constraints, demands, necessities, needs, or parameters that must be met or satisfied, usually within a certain timeframe.
+Read more: http://www.businessdictionary.com/definition/requirements.html#ixzz3bo8z01tb"
+
+:Prop ProductServiceIdea
+:Inst Type
+:sup 2DSCtx.Idea
+:name "Product Service Idea"
+:rem "A thought or collection of thoughts that generate in the mind. An idea is usually generated with intent, but can also be created unintentionally. Ideas often form during brainstorming sessions or through discussions.
+Read more: http://www.businessdictionary.com/definition/idea.html#ixzz3boAdZsH4"
+
+:Prop BusinessIdea
+:Inst Type
+:sup 4PSPCtx.ProductServiceIdea
+:name "Business Idea"
+:rem "A <sym>4PSPCtx.ProductServiceIdea</sym> about a business"
+
+:Prop ProductIdea
+:Inst Type
+:sup 4PSPCtx.ProductServiceIdea
+:name "Business Idea"
+:rem "A <sym>4PSPCtx.ProductServiceIdea</sym> about a Product"
+
+:Prop ProductServiceConcept
+:Inst Type
+:sup 2DSCtx.Concept
+:name "Product Service Concept"
+:rem "A clear, detailed description of the attributes and benefits of a new potential product-service that addresses the needs of the targeted customers. Concept is derived from one or several Ideas.
+Read more: http://www.businessdictionary.com/definition/concept.html#ixzz3boBLqm4z"
+
+:Prop Keyword
+:Inst Type
+:Inst NonLogicalFunctor
+:sup 2DSCtx.Identifier
+:sup MLO.AbstractEntity
+:name "Keyword"
+:rem "A word that represents the main feature or idea of something"
+:referenceRem "http://www.macmillandictionary.com/dictionary/american/keyword"
+
+:Prop Stakeholder
+:Inst Type
+:sup 2DSCtx.Stakeholder
+:name "Stakeholder"
+:rem "Person, group or organisation that has direct or indirect stake in designing and delivering the Product-Service because it can affect along all the PS life cycle"
+
+:Prop Owner
+:Inst Type
+:sup 2DSCtx.Owner
+:name "Owner"
+:rem "A person or organization that owns something: "
+:referenceRem "http://dictionary.cambridge.org/dictionary/business-english/owner"
+
+:Prop Contributor
+:Inst Type
+:sup 2DSCtx.Contributor
+:name "Contributor"
+:rem "Someone or something that is one of the causes of a situation, event, "
+:referenceRem "http://www.macmillandictionary.com/dictionary/american/contributor#contributor_6"
+
+:Prop EvaluationScheme
+:Inst Type
+:sup 2DSCtx.EvaluationScheme
+:name "EvaluationScheme"
+:rem "A plan, design, or program for allowing a structured interpretation and giving of meaning to predicted or actual impacts of an Idea"
+
+:Prop Status
+:Inst Type
+:sup 2DSCtx.Status
+:name "Status"
+:rem "The situation at a particular time during a process"
+:referenceRem "http://www.oxforddictionaries.com/es/definicion/ingles/status"
+
+:Prop Accepted
+:Inst Type
+:sup Status
+:name "Accepted"
+:rem "The status of An idea is Accepted"
+
+:Prop Approved
+:Inst Type
+:sup Status
+:name "Approved"
+:rem "The status of an Idea is Approved"
+
+:Prop NotApproved
+:Inst Type
+:sup Status
+:name "NotApproved"
+:rem "The status of an Idea is Not Approved"
+
+:Prop Comment
+:Inst Type
+:sup 2DSCtx.Comment
+:rem "A written or spoken remark giving an opinion"
+:referenceRem "http://www.macmillandictionary.com/dictionary/british/comment_1"
+
+

@@ -1,0 +1,244 @@
+:Name " Level 5 Reference Ontology - Pump Industry"
+:Description "This file contains the definitions of the specific enterprise ontology for Pump Industry in level 5 within the Flexinet Project reference ontology"
+
+:Use 5KSBCtx
+
+:Prop 5KSB_BusinessIdea
+:Inst Type
+:sup System
+:rem "A new business idea in the context of KSB projects."
+:referenceRem "FLEXINET D1.3"
+
+:Prop 5KSB_LocalIndependentIdeas
+:Inst Type
+:sup 5KSB_BusinessIdea
+:rem "BusinessIdea devised in a specific location."
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_BusinessModel
+:Inst Type
+:sup BusinessModel
+:rem "A new business idea in the context of KSB projects."
+:referenceRem "FLEXINET D1.3"
+
+:Prop 5KSB_Strategy
+:Inst Type
+:sup System 
+:rem "A method or plan chosen to bring about a desired future, such as achievement of a goal or solution to a problem."
+:referenceRem "http://www.businessdictionary.com/definition/strategy.html#ixzz3KdH6T0OO"
+
+:Prop 5KSB_Opportunity
+:Inst Type
+:sup System 
+:rem "Exploitable set of circumstances with uncertain outcome, requiring commitment of resources and involving exposure to risk."
+:referenceRem "http://www.businessdictionary.com/definition/opportunity.html#ixzz3KdHPntup"
+
+:Prop 5KSB_Competencies
+:Inst Type
+:sup System 
+:rem "FlEXINET - KSB Specific term."
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Prototype
+:Inst Type
+:sup System 
+:rem "Pre-production model of a product, engineered for full service test"
+:referenceRem "http://www.businessdictionary.com/definition/prototype.html#ixzz3KdHcowti"
+
+:Prop 5KSB_BusinessModelAnalysis 
+:Inst Type
+:sup Analysis 
+:rem "Analysis of Business Model within the context of KSB projects "
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_RiskAnalysis
+:Inst Type
+:sup Analysis 
+:rem "Analysis of risks within the context of KSB projects "
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_StrengthsAndWeaknessAnalysis
+:Inst Type
+:sup Analysis 
+:rem "Analysis of strengths and weakness within the context of KSB projects "
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_KSBArchivingSystems
+:Inst Type
+:sup ArchivingSystem
+:rem "Archiving Systems in KSB"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_KSBExcel
+:Inst Type
+:sup 5KSB_KSBArchivingSystems
+:rem "Excel used by KSB to store data."
+:referenceRem "FLEXINET D1.2 and D1.3"
+
+:Prop 5KSB_SAPSystems
+:Inst Type
+:sup 5KSB_KSBArchivingSystems
+:rem "SAP system in KSB"
+:referenceRem "FLEXINET D1.2 and D1.3"
+
+:Prop 5KSB_DataSource
+:Inst Type
+:sup 5KSB_KSBArchivingSystems
+:rem "Any other archiving system provided by KSB"
+:referenceRem "FLEXINET"
+
+:Prop 5KSB_HumanResources
+:Inst Type
+:sup Department
+:rem "Human resources is the set of individuals who make up the workforce of an organization, business sector, or economy."
+:referenceRem "http://en.wikipedia.org/wiki/Human_resources"
+
+:Prop 5KSB_ProductManagement
+:Inst Type
+:sup Department
+:rem "The organizational structure within a business that manages the development, marketing and sale of a product or set of products throughout the product life cycle."
+:referenceRem "http://www.businessdictionary.com/definition/product-management.html#ixzz3KdKjMeRM"
+ 
+:Prop 5KSB_ProductDevelopment
+:Inst Type
+:sup Department
+:rem "The creation of products with new or different characteristics that offer new or additional benefits to the customer."
+:referenceRem "http://www.businessdictionary.com/definition/product-development.html#ixzz3KdKtZo2Z"
+ 
+:Prop 5KSB_ITSystem
+:Inst Type
+:sup System
+:rem "KSB IT Systems"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Schedule
+:Inst Type
+:sup System
+:rem "or role?"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_DeliveryTime
+:Inst Type
+:sup Delivery
+:rem "The amount of time that it takes for goods that have been bought to arrive at the place where they are wanted. "
+:referenceRem "http://dictionary.cambridge.org/"
+
+:Prop 5KSB_ProductionTime
+:Inst Type
+:sup Delivery
+:rem "Running Time. A machine is running when there is output, regardless of the quantity or quality."
+:referenceRem "OEE Industry Standard. "
+
+:Prop 5KSB_DaylyProduction
+:Inst Type
+:sup Delivery
+:rem "?"
+:referenceRem "FlEXINET project"
+
+:Prop 5KSB_FunctionalElements
+:Inst Type
+:sup System
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+
+:Prop 5KSB_ProductionProcess
+:Inst Type
+:sup ProductionMethod
+:rem "Mechanical or chemical steps used to create an object, usually repeated to create multiple units of the same item. Generally involves the use of raw materials, machinery and manpower to create a product."
+:referenceRem "http://www.businessdictionary.com/definition/production-process.html#ixzz3KdKXrhQt"
+
+:Prop 5KSB_FunctionalSpecificationBook
+:Inst Type
+:sup System
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_TemplateSpecificationBook
+:Inst Type
+:sup 5KSB_FunctionalSpecificationBook
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_LocalOrganisations
+:Inst Type
+:sup Organisation
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Application
+:Inst Type
+:sup System
+:rem "to be related with Businessmodel"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Objective
+:Inst Type
+:sup Basic
+:rem "to be related with Businessmodel"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Parameter
+:Inst Type
+:sup Basic
+:rem "to be related with Businessmodel"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Market
+:Inst Type
+:sup MarketInformation
+:rem "to be related with HomeMarket"
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop 5KSB_ImportExportControl
+:Inst Type
+:sup LegalFactor
+:rem "ImportExport Control influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Indicator
+:Inst Type
+:sup Metric
+:rem "Defines Indicator term from KSB ontology"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Reactivity
+:Inst Type
+:sup 5KSB_Indicator
+:rem "Defines Reactivity term from KSB ontology. A measure relating to ...."
+:referenceRem ""
+
+:Prop 5KSB_EnvironmentalIndicator
+:Inst Type
+:sup 5KSB_Indicator
+:rem "a measure relating to ...."
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_NewTechnologyIndicator
+:Inst Type
+:sup 5KSB_Indicator
+:rem "a measure relating to ...."
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_TechnicalData
+:Inst Type
+:sup Basic
+:rem ""
+:referenceRem ""
+
+:Prop 5KSB_Data
+:Inst Type
+:sup MLO.AbstractEntity
+:rem ""
+:referenceRem ""
+
+:Fun 5KSB_FNumericalData
+:Inst UnaryFun
+:Sig RealNumber  -> 5KSB_Data
+:rem "Numerical Data"
+
+:Prop 5KSB_Characteristic
+:Inst Type
+:sup 5KSB_TechnicalData
+:rem ""
+:referenceRem ""

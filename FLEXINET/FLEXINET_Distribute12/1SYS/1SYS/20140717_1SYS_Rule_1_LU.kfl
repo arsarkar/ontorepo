@@ -1,0 +1,11 @@
+:Name "1SYS - Rules"
+:Use 1SYSCtx
+
+(=> (requiresA ?x ?y)
+     (systemContainsRole ?y ?x))
+;;;A Role requiring a System as a context implies that the System contains the Role
+;;;Could use inverserel instead of this rule
+
+(=> (systemContainsRole ?x ?y)
+     (requiresA ?y ?x))
+;;;A System containing a Role implies that the Role requires the System as a context

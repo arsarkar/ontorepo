@@ -1,0 +1,68 @@
+; Copyright 2007 HIGHFLEET, Inc. All rights reserved.
+
+:Name "Geocoding"
+:Description "A theory in support of geospatial coordinates"
+:Use MLO
+
+; author: kohl
+; date: 3-14-2007
+; depends on: ULO
+
+; This theory, based on the 1984 World Geodetic System, provides a Coordinate class, 
+; a function for interpreting a pair of real numbers as a coordinate pair, 
+; and a relation to connect Concrete Entities (see ULO Documentation) with their coordinate boundaries.
+
+:Ctx  WGS84
+:Inst UserContext
+:supCtx MLO
+:name "1984 World Geodetic System Context"
+
+:Use WGS84
+
+	:Prop Coordinates
+	:Inst Type
+	:Inst NonLogicalFunctor
+	:sup  MathematicalObject
+	:name "Coordinates"
+	:lex  "?1 is a set of coordinates"
+
+	:Fun  latlong
+	:Inst BinaryFun
+	:Sig  RealNumber RealNumber -> Coordinates
+	:name "lat-long"
+	:rem  "A function that identifies a region from coordinates in the WGS 84 coordinate system."
+	:lex "?1 and ?2 are coordinates in the WGS 84 coordinate system."
+
+	:Rel  hasCoordinates
+	:Inst TernaryRel
+	:Sig  ConcreteEntity NonNegInt Coordinates
+	:name "has coordinates"
+	:lex  "?1 has coordinates ?3 at position ?2 in its polygon"
+	:rem  "The WGS 84 coordinates for an object define its location in the 1984 World Geodetic System.  The sum total of coordinates for an object define an ordered list which itself defines its WGS 84 polygon representation."
+	:exampleRem "
+John is located at 10 degrees north, 25 degrees east: 
+	(WGS84.hasCoordinates John 1 (WGS84.latlong 10 -25))
+
+John's (large) house is represented by the polygon at (20N, 30W), (30N, 30W), (30N, 10E), (15S, 10E): 
+	(WGS84.hasCoordinates JohnsHouse 1 (WGS84.latlong 20 30))
+	(WGS84.hasCoordinates JohnsHouse 2 (WGS84.latlong 30 30))
+	(WGS84.hasCoordinates JohnsHouse 3 (WGS84.latlong 30 -10))
+	(WGS84.hasCoordinates JohnsHouse 4 (WGS84.latlong -15 -10))"
+	
+	
+	:Rel coordinates
+	:Inst BinaryRel
+	:Sig ConcreteEntity List
+	:functionalArg 2
+	:Args "Thing" "Its coordinates"
+	:name "coordinates"
+	:lex "?1 has these coordinates: ?2"
+	:rem "This relation maps a ConcreteEntity directly to a list of its WGS84 coordinates.  The lists are interpreted in one of three ways:
+			1.  the list contains one WGS84.latlong function term = the ConcreteEntity's corresponding geometry is a point.
+			2.  the list contains an arbitrary number of coordinates, and the first and last listed coordinate are the same = the corresponding geometry is a polygon
+			3.  the list contains an arbitrary number of coordinates and condition (2) is not true = the corresponding geometry is a line.
+			
+		This relation is intended to replace <sym>WGS84.hasCoordinates</sym>; and specifically to replace its use of an index in its second argument in favor of the more straightforward list"
+		
+	 
+

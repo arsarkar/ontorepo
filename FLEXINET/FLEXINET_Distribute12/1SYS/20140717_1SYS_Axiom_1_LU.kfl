@@ -1,0 +1,38 @@
+:Name  "1SYS - Axioms"
+:Description "Axioms pertaining to relations occurring at the Systems level."
+:Use 1SYSCtx
+
+;;LU removed axiom "A control is also an input", as now Control is subsumed by Input
+
+(=> (Role ?r)
+    (exists (?s)
+		(and (System ?s)
+			(requiresA ?r ?s))))
+:IC hard "The Role ?r requiresA System to provide a context."
+
+;;;LU added additional axioms 23/02/2015
+;(=> (System ?system)
+;	(exists (?input)
+;		 (and(Input ?input)
+;			 (systemContainsRole ?system ?input))))
+;:IC hard "A System must have an input. System ?system does not contain an input."
+
+;(=> (System ?system)
+;	(exists (?output)
+;		 (and(Output ?output)
+;			 (systemContainsRole ?system ?output))))
+;:IC hard "A System must have an output. System ?system does not contain an output."
+
+(=> (System ?system)
+	(exists (?resource)
+		 (and(Resource ?resource)
+			 (systemContainsRole ?system ?resource))))
+:IC soft "A System may contain a resource. System ?system does not contain a resource."
+
+(=>  (and (System ?system)
+     (playsRole ?system ?role ?scenario)
+	 ) 
+	 (not(systemContainsRole ?system ?role))
+)
+:IC hard "The same System cannot contain a Role and play the Role. ?system playsRole ?role in Scenario ?scenario. 
+The relation systemContainsRole does not hold between ?system and ?role."

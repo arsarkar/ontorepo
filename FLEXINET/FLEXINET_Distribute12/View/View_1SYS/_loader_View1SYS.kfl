@@ -1,0 +1,7 @@
+;; Loader file for Scenario View_1SYS
+
+:Load "20141106_View_1SYS_Prop_1_LU.kfl"
+
+:Load "20141106_View_1SYS_Rel_1_LU.kfl"
+:Load "20141106_View_1SYS_Rule_1_LU.kfl"
+

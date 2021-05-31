@@ -1,0 +1,178 @@
+; Copyright 2007 HIGHFLEET, Inc. All rights reserved.
+
+:Name "Region Connection Calculus"
+:Description "A qualitative theory of spatial relations based on the Region Connection Calculus (RCC)"
+:Use MLO
+
+; author: kohl
+; date: 6-18-2007
+; depends on: ULO
+
+; The Region Connection Calculus (RCC) is a qualitative spatial representation describing regions 
+; by their possible relations to each other:
+;
+; MLO.connectedTo
+; MLO.disconnectedFrom
+; MLO.spatiallyEqualTo
+; MLO.externallyconnectedTo
+; MLO.partiallyOverlaps
+; MLO.interiorBorderingPartOf
+; MLO.insideOf
+;
+; From these basic relations, combinations can be built.
+
+:Prop RegionConnectedRel
+:Inst MetaRelation
+:Inst FixedExtentRel
+:sup  BinaryRel
+:name "Region Connection Calculus relation"
+:lex  "?1 is a Region Connection Calculus (RCC) relation"
+:rem "The Region Connection Calculus (RCC) is a qualitative spatial representation describing regions 
+by their possible relations to each other:<br />
+<br />
+<sym>MLO.connectedTo</sym><br />
+<sym>MLO.disconnectedFrom</sym><br />
+<sym>MLO.spatiallyEqualTo</sym><br />
+<sym>MLO.externallyconnectedTo</sym><br />
+<sym>MLO.partiallyOverlaps</sym><br />
+<sym>MLO.interiorBorderingPartOf</sym><br />
+<sym>MLO.insideOf</sym><br />
+<br />
+From these basic relations, combinations can be built."
+
+:Rel  connectedTo
+:Inst IrreflexiveBR
+:Inst SymmetricBR
+:Inst RegionConnectedRel
+:Sig  ConcreteEntity ConcreteEntity
+:name "connected to"
+:lex  "?1 and ?2 are connected"
+:rem  "A <sym>ConcreteEntity</sym> is connected with another when their boundaries or interiors intersect.  By definition, a concrete entity is not connected with itself."
+:exampleRem "Oklahoma and Texas (intersecting boundaries)<br>
+Oklahoma and the United States(intersecting interiors)<br>
+Texas and the Unites States (intersecting boundaries and interiors)"
+
+
+:Rel  disconnectedFrom
+:Inst SymmetricBR
+:Inst RegionConnectedRel
+:Inst NonLogicalFunctor
+:Sig  ConcreteEntity ConcreteEntity
+:Mode b b
+:name "disconnected from"
+:lex  "?1 and ?2 are disconnected"
+:rem  "A <sym>ConcreteEntity</sym> is disconnected from another if they are not <sym>connectedTo</sym> each other."
+:exampleRem "South Africa and Antarctica"
+:negRel connectedTo
+
+(=> (and (disconnectedFrom ?a ?b)
+		 (locatedIn ?x ?a))
+	(not (locatedIn ?x ?b)))
+:IC hard "?x cannot be located in both ?a and ?b at the same time, because they are disconnected."
+
+
+:Rel  spatiallyEqualTo
+:Inst EquivalenceBR
+:Inst RegionConnectedRel
+:Sig  ConcreteEntity ConcreteEntity
+:name "same region as"
+:lex  "?1 and ?2 are spatially equal"
+:rem  "A <sym>ConcreteEntity</sym> is spatially equal to another when they have the same boundaries and interiors.  Two concrete entities being spatially equivalent does not make them identical (<sym>=</sym>) - a storm may at a time perfectly overlap with a country, but that does not make the country a storm."
+:negRel disconnectedFrom
+
+(=> (and (spatiallyEqualTo ?x ?y)
+		 (/= ?x ?y))
+	(connectedTo ?x ?y))
+:rem "Discrete things that are spatially equal are connected"
+
+(=> (and (spatiallyEqualTo ?a ?b)
+		 (locatedIn ?x ?a))
+	(locatedIn ?x ?b))
+:rem "If an object is located somewhere, it is also located everywhere spatially equal to it."
+
+
+:Rel  externallyConnectedTo
+:Inst IrreflexiveBR
+:Inst SymmetricBR
+:Inst RegionConnectedRel
+:Sig  ConcreteEntity ConcreteEntity
+:name "externally connected to"
+:lex  "?1 and ?2 are externally connected"
+:rem  "A <sym>ConcreteEntity</sym> is externally connected to another if they are connected (<sym>connectedTo</sym>) but their interiors do not intersect."
+:exampleRem "Poland and Ukraine"
+:supRel connectedTo
+:negRel spatiallyEqualTo
+
+
+:Rel  partiallyOverlaps
+:Inst IrreflexiveBR
+:Inst SymmetricBR
+:Inst RegionConnectedRel
+:Sig  ConcreteEntity ConcreteEntity
+:name "partially overlaps with"
+:lex  "?1 and ?2 partially overlap"
+:rem  "A <sym>ConcreteEntity</sym> partially overlaps another if their interiors intersect, but one is not <sym>containedIn</sym> or <sym>spatiallyEqualTo</sym> the other."
+:exampleRem "A weather system over France and part of Germany would partially overlap with Germany."
+:supRel connectedTo
+:negRel spatiallyEqualTo
+:negRel externallyConnectedTo
+
+
+(supRel locatedIn connectedTo)
+(negRel locatedIn spatiallyEqualTo)
+(negRel locatedIn externallyConnectedTo)
+(negRel locatedIn partiallyOverlaps)
+
+(=> (and (disconnectedFrom ?a ?b)
+		 (locatedIn ?aa ?a)
+		 (locatedIn ?bb ?b))
+	(disconnectedFrom ?aa ?bb))
+:rem "If two regions are disconnected, so are all the regions located within them, respectively."
+	
+(=> (and (locatedIn ?bb ?b)
+		 (connectedTo ?a ?bb)
+		 (/= ?a ?b))
+	(connectedTo ?a ?b))
+:rem "If region A if connected to region B, it is also connected to all the regions that B is located within."
+
+	:Rel  interiorBorderingPartOf
+	:Inst IrreflexiveBR
+	:Inst AsymmetricBR
+	:Inst RegionConnectedRel
+	:Sig  ConcreteEntity ConcreteEntity
+	:Args "part" "whole"
+	:name "interior bordering part of"
+	:lex  "?1 is an interior bordering part of ?2"
+	:rem  "A <sym>ConcreteEntity</sym> is an interior bordering part of another if the part is fully contained within the whole (but not equal to it) and the part's boundary intersects with the whole's boundary.  In other words, the part touches the boundary of the whole."
+	:exampleRem "Texas and the United States<br>
+	CapeTown and South Africa"
+	:supRel locatedIn
+
+	:Rel  insideOf
+	:Inst StrictPartialOrderBR
+	:Inst RegionConnectedRel
+	:Sig  ConcreteEntity ConcreteEntity
+	:Args "part" "whole"
+	:name "non-tangential proper part of"
+	:lex  "?1 is inside of ?2"
+	:rem  "A <sym>ConcreteEntity</sym> is inside of another if the part is fully contained within the whole (but not equal to it).  In other words, the part does not touch the boundary of the whole."
+	:exampleRem "Switzerland and Europe<br>
+	Iowa and the United States"
+	:supRel locatedIn
+	:negRel interiorBorderingPartOf
+	
+	(=> (and (externallyConnectedTo ?a ?b)
+			 (insideOf ?aa ?a)
+			 (insideOf ?bb ?b))
+		(disconnectedFrom ?aa ?bb))
+	:rem "If two regions are externally connected, they cannot overlap; i.e., those regions within each of them must be disconnected."
+		
+	(=> (and (locatedIn ?aa ?a)
+			 (insideOf ?aaa ?aa))
+		(insideOf ?aaa ?a))
+	:rem "Populating the <sym>MLO.insideOf</sym> relation recursively, using the <sym>MLO.locatedIn</sym> as a basis."
+		
+	(=> (and (insideOf ?aa ?a)
+			 (locatedIn ?aaa ?aa))
+		(insideOf ?aaa ?a))
+	:rem "Populating the <sym>MLO.insideOf</sym> relation recursively, using the <sym>MLO.locatedIn</sym> as a basis."

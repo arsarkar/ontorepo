@@ -1,0 +1,98 @@
+:Name "View_4PSP - Scenario Relations"
+:Description "Relations pertaining to View_4PSP scenarios"
+:Use 4PSPCtx
+
+;;;Might need to model ProductScenarioInScenario relation later (only one ProductScenario in a Scenario. Plus also perhaps need relations ProductDesignScenario in Product Scenario (only one) and ProductNetworkScenario in Product Scenario (only one).
+
+:Rel businessModelScenarioInScenario
+:Inst BinaryRel
+:Inst RigidRel
+:supRel inScenario
+:Inst AntisymmetricBR
+:Sig BusinessModelScenario Scenario
+:Args "component BusinessModelScenario" "compound Scenario"
+:lex "Business Model Scenario ?1 is contained within Scenario ?2" 
+:rem "Only one Business Scenario can be contained within a Scenario. Business Model Scenario is IN compound Scenario. Given that Business Model Scenario and compound Scenario are not identical, then it is not the case that compound is IN Business Model Scenario."
+(functionalArg businessModelScenarioInScenario 1)
+
+:Rel gpnScenarioInScenario
+:Inst BinaryRel
+:Inst RigidRel
+:supRel inScenario
+:Inst AntisymmetricBR
+:Sig GPNScenario Scenario
+:Args "component GPNScenario" "compound Scenario"
+:lex "GPNScenario ?1 is contained within Scenario ?2" 
+:rem "Only one GPNScenario can be contained within a Scenario. GPNScenario is IN compound Scenario. Given that GPNScenario and compound Scenario are not identical, then it is not the case that compound is IN GPN."
+(functionalArg gpnScenarioInScenario 1)
+
+:Rel riskScenarioInScenario
+:Inst BinaryRel
+:Inst RigidRel
+:Inst AntisymmetricBR
+:supRel inScenario
+:Sig RiskScenario Scenario
+:Args "component RiskScenario" "compound Scenario"
+:lex "RiskScenario ?1 is contained within Scenario ?2" 
+:rem "Only one RiskScenario can be contained within a Scenario. RiskScenario is IN compound Scenario. Given that Risk Scenario and compound Scenario are not identical, then it is not the case that compound is IN Risk."
+(functionalArg riskScenarioInScenario 1)
+
+:Rel balancedScoreCardScenarioInScenario
+:Inst BinaryRel
+:Inst RigidRel
+:Inst AntisymmetricBR
+:supRel inScenario
+:Sig BalancedScoreCardScenario Scenario
+:Args "component Balanced ScoreCard Scenario" "compound Scenario"
+:lex "Balanced ScoreCard Scenario ?1 is contained within Scenario ?2" 
+:rem "Only one Balanced Score Card Scenario can be contained within a Scenario. Balanced Score Card Scenario is IN compound Scenario. Given that Balanced ScoreCard Scenario and compound Scenario are not identical, then it is not the case that compound is IN Business."
+(functionalArg balancedScoreCardScenarioInScenario 1)
+
+:Rel businessModelScenarioHasChosenProductScenario
+:Inst BinaryRel
+:Inst RigidRel
+:Sig BusinessModelScenario ProductScenario
+:Args "Business Model Scenario" "Product Scenario" 
+:lex "BusinessModelScenario ?1 hasChosen  Product Scenario ?2"
+:rem "A <sym>4PSPCtx.BusinessModelScenario</sym> has one chosen <sym>4PSPCtx.ProductScenario</sym>." 
+(functionalArg businessModelScenarioHasChosenProductScenario 2)
+
+:Rel businessModelScenarioHasChosenGPNScenario
+:Inst BinaryRel
+:Inst RigidRel
+:supRel businessModelScenarioHasChosenProductScenario
+:Sig BusinessModelScenario GPNScenario
+:Args "Business Model Scenario" "GPN Scenario" 
+:lex "BusinessModelScenario ?1 hasChosen  GPN Scenario ?2"
+:rem "A <sym>4PSPCtx.BusinessModelScenario</sym> has one chosen <sym>4PSPCtx.Scenario</sym>." 
+(functionalArg businessModelScenarioHasChosenGPNScenario 2)
+
+:Rel productScenarioHasChosenBusinessModelScenario
+:Inst BinaryRel
+:Inst RigidRel
+:inverseRel businessModelScenarioHasChosenProductScenario
+:Sig ProductScenario BusinessModelScenario 
+:Args "Product Scenario" "Business Model Scenario" 
+:lex "Product Scenario ?1 hasChosen BusinessModelScenario ?2"
+:rem "A <sym>4PSPCtx.ProductScenario</sym> has one chosen <sym>2DSCtx.BusinessModelScenario</sym>." 
+(functionalArg productScenarioHasChosenBusinessModelScenario 2)
+
+:Rel gpnScenarioHasChosenBusinessModelScenario
+:Inst BinaryRel
+:Inst RigidRel
+:supRel productScenarioHasChosenBusinessModelScenario
+:inverseRel businessModelScenarioHasChosenGPNScenario
+:Sig GPNScenario BusinessModelScenario 
+:Args "GPN Scenario" "Business Model Scenario" 
+:lex "GPN Scenario ?1 hasChosen BusinessModelScenario ?2"
+:rem "A <sym>4PSPCtx.GPNScenario</sym> has one chosen <sym>2DSCtx.BusinessModelScenario</sym>. Subclassed to provide a more intuitive name to end users" 
+(functionalArg gpnScenarioHasChosenBusinessModelScenario 2)
+
+:Rel projectWorldContainsGPNScenario
+:Inst BinaryRel
+:Inst RigidRel
+:Sig ProjectWorld  GPNScenario
+:Args "Project World" "Global Production Network Scenario" 
+:lex "Project World ?1 contains GPN Scenario ?2"
+:rem "A <sym>4PSPCtx.ProjectWorld/sym> contains a <sym>4PSPCtx.GPNScenario</sym>.
+Relation added to enable PNES interface requirements." 

@@ -1,0 +1,76 @@
+:Name "Level 4 Product Service Production - Risk Axioms"
+:Description "This file contains the definition of the risk axioms identified at level 4 in the context of the FLEXINET Project - placed in folder 4PSP_Risk as they form a specialised subset of the reference ontology. Axioms pertaining to roles within the Risk Scenario."
+:Use 4PSPCtx
+
+;;;LU added axioms relating to node interdependency 20/01/2016 in order to enable Risk ontology to fit with PNES application.
+
+;;;==================================================
+
+
+(=> (nodeInterDependencyOnNode ?node1  ?interdependency ?node2)
+	(/= ?node1 ?node2)
+)
+:IC hard "A node (facility playing a role in a GPNScenario) cannot depend on itself, but ?node1 has interdependency ?interdependency upon itself."
+
+(=>  (nodeInterDependencyOnNode ?node1 ?interdependency ?node2)
+     (exists (?scenario ?actor)
+     (and 
+		(GPNScenario ?scenario)
+		(playsRoleActor ?node1 ?actor ?scenario)))
+)
+:IC hard "nodeInterDependencyOnNode only exists between nodes (facilities playing actor roles in a GPNScenario). ?node1 does not play an actor role in a GPNScenario."
+
+(=>  (nodeInterDependencyOnNode ?node1 ?interdependency ?node2)
+     (exists (?scenario ?actor)
+     (and 
+		(GPNScenario ?scenario)
+		(playsRoleActor ?node2 ?actor ?scenario)))
+)
+:IC hard "nodeInterDependencyOnNode only exists between nodes (facilities playing actor roles in a GPNScenario). ?node2 does not play an actor role in a GPNScenario."
+
+(=>  (nodeInterDependencyOnNode ?node1 ?interdependency ?node2)
+     (exists (?scenario ?actor1 ?actor2)
+     (and 
+		(GPNScenario ?scenario)
+		(playsRoleActor ?node1 ?actor1 ?scenario)
+		(playsRoleActor ?node2 ?actor2 ?scenario)))
+)
+:IC hard "nodeInterDependencyOnNodes only exists between nodes (facilities playing actor roles)  in the same GPN scenario. ?node1 has ?interdependency upon ?node2 but not in the same GPN Scenario."
+
+
+(=>	(and (playsRole ?intendRev ?role ?riskS)
+	 (RiskScenario ?riskS)
+	 (IntendedRevenue ?intendRev )
+	 )	
+	 (Output ?role)
+)		 
+:IC hard "In a RiskScenario an IntendedRevenue can only play an Output role. In RiskScenario ?riskS the IntendedRevenue ?intendRev   playsRole ?role which is not an Output."
+
+
+
+(=>  (and (playsRole ?inop ?role ?riskS)
+	 (RiskScenario ?riskS)
+	 (Inoperability ?inop)
+	 )	
+	 (Output ?role)
+)		 
+:IC hard "In a RiskScenario an Inoperability can only play an Output role. In RiskScenario ?riskS the Inoperability ?inop playsRole ?role which is not an Output."	
+
+
+(=>  (and (playsRole ?perturb ?role ?riskS)
+	 (RiskScenario ?riskS)
+	 (Perturbation ?perturb)
+	 )	
+	 (Input ?role)
+)		 
+:IC hard "In a RiskScenario a Perturbation can only play an Input role. In RiskScenario ?riskS the Perturbation ?perturb playsRole ?role which is not an Input."	
+
+
+(=>  (and (playsRole ?basic ?role ?riskS)
+	 (RiskScenario ?riskS)
+	 (Role ?role)
+	 )	
+	 (or (Perturbation ?basic)(Inoperability ?basic)(IntendedRevenue ?basic))
+)		 
+:IC hard "In a RiskScenario only the Basic sub-properties Perturbation, Inoperability or IntendedRevenue can play roles. In RiskScenario ?riskS the Basic ?basic which playsRole ?role is not one of these."	
+

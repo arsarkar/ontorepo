@@ -1,0 +1,83 @@
+;; Loader file for 2DS
+
+:Load "20141022_2DS_Ctx_1_LU.kfl"
+
+;; ========== Ainia =======================
+; Basics Concepts in Level 2
+:Load "20141014_2DS_Prop_Basic_1_AINIA.kfl"
+; Disparate Roles
+:Load "20141014_2DS_Prop_DRole_1_AINIA.kfl"
+
+;; ========== ITI  =======================
+; Systems Concepts in Level 2
+:Load "20140903_2DS_Prop_System_1_ITI.kfl"
+
+; Actor Roles
+:Load "20140903_2DS_Prop_ARole_1_ITI.kfl"
+; Relations Systems Level 2
+:Load "20140903_2DS_Rel_System_1_ITI.kfl"
+
+; Relations PNES Level 2
+:Load "20150629_2DS_Rel_Basic_1_LU.kfl"
+
+; Axioms PNES Level 2
+:Load "20150629_2DS_Axiom_2_PNES_ITI_1.kfl"
+
+;; ========== LU  =======================
+
+;Network Concepts
+:Load "20150902_2DS_Prop_Network_1_LU.kfl"
+
+;Qualifier Roles
+:Load "20141022_2DS_Prop_QRole_1_LU.kfl"
+;LU work on relations generic across 2DS
+:Load "20141204_2DS_Rel_Role_1_LU.kfl"
+
+;Axioms for 2DS
+:Load "20150616_2DS_Axiom_2_ITI.kfl"
+;Rules for 2DS
+:Load "20150515_2DS_Rule_1_LU.kfl"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Metrics section
+:Load "2DS_Metric/20141023_2DS_Prop_Metric_1_LU.kfl"
+:Load "2DS_Metric/20150925_2DS_Function_Metric_1_LU.kfl"
+:Load "2DS_Metric/20150925_2DS_Axiom_Metric_1_LU.kfl"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Indicator Section
+;;;LU designated work
+;Basic concepts for Indicators 
+:Load "2DS_Indicator/20150708_2DS_Prop_Indicator_1_LU.kfl"
+
+;Relations concerning Indicators
+:Load "2DS_Indicator/20150708_2DS_Rel_Indicator_1_LU.kfl"
+
+;;;External Factors - STEEP Factor
+:Load "2DS_Indicator/20150925_2DS_Prop_SocialFactor_1_LU.kfl"
+:Load "2DS_Indicator/20150925_2DS_Prop_TechnologicalFactor_1_LU.kfl"
+:Load "2DS_Indicator/20150925_2DS_Prop_EconomicFactor_1_LU.kfl"
+:Load "2DS_Indicator/20150925_2DS_Prop_EnvironmentalFactor_1_LU.kfl"
+:Load "2DS_Indicator/20150925_2DS_Prop_PoliticalFactor_1_LU.kfl"
+
+;;;Internal Factors
+:Load "2DS_Indicator/20150925_2DS_Prop_HumanResourceFactor_1_LU.kfl"
+:Load "2DS_Indicator/20150925_2DS_Prop_PurchasingFactor_1_LU.kfl"
+:Load "2DS_Indicator/20150925_2DS_Prop_ResearchFactor_1_LU.kfl"
+:Load "2DS_Indicator/20150925_2DS_Prop_ResourceFactor_1_LU.kfl"
+:Load "2DS_Indicator/20150925_2DS_Prop_SalesFactor_1_LU.kfl"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Risk Section
+:Load "2DS_Risk/20141204_2DS_Prop_Risk_1_LU.kfl"
+:Load "2DS_Risk/20141203_2DS_Rel_Risk_1_LU.kfl"
+:Load "2DS_Risk/20141203_2DS_Axiom_Risk_1_LU.kfl"
+;;;LU designated work
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Business Section
+:Load "2DS_Business/20151506_2DS_Prop_Business_1_LU.kfl"
+:Load "2DS_Business/20151307_2DS_Rel_Business_1_LU.kfl"
+:Load "2DS_Business/20151308_2DS_Axiom_Business_1_LU.kfl"
+:Load "2DS_Business/20150709_2DS_Rule_Business_1_LU.kfl"
+;;;LU designated work

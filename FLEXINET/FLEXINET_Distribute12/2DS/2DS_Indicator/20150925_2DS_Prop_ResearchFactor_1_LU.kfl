@@ -1,0 +1,28 @@
+:Name "Level 2 Designed Systems - Research Factor Properties"
+:Description "Research Factor subset of Internal Factor Indicator Properties."
+
+:Use ../2DSCtx
+
+:Prop ExpensesForResearchAndInnovation
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ResearchFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop LengthOfResearchAndInnovationProjects
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ResearchFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop NumberOfRegisteredPatents
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ResearchFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop SpecificWeightOfExpensesOnResearchAndInnovationInTheTotalAmountOfExpenses
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ResearchFactor
+:rem "Balanced ScoreCard example St. Gallen"

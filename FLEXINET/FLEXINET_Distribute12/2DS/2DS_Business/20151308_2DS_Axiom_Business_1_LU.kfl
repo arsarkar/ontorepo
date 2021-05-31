@@ -1,0 +1,90 @@
+:Name "Level 2 Designed Systems - Business Axioms"
+:Description "This file contains the definition of Business axioms which occur at the Designed Systems level of the FLEXINET Project reference ontology but is placed within a separate folder called 2DS_Business as they form a specialised subset of level 2."
+
+:Use ../2DSCtx
+
+(=>  (strategicValuehasValue ?var1 (fuzzyValTripleFN ?l ?m ?h)) 
+	 (and(lteNum ?m 1000)
+	     (gteNum ?m 0))
+)
+:IC hard "?var1 has a value ?m. The Strategic Value is a score within the values of 0 and 1000."
+
+(=> (and 
+        (strategicValuecontainsBSCView ?sv ?)
+          (sumf ?weight (?weight ?bsc) 
+                    (and
+                        (strategicValuecontainsBSCView ?sv ?bsc)
+                        (bSCViewhasWeighting ?bsc (% ?weight)))
+                        ?sumScoreView
+            )
+		)
+	(lteNum ?sumScoreView 100)	
+)
+:IC hard "For a Strategic Value it is prohibited that the sum of the contained Balanced Scorecard View weightings exceed 100%. Strategic value ?sv contains weightings which sum to ?sumScoreView %."
+
+
+(=> (and 
+        (bSCViewcontainsKPI ?bsc ?)
+          (sumf ?weight (?weight ?kpi) 
+                    (and
+                        (bSCViewcontainsKPI ?bsc ?kpi)
+                        (kPIhasWeighting ?kpi (% ?weight)))
+                        ?sumKPI
+            )
+		)
+	(lteNum ?sumKPI 100)	
+)
+:IC hard "For a Balanced Score Card view it is prohibited that the sum of the contained KPIs weightings exceed 100%. Balanced Score Card view ?bsc contains weightings which sum to ?sumKPI %."
+
+(=> (and 
+        (kPIcontainsPI  ?kpi ?)
+          (sumf ?weight (?weight ?pi) 
+                    (and
+                        (kPIcontainsPI  ?kpi ?pi)
+                        (pIhasWeighting ?pi (% ?weight)))
+                        ?sumPI
+            )
+		)
+	(lteNum ?sumPI 100)	
+)
+:IC hard "For a Key Performance Indicator it is prohibited that the sum of the contained PIs weightings exceed 100%. KPI ?kpi contains weightings which sum to ?sumPI %."
+
+;;;defining allowed cardinalities for quaternary relation hasThresholdValueForIndicator - Highfleet Functional args only work with binary
+(=>(hasThresholdValueForIndicator ?businessPolicy1 ?indicatorType1 ?thresholdType1 ?metric1)
+(not(exists(?thresholdType2 ?metric2)
+(and(hasThresholdValueForIndicator ?businessPolicy2 ?indicatorType2 ?thresholdType2 ?metric2)
+(= (listof ?businessPolicy1 ?indicatorType1) (listof ?businessPolicy2 ?indicatorType2))
+(/=(listof ?thresholdType1 ?metric1)(listof ?thresholdType2 ?metric2))))
+))
+:IC hard "A Business Policy has one Theshold Value for an Indicator. BusinessPolicy ?businessPolicy2 has more than one for indicator ?indicatorType1."
+
+;;;defining allowed cardinalities for quaternary relation hasPreferredThresholdValueForIndicator
+(=>( hasPreferredThresholdValueForIndicator ?businessPolicy1 ?indicatorType1 ?thresholdType1 ?metric1)
+(not(exists(?thresholdType2 ?metric2)
+(and(hasPreferredThresholdValueForIndicator ?businessPolicy2 ?indicatorType2 ?thresholdType2 ?metric2)
+(= (listof ?businessPolicy1 ?indicatorType1) (listof ?businessPolicy2 ?indicatorType2))
+(/=(listof ?thresholdType1 ?metric1)(listof ?thresholdType2 ?metric2))))
+))
+:IC hard "A Business Policy has at most one Preferred Theshold Value for an Indicator. BusinessPolicy ?businessPolicy2 has more than one for indicator ?indicatorType1."
+
+(=>(and (Facility ?potentialSupplier)
+		 (IndicatorType ?internalfactorType)
+		 (countf(?internalfactor) 
+	     (and (facilityHasInternalFactor  ?potentialSupplier ?internalfactor)     
+              (instAsserted ?internalfactor ?internalfactorType))          
+	     ?totalInternalfactor)
+	)
+    (lteNum ?totalInternalfactor 1)
+)
+:IC hard  "For a given Type of Internal factor a facility has at most one internal factor instance.  Facility ?potentialSupplier has more than one internal factor instance specified for type ?internalfactorType."	
+
+(=>(and (Location ?location)
+		 (IndicatorType ?externalfactorType)
+		 (countf(?externalfactor) 
+	     (and (locationHasExternalFactor  ?location ?externalfactor)     
+              (instAsserted ?externalfactor ?externalfactorType))          
+	     ?totalExternalfactor)
+	)
+    (lteNum ?totalExternalfactor 1)
+)
+:IC hard  "For a given Type of External factor a location has at most one external factor instance.  Location  ?location has more than one external factor instance specified for type ?externalfactorType."	

@@ -1,0 +1,95 @@
+
+
+(4PSPCtx.Facility Lopez_Pampin)
+(4PSPCtx.Facility Amelia_Ledo_Vence)
+(4PSPCtx.Facility Ullama)
+(4PSPCtx.Facility Fagreco)
+(4PSPCtx.Facility Wild)
+(4PSPCtx.Facility Agrovin)
+
+(4PSPCtx.Facility Casado)
+(4PSPCtx.Facility Conlesa)
+(4PSPCtx.Facility Vidrala)
+(4PSPCtx.Facility Ba_Vidro)
+(4PSPCtx.Facility Verallia)
+(4PSPCtx.Facility Castrillo)
+
+(4PSPCtx.Facility Rivera_Japan)
+(4PSPCtx.Facility Sunset)
+(4PSPCtx.Facility CustomDrinks)
+
+
+(1SYSCtx.Input input_LP)
+(1SYSCtx.Output output_LP)
+(1SYSCtx.requiresA  input_LP Lopez_Pampin)
+(1SYSCtx.requiresA  output_LP  Lopez_Pampin)
+
+(1SYSCtx.Input input_A)
+(1SYSCtx.Output output_A)
+(1SYSCtx.requiresA  input_A  Amelia_Ledo_Vence)
+(1SYSCtx.requiresA  output_A   Amelia_Ledo_Vence)
+
+(1SYSCtx.Input input_U)
+(1SYSCtx.Output output_U)
+(1SYSCtx.requiresA  input_U  Ullama)
+(1SYSCtx.requiresA  output_U   Ullama)
+
+(1SYSCtx.Input input_F)
+(1SYSCtx.Output output_F)
+(1SYSCtx.requiresA  input_F  Fagreco)
+(1SYSCtx.requiresA  output_F   Fagreco)
+
+(1SYSCtx.Input input_W)
+(1SYSCtx.Output output_W)
+(1SYSCtx.requiresA  input_W  Wild)
+(1SYSCtx.requiresA  output_W   Wild)
+
+(1SYSCtx.Input input_Ag)
+(1SYSCtx.Output output_Ag)
+(1SYSCtx.requiresA  input_Ag  Agrovin)
+(1SYSCtx.requiresA  output_Ag  Agrovin )
+
+(1SYSCtx.Input input_Cas)
+(1SYSCtx.Output output_Cas)
+(1SYSCtx.requiresA  input_Cas  Casado)
+(1SYSCtx.requiresA  output_Cas Casado)
+
+(1SYSCtx.Input input_Con)
+(1SYSCtx.Output output_Con)
+(1SYSCtx.requiresA  input_Con  Conlesa)
+(1SYSCtx.requiresA  output_Con Conlesa)
+
+(1SYSCtx.Input input_Vid)
+(1SYSCtx.Output output_Vid)
+(1SYSCtx.requiresA  input_Vid  Vidrala)
+(1SYSCtx.requiresA  output_Vid Vidrala)
+
+(1SYSCtx.Input input_Ba)
+(1SYSCtx.Output output_Ba)
+(1SYSCtx.requiresA  input_Ba  Ba_Vidro)
+(1SYSCtx.requiresA  output_Ba Ba_Vidro)
+
+(1SYSCtx.Input input_Ver)
+(1SYSCtx.Output output_Ver)
+(1SYSCtx.requiresA  input_Ver  Verallia)
+(1SYSCtx.requiresA  output_Ver Verallia)
+
+(1SYSCtx.Input input_Cast)
+(1SYSCtx.Output output_Cast)
+(1SYSCtx.requiresA  input_Cast  Castrillo)
+(1SYSCtx.requiresA  output_Cast Castrillo)
+
+(1SYSCtx.Input input_Riv)
+(1SYSCtx.Output output_Riv)
+(1SYSCtx.requiresA  input_Riv  Rivera_Japan)
+(1SYSCtx.requiresA  output_Riv Rivera_Japan)
+
+(1SYSCtx.Input input_Sun)
+(1SYSCtx.Output output_Sun)
+(1SYSCtx.requiresA  input_Sun  Sunset)
+(1SYSCtx.requiresA  output_Sun Sunset)
+
+(1SYSCtx.Input input_Cust)
+(1SYSCtx.Output output_Cust)
+(1SYSCtx.requiresA  input_Cust  CustomDrinks)
+(1SYSCtx.requiresA  output_Cust CustomDrinks)

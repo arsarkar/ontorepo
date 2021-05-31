@@ -1,0 +1,34 @@
+:Name "Level 2 Designed Systems - Human Resource Factor Properties"
+:Description "Human Resource Factor subset of Internal Factor Indicator Properties."
+
+:Use ../2DSCtx
+
+:Prop LabourProductivity
+:Inst MaterialRole
+:Inst IndicatorType
+:sup HumanResourceFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop LabourExpense
+:Inst MaterialRole
+:Inst IndicatorType
+:sup HumanResourceFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop RevenuePerEmployee
+:Inst MaterialRole
+:Inst IndicatorType
+:sup HumanResourceFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop ExpensesInTrainingOfPersonnelInTheTotalAmountOfExpenses
+:Inst MaterialRole
+:Inst IndicatorType
+:sup HumanResourceFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop NumberOfRationalAndCreativeIdeasPerEmployee
+:Inst MaterialRole
+:Inst IndicatorType
+:sup HumanResourceFactor
+:rem "Balanced ScoreCard example St. Gallen"

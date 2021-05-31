@@ -1,0 +1,362 @@
+:Name "Level 2 Reference Ontology - Systems"
+:Description "This file contains the definition of the properties related to Systems in level 2 of the reference ontology in the context of the FLEXINET Project"
+;;;LU added Market and Project at request of AINIA 12/03/2015
+;;;LU added imported ProductFacility and ServiceFacility when rationalising level 3 to a level providing context 2/07/2015
+;;;LU added Lifecycle, Infrastructure, Concept Development, ProductConfiguration derived from AINIA PSCOMS work 16/07/2015
+:Use 2DSCtx
+
+:Prop Collaboration
+:Inst Type
+:sup System
+:rem "Cooperative arrangement in which two or more parties (which may or may not have any previous relationship) work jointly towards a common goal."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Insurance 
+:Inst Type
+:sup System
+:rem "The act, system, or business of providing financial protection for property, life, health, etc, against specified contingencies, such as death, loss, or damage, and involving payment of regular premiums in return for a policy guaranteeing such protection."
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop Produce
+:Inst Type
+:sup System
+:rem "To bring (a thing) into existence from its raw materials or elements, or as the result of a process"
+:referenceRem "Oxford English Dictionary http://www.oed.com/view/Entry/151978?rskey=wjgvrK&result=2&isAdvanced=false#eid"
+
+:Prop Operate
+:Inst Type
+:sup System
+:rem "To run something, such as a piece of machinery, or a business."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Design
+:Inst Type
+:sup System
+:rem "Realization of a concept or idea into a configuration, drawing, model, mould, pattern, plan or specification (on which the actual or commercial production of an item is based) and which helps achieve the item's designated objectives."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop DataCollection
+:Inst Type
+:sup System
+:rem "The collection of data from surveys, or from independent or networked locations via data capture, data entry, or data logging."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Finance
+:Inst Type
+:sup System
+:rem “the management of a supply of money”
+:referenceRem  "Cambridge Online dictionary, http://dictionary.cambridge.org/dictionary/british/finance"
+
+:Prop Logistics
+:Inst Type
+:sup System
+:rem "The management of materials flow through an organization, from raw materials through to finished goods."
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop Software
+:Inst Type
+:sup System
+:rem "Organized information in the form of operating systems, utilities, programs, and applications that enable computers to work."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Dispose
+:Inst Type
+:sup System
+:rem "to arrange or settle (matters) by placing into correct or final condition ."
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop Supply
+:Inst Type
+:sup System
+:rem “the act or process of providing something that is needed”
+:referenceRem "Macmillan dictionary, http://www.macmillandictionary.com/dictionary/american/supply"
+
+:Prop Manage
+:Inst Type
+:sup System
+:rem "To control something, such as a project, team of people, or idea."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop NaturalSystems
+:Inst Type
+:sup System
+:rem "Natural Systems are living systems of all kinds, including the solar system and the Universe as examples."
+:referenceRem "Flexinet D3.1"
+
+:Prop Person
+:Inst Type
+:sup NaturalSystems
+:rem "an individual human being."
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop Organisation
+:Inst Type
+:sup System
+:disjointWith Facility
+:rem "A social unit of people that is structured and managed to meet a need or to pursue collective goals."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Facility
+:Inst Type
+:sup System
+:rem "Permanent, semi-permanent, or temporary commercial or industrial property such as a building, plant, or structure, built, established, or installed for the performance of one or more specific activities or functions."
+:referenceRem "http://www.businessdictionary.com/"
+(disjointSubProps Facility)
+
+:Prop ProductFacility
+:Inst Type
+:sup  Facility
+:name "Product Facility"
+:rem  "The means or equipment facilitating the performance of a product"
+:referenceRem "http://www.wordreference.com/definition/Facility (Adapted)" 
+
+:Prop ServiceFacility
+:Inst Type
+:sup  Facility
+:name "Service Facility"
+:rem  "The means or equipment facilitating the performance of a service"
+:referenceRem "http://www.wordreference.com/definition/Facility (Adapted)" 
+
+:Prop ReportingSystem
+:Inst Type
+:sup System
+:rem "Mechanism for organizing and/or monitoring the information of a particular interest in a organisation."
+:referenceRem "FLEXINET ¿? Definition TBR"
+
+:Prop Automation
+:Inst Type
+:sup System
+:rem "The use of methods for controlling industrial processes automatically, esp by electronically controlled systems, often reducing manpower."
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop ControlSystems
+:Inst Type
+:sup System
+:rem "Procedures designed and established to check, record, regulate, supervise, authenticate, and (if necessary) restrict, the access to an asset, resource, or system."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Virtualisation
+:Inst Type
+:sup System
+:rem "Virtualisation, in computing, refers to the act of creating a virtual (rather than actual) version of something, including but not limited to a virtual computer hardware platform, operating system (OS), storage device, or computer network resources."
+:referenceRem "http://en.wikipedia.org/wiki/Virtualization"
+
+:Prop Interface
+:Inst Type
+:sup System
+:rem "The point of interaction or communication between a computer and any other entity, such as a printer or human operator."
+:referenceRem "http://www.thefreedictionary.com/interface"
+
+:Prop Inspection
+:Inst Type
+:sup System
+:rem "Critical appraisal involving examination, measurement, testing, gauging, and comparison of materials or items."
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop ArchivingSystem
+:Inst Type
+:sup System
+:partitionedBy (listof DocumentManagementSystem DatabaseSystem DataStorageSystem)
+:rem "system to store (documents, data, etc) in an archive or other repository."
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop DocumentManagementSystem
+:Inst Type
+:sup ArchivingSystem
+:rem "A document management system (DMS) is a system (based on computer programs in the case of the management of digital documents) used to track and store documents."
+:referenceRem "http://en.wikipedia.org/wiki/Document_management_system"
+
+:Prop DatabaseSystem
+:Inst Type
+:sup ArchivingSystem
+:rem "A database is an organized collection of data. The data are typically organized to model aspects of reality in a way that supports processes requiring information. For example, modelling the availability of rooms in hotels in a way that supports finding a hotel with vacancies."
+:referenceRem "http://en.wikipedia.org"
+
+:Prop DataStorageSystem
+:Inst Type
+:sup ArchivingSystem 
+:rem "Technology consisting of computer components and recording media used to retain digital data."
+:referenceRem "http://en.wikipedia.org"
+
+:Prop Diagnosis
+:Inst Type
+:sup System
+:partitionedBy (listof FMEA RiskAnalysis Simulation RootCauseAnalysis)
+:rem "Thorough analysis of facts or problems in order to gain understanding and aid future planning."
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop FMEA
+:Inst Type
+:sup Diagnosis
+:rem "Failure Mode and Effects Analysis, FMEA, was one of the first systematic techniques for failure analysis."
+:referenceRem "http://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis"
+
+:Prop RiskAnalysis
+:Inst Type
+:sup Diagnosis
+:rem "Risk analysis is the science of risks and their probability and evaluation."
+:referenceRem "http://en.wikipedia.org"
+
+:Prop Simulation
+:Inst Type
+:sup Diagnosis
+:rem "Simulation is the imitation of the operation of a real-world process or system over time."
+:referenceRem "http://en.wikipedia.org/wiki/Simulation"
+
+:Prop RootCauseAnalysis
+:Inst Type
+:sup Diagnosis
+:rem "Root cause analysis (RCA) is a method of problem solving that tries to identify the root causes of faults or problems."
+:referenceRem "http://en.wikipedia.org/wiki/Root_cause_analysis"
+
+:Prop Analysis
+:Inst Type
+:sup System
+:partitionedBy (listof BooleanAnalysis StatisticalAnalysis)
+:rem "A systematic examination and evaluation of data or information, by breaking it into its component parts to uncover their interrelationships."
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop BooleanAnalysis
+:Inst Type
+:sup Analysis
+:rem "Analysis to detect deterministic dependencies between the items of a questionnaire or similar data-structures in observed response patterns"
+:referenceRem "http://en.wikipedia.org/wiki/Boolean_analysis"
+
+:Prop StatisticalAnalysis
+:Inst Type
+:sup Analysis
+:rem "Study of the collection, interpretation, presentation and organization of data."
+:referenceRem "http://en.wikipedia.org/wiki/Statistics"
+
+:Prop EvaluationScheme
+:Inst Type
+:sup Analysis
+:name "EvaluationScheme"
+:rem "A plan, design, or program for allowing a structured interpretation and giving of meaning to predicted or actual impacts of an Idea"
+
+
+:Prop Department
+:Inst Type
+:sup System
+:rem "Specialized functional area within an organization or a division, such as accounting, marketing, planning."
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop Inventory
+:Inst Type
+:sup System
+:rem "An itemized catalog or list of tangible goods or property, or the intangible attributes or qualities."
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop Transport
+:Inst Type
+:sup System
+:rem "the moving of goods or people from one place to another."
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop SustainmentProcess
+:Inst Type
+:sup System
+:partitionedBy (listof Training Monitor Maintenance)
+:rem "The process of maintenance"
+
+:Prop Training
+:Inst Type
+:sup SustainmentProcess
+:rem "Organized activity aimed at imparting information and/or instructions to improve the recipient's performance or to help him or her attain a required level of knowledge or skill."
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop Monitor
+:Inst Type
+:sup SustainmentProcess
+:rem "To check, supervise, watch, or keep track of. "
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop Maintenance
+:Inst Type
+:sup SustainmentProcess
+:partitionedBy (listof EquipmentMaintenance SoftwareMaintenance InfrastructureMaintenance)
+:rem "The actions taken to preserve the operation of devices, particularly of electromechanical equipment, to ensure that the devices can perform their intended functions when needed."
+:referenceRem "http://www.thefreedictionary.com/"
+;;;:rem "the process of keeping equipment in a useable condition or returning it to that condition when it fails. Maintenance involves either preventive maintenance, corrective maintenance, or modifications."
+
+:Prop EquipmentMaintenance
+:Inst Type
+:sup Maintenance
+:rem "Equipment maintenance is a broad term used to describe the various processes that are employed to keep equipment in proper working order."
+:referenceRem "http://www.wisegeek.com/what-is-equipment-maintenance.htm"
+
+:Prop SoftwareMaintenance
+:Inst Type
+:sup Maintenance
+:rem "Software maintenance in software engineering is the modification of a software product after delivery to correct faults, to improve performance or other attributes."
+:referenceRem "http://en.wikipedia.org"
+
+:Prop InfrastructureMaintenance
+:Inst Type
+:sup Maintenance
+:rem "Maintenance of the infrastructure of a facility"
+:referenceRem ""
+
+:Prop KnowledgeMaintenance
+:Inst Type
+:sup SoftwareMaintenance
+:rem ""
+:referenceRem ""
+
+:Prop 	Market					
+:Inst	Type
+:sup 	System
+:name	"Market"
+:rem	"An actual or nominal place where forces of demand and supply operate, and where buyers and sellers interact (directly or through intermediaries) to trade goods, services, or contracts or instruments, for money or barter."
+:referenceRem "http://www.businessdictionary.com/definition/market.html"
+
+:Prop 	Project					
+:Inst	Type
+:sup 	System
+:name	"Project"
+:rem	"Planned set of interrelated tasks to be executed over a fixed period and within certain cost and other limitations."
+:referenceRem "http://www.businessdictionary.com/definition/project.html"
+
+:Prop 	Lifecycle					
+:Inst	Type
+:sup 	System
+:name	"Project"
+:rem	"A course or evolution from a beginning, through development and productivity, to decay or ending."
+:referenceRem "Oxford English Dictionary. http://www.oed.com/view/Entry/108098?redirectedFrom=life+cycle#eid."
+
+:Prop Infrastructure
+:Inst Type
+:sup System
+:name "Infrastructure"
+:rem "The basic systems and services, such as transport and power supplies, that a country or organization uses in order to work effectively"
+:referenceRem "http://dictionary.cambridge.org"
+
+:Prop ConceptDevelopment
+:Inst Type
+:sup 1SYSCtx.System
+:name "ConceptDevelopment"
+:rem "Concept development is a set of activities that are carried out early in the systems engineering life cycle to collect and prioritize operational needs and challenges, develop alternative concepts to meet the needs, and select a preferred one as the basis for subsequent system or capability development and implementation."  
+:referenceRem "http://www.mitre.org/publications/systems-engineering-guide/se-lifecycle-building-blocks/concept-development"
+
+:Prop ProductConfiguration
+:Inst Type
+:sup 1SYSCtx.System
+:name "ProductConfiguration"
+:rem "An activity of customising a product to meet the needs of a particular customer."
+:referenceRem "https://en.wikipedia.org/wiki/Knowledge-based_configuration"
+
+:Prop ProductRealisation
+:Inst Type
+:sup  1SYSCtx.System
+:name "Product Realisation"
+:rem "Product realization is the term used to describe the work that the organization goes through to develop, manufacture, and deliver the finished goods or services."
+:referenceRem "http://www.simplyquality.org/2000%20Summary/req_7-0.html"
+
+:Prop Ideation
+:Inst Type
+:sup  1SYSCtx.System
+:name "Ideation"
+:rem "The creation of new ideas."
+:referenceRem "Oxford English Dictionary. http://www.oed.com/view/Entry/90972?redirectedFrom=ideation#eid"
+
+

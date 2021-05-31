@@ -1,0 +1,27 @@
+:Name "View_1SYS - Scenario Relations"
+:Description "Relations pertaining to the generic Scenario - specialised subset of Level 1 Systems"
+:Use 1SYSCtx
+
+:Rel defScenario
+:Inst BinaryRel
+:Inst RigidRel
+:Sig String Scenario
+:Args "String" "Scenario"
+:lex "?1 provides a definition for Scenario ?2" 
+
+:Rel inScenario
+:Inst BinaryRel
+:Inst RigidRel
+:Inst AsymmetricBR
+:Sig Scenario Scenario
+:Args "component Scenario" "compound Scenario"
+:lex "Scenario ?1 is contained within Scenario ?2" 
+:rem "component Scenario is IN compound Scenario. Given that component Scenario and compound Scenario are not identical, then it is not the case that compound is IN component."
+
+:Rel {hasReasonChosen/Rejected}
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Scenario String
+:Args "Scenario" "String"
+:lex "?1 has a reason ?2 for being chosen/rejected"
+:rem "A <sym>1SYSCtx.Scenario</sym> has a reason for being chosen or rejected."

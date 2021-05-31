@@ -1,0 +1,237 @@
+;;;LU modified to match UML v1.10 09/07/2015
+
+:Name "Level 5 Product Service LifeCycle Systems - Properties specific to Enterprise Indesit"
+
+:Use ../5INDCtx
+
+:Prop EnergySavingDryer
+:Inst Type
+:sup ProductionEquipment
+:rem "An advanced dryer enhanced by connectivity features."
+
+:Prop DryerCycleInformation
+:Inst Type
+:sup FunctionInformation
+:rem "Produced by the cycle of Dryer"
+
+:Prop EnergyConsumptionStatistics
+:Inst Type
+:sup Metric
+:rem "Energy consumption statistics for a drying cycle"
+
+:Prop TemperatureStatistics
+:Inst Type
+:sup Metric
+:rem "Temperature statistics for a drying cycle"
+
+:Prop FunctionInformation
+:Inst Type
+:sup  4PSPCtx.FunctionInformation
+:name "FunctionInformation"
+:rem  "Indesit specialisation of Level 4PSP <sym>4PSPCtx.FunctionInformation</sym>."
+
+:Prop Product
+:Inst Type
+:sup 4PSPCtx.ManufacturedProductService
+:rem "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ManufacturedProductService</sym>."
+
+:Prop Device
+:Inst Type
+:sup 4PSPCtx.ProductionEquipment
+:rem "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductionEquipment</sym>."
+
+:Prop Prototype
+:Inst Type
+:sup 4PSPCtx.ProductionEquipment
+:rem "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductionEquipment</sym>."
+
+:Prop Component
+:Inst Type
+:sup 4PSPCtx.ProductionEquipment
+:rem "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductionEquipment</sym>.  The Indesit term is a <sym>1SYSCtx.Basic</sym>."
+
+:Prop IntegratedChip
+:Inst Type
+:sup Component
+:rem "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductionEquipment</sym>."
+
+:Prop CommunicationProtocol
+:Inst Type
+:sup 4PSPCtx.CommunicationProtocol
+:rem  "Indesit specialisation of Level 4PSP <sym>4PSPCtx.CommunicationProtocol</sym>. This term was derived from an Indesit requirement."
+
+:Prop Cost
+:Inst Type
+:sup 4PSPCtx.ProductionCost
+:rem  "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductionCost</sym>."
+
+:Prop ComponentList
+:Inst Type
+:sup 4PSPCtx.ProductionPlan
+:rem  "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductionPlan</sym>."
+
+:Prop BillOfMaterials
+:Inst Type
+:sup 4PSPCtx.BOM
+:rem  "Indesit specialisation of Level 4PSP <sym>4PSPCtx.BOM</sym>."
+
+:Prop Idea
+:Inst Type
+:sup 4PSPCtx.Idea
+:rem  "Indesit specialisation of Level 4PSP <sym>4PSPCtx.Idea</sym>."
+
+:Prop Concept
+:Inst Type
+:sup 4PSPCtx.Concept
+:rem  "Indesit specialisation of Level 4PSP <sym>4PSPCtx.Concept</sym>."
+
+:Prop Feedback
+:Inst Type
+:sup 4PSPCtx.CustomerSatisfaction
+:rem  "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.CustomerSatisfaction</sym>."
+
+:Prop Country
+:Inst Type
+:sup 2DSCtx.Region
+:rem  "Indesit term for a specialisation of Level 2DS <sym>2DSCtx.Region</sym>."
+
+:Prop RiskFactor
+:Inst Type
+:sup 2DSCtx.RiskFactor
+:rem  "Indesit term for a specialisation of Level 2DS <sym>2DSCtx.RiskFactor</sym>."
+
+:Prop TechnologicalFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup 2DSCtx.TechnologicalFactor
+:rem  "Indesit term for a specialisation of Level 2DS <sym>2DSCtx.TechnologicalFactor</sym>."
+
+:Prop PoliticalFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup 2DSCtx.PoliticalFactor
+:rem  "Indesit term for a specialisation of Level 2DS <sym>2DSCtx.PoliticalFactor</sym>."
+
+:Prop LegalFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup 2DSCtx.LegalFactor
+:rem  "Indesit term for a specialisation of Level 2DS <sym>2DSCtx.LegalFactor</sym>."
+
+:Prop BusinessModel
+:Inst Type
+:sup 4PSPCtx.BusinessModel
+:rem  "Indesit specialisation of Level 4PSP <sym>4PSPCtx.BusinessModel</sym>."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Systems
+
+:Prop Factory
+:Inst Type
+:sup 4PSPCtx.ProductFacility
+:rem  "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductFacility</sym>."
+
+:Prop Service
+:Inst Type
+:sup ServiceProduct
+:rem "Indesit term for a specialisation of Level 2DS <sym>2DSCtx.ServiceProduct</sym>."
+
+:Prop Department
+:Inst Type
+:sup 4PSPCtx.ProductionDepartment
+:rem  "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductionDepartment</sym>."
+
+:Prop Ecosystem
+:Inst Type
+:sup Network
+:rem  "Indesit term for a specialisation of Level 2DS <sym>2DSCtx.Network</sym>."
+
+:Prop GPNetwork
+:Inst Type
+:sup 4PSPCtx.ProjectWorld
+:rem  "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProjectWorld</sym>."
+
+:Prop Supplier
+:Inst Type
+:sup 2DSCtx.Supplier
+:rem "Indesit term for a specialisation of Level 2DS<sym>2DSCtx.Supplier</sym>.  "
+
+:Prop Partner
+:Inst Type
+:sup 2DSCtx.Partner
+:rem "Indesit term for a specialisation of Level 2DS <sym>2DSCtx.Partner</sym>.  "
+
+:Prop Transport
+:Inst Type
+:sup 4PSPCtx.Transport
+:rem "Indesit specialisation of Level 4PSP <sym>4PSPCtx.Transport</sym>."
+
+:Prop SupplyChain
+:Inst Type
+:sup 2DSCtx.Network
+:rem "Indesit specialisation of Level 2DS <sym>2DSCtx.Network</sym>."
+
+:Prop Software
+:Inst Type
+:sup 4PSPCtx.ProductionSoftware
+:rem "Indesit specialisation of Level 4PSP <sym>4PSPCtx.ProductionSoftware</sym>."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Roles
+:Prop Function
+:Inst Type
+:sup 4PSPCtx.Functionality
+:rem  "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.Functionality</sym>."
+
+:Prop DryerCycle
+:Inst Type
+:sup Function
+:rem  "Set of parameters enabling drying of clothes set by end user."
+
+:Prop Asset
+:Inst Type
+:sup 4PSPCtx.ProductionAsset
+:rem  "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductionAsset</sym>."
+
+:Prop Requirement
+:Inst Type
+:sup 4PSPCtx.ProductionRequirements
+:rem  "Indesit term for a specialisation of Level 4PSP <sym>4PSPCtx.ProductionRequirements</sym>."
+
+:Prop Customer
+:Inst Type
+:sup 4PSPCtx.Customer
+:rem "Indesit specialisation of Level 4PSP <sym>4PSPCtx.Customer</sym>."
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Production equipment specific to Indesit. 
+;;;Information derived from section 3.3.3.1.2 Systems D6.2
+
+:Prop Dashboard
+:Inst Type
+:sup Component
+
+:Prop FrontPanel
+:Inst Type
+:sup Component
+
+:Prop Wiring
+:Inst Type
+:sup Component
+
+:Prop ElectronicBoard
+:Inst Type
+:sup Component
+
+:Prop DashboardTemplate
+:Inst Type
+:sup Component
+
+:Prop Knob
+:Inst Type
+:sup Component
+
+:Prop ElectronicComponent
+:Inst Type
+:sup Component

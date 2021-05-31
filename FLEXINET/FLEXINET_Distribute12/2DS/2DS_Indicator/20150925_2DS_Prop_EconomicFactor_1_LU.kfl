@@ -1,0 +1,159 @@
+:Name "Level 2 Designed Systems - Economic Factor Properties"
+:Description "Economic Factor subset of External Factor Indicator Properties."
+
+:Use ../2DSCtx
+
+:Prop IndustrialElectricityPrices
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop IndustrialGasPrices
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop DepositInterestRate
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Deposit interest rate is the rate paid by commercial or similar banks for demand, time, or savings deposits. The terms and conditions attached to these rates differ by country, however, limiting their comparability."
+:referenceRem "http://data.worldbank.org/indicator/FR.INR.DPST"
+
+:Prop LendingInterestRate
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Lending rate is the bank rate that usually meets the short- and medium-term financing needs of the private sector. This rate is normally differentiated according to creditworthiness of borrowers and objectives of financing. The terms and conditions attached to these rates differ by country, however, limiting their comparability."
+:referenceRem "http://data.worldbank.org/indicator/FR.INR.LEND"
+
+:Prop GDPGrowth
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Annual percentage growth rate of GDP at market prices based on constant local currency. Aggregates are based on constant 2005 U.S. dollars. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources."
+:referenceRem "http://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG"
+
+:Prop RealInterestRate
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Real interest rate is the lending interest rate adjusted for inflation as measured by the GDP deflator."
+:referenceRem "http://data.worldbank.org/indicator/FR.INR.RINR"
+
+:Prop ForeignDirectInvestment
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Foreign direct investment are the net inflows of investment to acquire a lasting management interest (10 percent or more of voting stock) in an enterprise operating in an economy other than that of the investor. It is the sum of equity capital, reinvestment of earnings, other long-term capital, and short-term capital as shown in the balance of payments. This series shows net inflows (new investment inflows less disinvestment) in the reporting economy from foreign investors. Data are in current U.S. dollars."
+:referenceRem "http://data.worldbank.org/indicator/BX.KLT.DINV.CD.WD"
+
+:Prop GDP
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in current U.S. dollars. Dollar figures for GDP are converted from domestic currencies using single year official exchange rates. For a few countries where the official exchange rate does not reflect the rate effectively applied to actual foreign exchange transactions, an alternative conversion factor is used."
+:referenceRem "http://data.worldbank.org/indicator/NY.GDP.MKTP.CD"
+
+:Prop HouseholdFinalConsumptionExpenditurePerCapitaGrowth
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Annual percentage growth of household final consumption expenditure per capita, which is calculated using household final consumption expenditure in constant 2005 prices and World Bank population estimates. Household final consumption expenditure (private consumption) is the market value of all goods and services, including durable products (such as cars, washing machines, and home computers), purchased by households. It excludes purchases of dwellings but includes imputed rent for owner-occupied dwellings. It also includes payments and fees to governments to obtain permits and licenses. Here, household consumption expenditure includes the expenditures of nonprofit institutions serving households, even when reported separately by the country."
+:referenceRem "http://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD.ZG"
+
+:Prop CostToExport
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Cost measures the fees levied on a 20-foot container in U.S. dollars. All the fees associated with completing the procedures to export or import the goods are included. These include costs for documents, administrative fees for customs clearance and technical control, customs broker fees, terminal handling charges and inland transport. The cost measure does not include tariffs or trade taxes. Only official costs are recorded. Several assumptions are made for the business surveyed: Has 60 or more employees; Is located in the country's most populous city; Is a private, limited liability company. It does not operate within an export processing zone or an industrial estate with special export or import privileges; Is domestically owned with no foreign ownership; Exports more than 10% of its sales. Assumptions about the traded goods: The traded product travels in a dry-cargo, 20-foot, full container load. The product: Is not hazardous nor does it include military items; Does not require refrigeration or any other special environment; Does not require any special phytosanitary or environmental safety standards other than accepted international standards."
+:referenceRem "http://data.worldbank.org/indicator/IC.EXP.COST.CD"
+
+:Prop CostToImport
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Cost measures the fees levied on a 20-foot container in U.S. dollars. All the fees associated with completing the procedures to export or import the goods are included. These include costs for documents, administrative fees for customs clearance and technical control, customs broker fees, terminal handling charges and inland transport. The cost measure does not include tariffs or trade taxes. Only official costs are recorded."
+:referenceRem "http://data.worldbank.org/indicator/IC.IMP.COST.CD"
+
+:Prop PumpPriceForDieselFuel
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Fuel prices refer to the pump prices of the most widely sold grade of diesel fuel. Prices have been converted from the local currency to U.S. dollars."
+:referenceRem "http://data.worldbank.org/indicator/EP.PMP.DESL.CD"
+
+:Prop PumpPriceForGasoline
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Fuel prices refer to the pump prices of the most widely sold grade of gasoline. Prices have been converted from the local currency to U.S. dollars."
+:referenceRem "http://data.worldbank.org/indicator/EP.PMP.SGAS.CD"
+
+:Prop ConsumerPriceIndex
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Consumer price index reflects changes in the cost to the average consumer of acquiring a basket of goods and services that may be fixed or changed at specified intervals, such as yearly. The Laspeyres formula is generally used."
+:referenceRem "http://data.worldbank.org/indicator/FP.CPI.TOTL"
+
+:Prop ExportOfGoodsAndServices
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Exports of goods and services represent the value of all goods and other market services provided to the rest of the world. They include the value of merchandise, freight, insurance, transport, travel, royalties, license fees, and other services, such as communication, construction, financial, information, business, personal, and government services. They exclude compensation of employees and investment income (formerly called factor services) and transfer payments."
+:referenceRem "http://data.worldbank.org/indicator/NE.EXP.GNFS.ZS"
+
+:Prop ImportOfGoodsAndServices
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Imports of goods and services represent the value of all goods and other market services received from the rest of the world. They include the value of merchandise, freight, insurance, transport, travel, royalties, license fees, and other services, such as communication, construction, financial, information, business, personal, and government services. They exclude compensation of employees and investment income (formerly called factor services) and transfer payments."
+:referenceRem "http://data.worldbank.org/indicator/NE.IMP.GNFS.ZS"
+
+:Prop EconomicSanctions
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop IndustryValueAdded
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Industry corresponds to ISIC divisions 10-45 and includes manufacturing (ISIC divisions 15-37). It comprises value added in mining, manufacturing (also reported as a separate subgroup), construction, electricity, water, and gas. Value added is the net output of a sector after adding up all outputs and subtracting intermediate inputs. It is calculated without making deductions for depreciation of fabricated assets or depletion and degradation of natural resources. The origin of value added is determined by the International Standard Industrial Classification (ISIC), revision 3. Note: For VAB countries, gross value added at factor cost is used as the denominator."
+:referenceRem "http://data.worldbank.org/indicator/NV.IND.TOTL.ZS"
+
+:Prop ServicesValueAdded
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Services correspond to ISIC divisions 50-99 and they include value added in wholesale and retail trade (including hotels and restaurants), transport, and government, financial, professional, and personal services such as education, health care, and real estate services. Also included are imputed bank service charges, import duties, and any statistical discrepancies noted by national compilers as well as discrepancies arising from rescaling. Value added is the net output of a sector after adding up all outputs and subtracting intermediate inputs. It is calculated without making deductions for depreciation of fabricated assets or depletion and degradation of natural resources. The industrial origin of value added is determined by the International Standard Industrial Classification (ISIC), revision 3. Note: For VAB countries, gross value added at factor cost is used as the denominator."
+:referenceRem "http://data.worldbank.org/indicator/NV.SRV.TETC.ZS"
+
+:Prop ListedDomesticCompanies
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Listed domestic companies are the domestically incorporated companies listed on the country's stock exchanges at the end of the year. This indicator does not include investment companies, mutual funds, or other collective investment vehicles."
+:referenceRem "http://data.worldbank.org/indicator/CM.MKT.LDOM.NO"
+
+:Prop InflationRate
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop CurrencyRisk
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Balanced ScoreCard example St. Gallen"
+
+:Prop Recession
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EconomicFactor
+:rem "Balanced ScoreCard example St. Gallen"

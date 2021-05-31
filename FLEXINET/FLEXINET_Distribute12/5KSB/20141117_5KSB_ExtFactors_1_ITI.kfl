@@ -1,0 +1,91 @@
+:Name " Level 5 Reference Ontology - Pump Industry"
+:Description "This file contains the definitions of the External factors influencing Pump Industry in level 5 within the Flexinet Project reference ontology"
+
+:Use 5KSBCtx
+
+:Prop 5KSB_ExternalFactors
+:Inst Type
+:sup EnvironFactor
+:rem "External Factors influencing KSB projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_LocalRegulations
+:Inst Type
+:sup LegalFactor
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_TechnologyTrends
+:Inst Type
+:sup TechnologicalFactor
+:rem "Trends influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Standards
+:Inst Type
+:sup LegalFactor
+:rem "Standards influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_TerroristAttack
+:Inst Type
+:sup PoliticalFactor
+:rem "TerroristAttack influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Embargo
+:Inst Type
+:sup PoliticalFactor
+:rem "Embargo influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_LabourConflicts
+:Inst Type
+:sup SocialFactor
+:rem "Labour Conflicts influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_EconomicSanctions
+:Inst Type
+:sup EconomicFactor
+:rem "Economic Sanctions Factor influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Recession
+:Inst Type
+:sup EconomicFactor
+:rem "Recession Factor influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_InflationRisk
+:Inst Type
+:sup EconomicFactor
+:rem "InflationRisk Factor influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_CurrencyRisk
+:Inst Type
+:sup EconomicFactor
+:rem "Currency Risk Factor influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_IndustrialDispute
+:Inst Type
+:sup SocialFactor
+:rem "Industrial Dispute Factor influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Strike
+:Inst Type
+:sup SocialFactor
+:rem "Strikes influencing Factor KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Taxes
+:Inst Type
+:sup LegalFactor
+:rem "Taxes influencing KSB Projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+
+

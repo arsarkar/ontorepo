@@ -1,0 +1,85 @@
+
+;;Possible status for an idea
+
+(4PSPCtx.Accepted accepted)
+
+(4PSPCtx.Approved approved)
+
+(4PSPCtx.NotApproved notApproved)
+
+;;;Idea manager
+
+;;;Ideas
+
+(4PSPCtx.ProductIdea DrinksForVeggies)
+
+(4PSPCtx.BusinessIdea EnterHalalMarket)
+
+;;Concepts
+
+(4PSPCtx.ProductServiceConcept FlavouredDrink)
+
+(4PSPCtx.ProductServiceConcept VegetarianBeer)
+
+(4PSPCtx.ProductServiceConcept NewMarketEntry)
+
+;;;a rejected idea
+
+(4PSPCtx.ideaHasStatus EnterHalalMarket notApproved)
+
+(4PSPCtx.ideaHasDescription EnterHalalMarket "Considering the Muslim market")
+
+(4PSPCtx.ideaHasAssociatedKeyword EnterHalalMarket (keywordTypeAndValue "notApproved" "Market Conditions unfavourable"))
+
+;; an approved Idea
+
+;;the initial status of the idea is accepted
+
+(4PSPCtx.ideaHasStatus DrinksForVeggies accepted)
+
+(4PSPCtx.ideaHasDescription DrinksForVeggies "drinks that don't contain isinglass, gelatin, glycerin or casein")
+
+(4PSPCtx.ideaHasAssociatedKeyword DrinksForVeggies (keywordTypeAndValue  "Vegetarian" "Vegetarian Beer"))
+
+(4PSPCtx.ideaHasAssociatedKeyword DrinksForVeggies (keywordTypeAndValue  "Vegan" "Vegetarian Beer"))
+
+(4PSPCtx.ideaHasAssociatedKeyword DrinksForVeggies (keywordTypeAndValue "Alcoholic drink" "Vegetarian Beer"))
+
+;; if the status of an idea is "approved" a concept is associated
+(4PSPCtx.conceptHasAssociatedIdea FlavouredDrink DrinksForVeggies)
+
+(4PSPCtx.conceptHasAssociatedIdea VegetarianBeer DrinksForVeggies)
+
+(4PSPCtx.conceptHasStatus VegetarianBeer approved)
+
+
+;;;PSC  - CREATING THE PROJECT AND ASSOCIATING THE CONCEPT SHOULD BE DONE IN IDEA MANAGER
+
+(2DSCtx.Project VeggieProject)
+
+(2DSCtx.projectContainsConcept VeggieProject VegetarianBeer)
+
+;;;PSC STARTS HERE
+
+(ProjectWorld DrinksWorld) ;- ALTHOUGH PROJECTWORLD SHOULD BE PRE-SPECIFIED
+
+(systemContainsRole DrinksWorld VegetarianBeerProduct)
+
+(4PSPCtx.ManufacturedProductService VegetarianBeerProduct)
+
+(4PSPCtx.productHasAssociatedConcept VegetarianBeerProduct VegetarianBeer)
+
+
+;;; AT END OF PSC
+(4PSPCtx.conceptHasPilotProductionStatus VegetarianBeer approved)
+(4PSPCtx.conceptHasGPNConfigurationStatus  VegetarianBeer approved)
+(4PSPCtx.conceptHasBusinessModelScenarioStatus  VegetarianBeer approved)
+(2DSCtx.projectContainsScenario VeggieProject NamedScenario)
+(4PSPCtx.GPNScenario NamedScenario) ;should be pre-specified in PNES applicaton - namedScenario is an example name substitute in what is appropriate
+(2DSCtx.projectContainsScenario VeggieProject NamedScenario) ;should be pre-specified in PNES applicaton
+(4PSPCtx.BusinessModelScenario NamedBusinessModelScenario) ;should be pre-specified in BMAA - NamedBusinessModelScenario is an example name substitute in what is appropriate
+(2DSCtx.projecthasChosenScenario VeggieProject NamedScenario)
+(4PSPCtx.businessModelScenarioHasChosenGPNScenario NamedBusinessModelScenario NamedScenario)
+
+
+

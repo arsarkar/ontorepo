@@ -1,0 +1,79 @@
+:Name " Level 4 Reference Ontology - PSP Roles"
+:Description "This file contains the definitions of PSP roles in level 4 within the FLEXINET Project reference ontology"
+;;;LU added  imported  Functionality, Production Asset, ProductionRequirements, Customer, Manufacturer, Manufactured Product when rationalising Level 3 to a level providing context 2/07/2015
+
+:Use 4PSPCtx
+
+:Prop DesignEngineer
+:Inst ActorType
+:sup Actor
+:rem "The term it refers engineers who develop new products or processes with a primary emphasis on functional utility."
+:referenceRem "http://en.wikipedia.org/wiki/Design_engineer"
+
+:Prop ProductionEngineer
+:Inst ActorType
+:sup Actor 
+:rem "Person dedicate to the design and application of manufacturing techniques to produce a specific product."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop Producer
+:Inst ActorType
+:sup Actor
+:rem "a person or business enterprise that generates goods or services for sale "
+:referenceRem "http://www.collinsdictionary.com/"
+
+:Prop ServiceEngineer
+:Inst ActorType
+:sup Actor 
+:rem "someone who maintains and repairs equipment"
+:referenceRem "http://www.collinsdictionary.com/dictionary/english/service-engineer"
+
+:Prop 	Ingredient
+:Inst	Type
+:sup	Component
+:name	"Ingredient"
+:rem	"A material or substance which you use to make something."
+:referenceRem "http://www.dictionarycentral.com/definition/ingredient.html"
+
+:Prop 	DiscreteComponent
+:Inst	Type
+:sup	Component
+:name	"Discrete component"
+:rem	"A <sym>2DSCtx.Component</sym> which is individually recognizable and countable, distinct and separate from the similar items." 
+:referenceRem "http://www.businessdictionary.com/definition/discrete.html"
+
+:Prop Manufacturer  
+:Inst ActorType
+:sup Actor
+:rem "Entity that makes a good through a process involving raw materials, components, or assemblies, usually on a large scale with different operations divided among different workers."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop ManufacturedProduct
+:Inst Type
+:sup PhysicalProduct 
+:rem "A <sym>2DSCtx.Product</sym> that exploits/consumes a raw material."
+
+:Prop ManufacturedProductService
+:Inst Type
+:sup  ManufacturedProduct
+:rem "A specialisation of <sym>ProductService</sym> within the Level 4 Product Service Production domain."
+
+:Prop Functionality
+:Inst Type
+:sup 2DSCtx.Functionality
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Functionality</sym>."
+
+:Prop ProductionAsset
+:Inst Type
+:sup 2DSCtx.Asset
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Asset</sym>."
+
+:Prop ProductionRequirements
+:Inst Type
+:sup 2DSCtx.Requirements
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Requirements</sym>."
+
+:Prop Customer
+:Inst Type
+:sup 2DSCtx.Customer
+:rem "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Customer</sym>."

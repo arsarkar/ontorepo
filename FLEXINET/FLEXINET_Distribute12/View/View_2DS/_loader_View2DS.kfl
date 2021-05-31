@@ -1,0 +1,6 @@
+;; Loader file for Scenario View_2DS
+
+:Load "20141106_View_2DS_Prop_1_LU.kfl"
+:Load "20141106_View_2DS_Rel_1_LU.kfl"
+:Load "20140929_View_2DS_Axiom_1_LU.kfl"
+:Load "20141210_View_2DS_Rule_1_LU.kfl"

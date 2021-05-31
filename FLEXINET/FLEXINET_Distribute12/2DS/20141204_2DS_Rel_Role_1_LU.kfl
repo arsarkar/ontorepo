@@ -1,0 +1,128 @@
+:Name "Level 2 Designed Systems - Role Relations"
+:Description "This file contains the relations concerned with properties which are subproperties of Role in the Designed Systems level of the FLEXINET Project reference ontology"
+
+:Use 2DSCtx
+
+;;;LU added Gateway and Start/End relations defined by ITI 16/06/2015
+;;;LU added Product relations 13/07/2015
+;;;LU added Flow relations 108/08/2015
+
+:Rel playsRoleQualifier
+:Inst TernaryRel
+:Inst NonRigidRel
+:supRel playsRole
+:Sig Information Qualifier Scenario
+:Args "Information" "Qualifier" "Scenario"
+:lex "Information entity ?1 plays Qualifier Role ?2 in Scenario ?3" 
+:rem "A Qualifier is played by a <sym>1SYSCtx.Entity</sym> which is a subtype of <sym>1SYSCtx.Information</sym>."
+
+:Rel playsRoleActor
+:Inst TernaryRel
+:Inst NonRigidRel
+:supRel playsRole
+:Sig System Actor Scenario
+:Args "System" "Actor" "Scenario"
+:lex "System entity ?1 plays Actor Role ?2 in Scenario ?3" 
+:rem "An Actor is played by a <sym>1SYSCtx.Basic</sym> which is a subtype of <sym>1SYSCtx.System</sym>."
+
+:Rel defProject
+:Inst BinaryRel
+:Inst RigidRel
+:Sig String Project
+:Args "String" "Project"
+:lex "?1 provides a definition for Project ?2" 
+
+:Rel requiresInputOfType
+:Inst BinaryRel
+:Inst NonRigidRel
+:Sig ServiceProduct Type
+:Args "Service Product" "Type"
+:lex "Service ?1 requires input of type ?2" 
+;;;could instantiate this as an intensional relation?
+
+:Rel flow
+:Inst TernaryRel
+:Inst RigidRel
+:Sig Role Role Scenario
+:Args "Source" "Target" "Scenario"
+:lex "Flow from Source ?1 to Target ?2 in Scenario ?3" 
+:rem "A Flow occurs from an <sym>1SYSCtx.Input</sym> to an <sym>1SYSCtx.Output</sym> or from an <sym>1SYSCtx.Output</sym> to an <sym>1SYSCtx.Input</sym> within a given <sym>1SYSCtx.Scenario</sym>."
+
+;;;=================================================
+;;;Relations for gateways
+
+:Rel gatewayContainsRole
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Gateway Role 
+:Args "Gateway" "Role" 
+:lex "Gateway ?1 contains Role ?1" 
+
+:Rel InputHasCondition
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Input Condition
+:Args "Input" "Condition" 
+:lex " Input ?1 Has a Value-Condition (Boolean) ?2" 
+
+:Rel OutputHasCondition
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Output Condition
+:Args "Output" "Condition" 
+:lex " Output ?1 Has a Value-Condition (Boolean) ?2" 
+
+;;;=================================================
+;; Relations for Events. ITI Additions, March 2015  
+;:Rel eventContainsRole
+;:Inst BinaryRel
+;:Inst RigidRel
+;:Sig StartEvent Role 
+;:Args "StartEvent" "Role" 
+;:lex "Start Event ?1 contains Role ?1" 
+
+:Rel startEventRel
+:Inst BinaryRel
+:Inst RigidRel
+:Sig StartEvent Output
+:Args "StartEvent" "Output" 
+:lex "Start Event ?1 has an output role ?2" 
+
+:Rel endEventRel
+:Inst BinaryRel
+:Inst RigidRel
+:Sig EndEvent Input
+:Args "EndEvent" "Input" 
+:lex "End Event ?1 has an input role ?2"
+
+;;;=================================================
+;;; Relations for Product. 
+;;; ManufacturedProduct relations at level 4 
+:Rel pContainsService
+:Inst BinaryRel
+:Inst RigidRel
+:supRel roleContainsRole
+:Sig ProductService ServiceProduct
+:Args "Product Service" "Service" 
+:lex "Product Service ?1 contains a Service ?2"
+:rem "A <sym>2DSCtx.ProductService</sym> contains at least one <sym>2DSCtx.ServiceProduct</sym>."
+(totalArg pContainsService 1)
+
+:Rel spContainsProduct
+:Inst BinaryRel
+:Inst RigidRel
+:supRel roleContainsRole
+:Sig ServiceUsingProduct PhysicalProduct
+:Args "ServiceUsingProduct" "PhysicalProduct" 
+:lex "Service ?1 contains a Product ?2"
+:rem "A <sym>2DSCtx.ServiceUsingProduct</sym> contains at least one <sym>2DSCtx.PhysicalProduct</sym>."
+(totalArg spContainsProduct 1)
+
+:Rel hasAPrototype
+:Inst BinaryRel
+:Inst RigidRel
+:Sig PhysicalProduct Prototype
+:Args "PhysicalProduct" "Prototype" 
+:lex "PhysicalProduct ?1 has a Prototype ?2"
+:rem "A <sym>2DSCtx.PhysicalProduct</sym> has a <sym>2DSCtx.Prototype</sym>."
+

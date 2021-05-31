@@ -1,0 +1,149 @@
+:Name "Level 2 Designed Systems - Metric Properties"
+:Description "Measures to be used within FLEXINET"
+;;;LU added MassQuantity and EnergyQuantity and related functions at request of AINIA 13/03/2015
+;;;LU extended HMLType with more metaproperty instances 20/01/2016 in response to request by CU
+
+
+:Use ../2DSCtx
+
+;;;More Metrics to be added in line with Business model
+
+:Prop Metric
+:Inst Type
+:Inst NonLogicalFunctor
+:sup Information
+:sup MLO.AbstractEntity
+:name "Metric"
+:rem  "A system or standard of measurement; a criterion or set of criteria stated in quantifiable terms"
+:referenceRem "Oxford English Dictionary. http://www.oed.com"
+(disjointSubProps Metric)
+
+:Prop QuantitativeMeasure
+:Inst Type
+:Inst NonLogicalFunctor
+:sup Metric
+:sup Quantity
+:rem "a measure of ...amount or size."
+:referenceRem "Collins English Dictionary. http://www.collinsdictionary.com/dictionary/english/quantitative."
+
+:Prop QualitativeMeasure
+:Inst Type
+:sup Metric
+:rem "a measure relating to ...quality of something rather than its quantity."
+:referenceRem "Oxford Dictionaries Online. http://www.oxforddictionaries.com/us/definition/american_english/qualitative."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Quantitative measures
+
+:Prop Distance
+:Inst Type
+:sup  QuantitativeMeasure
+:Inst NonLogicalFunctor
+:name "Distance"
+:rem  "The amount of space between two things"
+:referenceRem "Oxford Dictionary. http://www.oxforddictionaries.com/us/definition/american_english/distance"
+
+:Prop Cost
+:Inst Type
+:Inst NonLogicalFunctor
+:sup  QuantitativeMeasure
+:name "Cost"
+:rem  "It is usually a monetary valuation of effort, material, resources, time and utilities consumed, risks incurred, and opportunity forgone in production and delivery of a product or service."
+:referenceRem "http://www.businessdictionary.com/"
+
+:Prop DurationMetric
+:Inst Type
+:Inst NonLogicalFunctor
+:sup  QuantitativeMeasure
+:sup MLO.Duration
+:name "Duration"
+:rem  " the continuance or length of time."
+:referenceRem "http://www.oed.com/view/Entry/58626?redirectedFrom=duration#eid"
+
+:Prop Percent
+:Inst Type
+:Inst NonLogicalFunctor
+:sup QuantitativeMeasure
+:rem "One part in every hundred."
+:referenceRem "Oxford Dictionaries Online. http://www.oxforddictionaries.com/us/definition/american_english/percent."
+
+:Prop MassQuantity
+:Inst Type
+:Inst NonLogicalFunctor
+:sup QuantitativeMeasure
+:rem "The amount of matter in any solid object or in any volume of liquid or gas."
+:referenceRem "http://dictionary.cambridge.org/dictionary/british/mass"
+
+:Prop EnergyQuantity
+:Inst Type
+:Inst NonLogicalFunctor
+:sup QuantitativeMeasure
+:rem "A measure of <sym> 1SYSCtx.Energy</sym>."
+:referenceRem "http://dictionary.cambridge.org/dictionary/british/mass"
+
+:Prop FuzzyMeasure
+:Inst Type
+:Inst NonLogicalFunctor
+:sup QuantitativeMeasure
+:rem "A fuzzy measure consists of a fuzzy set plus the fuzzy weightings applied."
+:referenceRem "FLEXINET D2.1"
+
+:Prop FuzzyError
+:Inst Type
+:Inst NonLogicalFunctor
+:sup QuantitativeMeasure
+:rem "A Fuzzy Error is applied to the value of the <sym>2DSCtx.Indicator</sym> to produce a <sym> 2DSCtx.FuzzyMeasure</sym>."
+
+:Prop IntervalScale
+:Inst Type
+:Inst NonLogicalFunctor
+:sup QuantitativeMeasure
+:rem "A scale of measurement of data according to which the differences between values can be quantified in absolute but not relative terms and for which any zero is merely arbitrary."
+:referenceRem "http://www.collinsdictionary.com/dictionary/english/interval-scale"
+
+;;;Time will be implemented using Highfleet builtin functions.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;Qualitative measures
+
+;;;N.B. The values of qualitatitive measures are modelled as classes not instances. Facts about instances 
+;;;form part of a knowledge base and should not appear in the ontology.
+;;;The use of HMLType in a signature restricts the arg values to a list of seven values Very High, Fairly High, High, Medium and Fairly Low, Low Very Low. 
+;;;There appears to be no way to create a restricted list.
+;;;"coveredBy" relates to properties not insts as in insts of facts, consts or metaproperties (as below).
+
+:Prop HMLType
+:Inst MetaProperty
+:sup Type
+:name "Measure of Very Low to Very High"
+
+:Prop VeryHigh
+:Inst HMLType
+:sup QualitativeMeasure 
+
+:Prop High
+:Inst HMLType
+:sup QualitativeMeasure 
+
+:Prop FairlyHigh
+:Inst HMLType
+:sup QualitativeMeasure 
+
+:Prop Medium
+:Inst HMLType
+:sup QualitativeMeasure
+
+:Prop FairlyLow
+:Inst HMLType
+:sup QualitativeMeasure
+
+:Prop Low
+:Inst HMLType
+:sup QualitativeMeasure
+
+:Prop VeryLow
+:Inst HMLType
+:sup QualitativeMeasure
+
+
+

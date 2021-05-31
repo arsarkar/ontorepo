@@ -1,0 +1,128 @@
+:Name "Level 2 Designed Systems - Indicator Properties"
+:Description "This file contains the definition of Indicators which occur at the Designed Systems level of the FLEXINET Project reference ontology but is placed within a separate folder called 2DS_Indicator as they form a specialised subset of level 2."
+
+;;;;Will be updated further in line with Business model.
+
+:Use ../2DSCtx
+
+;;;metaproperty - needed to refer to types of Indicator in Business Policy threshold value relations
+:Prop IndicatorType
+:Inst MetaProperty
+:sup MaterialRole
+:name "Indicator Type"
+:metaPropFor Indicator
+
+:Prop Indicator
+:Inst MaterialRole
+:Inst IndicatorType
+:sup Information
+:sup MLO.Object
+:rem "Something that influences actors in global production networks."
+:referenceRem "FLEXINET D3.3"
+
+;;; declaring Indicator as a ULO MaterialRole in order to use the ULO builtin HoldsIn Relation
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:Prop InternalFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup Indicator
+:rem "Inner strengths and weaknesses that an organization exhibits. Internal factors can strongly affect how well a company meets its objectives, and they might be seen as strengths if they have a favorable impact on a business, but as weaknesses if they have a deleterious effect on the business."
+:referenceRem "http://www.businessdictionary.com"
+
+:Prop HumanResourceFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup InternalFactor
+:rem "An influence resulting from the resource that resides in the knowledge, skills, and motivation of people."
+:referenceRem "www.businessdictionary.com/definition/human-resource.html (modified)"
+(disjointSubProps HumanResourceFactor)
+
+:Prop ResearchFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup InternalFactor
+:rem "An influence resulting from the systematic investigation into and study of materials and sources in order to establish facts and reach new conclusions"
+:referenceRem "http://www.oxforddictionaries.com/us/definition/american_english/research (modified)"
+(disjointSubProps ResearchFactor)
+
+:Prop PurchasingFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup InternalFactor
+:rem "An influence resulting from the activity of acquiring goods or services to accomplish the goals of an organization."
+:referenceRem "http://www.businessdictionary.com/definition/purchasing.html (modified)"
+(disjointSubProps PurchasingFactor)
+
+:Prop SalesFactor
+:Inst MaterialRole
+:sup InternalFactor
+:rem "An influence resulting from the activity or business of selling products or services."
+:referenceRem "http://www.businessdictionary.com/definition/sales.html (modified)"
+(disjointSubProps SalesFactor)
+
+:Prop ResourceFactor
+:Inst MaterialRole
+:sup InternalFactor
+:rem "An economic or productive factor required to accomplish an activity"
+:referenceRem "http://www.businessdictionary.com/definition/resource.html"
+(disjointSubProps ResourceFactor)
+
+:Prop CapitalProductivity
+:Inst MaterialRole
+:sup InternalFactor
+:referenceRem "Balanced ScoreCard example St. Gallen"
+
+:Prop EmissionOfHazardousSubstancesTotheEnvironment
+:Inst MaterialRole
+:sup InternalFactor
+:referenceRem "Balanced ScoreCard example St. Gallen"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+:Prop ExternalFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup Indicator
+:rem "External Factor is a general geopolitical, environmental or economic issue which can affect a GPN, but is outside its control."
+:referenceRem "FLEXINET D3.3"
+
+:Prop PoliticalFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ExternalFactor
+:rem "Political factors identify to what degree a government intervenes in the economy. Also, political factors determine health, education and infrastructure of a nation to a certain extent."
+:referenceRem "2014 FLEXINET D2.1"
+(disjointSubProps PoliticalFactor)
+
+:Prop SocialFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ExternalFactor
+:rem "Social factors determine the cultural dimension which includes aspects like health consciousness, population growth rate, age distribution (demographics), career attitudes and safety. They are influencing a company's products and services and particularly how a company operates."
+:referenceRem "2014 FLEXINET D2.1"
+(disjointSubProps SocialFactor)
+
+:Prop EnvironmentalFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ExternalFactor
+:rem "Environmental factors are concerned with the general environment like weather, climate and climate change."
+:referenceRem "2014 FLEXINET D2.1"
+(disjointSubProps EnvironmentalFactor)
+
+:Prop EconomicFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ExternalFactor
+:rem "Economic factors have a major impact on a company's business operations and decision-making."
+:referenceRem "2014 FLEXINET D2.1"
+(disjointSubProps EconomicFactor)
+
+:Prop TechnologicalFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup ExternalFactor
+:rem "Technological factors are related to R&D activities, automation, technology incentives."
+:referenceRem "2014 FLEXINET D2.1"
+(disjointSubProps TechnologicalFactor)
+

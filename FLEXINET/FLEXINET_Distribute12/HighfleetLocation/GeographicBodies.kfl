@@ -1,0 +1,111 @@
+; Copyright 2008 HIGHFLEET, Inc. All rights reserved.
+
+:Name "Geographic Bodies"
+:Description "A simple theory of geographic bodies"
+:Use MLO
+
+; author: kohl
+; date: 1-29-2008
+; depends on: Region.kfl
+
+; This theory defines common geographic classes like Continent, Country, City, bodies of water, Island, Mountain, and Desert.
+; Provides relations relating a Region to its capital and provinces.
+
+:Prop Continent
+:Inst Type
+:sup  Region
+:name "Continent"
+:lex  "?1 is a continent"
+:rem "One of several large landmasses on Earth, generally identified by convention rather than any strict criteria"
+
+:Prop Country
+:Inst Type
+:sup  Region 
+:name "Country"
+:lex  "?1 is a country"
+
+:Prop City
+:Inst Type
+:sup  Region
+:name "City"
+:lex  "?1 is a city"
+:disjointWith Continent
+
+	:Rel  hasCapital
+	:Inst BinaryRel
+	:Sig  Region Region
+	:Args "Region" "Capital"
+	:name "has capital"
+	:lex  "?2 is the capital of ?1"
+	:functionalArg 1
+	
+:Prop Waterbody
+:Inst Type
+:sup  Region
+:name "Waterbody"
+:lex  "?1 is a waterbody"
+:disjointWith Continent
+:disjointWith Country
+:disjointWith City
+
+	:Prop Ocean
+	:Inst Type
+	:sup  Waterbody
+	:name "Ocean"
+	:lex  "?1 is an ocean"
+	
+	:Prop River
+	:Inst Type
+	:sup  Waterbody
+	:name "River"
+	:lex  "?1 is a river"
+	
+	:Prop Lake
+	:Inst Type
+	:sup  Waterbody
+	:name "Lake"
+	:lex  "?1 is a lake"
+	
+	:Prop Sea
+	:Inst Type
+	:sup  Waterbody
+	:name "Sea"
+	:lex  "?1 is a sea"
+
+:Prop Island
+:Inst Type
+:sup  Region
+:name "Island"
+:lex  "?1 is an island"
+:disjointWith Continent
+:disjointWith Country
+:disjointWith City
+:disjointWith Waterbody
+
+
+:Prop Mountain
+:Inst Type
+:sup  Region
+:name "Mountain"
+:lex  "?1 is a mountain"
+:disjointWith Continent
+:disjointWith Country
+:disjointWith City
+:disjointWith Waterbody
+
+:Prop Desert
+:Inst Type
+:sup  Region
+:name "Desert"
+:lex  "?1 is a desert"
+:disjointWith Continent
+:disjointWith Country
+:disjointWith City
+:disjointWith Waterbody
+
+:Rel  provinceOf
+:Inst BinaryRel
+:Sig  Region Region
+:name "province of"
+:lex  "?1 is a province of ?2"
+:supRel locatedIn

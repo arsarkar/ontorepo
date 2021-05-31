@@ -1,0 +1,47 @@
+:Name "Level 2 Designed Systems - Environmental Factor Properties"
+:Description "Environmental Factor subset of External Factor Indicator Properties."
+
+:Use ../2DSCtx
+
+:Prop CO2Emissions
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EnvironmentalFactor
+:rem "Carbon dioxide emissions are those stemming from the burning of fossil fuels and the manufacture of cement. They include carbon dioxide produced during consumption of solid, liquid, and gas fuels and gas flaring."
+:referenceRem "http://data.worldbank.org/indicator/EN.ATM.CO2E.PC"
+
+:Prop NitrousOxideEmissions
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EnvironmentalFactor
+:rem "Nitrous oxide emissions are emissions from agricultural biomass burning, industrial activities, and livestock management."
+:referenceRem "http://data.worldbank.org/indicator/EN.ATM.NOXE.KT.CE"
+
+:Prop AlternativeAndNuclearEnergy
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EnvironmentalFactor
+:rem "Clean energy is noncarbohydrate energy that does not produce carbon dioxide when generated. It includes hydropower and nuclear, geothermal, and solar power, among others."
+:referenceRem "http://data.worldbank.org/indicator/EG.USE.COMM.CL.ZS"
+
+:Prop OtherGreenhouseGases
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EnvironmentalFactor
+:rem "Other greenhouse gas emissions are by-product emissions of hydrofluorocarbons, perfluorocarbons, and sulfur hexafluoride."
+:referenceRem "http://data.worldbank.org/indicator/EN.ATM.GHGO.KT.CE"
+
+:Prop RailwayGoodsTransported
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EnvironmentalFactor
+:rem "Goods transported by railway are the volume of goods transported by railway, measured in metric tons times kilometers traveled."
+:referenceRem "http://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6"
+
+:Prop AirTransportFreight
+:Inst MaterialRole
+:Inst IndicatorType
+:sup EnvironmentalFactor
+:rem "Air freight is the volume of freight, express, and diplomatic bags carried on each flight stage (operation of an aircraft from takeoff to its next landing), measured in metric tons times kilometers traveled."
+:referenceRem "http://data.worldbank.org/indicator/IS.AIR.GOOD.MT.K1"
+

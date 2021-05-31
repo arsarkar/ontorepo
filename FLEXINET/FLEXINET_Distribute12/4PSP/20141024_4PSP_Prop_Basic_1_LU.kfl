@@ -1,0 +1,104 @@
+;;;LU added Function Information, Production Equipment, ProductionPlan, Idea, CustomerSatisfaction - generalisations derived from Indesit ontology 28/04/2015
+;;;LU imported ManufacturingAuthorityLevel, Manufacturing Standard when rationalising Level 3 to a level providing context 2/07/2015
+;;;LU added Concept 09/07/2015
+
+:Name "4PSP - Basic Properties"
+:Description "This file contains the definition of the Basic (Information, Material, Energy) properties for the Product Service Production Systems level which is a sublevel of the Product Service Lifecycle Systems Level of the FLEXINET Project reference ontology"
+:Use 4PSPCtx
+
+:Prop CommunicationProtocol
+:Inst Type
+:sup 2DSCtx.CommunicationProtocol
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.CommunicationProtocol</sym>."
+
+:Prop ProductionFeature
+:Inst Type
+:sup Information
+:sup Feature
+:name "Production Feature"
+:rem "A <sym>2DSCtx.Feature</sym> relating specifically to the Production domain."
+
+:Prop ProductionMaterial
+:Inst Type
+:sup Material
+:name "Production Material"
+:rem "A <sym>1SYSCtx.Material</sym> used within the Production domain."
+
+:Prop FunctionInformation
+:Inst Type
+:sup  2DSCtx.FunctionInformation
+:name "Function Information"
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.FunctionInformation</sym>."
+
+:Prop ProductionEquipment
+:Inst Type
+:sup  2DSCtx.Equipment
+:name "Production Equipment"
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Equipment</sym>."
+
+:Prop ProductionCost
+:Inst Type
+:sup Cost
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Cost</sym>."
+
+:Prop ProductionPlan
+:Inst Type
+:sup Plan
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Plan</sym>."
+
+:Prop BOM
+:Inst Type
+:sup ProductionPlan
+:name "Bill of Materials"
+:rem "BOM lists the components required to build a <sym>2DSCtx.Product</sym> as well as information related to these components."
+:referenceRem "Imran, M. 2013, Towards an Assembly Reference Ontology for Assembly Knowledge Sharing, PhD Thesis, Loughborough University, U.K."
+
+:Prop BOR
+:Inst Type
+:sup ProductionPlan
+:name "Bill of Resources"
+:rem "BOR represents the required assembly resources to carry out the assembly processes for a particular <sym>2DSCtx.Product</sym>."
+:referenceRem "Imran, M. 2013, Towards an Assembly Reference Ontology for Assembly Knowledge Sharing, PhD Thesis, Loughborough University, U.K."
+
+:Prop BOP
+:Inst Type
+:sup ProductionPlan
+:name "Bill of Process"
+:rem "BOP lists the sequence of assembly processes for the production of a particular <sym>2DSCtx.Product</sym>."
+:referenceRem "Imran, M. 2013, Towards an Assembly Reference Ontology for Assembly Knowledge Sharing, PhD Thesis, Loughborough University, U.K."
+
+:Prop Idea
+:Inst Type
+:sup 2DSCtx.Idea
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Idea</sym>."
+
+:Prop 	Concept						
+:Inst	Type
+:sup 	2DSCtx.Concept
+:name	"Concept"
+:rem	"Level 4PSP specialisation of Level 2DS <sym>2DSCtx.Concept</sym>."
+
+:Prop CustomerSatisfaction
+:Inst Type
+:sup 2DSCtx.CustomerSatisfaction
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.CustomerSatisfaction</sym>."
+
+:Prop BusinessModel
+:Inst Type
+:sup 2DSCtx.BusinessModel
+:rem  "Level 4PSP specialisation of Level 2DS <sym>2DSCtx.BusinessModel</sym>."
+
+:Prop ManufacturingAuthorityLevel
+:Inst Type
+:sup  Metric
+:name "Manufacturing Authority Level"
+:rem  "Level for the right, power or ability to control, command or decide into a manufacturing domain"
+:referenceRem "http://www.wordreference.com/definition/authority (Adapted)" 
+
+:Prop ManufacturingStandard
+:Inst Type
+:sup  Standard
+:name "Manufacturing Standard"
+:rem  "Something considered to be a basis of comparison into a manufacturing domain"
+:referenceRem "http://www.wordreference.com/definition/standard (Adapted)"
+

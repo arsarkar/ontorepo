@@ -1,0 +1,8 @@
+:Name "5IND - Context"
+:Description "This file contains the context for the Enterprise Specific level for the Indesit end user domain within the FLEXINET Project reference ontology"
+
+:Use ../4PSPCtx
+
+:Ctx 5INDCtx
+:Inst UserContext
+:supCtx ../4PSPCtx

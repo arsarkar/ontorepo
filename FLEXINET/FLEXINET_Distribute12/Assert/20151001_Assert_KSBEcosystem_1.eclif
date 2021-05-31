@@ -1,0 +1,256 @@
+;;;ECOSYSTEM
+(Scenario KSBecosystem)
+(System KSBworld)
+
+;;;locations
+(2DSCtx.Country	DEU)
+(2DSCtx.Country	IND)
+(2DSCtx.Country	AUS)
+(Area/City Mumbai)
+(Area/City Halle)
+(Area/City Nashik)
+(Area/City Bundamba)
+(Area/City Berlin)
+(Area/City Frankenthal)
+(Area/City Bonn)
+(Area/City Hannover)
+
+;;;Basics of Ecosystem
+(Information CustomerOrder)
+(Information SupplierOrder)
+(2DSCtx.Component BaseMaterial)
+(2DSCtx.Component HydraulicSingleComponents)
+(Part PumpHydraulics)
+(2DSCtx.Component BaseConstituentsForPump)
+(2DSCtx.Component ControlUnitSingleComponents)
+(Part ControlUnit)
+(Part LowEnergyPump)
+(Part MountedPump)
+(2DSCtx.Component ElectricMotorComponents)
+(Part ElectricMotor)
+(Part LowEnergyDrive)
+;;materials not used in Low Energy example
+(Part BilgePump)
+(Part DieselPump)
+
+;;;Roles of Ecosystem
+(2DSCtx.Supplier KSBecosystem_Supplier)
+(4PSPCtx.Producer KSBecosystem_Producer)
+(4PSPCtx.Customer KSBecosystem_Customer)
+(4PSPCtx.ManufacturedProduct KSBecosystem_Product)
+
+(systemContainsRole KSBworld KSBecosystem_Supplier)
+(systemContainsRole KSBworld KSBecosystem_Producer)
+(systemContainsRole KSBworld KSBecosystem_Customer)
+(systemContainsRole KSBworld KSBecosystem_Product)
+
+;defining facility
+(4PSPCtx.Facility KSB_Central_HQ)
+(Input In_KSBCent_HQ)
+(Output Out_KSBCent_HQ)
+(requiresA In_KSBCent_HQ KSB_Central_HQ)
+(requiresA Out_KSBCent_HQ KSB_Central_HQ)
+(playsRole SupplierOrder Out_KSBCent_HQ KSBecosystem)
+;;location estimated
+(facilityLocatedAt  KSB_Central_HQ (WGS84.latlong 8.4627338 7.1777323)Frankenthal DEU)
+;defining embedded operation 
+(4PSPCtx.Operation Control&Monitoring_KSB_Cent_HQ)
+(basicContainsBasic KSB_Central_HQ Control&Monitoring_KSB_Cent_HQ)
+(playsRoleActor KSB_Central_HQ KSBecosystem_Supplier KSBecosystem)
+
+(4PSPCtx.Facility KSB_International)
+(Input In_KSBInt)
+(Output Out_KSBInt)
+(Control InControl_KSBInt)
+(requiresA In_KSBInt KSB_International)
+(requiresA Out_KSBInt KSB_International)
+(requiresA InControl_KSBInt KSB_International)
+(playsRole PumpHydraulics Out_KSBInt KSBecosystem)
+;;location estimated
+(facilityLocatedAt  KSB_International (WGS84.latlong 8.4627338 7.1777323)Frankenthal DEU)
+;defining embedded operation 
+(4PSPCtx.Operation MakeHydraulicS_KSBInt)
+(basicContainsBasic KSB_International MakeHydraulicS_KSBInt)
+(playsRoleActor KSB_International KSBecosystem_Supplier KSBecosystem)
+
+;defining facility
+(4PSPCtx.Facility Siemens)
+(Input In_Siem)
+(Output Out_Siem)
+(Control InControl_Siem)
+(requiresA In_Siem Siemens)
+(requiresA Out_Siem Siemens)
+(requiresA InControl_Siem Siemens)
+(playsRole  ControlUnit Out_Siem KSBecosystem)
+;;location estimated
+(facilityLocatedAt  Siemens (WGS84.latlong 8.4627338 7.1777323) Bonn DEU)
+;defining embedded operation 
+(4PSPCtx.Operation MakeControlUnit_Siem)
+(basicContainsBasic Siemens MakeControlUnit_Siem)
+(playsRoleActor Siemens KSBecosystem_Supplier KSBecosystem)
+
+(4PSPCtx.Facility AnotherControlUnitMaker)
+(Input In_Anoth)
+(Output Out_Anoth)
+(Control InControl_Anoth)
+(requiresA In_Anoth AnotherControlUnitMaker)
+(requiresA Out_Anoth AnotherControlUnitMaker)
+(requiresA InControl_Anoth AnotherControlUnitMaker)
+(playsRole  ControlUnit Out_Anoth KSBecosystem)
+;defining embedded operation
+(4PSPCtx.Operation MakeControlUnit_Anoth)
+(basicContainsBasic AnotherControlUnitMaker MakeControlUnit_Anoth)
+(playsRoleActor AnotherControlUnitMaker KSBecosystem_Supplier KSBecosystem)
+
+;defining facility
+(4PSPCtx.Facility KSB_Central)
+(Input In_KSBCent)
+(Output Out_KSBCent)
+(Control InControl_KSBCent)
+(requiresA In_KSBCent KSB_Central)
+(requiresA Out_KSBCent KSB_Central)
+(requiresA InControl_KSBCent KSB_Central)
+(playsRole LowEnergyPump Out_KSBCent KSBecosystem)
+(playsRole LowEnergyDrive Out_KSBCent KSBecosystem)
+;;location estimated
+(facilityLocatedAt KSB_Central (WGS84.latlong 83.4627338 76.1777323) Frankenthal DEU)
+;defining embedded operation 
+(4PSPCtx.Operation MakePump_KSBCent)
+(basicContainsBasic KSB_Central MakePump_KSBCent)
+(playsRoleActor KSB_Central KSBecosystem_Supplier KSBecosystem)
+
+;defining facility
+(4PSPCtx.Facility KSB_Halle)
+(Input In_KSBHalle)
+(Output Out_KSBHalle)
+(Control InControl_KSBHalle)
+(requiresA In_KSBHalle KSB_Halle)
+(requiresA Out_KSBHalle KSB_Halle)
+(requiresA InControl_KSBHalle KSB_Halle)
+(playsRole LowEnergyPump Out_KSBHalle KSBecosystem)
+(playsRole ElectricMotor Out_KSBHalle KSBecosystem)
+;;location actual
+(facilityLocatedAt KSB_Halle (WGS84.latlong 52.52 13.41) Halle DEU)
+;defining embedded operations 
+(4PSPCtx.Operation MakePump_KSBHalle)
+(basicContainsBasic KSB_Central MakePump_KSBHalle)
+(4PSPCtx.Operation MakeElectricMotor_KSBHalle)
+(basicContainsBasic KSB_Halle MakeElectricMotor_KSBHalle)
+(playsRoleActor KSB_Halle KSBecosystem_Supplier KSBecosystem)
+
+(4PSPCtx.Facility KSB_Nashik)
+(Input In_KSBNashik)
+(Output Out_KSBNashik)
+(Control InControl_KSBNashik)
+(requiresA In_KSBNashik KSB_Nashik)
+(requiresA Out_KSBNashik KSB_Nashik)
+(requiresA InControl_KSBNashik KSB_Nashik)
+(playsRole LowEnergyPump Out_KSBNashik KSBecosystem)
+(playsRole ElectricMotor Out_KSBNashik KSBecosystem)
+;;location actual
+(facilityLocatedAt KSB_Nashik(WGS84.latlong 19.00 73.79) Nashik IND)
+;defining embedded operations 
+(4PSPCtx.Operation MakePump_KSBNashik)
+(basicContainsBasic KSB_Nashik MakePump_KSBNashik)
+(4PSPCtx.Operation MakeElectricMotor_KSBNashik)
+(basicContainsBasic KSB_Nashik MakeElectricMotor_KSBNashik)
+(playsRoleActor KSB_Nashik KSBecosystem_Supplier KSBecosystem)
+
+(4PSPCtx.Facility KSB_Bund)
+(Input In_KSBBund)
+(Output Out_KSBBund)
+(Control InControl_KSBBund)
+(requiresA In_KSBBund KSB_Bund)
+(requiresA Out_KSBBund KSB_Bund)
+(requiresA InControl_KSBBund KSB_Bund)
+(playsRole LowEnergyPump Out_KSBBund KSBecosystem)
+(playsRole ElectricMotor Out_KSBBund KSBecosystem)
+;;location actual
+(facilityLocatedAt KSB_Bund(WGS84.latlong -27.61 152.81) Bundamba AUS)
+;defining embedded operation 
+(4PSPCtx.Operation MakePump_KSBBund)
+(basicContainsBasic KSB_Nashik MakePump_KSBBund)
+(playsRoleActor KSB_Bund KSBecosystem_Supplier KSBecosystem)
+
+;defining facility
+(4PSPCtx.Facility REEL)
+(Input In_REEL)
+(Output Out_REEL)
+(Control InControl_REEL)
+(requiresA Out_REEL REEL)
+(requiresA In_REEL REEL)
+(requiresA InControl_REEL REEL)
+(playsRole ElectricMotor Out_REEL KSBecosystem)
+(facilityLocatedAt  REEL (WGS84.latlong 83.4627338 76.1777323) Hannover DEU)
+;defining embedded operation (can copy and rename from operations in ecosystem)
+(4PSPCtx.Operation MakeElectricMotor_REEL)
+(basicContainsBasic REEL MakeElectricMotor_REEL)
+(playsRoleActor REEL KSBecosystem_Supplier KSBecosystem)
+
+;defining facility
+(4PSPCtx.Facility LocalServicePartnerGermany)
+(Input In_LSPGermany)
+(Output Out_LSPGermany)
+(Control InControl_LSPGermany)
+(requiresA Out_LSPGermany LocalServicePartnerGermany)
+(requiresA In_LSPGermany LocalServicePartnerGermany)
+(requiresA InControl_LSPGermany LocalServicePartnerGermany)
+(playsRole  MountedPump Out_LSPGermany KSBecosystem)
+(facilityLocatedAt  LocalServicePartnerGermany (WGS84.latlong 45.4627338 9.1777323) Berlin DEU)
+;defining embedded operation 
+(4PSPCtx.Operation Complete&MountPump_LSPGermany)
+(basicContainsBasic LocalServicePartnerGermany Complete&MountPump_LSPGermany)
+(playsRoleActor LocalServicePartnerGermany KSBecosystem_Supplier KSBecosystem)
+
+;defining facility
+(4PSPCtx.Facility LocalServicePartnerIndia)
+(Input In_LSPIndia)
+(Output Out_LSPIndia)
+(Control InControl_LSPIndia)
+(requiresA Out_LSPIndia LocalServicePartnerIndia)
+(requiresA In_LSPIndia LocalServicePartnerIndia)
+(requiresA InControl_LSPIndia LocalServicePartnerIndia)
+(playsRole  MountedPump Out_LSPIndia KSBecosystem)
+(facilityLocatedAt  LocalServicePartnerIndia (WGS84.latlong 85.4627338 97.1777323) Mumbai IND)
+;defining embedded operation 
+(4PSPCtx.Operation Complete&MountPump_LSPIndia)
+(basicContainsBasic LocalServicePartnerIndia Complete&MountPump_LSPIndia)
+(playsRoleActor LocalServicePartnerIndia KSBecosystem_Supplier KSBecosystem)
+
+(4PSPCtx.Facility PumpBuyer)
+(Input In_PumpBuyer)
+(Output Out_PumpBuyer)
+(requiresA In_PumpBuyer PumpBuyer)
+(requiresA Out_PumpBuyer PumpBuyer)
+(playsRoleActor PumpBuyer KSBecosystem_Customer KSBecosystem)
+
+(4PSPCtx.Facility LowEnergyDriveBuyer)
+(Input In_DriveBuyer)
+(Output Out_DriveBuyer)
+(requiresA In_DriveBuyer LowEnergyDriveBuyer)
+(requiresA Out_DriveBuyer LowEnergyDriveBuyer)
+(playsRoleActor LowEnergyDriveBuyer KSBecosystem_Customer KSBecosystem)
+
+;;facilities of ecosystem not used in Low Energy Example
+(4PSPCtx.Facility RIL)
+(Input In_RIL)
+(Output Out_RIL)
+(requiresA In_RIL RIL)
+(requiresA Out_RIL RIL)
+(playsRole ElectricMotor Out_RIL KSBecosystem)
+(playsRoleActor RIL KSBecosystem_Supplier KSBecosystem)
+
+(4PSPCtx.Facility TEC)
+(Input In_TEC)
+(Output Out_TEC)
+(requiresA In_TEC TEC)
+(requiresA Out_TEC TEC)
+(playsRole ElectricMotor Out_TEC KSBecosystem)
+(playsRoleActor TEC KSBecosystem_Supplier KSBecosystem)
+
+(4PSPCtx.Facility Harland&Wolf)
+(Input In_H&S)
+(Output Out_H&S)
+(requiresA In_H&S Harland&Wolf)
+(requiresA Out_H&S Harland&Wolf)
+(playsRoleActor  Harland&Wolf KSBecosystem_Customer KSBecosystem)

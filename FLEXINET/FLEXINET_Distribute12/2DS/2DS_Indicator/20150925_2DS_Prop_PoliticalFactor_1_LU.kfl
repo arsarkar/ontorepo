@@ -1,0 +1,59 @@
+:Name "Level 2 Designed Systems - Political Factor Properties"
+:Description "Political Factor subset of External Factor Indicator Properties. Includes Legal Factors"
+
+:Use ../2DSCtx
+
+:Prop War
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PoliticalFactor
+
+:Prop Embargo
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PoliticalFactor
+
+:Prop TerroristAttack
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PoliticalFactor
+
+:Prop PoliticalLabourConflicts
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PoliticalFactor
+
+:Prop Standards
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PoliticalFactor
+
+:Prop Tax
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PoliticalFactor
+
+:Prop ImportExportControl
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PoliticalFactor
+
+:Prop LocalRegulations
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PoliticalFactor
+
+:Prop LegalFactor
+:Inst MaterialRole
+:Inst IndicatorType
+:sup PoliticalFactor
+:rem "Legal factors are concerned with the legal environment of an actor in a market."
+:referenceRem "2014 FLEXINET D2.1"
+(disjointSubProps LegalFactor)
+
+:Prop EaseOfDoingBusiness
+:Inst MaterialRole
+:Inst IndicatorType
+:sup LegalFactor
+:rem "Ease of doing business ranks economies from 1 to 189, with first place being the best. A high ranking (a low numerical rank) means that the regulatory environment is conducive to business operation. The index averages the country's percentile rankings on 10 topics covered in the World Bank's Doing Business. The ranking on each topic is the simple average of the percentile rankings on its component indicators."
+:referenceRem "http://data.worldbank.org/indicator/IC.BUS.EASE.XQ"

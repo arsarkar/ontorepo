@@ -1,0 +1,48 @@
+:Name "4PSCOMS - Rules"
+:Use 4PSPCtx
+;;;LU update relations to match currrent ontology 12/02/2016
+;1. If there is an Idea and a Demand Identification, then the Product-Service Life-Cycle  Status  of the associated Product-Service is the Demand Identification.
+(=>
+ (and
+   (ProductServiceIdea ?idea)
+   (DemandIdentification ?di)
+   (productHasAssociatedIdea ?ps ?idea)
+   (productHasAssociatedLifeCycle ?ps ?lc))
+   (lifeCycleStatusSetAsDemandIdentification ?lc ?di))
+:rem "If there is an Idea and a Demand Identification, then the Product-Service Life-Cycle  Status  of the associated Product-Service is the Demand Identification."
+
+;2. If there is a Concept and a Feasibility Study, then the Product-Service Life-Cycle Status of the associated Product-Service is the Feasibility Study
+ (=>
+(and
+   (ProductServiceConcept ?con)
+   (FeasibilityStudy ?fs)
+   (productHasAssociatedConcept?ps ?con)
+   (productHasAssociatedLifeCycle ?ps ?lc))
+   (lifeCycleStatusSetAsFeasibilityStudy ?lc ?fs))
+:rem "If there is an Idea and a Demand Identification, then the Product-Service Life-Cycle  Status  of the associated Product-Service is the Demand Identification."
+
+  ;3. If there is a Requirement and a Concept Development, then the Product-Service Life-Cycle Status of the associated Product-Service is the Concept Development
+(=>
+ (and 
+   (ProductServiceRequirement ?req) 
+   (ConceptDevelopment ?cd) 
+   (ManufacturedProductService ?ps)
+   (ProductServiceLifeCycle ?lc)
+   (productHasAssociatedLifeCycle ?ps ?lc))
+   (lifeCycleStatusSetAsConceptDevelopment ?lc ?cd))
+ 
+ :rem "If there is an Idea and a Demand Identification, then the Product-Service Life-Cycle  Status  of the associated Product-Service is the Demand Identification."
+
+ 
+ ;4. If there is a Support System and a Configuration, then the Product-Service Life-Cycle Status of the Product-Service that uses the Support System is the Configuration
+ (=>
+  (and
+   (SupportSystem ?ss)
+   (Configuration ?conf)
+   (productUsesSupportSystem ?ps ?ss)
+	(ProductServiceLifeCycle ?lc)
+    (productHasAssociatedLifeCycle ?ps ?lc))
+    (lifeCycleStatusSetAsConfiguration ?lc ?conf))
+:rem "If there is a Support System and a Configuration, then the Product-Service Life-Cycle Status of the Product-Service that uses the Support System is the Configuration"
+
+

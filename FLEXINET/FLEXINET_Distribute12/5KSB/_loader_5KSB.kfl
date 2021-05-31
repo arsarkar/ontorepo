@@ -1,0 +1,9 @@
+;; Loader file for 5KSB
+
+:Load "20141022_5KSB_Ctx_1_LU.kfl"
+;:Load "20141117_5KSB_Prop_1_ITI.kfl"
+;:Load "20141117_5KSB_Roles_1_ITI.kfl"
+;:Load "20141117_5KSB_ExtFactors_1_ITI.kfl"
+;:Load "20141117_5KSB_Rel_1_ITI.kfl"
+;;:Load "20141117_5KSB_Rules_1_ITI.kfl"
+

@@ -1,0 +1,187 @@
+;;;Defining the potential contributors to the global production network and the roles required by it.
+
+;;;The PumpProduction World follows from the facilities in the Ecosystem that reduces the option available because of contraints, e.g STEEP, Business Rules.
+
+(ProjectWorld  PumpProductionWorld)
+
+
+;(StartEvent GPN_StartEvent)
+;(EndEvent GPN_EndEvent)
+;(basicContainsBasic PumpProductionNetwork GPN_StartEvent)
+;(basicContainsBasic PumpProductionNetwork GPN_EndEvent)
+
+;;;defining the potential facilities of the global production network
+(basicContainsBasic PumpProductionWorld Siemens)
+(basicContainsBasic PumpProductionWorld AnotherControlUnitMaker)
+(basicContainsBasic PumpProductionWorld KSB_Central_HQ)
+(basicContainsBasic PumpProductionWorld KSB_International)
+(basicContainsBasic PumpProductionWorld KSB_Central)
+(basicContainsBasic PumpProductionWorld REEL)
+(basicContainsBasic PumpProductionWorld LocalServicePartnerGermany)
+(basicContainsBasic PumpProductionWorld LocalServicePartnerIndia)
+(basicContainsBasic PumpProductionWorld PumpBuyer)
+(basicContainsBasic PumpProductionWorld LowEnergyDriveBuyer)
+
+;;;Network Roles
+(2DSCtx.Supplier PumpProductionWorld_Supplier)
+(4PSPCtx.Producer PumpProductionWorld_Producer)
+(4PSPCtx.Customer PumpProductionWorld_PumpCustomer)
+(4PSPCtx.ManufacturedProduct PumpProductionWorld_Product)
+
+;;;Defining contexts for the Network Roles
+(requiresA PumpProductionWorld_Supplier PumpProductionWorld)
+(requiresA PumpProductionWorld_Producer PumpProductionWorld)
+(requiresA PumpProductionWorld_PumpCustomer PumpProductionWorld)
+(requiresA PumpProductionWorld_Product PumpProductionWorld)
+
+;;;Defining the first example GPNScenario
+;;;The GPNetwork1 scenario is chosen from the PumpProductionWorld by the user who uses information provided by the business model canvas to do this.
+(GPNScenario GPNScenario1)
+(projectWorldContainsGPNScenario PumpProductionWorld GPNScenario1)
+
+;;;Populating Roles within GPN Scenario1
+(playsRole MountedPump PumpProductionWorld_Product GPNScenario1)
+(playsRole LowEnergyDrive PumpProductionWorld_Product GPNScenario1)
+(playsRoleActor KSB_Central_HQ PumpProductionWorld_Supplier GPNScenario1)
+(playsRoleActor KSB_International PumpProductionWorld_Supplier GPNScenario1)
+(playsRoleActor Siemens PumpProductionWorld_Supplier GPNScenario1)
+(playsRoleActor KSB_Central PumpProductionWorld_Supplier GPNScenario1)
+(playsRoleActor REEL PumpProductionWorld_Supplier GPNScenario1)
+(playsRoleActor LocalServicePartnerGermany PumpProductionWorld_Supplier GPNScenario1)
+(playsRoleActor PumpBuyer PumpProductionWorld_PumpCustomer GPNScenario1)
+(playsRoleActor LowEnergyDriveBuyer PumpProductionWorld_PumpCustomer GPNScenario1)
+;;;Producer role is vacant will be filled by one of the companies in PumpProductionWorld who fulfil the requirements later
+
+;;;populating in and out roles
+(playsRole CustomerOrder In_KSBCent_HQ GPNScenario1)
+(playsRole SupplierOrder Out_KSBCent_HQ GPNScenario1)
+
+(playsRole HydraulicSingleComponents In_KSBInt GPNScenario1)
+(playsRole SupplierOrder  In_KSBInt GPNScenario1)
+(playsRole SupplierOrder InControl_KSBInt GPNScenario1)
+(playsRole PumpHydraulics Out_KSBInt GPNScenario1)
+
+(playsRole ControlUnitSingleComponents In_Siem GPNScenario1)
+(playsRole SupplierOrder  In_Siem GPNScenario1)
+(playsRole SupplierOrder InControl_Siem GPNScenario1)
+(playsRole ControlUnit Out_Siem GPNScenario1)
+
+(playsRole ElectricMotorComponents In_REEL GPNScenario1)
+(playsRole SupplierOrder  In_REEL GPNScenario1)
+(playsRole SupplierOrder InControl_REEL GPNScenario1)
+(playsRole ElectricMotor Out_REEL GPNScenario1)
+
+(playsRole BaseConstituentsForPump In_KSBCent GPNScenario1)
+(playsRole ControlUnit In_KSBCent GPNScenario1)
+(playsRole ElectricMotor In_KSBCent GPNScenario1)
+(playsRole SupplierOrder  In_KSBCent GPNScenario1)
+(playsRole SupplierOrder InControl_KSBCent GPNScenario1)
+(playsRole LowEnergyPump Out_KSBCent GPNScenario1)
+(playsRole LowEnergyDrive Out_KSBCent GPNScenario1)
+
+(playsRole LowEnergyPump In_LSPGermany GPNScenario1)
+(playsRole PumpHydraulics In_LSPGermany GPNScenario1)
+(playsRole BaseMaterial In_LSPGermany GPNScenario1)
+(playsRole SupplierOrder In_LSPGermany  GPNScenario1)
+(playsRole SupplierOrder InControl_LSPGermany GPNScenario1)
+(playsRole MountedPump Out_LSPGermany GPNScenario1)
+
+(playsRole MountedPump In_PumpBuyer GPNScenario1)
+(playsRole LowEnergyDrive In_DriveBuyer GPNScenario1)
+
+;;;Defining Flows of GPNscenario 1
+(flow Out_Siem In_KSBCent GPNScenario1)
+(flow Out_REEL In_KSBCent GPNScenario1)
+(flow Out_KSBCent In_LSPGermany GPNScenario1)
+(flow Out_KSBInt In_LSPGermany GPNScenario1)
+(flow Out_LSPGermany In_PumpBuyer GPNScenario1)
+(flow Out_KSBCent In_DriveBuyer GPNScenario1)
+
+;;;Control Flows of GPNscenario1
+(flow Out_KSBCent_HQ In_KSBInt GPNScenario1)
+(flow Out_KSBCent_HQ In_Siem GPNScenario1)
+(flow Out_KSBCent_HQ In_REEL GPNScenario1)
+(flow Out_KSBCent_HQ In_KSBCent GPNScenario1)
+(flow Out_KSBCent_HQ In_LSPGermany GPNScenario1)
+
+
+;;;Defining the SECOND example GPNScenario
+
+(GPNScenario GPNScenario2)
+(projectWorldContainsGPNScenario PumpProductionWorld GPNScenario2)
+
+;;;Populating Roles within GPN Scenario2
+(playsRole MountedPump PumpProductionWorld_Product GPNScenario2)
+(playsRole LowEnergyDrive PumpProductionWorld_Product GPNScenario2)
+(playsRoleActor KSB_Central_HQ PumpProductionWorld_Producer GPNScenario2)
+(playsRoleActor KSB_International PumpProductionWorld_Supplier GPNScenario2)
+(playsRoleActor Siemens PumpProductionWorld_Supplier GPNScenario2)
+(playsRoleActor KSB_Central PumpProductionWorld_Supplier GPNScenario2)
+(playsRoleActor REEL PumpProductionWorld_Supplier GPNScenario2)
+;;;substituting the local service partner
+(playsRoleActor LocalServicePartnerIndia PumpProductionWorld_Supplier GPNScenario2)
+(playsRoleActor PumpBuyer PumpProductionWorld_PumpCustomer GPNScenario2)
+(playsRoleActor LowEnergyDriveBuyer PumpProductionWorld_PumpCustomer GPNScenario2)
+
+;;;populating in and out roles
+(playsRole CustomerOrder In_KSBCent_HQ GPNScenario2)
+(playsRole SupplierOrder Out_KSBCent_HQ GPNScenario2)
+
+(playsRole HydraulicSingleComponents In_KSBInt GPNScenario2)
+(playsRole SupplierOrder  In_KSBInt GPNScenario2)
+(playsRole SupplierOrder InControl_KSBInt GPNScenario2)
+(playsRole PumpHydraulics Out_KSBInt GPNScenario2)
+
+(playsRole ControlUnitSingleComponents In_Siem GPNScenario2)
+(playsRole SupplierOrder  In_Siem GPNScenario2)
+(playsRole SupplierOrder InControl_Siem GPNScenario2)
+(playsRole ControlUnit Out_Siem GPNScenario2)
+
+(playsRole ElectricMotorComponents In_REEL GPNScenario2)
+(playsRole SupplierOrder  In_REEL GPNScenario2)
+(playsRole SupplierOrder InControl_REEL GPNScenario2)
+(playsRole ElectricMotor Out_REEL GPNScenario2)
+
+(playsRole BaseConstituentsForPump In_KSBCent GPNScenario2)
+(playsRole ControlUnit In_KSBCent GPNScenario2)
+(playsRole ElectricMotor In_KSBCent GPNScenario2)
+(playsRole SupplierOrder  In_KSBCent GPNScenario2)
+(playsRole SupplierOrder InControl_KSBCent GPNScenario2)
+(playsRole LowEnergyPump Out_KSBCent GPNScenario2)
+(playsRole LowEnergyDrive Out_KSBCent GPNScenario2)
+
+(playsRole LowEnergyPump In_LSPIndia GPNScenario2)
+(playsRole PumpHydraulics In_LSPIndia GPNScenario2)
+(playsRole BaseMaterial In_LSPIndia GPNScenario2)
+(playsRole SupplierOrder In_LSPIndia  GPNScenario2)
+(playsRole SupplierOrder InControl_LSPIndia GPNScenario2)
+(playsRole MountedPump Out_LSPIndia GPNScenario2)
+
+(playsRole MountedPump In_PumpBuyer GPNScenario2)
+(playsRole LowEnergyDrive In_DriveBuyer GPNScenario2)
+
+;;;Defining Flows of GPNscenario 2
+(flow Out_Siem In_KSBCent GPNScenario2)
+(flow Out_REEL In_KSBCent GPNScenario2)
+(flow Out_KSBCent In_LSPIndia GPNScenario2)
+(flow Out_KSBInt In_LSPIndia GPNScenario2)
+(flow Out_LSPIndia In_PumpBuyer GPNScenario2)
+(flow Out_KSBCent In_DriveBuyer GPNScenario2)
+
+;;;Control Flows of GPNscenario2
+(flow Out_KSBCent_HQ In_KSBInt GPNScenario2)
+(flow Out_KSBCent_HQ In_Siem GPNScenario2)
+(flow Out_KSBCent_HQ In_REEL GPNScenario2)
+(flow Out_KSBCent_HQ In_KSBCent GPNScenario2)
+(flow Out_KSBCent_HQ In_LSPIndia GPNScenario2)
+
+;;;query
+;(exists (?portFrom ?portTo)
+;(and (systemContainsRole ?facilityFrom ?portFrom)
+ ;    (systemContainsRole ?facilityTo ?portTo)
+;(flow  ?portFrom ?portTo GPNScenario2)))
+
+
+
+
+

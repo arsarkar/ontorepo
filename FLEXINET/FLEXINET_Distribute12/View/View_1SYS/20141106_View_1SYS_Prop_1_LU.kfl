@@ -1,0 +1,12 @@
+:Name  "View_1SYS - Scenario Properties"
+:Description "This file contains the definition of a generic scenario property which is  located in the level 1 of the reference ontology in the context of the FLEXINET Project but placed within a separate folder called View_1SYS as it forms a specialised subset of level 1."
+:Use 1SYSCtx
+
+:Prop Scenario
+:Inst Type
+:sup AbstractEntity
+:rem "A scenario provides a view upon a <sym>1SYSCtx.System</sym> by providing an identifier for each <sym>1SYSCtx.Role</sym> played within the System and for the flows within the system."
+:disjointWith Role
+:disjointWith Basic
+(disjointSubProps Scenario)
+

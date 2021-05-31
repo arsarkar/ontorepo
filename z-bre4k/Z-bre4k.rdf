@@ -1,0 +1,1407 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.Z-bre4k.org/ontology#"
+     xml:base="http://www.Z-bre4k.org/ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.Z-bre4k.org/ontology">
+        <owl:versionInfo xml:lang="en">0.1</owl:versionInfo>
+        <rdfs:comment xml:lang="en">Created by EPFL from work of Z-bre4k project</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#description -->
+
+    <owl:AnnotationProperty rdf:about="http://www.Z-bre4k.org/ontology#description"/>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#requires_Correntive_Maintenance_Process_Definition_of_System_Part_Failure_Mode -->
+
+    <owl:AnnotationProperty rdf:about="http://www.Z-bre4k.org/ontology#requires_Correntive_Maintenance_Process_Definition_of_System_Part_Failure_Mode"/>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#requires_Predictive_Maintenance_Process_Definition_of_System_Part_Failure_Mode -->
+
+    <owl:AnnotationProperty rdf:about="http://www.Z-bre4k.org/ontology#requires_Predictive_Maintenance_Process_Definition_of_System_Part_Failure_Mode"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#consists_of_Embedded_Data-Source_Component_Role_of_System_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#consists_of_Embedded_Data-Source_Component_Role_of_System_Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#consists_of_System_Part_Role_of_System_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#consists_of_System_Part_Role_of_System_Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_2_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#effects_System_Failure_Cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#effects_System_Failure_Cause">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#generates_Embedded_Data -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#generates_Embedded_Data">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_5"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_1_1_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Detection_Indicator_of_System_Failure_Cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Detection_Indicator_of_System_Failure_Cause">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_5"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Detection_Indicator_of_System_Part_Failure_Mode -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Detection_Indicator_of_System_Part_Failure_Mode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_5"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Embedded_Data-Source_Component_Role_of_Embedded_Data-Source_Component -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Embedded_Data-Source_Component_Role_of_Embedded_Data-Source_Component">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_5"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Embedded_Data-Source_Component_of_System_Part -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Embedded_Data-Source_Component_of_System_Part">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_5"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Key_Performance_Parameter_of_System -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Key_Performance_Parameter_of_System">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Key_Performance_Parameter_of_System_Part -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Key_Performance_Parameter_of_System_Part">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Key_Risk_Indicator_of_System_Failure_Cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Key_Risk_Indicator_of_System_Failure_Cause">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Key_Risk_Indicator_of_System_Part_Failure_Mode -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Key_Risk_Indicator_of_System_Part_Failure_Mode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Risk_Probability_Indicator_of_System_Failure_Cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Risk_Probability_Indicator_of_System_Failure_Cause">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_3"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Risk_Probability_Indicator_of_System_Part_Failure_Mode -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Risk_Probability_Indicator_of_System_Part_Failure_Mode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_3"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Severity_Indicator_of_System_Failure_Cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Severity_Indicator_of_System_Failure_Cause">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_4"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_Severity_Indicator_of_System_Part_Failure_Mode -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_Severity_Indicator_of_System_Part_Failure_Mode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_4"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Failure_Cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Failure_Cause">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Failure_Cause_of_Current_System_Quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Failure_Cause_of_Current_System_Quality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Failure_Cause_of_Predictied_System_Quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Failure_Cause_of_Predictied_System_Quality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Failure_Symptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Failure_Symptom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Part -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Part">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Part_Failure_Mode -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Part_Failure_Mode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Part_Failure_Mode_of_Current_System_Part_Quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Part_Failure_Mode_of_Current_System_Part_Quality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Part_Failure_Mode_of_Predictied_System_Part_Quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Part_Failure_Mode_of_Predictied_System_Part_Quality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_2_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Part_Failure_Symptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Part_Failure_Symptom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Part_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Part_Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_2_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#has_System_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#has_System_Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_2_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_Correntive_Maintenance_Process_Definition_of_System_Part_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_Correntive_Maintenance_Process_Definition_of_System_Part_Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_Correntive_Maintenance_Process_Definition_of_System_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_Correntive_Maintenance_Process_Definition_of_System_Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_Detection_Indicator -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_Detection_Indicator">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_7"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_5"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_Predictive_Maintenance_Process_Definition_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_Predictive_Maintenance_Process_Definition_of_Embedded_Data-Source_Component_Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_Predictive_Maintenance_Process_Definition_of_System_Part_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_Predictive_Maintenance_Process_Definition_of_System_Part_Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_Predictive_Maintenance_Process_Definition_of_System_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_Predictive_Maintenance_Process_Definition_of_System_Role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_Risk_Indicator -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_Risk_Indicator">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_7"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_6"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_Risk_Probability_Indicator -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_Risk_Probability_Indicator">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_6"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_3"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_Severity_Indicator -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_Severity_Indicator">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_6"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_4"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_System_Part_of_Current_System_Part_Quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_System_Part_of_Current_System_Part_Quality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_System_Part_of_Predictied_System_Part_Quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_System_Part_of_Predictied_System_Part_Quality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_2_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_System_of_Current_System_Quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_System_of_Current_System_Quality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#inheres_in_System_of_Predictied_System_Quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#inheres_in_System_of_Predictied_System_Quality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#owns_System -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#owns_System">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_1_1"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#provides_Correntive_Maintenance_Process_Definition -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#provides_Correntive_Maintenance_Process_Definition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_2_3"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#provides_Predictive_Maintenance_Process_Definition -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#provides_Predictive_Maintenance_Process_Definition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_2_3"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#provides_System -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#provides_System">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_2_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#realized_in_Embedded_Data-Source_Component_Role_of_System_Part_Failure_Mode -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#realized_in_Embedded_Data-Source_Component_Role_of_System_Part_Failure_Mode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#requires_Correntive_Maintenance_Process_Definition_of_System_Failure_Symptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#requires_Correntive_Maintenance_Process_Definition_of_System_Failure_Symptom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#requires_Correntive_Maintenance_Process_Definition_of_System_Part_Failure_Symptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#requires_Correntive_Maintenance_Process_Definition_of_System_Part_Failure_Symptom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#requires_Maintenance_of_System -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#requires_Maintenance_of_System">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#4_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#requires_Maintenance_of_System_Part -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#requires_Maintenance_of_System_Part">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#4_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#requires_Predictive_Maintenance_Process_Definition_of_System_Failure_Symptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#requires_Predictive_Maintenance_Process_Definition_of_System_Failure_Symptom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2_1"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#requires_Predictive_Maintenance_Process_Definition_of_System_Part_Failure_Symptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#requires_Predictive_Maintenance_Process_Definition_of_System_Part_Failure_Symptom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_1"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#works_in_Maintneance_Service_Provider -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#works_in_Maintneance_Service_Provider">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_2_3"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#works_in_Product_Provider -->
+
+    <owl:ObjectProperty rdf:about="http://www.Z-bre4k.org/ontology#works_in_Product_Provider">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_1_2"/>
+        <rdfs:range rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_2_2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Alarm_code_of_System_Part_Failure_Mode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Alarm_code_of_System_Part_Failure_Mode">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Allarm_code_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Allarm_code_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Characteristics_of_System_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Characteristics_of_System_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Description_of_System_Failure_Cause -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Description_of_System_Failure_Cause">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Description_of_System_Failure_Symptom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Description_of_System_Failure_Symptom">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2_1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Description_of_System_Part_Failure_Mode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Description_of_System_Part_Failure_Mode">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Description_of_System_Part_Failure_Symptom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Description_of_System_Part_Failure_Symptom">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2_2"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Description_of_System_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Description_of_System_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Funtion_of_System_Part_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Funtion_of_System_Part_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_2"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Measurability_of_System_Part_Failure_Mode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Measurability_of_System_Part_Failure_Mode">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1_2"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Priority_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Priority_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Priority_of_Risk_Priority_Number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Priority_of_Risk_Priority_Number">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_7"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Redundancy_provided_of_System_Part_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Redundancy_provided_of_System_Part_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_2"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Severity_level_of_Severity_Indicator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Severity_level_of_Severity_Indicator">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1_4"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Signals_involved_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Signals_involved_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Technical_Information_CDS_Machine_of_System_Part_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Technical_Information_CDS_Machine_of_System_Part_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_2"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#Type_of_signal_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#Type_of_signal_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#corrective_actions_of_Correntive_Maintenance_Process_Definition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#corrective_actions_of_Correntive_Maintenance_Process_Definition">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_2"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#do_we_need_filter_or_elaborate_signal_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#do_we_need_filter_or_elaborate_signal_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#is_it_used_for_automation_machine_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#is_it_used_for_automation_machine_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#machine_part_linked_to_sensor_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#machine_part_linked_to_sensor_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#predictive_actions_of_Predictive_Maintenance_Process_Definition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#predictive_actions_of_Predictive_Maintenance_Process_Definition">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1_1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#q_ty_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#q_ty_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#sampling_frequency_before_signal_elaboration_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#sampling_frequency_before_signal_elaboration_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#storage_frequency_after_elaboration_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#storage_frequency_after_elaboration_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#we_want_to_share_sansor_with_customer_of_Embedded_Data-Source_Component_Role -->
+
+    <owl:DatatypeProperty rdf:about="http://www.Z-bre4k.org/ontology#we_want_to_share_sansor_with_customer_of_Embedded_Data-Source_Component_Role">
+        <rdfs:domain rdf:resource="http://www.Z-bre4k.org/ontology#3_2_6"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1">
+        <description>Independent_Continuant (see BFO)</description>
+        <rdfs:label>Independent_Continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1"/>
+        <description>Material_Entity ( see BFO)</description>
+        <rdfs:label>Material_Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1"/>
+        <description>The System is a Material_Entity which is a universal set of the target system</description>
+        <rdfs:label>System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1"/>
+        <description>Product Component is a Material Entity which is a part of the System.</description>
+        <rdfs:label>System_Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_2_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_2_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2"/>
+        <description>The System_Part is a System_Component which are a modularity subset of the system</description>
+        <rdfs:label>System_Part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_2_5 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_2_5">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1_2"/>
+        <description>Embedded Data-Source Component is a Product Component that refers to product-embedded information devices / parts (e.g. sensors), which allows for (additional) services to be offered for the product.</description>
+        <rdfs:label>Embedded_Data-Source_Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_3 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_3">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1"/>
+        <description>Stakeholder/Actor is an entity that describes the humans (or beings) involved in a business scenario (development, deployment, use etc.).</description>
+        <rdfs:label>Stakeholder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_3_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_3_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3"/>
+        <description>Individual Person is a Stakeholder indicating a separate person who is not legal entity (i.e. not legally considered a corporate group, as for example a company).</description>
+        <rdfs:label>Individual_Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_3_1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_3_1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_1"/>
+        <description>Individual Customer is an Individual Person that buys or consumes (consumer) any product/maintenance service. </description>
+        <rdfs:label>Individual_Customer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_3_1_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_3_1_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_1"/>
+        <description>Employee is an Individual Person that works in a Company in the domain.</description>
+        <rdfs:label>Employee</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_3_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_3_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3"/>
+        <description>Company is a Stakeholder that can be one or more individuals forming a legal entity (corporate body).</description>
+        <rdfs:label>Company</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_3_2_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_3_2_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_2"/>
+        <description>Business Customer is a Company that buys and uses the products, and maintenance services. It is the (group/company) customer of the system, using the system for their own business. </description>
+        <rdfs:label>Business_Customer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_3_2_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_3_2_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_2"/>
+        <description>Product Provider is a Supplier/ provider/vendor that both produces and sells a product, or only sells it.</description>
+        <rdfs:label>Product_Provider</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#1_1_3_2_3 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#1_1_3_2_3">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#1_1_3_2"/>
+        <description>Service_Provider is a Supplier/provider/vendor that offers a maintenance service.</description>
+        <rdfs:label>Maintneance_Service_Provider</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2">
+        <description>Generally Dependent Continuant (see BFO)</description>
+        <rdfs:label>Generally_Dependent_Continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2"/>
+        <description>Resource_Entity is a mean (source) that can be used for the design, development, offer and delivery of a PSS, from which benefit can be produced.</description>
+        <rdfs:label>Resource_Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_1"/>
+        <description>Source-Data is a Resource_Entity that refers to the digitalised information coming as input from the product or the service, specifically for the scope of Project.</description>
+        <rdfs:label>Source_Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_1_1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_1_1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_1_1"/>
+        <description>Product Data are Source_Data used in the scope of product, and refer specifically to the system part.</description>
+        <rdfs:label>Product_Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_1_1_1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_1_1_1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_1_1_1"/>
+        <description>Embedded Data are Product Data generated from embedded data-source components.</description>
+        <rdfs:label>Embedded_Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_1_1_1_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_1_1_1_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_1_1_1"/>
+        <description>Digital Log Data are Product Data generated from a software element, part of the product.</description>
+        <rdfs:label>Digital_Log_Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2"/>
+        <description>Information_Entity is a Resource, immaterial, describing aspects affecting Project, and referring to all the (processed) data that one can acquire knowledge from, or further process.</description>
+        <rdfs:label>Information_Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2"/>
+        <description>The Indicator is a Information_Entity which is a observed value indicating the state or level of something</description>
+        <rdfs:label>Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1"/>
+        <description>The Key_Performance_Parameter is a indicator to measure the performance of each mode at time t</description>
+        <rdfs:label>Key_Performance_Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_1_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_1_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1"/>
+        <description>The Key_Risk_Indicator is a indicator of risk exposures to address potential warning events</description>
+        <rdfs:label>Key_Risk_Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_1_3 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_1_3">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1"/>
+        <description>The Risk Probability Indicator is a indicator which is a frequency of occurrence of Failure_Effect</description>
+        <rdfs:label>Risk_Probability_Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_1_4 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_1_4">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1"/>
+        <description>The Severity Indicator is a indicator of how serious and destructive a failure mode is</description>
+        <rdfs:label>Severity_Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_1_5 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_1_5">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1"/>
+        <description>The Detection_Indicator is a numerical subjective estimation of the effectiveness of the controls to preven or detect the cause or failure mode before the failure (Threshold?)</description>
+        <rdfs:label>Detection_Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_1_6 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_1_6">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1"/>
+        <description>The Risk is a indicator multipling Probability Indicator by Serverity Indicator of the failure</description>
+        <rdfs:label>Risk_Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_1_7 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_1_7">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_1"/>
+        <description>The Risk Priority Number is a indicator multipling Risk Indicator by Detection Indicator of the failure</description>
+        <rdfs:label>Risk_Priority_Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2"/>
+        <description>The Failure_Symptom is a Failure_Mechanism_Entity which is a a physical feature that is regarded as indicating a condition of the failure</description>
+        <rdfs:label>Failure_Symptom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_2_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_2_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2"/>
+        <description>The System_Failure_Symptom is a Failure_Symptom described in the level of System</description>
+        <rdfs:label>System_Failure_Symptom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_2_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_2_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_2"/>
+        <description>The Subystem_Failure_Symptom is a Failure_Symptom described in the level of System_Part</description>
+        <rdfs:label>System_Part_Failure_Symptom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_3 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_3">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2"/>
+        <description>Process Definition is a structured set of activities designed to accomplish a specific objective. For example, the Process Definition can be the manufacturing process where the equipment is manufactured, or the process where the equipment is used, or the development process where products, and maintenance services are being developed etc.</description>
+        <rdfs:label>Process_Definition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_3_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_3_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3"/>
+        <description>Maintenance Process Definition is a Process Definition referring to a set of non-tangible entities (activities, software modules etc.), related to the maintenance service part, which aims to satisfy a need of the end-users.   </description>
+        <rdfs:label>Maintenance_Process_Definition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_3_1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_3_1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1"/>
+        <description>The Predictive_Maintenance_Process_Definition is a Maintenance_Process_Definition to prevent failures by monitoring</description>
+        <rdfs:label>Predictive_Maintenance_Process_Definition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#2_2_3_1_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#2_2_3_1_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#2_2_3_1"/>
+        <description>The Correntive_Maintenance_Process_Definition is a Maintenance_Process_Definition to correct failures after break down or malfunction</description>
+        <rdfs:label>Correntive_Maintenance_Process_Definition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3">
+        <description>Specifically Dependent Countinuant (See BFO)</description>
+        <rdfs:label>Specifically_Dependent_Countinuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3"/>
+        <description>Realisable Entity (See BFO)</description>
+        <rdfs:label>Realisable_Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1"/>
+        <description>Failure_Mechanism_Entity</description>
+        <rdfs:label>Failure_Mechanism_Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_2_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_2_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2"/>
+        <description>The Failure_Cause is a Failure_Mechanism_Entity which is a defect in design, process, quality, or part application, which are the underlying cause of a failure or which initiate a process which leads to failure.</description>
+        <rdfs:label>Failure_Cause</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_2_1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_2_1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1"/>
+        <description>The System_Failure_Cause is a Failure_Cause described in the level of System</description>
+        <rdfs:label>System_Failure_Cause</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_2_1_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_2_1_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1_2_1"/>
+        <description>The System_Part_Failure_Mode is a Failure_Cause described in the level of System_Part</description>
+        <rdfs:label>System_Part_Failure_Mode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_3 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_3">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1"/>
+        <description>Quality (See BFO)</description>
+        <rdfs:label>Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_3_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_3_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3"/>
+        <description>The Current_Quality is a Quality at time t. If they inhere in an entity at all, they are fully exhibited
+or manifested or realized in that entity.</description>
+        <rdfs:label>Current_Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_3_1_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_3_1_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_1"/>
+        <description>The Current_Quality is a Quality of an System entity at time t.</description>
+        <rdfs:label>Current_System_Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_3_1_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_3_1_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_1"/>
+        <description>The Current_System_Part_Quality is a Quality of an System_Part entity at time t.</description>
+        <rdfs:label>Current_System_Part_Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_3_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_3_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3"/>
+        <description>The Predicted_Quality is a predicted Quality at future time t.</description>
+        <rdfs:label>Predicted_Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_3_2_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_3_2_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_2"/>
+        <description>The Predictied_System_Quality is a Quality of an System entity at future time t.</description>
+        <rdfs:label>Predictied_System_Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_1_3_2_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_1_3_2_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_1_3_2"/>
+        <description>The Predictied_System_Part_Quality is a Quality of an System_Part entity at future time t.</description>
+        <rdfs:label>Predictied_System_Part_Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3"/>
+        <description>(See BFO)</description>
+        <rdfs:label>Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_2_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_2_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_2"/>
+        <description>borne by a group of one or more System(s) by Maintenance_Process_Definition</description>
+        <rdfs:label>System_Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_2_2 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_2_2">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_2"/>
+        <description>borne by a group of one or more System_Part(s) by Maintenance_Process_Definition</description>
+        <rdfs:label>System_Part_Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#3_2_6 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#3_2_6">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#3_2"/>
+        <description>borne by a group of one or more Embedded_Data-Source_Component(s) by Maintenance_Process_Definition</description>
+        <rdfs:label>Embedded_Data-Source_Component_Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#4 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#4">
+        <description>See BFO</description>
+        <rdfs:label>Processual_Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.Z-bre4k.org/ontology#4_1 -->
+
+    <owl:Class rdf:about="http://www.Z-bre4k.org/ontology#4_1">
+        <rdfs:subClassOf rdf:resource="http://www.Z-bre4k.org/ontology#4"/>
+        <description>Maintenance is a Process made for, and driven by customers, with economic value, and refers to the maintenance Offer entity in conjunction with time t.</description>
+        <rdfs:label>Maintenance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

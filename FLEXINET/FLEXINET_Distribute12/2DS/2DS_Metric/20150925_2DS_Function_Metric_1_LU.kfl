@@ -1,0 +1,260 @@
+:Name "Level 2 Designed Systems - Functions of Metric Properties"
+:Description "Functions providing units for the Measures to be used within FLEXINET"
+
+:Use ../2DSCtx
+
+:Fun numberOf
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig  NonNegInt -> QuantitativeMeasure
+:name "Whole Number of "
+
+:Fun scaleAndvalue
+:Inst TernaryFun
+:Sig NonNegInt NonNegInt NonNegInt -> IntervalScale
+:Args "bottom of scale" "top of scale" "value" -> "IntervalScale"
+:rem "The value specified must fall within the range between bottom of scale and top of scale."
+
+:Fun  days
+:supRel MLO.days
+:Inst UnaryFun
+:Inst MeasureFun
+:measureMultiple 24 hours
+:Sig  RealNumber -> DurationMetric
+:name "days function for a metric"
+:lex  "?1 days"
+:rem  "A <sym>RootCtx.Function</sym> used to return a <sym>DurationMetric</sym> measured in days (24 <sym>MLO.hours</sym>)."
+
+:Fun years
+:Inst UnaryFun
+:Inst MeasureFun
+:measureMultiple 365 days
+:Sig  RealNumber -> DurationMetric
+:name "years function for a metric"
+:lex  "?1 years"
+:rem  "A <sym>RootCtx.Function</sym> used to return a <sym>DurationMetric</sym> measured in years (assuming 365 <sym>MLO.days</sym>)."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; cost functions
+
+:Fun euro
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig  NonNegReal -> Cost
+:name "euro"
+
+:Fun {euro/h}
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig  NonNegReal -> Cost
+:name "euros per Hour"
+
+:Fun $
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig  NonNegReal -> Cost
+:name "dollar"
+
+:Fun {dollar/container}
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig  NonNegReal -> Cost
+:name "dollars per container"
+
+:Fun {dollar/liter}
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig  NonNegReal -> Cost
+:name "dollars per liter"
+
+:Fun {tonCO2/MillionEuroSales}
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig  NonNegReal -> Cost
+:name "ton of CO2 per million euro sales"
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;energy cost functions
+
+:Fun {euro/kWh}
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig  NonNegReal -> Cost
+:name "euros per kiloWattHour"
+
+:Fun {euro/GJ}
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig  NonNegReal -> Cost
+:name "euros per gigajoule"
+
+:Fun kCal
+:Inst MeasureFun
+:Sig RealNumber -> EnergyQuantity
+:rem "1000 times the energy needed to raise the temperature of 1 <sym>2DSCtx.gram</sym> of water through 1 degree C "
+:referenceRem "http://www.oxforddictionaries.com/us/definition/american_english/calorie"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;percent functions
+
+:Fun %
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "percentage"
+
+:Fun percentPa
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "percentage per annum"
+
+:Fun percentOfPopulation
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "percentage of population"
+
+:Fun percentOfFemaleChildrenAged7-14
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "% of female children ages 7-14"
+
+:Fun percentOfMaleChildrenAged7-14
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "% of male children ages 7-14"
+
+:Fun percentOfTotalEnergyUse
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "percentage of total energy use"
+
+:Fun percentGDP
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "percentage of gross domestic product"
+
+:Fun percentManufacturedExports
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "percentage of manufactured exports"
+
+:Fun percentProducts
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "percentage of products"
+
+:Fun percentOfLabourForce
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "percentage of labour force"
+
+:Fun percentOfTotalProductCategories
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig NonNegReal -> Percent
+:name "percentage of total product categories"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;mass quantity functions
+
+:Fun gram
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig RealNumber -> MassQuantity
+:rem	"A metric unit of mass equal to one thousandth of a kilogram."
+:referenceRem "http://www.oxforddictionaries.com/us/definition/american_english/gram#gram-2"
+
+:Fun mgram
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig RealNumber -> MassQuantity
+:rem	"A metric unit of mass that is equal to 0.001 <sym>2DSCtx.gram</sym>s."
+:referenceRem "http://dictionary.cambridge.org/dictionary/british/milligram"
+
+:Fun kilogram
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig RealNumber -> MassQuantity
+:rem	"A metric unit of mass that is equal to 1000 <sym>2DSCtx.gram</sym>s."
+:referenceRem "http://dictionary.cambridge.org/dictionary/english/kilogram"
+
+:Fun tonne
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig RealNumber -> MassQuantity
+:rem	"A metric unit of mass that is equal to 1000000 <sym>2DSCtx.gram</sym>s."
+:referenceRem "http://dictionary.cambridge.org/dictionary/english/ton"
+
+:Fun ktonne
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig RealNumber -> MassQuantity
+:rem	"A metric unit of mass that is equal to 1000000000 <sym>2DSCtx.gram</sym>s."
+:referenceRem "http://www.thefreedictionary.com/kiloton"
+
+:Fun tonnesPerCaptia
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig RealNumber -> MassQuantity
+:name "tonnes per capita"
+
+:Fun ktonnesCO2Equivalent
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig RealNumber -> MassQuantity
+:name "kilotons CO2 equivalent"
+
+:Fun tonnesPerKm
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig RealNumber -> MassQuantity
+:name "tonnes per kilometre"
+
+:Fun tonnesPerMillionPeople
+:Inst UnaryFun
+:Inst MeasureFun
+:Sig RealNumber -> MassQuantity
+:name "tonnes per million people"
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;fuzzy number functions
+:Fun fuzzyValTripleFN
+:Inst TernaryFun
+:Sig NonNegReal NonNegReal NonNegReal -> FuzzyMeasure
+:Args "low" "mid" "high" -> "FuzzyMeasure"
+:rem "TFNs are identified by three numbers, first representing the lowest possible value, second the value with the highest possibility and third that represents the highest possible value"
+:referenceRem "FLEXINET D2.1"
+
+:Fun fuzzyValLinguisticCoupleFN
+:Inst BinaryFun
+:Sig HMLType HMLType -> FuzzyMeasure
+:Args  "Confidence" "Value" -> "FuzzyMeasure"
+:rem ""
+:referenceRem "FLEXINET D2.3"
+
+:Fun riskFuzzyValTripleFN
+:Inst TernaryFun
+:supRel fuzzyValTripleFN
+:Sig UnitRange UnitRange UnitRange -> FuzzyMeasure
+:Args "low" "mid" "high" -> "FuzzyMeasure"
+:rem "Risk fuzzyValue Triple Functions contain values between 0 and 1"
+:referenceRem "FLEXINET D2.1"
+;;;UnitRange is nonreal between 0 and 1 inclusive
+
+:Fun fuzzyErrorFN
+:Inst BinaryFun
+:Sig Percent Percent -> FuzzyError
+:Args "Lower Error" "Upper Error" -> "FuzzyError"
+:rem "A Fuzzy Error consists of an Lower Error which is used to produce the first (or lowest) value of a <sym>2DSCtx.FuzzyMeasure</sym> and an Upper Error which is used to produce the third (or highest) value of a  <sym>2DSCtx.FuzzyMeasure</sym>."
+

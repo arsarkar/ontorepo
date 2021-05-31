@@ -1,0 +1,8 @@
+:Name "4PSP - Context"
+:Description "This file contains the context for the Product Service Produce level which is a sublevel of the Product Service Lifecycle Systems Level within the FLEXINET Project reference ontology"
+
+:Use ../4PSLSCtx
+
+:Ctx 4PSPCtx
+:Inst UserContext
+:supCtx ../4PSLSCtx

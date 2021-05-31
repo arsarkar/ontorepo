@@ -1,0 +1,38 @@
+:Name "Level 2 Designed Systems - Rules"
+:Description "Rules pertaining to relations occurring at the Designed Systems level."
+:Use 2DSCtx
+
+;;;LU amalgamated with Network rules 08/07/2015
+  
+(=> (and (ServiceProduct ?service1)
+(playsRole ?system1 ?service1 ?scenario1)
+(Input ?input1)
+(systemContainsRole ?system1 ?input1)
+(playsRole ?basic1 ?input1 ?scenario1)
+(instAsserted ?basic1 ?basictype)
+)
+(requiresInputOfType ?service1 ?basictype))
+:rem "There is a Service. A System plays the Role of the Service. An Input exists to the Service.
+This implies that the Service requires input of this type."
+
+;; ====  RULES GPN === 
+;; Rule  - If a system/process contains another system/process, then the child process belongs to the same Network that the parent process. 
+(=> (and (System ?x)
+        (System ?z)
+		(basicContainsBasic ?z ?x)
+		(Network ?net)			
+		(basicContainsBasic ?net ?z))
+		(basicContainsBasic ?net ?x))
+		
+;; ====  RULES  TEA === 
+		
+;;Rule  - A technology must have always a TRL level (default value). LEVEL_0 Default Value ?????
+(=> (Technology ?t)
+	(and (TechnologyReadinessLevel 0)		
+		 (technologyHasDimension ?t 0)))		
+
+;;  Rule  - A new technology always apply to a new Location of ZoneType.
+;;	Rule  - If a basic is compatible with an input or part of, then the basic plays the role of input in the system. 
+;;	Rule  - If a basic is compatible with an output or part of, then the basic plays the role of output in the system. 
+;;	Rule  - If a basic is compatible with a a resource or part of, then the basic plays the role of resource in the system. 
+;;	Rule  - If there is a new technology send event to …..		 

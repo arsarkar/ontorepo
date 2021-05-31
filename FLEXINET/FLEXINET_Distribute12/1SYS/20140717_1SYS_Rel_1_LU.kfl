@@ -1,0 +1,91 @@
+:Name "1SYS - Relations"
+:Description "This file contains the definition of the relations identified at the Systems level in the context of the FLEXINET Project"
+:Use 1SYSCtx
+
+;;;28/04/2015 LU renamed basicComposedOfBasic and roleComposedOfRole to basicContainsBasic and roleContainsRole to
+;;;make a less strong aggregation relation. 
+
+
+:Rel affectsState
+:Inst BinaryRel
+:Inst RigidRel
+:Inst AsymmetricBR
+:Sig Particular Role 
+:Args "Affector" "Role" 
+:lex "?1 affects Role ?2" 
+:rem "affectsState is unidirectional so is an AsymmetricBR"
+
+:Rel basicAffectsState
+:Inst BinaryRel
+:Inst RigidRel
+:supRel affectsState
+:Sig Basic Role
+:Args "Basic" "Role"
+:lex "Basic entity ?1 affects Role ?2" 
+:rem "basicAffectsState holds between Basic individuals and Role individuals."
+
+:Rel roleAffectsState
+:Inst BinaryRel
+:Inst RigidRel
+:supRel affectsState
+:Sig Role Role 
+:Args "Role" "Role" 
+:lex "Role ?1 affects Role ?2" 
+:rem "roleAffectsState holds between Role individuals and Role individuals."
+
+:Rel playsRole
+:Inst TernaryRel
+:Inst NonRigidRel
+:Sig Basic Role Scenario
+:Args "Basic" "Role" "Scenario"
+:lex "Basic entity ?1 plays Role ?2 in Scenario ?3" 
+:rem "To provide a <sym>RootCtx.TimeSpan</sym> use the ECLIF operator <sym>holdsIn</sym>."
+
+:Rel requiresA
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Role System 
+:Args "Role" "System" 
+:lex "Role ?1 depends on System ?2" 
+:rem "A role requires a context provided by one system."
+(functionalArg requiresA 2)
+;;;renamed 'dependsOn relation' as clashes with a existing RootCtx relation.
+
+:Rel basicContainsBasic
+:Inst BinaryRel
+:Inst RigidRel
+:Inst AntisymmetricBR
+:Sig Basic Basic
+:Args "sup" "sub" 
+:lex "?1 is contains ?2"
+:rem "sup contains sub. Given that sup and sub are not identical, then it is not the case that sub is contains sup."
+
+;;;==================================================
+;;; Testing Relation containsBasic
+
+;;;Sample facts
+;;;(Information Report)
+;;;(Information Picture)
+;;;(Information Document)
+;;;(basicContainsBasic Report Picture)
+;;;(basicContainsBasic Report Document)
+
+;;; Query 
+;;;(setof ?y (basicContainsBasic Report ?y) ?l)
+;;;==================================================
+
+:Rel roleContainsRole
+:Inst BinaryRel
+:Inst RigidRel
+:Inst AntisymmetricBR
+:Sig Role Role
+:Args "sup" "sub" 
+:lex "?1 is contains ?2"
+:rem "sup is contains sub. Given that sup and sub are not identical, then it is not the case that sub is contains sup."
+
+:Rel systemContainsRole
+:Inst BinaryRel
+:Inst RigidRel
+:Sig System Role 
+:Args "System" "Role" 
+:lex "System ?1 contains Role ?1" 

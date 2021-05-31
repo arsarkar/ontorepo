@@ -1,0 +1,9 @@
+:Name "3MBS - Context"
+:Description "This file contains the context for the Manufacturing Business Systems level within the FLEXINET Project reference ontology"
+
+:Use ../2DSCtx
+
+:Ctx 3MBSCtx
+:Inst UserContext
+:supCtx ../2DSCtx
+

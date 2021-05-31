@@ -1,0 +1,10 @@
+:Name "Level 2 Designed Systems - Functions of Metric Properties"
+:Description "Functions providing units for the Measures to be used within FLEXINET"
+
+:Use ../4PSPCtx
+
+:Fun keywordTypeAndValue
+:Inst BinaryFun
+:Sig String String -> Keyword
+:Args "Keyword Type" "Keyword value" -> "Keyword"
+:rem "Function to classify and provide a value for the keyword."

@@ -1,0 +1,8 @@
+:Name "1SYS - Context"
+:Description "This file contains the context for the Systems level within the FLEXINET Project reference ontology"
+
+:Use MLO
+
+:Ctx 1SYSCtx
+:Inst UserContext
+:supCtx MLO

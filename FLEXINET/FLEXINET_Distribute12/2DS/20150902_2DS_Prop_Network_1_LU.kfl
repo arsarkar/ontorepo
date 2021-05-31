@@ -1,0 +1,84 @@
+:Name "Level 2 Reference Ontology - Network Decisions"
+:Description "Level 2 properties required to model a network and the process decisions taking place within it."
+:Use 2DSCtx
+
+(partitionedBy Basic (listof System Entity Gateway BusinessEvent))
+;;;Basic restriction placed at level 2 not level 1 as Gateway and BusinessEvent are level 2
+
+:Prop Network
+:Inst Type
+:sup System
+:rem "An interconnected or interrelated chain or group of <sym>1SYS.System</sym>s"
+:referenceRem "http://www.collinsdictionary.com/"
+
+;;;Gateways - needed to refer to process decisions
+
+:Prop Gateway
+:Inst Type
+:sup Basic
+:rem "Gateways are used to control how Sequence Flows interact as they converge and diverge within a Process "
+:referenceRem "OMG, 2011, Business Process Model and Notation (BPMN) Version 2.0"
+
+:Prop DivergingGateway
+:Inst Type
+:sup Gateway
+:rem " A diverging gateway has only one input and 2 or more outputs (describes an opening AND or a fork)"
+
+:Prop ConvergingGateway
+:Inst Type
+:sup Gateway
+:rem "A converging gateway has 2 or more inputs and only one output (describes an closing AND or a join)"
+
+:Prop InclusiveDivergingGateway
+:Inst Type
+:sup DivergingGateway
+:rem "A inclusive diverging gateway (opening OR) has one input and two or more outputs An output must have a condition (a boolean)". 
+
+:Prop InclusiveConvergingGateway
+:Inst Type
+:sup ConvergingGateway
+:rem " An inclusive converging gateway (“closing OR”) has one default output and two or more inputs. An input must have a condition (a boolean). "
+
+:Prop ExclusiveDivergingGateway
+:Inst Type
+:sup InclusiveDivergingGateway
+:rem "An exclusive diverging gateway (“opening XOR”, branch) inherits from an inclusive diverging gateway. The value of the condition of an output must not be identical to the value of the condition of any of the other outputs of the XOR gateway (i.e. only one condition within the XOR gateway can activated, so only one branch can be taken)."
+
+:Prop ExclusiveConvergingGateway
+:Inst Type
+:sup ExclusiveDivergingGateway
+:rem "An exclusive converging gateway (“closing XOR”, merge) inherits from an inclusive diverging gateway. The value of the condition of an input must not be identical to the value of the condition of any of the other inputs of the XOR gateway (i.e. only one condition within the XOR gateway can activated, so only one incoming flow is needed)."
+
+:Prop Condition
+:Inst Type
+:sup MLO.Object
+:rem "Boolean value as a result of a condition?. "
+
+;;;==================================================
+;;;Network Events
+
+:Prop BusinessEvent
+:Inst Type
+:sup Basic
+:rem  "Events that take place in the course of normal operation for a business that reoccur as business processes are executed."
+:referenceRem "FLEXINET D3.3"
+
+:Prop StartEvent
+:Inst Type
+:sup BusinessEvent
+:rem  "To indicate the start of a process."
+:referenceRem "An event that initiates a process"
+:referenceRem "FLEXINET D3.3"
+
+:Prop EndEvent
+:Inst Type
+:sup BusinessEvent
+:rem  "To indicate the end of a process."
+:referenceRem "FLEXINET D3.3"
+ 
+:Prop DecisionEvent
+:Inst Type
+:sup BusinessEvent
+:rem  "An event where decisions are made or taken."
+:referenceRem "FLEXINET D3.3" 
+;;;can have the outcome of an end, a process for the product or a rework, therefore is more than a system.

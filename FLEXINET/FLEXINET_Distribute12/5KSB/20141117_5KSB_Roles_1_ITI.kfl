@@ -1,0 +1,183 @@
+:Name " Level 5 Reference Ontology - Roles for Pump Industry"
+:Description "This file contains the definitions, referring to roles, of the specific enterprise ontology for Pump Industry in level 5 within the Flexinet Project reference ontology"
+
+:Use 5KSBCtx
+
+:Prop 5KSB_Product
+:Inst Type
+:sup Product
+:rem "A product within the context of KSB projects. 
+KSB Products are specialised in Pumps and valves."
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Service
+:Inst Type
+:sup Service
+:rem "Service within the context of KSB projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Consulting
+:Inst Type
+:sup 5KSB_Service
+:rem "Consulting within the context of KSB projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Training
+:Inst Type
+:sup 5KSB_Service
+:rem "Training within the context of KSB projects"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Pump
+:Inst Type
+:sup 5KSB_Product
+:rem "A machine or device for raising, compressing, or transferring fluids."
+:referenceRem "http://www.thefreedictionary.com/pump"
+
+:Prop 5KSB_Valve
+:Inst Type
+:sup 5KSB_Product
+:rem "Any device that shuts off, starts, regulates, or controls the flow of a fluid."
+:referenceRem "http://www.thefreedictionary.com/valve"
+
+:Prop 5KSB_BusinessProduct
+:Inst Type
+:sup Actor
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Customer
+:Inst Type
+:sup Customer
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Competitor
+:Inst Type
+:sup Competitor
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Partner
+:Inst Type
+:sup Partner
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+
+:Prop 5KSB_Tenderer
+:Inst Type
+:sup 5KSB_Customer
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_PlanContructionFirm
+:Inst Type
+:sup 5KSB_Customer
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_IndustrialCustomer
+:Inst Type
+:sup 5KSB_Customer
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_EndConsumer
+:Inst Type
+:sup 5KSB_Customer
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Official
+:Inst Type
+:sup 5KSB_Customer
+:rem ""
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Expert
+:Inst Type
+:sup Employee
+:rem "A person who has extensive skill or knowledge in a particular field. 
+The term it refers to experts in relevant technologies for KSB."
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_Technology
+:Inst Type
+:sup Technology
+:rem "Technology currently used in KSB projects."
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_TechnologyLeadership
+:Inst Type
+:sup Target
+:rem "KSB Target when analysing a new business Model"
+:referenceRem "Flexinet D1.3"
+
+:Prop 5KSB_Revenue
+:Inst Type
+:sup Target
+:rem "KSB Target when analysing a new business Model"
+:referenceRem "Flexinet D1.3"
+
+:Prop 5KSB_EnvironmentProctection
+:Inst Type
+:sup Target
+:rem "KSB Target when analysing a new business Model"
+:referenceRem "Flexinet D1.3"
+
+:Prop 5KSB_Region
+:Inst Type
+:sup System
+:rem "A region is a set of locations.Relation"
+:referenceRem "FlEXINET - KSB Specific term."
+
+:Prop 5KSB_SoftwareTechnology
+:Inst Type
+:sup 5KSB_Technology
+:rem "Computer Aided Design (CAD), Computer Aided Manufacturing (CAM), Computer Numerical Control (CNC), 
+Direct Numerical Control (DNC), Programmable Logic Control (PLC), Numerical Control (NC), 
+program optimization software, and systems integration software"
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop 5KSB_MaterialRemoval
+:Inst Type
+:sup 5KSB_Technology
+:rem "Turning, milling, drilling, grinding, tapping, electrical discharge machines (EDM), broaching, sawing, water jet cutting equipment, and laser process equipment."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop 5KSB_MaterialForming
+:Inst Type
+:sup 5KSB_Technology
+:rem "Stamping, bending, joining, hydro-forming, presses, shearing, cold and hot forming equipment."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop 5KSB_Workholding 
+:Inst Type
+:sup 5KSB_Technology
+:rem "Computer Chucks, fixtures, clamps, blocks, angle plates, and tooling columns."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop 5KSB_Tooling 
+:Inst Type
+:sup 5KSB_Technology
+:rem "Drills, taps, reamers, boring bars, dies, punches, and grinding wheels."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+
+:Prop 5KSB_MaterialHandling  
+:Inst Type
+:sup 5KSB_Technology
+:rem "Conveyors, automated wire guided vehicles, die handling equipment, robots, pallet changers, and bar feed equipment."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+:Prop 5KSB_AutomatedSystems
+:Inst Type
+:sup 5KSB_Technology
+:rem "Transfer machines, assembly systems, automated systems and cells, and Flexible Manufacturing Systems (FMS)."
+:referenceRem "http://www.amtonline.org/aboutamt/WhatisManufacturingTechnology/"
+
+
+
+
+

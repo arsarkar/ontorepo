@@ -1,0 +1,8 @@
+:Name "5CD - Context"
+:Description "This file contains the context for the Enterprise Specific level for the Custom Drinks end user domain within the Flexinet Project reference ontology"
+
+:Use ../4PSPCtx
+
+:Ctx 5CDCtx
+:Inst UserContext
+:supCtx ../4PSPCtx

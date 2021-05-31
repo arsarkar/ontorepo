@@ -1,0 +1,162 @@
+:Name "View_4PSP - Scenario Axioms"
+:Description "Axioms pertaining to View_4PSP Scenarios"
+:Use 4PSPCtx
+
+(=> (projectContainsScenario ?x ?y)
+(not (DependentScenario ?y))
+)
+:IC hard "A project cannot contain DependentScenarios. The relation projectContainsScenario does not hold between the Project ?x and the DependentScenario ?y."
+
+(=> (inScenario ?x ?y)
+(not (DependentScenario ?y))
+)
+:IC hard "A Scenario cannot be contained within (inScenario) a DependentScenario. The relation inScenario does not hold between the Scenario ?x and the DependentScenario ?y."
+
+;;;Should we enable a businessScenario to be composed of business Scenarios?
+
+(=> (and(DependentScenario ?dependS)
+	(inScenario ?dependS ?compound))
+            (exists (?gpnS)
+			(and (GPNScenario ?gpnS)
+                (inScenario ?gpnS ?compound)
+    )))
+:IC hard "A Dependent Scenario requires a GPNScenario to exist within the same compound scenario as the Dependent Scenario.
+A GPNScenario should be in the same compound Scenario ?compound as ?dependS."
+
+(=> (and(BalancedScoreCardScenario ?balanceS)
+	(inScenario ?balanceS ?compound))
+            (exists (?bmS)
+			(and (BusinessModelScenario ?bmS)
+                (inScenario ?bmS ?compound)
+    )))
+:IC soft "A Balanced ScoreCard Scenario could depend on a Business Model. Therefore a Balanced ScoreCard Scenario may be required to exist within the same compound scenario as the Business Model Scenario.
+A Business Model Scenario should be in the same compound Scenario ?compound as ?balanceS."
+
+(=> (businessModelScenarioHasChosenProductScenario ?bmS ?prodS)
+		(exists (?compound)
+			(and
+				(businessModelScenarioInScenario ?bmS  ?compound)
+                (inScenario ?prodS ?compound)
+			)
+		)
+)
+:IC soft "A Business Model Scenario could have a chosen Product Scenario. Therefore a Business Model Scenario may be in the same compound scenario as the Product Scenario. The chosen Product Scenario ?prodS should be InScenario the same compound scenario as?bmS."
+;;a soft axiom as I'm unsure
+
+(=> (productScenarioHasChosenBusinessModelScenario ?prodS ?bmS)
+		(exists (?compound)
+			(and
+				(inScenario ?prodS ?compound)
+                (businessModelScenarioInScenario ?bmS ?compound)
+			)
+		)
+)
+:IC soft "A Product Scenario could have a chosen Business Model Scenario. Therefore a Product Scenario  may be in the same compound scenario as the Business Model Scenario. The chosen Business Model Scenario ?bmS should businessModelScenarioInScenario the same compound scenario as ?prodS."
+;;a soft axiom as I'm unsure
+
+(=>  (and (playsRole ?basic ?role ?riskS)
+	 (RiskScenario ?riskS)
+	 (Basic ?basic)
+	 (Role ?role))	
+	 (or(Input ?role) (Output ?role) (Control ?role) (Resource ?role))	
+)		 
+:IC hard "In a RiskScenario only Input, Output, Control or Resource roles can be played. 
+In RiskScenario ?riskS ?basic playsRole ?role which is not one of these."	
+
+;(=> (ProductScenario ?productS)	
+;	(exists (?productRole ?player)
+;	    (and (2DSCtx.Product ?productRole)
+;			 (playsRole ?player ?productRole ?productS) 
+;		)
+;	)
+;)
+;:IC hard "A Product Scenario must contain a product role. In Product Scenario ?productS a product role ;is not played."
+
+;(=>(and (GPNScenario ?gpnS)
+;		(playsRole ?player ?role ?gpnS)
+;	)
+ ;  (exists (?gpNetwork)
+;		(and(ProjectWorld ?gpNetwork)  	
+;			(systemContainsRole ?gpNetwork ?role)
+;		)
+;	)
+;)
+;:IC hard "A GPN Scenario must provide a view upon a GPN. Role ?role played within GPNScenario ?gpnS is not contained by ;a GPN (systemContainsRole)."
+
+;(=>(and (BusinessModelScenario ?bmS)
+;		(playsRole ?player ?role ?bmS)
+;	)
+ ;  (exists (?canvasmodel)
+;		(and(BusinessModelCanvas ?canvasmodel)  	
+	;		(systemContainsRole ?canvasmodel ?role)
+	;	)
+	;)
+;)
+;:IC hard "A Business Model Scenario must provide a view upon a Business Model Canvas. Role ?role ;played within BusinessModelScenario ?bmS is not contained by a BusinessModelCanvas ;(systemContainsRole)."
+
+(=> (and(System ?system)
+		(Scenario ?compound)
+		(DependentScenario ?dpndS)
+		(GPNScenario ?gpnS)
+		(inScenario ?dpndS ?compound)
+		(inScenario ?gpnS ?compound)
+		(systemContainsRole ?system ?dpndRole)
+		(playsRole ?rolePlayer ?dpndRole ?dpndS)
+	)
+	(exists (?gpnRole)
+		(playsRole ?system ?gpnRole ?gpnS))
+)	
+
+:IC hard "Given that a DependentScenario is in the same compound Scenario as the GPNScenario then a node in the DependentScenario must also be present in the GPNScenario. 
+DependentScenario ?dpndS and GPNScenario ?gpnS are InScenario ?compound. 
+The Role ?dpndRole playsRole ?rolePlayer in DependentScenario ?dpndS and requiresA System ?system to play a Role in ?gpnS but ?system does not."
+;;;rem: "Only one GPNScenario and one RiskScenario and one BusinessScenario are present in a compound scenario as defined by functionalargs
+;;;on the gpnScenarioInScenario, riskScenarioInScenario and businessScenarioInScenario relations,
+;;;therefore this axiom assumes the GPNScenario and the Dependentscenario (risk or business scenario) refer to each other (as there is a one-to-one relationship)."
+;;;N.B. This axiom allows nodes to be present in a GPNScenario which are not in the DependentScenario. The DependentScenario is able to form a subset of the GPNScenario."
+
+
+;;;Might need to change this to In  Balanced ScoreCard Scenario ?balanceS the System ?system should play a role
+(=> (and(System ?system)
+		(Scenario ?compound)
+		(RiskScenario ?riskS)	
+		(inScenario ?riskS ?compound)
+		(BalancedScoreCardScenario ?balanceS)
+		(inScenario ?balanceS ?compound)
+		(requiresA ?riskRole ?system)
+		(playsRole ?rolePlayerRisk ?riskRole ?riskS)
+	)
+	(exists (?balanceRole ?rolePlayerBalance)
+	(and
+		(requiresA ?balanceRole ?system)
+		(playsRole ?rolePlayerBalance ?balanceRole ?balanceS))
+	)	
+)
+:IC hard "Given that a RiskScenario and a Balance ScoreCard Scenario are present in the same compound Scenario then a node in the RiskScenario must also be present in the Balanced ScoreCard Scenario. Cost and risk must be considered for the same node.
+RiskScenario ?riskS and Balanced ScoreCard Scenario ?balanceS are InScenario compound Scenario ?compound.
+In RiskScenario ?riskS Role ?riskRole playsRole ?rolePlayerRisk and requiresA System ?system. In  Balanced ScoreCard Scenario ?balanceS a role should be played which requires the System ?system as a context but this does not occur."
+;;;rem: "Only one RiskScenario and one BusinessScenario are present in a compound scenario as defined by functionalargs
+;;;on the riskScenarioInScenario and businessScenarioInScenario relations,
+;;;therefore this axiom assumes the Risk and Business Scenario refer to each other (as there is a one-to-one relationship)." 
+
+;;;Might need to change this to In BalancedScoreCardScenario ?balanceS System ?system playsRole ?rolePlayerBalance.
+(=> (and(System ?system)
+		(Scenario ?compound)
+		(BalancedScoreCardScenario ?balanceS)
+		(inScenario ?balanceS ?compound)
+		(RiskScenario ?riskS)
+		(inScenario ?riskS ?compound)
+		(requiresA ?balanceRole ?system)
+		(playsRole ?rolePlayerBalance ?balanceRole ?balanceS)
+	)
+	(exists (?riskRole ?rolePlayerRisk)
+	(and(requiresA ?riskRole ?system)
+		(playsRole ?rolePlayerRisk ?riskRole ?riskS))
+	)	
+)
+:IC hard "Given that a BalancedScoreCardScenario and a Risk Scenario are present in the same compound Scenario then a node in the BalancedScoreCardScenario must also be present in the RiskScenario. Cost and risk must be considered for the same node.
+BalancedScoreCardScenario ?balanceS and RiskScenario ?riskS are InScenario compound Scenario ?compound.
+In BalancedScoreCardScenario ?balanceS Role ?balanceRole playsRole ?rolePlayerBalance and requiresA System ?system. In RiskScenario ?riskS a role should be played which requires the System ?system as a context but this does not occur."
+;;;rem: "Only one BalancedScoreCardScenario ?balanceS  and one Risk Scenario are present in a compound scenario as defined by functionalargs
+;;;on the balancedScoreCardScenarioInScenario and the riskScenarioInScenario relations,
+;;;therefore this axiom assumes the Business and Risk Scenario refer to each other (as there is a one-to-one relationship)." 

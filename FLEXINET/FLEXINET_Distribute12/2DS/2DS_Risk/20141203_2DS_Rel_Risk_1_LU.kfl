@@ -1,0 +1,195 @@
+:Name "Level 2 Designed Systems - Risk Relations"
+:Description "This file contains the definition of the risk relations identified at level 2 in the context of the FLEXINET Project - placed in folder 2DS_Risk as they form a specialised subset of the reference ontology. More risk relations are defined at level 4PSP."
+
+:Use 2DSCtx
+
+;;;LU changed organisationHasIncident to facilityHasIncident 15/02/2016 to ensure all applications are consistent 15/02/2016
+;;;==================================================
+;;;Relations of Resilience Property
+
+:Rel resilienceHasValue
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Resilience FuzzyMeasure
+:Args "Resilience" "FuzzyMeasure"
+:lex "?1 has Value ?2"
+:rem "Resilience has one value."
+:exampleRem "(resilienceHasValue res1 (fuzzyValTripleFN 0.1 0.2 0.3))"
+(functionalArg resilienceHasValue 2)
+
+:Rel resilienceHasActorType
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Resilience ActorType
+:Args "Resilience" "ActorType"
+:lex "?1 has ActorType ?2"
+:rem "Resilience has ActorType(s)."
+:exampleRem "(resilienceHasActorType res1 2DSCtx.Supplier)"
+
+:Rel facilityHasResilience
+:Inst BinaryRel
+:Inst RigidRel
+:Sig 2DSCtx.Facility Resilience
+:Args "Facility" "Resilience"
+:lex "?1 has resilience ?2"
+:rem "One Facility has Resilience(s)."
+(functionalArg facilityHasResilience 1)
+
+;;;==================================================
+;;;Relations of Incident Property
+:Rel facililtyHasIncident
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Facility Incident
+:Args "Facility" "Incident"
+:lex "?1 has associated Incident ?2"
+:rem "Facility(s) have Incident(s)."
+
+:Rel incidentHasCause
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Incident String
+:Args "Incident" "Description of Cause"
+:lex "?1 has cause ?2"
+:rem "Incident has cause(s)."
+
+:Rel incidentHasConsequence
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Incident String
+:Args "Incident" "Description of Consequence"
+:lex "?1 has consequence ?2"
+:rem "Incident has consequence(s)."
+
+:Rel incidentHasSolution
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Incident String
+:Args "Incident" "Description of Solution"
+:lex "?1 has preventitive solution ?2"
+:rem "Incident has solution(s) to prevent it."
+
+:Rel incidentHasLessonsLearned
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Incident String
+:Args "Incident" "Description of LessonsLearned"
+:lex "?1 has lessons learned ?2"
+:rem "Incident has LessonsLearned(s) from it."
+
+:Rel incidentHasLocation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  Incident Location
+:Args "Incident" "Location"
+:lex "?1 has location ?2"
+:rem "Incident has location(s)."
+;;;Not sure we need this relation as incidentHasOrganisation and OrganisationHasLocation but it's in the Coventry model.
+
+;;;using the Highfleet builtin occursAt Relation to model FromDate and ToDate of Incident
+;;;e.g. (occursAt Incident1 (Span (Date "2002") (Date "2003")) )
+;;;The query (hasStartTime Incident1 ?time) returns the FromDate
+;;;The query (hasEndTime Incident1 ?time) returns the ToDate
+;;;The query (hasDuration Incident1 (minutes ?x)) returns the duration.
+
+
+
+:Rel riskFactorHasIncident
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  RiskFactor Incident
+:Args "RiskFactor" "Incident"
+:lex "?1 has occurrence Incident ?2"
+:rem "RiskFactor(s) have Incident(s) of occurrence."
+
+;;;==================================================
+;;;Relations of RiskFactor Property
+
+;;using builtIn Highfleet name relation
+
+:Rel isExampleRF
+:Inst UnaryRel
+:Sig RiskFactor
+:lex "?1 is true"
+:rem "The RiskFactor is a member of the FLEXINET RiskFactor example library."
+
+:Rel riskFactorHasDataSource
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  RiskFactor String
+:Args "RiskFactor" "DataSource"
+:lex "?1 has data source ?2"
+:rem "Risk has DataSource(s)."
+
+:Rel riskFactorHasMitigationMethod
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  RiskFactor String
+:Args "RiskFactor" "MitigationMethod"
+:lex "?1 has MitigationMethod ?2"
+:rem "RiskFactor(s) have mitigation method(s)."
+;;;might change modelling of mitigation method to a system property later?
+
+:Rel riskFactorHasDescription
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  RiskFactor String
+:Args "RiskFactor" "Description"
+:lex "?1 has description ?2"
+:rem "Risk has One Description."
+(functionalArg riskFactorHasDescription 2)
+
+:Rel riskFactorHasActorType
+:Inst BinaryRel
+:Inst RigidRel
+:Sig RiskFactor ActorType
+:Args "RiskFactor" "ActorType"
+:lex "?1 has ActorType ?2"
+:rem "RiskFactor(s) have ActorType(s)."
+:exampleRem "(riskFactorHasActorType FoodSafety 4PSPCtx.Producer)"
+
+:Rel riskFactorInfluences
+:Inst BinaryRel
+:Inst RigidRel
+:Sig  RiskFactor String
+:Args "RiskFactor" "production metric influenced"
+:lex "?1 influences ?2"
+:rem "Risk has influence on production processes/metrics."
+(functionalArg riskFactorInfluences 2)
+
+:Rel riskFactorDeptValueOnRF
+:Inst TernaryRel
+:Inst RigidRel
+:Sig RiskFactor FuzzyMeasure RiskFactor
+:Args "RiskFactor" "FuzzyMeasure" "RiskFactor"
+:lex "?1 has an interdependency of ?2 upon ?3"
+:rem "A RiskFactor has a dependency value upon a RiskFactor. There is only one dependency value for a given pair of RiskFactors."
+:exampleRem "(riskFactorDeptValueOnRF rf1 (fuzzyValTripleFN 0.1 0.2 0.3) rf2)"
+(functionalArg riskFactorDeptValueOnRF 2)
+
+:Rel riskFactorAppliesToFacility
+:Inst BinaryRel
+:Inst RigidRel
+:Sig FacilitySpecificRiskFactor Facility
+:Args "FacilitySpecificRiskFactor" "Facility"
+:lex "?1 applies to Organisation ?2"
+:rem "RiskFactor(s) apply to Facilities(s). A FacilitySpecificRiskFactor must apply to an facility."
+(totalArg riskFactorAppliesToFacility 1)
+
+:Rel riskFactorAppliesToRegion
+:Inst BinaryRel
+:Inst RigidRel
+:Sig RegionalSpecificRiskFactor ZoneType
+:Args "RegionalSpecificRiskFactor" "Region"
+:lex "?1 applies to Region ?2"
+:rem "RiskFactor(s) apply to Region(s). An RegionalSpecificRiskFactor must apply to a Region."
+(totalArg riskFactorAppliesToRegion 1)
+
+:Rel riskFactorAppliesToLocation
+:Inst BinaryRel
+:Inst RigidRel
+:Sig LocationSpecificRiskFactor Location
+:Args "LocationSpecificRiskFactor" "Location"
+:lex "?1 applies to Location ?2"
+:rem "RiskFactor(s) apply to Location(s). An LocationSpecificRiskFactor must apply to a Location."
+(totalArg riskFactorAppliesToLocation 1)

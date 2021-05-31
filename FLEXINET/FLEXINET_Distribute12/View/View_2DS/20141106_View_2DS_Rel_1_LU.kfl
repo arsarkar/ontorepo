@@ -1,0 +1,20 @@
+:Name "View2DS - Scenario Relations"
+:Description "Relations pertaining to modelling Scenarios - specialised subset of Designed Systems"
+:Use 2DSCtx
+
+:Rel projectContainsScenario
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Project Scenario
+:Args "project" "scenario" 
+:lex "Project ?1 contains scenario ?2"
+
+:Rel projecthasChosenScenario
+:Inst BinaryRel
+:Inst RigidRel
+:Sig Project Scenario
+:Args "project" "scenario" 
+:lex "Project ?1 hasChosen scenario ?2"
+:rem "A <sym>2DSCtx.Project</sym> has one chosen <sym>1SYSCtx.Scenario</sym>" 
+(functionalArg projecthasChosenScenario 2)
+

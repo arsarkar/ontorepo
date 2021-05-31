@@ -1,0 +1,16 @@
+:Name "Level 5 KSB level Rules"
+
+:Use 5KSBCtx
+;;;(=> (and (KSBService ?s)		
+	 ;;;(KSBServiceAssociatesWithBusinessProduct ?s ?bp)
+;;;	)
+;;;	(BusinessProduct ?bp)
+;;;)	 
+;;;a business product should be created if a service is related with a business Product  
+
+;;;(=> (and (KSBProduct ?p)		
+	 ;;;(KSBProductAssociatesWithBusinessProduct ?p ?bp)
+	;;;)
+	;;;(BusinessProduct ?bp)
+;;;)	 
+;;;a business product should be created if a product is related with a business Product  
