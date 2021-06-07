@@ -1,0 +1,1170 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns="http://www.grace-ontology.com#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:p1="http://www.grace.com#"
+    xmlns:assert="http://www.owl-ontologies.com/assert.owl#"
+  xml:base="http://www.grace.com">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment xml:lang="en">
+The GRACE system will act at the Distributed Control System (DCS)
+and Manufacturing Execution System (MES) levels,
+implementing the sharing of process critical information between and
+inside the two layers. This results in a more efficient management
+of resources and a higher final product quality.</rdfs:comment>
+    <owl:imports rdf:resource="http://www.owl-ontologies.com/assert.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Journal">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasJournalDetails"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Entity that describes the execution of an operation, including the processing time, participants (e.g. type and number of resources), priority, scheduled dates, state and quantity</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Transporter">
+    <rdfs:comment xml:lang="en">A specialized resource entity that is responsible for the execution of handling/transporting operations, such as an Auto-guided Vehicle (AGV) or a conveyor</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Resource"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Tool"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#QualityController"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Producer"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Operator"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Product">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasProcessPlan"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Entity produced by the enterprise (it includes sub-products)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Resource">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Operation"/>
+    </owl:disjointWith>
+    <rdfs:comment xml:lang="en">Entity that can execute a certain range of operations as long as its capacity is not exceeded. Producer, mover, transporter, operator, tool, and gripper are specializations of resource and inherit its characteristics</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#QualityController">
+    <rdfs:comment xml:lang="en">A specialized resource entity that is responsible for the execution of testing measurement operations, such as quality control stations</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Tool"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Producer"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Operator"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#Transporter"/>
+    <rdfs:subClassOf rdf:resource="http://www.grace-ontology.com#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#MaterialFamily">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasCarrier"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Material">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasMaterialFamily"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Entity acquired outside the enterprise and used during the production process, e.g. blocks of steel, nuts and bolds (unless produced internally)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Operator">
+    <rdfs:comment xml:lang="en">A specialized resource entity that is responsible for the execution of manual operations, such as an operator connecting the electrical cables</rdfs:comment>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Tool"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#QualityController"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Producer"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#Transporter"/>
+    <rdfs:subClassOf rdf:resource="http://www.grace-ontology.com#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Property">
+    <rdfs:comment xml:lang="en">An attribute that characterizes a resource or that a resource should satisfy to execute an operation</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#ProductionOrder">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasJournal"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#isAssociatedWithProduct"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Entity obtained by aggregating customer and forecast orders for the production of products</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#RecoveryProcedure"/>
+  <owl:Class rdf:about="http://www.grace-ontology.com#JournalDetails">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#materialUsed"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#executedBy"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#describesOperation"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Failure">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasFailureType"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Description of an occurred perturbation, including the occurrence date, applied solutions and recover time</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Producer">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.grace-ontology.com#Tool"/>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#QualityController"/>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#Operator"/>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#Transporter"/>
+    <rdfs:subClassOf rdf:resource="http://www.grace-ontology.com#Resource"/>
+    <rdfs:comment xml:lang="en">A specialized resource entity that is responsible for the execution of producing operations, such as a welding robot or a CNC machine</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Setup">
+    <rdfs:comment xml:lang="en">Set of actions that it is necessary to execute in order to prepare a manufacturing resource for the execution of a range of operations.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Tool">
+    <rdfs:comment xml:lang="en">A specialized resource entity representing the physical devices used by producer stations to execute their processing operations</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.grace-ontology.com#Resource"/>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#QualityController"/>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#Producer"/>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#Operator"/>
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#Transporter"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Operation">
+    <owl:disjointWith rdf:resource="http://www.grace-ontology.com#Resource"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#createsFunction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#usesMaterialFamily"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#requiresSetup"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">A job executed by one resource like drilling, maintenance, and reconfiguration of resources, which may create a function in the product.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#FailureType">
+    <rdfs:comment xml:lang="en">Unexpected event, like machine failure or delay that degrades the execution of a production plan</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#Function">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasTarget"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Entity that describes the functionality exhibited by the product</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.grace-ontology.com#ProcessPlan">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasOperation"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en">Description of a sequence of operations (for producing a product) with temporal constraints like precedence of execution</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasMaterialFamily">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Material"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#MaterialFamily"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasMaterial">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Product"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Material"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasProperty">
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class Resource and the class Property</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.grace-ontology.com#Resource"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Material"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Property"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasSetup">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Resource"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Setup"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class Resource and the class Setup</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#comprisesMaterial">
+    <rdfs:comment xml:lang="en">This predicate establishes the recursive relation between the class Material</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Material"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Material"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasPossivleRecoveryProcedure">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#RecoveryProcedure"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#FailureType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#usesMaterialFamily">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#MaterialFamily"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Operation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasOperation">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Operation"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#ProcessPlan"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class ProcessPlan and the class Operation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#isAssociatedWithProduct">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Product"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#ProductionOrder"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class ProductionOrder and the class Productl</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasJournal">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Journal"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#ProductionOrder"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class ProductionOrder and the class WorkOrder</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasPossibleResources">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Operation"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Resource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#executedBy">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#JournalDetails"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Resource"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class xxxxxx
+ and the class Resource, being formally defined as follows</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#requiresProperty">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Operation"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class Operation class and the class Property</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Property"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasAppliedRecoveryProcedure">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Failure"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#RecoveryProcedure"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#comprisesOperation">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Operation"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Operation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasProcessPlan">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#ProcessPlan"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Product"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class Product and the class ProcessPlan</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#describesOperation">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Operation"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#JournalDetails"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#createsFunction">
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class Operation and the class Function, allowing to create a function from the execution of an operation using a material</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Function"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Operation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasTarget">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Function"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#MaterialFamily"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#requiresSetup">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Operation"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class Operation and the class Setup</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Setup"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#materialUsed">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#JournalDetails"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Material"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasFailureType">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#FailureType"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class Failure and the class FailureType</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Failure"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasTool">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Producer"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Tool"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasExecuted">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#JournalDetails"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Resource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasOperationPrecedence">
+    <rdfs:comment xml:lang="en">This predicate establishes the recursive relation between the class Operation to define a precedence to execute an operation</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Operation"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Operation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasFailure">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Resource"/>
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Failure"/>
+    <rdfs:comment xml:lang="en">This predicate establishes the relation between the class Resource and the class Failure</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasCarrier">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#Function"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#MaterialFamily"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.grace-ontology.com#hasJournalDetails">
+    <rdfs:range rdf:resource="http://www.grace-ontology.com#JournalDetails"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Journal"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#description">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.grace-ontology.com#Setup"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Product"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Failure"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Material"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#MaterialFamily"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#RecoveryProcedure"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Operation"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#FailureType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment xml:lang="en">A statement describing something, e.g. a product or a setup</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#type">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.grace-ontology.com#Resource"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#FailureType"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Operation"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Material"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Function"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment xml:lang="en">The designation of a type, e.g. a description</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#endDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en">The estimated date for the end of an activity</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.grace-ontology.com#Journal"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#JournalDetails"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#journalDetailsID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#JournalDetails"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#duration">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Operation"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#overallResult">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Good</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Not Good</rdf:first>
+              </rdf:rest>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Not OK</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >OK</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#JournalDetails"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#expectedDetailedResult">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Function"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#mathOperator">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Property"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#journalID">
+    <rdfs:comment xml:lang="en">A non-negative integer number that provides the unique identification of the work order</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Journal"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#startDate">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.grace-ontology.com#ProductionOrder"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Journal"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#JournalDetails"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en">The estimated date for the end of start activity</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#procedureID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#RecoveryProcedure"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#setOfSymptons">
+    <rdfs:comment xml:lang="en">List of symptoms that may lead to the occurrence of a failure (important to forecast failures and to support the diagnosis)</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#FailureType"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#failureID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment xml:lang="en">A non-negative integer number that provides the unique identification of the failure</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Failure"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#earliestDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:comment xml:lang="en">The date before which an activity or event must not start</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#ProductionOrder"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#value">
+    <rdfs:comment xml:lang="en">A specific amount related to a property type</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Property"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#quantity">
+    <rdfs:comment xml:lang="en">A positive rational number that defines the specific amount of things to be produced</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.grace-ontology.com#ProductionOrder"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Material"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#dueDate">
+    <rdfs:comment xml:lang="en">The date on which an obligation, e.g. the production of a product, must be accomplished</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#ProductionOrder"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#materialID">
+    <rdfs:comment xml:lang="en">A non-negative integer number that provides the unique identification of the material</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Material"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#processPlanID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">A non-negative integer number that provides the unique identification of the process plan</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#ProcessPlan"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#materialFamilyID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#MaterialFamily"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#operationID">
+    <rdfs:comment xml:lang="en">A non-negative integer number that provides the unique identification of the operation</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Operation"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#state">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.grace-ontology.com#Journal"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Resource"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment xml:lang="en">The current state of the resource, e.g. waiting, running and broken</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#unit">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Property"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#thisID">
+    <rdfs:comment xml:lang="en">A non-negative integer number that provides the unique identification of the resource</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Resource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#detailedResult">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#JournalDetails"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#recoveryTime">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Failure"/>
+    <rdfs:comment xml:lang="en">A positive rational number, it gives the indication of the recovery time after a failure (expressed in seconds)</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#location">
+    <rdfs:comment xml:lang="en">A place where something, e.g. a resource, is located.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Resource"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#toolType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Tool"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#setupID">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Setup"/>
+    <rdfs:comment xml:lang="en">A non-negative integer number that provides the unique identification of the setup</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#name">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.grace-ontology.com#Resource"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Property"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Operation"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Product"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#MaterialFamily"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#JournalDetails"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Journal"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#FailureType"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Function"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#ProcessPlan"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#Material"/>
+          <owl:Class rdf:about="http://www.grace-ontology.com#RecoveryProcedure"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment xml:lang="en">The designation of a thing, e.g. a resource, a property or an operation</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#productID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">A non-negative integer number that provides the unique identification of the product</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Product"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#productionOrderID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment xml:lang="en">A non-negative integer number that provides the unique identification of the production order</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#ProductionOrder"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.grace-ontology.com#occurenceDate">
+    <rdfs:domain rdf:resource="http://www.grace-ontology.com#Failure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en">The date when a failure occurred</rdfs:comment>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://www.grace-ontology.com#_push">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></name>
+  </rdf:Description>
+  <Product rdf:about="http://www.grace-ontology.com#_859201049011_1111">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AW0E9XPTO</name>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LA-1200-WP-PL-E8+IL-K64-A22</description>
+    <hasMaterial>
+      <Material rdf:about="http://www.grace-ontology.com#_461973212312">
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</quantity>
+        <materialID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4</materialID>
+        <hasMaterialFamily>
+          <MaterialFamily rdf:about="http://www.grace-ontology.com#RearTub">
+            <materialFamilyID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >4</materialFamilyID>
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >RearTub</name>
+            <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            ></description>
+            <hasCarrier>
+              <Function rdf:about="http://www.grace-ontology.com#RearTub_Hold_Bbearing">
+                <hasCarrier rdf:resource="http://www.grace-ontology.com#RearTub"/>
+                <hasTarget>
+                  <MaterialFamily rdf:about="http://www.grace-ontology.com#Bbearing">
+                    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Bbearing</name>
+                    <hasCarrier>
+                      <Function rdf:about="http://www.grace-ontology.com#BBearing_Hold_CrossPiece">
+                        <hasTarget>
+                          <MaterialFamily rdf:about="http://www.grace-ontology.com#CrossPiece">
+                            <materialFamilyID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >3</materialFamilyID>
+                            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >CrossPiece</name>
+                          </MaterialFamily>
+                        </hasTarget>
+                        <hasCarrier rdf:resource="http://www.grace-ontology.com#Bbearing"/>
+                      </Function>
+                    </hasCarrier>
+                    <materialFamilyID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >2</materialFamilyID>
+                  </MaterialFamily>
+                </hasTarget>
+              </Function>
+            </hasCarrier>
+            <hasCarrier>
+              <Function rdf:about="http://www.grace-ontology.com#RearTub_Hold_Abearing">
+                <hasCarrier rdf:resource="http://www.grace-ontology.com#RearTub"/>
+                <hasTarget>
+                  <MaterialFamily rdf:about="http://www.grace-ontology.com#Abearing">
+                    <materialFamilyID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >1</materialFamilyID>
+                    <hasCarrier>
+                      <Function rdf:about="http://www.grace-ontology.com#ABearing_Hold_CrossPiece">
+                        <hasCarrier rdf:resource="http://www.grace-ontology.com#Abearing"/>
+                        <hasTarget rdf:resource="http://www.grace-ontology.com#CrossPiece"/>
+                      </Function>
+                    </hasCarrier>
+                    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Abearing</name>
+                  </MaterialFamily>
+                </hasTarget>
+              </Function>
+            </hasCarrier>
+            <hasCarrier>
+              <Function rdf:about="http://www.grace-ontology.com#RearTub_Hold_ShaftSeal">
+                <hasCarrier rdf:resource="http://www.grace-ontology.com#RearTub"/>
+                <hasTarget>
+                  <MaterialFamily rdf:about="http://www.grace-ontology.com#ShaftSeal">
+                    <materialFamilyID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >5</materialFamilyID>
+                    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >shaftSeal</name>
+                  </MaterialFamily>
+                </hasTarget>
+              </Function>
+            </hasCarrier>
+          </MaterialFamily>
+        </hasMaterialFamily>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hub4Eureka</description>
+        <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hub</type>
+      </Material>
+    </hasMaterial>
+    <hasProcessPlan>
+      <ProcessPlan rdf:about="http://www.grace-ontology.com#FrontLoader">
+        <processPlanID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >FrontLoader</processPlanID>
+        <hasOperation>
+          <Operation rdf:about="http://www.grace-ontology.com#MarriageRearTubDrum-Program1">
+            <usesMaterialFamily rdf:resource="http://www.grace-ontology.com#RearTub"/>
+            <hasPossibleResources>
+              <Producer rdf:about="http://www.grace-ontology.com#Marriage2">
+                <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >assembly</type>
+                <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Marriage2</name>
+                <thisID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >6</thisID>
+                <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Naples_Line1</location>
+              </Producer>
+            </hasPossibleResources>
+            <hasPossibleResources>
+              <Producer rdf:about="http://www.grace-ontology.com#Marriage1">
+                <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Naples_Line1</location>
+                <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >assembly</type>
+                <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Marriage1</name>
+                <thisID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >1</thisID>
+              </Producer>
+            </hasPossibleResources>
+            <hasOperationPrecedence>
+              <Operation rdf:about="http://www.grace-ontology.com#SealInsertion-Program1">
+                <hasOperationPrecedence>
+                  <Operation rdf:about="http://www.grace-ontology.com#Bearing_Insertion-Program1">
+                    <requiresSetup>
+                      <Setup rdf:about="http://www.grace-ontology.com#Setup_1">
+                        <setupID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</setupID>
+                        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Install the first requirements</description>
+                      </Setup>
+                    </requiresSetup>
+                    <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >hold</type>
+                    <createsFunction rdf:resource="http://www.grace-ontology.com#ABearing_Hold_CrossPiece"/>
+                    <hasPossibleResources>
+                      <Producer rdf:about="http://www.grace-ontology.com#Bearing_Insertion2">
+                        <thisID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >2</thisID>
+                        <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Naples_Line1</location>
+                        <hasProperty>
+                          <Property rdf:about="http://www.grace-ontology.com#Property_Speed">
+                            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >press</name>
+                            <value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >15</value>
+                            <mathOperator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >&gt;</mathOperator>
+                            <unit rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Newtons</unit>
+                          </Property>
+                        </hasProperty>
+                        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Bearing_Insertion2</name>
+                        <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >press</type>
+                      </Producer>
+                    </hasPossibleResources>
+                    <hasPossibleResources>
+                      <Producer rdf:about="http://www.grace-ontology.com#Bearing_Insertion1">
+                        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Bearing_Insertion1</name>
+                        <thisID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</thisID>
+                        <hasProperty rdf:resource="http://www.grace-ontology.com#Property_Speed"/>
+                        <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >press</type>
+                        <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Naples_Line1</location>
+                      </Producer>
+                    </hasPossibleResources>
+                    <usesMaterialFamily rdf:resource="http://www.grace-ontology.com#Abearing"/>
+                    <duration rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >20</duration>
+                    <operationID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >2</operationID>
+                    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Bearing_Insertion</name>
+                  </Operation>
+                </hasOperationPrecedence>
+                <createsFunction rdf:resource="http://www.grace-ontology.com#RearTub_Hold_ShaftSeal"/>
+                <hasPossibleResources>
+                  <Producer rdf:about="http://www.grace-ontology.com#Seal_Insertion2">
+                    <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >press</type>
+                    <thisID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >5</thisID>
+                    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Seal Insertion2</name>
+                    <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Naples_Line2</location>
+                  </Producer>
+                </hasPossibleResources>
+                <hasPossibleResources>
+                  <Producer rdf:about="http://www.grace-ontology.com#Seal_Insertion1">
+                    <location rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Naples_Line1</location>
+                    <hasProperty rdf:resource="http://www.grace-ontology.com#Property_Speed"/>
+                    <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >press</type>
+                    <thisID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >3</thisID>
+                    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Seal Insertion1</name>
+                  </Producer>
+                </hasPossibleResources>
+                <usesMaterialFamily rdf:resource="http://www.grace-ontology.com#ShaftSeal"/>
+                <requiresSetup rdf:resource="http://www.grace-ontology.com#Setup_1"/>
+                <operationID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >1</operationID>
+                <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Seal_Insertion1</name>
+              </Operation>
+            </hasOperationPrecedence>
+            <createsFunction rdf:resource="http://www.grace-ontology.com#RearTub_Hold_Bbearing"/>
+            <operationID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >3</operationID>
+            <requiresSetup rdf:resource="http://www.grace-ontology.com#Setup_1"/>
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >MarriageRearTubDrum-</name>
+          </Operation>
+        </hasOperation>
+        <hasOperation rdf:resource="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <hasOperation rdf:resource="http://www.grace-ontology.com#SealInsertion-Program1"/>
+      </ProcessPlan>
+    </hasProcessPlan>
+    <productID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >859201049011111</productID>
+  </Product>
+  <Product rdf:about="http://www.grace-ontology.com#_859201049010_0000">
+    <hasProcessPlan rdf:resource="http://www.grace-ontology.com#FrontLoader"/>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LA-1200-WP-PL-E8+IL-K64-A11</description>
+    <productID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >8592010490100000</productID>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AW0E9120</name>
+    <hasMaterial>
+      <Material rdf:about="http://www.grace-ontology.com#_461971422013">
+        <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hub</type>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >seal0465x12,2</description>
+        <hasMaterialFamily>
+          <MaterialFamily rdf:about="http://www.grace-ontology.com#Hub">
+            <materialFamilyID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >6</materialFamilyID>
+            <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            ></description>
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >hub</name>
+            <hasCarrier rdf:resource="http://www.grace-ontology.com#ABearing_Hold_CrossPiece"/>
+          </MaterialFamily>
+        </hasMaterialFamily>
+        <materialID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3</materialID>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</quantity>
+      </Material>
+    </hasMaterial>
+    <hasMaterial>
+      <Material rdf:about="http://www.grace-ontology.com#_461971422011">
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >seal0465x12,2</description>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</quantity>
+        <materialID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</materialID>
+        <hasMaterialFamily rdf:resource="http://www.grace-ontology.com#Hub"/>
+      </Material>
+    </hasMaterial>
+    <hasMaterial>
+      <Material rdf:about="http://www.grace-ontology.com#_461971408451">
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</quantity>
+        <hasMaterialFamily rdf:resource="http://www.grace-ontology.com#Hub"/>
+        <type rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hub</type>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hub4Eureka</description>
+        <materialID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</materialID>
+      </Material>
+    </hasMaterial>
+  </Product>
+  <FailureType rdf:about="http://www.grace-ontology.com#FailureType_1">
+    <hasPossivleRecoveryProcedure>
+      <RecoveryProcedure rdf:about="http://www.grace-ontology.com#RecoveryProcedure_2"/>
+    </hasPossivleRecoveryProcedure>
+  </FailureType>
+  <Function rdf:about="http://www.grace-ontology.com#_stop">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stop</name>
+  </Function>
+  <Setup rdf:about="http://www.grace-ontology.com#Setup_2">
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Install Last procedures</description>
+    <setupID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</setupID>
+  </Setup>
+  <RecoveryProcedure rdf:about="http://www.grace-ontology.com#RecoveryProcedure_1">
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sd</description>
+  </RecoveryProcedure>
+  <Tool rdf:about="http://www.grace-ontology.com#MechanicalTool_2">
+    <hasProperty rdf:resource="http://www.grace-ontology.com#Property_Speed"/>
+    <thisID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</thisID>
+  </Tool>
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >adjust</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >cleaning</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >composite</rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:rest>
+                      </rdf:rest>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >repairing</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >fix</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >movement</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >measure</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >assembly</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >programming</rdf:first>
+          </rdf:rest>
+        </rdf:rest>
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >marriage</rdf:first>
+      </rdf:rest>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >transformation</rdf:first>
+    </owl:oneOf>
+  </owl:DataRange>
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >System</rdf:first>
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >SuperSystem</rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </rdf:rest>
+    </owl:oneOf>
+  </owl:DataRange>
+  <ProductionOrder rdf:about="http://www.grace-ontology.com#_9503599367">
+    <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2012-02-06T15:06:48</startDate>
+    <hasJournal>
+      <Journal rdf:about="http://www.grace-ontology.com#Journal_411142011153">
+        <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2012-02-07T15:09:00</startDate>
+        <state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Finished</state>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Journal_411142011153</name>
+        <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2012-02-09T15:09:08</endDate>
+        <journalID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >411142011153</journalID>
+        <hasJournalDetails>
+          <JournalDetails rdf:about="http://www.grace-ontology.com#Journal_Details_1">
+            <describesOperation rdf:resource="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+            <detailedResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The result is:Good</detailedResult>
+            <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-21T22:58:14</startDate>
+            <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-29T22:58:17</endDate>
+            <materialUsed rdf:resource="http://www.grace-ontology.com#_461971422011"/>
+            <journalDetailsID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1</journalDetailsID>
+            <executedBy rdf:resource="http://www.grace-ontology.com#Bearing_Insertion1"/>
+            <overallResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >OK</overallResult>
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Journal_Details_1</name>
+          </JournalDetails>
+        </hasJournalDetails>
+        <hasJournalDetails>
+          <JournalDetails rdf:about="http://www.grace-ontology.com#Journal_Details_2">
+            <describesOperation rdf:resource="http://www.grace-ontology.com#SealInsertion-Program1"/>
+            <overallResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >OK</overallResult>
+            <detailedResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The result is:Good</detailedResult>
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Journal_Details_2</name>
+            <executedBy rdf:resource="http://www.grace-ontology.com#Seal_Insertion1"/>
+            <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-28T22:59:10</endDate>
+            <materialUsed rdf:resource="http://www.grace-ontology.com#_461971408451"/>
+            <journalDetailsID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >2</journalDetailsID>
+            <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-20T22:59:06</startDate>
+          </JournalDetails>
+        </hasJournalDetails>
+        <hasJournalDetails>
+          <JournalDetails rdf:about="http://www.grace-ontology.com#Journal_Details_3">
+            <executedBy rdf:resource="http://www.grace-ontology.com#Marriage1"/>
+            <overallResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >OK</overallResult>
+            <describesOperation rdf:resource="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+            <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-16T23:04:36</endDate>
+            <materialUsed rdf:resource="http://www.grace-ontology.com#_461971422011"/>
+            <journalDetailsID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >3</journalDetailsID>
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Journal_Details_3</name>
+            <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-02T23:04:31</startDate>
+            <detailedResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The result is:Good</detailedResult>
+          </JournalDetails>
+        </hasJournalDetails>
+      </Journal>
+    </hasJournal>
+    <hasJournal>
+      <Journal rdf:about="http://www.grace-ontology.com#Journal_411142011154">
+        <journalID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >411142011154</journalID>
+        <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2012-02-09T15:09:26</startDate>
+        <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+        >2012-02-10T15:09:21</endDate>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Journal_411142011154</name>
+        <hasJournalDetails>
+          <JournalDetails rdf:about="http://www.grace-ontology.com#Journal_Details_4">
+            <describesOperation rdf:resource="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+            <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-21T22:58:14</startDate>
+            <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-29T22:58:17</endDate>
+            <journalDetailsID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >4</journalDetailsID>
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Journal_Details_4</name>
+            <detailedResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The result is:Good</detailedResult>
+            <overallResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >OK</overallResult>
+          </JournalDetails>
+        </hasJournalDetails>
+        <hasJournalDetails>
+          <JournalDetails rdf:about="http://www.grace-ontology.com#Journal_Details_6">
+            <describesOperation rdf:resource="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+            <journalDetailsID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >6</journalDetailsID>
+            <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-29T22:58:17</endDate>
+            <overallResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >OK</overallResult>
+            <executedBy rdf:resource="http://www.grace-ontology.com#Marriage1"/>
+            <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-21T22:58:14</startDate>
+            <detailedResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The result is:Good</detailedResult>
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Journal_Details_6</name>
+          </JournalDetails>
+        </hasJournalDetails>
+        <hasJournalDetails>
+          <JournalDetails rdf:about="http://www.grace-ontology.com#Journal_Details_5">
+            <executedBy rdf:resource="http://www.grace-ontology.com#Seal_Insertion1"/>
+            <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-29T22:58:17</endDate>
+            <detailedResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >The result is:Good</detailedResult>
+            <describesOperation rdf:resource="http://www.grace-ontology.com#SealInsertion-Program1"/>
+            <overallResult rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >OK</overallResult>
+            <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Journal_Details_5</name>
+            <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2012-02-21T22:58:14</startDate>
+            <journalDetailsID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >5</journalDetailsID>
+          </JournalDetails>
+        </hasJournalDetails>
+        <state rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Finished</state>
+      </Journal>
+    </hasJournal>
+    <productionOrderID rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >0</productionOrderID>
+    <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</quantity>
+  </ProductionOrder>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.7, Build 620)  http://protege.stanford.edu -->
