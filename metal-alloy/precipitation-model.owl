@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://home.agh.edu.pl/~pmaciol/precipitation-model/"
+     xml:base="http://home.agh.edu.pl/~pmaciol/precipitation-model/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:emmo-core="http://emmc.info/emmo-core#"
+     xmlns:emmo-models="http://emmc.info/emmo-models#"
+     xmlns:precipitation-model="http://home.agh.edu.pl/~pmaciol/precipitation-model/">
+    <owl:Ontology rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/">
+        <owl:versionIRI rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/0.0.1"/>
+        <owl:imports rdf:resource="http://emmc.info/emmo-math"/>
+        <owl:imports rdf:resource="http://home.agh.edu.pl/~pmaciol/metal-alloy/0.0.1"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://emmc.info/emmo-models#EMMO_05eef8df_e29a_43bf_8afd_4de96d38317f -->
+
+    <owl:ObjectProperty rdf:about="http://emmc.info/emmo-models#EMMO_05eef8df_e29a_43bf_8afd_4de96d38317f">
+        <rdfs:domain rdf:resource="http://emmc.info/emmo-models#EMMO_939483b1_0148_43d1_8b35_851d2cd5d939"/>
+        <rdfs:range rdf:resource="http://emmc.info/emmo-direct#EMMO_36c79456_e29c_400d_8bd3_0eedddb82652"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/has_multiscale_model_components -->
+
+    <owl:ObjectProperty rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/has_multiscale_model_components">
+        <rdfs:subPropertyOf rdf:resource="http://emmc.info/emmo-direct#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+        <owl:inverseOf rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/is_component_of_multiscale_model"/>
+        <rdfs:domain rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/multiscale_model"/>
+        <rdfs:range rdf:resource="http://emmc.info/emmo-models#EMMO_939483b1_0148_43d1_8b35_851d2cd5d939"/>
+        <rdfs:comment>Is this really has_spatial_direct_part?</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/is_component_of_multiscale_model -->
+
+    <owl:ObjectProperty rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/is_component_of_multiscale_model">
+        <rdfs:subPropertyOf rdf:resource="http://emmc.info/emmo-direct#EMMO_ea69f6b1_95b2_4721_b24a_b1a1dfa643a6"/>
+        <rdfs:domain rdf:resource="http://emmc.info/emmo-models#EMMO_939483b1_0148_43d1_8b35_851d2cd5d939"/>
+        <rdfs:range rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/multiscale_model"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://emmc.info/emmo-models#EMMO_27c5d8c6_8af7_4d63_beb1_ec37cd8b3fa3 -->
+
+    <owl:Class rdf:about="http://emmc.info/emmo-models#EMMO_27c5d8c6_8af7_4d63_beb1_ec37cd8b3fa3"/>
+    
+
+
+    <!-- http://emmc.info/emmo-models#EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea -->
+
+    <owl:Class rdf:about="http://emmc.info/emmo-models#EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea"/>
+    
+
+
+    <!-- http://emmc.info/emmo-models#EMMO_53935db0_af45_4426_b9e9_244a0d77db00 -->
+
+    <owl:Class rdf:about="http://emmc.info/emmo-models#EMMO_53935db0_af45_4426_b9e9_244a0d77db00"/>
+    
+
+
+    <!-- http://emmc.info/emmo-models#EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213 -->
+
+    <owl:Class rdf:about="http://emmc.info/emmo-models#EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213"/>
+    
+
+
+    <!-- http://emmc.info/emmo-models#EMMO_939483b1_0148_43d1_8b35_851d2cd5d939 -->
+
+    <owl:Class rdf:about="http://emmc.info/emmo-models#EMMO_939483b1_0148_43d1_8b35_851d2cd5d939"/>
+    
+
+
+    <!-- http://emmc.info/emmo-models#EMMO_a4b14b83_9392_4a5f_a2e8_b2b58793f59b -->
+
+    <owl:Class rdf:about="http://emmc.info/emmo-models#EMMO_a4b14b83_9392_4a5f_a2e8_b2b58793f59b"/>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/ANN_model -->
+
+    <owl:Class rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/ANN_model">
+        <rdfs:subClassOf rdf:resource="http://emmc.info/emmo-models#EMMO_a4b14b83_9392_4a5f_a2e8_b2b58793f59b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/CALPHAD_model -->
+
+    <owl:Class rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/CALPHAD_model">
+        <rdfs:subClassOf rdf:resource="http://emmc.info/emmo-models#EMMO_53935db0_af45_4426_b9e9_244a0d77db00"/>
+    </owl:Class>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/FEM_heat_model -->
+
+    <owl:Class rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/FEM_heat_model">
+        <rdfs:subClassOf rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/Finite_Element_Method_model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/Finite_Element_Method_model -->
+
+    <owl:Class rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/Finite_Element_Method_model">
+        <rdfs:subClassOf rdf:resource="http://emmc.info/emmo-models#EMMO_4456a5d2_16a6_4ee1_9a8e_5c75956b28ea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/Kriging_model -->
+
+    <owl:Class rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/Kriging_model">
+        <rdfs:subClassOf rdf:resource="http://emmc.info/emmo-models#EMMO_a4b14b83_9392_4a5f_a2e8_b2b58793f59b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/dislocations_equation -->
+
+    <owl:Class rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/dislocations_equation">
+        <rdfs:subClassOf rdf:resource="http://emmc.info/emmo-models#EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213"/>
+    </owl:Class>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/dislocations_equation_Kocks -->
+
+    <owl:Class rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/dislocations_equation_Kocks">
+        <rdfs:subClassOf rdf:resource="http://emmc.info/emmo-models#EMMO_27c5d8c6_8af7_4d63_beb1_ec37cd8b3fa3"/>
+        <rdfs:subClassOf rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/dislocations_equation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/elastic_stress_dislocations_equation -->
+
+    <owl:Class rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/elastic_stress_dislocations_equation">
+        <rdfs:subClassOf rdf:resource="http://emmc.info/emmo-models#EMMO_27c5d8c6_8af7_4d63_beb1_ec37cd8b3fa3"/>
+        <rdfs:subClassOf rdf:resource="http://emmc.info/emmo-models#EMMO_84cadc45_6758_46f2_ba2a_5ead65c70213"/>
+    </owl:Class>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/multiscale_model -->
+
+    <owl:Class rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/multiscale_model">
+        <rdfs:subClassOf rdf:resource="http://emmc.info/emmo-models#EMMO_939483b1_0148_43d1_8b35_851d2cd5d939"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/FEM_deform_htA6082 -->
+
+    <owl:NamedIndividual rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/FEM_deform_htA6082">
+        <rdf:type rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/FEM_heat_model"/>
+        <emmo-models:EMMO_05eef8df_e29a_43bf_8afd_4de96d38317f rdf:resource="http://home.agh.edu.pl/~pmaciol/metal-alloy#A6082"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/MatCalc_TUW_A6082 -->
+
+    <owl:NamedIndividual rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/MatCalc_TUW_A6082">
+        <rdf:type rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/CALPHAD_model"/>
+        <emmo-models:EMMO_05eef8df_e29a_43bf_8afd_4de96d38317f rdf:resource="http://home.agh.edu.pl/~pmaciol/metal-alloy#A6082"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/amm3_maciol_bureau_model -->
+
+    <owl:NamedIndividual rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/amm3_maciol_bureau_model">
+        <rdf:type rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/multiscale_model"/>
+        <emmo-models:EMMO_05eef8df_e29a_43bf_8afd_4de96d38317f rdf:resource="http://home.agh.edu.pl/~pmaciol/metal-alloy#A6082"/>
+        <has_multiscale_model_components rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/FEM_deform_htA6082"/>
+        <has_multiscale_model_components rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/MatCalc_TUW_A6082"/>
+        <has_multiscale_model_components rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/elastic_stress_bureau_A6082"/>
+        <has_multiscale_model_components rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/kocks_equation_bureau_A6082"/>
+        <has_multiscale_model_components rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/kriging_model_for_htA6082"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/elastic_stress_bureau_A6082 -->
+
+    <owl:NamedIndividual rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/elastic_stress_bureau_A6082">
+        <rdf:type rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/elastic_stress_dislocations_equation"/>
+        <emmo-models:EMMO_05eef8df_e29a_43bf_8afd_4de96d38317f rdf:resource="http://home.agh.edu.pl/~pmaciol/metal-alloy#A6082"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/kocks_equation_bureau_A6082 -->
+
+    <owl:NamedIndividual rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/kocks_equation_bureau_A6082">
+        <rdf:type rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/dislocations_equation_Kocks"/>
+        <emmo-models:EMMO_05eef8df_e29a_43bf_8afd_4de96d38317f rdf:resource="http://home.agh.edu.pl/~pmaciol/metal-alloy#A6082"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://home.agh.edu.pl/~pmaciol/precipitation-model/kriging_model_for_htA6082 -->
+
+    <owl:NamedIndividual rdf:about="http://home.agh.edu.pl/~pmaciol/precipitation-model/kriging_model_for_htA6082">
+        <rdf:type rdf:resource="http://home.agh.edu.pl/~pmaciol/precipitation-model/Kriging_model"/>
+        <emmo-models:EMMO_05eef8df_e29a_43bf_8afd_4de96d38317f rdf:resource="http://home.agh.edu.pl/~pmaciol/metal-alloy#A6082"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
