@@ -1,0 +1,2670 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2012/11/LowerContextModel"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ontologies/2012/11/LowerContextModel">
+    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/2012/11/LowerContextModel#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="ContextModel" IRI="http://www.semanticweb.org/ontologies/2012/10/ContextModel.owl#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>This ontology is a domain specific extension of the User and Business context models. The domain is the production of juice drinks in a production plant. The plant consists of two processing lines and two filling lines. 9 Users are modelled: Plant Manager, 4 Line Managers and 4 Line Operators. Also, business objects and events specific to the production of juice drinks are modelled (e.g. Customer order, Filling order,BadQualityAlarm,...). 
+This model is by no means complete. It consists of the necessary classes, properties, individuals and rules needed to demonstrate its effectiveness.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#BusinessObjects"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CustomerOrder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Delivery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DesktopComputer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExternalTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FillingActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FillingAlarm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FillingEvents"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FillingOrder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FinancialResources"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GermanPlant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InsidePlant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InspectionLot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternalTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternalTransportationOrder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineTerminal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManufacturingBranch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Offices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutsidePlant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlantFloor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcessOrder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcessingActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcessingAlarm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcessingEvents"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionLine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PurchaseOrder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QualityAlarm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QualityControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResearchBranch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SwissPlant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TabletDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportationActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportationAlarm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportationEvents"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportationOrder"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasObjectID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProductID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInterestedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRelevant"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#activateBusinessState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AbnormalFillingState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AbnormalProcessingState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AccessToCustomerOrder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AccessToDelivery"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AccessToFillingOrder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AccessToInspectionLot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AccessToProcessOrder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AccessToPurchaseOrder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AccessToTransportationOrder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AsPlanned"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BadQualityState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Canceled"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Completed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CustomerOrder1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Delivered"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ExtTransport1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Filling1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingAlarm1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingEnded"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingFloor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingLineA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingLineATerminal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingLineB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingLineBTerminal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingOffice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingOfficeComputer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingOngoingAsPlanned"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingOngoingBehindSchedule"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingOrder1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FillingStarted"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ID_112"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IntTransport1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InternalTransportationOrder1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LineManager"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LineOperator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lot1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ManagerOffice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OngoingAsPlanned"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OngoingBehindSchedule"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Overtime"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PlantManager"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PlantManagerComputer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessOrder1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Processing1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingEnded"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingFloor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingLineA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingLineATerminal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingLineB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingLineBTerminal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingOffice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingOfficeComputer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingOngoingAsPlanned"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingOngoingBehindSchedule"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcessingStarted"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PurchaseOrder1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#QualityAlarm1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#QualityControl1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TransportationOrder1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TransportationStarted"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User8"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User9"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserNotWorking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserOnBreak"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserOnVacation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserSick"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserWorking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Waiting"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ContextModel:isSuperiorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ContextModel:accessedWith"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:BusinessContext"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:Permission"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:BusinessEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:User"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:ActivityStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ContextModel:isLocatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ContextModel:isNext"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:UserWorking"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:BusinessState"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:BusinessResource"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:InformationFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:UserNotWorking"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ContextModel:isPeerTo"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:Alarm"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:Role"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:UserState"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:AccessDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:ActivityResult"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ContextModel:RelativeLocation"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="ContextModel:ActivityResult"/>
+        <Class abbreviatedIRI="ContextModel:BusinessContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ContextModel:ActivityStatus"/>
+        <Class abbreviatedIRI="ContextModel:BusinessContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+        <Class abbreviatedIRI="ContextModel:BusinessContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ContextModel:BusinessEvent"/>
+        <Class abbreviatedIRI="ContextModel:BusinessContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BusinessObjects"/>
+        <Class abbreviatedIRI="ContextModel:InformationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CustomerOrder"/>
+        <Class IRI="#BusinessObjects"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Delivery"/>
+        <Class IRI="#BusinessObjects"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DesktopComputer"/>
+        <Class abbreviatedIRI="ContextModel:AccessDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExternalTransport"/>
+        <Class IRI="#TransportationActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FillingActivity"/>
+        <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FillingAlarm"/>
+        <Class abbreviatedIRI="ContextModel:Alarm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FillingEvents"/>
+        <Class abbreviatedIRI="ContextModel:BusinessEvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FillingOrder"/>
+        <Class IRI="#BusinessObjects"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FinancialResources"/>
+        <Class abbreviatedIRI="ContextModel:BusinessResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GermanPlant"/>
+        <Class IRI="#ManufacturingBranch"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InsidePlant"/>
+        <Class abbreviatedIRI="ContextModel:RelativeLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InspectionLot"/>
+        <Class IRI="#BusinessObjects"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InternalTransport"/>
+        <Class IRI="#TransportationActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InternalTransportationOrder"/>
+        <Class IRI="#BusinessObjects"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineTerminal"/>
+        <Class abbreviatedIRI="ContextModel:AccessDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManufacturingBranch"/>
+        <Class abbreviatedIRI="ContextModel:BusinessResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Offices"/>
+        <Class IRI="#InsidePlant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutsidePlant"/>
+        <Class abbreviatedIRI="ContextModel:RelativeLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlantFloor"/>
+        <Class IRI="#InsidePlant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProcessOrder"/>
+        <Class IRI="#BusinessObjects"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProcessingActivity"/>
+        <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProcessingAlarm"/>
+        <Class abbreviatedIRI="ContextModel:Alarm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProcessingEvents"/>
+        <Class abbreviatedIRI="ContextModel:BusinessEvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductID"/>
+        <Class abbreviatedIRI="ContextModel:BusinessContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionLine"/>
+        <Class IRI="#SwissPlant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PurchaseOrder"/>
+        <Class IRI="#BusinessObjects"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QualityAlarm"/>
+        <Class abbreviatedIRI="ContextModel:Alarm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QualityControl"/>
+        <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResearchBranch"/>
+        <Class abbreviatedIRI="ContextModel:BusinessResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SwissPlant"/>
+        <Class IRI="#ManufacturingBranch"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TabletDevice"/>
+        <Class abbreviatedIRI="ContextModel:AccessDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportationActivity"/>
+        <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportationAlarm"/>
+        <Class abbreviatedIRI="ContextModel:Alarm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportationEvents"/>
+        <Class abbreviatedIRI="ContextModel:BusinessEvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportationOrder"/>
+        <Class IRI="#BusinessObjects"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="ContextModel:Alarm"/>
+        <Class IRI="#FillingEvents"/>
+        <Class IRI="#ProcessingEvents"/>
+        <Class IRI="#TransportationEvents"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DesktopComputer"/>
+        <Class IRI="#MachineTerminal"/>
+        <Class IRI="#TabletDevice"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ExternalTransport"/>
+        <Class IRI="#InternalTransport"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FillingActivity"/>
+        <Class IRI="#ProcessingActivity"/>
+        <Class IRI="#QualityControl"/>
+        <Class IRI="#TransportationActivity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FillingAlarm"/>
+        <Class IRI="#ProcessingAlarm"/>
+        <Class IRI="#QualityAlarm"/>
+        <Class IRI="#TransportationAlarm"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#InsidePlant"/>
+        <Class IRI="#OutsidePlant"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Offices"/>
+        <Class IRI="#PlantFloor"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:BusinessState"/>
+        <NamedIndividual IRI="#AbnormalFillingState"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:BusinessState"/>
+        <NamedIndividual IRI="#AbnormalProcessingState"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Permission"/>
+        <NamedIndividual IRI="#AccessToCustomerOrder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Permission"/>
+        <NamedIndividual IRI="#AccessToDelivery"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Permission"/>
+        <NamedIndividual IRI="#AccessToFillingOrder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Permission"/>
+        <NamedIndividual IRI="#AccessToInspectionLot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Permission"/>
+        <NamedIndividual IRI="#AccessToProcessOrder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Permission"/>
+        <NamedIndividual IRI="#AccessToPurchaseOrder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Permission"/>
+        <NamedIndividual IRI="#AccessToTransportationOrder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:UserWorking"/>
+        <NamedIndividual IRI="#AsPlanned"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:BusinessState"/>
+        <NamedIndividual IRI="#BadQualityState"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:ActivityStatus"/>
+        <NamedIndividual IRI="#Canceled"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:ActivityStatus"/>
+        <NamedIndividual IRI="#Completed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CustomerOrder"/>
+        <NamedIndividual IRI="#CustomerOrder1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TransportationEvents"/>
+        <NamedIndividual IRI="#Delivered"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ExternalTransport"/>
+        <NamedIndividual IRI="#ExtTransport1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FillingActivity"/>
+        <NamedIndividual IRI="#Filling1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FillingAlarm"/>
+        <NamedIndividual IRI="#FillingAlarm1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FillingEvents"/>
+        <NamedIndividual IRI="#FillingEnded"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlantFloor"/>
+        <NamedIndividual IRI="#FillingFloor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProductionLine"/>
+        <NamedIndividual IRI="#FillingLineA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MachineTerminal"/>
+        <NamedIndividual IRI="#FillingLineATerminal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProductionLine"/>
+        <NamedIndividual IRI="#FillingLineB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MachineTerminal"/>
+        <NamedIndividual IRI="#FillingLineBTerminal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Offices"/>
+        <NamedIndividual IRI="#FillingOffice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DesktopComputer"/>
+        <NamedIndividual IRI="#FillingOfficeComputer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:BusinessState"/>
+        <NamedIndividual IRI="#FillingOngoingAsPlanned"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:BusinessState"/>
+        <NamedIndividual IRI="#FillingOngoingBehindSchedule"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FillingOrder"/>
+        <NamedIndividual IRI="#FillingOrder1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FillingEvents"/>
+        <NamedIndividual IRI="#FillingStarted"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProductID"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#InternalTransport"/>
+        <NamedIndividual IRI="#IntTransport1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#InternalTransportationOrder"/>
+        <NamedIndividual IRI="#InternalTransportationOrder1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Role"/>
+        <NamedIndividual IRI="#LineManager"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Role"/>
+        <NamedIndividual IRI="#LineOperator"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#InspectionLot"/>
+        <NamedIndividual IRI="#Lot1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Offices"/>
+        <NamedIndividual IRI="#ManagerOffice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:ActivityStatus"/>
+        <NamedIndividual IRI="#OngoingAsPlanned"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:ActivityStatus"/>
+        <NamedIndividual IRI="#OngoingBehindSchedule"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:UserWorking"/>
+        <NamedIndividual IRI="#Overtime"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:Role"/>
+        <NamedIndividual IRI="#PlantManager"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DesktopComputer"/>
+        <NamedIndividual IRI="#PlantManagerComputer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProcessOrder"/>
+        <NamedIndividual IRI="#ProcessOrder1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProcessingActivity"/>
+        <NamedIndividual IRI="#Processing1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProcessingEvents"/>
+        <NamedIndividual IRI="#ProcessingEnded"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlantFloor"/>
+        <NamedIndividual IRI="#ProcessingFloor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProductionLine"/>
+        <NamedIndividual IRI="#ProcessingLineA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MachineTerminal"/>
+        <NamedIndividual IRI="#ProcessingLineATerminal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProductionLine"/>
+        <NamedIndividual IRI="#ProcessingLineB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MachineTerminal"/>
+        <NamedIndividual IRI="#ProcessingLineBTerminal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Offices"/>
+        <NamedIndividual IRI="#ProcessingOffice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DesktopComputer"/>
+        <NamedIndividual IRI="#ProcessingOfficeComputer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:BusinessState"/>
+        <NamedIndividual IRI="#ProcessingOngoingAsPlanned"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:BusinessState"/>
+        <NamedIndividual IRI="#ProcessingOngoingBehindSchedule"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProcessingEvents"/>
+        <NamedIndividual IRI="#ProcessingStarted"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PurchaseOrder"/>
+        <NamedIndividual IRI="#PurchaseOrder1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#QualityAlarm"/>
+        <NamedIndividual IRI="#QualityAlarm1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#QualityControl"/>
+        <NamedIndividual IRI="#QualityControl1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TransportationOrder"/>
+        <NamedIndividual IRI="#TransportationOrder1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TransportationEvents"/>
+        <NamedIndividual IRI="#TransportationStarted"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:User"/>
+        <NamedIndividual IRI="#User1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:User"/>
+        <NamedIndividual IRI="#User2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:User"/>
+        <NamedIndividual IRI="#User4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:User"/>
+        <NamedIndividual IRI="#User6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:User"/>
+        <NamedIndividual IRI="#User7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:User"/>
+        <NamedIndividual IRI="#User8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:User"/>
+        <NamedIndividual IRI="#User9"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:UserState"/>
+        <NamedIndividual IRI="#UserNotWorking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:UserNotWorking"/>
+        <NamedIndividual IRI="#UserOnBreak"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:UserNotWorking"/>
+        <NamedIndividual IRI="#UserOnVacation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:UserNotWorking"/>
+        <NamedIndividual IRI="#UserSick"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:UserState"/>
+        <NamedIndividual IRI="#UserWorking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ContextModel:ActivityStatus"/>
+        <NamedIndividual IRI="#Waiting"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProductID"/>
+        <NamedIndividual IRI="#ExtTransport1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProductID"/>
+        <NamedIndividual IRI="#Filling1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasObjectID"/>
+        <NamedIndividual IRI="#FillingOrder1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProductID"/>
+        <NamedIndividual IRI="#IntTransport1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasObjectID"/>
+        <NamedIndividual IRI="#InternalTransportationOrder1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasObjectID"/>
+        <NamedIndividual IRI="#Lot1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasObjectID"/>
+        <NamedIndividual IRI="#ProcessOrder1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProductID"/>
+        <NamedIndividual IRI="#Processing1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProductID"/>
+        <NamedIndividual IRI="#QualityControl1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasObjectID"/>
+        <NamedIndividual IRI="#TransportationOrder1"/>
+        <NamedIndividual IRI="#ID_112"/>
+    </ObjectPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#describedBy"/>
+        <ObjectProperty IRI="#isRelevant"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasObjectID"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasProductID"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#describedBy"/>
+        <Class abbreviatedIRI="ContextModel:BusinessContext"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasObjectID"/>
+        <Class IRI="#BusinessObjects"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProductID"/>
+        <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isInterestedIn"/>
+        <Class abbreviatedIRI="ContextModel:User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRelevant"/>
+        <Class abbreviatedIRI="ContextModel:InformationFeature"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#describedBy"/>
+        <Class abbreviatedIRI="ContextModel:InformationFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasObjectID"/>
+        <Class IRI="#ProductID"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProductID"/>
+        <Class IRI="#ProductID"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInterestedIn"/>
+        <Class abbreviatedIRI="ContextModel:InformationFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRelevant"/>
+        <Class abbreviatedIRI="ContextModel:BusinessContext"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#activateBusinessState"/>
+        <Class abbreviatedIRI="ContextModel:BusinessState"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#activateBusinessState"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:eventOn"/>
+                <Variable IRI="urn:swrl:var#FillingAlarm"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:uses"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#AbnormalFillingState"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isInterestedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:eventOn"/>
+                <Variable IRI="urn:swrl:var#FillingAlarm"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <NamedIndividual IRI="#UserNotWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isPeerTo"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:uses"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#AbnormalFillingState"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isInterestedIn"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:eventOn"/>
+                <Variable IRI="urn:swrl:var#ProcessingAlarm"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:uses"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#AbnormalProcessingState"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isInterestedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:eventOn"/>
+                <Variable IRI="urn:swrl:var#ProcessingAlarm"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <NamedIndividual IRI="#UserNotWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isPeerTo"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:uses"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#AbnormalProcessingState"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isInterestedIn"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:uses"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <NamedIndividual IRI="#FillingOngoingBehindSchedule"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#FillingOngoingBehindSchedule"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isInterestedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:uses"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <NamedIndividual IRI="#ProcessingOngoingBehindSchedule"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#ProcessingOngoingBehindSchedule"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isInterestedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <NamedIndividual IRI="#UserNotWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isPeerTo"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:uses"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <NamedIndividual IRI="#FillingOngoingBehindSchedule"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#FillingOngoingBehindSchedule"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isInterestedIn"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <NamedIndividual IRI="#UserNotWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isPeerTo"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:uses"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <NamedIndividual IRI="#ProcessingOngoingBehindSchedule"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#ProcessingOngoingBehindSchedule"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isInterestedIn"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#b1"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasStatus"/>
+                <Variable IRI="urn:swrl:var#b1"/>
+                <NamedIndividual IRI="#Canceled"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isNext"/>
+                <Variable IRI="urn:swrl:var#b1"/>
+                <Variable IRI="urn:swrl:var#b2"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasStatus"/>
+                <Variable IRI="urn:swrl:var#b2"/>
+                <NamedIndividual IRI="#Canceled"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:BusinessActivity"/>
+                <Variable IRI="urn:swrl:var#b1"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasStatus"/>
+                <Variable IRI="urn:swrl:var#b1"/>
+                <NamedIndividual IRI="#OngoingAsPlanned"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isNext"/>
+                <Variable IRI="urn:swrl:var#b1"/>
+                <Variable IRI="urn:swrl:var#b2"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasStatus"/>
+                <Variable IRI="urn:swrl:var#b2"/>
+                <NamedIndividual IRI="#Waiting"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:Role"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#LineManager"/>
+                <NamedIndividual IRI="#AccessToFillingOrder"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#LineManager"/>
+                <NamedIndividual IRI="#AccessToInspectionLot"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#LineManager"/>
+                <NamedIndividual IRI="#AccessToProcessOrder"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:Role"/>
+                <NamedIndividual IRI="#LineOperator"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#LineOperator"/>
+                <NamedIndividual IRI="#AccessToFillingOrder"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#LineOperator"/>
+                <NamedIndividual IRI="#AccessToProcessOrder"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="ContextModel:Role"/>
+                <NamedIndividual IRI="#PlantManager"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#PlantManager"/>
+                <NamedIndividual IRI="#AccessToCustomerOrder"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#PlantManager"/>
+                <NamedIndividual IRI="#AccessToDelivery"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#PlantManager"/>
+                <NamedIndividual IRI="#AccessToFillingOrder"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#PlantManager"/>
+                <NamedIndividual IRI="#AccessToInspectionLot"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#PlantManager"/>
+                <NamedIndividual IRI="#AccessToProcessOrder"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#PlantManager"/>
+                <NamedIndividual IRI="#AccessToPurchaseOrder"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasPermission"/>
+                <NamedIndividual IRI="#PlantManager"/>
+                <NamedIndividual IRI="#AccessToTransportationOrder"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#ExternalTransport"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#TransportationOrder"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasObjectID"/>
+                <Variable IRI="urn:swrl:var#o"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#ExternalTransport"/>
+                <Variable IRI="urn:swrl:var#t2"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#InternalTransport"/>
+                <Variable IRI="urn:swrl:var#t1"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#t1"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#t2"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isNext"/>
+                <Variable IRI="urn:swrl:var#t1"/>
+                <Variable IRI="urn:swrl:var#t2"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#FillingActivity"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#FillingOrder"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasObjectID"/>
+                <Variable IRI="urn:swrl:var#o"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#FillingActivity"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#InternalTransport"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isNext"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#FillingActivity"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#QualityControl"/>
+                <Variable IRI="urn:swrl:var#q"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#q"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isNext"/>
+                <Variable IRI="urn:swrl:var#q"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#FillingActivity"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasStatus"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <NamedIndividual IRI="#OngoingAsPlanned"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isRelevant"/>
+                <Variable IRI="urn:swrl:var#o"/>
+                <NamedIndividual IRI="#FillingOngoingAsPlanned"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#FillingOngoingAsPlanned"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#FillingActivity"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasStatus"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <NamedIndividual IRI="#OngoingBehindSchedule"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isRelevant"/>
+                <Variable IRI="urn:swrl:var#o"/>
+                <NamedIndividual IRI="#FillingOngoingBehindSchedule"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#FillingOngoingBehindSchedule"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#FillingAlarm"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#AbnormalFillingState"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#InspectionLot"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#QualityControl"/>
+                <Variable IRI="urn:swrl:var#q"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasObjectID"/>
+                <Variable IRI="urn:swrl:var#o"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#q"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#q"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#InternalTransport"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#InternalTransportationOrder"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasObjectID"/>
+                <Variable IRI="urn:swrl:var#o"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#ProcessOrder"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#ProcessingActivity"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasObjectID"/>
+                <Variable IRI="urn:swrl:var#o"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#ProcessingActivity"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#QualityControl"/>
+                <Variable IRI="urn:swrl:var#q"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasProductID"/>
+                <Variable IRI="urn:swrl:var#q"/>
+                <Variable IRI="urn:swrl:var#i"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isNext"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#q"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#ProcessingActivity"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasStatus"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <NamedIndividual IRI="#OngoingAsPlanned"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isRelevant"/>
+                <Variable IRI="urn:swrl:var#o"/>
+                <NamedIndividual IRI="#ProcessingOngoingAsPlanned"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#ProcessingOngoingAsPlanned"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#ProcessingActivity"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasStatus"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <NamedIndividual IRI="#OngoingBehindSchedule"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#describedBy"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#o"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isRelevant"/>
+                <Variable IRI="urn:swrl:var#o"/>
+                <NamedIndividual IRI="#ProcessingOngoingBehindSchedule"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#ProcessingOngoingBehindSchedule"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#ProcessingAlarm"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#AbnormalProcessingState"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#QualityAlarm"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:eventOn"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <NamedIndividual IRI="#Filling1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasStatus"/>
+                <NamedIndividual IRI="#Filling1"/>
+                <NamedIndividual IRI="#Waiting"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="#activateBusinessState"/>
+                <NamedIndividual IRI="#BadQualityState"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:accessedWith"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#FillingLineATerminal"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isLocatedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#FillingFloor"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:accessedWith"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#FillingLineBTerminal"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isLocatedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#FillingFloor"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:accessedWith"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#FillingOfficeComputer"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isLocatedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#FillingOffice"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:accessedWith"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#PlantManagerComputer"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isLocatedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#ManagerOffice"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:accessedWith"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#ProcessingLineATerminal"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isLocatedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#ProcessingFloor"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:accessedWith"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#ProcessingLineBTerminal"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isLocatedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#ProcessingFloor"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:accessedWith"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#ProcessingOfficeComputer"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isLocatedIn"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#ProcessingOffice"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasCurrentStatus"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#AsPlanned"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasCurrentStatus"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#Overtime"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserWorking"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasCurrentStatus"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserOnBreak"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserNotWorking"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasCurrentStatus"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserOnVacation"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserNotWorking"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasCurrentStatus"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserSick"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:hasState"/>
+                <Variable IRI="urn:swrl:var#u"/>
+                <NamedIndividual IRI="#UserNotWorking"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isPeerTo"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <NamedIndividual IRI="#PlantManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <NamedIndividual IRI="#LineManager"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:performs"/>
+                <Variable IRI="urn:swrl:var#u3"/>
+                <NamedIndividual IRI="#LineOperator"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isSuperiorOf"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isSuperiorOf"/>
+                <Variable IRI="urn:swrl:var#u1"/>
+                <Variable IRI="urn:swrl:var#u3"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="ContextModel:isSuperiorOf"/>
+                <Variable IRI="urn:swrl:var#u2"/>
+                <Variable IRI="urn:swrl:var#u3"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AbnormalFillingState</IRI>
+        <Literal>Alarm while filling.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AbnormalProcessingState</IRI>
+        <Literal>Alarm while processing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BusinessObjects</IRI>
+        <Literal>In the case of this domain extension, the business objects are all orders describing the production flow of the plant.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CustomerOrder</IRI>
+        <Literal>Describes all information from the purchase order into the ERP system and carries the &quot;demand&quot; from the customer.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Delivered</IRI>
+        <Literal>Indicates the end of transportation. In Transport order is specified when it should end.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Delivery</IRI>
+        <Literal>Description enclosing all outgoing delivery info: what (+quantity) to deliver, to whom (customer), where (address) and when (delivery date) etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ExternalTransport</IRI>
+        <Literal>Transporting product to delivery.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:hasStatus"/>
+        <IRI>#Filling1</IRI>
+        <IRI>#Waiting</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:uses"/>
+        <IRI>#Filling1</IRI>
+        <IRI>#FillingLineA</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FillingActivity</IRI>
+        <Literal>Filling bottles with juices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:eventOn"/>
+        <IRI>#FillingAlarm1</IRI>
+        <IRI>#Filling1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FillingEnded</IRI>
+        <Literal>Indicates the end of filling. In Filling order is specified when it should end</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FillingEvents</IRI>
+        <Literal>Class of events for sudden changes of filling procedure (Start, End).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FillingOrder</IRI>
+        <Literal>Description of all information concerning the filling.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FillingStarted</IRI>
+        <Literal>Indicates the start of filling. In Filling order is specified when it should start.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InspectionLot</IRI>
+        <Literal>Collection of all reference information for the bulk, after the quality inspection.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InternalTransport</IRI>
+        <Literal>Transporting product to loading dock.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InternalTransportationOrder</IRI>
+        <Literal>Describes all information concerning transportation within the plant (conveyor belt, forklifts)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LineManager</IRI>
+        <Literal>Responsible for the production line. Interested only in the information concerning his production line. He is interested only in deviations of the planned production.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LineOperator</IRI>
+        <Literal>Responsible for the operating the production line. He is interested in statuses of the all current activities and the ongoing activities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ManufacturingBranch</IRI>
+        <Literal>Class containing the manufacturing resources of the two plants of the company.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlantManager</IRI>
+        <Literal>Responsible for the whole plant. Generally he is interested only in the overall performance. This roll comes with permissions of access to all Business Objects.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProcessOrder</IRI>
+        <Literal>Description of all information concerning production process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:hasStatus"/>
+        <IRI>#Processing1</IRI>
+        <IRI>#OngoingBehindSchedule</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:uses"/>
+        <IRI>#Processing1</IRI>
+        <IRI>#ProcessingLineA</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProcessingActivity</IRI>
+        <Literal>Producing juices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProcessingEnded</IRI>
+        <Literal>Indicates the end of processing. In Process order is specified when it should end.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProcessingEvents</IRI>
+        <Literal>Class of events for sudden changes of processing procedure (Start, End).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProcessingStarted</IRI>
+        <Literal>Indicates the start of processing. In Process order is specified when it should start.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProductID</IRI>
+        <Literal>To identify that all these individuals are in fact the different activity stages for one single customer order, they were all given one same Product ID through a newly defined hasProductID object property. The concept of the product ID was implemented to facilitate the writing of SWRL rules concerning the status of the different activities. However one must understand that this concept is only a workaround to the fact that in the current version of Protege, there exists no means of inferring new individuals, meaning that all individuals must be created from the start.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProductionLine</IRI>
+        <Literal>The plant has four production lines, A B C and D, for the filling and processing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PurchaseOrder</IRI>
+        <Literal>Incoming message from a customer in various forms (email, phone call, fax etc.) which is a starting point to enter a customer order in the system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#QualityAlarm</IRI>
+        <Literal>Alarm while conducting quality control.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:eventOn"/>
+        <IRI>#QualityAlarm1</IRI>
+        <IRI>#Filling1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#QualityControl</IRI>
+        <Literal>Between Processing and Filling, a quality control is made.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:hasStatus"/>
+        <IRI>#QualityControl1</IRI>
+        <IRI>#Completed</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TransportationActivity</IRI>
+        <Literal>Transporting product.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TransportationAlarm</IRI>
+        <Literal>Alarm while transporting product.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TransportationEvents</IRI>
+        <Literal>Class of events for sudden changes of transporting procedure (Start, End).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TransportationOrder</IRI>
+        <Literal>Describes all actual outgoing transportation info from the external transportation company. May include more than one delivery in one transportation. Includes all delivery information (what, when, where, to whom….).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TransportationStarted</IRI>
+        <Literal>Indicates the start of transportation. In Transport order is specified when it should start.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:performs"/>
+        <IRI>#User1</IRI>
+        <IRI>#PlantManager</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User1</IRI>
+        <Literal>Plant Manager</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:hasCurrentStatus"/>
+        <IRI>#User2</IRI>
+        <IRI>#UserOnVacation</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+        <IRI>#User2</IRI>
+        <IRI>#ProcessingLineA</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+        <IRI>#User2</IRI>
+        <IRI>#ProcessingLineB</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:performs"/>
+        <IRI>#User2</IRI>
+        <IRI>#LineManager</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User2</IRI>
+        <Literal>Line manager for processing line A and B</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User2</IRI>
+        <Literal>Processing Line Manager </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:hasCurrentStatus"/>
+        <IRI>#User4</IRI>
+        <IRI>#AsPlanned</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+        <IRI>#User4</IRI>
+        <IRI>#FillingLineA</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:isResponsibleFor"/>
+        <IRI>#User4</IRI>
+        <IRI>#FillingLineB</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:performs"/>
+        <IRI>#User4</IRI>
+        <IRI>#LineManager</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User4</IRI>
+        <Literal>Line manager for filling line A and B</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User4</IRI>
+        <Literal>Filling Line Manager </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:performs"/>
+        <IRI>#User6</IRI>
+        <IRI>#LineOperator</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User6</IRI>
+        <Literal>Line operator for processing line A</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User6</IRI>
+        <Literal>Line Operator PR_A</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:performs"/>
+        <IRI>#User7</IRI>
+        <IRI>#LineOperator</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User7</IRI>
+        <Literal>Line operator for processing line B</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User7</IRI>
+        <Literal>Line Operator PR_B</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:performs"/>
+        <IRI>#User8</IRI>
+        <IRI>#LineOperator</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User8</IRI>
+        <Literal>Line operator for filling line A</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User8</IRI>
+        <Literal>Line Operator FL_A</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="ContextModel:performs"/>
+        <IRI>#User9</IRI>
+        <IRI>#LineOperator</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User9</IRI>
+        <Literal>Line operator for filling line B</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User9</IRI>
+        <Literal>Line Operator FL_B</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#activateBusinessState</IRI>
+        <Literal>This data property activates Business States when SWRL rules based on the Business Context Model are implied.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#describedBy</IRI>
+        <Literal>A group of activated business states is a business entity that is desribed by information features through this property. Inverse property is isRelevant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasObjectID</IRI>
+        <Literal>Businness Objects all have a Product ID. This ID remains constant throughout the production process and makes writing rules easier.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProductID</IRI>
+        <Literal>Businness Activities all have a Product ID. This ID remains constant throughout the production process and makes writing rules easier.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isInterestedIn</IRI>
+        <Literal>This property links the User to specific Information Features that deemed important based on the Business State</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isRelevant</IRI>
+        <Literal>Informations features are relevant to business states through this property.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

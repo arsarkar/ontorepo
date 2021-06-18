@@ -1,0 +1,962 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/maintenance_wg_ontology#"
+     xml:base="http://www.semanticweb.org/maintenance_wg_ontology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:CommonCoreOntologies="http://www.ontologyrepository.com/CommonCoreOntologies/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/maintenance_wg_ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000602 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000602"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0010000 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0010000"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/acronym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/acronym"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/alternative_label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/alternative_label"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/definition"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/definition_source -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/definition_source"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/elucidation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/elucidation"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/term_creator -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/term_creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000063 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000063"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000219 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000219"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000312 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000052 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000053 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000053"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0001000 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001000"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000016 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000016"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000023 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000035 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000035"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000038 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000038"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#AssetFunction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#AssetFunction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+        <obo:IAO_0000115>MH Definitions from SAE JA1012
+Function - what the owner of user of a physical asset or system wants it to do.
+Function, primary - the function(s) which constitute the main reason(s) why a physical asset or system is acquired by its owner or user.
+function, secondary - functions which a physical asset or system has to fulfil apart from its primary function(s), such as those needed to fulfil regulatory
+requirements and those which concern issues such as protection, control, containment, comfort, appearance, energy efficiency and structural integrity.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#AssetRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#AssetRole">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000115>Asset_Role is a a BFO:Role that is borne by an IOF:Engineered_System; and where the role that has potential or actual value to an organisation _ NEEDS REVIEWED</obo:IAO_0000115>
+        <obo:IAO_0000116>Definition of ASSET: An item, entity or thing that has potential or actual value to an organization (ISO 55000). Note 1: Value can be tangible or intangible, financial or non-financial, and includes consideration of risks and liabilities. It can be positive or negative at different stages of the asset&apos;s life.
+
+The concept of roles is necessary to allow for physical components to play different roles e.g. a component can be an asset for accounting purposes and/or a maintainable item for maintenance purposes</obo:IAO_0000116>
+        <rdfs:isDefinedBy>NEEDS REVIEW</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Component -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Component">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Consequence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Consequence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Downtime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Downtime">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:isDefinedBy>Downtime = Def. A BFO:OneDimensionalTemporalRegion where an IOF:Component is not available to perform its BFO:Function.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#ExecutedInADefinedPeriod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#ExecutedInADefinedPeriod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#FailureCause -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FailureCause">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <obo:IAO_0000115>A BFO:Occurrent that have led to a MNT:State_Of_Failure_Machine or  MNT:State_Of_Failure_Component.
+
+The circumstances during design, manufacture or use which have led to a failure</obo:IAO_0000115>
+        <obo:IAO_0000116>Circumstances associated with design, manufacture, installation, use and maintenance that have led to a failure  (ISO 14226) OR  The circumstances during design, manufacture or use which have led to a failure  (iec 60300.3.11)</obo:IAO_0000116>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#FailureEffect -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FailureEffect">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#FailureEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FailureEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <obo:IAO_0000116>SME Def. An event in which an item has a loss of ability to perform as required.</obo:IAO_0000116>
+        <obo:IAO_0000602>instanceOf(z,FailureEvent,t)≡∃x,y,p(instanceOf(x,process,t)∧instanceOf(p,MaterialProductProductionProcessPlan,t)∧realizesInitialPhaseOfPlan(x,y,p)∧terminalProcessBoundary(z,x))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>a BFO: terminal process boundary where some process which realizes the initial phase of a material product production process plan ceases</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A failure event z is equivalent to the terminal process boundary z of some process x where x realizes the initial phase y of a material product production process plan p.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:comment>30/01/2020: this definition for Failure Event as a Process Boundary replaced the old definition for Failure as a Proccess. (Melinda Hodkiewicz, Caitlin Woods, Emily Low)</rdfs:comment>
+        <rdfs:label>Failure Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#FailureMechanism -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FailureMechanism">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000115>Def: A BFO:Process that results in MNT:State_of_Failure.
+
+The physical, chemical, electrical, thermal or other process which results in failure</obo:IAO_0000115>
+        <obo:IAO_0000116>ISO 14226: the physical, chemical, electrical, thermal or other process which results in failure.</obo:IAO_0000116>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#FailureMode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FailureMode">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Consequence"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#StateOfFailureComponent"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#StateOfFailureMachine"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#FailureMechanism"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+        <obo:IAO_0000115>Def. A BFO:Realizable Entity that is the UNK:Consequence of a MNT:FailureMechanism through which the MNT:StateOfFailue occurs</obo:IAO_0000115>
+        <obo:IAO_0000116>Definitions differ slightly between standards.
+ISO 14224:2006 - The effect by which a failure is observed on the failed item.  
+AS IEC 60300.3.11 - one of the possible states of a failed item for a given required function.  
+MIL-STD-721-C: The consequence of the mechanism through which failure occurs</obo:IAO_0000116>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#FailureModeAndEffectsAnalysis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FailureModeAndEffectsAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+        <obo:IAO_0000112>Need to do</obo:IAO_0000112>
+        <obo:IAO_0000116>MH 22/9/19 Need to check if the axiom FMEA SubClassOf (denotes min 1 FailureEffect) and (denotes min 1 FailureMode) is appropriate given the FMEA is a paper exercise.
+MH 5/12/19 Removed axioms as per IOF directive</obo:IAO_0000116>
+        <CommonCoreOntologies:acronym>FMEA</CommonCoreOntologies:acronym>
+        <CommonCoreOntologies:definition xml:lang="en">descriptive Information Content Entity that describes the output of a failure mode and effects activity</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>MIL-STD-721C: a FMEA is a procedure by which each potential failure mode in a system is analysed to determine the results or effects thereof on the system and to classify each potential failure mode according to its severity.</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:elucidation>A state of failure machine x is equivalent to an IOF state x where for some machine y and requirement w, y does not meet the requirement w.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz &amp; Caitlin Woods</CommonCoreOntologies:term_creator>
+        <rdfs:label xml:lang="en">Failure and effects analysis specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Failure_Mode_Code -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Failure_Mode_Code">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+        <obo:IAO_0000116>SME Def. A set of codes used to describe the failure mode of a maintainable item.</obo:IAO_0000116>
+        <obo:IAO_0000602>instanceOf(x,FailureModeCode,t) ≡instanceOf(x,DescriptiveInformationContentEntity,t)∧∃y(instanceOf(y,FailureMode,t)∧IAO:denotes(x,y,t))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:DescriptiveInformationContentEntity describing a failure mode</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A failure mode code x is equivalent to a descriptive information content entity x such that there exists a failure mode y and x denotes y.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Failure Mode Code</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#FunctionalFailure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FunctionalFailure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+        <obo:IAO_0000115>Defn: a state in which a physical asset or system is unable to perform a specific function to a desired level of performance.</obo:IAO_0000115>
+        <obo:IAO_0000119>SAE JA 1012 A Guide to the Reliability-Centered Maintenance (RCM) Standard JA1012_201108</obo:IAO_0000119>
+        <rdfs:comment>MH: A functionalFailure is related to the function the asset should perform</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Functional_Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Functional_Location">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+        <obo:IAO_0000116>SME Def. Describes a physical location where a maintenance task is actioned.</obo:IAO_0000116>
+        <obo:IAO_0000602>instanceOf(x,FunctionalLocation,t)≡instanceOf(x,DescriptiveInformationContentEntity,t)∧∃y,z(instanceOf(y,MaintenanceTask,t)∧instanceOf(z,SpatialRegion,t)∧RO:locationOf(z,y)∧IAO:denotes(x,z))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:DescriptiveInformationContentEntity that describes the location of a maintenance task</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A functional location x is equivalent to a descriptive information content entity x such that there exists a maintenance task y and a spatial region (0D, 1D, 2D or 3D) z. The location of y is z and x denotes z.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Functional Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#InspectionAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#InspectionAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+        <obo:IAO_0000115>Defn: Examination of an item against a specific standard.</obo:IAO_0000115>
+        <obo:IAO_0000119>IEC 60300.3.11 2011 Dependability management Application guide - Reliability centred maintenance</obo:IAO_0000119>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#InspectionTriggeringEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#InspectionTriggeringEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A BFO:Process_Boundry boundary of an UNK: Inspection_Action that begins a MNT: Maintenance_Process.
+
+An inspection event that causes a maintenance process to be initiated</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Machine_Identifier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Machine_Identifier">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+        <obo:IAO_0000116>SME Def. A unique identifier or serial number of a machine or asset.</obo:IAO_0000116>
+        <obo:IAO_0000602>instanceOf(x,MachineIdentifier,t)≡instanceOf(x,DescriptiveInformationContentIdentity,t)∧∃y(instanceOf(y,Machine,t)∧IAO:denotes(x,y))∧∀z(IAO:denotes(x,z)→z=y)</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:DescriptiveInformationContentEntity that uniquely identifies a machine</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A machine identier x is equivalent to a descriptive information content entity x and there exists a machine y and x denotes y. For all z, if x denotes z then z is equal to y.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Machine Identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Machine_Maintenance_Plan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Machine_Maintenance_Plan">
+        <rdfs:subClassOf rdf:resource="https://www.industrialontologies.org/core/iof_00000049"/>
+        <obo:IAO_0000116>SME Def. A plan for the maintenance of a machine over its life cycle that documents actions required and when those actions should occur.</obo:IAO_0000116>
+        <obo:IAO_0000602>instanceOf(x,MachineMaintenancePlan,t)≡instanceOf(x,Plan,t)∧∃x_1,x_2,…,x_n, ∧∀i(instanceOf(x_i,MaintenanceAction,t)∧partOf(x_i,x)) ∧∃y,z(instanceOf(y, MaintenanceTriggeringEvent, t) ∧denotes(x,y) ∧ instanceOf(z,Machine,t) ∧bearerOf(z, y))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:Plan that describes maintenance actions to be taken for a machine and that identifies the MNT:MaintenanceTriggeringEvent for the machine</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A machine maintenance plan x is equivalent to a plan x such that there exists a set of maintenance actions xi (for x1 to xn) where all xi are parts of x and x describes the maintenance triggering event y for a machine z.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Machine Maintenance Plan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintainableItem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintainableItem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#Component"/>
+        <obo:IAO_0000115>An IOF:Component when it bears a MNT:Maintainable_Item_Role.</obo:IAO_0000115>
+        <rdfs:comment>An item that constitutes a component or an assembly of components that is normally the lowest level in the equipment hierarchy during maintenance. (adapted from ISO 14224:2006)
+
+ISO 14224:2006 maintainable item - item that constitutes a part or an assembly of parts that is normally the lowest level in the equipment hierarchy during maintenance
+
+30/01/2020: this definition for Maintainable Item as a Component was replaced by the new definition for Maintainable Item as a Material Artifact. (Melinda Hodkiewicz, Caitlin Woods, Emily Low)</rdfs:comment>
+        <rdfs:label>Maintainable Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Maintainable_Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Maintainable_Item">
+        <rdfs:subClassOf rdf:resource="https://www.industrialontologies.org/core/iof_00000018"/>
+        <obo:IAO_0000116>SME Def. A component or grouping of components on which maintenance is actioned.</obo:IAO_0000116>
+        <obo:IAO_0000602>instanceOf(x,MaintainableItem,t)≡instanceOf(x,MaterialArtifact,t)∧∃r(MaintainableItemRole(r)∧bearerOf(x,r))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:MaterialArtifact that has a MNT:MaintainableItemRole</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A maintainable item x is equivalent to a material artifact x and there exists some maintainable item role r such that x is a bearer of r.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:comment>30/01/2020: this definition for Maintainable Item as a Material Artifact replaced the old definition for Maintainable Item as a Component. (Melinda Hodkiewicz, Caitlin Woods, Emily Low)</rdfs:comment>
+        <rdfs:label>Maintainable Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Maintainable_Item_Role -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Maintainable_Item_Role">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+        <obo:IAO_0000602>instanceOf(x,MaintainableItemRole,t)≡instanceOf(x,Role,t)∧∃y,w,z(instanceOf(y,Component,t)∧bearerOf(y,x,t)∧hasCapability(y,w)∧∀z(realizes(z,w)→(instanceOf(z,MaintenanceProcess)∧hasSpecifiedOutput(z,y))))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>a role that inheres in some IOF:Component that has the capability to serve as the output of some MNT:MaintenanceProcess</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A maintainable item role x is equivalent to a role x such that there exists a component y that is a bearer of the maintainable item role x and has capability w. Any maintenance process z that realises w has specified output y.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Maintainable Item Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceAction">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000115>Def. A BFO:Process to perform work on an IOF:Component according to a MNT:Maintenance_Work_Specification.
+
+One of more tasks necessary to retain an item in or restore it to a specified condition.</obo:IAO_0000115>
+        <obo:IAO_0000116>MIL-STD-721C: an element of a maintenance event. One of more tasks (i.e., fault localization, fault isolation, servicing and inspection) necessary to retain an item in or restore it to a specified condition.   SMRP Def: One or more tasks necessary to retain an item in, or restore it to, a specified operating condition. A maintenance action includes corrective, as well as preventive and predictive, maintenance tasks that interrupt the asset function.</obo:IAO_0000116>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNonStandardWorkSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNonStandardWorkSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000112>A document (usually a digital record) used to organise and track maintenance management activitiesfrom events work that is not part of structured maintenance work. Often called a maintenance notification in some CMMS systems</obo:IAO_0000112>
+        <obo:IAO_0000116>4/12/19: Used to be Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist
+
+5/12/19 MH Had to edit when removed IAO, including removing axiom</obo:IAO_0000116>
+        <obo:IAO_0000602>$instanceOf(x, MaintenanceNonStandardWorkSpecification, t) \equiv \newline instanceOf(x, InformationContentEntity, t) \land \exists y(instanceOf(y, MaintenanceAction, t) \land denotes(x, y, t)) \land (denotes(x, y, t) \exists z(instanceOf(z, MaintenanceStandardWorkSpecification, t) \land denotes(z, y, t)))$</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>A Directive Information Content Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>Working group generated</CommonCoreOntologies:definition_source>
+        <rdfs:label xml:lang="en">Maintenance Non Standard Work Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNotification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNotification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000116>SME Def. Documentation used to notify the maintenance planners about a non-conformity.</obo:IAO_0000116>
+        <obo:IAO_0000602>instanceOf(x,MaintenanceNotification,t)≡instanceOf(x,DirectiveInformationContentEntity,t)∧∃y(instanceOf(y,NonConformity,t)∧denotes(x,y,t))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:DirectiveInformationContentEntity describing a non-conformity</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A maintenance notification x is equivalent to a directive information content entity x and it is the case that there exists a non-conformity y and x denotes y.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label xml:lang="en">Maintenance Notification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenancePlanSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenancePlanSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000115>Def. An IAO:Plan_Specification containing MNT:Maintenance_Strategies and MNT:Maintenance_Standard_Work_Procedures for a MNT:Maintainable_Item over its UNK:Lifecycle.
+
+The documentation of a plan for the maintenance of an asset over its life cycle</obo:IAO_0000115>
+        <obo:IAO_0000116>11/9/19 MH: In the Google Drive there is a note: to discuss - MaintenanceStandardWorkProcedures is also a Plan Specification, can one PlanSpecification be part of another PlanSpecification?</obo:IAO_0000116>
+        <rdfs:comment>Relevant Standards: IIMM v3.0: collated information, policies and procedures for the optimum maintenance of an asset, or group of assets</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceProcess">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000115>A BFO:Process comprised of MNT:MaintenanceAction to retain or restore an MNT:MaintainableItem to perform a BFO:Function.
+
+All activities necessary to retain or restore the functionality of an asset.</obo:IAO_0000115>
+        <obo:IAO_0000116>In Sept 2019 IOF Top down group issued paper on Top 25 terms. There is a class in their diagram for Maintenance Process, a subclass of Planned Process, but there is no definition for Maintenance Process specifically.
+
+In this diagram the Planned Process is a subclass of Action which is a subclass of Process</obo:IAO_0000116>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkProcedureSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkProcedureSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000115>A Directive Information Content Entity that describes the steps required for a specific MNT:Maintenance_Action.</obo:IAO_0000115>
+        <obo:IAO_0000116>4/12/19 MH: Used to be Def. An IAO:Plan_Specification that describes the steps required for a specific MNT:Maintenance_Action. but changed when removed IAO
+
+11/9/19 MH: There is a Note in the Google Drive to discuss: subclassOf IAO:PlanSpecification (has part action specification), subclassOf: IAO:denotes exactly 1 MaintenanceAction
+
+Written instructions to achieve uniformity of the performance of a specific function
+
+5/12/19 MH Removed axiom as per IOF directive</obo:IAO_0000116>
+        <rdfs:comment>Relevant Standards: International council on harmonisation:  detailed, written instructions to achieve uniformity of the performance of a specific function</rdfs:comment>
+        <rdfs:label>Maintenance Standard Work Procediures Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000115>Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action.</obo:IAO_0000115>
+        <obo:IAO_0000116>4/12/19 MH: USed to be Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action.
+
+but IAO removed now.
+
+ALso removed axiom related to IAO</obo:IAO_0000116>
+        <rdfs:comment>A document (usually a digital record) used to organise and track maintenance management activities</rdfs:comment>
+        <rdfs:label>Maintenance Standard Work Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategyProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategyProcess">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategySpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Def: A BFO:Process to produce a MNT:MaintenanceStrategySpecification.
+
+Describes the process to produce a maintenance strategy for a maintainable item</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategySpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000116>4/12/19 MH edited old def Def. An IOA:InformationContentEntity describing the MNT:MaintenanceStrategyType to deal with a specific MNT:FunctionalFailure.
+due to removal of IAO.
+
+ALso removed axiom related to IAO</obo:IAO_0000116>
+        <obo:IAO_0010000>A directive information content entity describing the MNT:MaintenanceStrategyType to deal with a specific MNT:FunctionalFailure.</obo:IAO_0010000>
+        <rdfs:comment>The documentation of which maintenance strategy is assigned to manage different asset functional failures</rdfs:comment>
+        <rdfs:label>Maintenance Strategy Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceTriggeringEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceTriggeringEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <obo:IAO_0000115>Maintenance_Triggering_Event = Def. A BFO:ProcessBoundary that begins a MNT:MaintenanceProcess through the production of a  MNT:Maintenance_Work_Specification</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Notification_Trigger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Notification_Trigger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Maintenance Notification Trigger</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Schedule_List -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Schedule_List">
+        <rdfs:subClassOf rdf:resource="https://www.industrialontologies.org/core/iof_00000049"/>
+        <obo:IAO_0000602>instanceOf(x,MaintenanceScheduleList,t)≡instanceOf(x,Plan,t)∧∃x_1,x_2,…,x_n, ∀i(instanceOf(x_i,MaintenanceAction,t)∧partOf(x_i,x))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:Plan describing a list of MNT:MaintenanceAction(s) to be executed in a defined period</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A maintenance schedule list x is equivalent to a plan x such that there exists a set of maintenance actions xi (for x1 to xn) where all xi are parts of x.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Maintenance Schedule List</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Strategy_Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Strategy_Type">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+        <obo:IAO_0000602>instanceOf(x,MaintenanceStrategyType,t)≡instanceOf(x,DescriptiveInformationContentEntity,t)∧∃y,z(instanceOf(y,MaintenanceStrategyType,t)∧instanceOf(z,FailureMode,t)∧denotes(x,y,t)∧denotes(x,z,t))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:DescriptiveInformationContentEntity describing the MNT:MaintenanceStrategyType to manage a specific MNT:FailureMode</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A maintenance strategy type x is equivalent to a descriptive information content entity x such that there exists a maintenance strategy type y and a failure mode z and x denotes both y and z.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Maintenance Strategy Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Task">
+        <rdfs:subClassOf rdf:resource="https://www.industrialontologies.org/core/iof_00000063"/>
+        <obo:IAO_0000116>SME Def. A task involving replacement, repair, inspection or service of a maintainable item.</obo:IAO_0000116>
+        <obo:IAO_0000602>instanceOf(x,MaintenanceTask,t)≡instanceOf(x,Task,t)∧∃y,z(instanceOf(y,MaintenanceWorkOrderRecord,t)∧inputOf(y,x)∧instanceOf(z,RestoringFunctionProcess,t)∧RO:hasTemporalPart(z,x))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:Task that takes some MNT:MaintenanceWorkOrderRecord as an input and is a temporal part of some process where a maintainable item&apos;s required function is restored</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A maintenance task x is equivalent to a task x which has some maintenance work order record y as input and is a temporal part of some restoring function process z.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Maintenance Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Work_Order_Record -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Maintenance_Work_Order_Record">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+        <obo:IAO_0000116>SME Def. A record in the computerized maintenance management system describing the need for a maintenance action.</obo:IAO_0000116>
+        <obo:IAO_0000602>instanceOf(x,MaintenanceWorkOrderRecord,t)≡instanceOf(x,DescriptiveInformationContentEntity,t)∧∃y,z,p(instanceOf(y,MaintenanceTask,t)∧RO:inputOf(x,y)∧instanceOf(z,MaintenanceNotificationTrigger,t)∧instanceOf(p,StucturedMaintenanceTrigger,t)∧(RO:realisedInResponseTo(x,z)∨RO:realisedInResponseTo(x,p))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF: DescriptiveInformationContentEntity that describes some MNT: MaintenanceTask and is realized in response to a MNT: MaintenanceNotificationTrigger or a MNT: StructuredMaintenanceTrigger</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A maintenance work order record x is equivalent to a descriptive information content entity x and there exists some maintenance action y and x isAbout y. It is realised in response to either a MaintenanceNotificationTrigger z or a StructuredMaintenanceTrigger p.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Maintenance Work Order Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Material_Product_Production_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Material_Product_Production_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Material Product Production Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Material_Product_Production_Process_Plan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Material_Product_Production_Process_Plan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Material Product Production Process Plan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#NonConformity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#NonConformity">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <obo:IAO_0000115>Def. A loss of quality, function, or capability for a BFO:material entity or BFO:process.
+
+A loss of quality, function or capability</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#OperatingTriggeringEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#OperatingTriggeringEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000035"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A BFO:Process_Boundary in the operation of a IOF: Manufacturing Process that begins a MNT: Maintenance_Process.
+
+An operational event that causes a maintenance process to be initiated</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#ProcessOfDegradation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#ProcessOfDegradation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000115>A BFO:Process that results in the loss of ability to perform a BFO:Function.
+
+The loss of ability of a component or engineering system to perform its required function.</obo:IAO_0000115>
+        <obo:IAO_0000116>Sources: 
+MIL-STD-721C: a gradual impairment of ability to perform.     
+
+OED: Reduction to an inferior type or stage of development; A lowering or reducing in strength, amount, etc.</obo:IAO_0000116>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Restoring_Function_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Restoring_Function_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Restoring Function Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#State">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:comment>TODO: import from IOF ontology</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#StateOfDegradation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#StateOfDegradation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#State"/>
+        <obo:IAO_0000115>Def. A IOF:State in which some IOF:component endures and is moving towards non-conformity.
+
+Describes when a component is in the process of degrading</obo:IAO_0000115>
+        <obo:IAO_0000116>MIL-STD-72C (degradation): a gradual impairment of ability to perform</obo:IAO_0000116>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#StateOfFailureComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#StateOfFailureComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#State"/>
+        <obo:IAO_0000116>ISO 14224:2006 /ISO 13372 / AS IEC 60300.2 / AS IEC 60300.3.11 / AS IEC 60812 (failure):  Termination of the ability of an item to perform a required function. 
+
+Needs more discussion - State or Stasis?
+
+How does this fit into the concept of malfunction</obo:IAO_0000116>
+        <rdfs:isDefinedBy>Def. A IOF:State in which some IOF:component endures and does not meet a requirement.
+
+Describes when a component is in a failed state</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#StateOfFailureMachine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#StateOfFailureMachine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#State"/>
+        <obo:IAO_0000115>Def. A IOF:State in which some IOF:machine endures and does not meet a requirement.
+
+Describes when a machine is in a failed state</obo:IAO_0000115>
+        <obo:IAO_0000116>ISO 14224:2006 /ISO 13372 / AS IEC 60300.2 / AS IEC 60300.3.11 / AS IEC 60812 (failure):  Termination of the ability of an item to perform a required function.</obo:IAO_0000116>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Structured_Maintenance_Task_Specification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Structured_Maintenance_Task_Specification">
+        <rdfs:subClassOf rdf:resource="https://www.industrialontologies.org/core/iof_00000066"/>
+        <obo:IAO_0000602>instanceOf(x,MaintenanceWorkOrderSpecification,t)≡instanceOf(x,TaskSpecification,t)∧∃y(instanceOf(y,MaintenanceAction,t)∧denotes(x,y,t))</obo:IAO_0000602>
+        <CommonCoreOntologies:definition>an IOF:TaskSpecification describing a desired MNT:MaintenanceAction</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:elucidation>A maintenance work order specification x is equivalent to task specification x and it is the case that there exists a maintenance action y and x denotes y.</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Structured Maintenance Task Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#Structured_Maintenance_Trigger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#Structured_Maintenance_Trigger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NEEDTOPLACE"/>
+        <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
+        <rdfs:label>Structured Maintenance Trigger</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maintenance_wg_ontology#ZeroDimensionFailureEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#ZeroDimensionFailureEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000112>need to do</obo:IAO_0000112>
+        <obo:IAO_0000115>process p in an artifact x in which one participant ceases to realize some capability whose realization is required by x</obo:IAO_0000115>
+        <obo:IAO_0000116>Dec 4th 2019 [MH]:  Prior to Dec 2019 failure event sat under the class temporal region&gt;zero-dimensional termporal region&gt;ZeroDimensionalDailureEvent
+This definition was  changed at Dec IOF meeting (by Barry Smith) to
+&quot;Failure event is a process at least one participant of which has ceased to realize some function, requirement or specification in the course of this process and that is not what we wanted&quot;
+
+We also MOVED the location of failure event to be under Process rather where it was (see above).
+
+Barry Smith also emailed the following 
+BFO
+every event (= BFO process) occupies a unique spatiotemporal region
+at any given time instant this spatiotemporal region is projected onto a unique spatial region
+if the event does not involve spatial motion that it is projected at all times onto the same spatial region
+
+Then it was refined to:
+Failure event =def. Process p in an artifact x in which one participant ceases to realize some capability whose realization is required by x
+THIS IS WHAT IS IN THERE NOW.</obo:IAO_0000116>
+        <obo:IAO_0000116>MH 12/12/19 going back to the google drive I found an earlier definition &quot;Failure Event has some participants one of which has ceased to realize some function, requirement, or fails to meet some specification&quot;
+This is similar but not identical to what is the current definition</obo:IAO_0000116>
+        <obo:IAO_0000116>Sept 2019 [MH]:  The definition &quot;Zero-(temporal)Dimension Failure Event has some participants one of which has ceased to realize some function, requirement, or fails to meet some specification&quot; .was developed by the TOB team in September</obo:IAO_0000116>
+        <CommonCoreOntologies:acronym>None</CommonCoreOntologies:acronym>
+        <CommonCoreOntologies:alternative_label>None</CommonCoreOntologies:alternative_label>
+        <CommonCoreOntologies:definition_source>There is no agreed and independent source</CommonCoreOntologies:definition_source>
+        <CommonCoreOntologies:term_creator>Barry Smith Dec 2019</CommonCoreOntologies:term_creator>
+        <rdfs:comment>30/01/2020: this definition for Failure Event as a Process was replaced by the new definition for Failure Event as a Process Boundary. (Melinda Hodkiewicz, Caitlin Woods, Emily Low)</rdfs:comment>
+        <rdfs:label xml:lang="en">Failure Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.industrialontologies.org/core/iof_00000018 -->
+
+    <owl:Class rdf:about="https://www.industrialontologies.org/core/iof_00000018"/>
+    
+
+
+    <!-- https://www.industrialontologies.org/core/iof_00000049 -->
+
+    <owl:Class rdf:about="https://www.industrialontologies.org/core/iof_00000049"/>
+    
+
+
+    <!-- https://www.industrialontologies.org/core/iof_00000063 -->
+
+    <owl:Class rdf:about="https://www.industrialontologies.org/core/iof_00000063"/>
+    
+
+
+    <!-- https://www.industrialontologies.org/core/iof_00000066 -->
+
+    <owl:Class rdf:about="https://www.industrialontologies.org/core/iof_00000066"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#InspectionTriggeringEvent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceTriggeringEvent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#OperatingTriggeringEvent"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

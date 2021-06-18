@@ -1,0 +1,974 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.falcon.org/ontologies/upper-ontology-concepts"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.falcon.org/ontologies/upper-ontology-concepts">
+    <Prefix name="" IRI="http://www.falcon.org/ontologies/upper-ontology-concepts#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Declaration>
+        <Class IRI="#Actor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Benefit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Call_centre_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consumer_Client"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cost_Reduction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Customer_Complaint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Customer_Recommendation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Customer_Requirement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Customer_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Data_analyst"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Developer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Development_Requirement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Development_Support_Service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Eco_Friendliness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Error"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Functional_Need"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maintenance_Requirement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maintenance_Service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Need_Requirement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Normal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PEID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PSS_provider"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Part"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Performance_Improvement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Precaution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Product"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Product_Service_System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Product_State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Product_System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Project_manager"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Risk_Reduction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Social_Media_Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Software_Log_file"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sub-assembly"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Support_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Usage_Recommendation_Service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Warranty_Adjustment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3rd_Party_Partner"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#collectsCallCentreData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describesProductState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#generatesFunctionalNeed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#generatesSoftwarelog"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#givesFeedback"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBenefit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLog"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNeed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPEID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isComponentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isComponentOfPS"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isComponentOfPSS"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProvidedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#providesService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#receivesService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requestsNeed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requestsService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#satisfiesRequirement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#updatesWarranty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AccessAuthority"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Assessment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Benefit_Description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Complexity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ConceptualDetail"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Criticality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Function"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#LowerLimitOfError"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#LowerLimitOfPrecaution"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MaintenanceScheduledDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MeasuredValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Objective"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Postcondition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Precondition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Reiteration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Requirement_Description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Scenario"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#UpdatedWarranty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#UpperLimitOfError"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#UpperLimitOfPrecaution"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Warranty"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Consumer_Client"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cost_Reduction"/>
+        <Class IRI="#Benefit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Customer_Complaint"/>
+        <Class IRI="#Customer_Requirement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Customer_Recommendation"/>
+        <Class IRI="#Customer_Requirement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Customer_Requirement"/>
+        <Class IRI="#Need_Requirement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Customer_service"/>
+        <Class IRI="#PSS_provider"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Data_analyst"/>
+        <Class IRI="#PSS_provider"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Developer"/>
+        <Class IRI="#PSS_provider"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Development_Requirement"/>
+        <Class IRI="#Functional_Need"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Development_Support_Service"/>
+        <Class IRI="#OT"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Eco_Friendliness"/>
+        <Class IRI="#Benefit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Error"/>
+        <Class IRI="#Product_State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Functional_Need"/>
+        <Class IRI="#Need_Requirement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IT"/>
+        <Class IRI="#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maintenance_Requirement"/>
+        <Class IRI="#Functional_Need"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maintenance_Service"/>
+        <Class IRI="#OT"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Normal"/>
+        <Class IRI="#Product_State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OT"/>
+        <Class IRI="#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PSS_provider"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Part"/>
+        <Class IRI="#Product"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Performance_Improvement"/>
+        <Class IRI="#Benefit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Precaution"/>
+        <Class IRI="#Product_State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Product"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isComponentOfPS"/>
+            <Class IRI="#Product_System"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Product_System"/>
+        <Class IRI="#Product_Service_System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project_manager"/>
+        <Class IRI="#PSS_provider"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Risk_Reduction"/>
+        <Class IRI="#Benefit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sub-assembly"/>
+        <Class IRI="#Product"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Support_service"/>
+        <Class IRI="#PSS_provider"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Usage_Recommendation_Service"/>
+        <Class IRI="#OT"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Warranty_Adjustment"/>
+        <Class IRI="#Functional_Need"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3rd_Party_Partner"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Customer_Complaint"/>
+        <Class IRI="#Customer_Recommendation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Error"/>
+        <Class IRI="#Normal"/>
+        <Class IRI="#Precaution"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isComponentOfPS"/>
+        <ObjectProperty IRI="#isComponentOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isComponentOfPSS"/>
+        <ObjectProperty IRI="#isComponentOf"/>
+    </SubObjectPropertyOf>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#collectsCallCentreData"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#describesProductState"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#generatesFunctionalNeed"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#generatesSoftwarelog"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#givesFeedback"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasBenefit"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasLog"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasNeed"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasPEID"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isComponentOfPS"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isComponentOfPSS"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isProvidedTo"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#providesService"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#receivesService"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#requestsNeed"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#requestsService"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#satisfiesRequirement"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#updatesWarranty"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#collectsCallCentreData"/>
+        <Class IRI="#Customer_service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#describesProductState"/>
+        <Class IRI="#Software_Log_file"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#generatesFunctionalNeed"/>
+        <Class IRI="#Error"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#generatesFunctionalNeed"/>
+        <Class IRI="#Precaution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#generatesSoftwarelog"/>
+        <Class IRI="#IT"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#givesFeedback"/>
+        <Class IRI="#Consumer_Client"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBenefit"/>
+        <Class IRI="#Service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLog"/>
+        <Class IRI="#PEID"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNeed"/>
+        <Class IRI="#Product_Service_System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPEID"/>
+        <Class IRI="#Product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isComponentOfPS"/>
+        <Class IRI="#Product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isComponentOfPSS"/>
+        <Class IRI="#Service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProvidedTo"/>
+        <Class IRI="#Product_Service_System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#providesService"/>
+        <Class IRI="#PSS_provider"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#providesService"/>
+        <Class IRI="#3rd_Party_Partner"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#receivesService"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#requestsNeed"/>
+        <Class IRI="#PSS_provider"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#requestsService"/>
+        <Class IRI="#Need_Requirement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#satisfiesRequirement"/>
+        <Class IRI="#Developer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#satisfiesRequirement"/>
+        <Class IRI="#Project_manager"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#satisfiesRequirement"/>
+        <Class IRI="#Support_service"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#updatesWarranty"/>
+        <Class IRI="#Warranty_Adjustment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#collectsCallCentreData"/>
+        <Class IRI="#Call_centre_data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#describesProductState"/>
+        <Class IRI="#Product_State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#generatesFunctionalNeed"/>
+        <Class IRI="#Functional_Need"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#generatesSoftwarelog"/>
+        <Class IRI="#Software_Log_file"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#givesFeedback"/>
+        <Class IRI="#Call_centre_data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#givesFeedback"/>
+        <Class IRI="#Social_Media_Data"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBenefit"/>
+        <Class IRI="#Benefit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLog"/>
+        <Class IRI="#Software_Log_file"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNeed"/>
+        <Class IRI="#Need_Requirement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPEID"/>
+        <Class IRI="#PEID"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isComponentOfPS"/>
+        <Class IRI="#Product_System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isComponentOfPSS"/>
+        <Class IRI="#Product_Service_System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProvidedTo"/>
+        <Class IRI="#Consumer_Client"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#providesService"/>
+        <Class IRI="#Service"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#receivesService"/>
+        <Class IRI="#Service"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#requestsNeed"/>
+        <Class IRI="#Functional_Need"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#requestsService"/>
+        <Class IRI="#Service"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#satisfiesRequirement"/>
+        <Class IRI="#Functional_Need"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#updatesWarranty"/>
+        <Class IRI="#Consumer_Client"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#AccessAuthority"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Assessment"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Benefit_Description"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Complexity"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#ConceptualDetail"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Criticality"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Function"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#LowerLimitOfError"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#LowerLimitOfPrecaution"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#MaintenanceScheduledDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#MeasuredValue"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Objective"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Postcondition"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Precondition"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Reiteration"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Requirement_Description"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Scenario"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#UpdatedWarranty"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#UpperLimitOfError"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#UpperLimitOfPrecaution"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Warranty"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AccessAuthority"/>
+        <Class IRI="#PSS_provider"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AccessAuthority"/>
+        <Class IRI="#3rd_Party_Partner"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Assessment"/>
+        <Class IRI="#Need_Requirement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Benefit_Description"/>
+        <Class IRI="#Benefit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Complexity"/>
+        <Class IRI="#Need_Requirement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ConceptualDetail"/>
+        <Class IRI="#OT"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Criticality"/>
+        <Class IRI="#Need_Requirement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Function"/>
+        <Class IRI="#OT"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#LowerLimitOfError"/>
+        <Class IRI="#Error"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#LowerLimitOfPrecaution"/>
+        <Class IRI="#Precaution"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MaintenanceScheduledDate"/>
+        <Class IRI="#Maintenance_Service"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MeasuredValue"/>
+        <Class IRI="#Software_Log_file"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Objective"/>
+        <Class IRI="#OT"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Postcondition"/>
+        <Class IRI="#Benefit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Precondition"/>
+        <Class IRI="#Benefit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Reiteration"/>
+        <Class IRI="#Need_Requirement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Requirement_Description"/>
+        <Class IRI="#Need_Requirement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Scenario"/>
+        <Class IRI="#OT"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#UpdatedWarranty"/>
+        <Class IRI="#Warranty_Adjustment"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#UpperLimitOfError"/>
+        <Class IRI="#Error"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#UpperLimitOfPrecaution"/>
+        <Class IRI="#Precaution"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Warranty"/>
+        <Class IRI="#Consumer_Client"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#AccessAuthority"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Assessment"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Benefit_Description"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Complexity"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ConceptualDetail"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Criticality"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Function"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#LowerLimitOfError"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#LowerLimitOfPrecaution"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MaintenanceScheduledDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MeasuredValue"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Objective"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Postcondition"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Precondition"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Reiteration"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Requirement_Description"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Scenario"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#UpdatedWarranty"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#UpperLimitOfError"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#UpperLimitOfPrecaution"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Warranty"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Product_State"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#MeasuredValue"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#v"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#LowerLimitOfError"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#u"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThan">
+                <Variable IRI="urn:swrl:var#v"/>
+                <Variable IRI="urn:swrl:var#u"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#Error"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Product_State"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#MeasuredValue"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#v"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#LowerLimitOfPrecaution"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#u"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThan">
+                <Variable IRI="urn:swrl:var#v"/>
+                <Variable IRI="urn:swrl:var#u"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#Precaution"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Product_State"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#MeasuredValue"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#v"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#UpperLimitOfError"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#u"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThan">
+                <Variable IRI="urn:swrl:var#v"/>
+                <Variable IRI="urn:swrl:var#u"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#Error"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Product_State"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#MeasuredValue"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#v"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#UpperLimitOfPrecaution"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#u"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThan">
+                <Variable IRI="urn:swrl:var#v"/>
+                <Variable IRI="urn:swrl:var#u"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#Precaution"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

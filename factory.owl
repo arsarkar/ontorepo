@@ -1,0 +1,2326 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.ontoeng.com/factory"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.ontoeng.com/factory">
+    <Prefix name="" IRI="http://www.ontoeng.com/factory#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="ns" IRI="http://creativecommons.org/ns#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="schema" IRI="http://schema.org/"/>
+    <Prefix name="factory" IRI="http://www.ontoeng.com/factory#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="ns:license"/>
+        <Literal>http://creativecommons.org/licenses/by/3.0/</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Walter Terkaj</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal>Ontology that models factories and their components for applications related to design, management and control.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="stiima.cnr.it.">If you wish to use this ontology, please acknowledge Walter Terkaj (CNR-STIIMA) and related publications.
+
+For any query please write to walter.terkaj</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Artifact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtifactType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AssemblySystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AssemblyTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AssemblyTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferElementHistory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferElementObs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferElementObsProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferElementProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferElementStaticProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferElementType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferLevelObs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferRestingPosition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BufferWorkingPosition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conveyor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConveyorType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DisassemblyTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DisassemblyTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineEnergyConsumption"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineEnergyConsumptionObs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineNominalPowerConsumption"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineServerN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineTool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolBlockedState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolEnergyState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolEventType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolExtendedStandbyState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolFailedState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolFailure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolFailureType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolFailureTypeEnum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolHistory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolIdleState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolObs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolObsProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolOffState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolProcessingState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolReadyForProcessingState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolSelect"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolSimpleState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolStandbyState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolStartOperation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolStartOperationType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolStarvedState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolStaticProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolWarmupState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineToolWorkingState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineWipLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineWipLevelObs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachiningTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachiningTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManufacturingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManufacturingTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManufacturingTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialHandlingTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialHandlingTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pallet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PalletPosition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PalletType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProducedQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProducedQuantityObs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionCrewResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionCrewResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionEquipmentResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionEquipmentResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionLaborResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionLaborResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionMaterialResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionMaterialResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionPlan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionPlanHistory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionProductResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionProductResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionSchedule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionScheduleHistory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionScheduleObs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionScheduleObsProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionScheduleProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionScheduleStaticProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionSubContractResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductionSubContractResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QualityControlSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QualityControlTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QualityControlTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReturnToRestMotion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Robot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RobotType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RotatingTable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RotatingTableType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScheduledQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaceElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaceElementType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StorageElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StorageElementType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StorageResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StorageResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskExecutionMotion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ToolType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransformationSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransportationSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnloadingTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnloadingTaskType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkholdingPallet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkholdingPalletType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkholdingPosition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkpieceDueDate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkpieceOccurrence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkpieceStaticProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkpieceType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#baseQuantity_ProductionResource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#baseQuantity_ProductionResourceType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMachineEnergyState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMachineToolFailureType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResourceEnergyConsumption"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usage_ProductionResource"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ODF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TDF"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElementType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcWorkSchedule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTaskType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/osph#hasResultValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontoeng.com/osph#ObjectHistory"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/sosa/observedProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTransportElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontoeng.com/controlSystem#ControllerFB"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcWorkPlan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.learninglab.de/~dolog/fsm/fsm.owl#Composite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontoeng.com/osph#ProductHistory"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ssn/hasProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/express#ENUMERATION"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/osph#hasHistory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontoeng.com/osph#StaticProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/controlSystem#hasExecutionController"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcEnergyMeasure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTypeResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/osph#hasStateFrequencies"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#declaresObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/osph#do"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTransportElementType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontoeng.com/controlSystem#Algorithm"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.ontoeng.com/osph#hasPropertySimpleValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/osph#hasRelatedState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/osph#isHistoryOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontoeng.com/osph#ResultStatistics"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/sosa/Observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcProcedureType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/express#SELECT"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcPowerMeasure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/sosa/hasResult"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcEventType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/osph#hasPropertyValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcPhysicalQuantity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontoeng.com/osph#hasHistoryObservations"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontoeng.com/osph#Motion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcResourceTime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontoeng.com/osph#ProductSimpleState"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="ns:license"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#BufferElementProperty"/>
+        <ObjectUnionOf>
+            <Class IRI="#BufferElementObsProperty"/>
+            <Class IRI="#BufferElementStaticProperty"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MachineToolFailureTypeEnum"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#ODF"/>
+            <NamedIndividual IRI="#TDF"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MachineToolProperty"/>
+        <ObjectUnionOf>
+            <Class IRI="#MachineToolObsProperty"/>
+            <Class IRI="#MachineToolStaticProperty"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MachineToolSelect"/>
+        <ObjectUnionOf>
+            <Class IRI="#MachineTool"/>
+            <Class IRI="#MachineToolType"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ProductionScheduleProperty"/>
+        <ObjectUnionOf>
+            <Class IRI="#ProductionScheduleObsProperty"/>
+            <Class IRI="#ProductionScheduleStaticProperty"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://www.ontoeng.com/controlSystem#Algorithm"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcProcedureType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Artifact"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Artifact"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#declaresObject"/>
+            <Class IRI="#Artifact"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Artifact"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByObject"/>
+            <Class IRI="#Artifact"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Artifact"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ArtifactType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtifactType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElementType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtifactType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#Artifact"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AssemblySystem"/>
+        <Class IRI="#TransformationSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AssemblyTask"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AssemblyTask"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#AssemblyTaskType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AssemblyTaskType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTaskType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AssemblyTaskType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#AssemblyTask"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferCapacity"/>
+        <Class IRI="#BufferElementStaticProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferCapacity"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="http://www.ontoeng.com/osph#hasPropertySimpleValue"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElement"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#declaresObject"/>
+            <Class IRI="#BufferElement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByObject"/>
+            <Class IRI="#BufferElement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#BufferElementType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#hasHistory"/>
+            <Class IRI="#BufferElementHistory"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/ssn/hasProperty"/>
+            <Class IRI="#BufferElementProperty"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementHistory"/>
+        <Class IRI="http://www.ontoeng.com/osph#ProductHistory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementHistory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#hasHistoryObservations"/>
+            <Class IRI="#BufferElementObs"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementHistory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#isHistoryOf"/>
+            <Class IRI="#BufferElement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementObs"/>
+        <Class IRI="http://www.w3.org/ns/sosa/Observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementObsProperty"/>
+        <Class IRI="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementProperty"/>
+        <Class IRI="https://w3id.org/express#SELECT"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementStaticProperty"/>
+        <Class IRI="http://www.ontoeng.com/osph#StaticProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElementType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#BufferElement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferElementType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/ssn/hasProperty"/>
+            <Class IRI="#BufferElementStaticProperty"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferLevel"/>
+        <Class IRI="#BufferElementObsProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferLevelObs"/>
+        <Class IRI="#BufferElementObs"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferLevelObs"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/sosa/hasResult"/>
+            <Class IRI="http://www.ontoeng.com/osph#ResultStatistics"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferLevelObs"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/sosa/observedProperty"/>
+            <Class IRI="#BufferLevel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferLevelObs"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferRestingPosition"/>
+        <Class IRI="#BufferElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BufferWorkingPosition"/>
+        <Class IRI="#BufferElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conveyor"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTransportElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conveyor"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ConveyorType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConveyorType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTransportElementType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConveyorType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#Conveyor"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DisassemblyTask"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DisassemblyTask"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#DisassemblyTaskType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DisassemblyTaskType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTaskType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DisassemblyTaskType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#DisassemblyTask"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineEnergyConsumption"/>
+        <Class IRI="#MachineToolObsProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineEnergyConsumptionObs"/>
+        <Class IRI="#MachineToolObs"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineEnergyConsumptionObs"/>
+        <ObjectUnionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://www.ontoeng.com/osph#hasResultValue"/>
+                <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcEnergyMeasure"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://www.w3.org/ns/sosa/hasResult"/>
+                <Class IRI="http://www.ontoeng.com/osph#ResultStatistics"/>
+            </ObjectAllValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineEnergyConsumptionObs"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/sosa/observedProperty"/>
+            <Class IRI="#MachineEnergyConsumption"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineNominalPowerConsumption"/>
+        <Class IRI="#MachineToolStaticProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineNominalPowerConsumption"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasMachineEnergyState"/>
+            <Class IRI="#MachineToolEnergyState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineNominalPowerConsumption"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#hasPropertyValue"/>
+            <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcPowerMeasure"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineServerN"/>
+        <Class IRI="#MachineToolStaticProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineServerN"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="http://www.ontoeng.com/osph#hasPropertySimpleValue"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineTool"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineTool"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#declaresObject"/>
+            <Class IRI="#MachineTool"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineTool"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByObject"/>
+            <Class IRI="#MachineTool"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineTool"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#MachineToolType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineTool"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#hasHistory"/>
+            <Class IRI="#MachineToolHistory"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineTool"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/ssn/hasProperty"/>
+            <Class IRI="#MachineToolProperty"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolBlockedState"/>
+        <Class IRI="#MachineToolIdleState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolEnergyState"/>
+        <Class IRI="#MachineToolSimpleState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolEvent"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcEvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolEvent"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#MachineToolEventType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolEventType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcEventType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolEventType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#MachineToolEvent"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolExtendedStandbyState"/>
+        <Class IRI="#MachineToolEnergyState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolFailedState"/>
+        <Class IRI="#MachineToolSimpleState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolFailedState"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#do"/>
+            <ObjectUnionOf>
+                <Class IRI="#MaintenanceTask"/>
+                <Class IRI="#MaintenanceTaskType"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolFailure"/>
+        <Class IRI="#MachineToolEvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolFailure"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#MachineToolFailureType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolFailure"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasMachineToolFailureType"/>
+            <Class IRI="#MachineToolFailureTypeEnum"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolFailureType"/>
+        <Class IRI="#MachineToolEventType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolFailureType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#MachineToolFailure"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolFailureType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasMachineToolFailureType"/>
+            <Class IRI="#MachineToolFailureTypeEnum"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolFailureTypeEnum"/>
+        <Class IRI="https://w3id.org/express#ENUMERATION"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolHistory"/>
+        <Class IRI="http://www.ontoeng.com/osph#ProductHistory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolHistory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#hasHistoryObservations"/>
+            <Class IRI="#MachineToolObs"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolHistory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#hasStateFrequencies"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://www.ontoeng.com/osph#hasRelatedState"/>
+                <ObjectUnionOf>
+                    <Class IRI="http://www.learninglab.de/~dolog/fsm/fsm.owl#Composite"/>
+                    <Class IRI="#MachineToolSimpleState"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolHistory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#isHistoryOf"/>
+            <Class IRI="#MachineTool"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolIdleState"/>
+        <Class IRI="#MachineToolSimpleState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolObs"/>
+        <Class IRI="http://www.w3.org/ns/sosa/Observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolObsProperty"/>
+        <Class IRI="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolOffState"/>
+        <Class IRI="#MachineToolEnergyState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolProcessingState"/>
+        <Class IRI="#MachineToolEnergyState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolProperty"/>
+        <Class IRI="https://w3id.org/express#SELECT"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolReadyForProcessingState"/>
+        <Class IRI="#MachineToolEnergyState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolSelect"/>
+        <Class IRI="https://w3id.org/express#SELECT"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolSimpleState"/>
+        <Class IRI="http://www.ontoeng.com/osph#ProductSimpleState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolStandbyState"/>
+        <Class IRI="#MachineToolEnergyState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolStartOperation"/>
+        <Class IRI="#MachineToolEvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolStartOperation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#MachineToolStartOperationType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolStartOperationType"/>
+        <Class IRI="#MachineToolEventType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolStartOperationType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#MachineToolStartOperation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolStarvedState"/>
+        <Class IRI="#MachineToolIdleState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolStaticProperty"/>
+        <Class IRI="http://www.ontoeng.com/osph#StaticProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElementType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#MachineTool"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/ssn/hasProperty"/>
+            <Class IRI="#MachineToolStaticProperty"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolWarmupState"/>
+        <Class IRI="#MachineToolEnergyState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineToolWorkingState"/>
+        <Class IRI="#MachineToolSimpleState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineWipLevel"/>
+        <Class IRI="#MachineToolObsProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineWipLevelObs"/>
+        <Class IRI="#MachineToolObs"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineWipLevelObs"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/sosa/hasResult"/>
+            <Class IRI="http://www.ontoeng.com/osph#ResultStatistics"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineWipLevelObs"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/sosa/observedProperty"/>
+            <Class IRI="#MachineWipLevel"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineWipLevelObs"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachiningTask"/>
+        <Class IRI="#ManufacturingTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachiningTask"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#MachiningTaskType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachiningTaskType"/>
+        <Class IRI="#ManufacturingTaskType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachiningTaskType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#MachiningTask"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceTask"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceTask"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#MaintenanceTaskType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceTaskType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTaskType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceTaskType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#MaintenanceTask"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManufacturingSystem"/>
+        <Class IRI="#TransformationSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManufacturingTask"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManufacturingTask"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ManufacturingTaskType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManufacturingTaskType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTaskType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManufacturingTaskType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#ManufacturingTask"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialHandlingTask"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialHandlingTask"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#MaterialHandlingTaskType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialHandlingTaskType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTaskType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialHandlingTaskType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#MaterialHandlingTask"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pallet"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pallet"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#declaresObject"/>
+            <Class IRI="#Pallet"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pallet"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByObject"/>
+            <Class IRI="#Pallet"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pallet"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#PalletType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PalletPosition"/>
+        <Class IRI="#BufferElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PalletType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElementType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PalletType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#Pallet"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducedQuantity"/>
+        <Class IRI="#ProductionScheduleObsProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducedQuantityObs"/>
+        <Class IRI="#ProductionScheduleObs"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducedQuantityObs"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/sosa/hasResult"/>
+            <Class IRI="http://www.ontoeng.com/osph#ResultStatistics"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducedQuantityObs"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/sosa/observedProperty"/>
+            <Class IRI="#ProducedQuantity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducedQuantityObs"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionCrewResource"/>
+        <Class IRI="#ProductionResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionCrewResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ProductionCrewResourceType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionCrewResourceType"/>
+        <Class IRI="#ProductionResourceType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionCrewResourceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#ProductionCrewResource"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionEquipmentResource"/>
+        <Class IRI="#ProductionResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionEquipmentResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ProductionEquipmentResourceType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionEquipmentResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasResourceEnergyConsumption"/>
+            <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcEnergyMeasure"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionEquipmentResourceType"/>
+        <Class IRI="#ProductionResourceType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionEquipmentResourceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#ProductionEquipmentResource"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionLaborResource"/>
+        <Class IRI="#ProductionResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionLaborResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ProductionLaborResourceType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionLaborResourceType"/>
+        <Class IRI="#ProductionResourceType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionLaborResourceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#ProductionLaborResource"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionMaterialResource"/>
+        <Class IRI="#ProductionResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionMaterialResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ProductionMaterialResourceType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionMaterialResourceType"/>
+        <Class IRI="#ProductionResourceType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionMaterialResourceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#ProductionMaterialResource"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionPlan"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcWorkPlan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionPlan"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/controlSystem#hasExecutionController"/>
+            <Class IRI="http://www.ontoeng.com/controlSystem#ControllerFB"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionPlan"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#hasHistory"/>
+            <Class IRI="#ProductionPlanHistory"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionPlanHistory"/>
+        <Class IRI="http://www.ontoeng.com/osph#ObjectHistory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionPlanHistory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#isHistoryOf"/>
+            <Class IRI="#ProductionPlan"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionProductResource"/>
+        <Class IRI="#ProductionResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionProductResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ProductionProductResourceType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionProductResourceType"/>
+        <Class IRI="#ProductionResourceType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionProductResourceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#ProductionProductResource"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResource"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ProductionResourceType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#baseQuantity_ProductionResource"/>
+            <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcPhysicalQuantity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#usage_ProductionResource"/>
+            <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcResourceTime"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResource"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#baseQuantity_ProductionResource"/>
+            <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcPhysicalQuantity"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResource"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#usage_ProductionResource"/>
+            <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcResourceTime"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResourceType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTypeResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResourceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#ProductionResource"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResourceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#baseQuantity_ProductionResourceType"/>
+            <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcPhysicalQuantity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionResourceType"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#baseQuantity_ProductionResourceType"/>
+            <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcPhysicalQuantity"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionSchedule"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcWorkSchedule"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionSchedule"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#hasHistory"/>
+            <Class IRI="#ProductionScheduleHistory"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionSchedule"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/ssn/hasProperty"/>
+            <Class IRI="#ProductionScheduleProperty"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionScheduleHistory"/>
+        <Class IRI="http://www.ontoeng.com/osph#ObjectHistory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionScheduleHistory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#hasHistoryObservations"/>
+            <Class IRI="#ProductionScheduleObs"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionScheduleHistory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/osph#isHistoryOf"/>
+            <Class IRI="#ProductionSchedule"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionScheduleObs"/>
+        <Class IRI="http://www.w3.org/ns/sosa/Observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionScheduleObsProperty"/>
+        <Class IRI="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionScheduleProperty"/>
+        <Class IRI="https://w3id.org/express#SELECT"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionScheduleStaticProperty"/>
+        <Class IRI="http://www.ontoeng.com/osph#StaticProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionSubContractResource"/>
+        <Class IRI="#ProductionResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionSubContractResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#ProductionSubContractResourceType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionSubContractResourceType"/>
+        <Class IRI="#ProductionResourceType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductionSubContractResourceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#ProductionSubContractResource"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QualityControlSystem"/>
+        <Class IRI="#TransformationSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QualityControlTask"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QualityControlTask"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#QualityControlTaskType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QualityControlTaskType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTaskType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QualityControlTaskType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#QualityControlTask"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReturnToRestMotion"/>
+        <Class IRI="http://www.ontoeng.com/osph#Motion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Robot"/>
+        <Class IRI="#MachineTool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Robot"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#declaresObject"/>
+            <Class IRI="#Robot"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Robot"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByObject"/>
+            <Class IRI="#Robot"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Robot"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#RobotType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RobotType"/>
+        <Class IRI="#MachineToolType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RobotType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#Robot"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RotatingTable"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTransportElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RotatingTable"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#RotatingTableType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RotatingTableType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTransportElementType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RotatingTableType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#RotatingTable"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScheduledQuantity"/>
+        <Class IRI="#ProductionScheduleStaticProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScheduledQuantity"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="http://www.ontoeng.com/osph#hasPropertySimpleValue"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceElement"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceElement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#SpaceElementType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceElementType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElementType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceElementType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#SpaceElement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageElement"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageElement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#StorageElementType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageElementType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElementType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageElementType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#StorageElement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageResource"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageResource"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#StorageResourceType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageResourceType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTypeResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageResourceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#StorageResource"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskExecutionMotion"/>
+        <Class IRI="http://www.ontoeng.com/osph#Motion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#declaresObject"/>
+            <Class IRI="#Tool"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByObject"/>
+            <Class IRI="#Tool"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#Tool"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ToolType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcElementType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ToolType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#Tool"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransformationSystem"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportTask"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportTask"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#TransportTaskType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportTaskType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTaskType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportTaskType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#TransportTask"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransportationSystem"/>
+        <Class IRI="#TransformationSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnloadingTask"/>
+        <Class IRI="#MaterialHandlingTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnloadingTask"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#UnloadingTaskType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnloadingTaskType"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcTaskType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnloadingTaskType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#UnloadingTask"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkholdingPallet"/>
+        <Class IRI="#Pallet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkholdingPallet"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#WorkholdingPalletType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkholdingPalletType"/>
+        <Class IRI="#PalletType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkholdingPalletType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#WorkholdingPallet"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkholdingPosition"/>
+        <Class IRI="#BufferElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkpieceDueDate"/>
+        <Class IRI="#WorkpieceStaticProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkpieceDueDate"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="http://www.ontoeng.com/osph#hasPropertySimpleValue"/>
+            <Datatype abbreviatedIRI="xsd:date"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkpieceOccurrence"/>
+        <Class IRI="#Artifact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkpieceOccurrence"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByObject"/>
+            <Class IRI="#WorkpieceOccurrence"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkpieceOccurrence"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#isDefinedByType"/>
+            <Class IRI="#WorkpieceType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkpieceStaticProperty"/>
+        <Class IRI="http://www.ontoeng.com/osph#StaticProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkpieceType"/>
+        <Class IRI="#ArtifactType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkpieceType"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.ontoeng.com/IFC4_ADD1_extension#typesObject"/>
+            <Class IRI="#WorkpieceOccurrence"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AssemblyTask"/>
+        <Class IRI="#ManufacturingTask"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AssemblyTask"/>
+        <Class IRI="#TransportTask"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ManufacturingTask"/>
+        <Class IRI="#TransportTask"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#MachineToolFailureTypeEnum"/>
+        <NamedIndividual IRI="#ODF"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MachineToolFailureTypeEnum"/>
+        <NamedIndividual IRI="#TDF"/>
+    </ClassAssertion>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#baseQuantity_ProductionResource"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#baseQuantity_ProductionResourceType"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasMachineToolFailureType"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#usage_ProductionResource"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMachineEnergyState"/>
+        <Class IRI="#MachineNominalPowerConsumption"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResourceEnergyConsumption"/>
+        <Class IRI="#ProductionEquipmentResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMachineEnergyState"/>
+        <Class IRI="#MachineToolEnergyState"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasResourceEnergyConsumption"/>
+        <Class IRI="http://ifcowl.openbimstandards.org/IFC4_ADD1#IfcEnergyMeasure"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://www.ontoeng.com/osph#hasPropertySimpleValue"/>
+    </FunctionalDataProperty>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Artifact</IRI>
+        <Literal>Definition from VFF: class for generic products seen as the output of a production system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ArtifactType</IRI>
+        <Literal>Definition from VFF: class for generic product type seen as the output of a production system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#AssemblySystem</IRI>
+        <Literal>Definition from VFF:
+VffAssemblySystem represents a generic assembly system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#BufferElement</IRI>
+        <Literal>To Be defined</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#BufferElementType</IRI>
+        <Literal>To Be described</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachineToolEnergyState</IRI>
+        <Literal>Based on ISO 14955-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachineToolExtendedStandbyState</IRI>
+        <Literal>Based on ISO 14955-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachineToolFailureTypeEnum</IRI>
+        <Literal>Types of machinery failure mode:
+- operation dependent failure (ODF)
+- time dependent failure (TDF)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachineToolOffState</IRI>
+        <Literal>Based on ISO 14955-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachineToolReadyForProcessingState</IRI>
+        <Literal>Based on ISO 14955-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachineToolStandbyState</IRI>
+        <Literal>Based on ISO 14955-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachineToolType</IRI>
+        <Literal>Definition from VFF: 
+Generic machinery element type.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachineToolWarmupState</IRI>
+        <Literal>Based on ISO 14955-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachiningTask</IRI>
+        <Literal>Definition from VFF: class representing a machining process.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#MachiningTaskType</IRI>
+        <Literal>Definition from VFF: class representing a machining process type.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ManufacturingSystem</IRI>
+        <Literal>Definition from VFF:
+VffManufacturingSystem represents a generic manufacturing system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Pallet</IRI>
+        <Literal>To Be defined</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#PalletType</IRI>
+        <Literal>To Be defined</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionCrewResource</IRI>
+        <Literal>A ProductionCrewResource represents a collection of internal resources used in production processes.
+Identification of people and equipment of a crew is achieved through their specification at the level of the component. Therefore, knowing which persons are within a crew is achieved through identifying the persons assigned to each ProductionLaborResource within the ProductionCrewResource. Similarly, identifying that a screwing machine forms part of the crew is achieved by relating an appropriate individual of IfcElementComponent to the ProductionEquipmentResource forming an element of the ProductionCrewResource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionCrewResourceType</IRI>
+        <Literal>The resource type ProductionCrewResourceType defines commonly shared information for occurrences of crew resources. The set of shared information may include:
+    * common productivities
+    * common cost rates
+    * common properties within shared property sets
+It is used to define a crew resource specification (i.e. the specific resource information that is common to all occurrences of that resource). Resource types may be exchanged without being already assigned to occurrences.
+Occurrences of the ProductionCrewResourceType are represented by individuals of ProductionCrewResource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionEquipmentResource</IRI>
+        <Literal>A ProductionEquipmentResource is usage of production equipment to assist in the performance of production. production Equipment resources are wholly or partially consumed, or occupied (i.e. used) in the performance of production.
+Occurrences of ProductionEquipmentResource are products that are used as resources to assist the process of production. More specifically, they are products that are standalone items brought to a factory to fulfil a particular purpose. Examples might be a machine tool, etc. They are explicitly instances of IfcProduct and may be drawn from various of the subclasses.
+A product that is used as an ProductionEquipmentResource is referenced using the IfcRelAssignsToResource relationship.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionEquipmentResourceType</IRI>
+        <Literal>The resource type ProductionEquipmentResourceType defines commonly shared information for occurrences of construction production resources. The set of shared information may include:
+    * common productivities
+    * common cost rates
+    * common properties within shared property sets
+It is used to define a production equipment resource specification (i.e. the specific resource information that is common to all occurrences of that resource). Resource types may be exchanged without being already assigned to occurrences.
+Occurrences of the ProductionEquipmentResourceType are represented by individuals of ProductionEquipmentResource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionLaborResource</IRI>
+        <Literal>A ProductionLaborResource is used in production context with particular skills or crafts required to perform certain types of production or management related work.
+The purpose of an ProductionLaborResource is to identify a skillset that may be required or used. The skillset provides a designation of a particular level of skill. It can be used to identify the generic type of labor resource that is required for a purpose without having to be specific about the actor (person or organization) providing the resource occurrence. It may be particularly useful when creating an overall plan for a process or processes. For instance, within maintenance or work planning there may be a known task that needs to be done. There may be several such labor resources available and so the need to identify which will be used is not necessary at the planning stage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionLaborResourceType</IRI>
+        <Literal>The resource type ProductionLaborResourceType defines commonly shared information for occurrences of labor resources. The set of shared information may include:
+    * common productivities
+    * common cost rates
+    * common properties within shared property sets
+It is used to define a labor resource specification (i.e. the specific resource information that is common to all occurrences of that resource). Resource types may be exchanged without being already assigned to occurrences.
+Occurrences of the ProductionLaborResourceType are represented by individuals of ProductionLaborResource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionMaterialResource</IRI>
+        <Literal>A ProductionMaterialResource identifies a material resource type in a production project. 
+Occurrences of ProductionMaterialResource are consumed (wholly or partially), or occupied during a production work task (i.e. IfcTask).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionMaterialResourceType</IRI>
+        <Literal>The resource type ProductionMaterialResourceType defines commonly shared information for occurrences of production material resources. The set of shared information may include:
+    * common productivities
+    * common cost rates
+    * common properties within shared property sets
+It is used to define a production material resource specification (i.e. the specific resource information that is common to all occurrences of that resource). Resource types may be exchanged without being already assigned to occurrences.
+Occurrences of the ProductionMaterialResourceType are represented by individuals of ProductionMaterialResource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionProductResource</IRI>
+        <Literal>A ProductionProductResource defines the role of a product that is consumed (wholly or partially), or occupied (i.e. used) in the performance of production. 
+Occurrences of ProductionProductResource are usage of products to assist the process of production. More specifically, they are usage of products that result from some production processes and that are then used as resources to facilitate further construction. ProductionProductResource occurrences are explicitly instances of IfcProduct and may be drawn from various of the subclasses, for instance IfcElementComponent, IfcElementAssembly, IfcProxy (for particular cases where more precise usage details are not available).The product that is used as a production resource is referenced using the IfcRelAssignsToResource relationship.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionProductResourceType</IRI>
+        <Literal>The resource type ProductionProductResourceType defines commonly shared information for occurrences of production product resources. The set of shared information may include:
+    * common productivities
+    * common cost rates
+    * common properties within shared property sets
+It is used to define a production product resource specification (i.e. the specific resource information that is common to all occurrences of that resource). Resource types may be exchanged without being already assigned to occurrences.
+Occurrences of the ProductionProductResourceType are represented by individuals of ProductionProductResource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionResource</IRI>
+        <Literal>A ProductionResource is an abstract generalization of the different resources used in factories (and their production systems), mainly labor, material, equipment and product resources, plus subcontracted resources and aggregations, such as a crew resource.
+A resource represents &quot;use of something&quot; and does not necessarily correspond to a single item (e.g. person, machine), but represents a pool of items having limited availability (e.g. general labor, equipment fleet). A resource can represent either a generic resource pool (not having any task assignment) or a task-specific resource allocation (having an IfcTask assignment).
+ProductionResource defines the occurrence of any production resource; common information about construction resource types is handled by ProductionResourceType. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionResourceType</IRI>
+        <Literal>ProductionResourceType is an abstract generalization of the different resource types used in factories (and their production systems), mainly labor, material, equipment and product resource types, plus subcontracted resource types and aggregations such as a crew resource type.
+A resource type represents a model of &quot;use of something&quot; and does not necessarily correspond to a specific type of object (e.g. person, machine), but represents possible usages of such objects (e.g. general labor, equipment fleet). A resource type can either represent usage in general (consumption attributes defined but no task type assignment) or a task-specific resource type (production attributes defined and having an IfcTask assignment).
+A production resource type captures common productivities and cost rates for applying resources to particular task types. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionSubContractResource</IRI>
+        <Literal>A ProductionSubContractResource is a production resource needed in a production process that represents a sub-contractor.
+ProductionSubContractResource can be used in cost estimating and work planning with or without specifying the subcontractor and contract agreement.
+The purpose of an ProductionSubContractResource is to indicate work of a particular type that is that is to be engaged through the use of a sub-contract. Its aim is to identify the description of the sub-contract work required. It can be used to identify the generic type of sub-contract resource that is required for a purpose without having to be specific about the actor (person or organization) providing the resource occurrence. It may be particularly useful when creating an overall plan for a process or processes. For instance, within maintenance or work planning there may be a known task that needs to be done.
+A subcontract resource may be described at various stages and levels of detail through its assignments:
+    * Subcontract resource designated for particular tasks
+    * Actors identified to request bids
+    * Cost schedules (bids) received from actors
+    * Project order (work order, change order, etc.) executed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ProductionSubContractResourceType</IRI>
+        <Literal>The resource type ProductionSubContractResourceType defines commonly shared information for occurrences of subcontract resources. The set of shared information may include:
+    * common productivities
+    * common cost rates
+    * common properties within shared property sets
+It is used to define a subcontract resource specification (i.e. the specific resource information that is common to all occurrences of that resource). Resource types may be exchanged without being already assigned to occurrences.
+Occurrences of the ProductionSubContractResourceType are represented by instances of ProductionSubContractResource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#QualityControlSystem</IRI>
+        <Literal>Definition from VFF: 
+VffQualityControlSystem represents a generic quality control system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Robot</IRI>
+        <Literal>To Be described</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#RobotType</IRI>
+        <Literal>To Be described</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StorageResource</IRI>
+        <Literal>An DmStorageResource is usage of buffers of generic storages to accomodate parts.
+storage points are wholly or partially occupied during the process.
+Occurrences of DmStorageResource are resources that are used to offer space to parts that have to wait.
+Examples mught be invenotries in supply chains, interoperational buffers in transfer lines, pallets in assembly line or workcenters. 
+A product that is used as an DmStorageResource is referenced using the IfcRelAssignsToResource relationship.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#StorageResourceType</IRI>
+        <Literal>TO DO</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#TDF</IRI>
+        <Literal>Time dependent failure (TDF)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#TransformationSystem</IRI>
+        <Literal>Definition from VFF: 
+Generic transformation system that is organized as a combination of related parts within an AEC product, composed for a common purpose or function or to provide a service. System is essentially a functionally related aggregation of products and resources. The grouping relationship to one or several individuals of IfcProduct, IfcResource, IfcGroup, IfcProcess, IfcControl, IfcActor, i.e. the system members, is handled by IfcRelAssignsToGroup relationship.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#TransportationSystem</IRI>
+        <Literal>Definition from VFF:
+VffTransportationSystem represents a generic transportation system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#baseQuantity_ProductionResource</IRI>
+        <Literal>BaseQuantity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#baseQuantity_ProductionResourceType</IRI>
+        <Literal>BaseQuantity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#usage_ProductionResource</IRI>
+        <Literal>Domain(VffProductionResource): Indicates the work, usage, and times scheduled and completed. Some attributes on this object may have associated constraints or time series; see documentation of IfcResourceTime for specific usage. If the resource is nested, then certain values may be calculated based on the component resources as indicated at IfcResourceTime. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#usage_ProductionResource</IRI>
+        <Literal>Usage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>http://www.vff-project.eu//IfcExternalReferenceResource.owl#VffFileFormatEnum</IRI>
+        <Literal>Definition from VFF: enumeration of file formats</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

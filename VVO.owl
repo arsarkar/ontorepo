@@ -1,0 +1,2737 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://purl.org/vvo/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://purl.org/vvo/ns#">
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="gr" IRI="http://purl.org/goodrelations/v1#"/>
+    <Prefix name="coo" IRI="http://purl.org/coo/ns#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="vso" IRI="http://purl.org/vso/ns#"/>
+    <Prefix name="vvo" IRI="http://purl.org/vvo/ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <Literal>Charles Sandeman-Craik, Tribal DDB; Chris Jenkins, Tribal DDB; Tim Redding, Tribal DDB; Yago Otero, Tribal DDB; William Greenly, Tribal DDB; Robin Dingle, Volkswagen UK</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <Literal xml:lang="en">Some class and property definitions are inspired by or based on abstracts from Wikipedia, the free encyclopedia.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal xml:lang="en">Martin Hepp</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:rights"/>
+        <Literal xml:lang="en">The Volkswagen Vehicles Ontology is available under the Creative Commons Attribution 3.0 Unported license; see http://creativecommons.org/licenses/by/3.0/. 
+In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), 
+as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:subject"/>
+        <Literal xml:lang="en">Volkswagen, E-Commerce, E-Business, GoodRelations, Ontology, Cars, Automobiles</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal xml:lang="en">VVO: The Volkswagen Vehicles Ontology for Semantic Web-based E-Commerce</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+        <IRI>http://creativecommons.org/licenses/by/3.0/</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en">VVO: The Volkswagen Vehicles Ontology
+    
+A vocabulary for describing Volkswagen-specific features of automobiles and their components
+
+Vocabulary:    http://purl.org/vvo/ns
+Namespace:     http://purl.org/vvo/ns#
+
+
+The vocabulary is designed to be used in combination with 
+(1) GoodRelations, a standard vocabulary for the commercial aspects of offers for sale, rental, repair, or disposal;
+(2) the Vehicle Sales Ontology, a standard vocabulary for cars and other vehicles; and
+(3) the Car Options Ontology, a standard vocabulary for buildability / configuration information for cars. 
+
+See http://purl.org/goodrelations/ for more information.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en">Volkswagen Vehicles Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://purl.org/goodrelations/</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>V 1.0, Release 2010-10-12</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="AudioAndNavigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DecorativeTrims"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Engine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Financing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="GearboxTypeValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Paint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Parking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Roofs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Seats"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SteeringWheels"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TrafficPattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TransmissionTypeValueManual"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Upholstery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Wheels"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="advancedPayment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="credit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="customerCashPrice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="customerDeposit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="depositContribution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="discount"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="excessMileage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="finalPaymentFee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="firstMonthlyPaymentFee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="gearbox"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="heightOpenBonnet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="heightOpenTailgate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="luggageCapacitySeatsFolded"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="luggageCapacitySeatsUpright"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="monthlyPayment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="otrRetailPrice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="refersToTrafficPattern"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="rotationalSpeedReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="scrappageContribution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="torque"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="totalPayable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="widthExcludingDoorMirrors"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="widthWithDoorsOpen"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="apr"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="capCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="cylinderTypeId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="dateLaunched"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="dhCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="emissions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="finalPayment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="fuelInjectionTypeId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="gearboxTypeId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="insuranceGroup"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="insuranceGroup50"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="manufacturerCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="marketingName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="noOfMonthlyPayments"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="offerPromoCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="productCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="shortSubtitle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="shortTitle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="subtitle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="termsAndConditions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="ved"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:rights"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:subject"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="hasID"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TTUnspecified"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="vso:EmissionStandardValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="vso:cargoVolume"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gr:QuantitativeValue"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gr:QuantitativeValueFloat"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT8SpeedAuto"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="vso:TransmissionTypeValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gr:quantitativeProductOrServiceProperty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Euro4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Euro5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Euro2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Euro3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Euro1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT6SpeedManual"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Petrol"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/coo/ns/#Derivative"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="BodyStyle4X4"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gr:PaymentMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="BodyStyleMPV"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="vso:width"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="vso:BodyStyleValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Combined"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT5SpeedManual"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gr:Offering"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="BodyStyleCoupe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="BodyStyleSaloon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT5SpeedAutoTiptronic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gr:qualitativeProductOrServiceProperty"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Urban"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="ExtraUrban"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="BodyStyleUnspecified"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="BodyStyleHatchback"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Hybrid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT7SpeedAutoDSG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT6SpeedAutoDSG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT5SpeedAutoDSG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="GearboxAutomatic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT6SpeedAuto"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="GearboxManual"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gr:QualitativeValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="GearboxDSG"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="vso:FuelTypeValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Diesel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT6SpeedAutoTiptronic"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="gr:datatypeProductOrServiceProperty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="BodyStyleCabriolet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gr:valueReference"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="BodyStyleEstate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TT4SpeedAuto"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="AudioAndNavigation"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DecorativeTrims"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Engine"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Financing"/>
+        <Class abbreviatedIRI="gr:PaymentMethod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GearboxTypeValue"/>
+        <Class abbreviatedIRI="gr:QualitativeValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Paint"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Parking"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Roofs"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Seats"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Service"/>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SteeringWheels"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TrafficPattern"/>
+        <Class abbreviatedIRI="gr:QualitativeValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+        <Class abbreviatedIRI="vso:TransmissionTypeValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TransmissionTypeValueManual"/>
+        <Class abbreviatedIRI="vso:TransmissionTypeValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Upholstery"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Wheels"/>
+        <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:BodyStyleValue"/>
+        <NamedIndividual IRI="BodyStyle4X4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:BodyStyleValue"/>
+        <NamedIndividual IRI="BodyStyleCabriolet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:BodyStyleValue"/>
+        <NamedIndividual IRI="BodyStyleCoupe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:BodyStyleValue"/>
+        <NamedIndividual IRI="BodyStyleEstate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:BodyStyleValue"/>
+        <NamedIndividual IRI="BodyStyleHatchback"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:BodyStyleValue"/>
+        <NamedIndividual IRI="BodyStyleMPV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:BodyStyleValue"/>
+        <NamedIndividual IRI="BodyStyleSaloon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:BodyStyleValue"/>
+        <NamedIndividual IRI="BodyStyleUnspecified"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TrafficPattern"/>
+        <NamedIndividual IRI="Combined"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:FuelTypeValue"/>
+        <NamedIndividual IRI="Diesel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:EmissionStandardValue"/>
+        <NamedIndividual IRI="Euro1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:EmissionStandardValue"/>
+        <NamedIndividual IRI="Euro2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:EmissionStandardValue"/>
+        <NamedIndividual IRI="Euro3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:EmissionStandardValue"/>
+        <NamedIndividual IRI="Euro4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:EmissionStandardValue"/>
+        <NamedIndividual IRI="Euro5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TrafficPattern"/>
+        <NamedIndividual IRI="ExtraUrban"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="GearboxTypeValue"/>
+        <NamedIndividual IRI="GearboxAutomatic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="GearboxTypeValue"/>
+        <NamedIndividual IRI="GearboxDSG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="GearboxTypeValue"/>
+        <NamedIndividual IRI="GearboxManual"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:FuelTypeValue"/>
+        <NamedIndividual IRI="Hybrid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:FuelTypeValue"/>
+        <NamedIndividual IRI="Petrol"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+        <NamedIndividual IRI="TT4SpeedAuto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+        <NamedIndividual IRI="TT5SpeedAutoDSG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+        <NamedIndividual IRI="TT5SpeedAutoTiptronic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueManual"/>
+        <NamedIndividual IRI="TT5SpeedManual"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+        <NamedIndividual IRI="TT6SpeedAuto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+        <NamedIndividual IRI="TT6SpeedAutoDSG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+        <NamedIndividual IRI="TT6SpeedAutoTiptronic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueManual"/>
+        <NamedIndividual IRI="TT6SpeedManual"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+        <NamedIndividual IRI="TT7SpeedAutoDSG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TransmissionTypeValueAutomatic"/>
+        <NamedIndividual IRI="TT8SpeedAuto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="vso:TransmissionTypeValue"/>
+        <NamedIndividual IRI="TTUnspecified"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TrafficPattern"/>
+        <NamedIndividual IRI="Urban"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT4SpeedAuto"/>
+        <Literal>1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT5SpeedAutoDSG"/>
+        <Literal>3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT5SpeedAutoTiptronic"/>
+        <Literal>2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT5SpeedManual"/>
+        <Literal>1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT6SpeedAuto"/>
+        <Literal>2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT6SpeedAutoDSG"/>
+        <Literal>3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT6SpeedAutoTiptronic"/>
+        <Literal>2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT6SpeedManual"/>
+        <Literal>1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT7SpeedAutoDSG"/>
+        <Literal>3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TT8SpeedAuto"/>
+        <Literal>2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="gearboxTypeId"/>
+        <NamedIndividual IRI="TTUnspecified"/>
+        <Literal>1</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="gearbox"/>
+        <ObjectProperty abbreviatedIRI="gr:qualitativeProductOrServiceProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="heightOpenBonnet"/>
+        <ObjectProperty abbreviatedIRI="gr:quantitativeProductOrServiceProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="heightOpenTailgate"/>
+        <ObjectProperty abbreviatedIRI="gr:quantitativeProductOrServiceProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="luggageCapacitySeatsFolded"/>
+        <ObjectProperty abbreviatedIRI="gr:quantitativeProductOrServiceProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="luggageCapacitySeatsFolded"/>
+        <ObjectProperty abbreviatedIRI="vso:cargoVolume"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="luggageCapacitySeatsUpright"/>
+        <ObjectProperty abbreviatedIRI="gr:quantitativeProductOrServiceProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="luggageCapacitySeatsUpright"/>
+        <ObjectProperty abbreviatedIRI="vso:cargoVolume"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="refersToTrafficPattern"/>
+        <ObjectProperty abbreviatedIRI="gr:valueReference"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="rotationalSpeedReference"/>
+        <ObjectProperty abbreviatedIRI="gr:valueReference"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="torque"/>
+        <ObjectProperty abbreviatedIRI="gr:quantitativeProductOrServiceProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="widthExcludingDoorMirrors"/>
+        <ObjectProperty abbreviatedIRI="gr:quantitativeProductOrServiceProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="widthExcludingDoorMirrors"/>
+        <ObjectProperty abbreviatedIRI="vso:width"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="widthWithDoorsOpen"/>
+        <ObjectProperty abbreviatedIRI="gr:quantitativeProductOrServiceProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="advancedPayment"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="credit"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="customerCashPrice"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="customerDeposit"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="depositContribution"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="discount"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="excessMileage"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="finalPaymentFee"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="firstMonthlyPaymentFee"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="gearbox"/>
+        <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="heightOpenBonnet"/>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="heightOpenTailgate"/>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="luggageCapacitySeatsFolded"/>
+        <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="luggageCapacitySeatsUpright"/>
+        <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="monthlyPayment"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="otrRetailPrice"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="refersToTrafficPattern"/>
+        <Class abbreviatedIRI="gr:QuantitativeValue"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="rotationalSpeedReference"/>
+        <Class abbreviatedIRI="gr:QuantitativeValue"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="scrappageContribution"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="torque"/>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="totalPayable"/>
+        <Class IRI="Financing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="widthExcludingDoorMirrors"/>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="widthWithDoorsOpen"/>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="advancedPayment"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="credit"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="customerCashPrice"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="customerDeposit"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="depositContribution"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="discount"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="excessMileage"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="finalPaymentFee"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="firstMonthlyPaymentFee"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="gearbox"/>
+        <Class IRI="GearboxTypeValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="heightOpenBonnet"/>
+        <Class abbreviatedIRI="gr:QuantitativeValueFloat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="heightOpenTailgate"/>
+        <Class abbreviatedIRI="gr:QuantitativeValueFloat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="luggageCapacitySeatsFolded"/>
+        <Class abbreviatedIRI="gr:QuantitativeValueFloat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="luggageCapacitySeatsUpright"/>
+        <Class abbreviatedIRI="gr:QuantitativeValueFloat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="monthlyPayment"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="otrRetailPrice"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="refersToTrafficPattern"/>
+        <Class IRI="TrafficPattern"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="rotationalSpeedReference"/>
+        <Class abbreviatedIRI="gr:QuantitativeValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="scrappageContribution"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="torque"/>
+        <Class abbreviatedIRI="gr:QuantitativeValueFloat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="totalPayable"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="widthExcludingDoorMirrors"/>
+        <Class abbreviatedIRI="gr:QuantitativeValueFloat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="widthWithDoorsOpen"/>
+        <Class abbreviatedIRI="gr:QuantitativeValueFloat"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="dateLaunched"/>
+        <DataProperty abbreviatedIRI="gr:datatypeProductOrServiceProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="apr"/>
+        <Class IRI="Financing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="capCode"/>
+        <Class IRI="http://purl.org/coo/ns/#Derivative"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="cylinderTypeId"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+            <Class IRI="Engine"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="dateLaunched"/>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="dhCode"/>
+        <Class IRI="http://purl.org/coo/ns/#Derivative"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="emissions"/>
+        <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="finalPayment"/>
+        <Class IRI="Financing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="fuelInjectionTypeId"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+            <Class IRI="Engine"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="gearboxTypeId"/>
+        <Class abbreviatedIRI="vso:TransmissionTypeValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="insuranceGroup"/>
+        <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="insuranceGroup50"/>
+        <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="manufacturerCode"/>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="marketingName"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="gr:Offering"/>
+            <Class abbreviatedIRI="gr:ProductOrService"/>
+            <Class IRI="Financing"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="noOfMonthlyPayments"/>
+        <Class IRI="Financing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="offerPromoCode"/>
+        <Class abbreviatedIRI="gr:Offering"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="productCode"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="coo:ChoiceOrComponent"/>
+            <Class abbreviatedIRI="vso:MotorizedRoadVehicle"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="shortSubtitle"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="gr:Offering"/>
+            <Class abbreviatedIRI="gr:ProductOrService"/>
+            <Class IRI="Financing"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="shortTitle"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="gr:Offering"/>
+            <Class abbreviatedIRI="gr:ProductOrService"/>
+            <Class IRI="Financing"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="subtitle"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="gr:Offering"/>
+            <Class abbreviatedIRI="gr:ProductOrService"/>
+            <Class IRI="Financing"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="termsAndConditions"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="gr:Offering"/>
+            <Class IRI="Financing"/>
+            <Class IRI="Service"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="ved"/>
+        <Class abbreviatedIRI="gr:ProductOrService"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="apr"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="capCode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="cylinderTypeId"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="dateLaunched"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="dhCode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="emissions"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="finalPayment"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="fuelInjectionTypeId"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="gearboxTypeId"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="insuranceGroup"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="insuranceGroup50"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="manufacturerCode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="marketingName"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="noOfMonthlyPayments"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="offerPromoCode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="productCode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="shortSubtitle"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="shortTitle"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="subtitle"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="termsAndConditions"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="ved"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>AudioAndNavigation</IRI>
+        <Literal>1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>AudioAndNavigation</IRI>
+        <Literal xml:lang="en">The class of audio and navigation choices or components (CD/DVD/SatNav, a &quot;MonoSelectGroup&quot; in automotive terminology), VW ID: 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>AudioAndNavigation</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AudioAndNavigation</IRI>
+        <Literal xml:lang="en">Audio and Navigation Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>BodyStyle4X4</IRI>
+        <Literal>6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>BodyStyle4X4</IRI>
+        <Literal xml:lang="en">Four-by-Four Vehicle, VW ID: 6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>BodyStyle4X4</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BodyStyle4X4</IRI>
+        <Literal xml:lang="en">4 X 4 (vso:BodyStyleValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>BodyStyleCabriolet</IRI>
+        <Literal>4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>BodyStyleCabriolet</IRI>
+        <Literal xml:lang="en">Cabriolet, VW ID: 4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>BodyStyleCabriolet</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BodyStyleCabriolet</IRI>
+        <Literal xml:lang="en">Cabriolet (vso:BodyStyleValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>BodyStyleCoupe</IRI>
+        <Literal>7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>BodyStyleCoupe</IRI>
+        <Literal xml:lang="en">Coupe, VW ID: 7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>BodyStyleCoupe</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BodyStyleCoupe</IRI>
+        <Literal xml:lang="en">Coupe (vso:BodyStyleValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>BodyStyleEstate</IRI>
+        <Literal>3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>BodyStyleEstate</IRI>
+        <Literal xml:lang="en">Estate, VW ID: 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>BodyStyleEstate</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BodyStyleEstate</IRI>
+        <Literal xml:lang="en">Estate (vso:BodyStyleValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>BodyStyleHatchback</IRI>
+        <Literal>1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>BodyStyleHatchback</IRI>
+        <Literal xml:lang="en">Hatchback, VW ID: 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>BodyStyleHatchback</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BodyStyleHatchback</IRI>
+        <Literal xml:lang="en">Hatchback (vso:BodyStyleValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>BodyStyleMPV</IRI>
+        <Literal>5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>BodyStyleMPV</IRI>
+        <Literal xml:lang="en">Multi-purpose Vehicle, VW ID: 5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>BodyStyleMPV</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BodyStyleMPV</IRI>
+        <Literal xml:lang="en">MPV (vso:BodyStyleValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>BodyStyleSaloon</IRI>
+        <Literal>2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>BodyStyleSaloon</IRI>
+        <Literal xml:lang="en">Saloon, VW ID: 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>BodyStyleSaloon</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BodyStyleSaloon</IRI>
+        <Literal xml:lang="en">Saloon (vso:BodyStyleValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>BodyStyleUnspecified</IRI>
+        <Literal>0</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>BodyStyleUnspecified</IRI>
+        <Literal xml:lang="en">Unspecified, VW ID: 0</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>BodyStyleUnspecified</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BodyStyleUnspecified</IRI>
+        <Literal xml:lang="en">Unspecified (vso:BodyStyleValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Combined</IRI>
+        <Literal xml:lang="en">Combined usage as a traffic pattern</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Combined</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Combined</IRI>
+        <Literal xml:lang="en">Combined (vvo:TrafficPattern)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>DecorativeTrims</IRI>
+        <Literal>8</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DecorativeTrims</IRI>
+        <Literal xml:lang="en">The class of decorative trim choices or components (a &quot;MonoSelectGroup&quot; in automotive terminology), VW ID: 8</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DecorativeTrims</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DecorativeTrims</IRI>
+        <Literal xml:lang="en">Decorative Trims Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>Diesel</IRI>
+        <Literal>2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Diesel</IRI>
+        <Literal xml:lang="en">Diesel, VW ID: 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Diesel</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Diesel</IRI>
+        <Literal xml:lang="en">Diesel (vso:FuelTypeValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Engine</IRI>
+        <Literal xml:lang="en">The class of engines as choices or components</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Engine</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Engine</IRI>
+        <Literal xml:lang="en">Engine Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Euro1</IRI>
+        <Literal xml:lang="en">The emission standard EURO 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Euro1</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Euro1</IRI>
+        <Literal xml:lang="en">Euro 1 (vso:EmissionStandardValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Euro2</IRI>
+        <Literal xml:lang="en">The emission standard EURO 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Euro2</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Euro2</IRI>
+        <Literal xml:lang="en">Euro 2 (vso:EmissionStandardValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Euro3</IRI>
+        <Literal xml:lang="en">The emission standard EURO 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Euro3</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Euro3</IRI>
+        <Literal xml:lang="en">Euro 3 (vso:EmissionStandardValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Euro4</IRI>
+        <Literal xml:lang="en">The emission standard EURO 4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Euro4</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Euro4</IRI>
+        <Literal xml:lang="en">Euro 4 (vso:EmissionStandardValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Euro5</IRI>
+        <Literal xml:lang="en">The emission standard EURO 5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Euro5</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Euro5</IRI>
+        <Literal xml:lang="en">Euro 5 (vso:EmissionStandardValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ExtraUrban</IRI>
+        <Literal xml:lang="en">Extra urban as a traffic pattern</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ExtraUrban</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ExtraUrban</IRI>
+        <Literal xml:lang="en">ExtraUrban (vvo:TrafficPattern)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Financing</IRI>
+        <Literal xml:lang="en">An instance of this class is the specification of a payment option via staged payments.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Financing</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Financing</IRI>
+        <Literal xml:lang="en">Financing (gr:PaymentMethod)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>GearboxAutomatic</IRI>
+        <Literal>2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GearboxAutomatic</IRI>
+        <Literal xml:lang="en">Automatic gearbox, VW ID: 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>GearboxAutomatic</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GearboxAutomatic</IRI>
+        <Literal xml:lang="en">Automatic (vvo:GearboxTypeValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>GearboxDSG</IRI>
+        <Literal>3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GearboxDSG</IRI>
+        <Literal xml:lang="en">DSG gearbox, VW ID: 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>GearboxDSG</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GearboxDSG</IRI>
+        <Literal xml:lang="en">DSG (vvo:GearboxTypeValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>GearboxManual</IRI>
+        <Literal>1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GearboxManual</IRI>
+        <Literal xml:lang="en">Manual gearbox, VW ID: 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>GearboxManual</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GearboxManual</IRI>
+        <Literal xml:lang="en">Manual (vvo:GearboxTypeValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GearboxTypeValue</IRI>
+        <Literal xml:lang="en">A value indicating a gearbox type.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>GearboxTypeValue</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GearboxTypeValue</IRI>
+        <Literal xml:lang="en">Gearbox type value (the class of predefined values)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>Hybrid</IRI>
+        <Literal>3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Hybrid</IRI>
+        <Literal xml:lang="en">Hybrid, VW ID: 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Hybrid</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Hybrid</IRI>
+        <Literal xml:lang="en">Hybrid (vso:FuelTypeValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>Paint</IRI>
+        <Literal>3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Paint</IRI>
+        <Literal xml:lang="en">The class of paint choices or components (a &quot;MonoSelectGroup&quot; in automotive terminology), VW ID: 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Paint</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Paint</IRI>
+        <Literal xml:lang="en">Paint Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>Parking</IRI>
+        <Literal>7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Parking</IRI>
+        <Literal xml:lang="en">The class of parking-related choices or components (a &quot;MonoSelectGroup&quot; in automotive terminology), VW ID: 7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Parking</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Parking</IRI>
+        <Literal xml:lang="en">Parking Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>Petrol</IRI>
+        <Literal>1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Petrol</IRI>
+        <Literal xml:lang="en">Petrol, VW ID: 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Petrol</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Petrol</IRI>
+        <Literal xml:lang="en">Petrol (vso:FuelTypeValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>Roofs</IRI>
+        <Literal>5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Roofs</IRI>
+        <Literal xml:lang="en">The class of roof choices or components (a &quot;MonoSelectGroup&quot; in automotive terminology), VW ID: 5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Roofs</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Roofs</IRI>
+        <Literal xml:lang="en">Roofs Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>Seats</IRI>
+        <Literal>9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Seats</IRI>
+        <Literal xml:lang="en">The class of seat-related choices or components (a &quot;MonoSelectGroup&quot; in automotive terminology), VW ID: 9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Seats</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Seats</IRI>
+        <Literal xml:lang="en">Seats Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Service</IRI>
+        <Literal xml:lang="en">A service or service model. Typical instances are complementing services for a particular car.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Service</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Service</IRI>
+        <Literal xml:lang="en">Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>SteeringWheels</IRI>
+        <Literal>6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>SteeringWheels</IRI>
+        <Literal xml:lang="en">The class of steering wheels choices or components (a &quot;MonoSelectGroup&quot; in automotive terminology), VW ID: 6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>SteeringWheels</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SteeringWheels</IRI>
+        <Literal xml:lang="en">Steering Wheels Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT4SpeedAuto</IRI>
+        <Literal>1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT4SpeedAuto</IRI>
+        <Literal xml:lang="en">4 Speed auto. VW ID: 1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT4SpeedAuto</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT4SpeedAuto</IRI>
+        <Literal xml:lang="en">4 Speed auto (vvo:TransmissionTypeValueAutomatic)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT5SpeedAutoDSG</IRI>
+        <Literal>8</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT5SpeedAutoDSG</IRI>
+        <Literal xml:lang="en">5 Speed auto DSG, VW ID: 8</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT5SpeedAutoDSG</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT5SpeedAutoDSG</IRI>
+        <Literal xml:lang="en">5 Speed auto DSG (vvo:TransmissionTypeValueAutomatic)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT5SpeedAutoTiptronic</IRI>
+        <Literal>3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT5SpeedAutoTiptronic</IRI>
+        <Literal xml:lang="en">5 Speed auto tiptronic, VW ID: 3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT5SpeedAutoTiptronic</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT5SpeedAutoTiptronic</IRI>
+        <Literal xml:lang="en">5 Speed auto tiptronic (vvo:TransmissionTypeValueAutomatic)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT5SpeedManual</IRI>
+        <Literal>2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT5SpeedManual</IRI>
+        <Literal xml:lang="en">5 Speed manual, VW ID: 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT5SpeedManual</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT5SpeedManual</IRI>
+        <Literal xml:lang="en">5 Speed manual (vvo:TransmissionTypeValueManual)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT6SpeedAuto</IRI>
+        <Literal>5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT6SpeedAuto</IRI>
+        <Literal xml:lang="en">6 Speed auto, VW ID: 5</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT6SpeedAuto</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT6SpeedAuto</IRI>
+        <Literal xml:lang="en">6 Speed auto (vvo:TransmissionTypeValueAutomatic)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT6SpeedAutoDSG</IRI>
+        <Literal>6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT6SpeedAutoDSG</IRI>
+        <Literal xml:lang="en">6 Speed auto DSG, VW ID: 6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT6SpeedAutoDSG</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT6SpeedAutoDSG</IRI>
+        <Literal xml:lang="en">6 Speed auto DSG (vvo:TransmissionTypeValueAutomatic)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT6SpeedAutoTiptronic</IRI>
+        <Literal>7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT6SpeedAutoTiptronic</IRI>
+        <Literal xml:lang="en">6 Speed auto tiptronic, VW ID: 7</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT6SpeedAutoTiptronic</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT6SpeedAutoTiptronic</IRI>
+        <Literal xml:lang="en">6 Speed auto tiptronic (vvo:TransmissionTypeValueAutomatic)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT6SpeedManual</IRI>
+        <Literal>4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT6SpeedManual</IRI>
+        <Literal xml:lang="en">6 Speed manual, VW ID: 4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT6SpeedManual</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT6SpeedManual</IRI>
+        <Literal xml:lang="en">6 Speed manual (vvo:TransmissionTypeValueManual)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT7SpeedAutoDSG</IRI>
+        <Literal>9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT7SpeedAutoDSG</IRI>
+        <Literal xml:lang="en">7 Speed auto DSG, VW ID: 9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT7SpeedAutoDSG</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT7SpeedAutoDSG</IRI>
+        <Literal xml:lang="en">7 Speed auto DSG (vvo:TransmissionTypeValueAutomatic)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TT8SpeedAuto</IRI>
+        <Literal>10</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TT8SpeedAuto</IRI>
+        <Literal xml:lang="en">8 Speed auto, VW ID: 10</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TT8SpeedAuto</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TT8SpeedAuto</IRI>
+        <Literal xml:lang="en">8 Speed auto (vvo:TransmissionTypeValueAutomatic)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>TTUnspecified</IRI>
+        <Literal>0</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TTUnspecified</IRI>
+        <Literal xml:lang="en">Unspecified, VW ID: 0</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TTUnspecified</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TTUnspecified</IRI>
+        <Literal xml:lang="en">Unspecified (vso:TransmissionTypeValue)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TrafficPattern</IRI>
+        <Literal xml:lang="en">A value indicating a traffic pattern, to be used as a reference for vso:fuelConsumption or vso:fuelEconomy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TrafficPattern</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TrafficPattern</IRI>
+        <Literal xml:lang="en">Traffic pattern value (the class of predefined values)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TransmissionTypeValueAutomatic</IRI>
+        <Literal xml:lang="en">The class of all automatic transmission types</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TransmissionTypeValueAutomatic</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TransmissionTypeValueAutomatic</IRI>
+        <Literal xml:lang="en">TransmissionTypeValueAutomatic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TransmissionTypeValueManual</IRI>
+        <Literal xml:lang="en">The class of all manual transmission types</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TransmissionTypeValueManual</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TransmissionTypeValueManual</IRI>
+        <Literal xml:lang="en">TransmissionTypeValueManual</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>Upholstery</IRI>
+        <Literal>4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Upholstery</IRI>
+        <Literal xml:lang="en">The class of upholstery choices or components (a &quot;MonoSelectGroup&quot; in automotive terminology), VW ID: 4</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Upholstery</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Upholstery</IRI>
+        <Literal xml:lang="en">Upholstery Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Urban</IRI>
+        <Literal xml:lang="en">Urban usage as a traffic pattern</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Urban</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Urban</IRI>
+        <Literal xml:lang="en">Urban (vvo:TrafficPattern)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="hasID"/>
+        <IRI>Wheels</IRI>
+        <Literal>2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Wheels</IRI>
+        <Literal xml:lang="en">The class of wheels-related choices or components (a &quot;MonoSelectGroup&quot; in automotive terminology), VW ID: 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Wheels</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Wheels</IRI>
+        <Literal xml:lang="en">Wheels Choice or Component</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>advancedPayment</IRI>
+        <Literal xml:lang="en">Indicates the advanced payment for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>advancedPayment</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>advancedPayment</IRI>
+        <Literal xml:lang="en">advancedPayment (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>apr</IRI>
+        <Literal xml:lang="en">Annual percentage rate. Note: 7.5 % is encoded as &quot;7.5&quot;^^xsd:decimal, not &quot;0.075&quot;^^xsd:decimal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>apr</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>apr</IRI>
+        <Literal xml:lang="en">apr (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>capCode</IRI>
+        <Literal xml:lang="en">The CAP code</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>capCode</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>capCode</IRI>
+        <Literal xml:lang="en">capCode (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>credit</IRI>
+        <Literal xml:lang="en">Indicates the credit for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>credit</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>credit</IRI>
+        <Literal xml:lang="en">credit (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>customerCashPrice</IRI>
+        <Literal xml:lang="en">Indicates the customer cash price for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>customerCashPrice</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>customerCashPrice</IRI>
+        <Literal xml:lang="en">customerCashPrice (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>customerDeposit</IRI>
+        <Literal xml:lang="en">Indicates the customer deposit for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>customerDeposit</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>customerDeposit</IRI>
+        <Literal xml:lang="en">customerDeposit (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>cylinderTypeId</IRI>
+        <Literal xml:lang="en">The Volkswagen-specific identifier for the cylinder type of a vehicle or engine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>cylinderTypeId</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>cylinderTypeId</IRI>
+        <Literal xml:lang="en">cylinderTypeId (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>dateLaunched</IRI>
+        <Literal xml:lang="en">The date of the official launch of the car model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>dateLaunched</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>dateLaunched</IRI>
+        <Literal xml:lang="en">dateLaunched (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>depositContribution</IRI>
+        <Literal xml:lang="en">Indicates the deposit contribution for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>depositContribution</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>depositContribution</IRI>
+        <Literal xml:lang="en">depositContribution (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>dhCode</IRI>
+        <Literal xml:lang="en">The DH code</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>dhCode</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>dhCode</IRI>
+        <Literal xml:lang="en">dhCode (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>discount</IRI>
+        <Literal xml:lang="en">Indicates the discount for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>discount</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>discount</IRI>
+        <Literal xml:lang="en">discount (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>emissions</IRI>
+        <Literal xml:lang="en">The CO2 emissions in g/km</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>emissions</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>emissions</IRI>
+        <Literal xml:lang="en">emissions (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>excessMileage</IRI>
+        <Literal xml:lang="en">Indicates the rate for excess mileage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>excessMileage</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>excessMileage</IRI>
+        <Literal xml:lang="en">excessMileage (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>finalPayment</IRI>
+        <Literal xml:lang="en">Indicates the final payment for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>finalPayment</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>finalPayment</IRI>
+        <Literal xml:lang="en">finalPayment (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>finalPaymentFee</IRI>
+        <Literal xml:lang="en">Indicates the final payment fee for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>finalPaymentFee</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>finalPaymentFee</IRI>
+        <Literal xml:lang="en">finalPaymentFee (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>firstMonthlyPaymentFee</IRI>
+        <Literal xml:lang="en">Indicates the first monthly payment fee for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>firstMonthlyPaymentFee</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>firstMonthlyPaymentFee</IRI>
+        <Literal xml:lang="en">firstMonthlyPaymentFee (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>fuelInjectionTypeId</IRI>
+        <Literal xml:lang="en">The Volkswagen-specific identifier for the fuel injection type of a vehicle or engine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>fuelInjectionTypeId</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>fuelInjectionTypeId</IRI>
+        <Literal xml:lang="en">fuelInjectionTypeId (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>gearbox</IRI>
+        <Literal xml:lang="en">The gearbox type of the vehicle or vehicle model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>gearbox</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>gearbox</IRI>
+        <Literal xml:lang="en">gearbox (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>gearbox</IRI>
+        <IRI>http://dbpedia.org/page/Transmission_%28mechanics%29</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>gearbox</IRI>
+        <IRI>http://en.wikipedia.org/wiki/Transmission_%28mechanics%29</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>gearboxTypeId</IRI>
+        <Literal xml:lang="en">The Volkswagen-specific gearbox type ID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>gearboxTypeId</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>gearboxTypeId</IRI>
+        <Literal xml:lang="en">gearboxTypeId (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasID</IRI>
+        <Literal xml:lang="en">An annotation property that can be used to attach element identifiers from XML schemas for the corresponding XML data or schema</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasID</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasID</IRI>
+        <Literal xml:lang="en">hasID (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>heightOpenBonnet</IRI>
+        <Literal xml:lang="en">The outer height of the vehicle with the bonnet open. Note that you can use gr:hasMinValueFloat and gr:hasMaxValueFloat to indicate ranges.
+Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>heightOpenBonnet</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>heightOpenBonnet</IRI>
+        <Literal xml:lang="en">heightOpenBonnet (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>heightOpenTailgate</IRI>
+        <Literal xml:lang="en">The outer height of the vehicle with the tailgate open. Note that you can use gr:hasMinValueFloat and gr:hasMaxValueFloat to indicate ranges.
+Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>heightOpenTailgate</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>heightOpenTailgate</IRI>
+        <Literal xml:lang="en">heightOpenTailgate (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>insuranceGroup</IRI>
+        <Literal xml:lang="en">The insurance group code</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>insuranceGroup</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>insuranceGroup</IRI>
+        <Literal xml:lang="en">insuranceGroup (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>insuranceGroup50</IRI>
+        <Literal xml:lang="en">The insurance group 50 code </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>insuranceGroup50</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>insuranceGroup50</IRI>
+        <Literal xml:lang="en">insuranceGroup50 (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>luggageCapacitySeatsFolded</IRI>
+        <Literal xml:lang="en">The available volume for cargo or luggage with the seats folded
+Typical unit code(s): LTR for liters, FTQ for cubic foot/feet
+	
+Note: You can use gr:hasMinValueFloat and gr:hasMaxValueFloat to indicate ranges.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>luggageCapacitySeatsFolded</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>luggageCapacitySeatsFolded</IRI>
+        <Literal xml:lang="en">luggageCapacitySeatsFolded (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>luggageCapacitySeatsUpright</IRI>
+        <Literal xml:lang="en">The available volume for cargo or luggage with the seats upright
+Typical unit code(s): LTR for liters, FTQ for cubic foot/feet
+	
+Note: You can use gr:hasMinValueFloat and gr:hasMaxValueFloat to indicate ranges.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>luggageCapacitySeatsUpright</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>luggageCapacitySeatsUpright</IRI>
+        <Literal xml:lang="en">luggageCapacitySeatsUpright (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>manufacturerCode</IRI>
+        <Literal xml:lang="en">The manufacturer code</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>manufacturerCode</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>manufacturerCode</IRI>
+        <Literal xml:lang="en">manufacturerCode (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>marketingName</IRI>
+        <Literal xml:lang="en">The name of the object for marketing purposes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>marketingName</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>marketingName</IRI>
+        <Literal xml:lang="en">marketingName (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>monthlyPayment</IRI>
+        <Literal xml:lang="en">Indicates the monthly payment for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>monthlyPayment</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>monthlyPayment</IRI>
+        <Literal xml:lang="en">monthlyPayment (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>noOfMonthlyPayments</IRI>
+        <Literal xml:lang="en">The number of monthly payments</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>noOfMonthlyPayments</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>noOfMonthlyPayments</IRI>
+        <Literal xml:lang="en">noOfMonthlyPayments (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>offerPromoCode</IRI>
+        <Literal xml:lang="en">The code for a promotional offer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>offerPromoCode</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>offerPromoCode</IRI>
+        <Literal xml:lang="en">offerPromoCode (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>otrRetailPrice</IRI>
+        <Literal xml:lang="en">Indicates the OTR retail price for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>otrRetailPrice</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>otrRetailPrice</IRI>
+        <Literal xml:lang="en">otrRetailPrice (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>productCode</IRI>
+        <Literal xml:lang="en">The Volkswagen-specific product code for the vehicle model, choice, component, spare part, or service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>productCode</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>productCode</IRI>
+        <Literal xml:lang="en">productCode (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>refersToTrafficPattern</IRI>
+        <Literal xml:lang="en">Indicates the traffic pattern to which the vso:fuelEconomy or vso:fuelConsumption value refers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>refersToTrafficPattern</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>refersToTrafficPattern</IRI>
+        <Literal xml:lang="en">refersToTrafficPattern  (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>rotationalSpeedReference</IRI>
+        <Literal xml:lang="en">The rotational speed to which a vvo:torque or vso:enginePower value refers
+Typical unit code(s): RPM for revolutions per minute or RPS for revolutions per second</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>rotationalSpeedReference</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>rotationalSpeedReference</IRI>
+        <Literal xml:lang="en">rotationalSpeedReference  (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>scrappageContribution</IRI>
+        <Literal xml:lang="en">Indicates the scrappage contribution for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>scrappageContribution</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>scrappageContribution</IRI>
+        <Literal xml:lang="en">scrappageContribution (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>shortSubtitle</IRI>
+        <Literal xml:lang="en">The short subtitle for a vehicle, component, offer, or financing option</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>shortSubtitle</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>shortSubtitle</IRI>
+        <Literal xml:lang="en">shortSubtitle (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>shortTitle</IRI>
+        <Literal xml:lang="en">The short title for a vehicle, component, offer, or financing option</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>shortTitle</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>shortTitle</IRI>
+        <Literal xml:lang="en">shortTitle (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>subtitle</IRI>
+        <Literal xml:lang="en">The subtitle for a vehicle, component, offer, or financing option</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>subtitle</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>subtitle</IRI>
+        <Literal xml:lang="en">subtitle (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>termsAndConditions</IRI>
+        <Literal xml:lang="en">Terms and conditions of the service, offer, or financing option</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>termsAndConditions</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>termsAndConditions</IRI>
+        <Literal xml:lang="en">termsAndConditions (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>torque</IRI>
+        <Literal xml:lang="en">The torque (turning force) of an engine
+Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>torque</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>torque</IRI>
+        <Literal xml:lang="en">torque (0..*)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>totalPayable</IRI>
+        <Literal xml:lang="en">Indicates the total payable for the financing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>totalPayable</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>totalPayable</IRI>
+        <Literal xml:lang="en">totalPayable (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ved</IRI>
+        <Literal xml:lang="en">The VED code</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ved</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ved</IRI>
+        <Literal xml:lang="en">ved (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>widthExcludingDoorMirrors</IRI>
+        <Literal xml:lang="en">The outer width of the vehicle, excluding door mirrors. Note that you can use gr:hasMinValueFloat and gr:hasMaxValueFloat to indicate ranges.
+Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>widthExcludingDoorMirrors</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>widthExcludingDoorMirrors</IRI>
+        <Literal xml:lang="en">widthExcludingDoorMirrors (0..1)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>widthWithDoorsOpen</IRI>
+        <Literal xml:lang="en">The outer width of the vehicle with the doors open. Note that you can use gr:hasMinValueFloat and gr:hasMaxValueFloat to indicate ranges.
+Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>widthWithDoorsOpen</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>widthWithDoorsOpen</IRI>
+        <Literal xml:lang="en">widthWithDoorsOpen (0..1)</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
