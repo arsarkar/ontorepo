@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:iirds="http://iirds.tekom.de/iirds#"
+     xmlns:schema="http://schema.org/"
+     xmlns:iirdsSft="http://iirds.tekom.de/iirds/domain/software#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#description -->
+
+    <AnnotationProperty rdf:about="http://iirds.tekom.de/iirds#description"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#AfterUse -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#AfterUse"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#PuttingToUse -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#PuttingToUse"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#TechnicalData -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#TechnicalData"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#TechnicalOverview -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#TechnicalOverview"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#Use -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#Use"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#iirdsDomainEntity -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity">
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Entity of the software domain.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Entität der Software-Domäne.</rdfs:comment>
+        <rdfs:label xml:lang="de">iirdsSoftwareDomainEntity</rdfs:label>
+        <rdfs:label xml:lang="en">iirdsSoftwareDomainEntity</rdfs:label>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#Administration -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/software#Administration">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Use"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product containing activities related to managing, updating, and configuring software products and IT systems.</rdfs:comment>
+        <rdfs:label xml:lang="de">Administration</rdfs:label>
+        <rdfs:label xml:lang="en">Administration</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#Architecture -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/software#Architecture">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#TechnicalOverview"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Technical structure of a software product or component.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Technischer Aufbaus eines Software-Produkts oder -Komponente.</rdfs:comment>
+        <rdfs:label xml:lang="en">Architecture</rdfs:label>
+        <rdfs:label xml:lang="de">Architektur</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#Customization -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/software#Customization">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Use"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product containing activities relating to reworking a standard product to the special requirements of individual customers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Customization</rdfs:label>
+        <rdfs:label xml:lang="de">kundenspezifische Anpassung</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#Deinstallation -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/software#Deinstallation">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#AfterUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product containing procedures for deinstalling an IT system or removing a software from a system.</rdfs:comment>
+        <rdfs:label xml:lang="de">Deinstallation</rdfs:label>
+        <rdfs:label xml:lang="en">Deinstallation</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#Deployment -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/software#Deployment">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#PuttingToUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product describing activities related to making a software system available for use.</rdfs:comment>
+        <rdfs:label xml:lang="de">Bereitstellung</rdfs:label>
+        <rdfs:label xml:lang="en">Deployment</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#Integration -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/software#Integration">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#PuttingToUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product containing procedures for integrating a software or IT system with other software products or systems.</rdfs:comment>
+        <rdfs:label xml:lang="de">Integration</rdfs:label>
+        <rdfs:label xml:lang="en">Integration</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#Interface -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/software#Interface">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#TechnicalOverview"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Point of interaction between hardware and software or between software programs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Interface</rdfs:label>
+        <rdfs:label xml:lang="de">Schnittstelle</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#SystemRequirement -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/software#SystemRequirement">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#TechnicalData"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity"/>
+        <iirds:description xml:lang="en">Examples are operating system, storage space, and RAM size.</iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Describes the requirements that need to be fulfilled in order for a software to be installed and operated.</rdfs:comment>
+        <rdfs:label xml:lang="en">System requirement</rdfs:label>
+        <rdfs:label xml:lang="de">Systemanforderung</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/software#Update -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/software#Update">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Use"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/software#iirdsSoftwareDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a software product containing procedures for installing a new version of a software in an IT system.</rdfs:comment>
+        <rdfs:label xml:lang="de">Update</rdfs:label>
+        <rdfs:label xml:lang="en">Update</rdfs:label>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

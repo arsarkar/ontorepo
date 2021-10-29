@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://gitlab.cc-asp.fraunhofer.de/EMI_datamanagement/bwmd_ontology/-/raw/master/BWMD_ontology_mid.owl" uri="BWMD_Ontology-mid.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1634664540673" name="https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain" uri="BWMD_Ontology-domain.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1634664540673" name="https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid" uri="BWMD_Ontology-mid.owl"/>
+    </group>
+</catalog>

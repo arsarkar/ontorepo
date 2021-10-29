@@ -7,7 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain"
      versionIRI="https://gitlab.cc-asp.fraunhofer.de/EMI_datamanagement/bwmd_ontology/-/raw/master/BWMD_ontology_domain.owl">
-    <Prefix name="" IRI="https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain#"/>
+    <Prefix name="" IRI="https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/domain"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="mid" IRI="https://www.materials.fraunhofer.de/ontologies/BWMD_ontology/mid#"/>
     <Prefix name="obo" IRI="http://purl.obolibrary.org/obo/"/>
@@ -19,6 +19,7 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
     <Prefix name="graph_designer" IRI="https://www.materials.fraunhofer.de/ontologies/graph_designer#"/>
+    <Import>https://gitlab.cc-asp.fraunhofer.de/EMI_datamanagement/bwmd_ontology/-/raw/master/BWMD_ontology_mid.owl</Import>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="obo:IAO_0000232"/>
         <Literal xml:lang="en">v1.0.3 (2020-12-04): Annotations added to every entity by Christoph Schweizer.
@@ -1462,10 +1463,10 @@ philipp.von.hartrott@iwm.fraunhofer.de</Literal>
         <AnnotationProperty abbreviatedIRI="obo:IAO_0000232"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="mid:BWMD_00835"/>
+        <AnnotationProperty abbreviatedIRI="mid:BWMD_00834"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="mid:BWMD_00834"/>
+        <AnnotationProperty abbreviatedIRI="mid:BWMD_00835"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#BWMD_00344"/>

@@ -1,0 +1,742 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:iirds="http://iirds.tekom.de/iirds#"
+     xmlns:schema="http://schema.org/"
+     xmlns:iirdsMch="http://iirds.tekom.de/iirds/domain/machinery#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#description -->
+
+    <AnnotationProperty rdf:about="http://iirds.tekom.de/iirds#description"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#duration -->
+
+    <AnnotationProperty rdf:about="http://iirds.tekom.de/iirds#duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#AfterUse -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#AfterUse"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#Collection -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#Collection"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#DesignAndRealization -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#DesignAndRealization"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#PlanningTime -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#PlanningTime"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#PuttingToUse -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#PuttingToUse"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#Safety -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#Safety"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#Supply -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#Supply"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#TechnicalOverview -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#TechnicalOverview"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#Use -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#Use"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds#iirdsDomainEntity -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#ConsumableSupply -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds/domain/machinery#ConsumableSupply">
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Supply"/>
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">Consumable supplies may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <iirds:description xml:lang="en">IRI: required</iirds:description>
+        <rdfs:comment xml:lang="en">Type of supply: Goods or material that is consumed, meaning dissipated or spent, in the lifecycle of a technical system. Examples are batteries, sanding discs, and magnets.</rdfs:comment>
+        <rdfs:label xml:lang="en">Consumable supply</rdfs:label>
+        <rdfs:label xml:lang="de">Verbrauchsmaterial</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#HardwareTool -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds/domain/machinery#HardwareTool">
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Supply"/>
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">Hardware tools may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <iirds:description xml:lang="en">IRI: required</iirds:description>
+        <rdfs:comment xml:lang="en">Type of supply: A device or implement, used to carry out a particular function or a working task.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hardware tool</rdfs:label>
+        <rdfs:label xml:lang="de">Werkzeug</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Lubricant -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Lubricant">
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Supply"/>
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">IRI: required</iirds:description>
+        <iirds:description xml:lang="en">Lubricants may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <rdfs:comment xml:lang="de">Schmierstoff</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of supply: Lubricant, meaning a substance used for lubricating an engine or component, such as oil or grease.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lubricant</rdfs:label>
+        <rdfs:label xml:lang="de">Schmierstoff</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#OperatingSupply -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds/domain/machinery#OperatingSupply">
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Supply"/>
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">IRI: required</iirds:description>
+        <iirds:description xml:lang="en">Operating supplies may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <rdfs:comment xml:lang="en">Type of supply: Physical items required for the running of a manufacturing production or service facility.</rdfs:comment>
+        <rdfs:label xml:lang="de">Betriebsstoff</rdfs:label>
+        <rdfs:label xml:lang="en">Operating supply</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#ProtectiveEquipment -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds/domain/machinery#ProtectiveEquipment">
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Supply"/>
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">IRI: required</iirds:description>
+        <iirds:description xml:lang="en">Protective supplies may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <rdfs:comment xml:lang="en">Type of supply: Physical items required for protection of a manufacturing product or personnel.</rdfs:comment>
+        <rdfs:label xml:lang="en">Protective equipment</rdfs:label>
+        <rdfs:label xml:lang="de">Schutzausrüstung</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#SetupTime -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds/domain/machinery#SetupTime">
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#PlanningTime"/>
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <iirds:description xml:lang="en">IRI: optional</iirds:description>
+        <rdfs:comment xml:lang="en">Type of planning time: Period of time required to prepare a technical system for a specific function or job.</rdfs:comment>
+        <rdfs:label xml:lang="de">Rüstzeit</rdfs:label>
+        <rdfs:label xml:lang="en">Setup time</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#SparePart -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds/domain/machinery#SparePart">
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Supply"/>
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">IRI: required</iirds:description>
+        <iirds:description xml:lang="en">Spare parts may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <rdfs:comment xml:lang="en">Type of supply: A spare part is an interchangeable part that is kept in an inventory and used for the repair or replacement of failed units of a technical system.</rdfs:comment>
+        <rdfs:label xml:lang="de">Ersatzteil</rdfs:label>
+        <rdfs:label xml:lang="en">Spare part</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity -->
+
+    <Class rdf:about="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity">
+        <rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Entity of the machinery domain</rdfs:comment>
+        <rdfs:label xml:lang="de">iirdsMachineryDomainEntity</rdfs:label>
+        <rdfs:label xml:lang="en">iirdsMachineryDomainEntity</rdfs:label>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Assembly -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Assembly">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#PuttingToUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product in which the product or its components are assembled for use.</rdfs:comment>
+        <rdfs:label xml:lang="en">Assembly</rdfs:label>
+        <rdfs:label xml:lang="de">Einbau</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#CircuitDiagram -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#CircuitDiagram">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#TechnicalOverview"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="de">In der (Elektro)Technik gebräuchliche Art der Darstellung für eine elektrische Schaltung. Stromlaufplan wird wohl auch synonym verwendet.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Typical representation of an electrical circuit in (electrical) technology.</rdfs:comment>
+        <rdfs:label xml:lang="en">Circuit diagram</rdfs:label>
+        <rdfs:label xml:lang="de">Schaltplan</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Cleaning -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Cleaning">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Use"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Product lifecycle phase of a technical system in which unwanted substances, such as dirt, are removed from the system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cleaning</rdfs:label>
+        <rdfs:label xml:lang="de">Reinigung</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#CloseDown -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#CloseDown">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#AfterUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product in which a plant, technical system, or facility is shut down permanently.</rdfs:comment>
+        <rdfs:label xml:lang="en">Close down</rdfs:label>
+        <rdfs:label xml:lang="de">Stilllegung</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Commissioning -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Commissioning">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Use"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="de">Maßnahmen vor oder im Zusammenhang mit der Übergabe eines Produkts einschließlich Endabnahmeprüfungen, Übergabe der gesamten Dokumentation, welche relevant ist für die Produktnutzung und falls erforderlich für die Anweisung von Personal (DIN EN 82079-1).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Product lifecycle phase containing activities related to transferring a product into active use and instructing personnel on the use. Activities include final inspection tests and handover of documentation, among others (DIN EN 82079-1).</rdfs:comment>
+        <rdfs:label xml:lang="en">Commissioning</rdfs:label>
+        <rdfs:label xml:lang="de">Inbetriebnahme</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Construction -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Construction">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#DesignAndRealization"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">Construction is a design phase which prepares the product for mass manufacturing.</iirds:description>
+        <rdfs:comment xml:lang="en">Product lifecycle phase containing activities for constructing a technical system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Construction</rdfs:label>
+        <rdfs:label xml:lang="de">Konstruktion</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Disassembly -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Disassembly">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#AfterUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Product lifecycle phase containing activities related to separating a machine or technical system into its different parts.</rdfs:comment>
+        <rdfs:label xml:lang="de">Demontage</rdfs:label>
+        <rdfs:label xml:lang="en">Disassembly</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#EnvironmentalNote -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#EnvironmentalNote">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Safety"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Notes in technical documentation regarding environmental protection.</rdfs:comment>
+        <rdfs:label xml:lang="en">Environmental note</rdfs:label>
+        <rdfs:label xml:lang="de">Umweltschutzhinweis</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#EnvironmentalProtectionInstruction -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#EnvironmentalProtectionInstruction">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Safety"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Instructions in technical documentation for working in an environmentally compatible way.</rdfs:comment>
+        <rdfs:label xml:lang="en">Environmental protection instruction</rdfs:label>
+        <rdfs:label xml:lang="de">Umweltschutzanweisung</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#ExplosionProtection -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#ExplosionProtection">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Safety"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Information in technical documentation how to avoid explosions when working with the product.</rdfs:comment>
+        <rdfs:label xml:lang="en">Explosion protection</rdfs:label>
+        <rdfs:label xml:lang="de">Explosionsschutz</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#FirstUse -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#FirstUse">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#PuttingToUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Product lifecycle phase describing the very first operation of a machine according to its intended use.</rdfs:comment>
+        <rdfs:label xml:lang="de">Erstinbetriebnahme</rdfs:label>
+        <rdfs:label xml:lang="en">First use</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#FlowDiagram -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#FlowDiagram">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#TechnicalOverview"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="de">In der (Elektro)Technik gebräuchliche Art der Darstellung für eine elektrische Schaltung. Schaltplan wird wohl auch synonym verwendet.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Typical representation of a technical process.</rdfs:comment>
+        <rdfs:label xml:lang="en">Flow diagram</rdfs:label>
+        <rdfs:label xml:lang="de">Stromlaufplan</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#GenericConsumableSupply -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#GenericConsumableSupply">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#ConsumableSupply"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">Consumable supplies may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <iirds:description xml:lang="en">The ConsumableSupply class describes goods or material that is consumed, meaning dissipated or spent, in the lifecycle of a technical system. Examples of consumables are batteries, sanding discs, and magnets.</iirds:description>
+        <rdfs:comment xml:lang="en">Generic instance of the ConsumableSupply class.</rdfs:comment>
+        <rdfs:label xml:lang="en">Consumable supply</rdfs:label>
+        <rdfs:label xml:lang="de">Verbrauchsmaterial</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#GenericHardwareTool -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#GenericHardwareTool">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#HardwareTool"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">The HardwareTool class describes tools for a working task.</iirds:description>
+        <rdfs:comment xml:lang="en">Generic instance of the HardwareTool class.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hardware tool</rdfs:label>
+        <rdfs:label xml:lang="de">Werkzeug</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#GenericLubricant -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#GenericLubricant">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#Lubricant"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">The Lubricant class describes lubricants, meaning a substance used for lubricating an engine or component, such as oil or grease. Lubricants may be referenced in the description of working tasks in technical documentation.
+</iirds:description>
+        <rdfs:comment xml:lang="en">Generic instance of the Lubricant class.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Schmierstoff</rdfs:comment>
+        <rdfs:label xml:lang="en">Lubricant</rdfs:label>
+        <rdfs:label xml:lang="de">Schmierstoff</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#GenericOperatingSupply -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#GenericOperatingSupply">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#OperatingSupply"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">The OperatingSupply class describes operating supplies, meaning physical items required for the running of a manufacturing production or service facility. Operating supplies may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <rdfs:comment xml:lang="en">Generic instance of the OperatingSupply class.</rdfs:comment>
+        <rdfs:label xml:lang="de">Betriebsstoff</rdfs:label>
+        <rdfs:label xml:lang="en">Operating supply</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#GenericProtectiveEquipment -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#GenericProtectiveEquipment">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#ProtectiveEquipment"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">The ProtectiveEquipment class describes protective equipment, meaning physical items that protect machinery or personnel. Protective equipment may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <rdfs:comment xml:lang="en">Generic instance of the ProtectiveEquipment class.</rdfs:comment>
+        <rdfs:label xml:lang="en">Protective equipment</rdfs:label>
+        <rdfs:label xml:lang="de">Schutzausrüstung</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#GenericSetupTime -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#GenericSetupTime">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#SetupTime"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">The SetupTime class describes time periods required to prepare a technical system for a specific function or job.</iirds:description>
+        <iirds:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT0M</iirds:duration>
+        <rdfs:comment xml:lang="en">Generic instance of the SetupTime class.</rdfs:comment>
+        <rdfs:label xml:lang="de">Rüstzeit</rdfs:label>
+        <rdfs:label xml:lang="en">Setup time</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#GenericSparePart -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#GenericSparePart">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#SparePart"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en">The SparePart class describes spare parts, meaning interchangeable parts that are kept in an inventory and are used for the repair or replacement of failed units of a technical system. Spare parts may be referenced in the description of working tasks in technical documentation.</iirds:description>
+        <rdfs:comment xml:lang="de">Ersatzteil</rdfs:comment>
+        <rdfs:comment xml:lang="en">Generic instance of the SparePart class.</rdfs:comment>
+        <rdfs:label xml:lang="de">Ersatzteil</rdfs:label>
+        <rdfs:label xml:lang="en">Spare part</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#HydraulicDiagram -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#HydraulicDiagram">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#TechnicalOverview"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="de">Grafische Darstellung der Strömungen von Flüssigkeiten für Steuer-, Regel-, Antriebs- und Bremsvorrichtungen von Fahrzeugen, Flugzeugen oder Geräten, deren Kräfte mithilfe des Drucks einer Flüssigkeit erzeugt oder übertragen werden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Graphical representation of flows of liquids for control, regulating, driving and braking devices of vehicles, airplanes or devices, whose forces are generated or transmitted by the pressure of a liquid.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hydraulic diagram</rdfs:label>
+        <rdfs:label xml:lang="de">Hydraulikplan</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#InstallationError -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#InstallationError">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Safety"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Describes installation errors.</rdfs:comment>
+        <rdfs:label xml:lang="en">Installation error</rdfs:label>
+        <rdfs:label xml:lang="de">Montagefehler</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Layout -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Layout">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#TechnicalOverview"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Describes the technical structure of the component/machine.</rdfs:comment>
+        <rdfs:label xml:lang="de">Aufbau</rdfs:label>
+        <rdfs:label xml:lang="en">Layout</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#ListOfLubricants -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#ListOfLubricants">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Collection"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Collection of lubricants required for working tasks described in specific information units. The information is usually assembled from different information units.</rdfs:comment>
+        <rdfs:label xml:lang="en">List of lubricants</rdfs:label>
+        <rdfs:label xml:lang="de">Schmiermittelliste</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#ListOfOperatingSupplies -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#ListOfOperatingSupplies">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Collection"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Collection of operating supplies; the information is usually assembled from different information units.</rdfs:comment>
+        <rdfs:label xml:lang="de">Betriebsmittelliste</rdfs:label>
+        <rdfs:label xml:lang="en">List of operating supplies</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#ListOfProtectiveEquipment -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#ListOfProtectiveEquipment">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Collection"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Collection of protective equipment required for working tasks described in specific information units. The information is usually assembled from different information units.</rdfs:comment>
+        <rdfs:label xml:lang="en">List of protective equipment</rdfs:label>
+        <rdfs:label xml:lang="de">Liste mit Schutzausrüstung</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#ListOfSpareParts -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#ListOfSpareParts">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Collection"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Collection of spare parts required for working tasks described in specific information units. The information is usually assembled from different information units.</rdfs:comment>
+        <rdfs:label xml:lang="de">Ersatzteilliste</rdfs:label>
+        <rdfs:label xml:lang="en">List of spare parts</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#ListOfTools -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#ListOfTools">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Collection"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Collection of tools required for working tasks described in specific information units. The information is usually assembled from different information units.</rdfs:comment>
+        <rdfs:label xml:lang="en">List of tools</rdfs:label>
+        <rdfs:label xml:lang="de">Werkzeugliste</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#LubricationPlan -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#LubricationPlan">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Collection"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="de">Kann aus verschiedenen Informationseinheiten zusammengestellt werden.</iirds:description>
+        <iirds:description xml:lang="en">May be assembled from different information units.</iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. A lubrication plan shows the lubrication points of a machine/component and the required lubricants. </rdfs:comment>
+        <rdfs:comment xml:lang="de">Thema der Informationseinheit. Auf einem Schmierplan werden die einzelnen Schmierstellen einer Maschine/Komponente und die benötigten Schmiermittel angegeben.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lubrication plan</rdfs:label>
+        <rdfs:label xml:lang="de">Schmierplan</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#MaintenancePlan -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#MaintenancePlan">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Collection"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Maintenance plan. Collection of information required for scheduled maintenance. The information is usually assembled from different information units.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Wartungsplan. Zusammenstellung von Informationen für die geplante Wartung. Wird in der Regel aus verschiedenen InformationUnits zusammengestellt.</rdfs:comment>
+        <rdfs:label xml:lang="en">Maintenance plan</rdfs:label>
+        <rdfs:label xml:lang="de">Wartungsplan</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Modification -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Modification">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Use"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product during which it is modified.</rdfs:comment>
+        <rdfs:label xml:lang="en">Modification</rdfs:label>
+        <rdfs:label xml:lang="de">Umrüstung</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#PartsList -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#PartsList">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Collection"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Collection of parts.</rdfs:comment>
+        <rdfs:label xml:lang="en">List of parts</rdfs:label>
+        <rdfs:label xml:lang="de">Stückliste</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#PneumaticDiagram -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#PneumaticDiagram">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#TechnicalOverview"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Contains a technical diagram of a pneumatic system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Pneumatic diagram</rdfs:label>
+        <rdfs:label xml:lang="de">Pneumatikplan</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Reuse -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Reuse">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#AfterUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="de">Bezieht sich auf die Wiederverwendung von Materialien, nicht von Informationen.</iirds:description>
+        <iirds:description xml:lang="en">Refers to reuse of materials, not of information.</iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase after the active use of a product; contains activities for recycling and reusing machine components and materials.</rdfs:comment>
+        <rdfs:label xml:lang="de">Recycling</rdfs:label>
+        <rdfs:label xml:lang="en">Recycling</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#SafetyEquipment -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#SafetyEquipment">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Safety"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Describes equipment that is used for the protection of life and to avoid injuries or casualties.</rdfs:comment>
+        <rdfs:label xml:lang="en">Safety equipment</rdfs:label>
+        <rdfs:label xml:lang="de">Schutzeinrichtung</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#SafetyMeasure -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#SafetyMeasure">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#Safety"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Information subject. Describes safety measures for work tasks.</rdfs:comment>
+        <rdfs:label xml:lang="en">Safety measure</rdfs:label>
+        <rdfs:label xml:lang="de">Schutzmaßnahme</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Storage -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Storage">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#AfterUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product that describes the process of keeping physical products available or in an adequate environment in order to bridge the time gap between arrival and use.</rdfs:comment>
+        <rdfs:label xml:lang="de">Lagerung</rdfs:label>
+        <rdfs:label xml:lang="en">Storage</rdfs:label>
+    </NamedIndividual>
+    
+
+
+    <!-- http://iirds.tekom.de/iirds/domain/machinery#Transport -->
+
+    <NamedIndividual rdf:about="http://iirds.tekom.de/iirds/domain/machinery#Transport">
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds#PuttingToUse"/>
+        <rdf:type rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#iirdsMachineryDomainEntity"/>
+        <iirds:description xml:lang="en"></iirds:description>
+        <rdfs:comment xml:lang="en">Lifecycle phase of a product containing activities for transporting a technical system or its components from one location to the other.</rdfs:comment>
+        <rdfs:label xml:lang="de">Transport</rdfs:label>
+        <rdfs:label xml:lang="en">Transport</rdfs:label>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
