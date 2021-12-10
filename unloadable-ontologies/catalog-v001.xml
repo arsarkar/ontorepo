@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://w3id.org/bot-0.3.2" uri="https://w3c-lbd-cg.github.io/bot/bot.ttl"/>
     <uri id="Imports Wizard Entry" name="https://w3id.org/bot-0.3.2" uri="https://raw.githubusercontent.com/w3c-lbd-cg/bot/master/bot-0.3.2.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1639137212953" name="http://www.semanticweb.org/ina3/ontologies/2016/2/untitled-ontology-122" uri="AMOntology-vFinal1.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1639137212953" name="http://www.semanticweb.org/osnathakimi/ontologies/deb" uri="DEB_ont.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1639137212953" name="https://www.emi.fraunhofer.de/ontologies/LPBFO" uri="LPBFO.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1639138718137" name="http://www.semanticweb.org/ina3/ontologies/2016/2/untitled-ontology-122" uri="AMOntology-vFinal1.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1639138718137" name="http://www.semanticweb.org/osnathakimi/ontologies/deb" uri="DEB_ont.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1639138718137" name="https://w3id.org/eepsa/foi4eepsa" uri="FoI4EEPSA.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1639138718137" name="https://www.emi.fraunhofer.de/ontologies/LPBFO" uri="LPBFO.owl"/>
     </group>
 </catalog>
