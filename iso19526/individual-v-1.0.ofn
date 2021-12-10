@@ -1,0 +1,173 @@
+Prefix(:=<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-v-1.0#>)
+Prefix(lci:=<http://standards.iso.org/iso/15926/ontology/life-cycle-integration/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-v-1.0>
+
+Declaration(Class(lci:Activity))
+Declaration(Class(lci:ActualIndividual))
+Declaration(Class(lci:ArrangedIndividual))
+Declaration(Class(lci:Event))
+Declaration(Class(lci:Feature))
+Declaration(Class(lci:FunctionalPhysicalObject))
+Declaration(Class(lci:InanimatePhysicalObject))
+Declaration(Class(lci:Individual))
+Declaration(Class(lci:MaterializedPhysicalObject))
+Declaration(Class(lci:Non-actualIndividual))
+Declaration(Class(lci:Non-arrangedIndividual))
+Declaration(Class(lci:Non-wholeLifeIndividual))
+Declaration(Class(lci:Organism))
+Declaration(Class(lci:Organization))
+Declaration(Class(lci:PeriodInTime))
+Declaration(Class(lci:Person))
+Declaration(Class(lci:PhysicalObject))
+Declaration(Class(lci:PointInSpace))
+Declaration(Class(lci:PointInTime))
+Declaration(Class(lci:RegionInSpace))
+Declaration(Class(lci:Stream))
+Declaration(Class(lci:Thing))
+Declaration(Class(lci:WholeLifeIndividual))
+Declaration(AnnotationProperty(lci:identificationBy))
+Declaration(AnnotationProperty(lci:identificationByLiteral))
+Declaration(AnnotationProperty(lci:representationBy))
+Declaration(AnnotationProperty(lci:representationByLiteral))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: lci:identificationBy (lci:identificationBy)
+
+SubAnnotationPropertyOf(lci:identificationBy lci:representationBy)
+
+# Annotation Property: lci:identificationByLiteral (lci:identificationByLiteral)
+
+SubAnnotationPropertyOf(lci:identificationByLiteral lci:identificationBy)
+SubAnnotationPropertyOf(lci:identificationByLiteral lci:representationByLiteral)
+
+# Annotation Property: lci:representationBy (lci:representationBy)
+
+AnnotationPropertyDomain(lci:representationBy lci:Thing)
+
+# Annotation Property: lci:representationByLiteral (lci:representationByLiteral)
+
+SubAnnotationPropertyOf(lci:representationByLiteral lci:representationBy)
+AnnotationPropertyRange(lci:representationByLiteral xsd:string)
+
+
+############################
+#   Classes
+############################
+
+# Class: lci:Activity (lci:Activity)
+
+SubClassOf(lci:Activity lci:Individual)
+
+# Class: lci:ActualIndividual (lci:ActualIndividual)
+
+SubClassOf(lci:ActualIndividual lci:Individual)
+DisjointClasses(lci:ActualIndividual lci:Non-actualIndividual)
+
+# Class: lci:ArrangedIndividual (lci:ArrangedIndividual)
+
+SubClassOf(lci:ArrangedIndividual lci:Individual)
+DisjointClasses(lci:ArrangedIndividual lci:Non-arrangedIndividual)
+
+# Class: lci:Event (lci:Event)
+
+SubClassOf(lci:Event lci:Individual)
+
+# Class: lci:Feature (lci:Feature)
+
+SubClassOf(lci:Feature lci:ArrangedIndividual)
+SubClassOf(lci:Feature lci:PhysicalObject)
+
+# Class: lci:FunctionalPhysicalObject (lci:FunctionalPhysicalObject)
+
+SubClassOf(lci:FunctionalPhysicalObject lci:PhysicalObject)
+
+# Class: lci:InanimatePhysicalObject (lci:InanimatePhysicalObject)
+
+SubClassOf(lci:InanimatePhysicalObject lci:PhysicalObject)
+
+# Class: lci:Individual (lci:Individual)
+
+SubClassOf(lci:Individual lci:Thing)
+DisjointUnion(lci:Individual lci:ActualIndividual lci:Non-actualIndividual)
+DisjointUnion(lci:Individual lci:ArrangedIndividual lci:Non-arrangedIndividual)
+
+# Class: lci:MaterializedPhysicalObject (lci:MaterializedPhysicalObject)
+
+SubClassOf(lci:MaterializedPhysicalObject lci:PhysicalObject)
+
+# Class: lci:Non-actualIndividual (lci:Non-actualIndividual)
+
+SubClassOf(lci:Non-actualIndividual lci:Individual)
+
+# Class: lci:Non-arrangedIndividual (lci:Non-arrangedIndividual)
+
+SubClassOf(lci:Non-arrangedIndividual lci:Individual)
+
+# Class: lci:Non-wholeLifeIndividual (lci:Non-wholeLifeIndividual)
+
+SubClassOf(lci:Non-wholeLifeIndividual lci:Individual)
+DisjointClasses(lci:Non-wholeLifeIndividual lci:WholeLifeIndividual)
+
+# Class: lci:Organism (lci:Organism)
+
+SubClassOf(lci:Organism lci:ArrangedIndividual)
+SubClassOf(lci:Organism lci:PhysicalObject)
+
+# Class: lci:Organization (lci:Organization)
+
+SubClassOf(lci:Organization lci:ArrangedIndividual)
+SubClassOf(lci:Organization lci:PhysicalObject)
+
+# Class: lci:PeriodInTime (lci:PeriodInTime)
+
+SubClassOf(lci:PeriodInTime lci:Individual)
+DisjointClasses(lci:PeriodInTime lci:PointInSpace)
+DisjointClasses(lci:PeriodInTime lci:PointInTime)
+DisjointClasses(lci:PeriodInTime lci:RegionInSpace)
+
+# Class: lci:Person (lci:Person)
+
+SubClassOf(lci:Person lci:Organism)
+
+# Class: lci:PhysicalObject (lci:PhysicalObject)
+
+SubClassOf(lci:PhysicalObject lci:Individual)
+
+# Class: lci:PointInSpace (lci:PointInSpace)
+
+SubClassOf(lci:PointInSpace lci:Individual)
+DisjointClasses(lci:PointInSpace lci:PointInTime)
+DisjointClasses(lci:PointInSpace lci:RegionInSpace)
+
+# Class: lci:PointInTime (lci:PointInTime)
+
+SubClassOf(lci:PointInTime lci:Event)
+DisjointClasses(lci:PointInTime lci:RegionInSpace)
+
+# Class: lci:RegionInSpace (lci:RegionInSpace)
+
+SubClassOf(lci:RegionInSpace lci:Individual)
+
+# Class: lci:Stream (lci:Stream)
+
+SubClassOf(lci:Stream lci:PhysicalObject)
+
+# Class: lci:Thing (lci:Thing)
+
+SubClassOf(lci:Thing owl:Thing)
+
+# Class: lci:WholeLifeIndividual (lci:WholeLifeIndividual)
+
+SubClassOf(lci:WholeLifeIndividual lci:Individual)
+
+
+)

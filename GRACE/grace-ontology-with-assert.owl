@@ -1,0 +1,2613 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.grace.com"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.grace.com">
+    <Prefix name="" IRI="http://www.grace.com"/>
+    <Prefix name="p1" IRI="http://www.grace.com#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="xsp" IRI="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="assert" IRI="http://www.owl-ontologies.com/assert.owl#"/>
+    <Prefix name="protege" IRI="http://protege.stanford.edu/plugins/owl/protege#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en">
+The GRACE system will act at the Distributed Control System (DCS)
+and Manufacturing Execution System (MES) levels,
+implementing the sharing of process critical information between and
+inside the two layers. This results in a more efficient management
+of resources and a higher final product quality.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>An ontology to define assertions about resources.  This can be used for testing constraints in tools like Protege-OWL.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Failure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#FailureType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Journal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Operator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#ProcessPlan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Product"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Property"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#QualityController"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#RecoveryProcedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Setup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.grace-ontology.com#Transporter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#comprisesMaterial"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#comprisesOperation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#createsFunction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#executedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasAppliedRecoveryProcedure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasExecuted"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasFailure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasFailureType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterial"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterialFamily"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperationPrecedence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossibleResources"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossivleRecoveryProcedure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProcessPlan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasSetup"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTarget"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTool"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#isAssociatedWithProduct"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#materialUsed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#requiresProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#requiresSetup"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.grace-ontology.com#usesMaterialFamily"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#detailedResult"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#dueDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#duration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#earliestDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#expectedDetailedResult"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#failureID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#journalDetailsID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#journalID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#location"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#materialFamilyID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#materialID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#mathOperator"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#occurenceDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#operationID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#overallResult"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#procedureID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#processPlanID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#productID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#productionOrderID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#quantity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#recoveryTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#setOfSymptons"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#setupID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#state"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#toolType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#unit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.grace-ontology.com#value"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ABearing_Hold_CrossPiece"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Abearing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#BBearing_Hold_CrossPiece"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bbearing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#CrossPiece"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FailureType_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FrontLoader"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Hub"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MechanicalTool_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Abearing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Bbearing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_ShaftSeal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RecoveryProcedure_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RecoveryProcedure_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ShaftSeal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971408451"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422011"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422013"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461973212312"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049010_0000"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049011_1111"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_9503599367"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_push"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_stop"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="assert:empty"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="assert:notEmpty"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Failure"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Failure"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#hasFailureType"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#hasTarget"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Journal"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Journal"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#executedBy"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#materialUsed"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterialFamily"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#createsFunction"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#requiresSetup"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#usesMaterialFamily"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Operator"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#ProcessPlan"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#ProcessPlan"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#hasOperation"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Product"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Product"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#hasProcessPlan"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#hasJournal"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.grace-ontology.com#isAssociatedWithProduct"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#QualityController"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Tool"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.grace-ontology.com#Transporter"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#Operator"/>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#Operator"/>
+        <Class IRI="http://www.grace-ontology.com#QualityController"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#Operator"/>
+        <Class IRI="http://www.grace-ontology.com#Tool"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#Operator"/>
+        <Class IRI="http://www.grace-ontology.com#Transporter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <Class IRI="http://www.grace-ontology.com#QualityController"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <Class IRI="http://www.grace-ontology.com#Tool"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <Class IRI="http://www.grace-ontology.com#Transporter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#QualityController"/>
+        <Class IRI="http://www.grace-ontology.com#Tool"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#QualityController"/>
+        <Class IRI="http://www.grace-ontology.com#Transporter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.grace-ontology.com#Tool"/>
+        <Class IRI="http://www.grace-ontology.com#Transporter"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ABearing_Hold_CrossPiece"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Abearing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#BBearing_Hold_CrossPiece"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bbearing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#CrossPiece"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#FailureType"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FailureType_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#ProcessPlan"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FrontLoader"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Hub"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Journal"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Journal"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Tool"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MechanicalTool_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Property"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Abearing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Bbearing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_ShaftSeal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#RecoveryProcedure"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RecoveryProcedure_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#RecoveryProcedure"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RecoveryProcedure_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Setup"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Setup"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ShaftSeal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971408451"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422011"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422013"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461973212312"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Product"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049010_0000"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Product"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049011_1111"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_9503599367"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_stop"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ABearing_Hold_CrossPiece"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Abearing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTarget"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ABearing_Hold_CrossPiece"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#CrossPiece"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Abearing"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ABearing_Hold_CrossPiece"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#BBearing_Hold_CrossPiece"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bbearing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTarget"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#BBearing_Hold_CrossPiece"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#CrossPiece"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bbearing"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#BBearing_Hold_CrossPiece"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#createsFunction"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ABearing_Hold_CrossPiece"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossibleResources"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossibleResources"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#requiresSetup"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#usesMaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Abearing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProperty"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProperty"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion2"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossivleRecoveryProcedure"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FailureType_1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RecoveryProcedure_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FrontLoader"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FrontLoader"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FrontLoader"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Hub"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ABearing_Hold_CrossPiece"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#executedBy"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#materialUsed"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422011"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#executedBy"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#materialUsed"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971408451"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#executedBy"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#materialUsed"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422011"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#executedBy"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#executedBy"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#createsFunction"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Bbearing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperationPrecedence"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossibleResources"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossibleResources"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#requiresSetup"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#usesMaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProperty"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MechanicalTool_2"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Abearing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Bbearing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_ShaftSeal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Abearing"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTarget"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Abearing"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Abearing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Bbearing"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTarget"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_Bbearing"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bbearing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_ShaftSeal"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTarget"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_ShaftSeal"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ShaftSeal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#createsFunction"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub_Hold_ShaftSeal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperationPrecedence"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossibleResources"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossibleResources"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#requiresSetup"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#usesMaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ShaftSeal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProperty"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971408451"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Hub"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422011"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Hub"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422013"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Hub"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterialFamily"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461973212312"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterial"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049010_0000"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971408451"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterial"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049010_0000"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422011"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterial"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049010_0000"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422013"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProcessPlan"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049010_0000"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FrontLoader"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterial"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049011_1111"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461973212312"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProcessPlan"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049011_1111"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FrontLoader"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournal"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_9503599367"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournal"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_9503599367"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialFamilyID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Abearing"/>
+        <Literal>1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Abearing"/>
+        <Literal>Abearing</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialFamilyID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bbearing"/>
+        <Literal>2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bbearing"/>
+        <Literal>Bbearing</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#duration"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <Literal>Bearing_Insertion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#operationID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion-Program1"/>
+        <Literal>hold</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#location"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion1"/>
+        <Literal>Naples_Line1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion1"/>
+        <Literal>Bearing_Insertion1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion1"/>
+        <Literal>press</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#location"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion2"/>
+        <Literal>Naples_Line1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion2"/>
+        <Literal>Bearing_Insertion2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Bearing_Insertion2"/>
+        <Literal>press</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialFamilyID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#CrossPiece"/>
+        <Literal>3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#CrossPiece"/>
+        <Literal>CrossPiece</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#processPlanID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#FrontLoader"/>
+        <Literal>FrontLoader</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Hub"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialFamilyID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Hub"/>
+        <Literal>6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Hub"/>
+        <Literal>hub</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-09T15:09:08</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#journalID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+        <Literal>411142011153</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+        <Literal>Journal_411142011153</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-07T15:09:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#state"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011153"/>
+        <Literal>Finished</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-10T15:09:21</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#journalID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+        <Literal>411142011154</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+        <Literal>Journal_411142011154</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-09T15:09:26</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#state"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_411142011154"/>
+        <Literal>Finished</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#detailedResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+        <Literal>The result is:Good</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-29T22:58:17</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#journalDetailsID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+        <Literal>1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+        <Literal>Journal_Details_1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#overallResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+        <Literal>OK</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-21T22:58:14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#detailedResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+        <Literal>The result is:Good</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-28T22:59:10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#journalDetailsID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+        <Literal>2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+        <Literal>Journal_Details_2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#overallResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+        <Literal>OK</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-20T22:59:06</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#detailedResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+        <Literal>The result is:Good</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-16T23:04:36</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#journalDetailsID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+        <Literal>3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+        <Literal>Journal_Details_3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#overallResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+        <Literal>OK</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-02T23:04:31</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#detailedResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+        <Literal>The result is:Good</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-29T22:58:17</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#journalDetailsID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+        <Literal>4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+        <Literal>Journal_Details_4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#overallResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+        <Literal>OK</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_4"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-21T22:58:14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#detailedResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+        <Literal>The result is:Good</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-29T22:58:17</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#journalDetailsID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+        <Literal>5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+        <Literal>Journal_Details_5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#overallResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+        <Literal>OK</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_5"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-21T22:58:14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#detailedResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+        <Literal>The result is:Good</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-29T22:58:17</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#journalDetailsID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+        <Literal>6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+        <Literal>Journal_Details_6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#overallResult"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+        <Literal>OK</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Journal_Details_6"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-21T22:58:14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#location"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage1"/>
+        <Literal>Naples_Line1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage1"/>
+        <Literal>Marriage1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage1"/>
+        <Literal>assembly</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#location"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage2"/>
+        <Literal>Naples_Line1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage2"/>
+        <Literal>Marriage2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Marriage2"/>
+        <Literal>assembly</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+        <Literal>MarriageRearTubDrum-</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#operationID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MarriageRearTubDrum-Program1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#MechanicalTool_2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#mathOperator"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+        <Literal>&gt;</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+        <Literal>press</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#unit"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+        <Literal>Newtons</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#value"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Property_Speed"/>
+        <Literal>15</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialFamilyID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+        <Literal>4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RearTub"/>
+        <Literal>RearTub</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#RecoveryProcedure_1"/>
+        <Literal>sd</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+        <Literal>Seal_Insertion1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#operationID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#SealInsertion-Program1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#location"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+        <Literal>Naples_Line1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+        <Literal>Seal Insertion1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion1"/>
+        <Literal>press</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#location"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion2"/>
+        <Literal>Naples_Line2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion2"/>
+        <Literal>Seal Insertion2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Seal_Insertion2"/>
+        <Literal>press</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_1"/>
+        <Literal>Install the first requirements</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#setupID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_2"/>
+        <Literal>Install Last procedures</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#setupID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#Setup_2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialFamilyID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ShaftSeal"/>
+        <Literal>5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#ShaftSeal"/>
+        <Literal>shaftSeal</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971408451"/>
+        <Literal>Hub4Eureka</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971408451"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#quantity"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971408451"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971408451"/>
+        <Literal>Hub</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422011"/>
+        <Literal>seal0465x12,2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422011"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#quantity"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422011"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422013"/>
+        <Literal>seal0465x12,2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#quantity"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461971422013"/>
+        <Literal>Hub</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461973212312"/>
+        <Literal>Hub4Eureka</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#materialID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461973212312"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#quantity"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461973212312"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_461973212312"/>
+        <Literal>Hub</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049010_0000"/>
+        <Literal>LA-1200-WP-PL-E8+IL-K64-A11</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049010_0000"/>
+        <Literal>AW0E9120</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#productID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049010_0000"/>
+        <Literal>8592010490100000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049011_1111"/>
+        <Literal>LA-1200-WP-PL-E8+IL-K64-A22</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049011_1111"/>
+        <Literal>AW0E9XPTO</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#productID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_859201049011_1111"/>
+        <Literal>859201049011111</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#productionOrderID"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_9503599367"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#quantity"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_9503599367"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_9503599367"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-02-06T15:06:48</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_push"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <NamedIndividual IRI="http://www.grace-ontology.com#_stop"/>
+        <Literal>stop</Literal>
+    </DataPropertyAssertion>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournal"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#comprisesMaterial"/>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#comprisesOperation"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#createsFunction"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#executedBy"/>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasAppliedRecoveryProcedure"/>
+        <Class IRI="http://www.grace-ontology.com#Failure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasExecuted"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasFailure"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasFailureType"/>
+        <Class IRI="http://www.grace-ontology.com#Failure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournal"/>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+        <Class IRI="http://www.grace-ontology.com#Journal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterial"/>
+        <Class IRI="http://www.grace-ontology.com#Product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterialFamily"/>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperation"/>
+        <Class IRI="http://www.grace-ontology.com#ProcessPlan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperationPrecedence"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossibleResources"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossivleRecoveryProcedure"/>
+        <Class IRI="http://www.grace-ontology.com#FailureType"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProcessPlan"/>
+        <Class IRI="http://www.grace-ontology.com#Product"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProperty"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.grace-ontology.com#Material"/>
+            <Class IRI="http://www.grace-ontology.com#Resource"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasSetup"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTarget"/>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTool"/>
+        <Class IRI="http://www.grace-ontology.com#Producer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#isAssociatedWithProduct"/>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#materialUsed"/>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#requiresProperty"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#requiresSetup"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.grace-ontology.com#usesMaterialFamily"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#comprisesMaterial"/>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#comprisesOperation"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#createsFunction"/>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#describesOperation"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#executedBy"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasAppliedRecoveryProcedure"/>
+        <Class IRI="http://www.grace-ontology.com#RecoveryProcedure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasCarrier"/>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasExecuted"/>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasFailure"/>
+        <Class IRI="http://www.grace-ontology.com#Failure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasFailureType"/>
+        <Class IRI="http://www.grace-ontology.com#FailureType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournal"/>
+        <Class IRI="http://www.grace-ontology.com#Journal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasJournalDetails"/>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterial"/>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasMaterialFamily"/>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperation"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasOperationPrecedence"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossibleResources"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasPossivleRecoveryProcedure"/>
+        <Class IRI="http://www.grace-ontology.com#RecoveryProcedure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProcessPlan"/>
+        <Class IRI="http://www.grace-ontology.com#ProcessPlan"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasProperty"/>
+        <Class IRI="http://www.grace-ontology.com#Property"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasSetup"/>
+        <Class IRI="http://www.grace-ontology.com#Setup"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTarget"/>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#hasTool"/>
+        <Class IRI="http://www.grace-ontology.com#Tool"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#isAssociatedWithProduct"/>
+        <Class IRI="http://www.grace-ontology.com#Product"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#materialUsed"/>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#requiresProperty"/>
+        <Class IRI="http://www.grace-ontology.com#Property"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#requiresSetup"/>
+        <Class IRI="http://www.grace-ontology.com#Setup"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.grace-ontology.com#usesMaterialFamily"/>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.grace-ontology.com#Failure"/>
+            <Class IRI="http://www.grace-ontology.com#FailureType"/>
+            <Class IRI="http://www.grace-ontology.com#Material"/>
+            <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+            <Class IRI="http://www.grace-ontology.com#Operation"/>
+            <Class IRI="http://www.grace-ontology.com#Product"/>
+            <Class IRI="http://www.grace-ontology.com#RecoveryProcedure"/>
+            <Class IRI="http://www.grace-ontology.com#Setup"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#detailedResult"/>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#dueDate"/>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#duration"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#earliestDate"/>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.grace-ontology.com#Journal"/>
+            <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#expectedDetailedResult"/>
+        <Class IRI="http://www.grace-ontology.com#Function"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#failureID"/>
+        <Class IRI="http://www.grace-ontology.com#Failure"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#journalDetailsID"/>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#journalID"/>
+        <Class IRI="http://www.grace-ontology.com#Journal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#location"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#materialFamilyID"/>
+        <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#materialID"/>
+        <Class IRI="http://www.grace-ontology.com#Material"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#mathOperator"/>
+        <Class IRI="http://www.grace-ontology.com#Property"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.grace-ontology.com#FailureType"/>
+            <Class IRI="http://www.grace-ontology.com#Function"/>
+            <Class IRI="http://www.grace-ontology.com#Journal"/>
+            <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+            <Class IRI="http://www.grace-ontology.com#Material"/>
+            <Class IRI="http://www.grace-ontology.com#MaterialFamily"/>
+            <Class IRI="http://www.grace-ontology.com#Operation"/>
+            <Class IRI="http://www.grace-ontology.com#ProcessPlan"/>
+            <Class IRI="http://www.grace-ontology.com#Product"/>
+            <Class IRI="http://www.grace-ontology.com#Property"/>
+            <Class IRI="http://www.grace-ontology.com#RecoveryProcedure"/>
+            <Class IRI="http://www.grace-ontology.com#Resource"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#occurenceDate"/>
+        <Class IRI="http://www.grace-ontology.com#Failure"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#operationID"/>
+        <Class IRI="http://www.grace-ontology.com#Operation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#overallResult"/>
+        <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#procedureID"/>
+        <Class IRI="http://www.grace-ontology.com#RecoveryProcedure"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#processPlanID"/>
+        <Class IRI="http://www.grace-ontology.com#ProcessPlan"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#productID"/>
+        <Class IRI="http://www.grace-ontology.com#Product"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#productionOrderID"/>
+        <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#quantity"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.grace-ontology.com#Material"/>
+            <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#recoveryTime"/>
+        <Class IRI="http://www.grace-ontology.com#Failure"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#setOfSymptons"/>
+        <Class IRI="http://www.grace-ontology.com#FailureType"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#setupID"/>
+        <Class IRI="http://www.grace-ontology.com#Setup"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.grace-ontology.com#Journal"/>
+            <Class IRI="http://www.grace-ontology.com#JournalDetails"/>
+            <Class IRI="http://www.grace-ontology.com#ProductionOrder"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#state"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.grace-ontology.com#Journal"/>
+            <Class IRI="http://www.grace-ontology.com#Resource"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+        <Class IRI="http://www.grace-ontology.com#Resource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#toolType"/>
+        <Class IRI="http://www.grace-ontology.com#Tool"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.grace-ontology.com#FailureType"/>
+            <Class IRI="http://www.grace-ontology.com#Function"/>
+            <Class IRI="http://www.grace-ontology.com#Material"/>
+            <Class IRI="http://www.grace-ontology.com#Operation"/>
+            <Class IRI="http://www.grace-ontology.com#Resource"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#unit"/>
+        <Class IRI="http://www.grace-ontology.com#Property"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.grace-ontology.com#value"/>
+        <Class IRI="http://www.grace-ontology.com#Property"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#description"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#detailedResult"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#dueDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#duration"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#earliestDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#endDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#expectedDetailedResult"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#failureID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#journalDetailsID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#journalID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#location"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#materialFamilyID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#materialID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#mathOperator"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#occurenceDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#operationID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#overallResult"/>
+        <DataOneOf>
+            <Literal>Good</Literal>
+            <Literal>Not Good</Literal>
+            <Literal>Not OK</Literal>
+            <Literal>OK</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#procedureID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#processPlanID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#productID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#productionOrderID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#quantity"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#recoveryTime"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#setOfSymptons"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#setupID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#startDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#state"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#thisID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#toolType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#type"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.grace-ontology.com#unit"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Failure</IRI>
+        <Literal xml:lang="en">Description of an occurred perturbation, including the occurrence date, applied solutions and recover time</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#FailureType</IRI>
+        <Literal xml:lang="en">Unexpected event, like machine failure or delay that degrades the execution of a production plan</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Function</IRI>
+        <Literal xml:lang="en">Entity that describes the functionality exhibited by the product</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Journal</IRI>
+        <Literal xml:lang="en">Entity that describes the execution of an operation, including the processing time, participants (e.g. type and number of resources), priority, scheduled dates, state and quantity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Material</IRI>
+        <Literal xml:lang="en">Entity acquired outside the enterprise and used during the production process, e.g. blocks of steel, nuts and bolds (unless produced internally)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Operation</IRI>
+        <Literal xml:lang="en">A job executed by one resource like drilling, maintenance, and reconfiguration of resources, which may create a function in the product.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Operator</IRI>
+        <Literal xml:lang="en">A specialized resource entity that is responsible for the execution of manual operations, such as an operator connecting the electrical cables</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#ProcessPlan</IRI>
+        <Literal xml:lang="en">Description of a sequence of operations (for producing a product) with temporal constraints like precedence of execution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Producer</IRI>
+        <Literal xml:lang="en">A specialized resource entity that is responsible for the execution of producing operations, such as a welding robot or a CNC machine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Product</IRI>
+        <Literal xml:lang="en">Entity produced by the enterprise (it includes sub-products)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#ProductionOrder</IRI>
+        <Literal xml:lang="en">Entity obtained by aggregating customer and forecast orders for the production of products</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Property</IRI>
+        <Literal xml:lang="en">An attribute that characterizes a resource or that a resource should satisfy to execute an operation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#QualityController</IRI>
+        <Literal xml:lang="en">A specialized resource entity that is responsible for the execution of testing measurement operations, such as quality control stations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Resource</IRI>
+        <Literal xml:lang="en">Entity that can execute a certain range of operations as long as its capacity is not exceeded. Producer, mover, transporter, operator, tool, and gripper are specializations of resource and inherit its characteristics</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Setup</IRI>
+        <Literal xml:lang="en">Set of actions that it is necessary to execute in order to prepare a manufacturing resource for the execution of a range of operations.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Tool</IRI>
+        <Literal xml:lang="en">A specialized resource entity representing the physical devices used by producer stations to execute their processing operations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#Transporter</IRI>
+        <Literal xml:lang="en">A specialized resource entity that is responsible for the execution of handling/transporting operations, such as an Auto-guided Vehicle (AGV) or a conveyor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#comprisesMaterial</IRI>
+        <Literal xml:lang="en">This predicate establishes the recursive relation between the class Material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#createsFunction</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class Operation and the class Function, allowing to create a function from the execution of an operation using a material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#description</IRI>
+        <Literal xml:lang="en">A statement describing something, e.g. a product or a setup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#dueDate</IRI>
+        <Literal xml:lang="en">The date on which an obligation, e.g. the production of a product, must be accomplished</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#earliestDate</IRI>
+        <Literal xml:lang="en">The date before which an activity or event must not start</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#endDate</IRI>
+        <Literal xml:lang="en">The estimated date for the end of an activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#executedBy</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class xxxxxx
+ and the class Resource, being formally defined as follows</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#failureID</IRI>
+        <Literal xml:lang="en">A non-negative integer number that provides the unique identification of the failure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#hasFailure</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class Resource and the class Failure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#hasFailureType</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class Failure and the class FailureType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#hasJournal</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class ProductionOrder and the class WorkOrder</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#hasOperation</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class ProcessPlan and the class Operation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#hasOperationPrecedence</IRI>
+        <Literal xml:lang="en">This predicate establishes the recursive relation between the class Operation to define a precedence to execute an operation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#hasProcessPlan</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class Product and the class ProcessPlan</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#hasProperty</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class Resource and the class Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#hasSetup</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class Resource and the class Setup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#isAssociatedWithProduct</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class ProductionOrder and the class Productl</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#journalID</IRI>
+        <Literal xml:lang="en">A non-negative integer number that provides the unique identification of the work order</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#location</IRI>
+        <Literal xml:lang="en">A place where something, e.g. a resource, is located.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#materialID</IRI>
+        <Literal xml:lang="en">A non-negative integer number that provides the unique identification of the material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#name</IRI>
+        <Literal xml:lang="en">The designation of a thing, e.g. a resource, a property or an operation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#occurenceDate</IRI>
+        <Literal xml:lang="en">The date when a failure occurred</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#operationID</IRI>
+        <Literal xml:lang="en">A non-negative integer number that provides the unique identification of the operation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#processPlanID</IRI>
+        <Literal xml:lang="en">A non-negative integer number that provides the unique identification of the process plan</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#productID</IRI>
+        <Literal xml:lang="en">A non-negative integer number that provides the unique identification of the product</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#productionOrderID</IRI>
+        <Literal xml:lang="en">A non-negative integer number that provides the unique identification of the production order</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#quantity</IRI>
+        <Literal xml:lang="en">A positive rational number that defines the specific amount of things to be produced</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#recoveryTime</IRI>
+        <Literal xml:lang="en">A positive rational number, it gives the indication of the recovery time after a failure (expressed in seconds)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#requiresProperty</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class Operation class and the class Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#requiresSetup</IRI>
+        <Literal xml:lang="en">This predicate establishes the relation between the class Operation and the class Setup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#setOfSymptons</IRI>
+        <Literal xml:lang="en">List of symptoms that may lead to the occurrence of a failure (important to forecast failures and to support the diagnosis)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#setupID</IRI>
+        <Literal xml:lang="en">A non-negative integer number that provides the unique identification of the setup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#startDate</IRI>
+        <Literal xml:lang="en">The estimated date for the end of start activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#state</IRI>
+        <Literal xml:lang="en">The current state of the resource, e.g. waiting, running and broken</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#thisID</IRI>
+        <Literal xml:lang="en">A non-negative integer number that provides the unique identification of the resource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#type</IRI>
+        <Literal xml:lang="en">The designation of a type, e.g. a description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.grace-ontology.com#value</IRI>
+        <Literal xml:lang="en">A specific amount related to a property type</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

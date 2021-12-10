@@ -1,0 +1,71 @@
+Prefix(:=<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-subset-v-1.0#>)
+Prefix(lci:=<http://standards.iso.org/iso/15926/ontology/life-cycle-integration/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-subset-v-1.0>
+Import(<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-v-1.0>)
+Import(<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-relationship-v-1.0>)
+Import(<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/relationship-v-1.0>)
+
+Declaration(Class(lci:AbstractObject))
+Declaration(Class(lci:ClassOfIndividual))
+Declaration(Class(lci:PhysicalQuantity))
+Declaration(Class(lci:Quantity))
+Declaration(Class(lci:TimeDuration))
+Declaration(DataProperty(lci:iso8601IdentificationOfDuration))
+Declaration(DataProperty(lci:iso8601IdentificationOfPeriodInTime))
+Declaration(DataProperty(lci:iso8601IdentificationOfPointInTime))
+Declaration(Datatype(xsd:duration))
+############################
+#   Data Properties
+############################
+
+# Data Property: lci:iso8601IdentificationOfDuration (lci:iso8601IdentificationOfDuration)
+
+DataPropertyDomain(lci:iso8601IdentificationOfDuration lci:TimeDuration)
+DataPropertyRange(lci:iso8601IdentificationOfDuration xsd:duration)
+
+# Data Property: lci:iso8601IdentificationOfPeriodInTime (lci:iso8601IdentificationOfPeriodInTime)
+
+DataPropertyDomain(lci:iso8601IdentificationOfPeriodInTime lci:PeriodInTime)
+DataPropertyRange(lci:iso8601IdentificationOfPeriodInTime xsd:string)
+
+# Data Property: lci:iso8601IdentificationOfPointInTime (lci:iso8601IdentificationOfPointInTime)
+
+DataPropertyDomain(lci:iso8601IdentificationOfPointInTime lci:PointInTime)
+DataPropertyRange(lci:iso8601IdentificationOfPointInTime xsd:dateTime)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: lci:AbstractObject (lci:AbstractObject)
+
+SubClassOf(lci:AbstractObject lci:Thing)
+DisjointClasses(lci:AbstractObject lci:Individual)
+
+# Class: lci:ClassOfIndividual (lci:ClassOfIndividual)
+
+SubClassOf(lci:ClassOfIndividual lci:AbstractObject)
+
+# Class: lci:PhysicalQuantity (lci:PhysicalQuantity)
+
+SubClassOf(lci:PhysicalQuantity lci:Quantity)
+
+# Class: lci:Quantity (lci:Quantity)
+
+SubClassOf(lci:Quantity lci:ClassOfIndividual)
+
+# Class: lci:TimeDuration (lci:TimeDuration)
+
+SubClassOf(lci:TimeDuration lci:PhysicalQuantity)
+
+
+)

@@ -1,0 +1,268 @@
+
+########################################################################################
+#                                                                                      #
+#              Branch of VISO for (RoMM-)ELECTRONIC MODELS/SOLVERS                     #
+#                                                                                      #
+########################################################################################
+
+@prefix viso: <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>.
+@prefix viso-el: <https://purl.vimmp.eu/semantics/viso/viso-electronic.ttl#>.
+
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xs: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+
+<https://purl.vimmp.eu/semantics/viso/viso-electronic.ttl#> a owl:Ontology.
+
+############################  Ontology header  #########################################
+
+<https://purl.vimmp.eu/semantics/viso/viso-electronic.ttl#>
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>;
+  dcterms:title "VISO-EL: Branch of VISO for (RoMM-)ELectronic models/solvers"^^xs:string;
+  dcterms:modified "2020-06-14"^^xs:string;
+  dcterms:creator "Joshua D. Elliott (ORCID 0000-0002-0729-246X)"^^xs:string;
+  dcterms:creator "Silvia Chiacchiera (ORCID 0000-0003-0422-7870)"^^xs:string;
+  dcterms:creator "Martin T. Horsch (ORCID 0000-0002-9464-6739)"^^xs:string;
+  dcterms:creator "Michael A. Seaton (ORCID 0000-0002-4708-573X)"^^xs:string;
+  dcterms:creator "Ilian T. Todorov (ORCID 0000-0001-7275-1784)"^^xs:string;
+  dcterms:creator "Mara Chiricotto (ORCID 0000-0003-1609-5254)"^^xs:string;
+  dcterms:creator "Gianluca Boccardo (ORCID 0000-0003-1264-8237)"^^xs:string;
+  dcterms:contributor "Welchy Leite Cavalcanti"^^xs:string;
+  dcterms:contributor "Gerhard Goldbeck (ORCID 0000-0002-4181-2852)"^^xs:string;
+  dcterms:contributor "Daniele Toti (ORCID 0000-0002-9668-6961)"^^xs:string;	
+  dcterms:license "GNU Lesser General Public License (LGPL) version 3"^^xs:string;
+  dcterms:description """VISO-EL expands on the model and solver features for Electronic 
+(as per RoMM) models."""^^xs:string;
+  dcterms:bibliographicCitation "10.1021/acs.jced.9b00739"^^xs:string;
+  rdfs:comment """The authors acknowledge funding from the European Union's Horizon 2020 research and
+innovation programme under grant agreement no. 760907, Virtual Materials Marketplace (VIMMP)."""^^xs:string.
+  
+##############  Electronic model types ##################################
+
+viso-el:density_functional_theory a owl:Class;
+  rdfs:subClassOf viso:el_model_type;
+  rdfs:comment "(Quantum) Density Functional Theory."^^xs:string.
+
+viso-el:DFT a viso-el:density_functional_theory;
+   viso:has_osmo_pe_type_id "EL.1";
+   viso:has_pe viso-el:KOHN_SHAM_EQUATION.
+
+###############  Electronic Model feature ###############################
+
+viso-el:wavefunction_related_feature a owl:Class;
+  rdfs:subClassOf viso:el_materials_relation_trait;
+  rdfs:comment "Model features that relate to the electronic wavefunction"^^xs:string.
+
+viso-el:hamiltonian_related_feature a owl:Class;
+  rdfs:subClassOf viso:el_materials_relation_trait;
+  rdfs:comment "Model features the constitute the construction of the electronic Hamiltonian"^^xs:string.
+
+viso-el:electron_spin a owl:Class;
+  rdfs:subClassOf viso:el_materials_relation_trait;
+  rdfs:comment "Inclusion of spin interaction in DFT"^^xs:string.
+
+viso-el:boundary_condition a owl:Class;
+  rdfs:subClassOf viso:el_external_condition_trait;
+  rdfs:comment "Boundary condition for DFT"^^xs:string.
+
+viso-el:core_electron_treatment a owl:Class;
+  rdfs:subClassOf viso-el:wavefunction_related_feature;
+  rdfs:comment "Approach for core electrons"^^xs:string.
+
+viso-el:exchange_correlation_functional a owl:Class;
+  rdfs:subClassOf viso-el:hamiltonian_related_feature;
+  rdfs:comment "Exchange correlation potentials"^^xs:string.
+
+viso-el:exchange_correlation_correction a owl:Class;
+  rdfs:subClassOf viso-el:hamiltonian_related_feature;
+  rdfs:comment "DFT functional correction schemes"^^xs:string.
+
+viso-el:electric_field a owl:Class;
+  rdfs:subClassOf viso-el:hamiltonian_related_feature;
+  rdfs:subClassOf viso:el_external_condition_trait;
+  rdfs:comment "Inclusion of electric fields in DFT"^^xs:string.
+
+## Exchange-Correlation Potentials
+viso-el:local_density_approximation a owl:Class;
+  rdfs:comment "Local Density Approximation"^^xs:string;
+  rdfs:seeAlso "Electronic Structure R. M. Martin 2004 Cambridge University Press"^^xs:string;
+  rdfs:subClassOf viso-el:exchange_correlation_functional. 
+
+viso-el:generalized_gradient_approximation a owl:Class;
+  rdfs:seeAlso "Electronic Structure R. M. Martin 2004 Cambridge University Press"^^xs:string;
+  rdfs:subClassOf viso-el:exchange_correlation_functional. 
+
+viso-el:exact_exchange a owl:Class;
+  rdfs:seeAlso "Modern Quantum Chemistry A. Szabo, N. S. Ostlund 1996 Dover books on Chemistry"^^xs:string;
+  rdfs:subClassOf viso-el:exchange_correlation_functional. 
+
+viso-el:hybrid_functional a owl:Class;
+  rdfs:seeAlso "Electronic Structure R. M. Martin 2004 Cambridge University Press"^^xs:string;
+  rdfs:subClassOf viso-el:exchange_correlation_functional.
+
+viso-el:meta_generalized_gradient_approximation a owl:Class;
+  rdfs:seeAlso "Essentials of Computational Chemistry, 2nd Ed. C. J. Cramer 2004 John Wiley & Sons."^^xs:string;
+  rdfs:subClassOf viso-el:exchange_correlation_functional.
+
+viso-el:van_der_waals_density_functional a owl:Class;
+  rdfs:seeAlso " J. Phys.: Condens. Matter 21 8 2009"^^xs:string;
+  rdfs:subClassOf viso-el:exchange_correlation_functional. 
+
+viso-el:hubbard_correction a owl:Class;
+  rdfs:seeAlso "Phys. Rev. B 44, 943 1991"^^xs:string;
+  rdfs:subClassOf viso-el:exchange_correlation_correction.
+
+viso-el:van_der_waals_correction a owl:Class;
+  rdfs:subClassOf viso-el:exchange_correlation_correction.
+
+viso-el:pseudopotential a owl:Class;
+  rdfs:seeAlso "Electronic Structure R. M. Martin 2004 Cambridge University Press"^^xs:string;
+  rdfs:subClassOf viso-el:core_electron_treatment. 
+
+viso-el:model_object a owl:Class;
+  rdfs:subClassOf viso:el_materials_relation_trait;
+  rdfs:subClassOf viso:model_object;
+  rdfs:comment "Type of object entering the model (e.g., quantum or classical)."^^xs:string;
+  owl:disjointUnionOf (viso-el:quantum_object viso-el:classical_object).
+
+viso-el:quantum_object a owl:Class;
+  rdfs:subClassOf viso-el:model_object;
+  rdfs:comment "A quantum object, i.e., an object described at a quantum mechanics level (for example, via a wavefunction)."^^xs:string;
+  rdfs:comment "For example, an object representing an electronic cloud."^^xs:string.
+
+viso-el:classical_object a owl:Class;
+  rdfs:subClassOf viso-el:model_object;
+  rdfs:comment "A classical object, i.e., an object described at a classical mechanics level."^^xs:string;
+  rdfs:comment "For example, an object representing an atomic nucleus."^^xs:string;
+  rdfs:seeAlso "See also the model_object class in VISO-AM"^^xs:string.
+
+###############  Instances of Electronic Model features ###############################
+
+viso-el:KOHN_SHAM_EQUATION a viso:el_physical_equation.
+
+viso-el:PERDEW_ZUNGER a viso-el:local_density_approximation.
+viso-el:PERDEW_WANG_92 a viso-el:local_density_approximation.
+
+viso-el:PBE a viso-el:generalized_gradient_approximation.
+viso-el:BLYP a viso-el:generalized_gradient_approximation.
+viso-el:B88 a viso-el:generalized_gradient_approximation.
+viso-el:PW91 a viso-el:generalized_gradient_approximation.
+viso-el:PBESOL a viso-el:generalized_gradient_approximation.
+
+viso-el:HARTREE_FOCK a viso-el:exact_exchange.
+
+viso-el:PBE0 a viso-el:hybrid_functional.
+viso-el:HSE06 a viso-el:hybrid_functional.
+viso-el:B3LYP a viso-el:hybrid_functional.
+viso-el:X3LYP a viso-el:hybrid_functional.
+
+viso-el:VDWDF a viso-el:van_der_waals_density_functional.
+viso-el:OPTB86 a viso-el:van_der_waals_density_functional.
+viso-el:OPTB88 a viso-el:van_der_waals_density_functional.
+
+viso-el:HUBBARD_U a viso-el:hubbard_correction.
+viso-el:HUBBARD_J a viso-el:hubbard_correction.
+
+viso-el:D3_DISPERSION a viso-el:van_der_waals_correction.
+
+viso-el:NON_SPIN_POLARIZED a viso-el:electron_spin. 
+viso-el:SPIN_POLARIZED a viso-el:electron_spin. 
+viso-el:NON_COLLINEAR_SPIN a viso-el:electron_spin.
+
+viso-el:SAWTOOTH_POTENTIAL a viso-el:electric_field. 
+viso-el:MODERN_THEORY_OF_POLARIZATION a viso-el:electric_field. 
+
+# Core electron treatment
+viso-el:EXPLICIT_CORE_ELECTRONS a viso-el:core_electron_treatment;
+  rdfs:comment "Corresponding to so-called all-electron calculations"^^xs:string.
+
+# Boundary conditions
+viso-el:OPEN_BOUNDARY_CONDITIONS a viso-el:boundary_condition. 
+viso-el:PERIODIC_BOUNDARY_CONDITIONS a viso-el:boundary_condition. 
+
+# Pseudopotentials
+viso-el:NORM_CONSERVING_PSEUDOPOTENTIAL a viso-el:pseudopotential.
+viso-el:ULTRA_SOFT_PSEUDOPOTENTIAL a viso-el:pseudopotential.
+viso-el:PROJECTOR_AUGMENTED_WAVE a viso-el:pseudopotential.
+
+##############  Electronic Solver feature ###############################
+
+viso-el:basis_set a owl:Class;
+  rdfs:subClassOf viso:el_solver_feature;
+  rdfs:seeAlso "Electronic Structure R. M. Martin 2004 Cambridge University Press"^^xs:string;
+  rdfs:comment "basis set expansion of electronic states"^^xs:string.
+
+viso-el:electron_diagonalization a owl:Class;
+  rdfs:subClassOf viso:el_solver_feature;
+  rdfs:comment "Algorithm that diagonalizes Kohn-Sham Hamiltonian"^^xs:string.
+
+viso-el:electron_mixing a owl:Class;
+  rdfs:subClassOf viso:el_solver_feature;
+  rdfs:comment "Algorithm for mixing the electron densities during SCF"^^xs:string.
+
+viso-el:electron_smearing a owl:Class;
+  rdfs:subClassOf viso:el_solver_feature;
+  rdfs:comment "Algorithm for the smearing of electronic populations"^^xs:string.
+
+viso-el:kpoint_mesh a owl:Class;
+  rdfs:subClassOf viso:el_solver_feature;
+  rdfs:comment "Algorithm for the generation of the kpoint grid"^^xs:string.
+
+viso-el:symmetry_adapted_solver a owl:Class;
+  rdfs:subClassOf viso:el_solver_feature;
+  rdfs:comment "Computation strategy based on system symmetries"^^xs:string.
+
+viso-el:ionic_relaxation a owl:Class;
+  rdfs:subClassOf viso:el_solver_feature;
+  rdfs:comment "Algorithm for optimisation of the nuclear coordinates"^^xs:string.
+
+###############  Instances of Electronic Solver features ###############################
+
+viso-el:PLANE_WAVE a viso-el:basis_set.
+viso-el:GAUSSIAN_ORBITAL a viso-el:basis_set.
+viso-el:WANNIER_FUNCTION a viso-el:basis_set.
+viso-el:SLATER_TYPE_ORBITAL a viso-el:basis_set. 
+
+# Electron Diagonalization
+viso-el:DAVIDSON a viso-el:electron_diagonalization.
+viso-el:CONJUGATE_GRADIENT a viso-el:electron_diagonalization;
+  rdfs:seeAlso "Numerical Recipes 3rd Edition: The Art of Scientific Computing 2007 Cambridge University Press"^^xs:string.
+
+# Electron Mixing
+viso-el:BROYDEN a viso-el:electron_mixing.
+viso-el:THOMAS_FERMI a viso-el:electron_mixing.
+viso-el:LOCAL_THOMAS_FERMI a viso-el:electron_mixing.
+
+# Electron Smearing
+viso-el:GAUSSIAN_SMEARING a viso-el:electron_smearing.
+viso-el:METHFESSEL_PAXTON a viso-el:electron_smearing;
+  rdfs:seeAlso "Phys. Rev. B 40 3616 1989"^^xs:string.
+viso-el:MARZARI_VANDERBILT a viso-el:electron_smearing;
+  rdfs:seeAlso "Phys. Rev. Lett. 82 3296 1999"^^xs:string.
+
+# k-point mesh
+viso-el:MONKHORST_PACK a viso-el:kpoint_mesh;
+  rdfs:seeAlso "Phys. Rev. B 16 1748 1977"^^xs:string.
+viso-el:GAMMA_POINT_ONLY a viso-el:kpoint_mesh;
+  rdfs:comment "Sample reciprocal space only at the Gamma point"^^xs:string. 
+viso-el:HIGH_SYMMETRY a viso-el:kpoint_mesh;                                                        
+  rdfs:comment "(typically user defined) kpoint path along high symmetry line"^^xs:string. 
+
+# Symmetry
+viso-el:NO_SYMMETRY a viso-el:symmetry_adapted_solver;
+   rdfs:comment "No symmetry adapted solution available or it is possible to disactivate symmetry routines"^^xs:string.
+viso-el:BRAVAIS_LATTICE a viso-el:symmetry_adapted_solver;
+   rdfs:comment "Recognises and exploits bravais lattice point groups"^^xs:string.
+viso-el:MOLECULAR_POINT_GROUPS a viso-el:symmetry_adapted_solver;
+   rdfs:comment "Recognises and exploits common molecular point groups"^^xs:string.
+
+# Ionic Relaxation
+viso-el:CONJUGATE_GRADIENT a viso-el:ionic_relaxation;
+   rdfs:seeAlso "Numerical Recipes 3rd Edition: The Art of Scientific Computing 2007 Cambridge University Press"^^xs:string.
+viso-el:BFGS a viso-el:ionic_relaxation;
+   rdfs:comment "Broyden–Fletcher–Goldfarb–Shanno (BFGS) algorithm"^^xs:string;
+   rdfs:seeAlso "Numerical Recipes 3rd Edition: The Art of Scientific Computing 2007 Cambridge University Press"^^xs:string.
+
+

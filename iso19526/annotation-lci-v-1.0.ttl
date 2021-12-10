@@ -1,0 +1,1961 @@
+# baseURI: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/annotation-lci-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/collector-v-1.0
+
+@prefix lci:     <http://standards.iso.org/iso/15926/ontology/life-cycle-integration/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/annotation-lci-v-1.0>
+      rdf:type owl:Ontology ;
+      owl:imports <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/collector-v-1.0> .
+
+lci:ComputerFile
+      lci:definitionByLiteral
+              "<InformationObject> that is a file within a computer system" ;
+      lci:descriptionOfExampleByLiteral
+              "The following are members of <ComputerFile>: the PDF file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.pdf, which contains a scan of the ink on paper material certificate for material product M-101-1234 produced by Schmidt Stahl; the XML file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.xml, which contains the material certificate in accordance with the standard material certificate XML schema auto-gration_messages.xsd." ;
+      lci:identificationByLiteral
+              "computer file" ;
+      lci:noteByLiteral "A <ComputerFile> is a <Individual> because it exists in space and time as a physical state of an electronic storage medium. A <ComputerFile> is a <FunctionalPhysicalObject> because the electronic storage medium that holds a computer file can change from time to time.PDF, file, XML file, and TURTLE file are subclasses of <ComputerFile>." .
+
+lci:Feature
+      lci:definitionByLiteral
+              "<PhysicalObject> that is a contiguous, non-separable part of a <Individual> and that has an incompletely defined separating bound" ;
+      lci:identificationByLiteral
+              "feature" ;
+      lci:noteByLiteral "Mountain, groove, rim, nozzle, nose, and raised face are subclasses of <Feature>." .
+
+lci:noteByInformationContent
+      lci:definitionByLiteral
+              "<noteBy> and <representationByInformationContent>" ;
+      lci:identificationByLiteral
+              "note by information content" .
+
+lci:classReferencedByValue
+      lci:definitionByLiteral
+              "each member of the subject has a <referencedBy> relationship with the object" ;
+      lci:identificationByLiteral
+              "class referenced by value" .
+
+lci:ListOfQuantity
+      lci:definitionByLiteral
+              "<List> that has <Quantity> as its range" ;
+      lci:identificationByLiteral
+              "list of quantity" ;
+      lci:noteByLiteral "This class is defined in the ontology solely to provide structure." .
+
+lci:Organism
+      lci:definitionByLiteral
+              "<PhysicalObject> that is a single living organism" ;
+      lci:identificationByLiteral
+              "organism" .
+
+lci:ClassOfPhysicalObject
+      lci:definitionByLiteral
+              "class that is the power class of <PhysicalObject>" ;
+      lci:identificationByLiteral
+              "class of physical object" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:noteByInformationObject
+      lci:definitionByLiteral
+              "<noteBy> and <representationByInformationObject>" ;
+      lci:identificationByLiteral
+              "note by information object" .
+
+lci:identificationBy
+      lci:definitionByLiteral
+              "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that identifies" ;
+      lci:descriptionOfExampleByLiteral
+              "The <PhysicalObject> delivered by Schmidt Stahl on 2014-09-15 has an <identificationBy> relationship with 'M-101-1234' ." ;
+      lci:identificationByLiteral
+              "identification by" ;
+      lci:noteByLiteral "An 'id' attribute of ISO 10303-41 entity such as 'product' is an <identificationBy> relationship." .
+
+lci:valuePartOfOccurrence
+      lci:definitionByLiteral
+              "the subject has a <partOf> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value part of occurrence" .
+
+lci:numberAsLiteral
+      lci:definitionByLiteral
+              "text string literal that represents the <Number> in decimal" ;
+      lci:identificationByLiteral
+              "number as literal" .
+
+lci:ClassOfIsomorphism
+      lci:definitionByLiteral
+              "class that is the power class of <Isomorphism>" ;
+      lci:identificationByLiteral
+              "class of isomorphism" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Organization
+      lci:definitionByLiteral
+              "<PhysicalObject> that consists of people and other assets and that is organized with a particular purpose" ;
+      lci:descriptionOfExampleByLiteral
+              "POSC Caesar Association, Fiatech, Bechtel and TopQuadrant are instances of <Organization>." ;
+      lci:identificationByLiteral
+              "organization" ;
+      lci:noteByLiteral "Company, government, and project team are subclasses of <Organization>." .
+
+lci:descriptionOfExampleBy
+      lci:definitionByLiteral
+              "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that is a description of an example" ;
+      lci:identificationByLiteral
+              "description of example by" ;
+      lci:noteByLiteral "<noteBy> has the same meaning as the SKOS property 'example'." .
+
+lci:ClassOfPerson
+      lci:definitionByLiteral
+              "class that is the power class of <Person>" ;
+      lci:identificationByLiteral
+              "class of person" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfPhysicalObjectByFunction
+      lci:definitionByLiteral
+              "<ClassOfPhysicalObject> that has as its criterion for membership a function or purpose" ;
+      lci:descriptionOfExampleByLiteral
+              "Pump, valve, and car are subclasses of <PhysicalObject> and instances of <ClassOfPhysicalObjectByFunction>." ;
+      lci:identificationByLiteral
+              "class of physical object by function" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:MaterializedPhysicalObject
+      lci:definitionByLiteral
+              "<PhysicalObject> that has matter continuity, energy continuity of both as its basis of identity" ;
+      lci:descriptionOfExampleByLiteral
+              "The shell and tube heat exchanger with manufacture's serial number ES/1234 is a <MaterializedPhysicalObject>." ;
+      lci:identificationByLiteral
+              "materialized physical object" ;
+      lci:noteByLiteral "A <MaterializedPhysicalObject> has some continuity of matter or energy between adjacent temporal parts. However, the eeplacement of some components from time to time does not create a new identity." .
+
+lci:ClassOfScale
+      lci:definitionByLiteral
+              "class that is the power class of <Scale>" ;
+      lci:identificationByLiteral
+              "class of scale" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classHasCauseOfBeginningValue
+      lci:definitionByLiteral
+              "each member of the subject has a <hasCauseOfBeginning> relationship with the object" ;
+      lci:identificationByLiteral
+              "class has cause of beginning value" .
+
+lci:QuantityMeasure
+      lci:definitionByLiteral
+              "<MathematicalFunction> that has a subclass of <Individual> as its domain and a <QuantitySpace> as its range, and that is not classification" ;
+      lci:descriptionOfExampleByLiteral
+              "'cost of certification' is a <QuantityMeasure>. The 'cost of certification' relationship between the vessel with serial number V1234/89 and 10000 euro is not a classification of the vessel. Instead it is a classification of the certification activity that is required for the vessel." ;
+      lci:identificationByLiteral
+              "quantity measure" ;
+      lci:noteByLiteral "A member of <QuantityMeasure> is implemented in this part of ISO 15926 as an owl:ObjectProperty with the range <Quantity>." .
+
+lci:ClassOfCompound
+      lci:definitionByLiteral
+              "class that is the power class of <Compound>" ;
+      lci:identificationByLiteral
+              "class of compound" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfOrderedPairOfQuantity
+      lci:definitionByLiteral
+              "class that is the power class of <OrderedPairOfQuantity>" ;
+      lci:identificationByLiteral
+              "class of ordered pair of quantity" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Class
+      lci:definitionByLiteral
+              "set of instances of <Thing/span>" ;
+      lci:identificationByLiteral
+              "class" ;
+      lci:noteByLiteral "A <Class> can be defined by enumerating its members or by criteria that separate instances of <Thing> into those which are members and those which are not.The members of a <Class> do not change with time. If the members are different, then it is a different <Class>.The object <Class> is a subclass of <Thing>. The object <Class> is not a subclass of owl:Class because this would prevent the use of OWL inferencing." .
+
+lci:classReferencesValue
+      lci:definitionByLiteral
+              "each member of the subject has a <references> relationship with the object" ;
+      lci:identificationByLiteral
+              "class references value" .
+
+lci:classPartOfValue
+      lci:definitionByLiteral
+              "each member of the subject has a <partOf> relationship with the object" ;
+      lci:identificationByLiteral
+              "class part of value" .
+
+lci:locatedRelativeTo
+      lci:definitionByLiteral
+              "<Individual> that has a relative location" ;
+      lci:descriptionOfExampleByLiteral
+              "The level gauge I-L-101-2 has a <locatedRelativeTo> relationship with tank T_101." ;
+      lci:identificationByLiteral
+              "located relative to" ;
+      lci:noteByLiteral "A subproperty, such as 'above' or 'beside', can indicate the nature of the relative location" .
+
+lci:featureOf
+      lci:definitionByLiteral
+              "<Individual> that has the <Feature> as a part" ;
+      lci:descriptionOfExampleByLiteral
+              "The face of flange F_101 has a <featureOf> relationship with flange F_101 as a whole.Nozzle N_101/1 has a <featureOf> relationship with vessel V_101." ;
+      lci:identificationByLiteral
+              "feature of" .
+
+lci:references
+      lci:definitionByLiteral
+              "thing that is referenced" ;
+      lci:descriptionOfExampleByLiteral
+              "The <Activity> 'accept delivery of material product M-101-1234' <references> the <InformationContent> that is the material certificate with URI http://schmidt-stahl.de/material-certificate/M-101-1234. This URI identifies the content of the certificate, which can be physical represented as ink on paper, PDF or XML.The <Activity> 'issue work order for planned activity P-101-2' <references> the <ClassOfActivity> that is plan P-101-2." ;
+      lci:identificationByLiteral
+              "references" .
+
+lci:classHasPartOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <hasPart> relationship with a member of the object, and each member of the object has a <partOf> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class has part occurrence" .
+
+lci:translationOf
+      lci:definitionByLiteral
+              "<InformationContent> that has the same meaning in a different <Language>" ;
+      lci:descriptionOfExampleByLiteral
+              "The <InformationContent> that is the Universal declaration of human rights in English has a <translationOf> relationship with the <InformationContent> that is the Universal declaration of human rights in French." ;
+      lci:identificationByLiteral
+              "translation of" ;
+      lci:noteByLiteral "The relationship <translationOf> is symmetric, and does not imply the source. The process of translation can be recorded by a translation <Activity>." .
+
+lci:identificationByLiteral
+      lci:definitionByLiteral
+              "<identificationBy> and <representationByLiteral>" ;
+      lci:identificationByLiteral
+              "identification by literal" .
+
+lci:FunctionalPhysicalObject
+      lci:definitionByLiteral
+              "<PhysicalObject> that has functional continuity as its basis of identity" ;
+      lci:descriptionOfExampleByLiteral
+              "The heat exchanger system known as tag E-4507 is a <FunctionalPhysicalObject>." ;
+      lci:identificationByLiteral
+              "functional physical object" ;
+      lci:noteByLiteral "A <FunctionalPhysicalObject> has functional, rather than material, continuity as its basis for identity. Adjacent temporal parts of a <FunctionalPhysicalObject> need not have common matter or energy, provided the matter or energy of each temporal part fulfils the same function" .
+
+lci:valueHasCauseOfEndOccurrence
+      lci:definitionByLiteral
+              "the subject has a <hasCauseOfEnd> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value has cause of end occurrence" .
+
+lci:classHasTemporalPartOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <hasTemporalPart> relationship with a member of the object, and each member of the object has a <temporalPartOf> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class has temporal part occurrence" .
+
+lci:Compound
+      lci:definitionByLiteral
+              "<PhysicalObject> that is an arrangement of molecules of the same or different types bound together by intermolecular forces" ;
+      lci:identificationByLiteral
+              "compound" ;
+      lci:noteByLiteral "Water, sulphuric acid, sand, limestone and steel are subclasses of <Compound>." .
+
+lci:ClassOfOrganism
+      lci:definitionByLiteral
+              "class that is the power class of <Organism>" ;
+      lci:identificationByLiteral
+              "class of organism" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classLocatedRelativeToOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <locatedRelativeTo> relationship with a member of the object, and each member of the object has a <locatedRelativeTo> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class located relative to occurrence" .
+
+lci:hasTemporalBound
+      lci:definitionByLiteral
+              "<Event> that is the beginning or end" ;
+      lci:identificationByLiteral
+              "has temporal bound" .
+
+lci:unionOfAllMembersOf
+      lci:definitionByLiteral
+              "<Class> that is the union of all members" ;
+      lci:descriptionOfExampleByLiteral
+              "The <RangePhysicalQuantity> that is all instances of <Individual> with a mass greater than 10 kilograms and less than 15 kilograms is the <unionOfAllMembersOf> the <RangePhysicalQuantity> that is all instances of mass greater than 10 kilograms and less than 15 kilograms." ;
+      lci:identificationByLiteral
+              "union of all members of" ;
+      lci:noteByLiteral "For an enumerated set of classes the union of all members can be defined using owl:unionOf. However the <unionOfAllMembersOf> relationship is required where the members of the set are not enumerated." .
+
+lci:quantityRangeHasLowerBound
+      lci:definitionByLiteral
+              "<Quantity> that is the lower bound" ;
+      lci:identificationByLiteral
+              "quantity range has lower bound" .
+
+lci:containedBy
+      lci:definitionByLiteral
+              "<Individual> that contains, but does not have the contained as a part" ;
+      lci:descriptionOfExampleByLiteral
+              "The batch of oil B_101 during 2014-04-11 has a <containedBy> relationship with tank T_101 during 2014-04-11." ;
+      lci:identificationByLiteral
+              "contained by" .
+
+lci:ClassOfPointInTime
+      lci:definitionByLiteral
+              "class that is the power class of <PointInTime>" ;
+      lci:identificationByLiteral
+              "class of point in time" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfOrderedPairOfPhysicalQuantity
+      lci:definitionByLiteral
+              "class that is the power class of <OrderedPairOfPhysicalQuantity>" ;
+      lci:identificationByLiteral
+              "class of ordered pair of physical quantity" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:OrderedPairOfTimeDuration
+      lci:definitionByLiteral
+              "<OrderedPairOfPhysicalQuantity> that is an ordered pair of <TimeDuration>" ;
+      lci:descriptionOfExampleByLiteral
+              "('50 hours', '200 hours') is an <OrderedPairOfTimeDuration>." ;
+      lci:identificationByLiteral
+              "ordered pair of time duration" .
+
+lci:classCausesEndOfValue
+      lci:definitionByLiteral
+              "each member of the subject has a <causesEndOf> relationship with the object" ;
+      lci:identificationByLiteral
+              "class causes end of value" .
+
+lci:ComputerFileFormat
+      lci:definitionByLiteral
+              "<ClassOfComputerFile> that has the format of the file as its criterion for membership" ;
+      lci:descriptionOfExampleByLiteral
+              "XML file, PDF file and TURTLE file are members of <ComputerFileFormat>." ;
+      lci:identificationByLiteral
+              "computer file format" ;
+      lci:noteByLiteral "XML, TURTLE and PDF are members of <RepresentationFormat>." .
+
+lci:partOf
+      lci:definitionByLiteral
+              "<Individual> that is a whole for the part" ;
+      lci:identificationByLiteral
+              "part of" .
+
+lci:InformationObject
+      lci:definitionByLiteral
+              "<Individual> that is intended to convey information" ;
+      lci:descriptionOfExampleByLiteral
+              "The following are members of <InformationObject>: the ink on paper material certificate for material product M-101-1234 produced by Schmidt Stahl, which bears the signature of the Schmidt Stahl inspector; the PDF file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.pdf, which contains a scan of the ink on paper material certificate for M-101-1234; the XML file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.xml, which contains the material certificate for M-101-1234 in accordance with the standard material certificate XML schema auto-gration_messages.xsd; the state of railway signal VS1234 between 10:02:30 and 10:02:45 on 2014-05-19" ;
+      lci:identificationByLiteral
+              "information object" .
+
+lci:Molecule
+      lci:definitionByLiteral
+              "<PhysicalObject> that is a molecule" ;
+      lci:identificationByLiteral
+              "molecule" ;
+      lci:noteByLiteral "A molecule is an electrically neutral group of two or more atoms held together by covalent chemical bonds. Molecules are distinguished from ions by their lack of electrical charge (wikipedia). <br/><br/>H2O, H2SO4, and DNA are subclasses of <Molecule>." .
+
+lci:Mapping
+      lci:definitionByLiteral
+              "<AbstractObject> that is a relationship between a domain <Class> and a range <Class>, and that defines a set of (domain member, range member) pairs" ;
+      lci:identificationByLiteral
+              "mapping" .
+
+lci:iso8601IdentificationOfDuration
+      lci:definitionByLiteral
+              "text that identifies a <TimeDuration> in accordance with ISO 8601" ;
+      lci:descriptionOfExampleByLiteral
+              "The <TimeDuration> that is 1 day and 12 hours has a <iso8601IdentificationOfDuration> relationship with the text 'P1DT12H'. This is 36 hours, unless daylight saving time begins or ends at the end of the day." ;
+      lci:identificationByLiteral
+              "ISO 8601 identification of duration" .
+
+lci:valueCausesEndOfOccurrence
+      lci:definitionByLiteral
+              "the subject has a <causesEndOf> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value causes end of occurrence" .
+
+lci:SubspaceOfCartesianProductOfQuantityKind
+      lci:definitionByLiteral
+              "<ClassOfListOfQuantity> that is a subspace of a <CartesianProductOfQuantityKind>" ;
+      lci:identificationByLiteral
+              "subspace of cartesian product of quantity kind" .
+
+lci:classHasTemporalPartValue
+      lci:definitionByLiteral
+              "each member of the subject has a <hasTemporalPart> relationship with the object" ;
+      lci:identificationByLiteral
+              "class has temporal part value" .
+
+lci:Scale
+      lci:definitionByLiteral
+              "<Isomorphism> between a <PhysicalQuantitySpace> and a <NumberSpace>" ;
+      lci:descriptionOfExampleByLiteral
+              "Celsius is a <Scale> that is an isomorphism between the <PhysicalQuantitySpace> thermodynamic temperature and the <NumberRange> that is reals greater than -273.15." ;
+      lci:identificationByLiteral
+              "scale" ;
+      lci:noteByLiteral "A member of <Scale> is implemented in this part of ISO 15926 as an owl:DatatypeProperty with domain <PhysicalQuantity>." .
+
+lci:ClassOfParticulateMaterial
+      lci:definitionByLiteral
+              "class that is the power class of <ParticulateMaterial>" ;
+      lci:identificationByLiteral
+              "class of particulate material" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfCompositeMaterial
+      lci:definitionByLiteral
+              "class that is the power class of <CompositeMaterial>" ;
+      lci:identificationByLiteral
+              "class of composite material" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classEndsValue
+      lci:definitionByLiteral
+              "each member of the subject has a <ends> relationship with the object" ;
+      lci:identificationByLiteral
+              "class ends value" .
+
+lci:ClassOfMolecule
+      lci:definitionByLiteral
+              "class that is the power class of <Molecule>" ;
+      lci:identificationByLiteral
+              "class of molecule" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:PhysicalQuantitySpace
+      lci:definitionByLiteral
+              "<ClassOfPhysicalQuantity> that is a subspace of, or all of, a <PhysicalQuantityKind>" ;
+      lci:descriptionOfExampleByLiteral
+              "mass is a <PhysicalQuantitySpace>." ;
+      lci:identificationByLiteral
+              "physical quantity space" .
+
+lci:representationByInformationContent
+      lci:definitionByLiteral
+              "<InformationContent> that is the representation" ;
+      lci:identificationByLiteral
+              "representation by information content" .
+
+lci:ClassOfAtom
+      lci:definitionByLiteral
+              "class that is the power class of <Atom>" ;
+      lci:identificationByLiteral
+              "class of atom" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ends
+      lci:definitionByLiteral
+              "<Individual> that ends" ;
+      lci:descriptionOfExampleByLiteral
+              "The <PointInTime> 1999-07-01T00:00 has a <ends> relationship with the <PeriodInTime> June 1999.The <Event> 'loading L_101 on 2014-04-11 complete' has a <ends> relationship with the <Individual> 'loading plant operating on 2014-04-11'." ;
+      lci:identificationByLiteral
+              "ends" .
+
+lci:hasParticipant
+      lci:definitionByLiteral
+              "<Individual> that is a participant" ;
+      lci:descriptionOfExampleByLiteral
+              "The activity 'discharge of motor vessel Murex on 2002-12-02' has a <hasParticipant> relationship with pump P_101 during 2002-12-02." ;
+      lci:identificationByLiteral
+              "has participant" .
+
+lci:Language
+      lci:definitionByLiteral
+              "<ClassOfInformationContent> that has the language used for the <InformationContent> as the criterion for membership" ;
+      lci:descriptionOfExampleByLiteral
+              "'US English' is a <Language>." ;
+      lci:identificationByLiteral
+              "language" ;
+      lci:noteByLiteral "The codes assigned by the parts of ISO 639 'Codes for the representation of names of languages' identify members of <Language>.If text is represented as an xsd:string, then a language tag can be specified as defined in IETF RFC 3066. If text is specified as an <InformationContent>, then it can be classified as a member of a <Language>." .
+
+lci:Number
+      lci:definitionByLiteral
+              "<AbstractObject> that is a member of a <NumberSpace>" ;
+      lci:descriptionOfExampleByLiteral
+              "27 is an <Number>.29.5 is a <Number>." ;
+      lci:identificationByLiteral
+              "number" .
+
+lci:ClassOfActivity
+      lci:definitionByLiteral
+              "class that is the power class of <Activity>" ;
+      lci:identificationByLiteral
+              "class of activity" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:RangeQuantity
+      lci:definitionByLiteral
+              "<ClassOfIndividual> that is all members of all instances of <Quantity> within a <QuantityRange>" ;
+      lci:descriptionOfExampleByLiteral
+              "The instances of <Individual> with a mass greater than 10 kilograms and less than 15 kilograms is a <RangeQuantity>.The instances of <Individual> costing a monetary amount greater than 10 euro and less than 15 euro is a <RangeQuantity>." ;
+      lci:identificationByLiteral
+              "range quantity" .
+
+lci:IdentificationSpace
+      lci:definitionByLiteral
+              "<RepresentationSpace> that has members that identify" ;
+      lci:descriptionOfExampleByLiteral
+              "Identification by UK vehicle registration number' is an <IdentificationSpace>." ;
+      lci:identificationByLiteral
+              "identification space" ;
+      lci:noteByLiteral "A member of <IdentificationSpace> is implemented in this part of ISO 15926 as an owl:AnnotationProperty that is a subproperty of <identificationBy>." .
+
+lci:Activity
+      lci:definitionByLiteral
+              "<Individual> that is something happening or changing" ;
+      lci:identificationByLiteral
+              "activity" ;
+      lci:noteByLiteral "An <Activity> is a space-time extension in which other instances of <Individual> and <Event> participate." .
+
+lci:classTemporalPartOfValue
+      lci:definitionByLiteral
+              "each member of the subject has a <temporalPartOf> relationship with the object" ;
+      lci:identificationByLiteral
+              "class temporal part of value" .
+
+lci:ClassOfOrganization
+      lci:definitionByLiteral
+              "class that is the power class of <Organization>" ;
+      lci:identificationByLiteral
+              "class of organization" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Boolean
+      lci:definitionByLiteral
+              "<Number> that is one of {true, false}" ;
+      lci:identificationByLiteral
+              "boolean" .
+
+lci:OrderedPairOfPhysicalQuantity
+      lci:definitionByLiteral
+              "<OrderedPairOfQuantity> that is an ordered pair of <PhysicalQuantity>" ;
+      lci:descriptionOfExampleByLiteral
+              "('50 hours', '200 hours') is an <OrderedPairOfPhysicalQuantity>." ;
+      lci:identificationByLiteral
+              "ordered pair of physical quantity" .
+
+lci:ClassOfComputerFile
+      lci:definitionByLiteral
+              "class that is the power class of <ComputerFile>" ;
+      lci:identificationByLiteral
+              "class of computer file" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:hasCauseOfBeginning
+      lci:definitionByLiteral
+              "<Activity> that causes the beginning" ;
+      lci:descriptionOfExampleByLiteral
+              "Pump casing PC_101 has a <hasCauseOfBeginning> relationship with forging activity F_101." ;
+      lci:identificationByLiteral
+              "has cause of beginning" .
+
+lci:classHasPartValue
+      lci:definitionByLiteral
+              "each member of the subject has a <hasPart> relationship with the object" ;
+      lci:identificationByLiteral
+              "class has part value" .
+
+lci:ClassOfClassOfInformationObject
+      lci:definitionByLiteral
+              "<ClassOfClassOfIndividual> that is the power class of <ClassOfInformationObject>" ;
+      lci:identificationByLiteral
+              "class of class of information object" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Non-wholeLifeIndividual
+      lci:definitionByLiteral
+              "<Individual> that is not an <WholeLifeIndividual>" ;
+      lci:descriptionOfExampleByLiteral
+              "The temporal part of the pump with serial number 'P-98/1234' that is installed as pump tag '20-P-101' is a <MaterializedPhysicalObject> and a <Non-wholeLifeIndividual>.The temporal part of pump tag '20-P-101' that has the pump with serial number 'P-98/1234' installed is a <FunctionalPhysicalObject> and a <Non-wholeLifeIndividual>." ;
+      lci:identificationByLiteral
+              "non-whole life individual" .
+
+lci:PhysicalQuantityRatio
+      lci:definitionByLiteral
+              "<QuantityRatio> that is a <ClassOfOrderedPairOfPhysicalQuantity>" ;
+      lci:identificationByLiteral
+              "physical quantity ratio" .
+
+lci:classConnectedToValue
+      lci:definitionByLiteral
+              "each member of the subject has a <connectedTo> relationship with the object" ;
+      lci:identificationByLiteral
+              "class connected to value" .
+
+lci:valueHasCauseOfBeginningOccurrence
+      lci:definitionByLiteral
+              "the subject has a <hasCauseOfBeginning> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value has cause of beginning occurrence" .
+
+lci:classCausesBeginningOfValue
+      lci:definitionByLiteral
+              "each member of the subject has a <causesBeginningOf> relationship with the object" ;
+      lci:identificationByLiteral
+              "class causes beginning of value" .
+
+lci:noteByLiteral
+      lci:definitionByLiteral
+              "<noteBy> and <representationByLiteral>" ;
+      lci:identificationByLiteral
+              "note by literal" .
+
+lci:InanimatePhysicalObject
+      lci:definitionByLiteral
+              "<PhysicalObject> that is not one or more instances of <Organism>" ;
+      lci:identificationByLiteral
+              "inanimate physical object" ;
+      lci:noteByLiteral "Oil is a subclass of <InanimatePhysicalObject>." .
+
+lci:PhysicalQuantityKind
+      lci:definitionByLiteral
+              "<PhysicalQuantitySpace> and a <QuantityKind>" ;
+      lci:descriptionOfExampleByLiteral
+              "mass is a <PhysicalQuantityKind>." ;
+      lci:identificationByLiteral
+              "physical quantity kind" .
+
+lci:classAfterOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <after> relationship with a member of the object, and each member of the object has a <before> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class after occurrence" .
+
+lci:ClassOfStatus
+      lci:definitionByLiteral
+              "class that is the power class of <Status>" ;
+      lci:identificationByLiteral
+              "class of status" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:assembledPartOf
+      lci:definitionByLiteral
+              "<ArrangedIndividual> that is a whole for the assembled part" ;
+      lci:descriptionOfExampleByLiteral
+              "Impeller I_345 during 2013 has an <assembledPartOf> relationship with pump P_101 during 2013." ;
+      lci:identificationByLiteral
+              "assembled part of" .
+
+lci:fraction
+      lci:definitionByLiteral
+              "number that identifies a <Ratio> as a fraction" ;
+      lci:descriptionOfExampleByLiteral
+              "The <Ratio> that is 50:200 has a <fraction> relationship with the number 0.25." ;
+      lci:identificationByLiteral
+              "fraction" .
+
+lci:valueTemporalPartOfOccurrence
+      lci:definitionByLiteral
+              "the subject has a <temporalPartOf> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value temporal part of occurrence" .
+
+lci:ClassOfInformationObject
+      lci:definitionByLiteral
+              "<ClassOfIndividual> that is the power class of <InformationObject>" ;
+      lci:identificationByLiteral
+              "class of information object" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfList
+      lci:definitionByLiteral
+              "class that is the power class of <List>" ;
+      lci:identificationByLiteral
+              "class of list" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueLocatedRelativeToOccurrence
+      lci:definitionByLiteral
+              "the subject has a <locatedRelativeTo> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value connected to occurrence" .
+
+lci:representationByLiteral
+      lci:definitionByLiteral
+              "text string literal that is the representation" ;
+      lci:identificationByLiteral
+              "representation by literal" ;
+      lci:noteByLiteral "The owl:AnnotationProperty <representationByLiteral> collects all sub-properties of <representationBy> that have xsd:string as the range." .
+
+lci:ClassOfListOfPhysicalQuantity
+      lci:definitionByLiteral
+              "class that is the power class of <ListOfPhysicalQuantity>" ;
+      lci:identificationByLiteral
+              "class of list of physical quantity" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueHasEndOccurrence
+      lci:definitionByLiteral
+              "the subject has a <hasEnd> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value has end occurrence" .
+
+lci:numberRangeHasUpperBound
+      lci:definitionByLiteral
+              "<Number> that is the upper bound" ;
+      lci:identificationByLiteral
+              "number range has upper bound" .
+
+lci:PhysicalRepresentationType
+      lci:definitionByLiteral
+              "<ClassOfInformationObject> that has the method used to create a physical representation of the information as the criterion for membership" ;
+      lci:descriptionOfExampleByLiteral
+              "The following are members of <PhysicalRepresentationType>:ink on paper document; ink on paper document with A4 paper; computer file; PDF file; coloured light railway signal." ;
+      lci:identificationByLiteral
+              "physical representation type" ;
+      lci:noteByLiteral "Computer file format, with members such as XML file and PDF file, is a subclass of <PhysicalRepresentationType>.Paper document format, with members such as A4 and foolscap, is a subclass of <PhysicalRepresentationType>." .
+
+lci:percent
+      lci:definitionByLiteral
+              "number that identifies a <Ratio> as a percentage" ;
+      lci:descriptionOfExampleByLiteral
+              "The <Ratio> that is 50:200 has a <percent> relationship with the number 25." ;
+      lci:identificationByLiteral
+              "percent" .
+
+lci:classHasCauseOfEndOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <hasCauseOfEnd> relationship with a member of the object, and each member of the object has a <causesEndOf> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class has cause of end occurrence" .
+
+lci:Logical
+      lci:definitionByLiteral
+              "<Number> that is one of {true, false, unknown}" ;
+      lci:identificationByLiteral
+              "logical" .
+
+lci:descriptionOfExampleByInformationObject
+      lci:definitionByLiteral
+              "<descriptionOfExampleBy> and <representationByInformationObject>" ;
+      lci:identificationByLiteral
+              "description of example by information object" .
+
+lci:QuantityRange
+      lci:definitionByLiteral
+              "<ClassOfQuantity> that is all instances of <Quantity> that are greater than a lower bound, or less than an upper bound, or both" ;
+      lci:descriptionOfExampleByLiteral
+              "The instances of mass that are greater than 10 kilograms and less than 15 kilograms is a <QuantityRange>The instances of monetary amount that are greater than 10 euro and less than 15 euro is a <QuantityRange>" ;
+      lci:identificationByLiteral
+              "quantity range" .
+
+lci:ClassOfArrangedIndividual
+      lci:definitionByLiteral
+              "<ClassOfIndividual> that is the power class of <ArrangedIndividual>" ;
+      lci:identificationByLiteral
+              "class of arranged individual" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfClass
+      lci:definitionByLiteral
+              "class that is the power class of <Class>" ;
+      lci:identificationByLiteral
+              "class of class" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:descriptionOfExampleByInformationContent
+      lci:definitionByLiteral
+              "<descriptionOfExampleBy> and <representationByInformationContent>" ;
+      lci:identificationByLiteral
+              "description of example by information content" .
+
+lci:classHasCauseOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <hasCause> relationship with a member of the object, and each member of the object has a <causes> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class has cause occurrence" .
+
+lci:descriptionByInformationObject
+      lci:definitionByLiteral
+              "<descriptionBy> and <representationByInformationObject>" ;
+      lci:identificationByLiteral
+              "description by information object" .
+
+lci:ClassOfInanimatePhysicalObject
+      lci:definitionByLiteral
+              "class that is the power class of <InanimatePhysicalObject>" ;
+      lci:identificationByLiteral
+              "class of inanimate physical object" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ArrangedIndividual
+      lci:definitionByLiteral
+              "<Individual> that has parts with a particular organization or arrangement" ;
+      lci:identificationByLiteral
+              "arranged individual" ;
+      lci:noteByLiteral "The properties, characteristics and behaviours of an <ArrangedIndividual> are different from those of its individual parts." .
+
+lci:classBeforeOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <before> relationship with a member of the object, and each member of the object has a <after> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class before occurrence" .
+
+lci:QuantitySpace
+      lci:definitionByLiteral
+              "<ClassOfQuantity> that is a subspace of, or all of, a <QuantityKind>" ;
+      lci:descriptionOfExampleByLiteral
+              "Monetary amount is a <QuantitySpace>.Mass is a <QuantitySpace>." ;
+      lci:identificationByLiteral
+              "quantity space" .
+
+lci:MathematicalFunction
+      lci:definitionByLiteral
+              "<Mapping> that has one member of the range for each member of the domain" ;
+      lci:identificationByLiteral
+              "mathematical function" .
+
+lci:valueCausesOccurrence
+      lci:definitionByLiteral
+              "the subject has a <causes> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value causes occurrence" .
+
+lci:valueCausesBeginningOfOccurrence
+      lci:definitionByLiteral
+              "the subject has a <causesBeginningOf> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value causes beginning of occurrence" .
+
+lci:booleanAsLiteral
+      lci:definitionByLiteral
+              "<numberAsLiteral> that represents the <Boolean> as 'T' or 'F'" ;
+      lci:identificationByLiteral
+              "boolean as literal" .
+
+lci:logicalAsLiteral
+      lci:definitionByLiteral
+              "<numberAsLiteral> that represents the <Boolean> as 'T', 'F' or 'U'" ;
+      lci:identificationByLiteral
+              "logical as literal" .
+
+lci:arrangedPartOf
+      lci:definitionByLiteral
+              "<ArrangedIndividual> that is a whole for the arranged part with a distinct role" ;
+      lci:descriptionOfExampleByLiteral
+              "Aircraft A_101 from 2014-04-11T10:50 to 2014-04-11T12:15 has an <arrangedPartOf> relationship with formation F_101 from 2014-04-11T10:50 to 2014-04-11T12:15, within which it is flying.Bin B_101 has an <arrangedPartOf> relationship with Warehouse W_101, within which it is a part of the layout." ;
+      lci:identificationByLiteral
+              "arranged part of" ;
+      lci:noteByLiteral "An <arrangedPartOf> relationship says a part has a particular role with respect to the whole. The nature of this role is not specified by this relationship, but must be specified by a classification of the part." .
+
+lci:representationByInformationObject
+      lci:definitionByLiteral
+              "<InformationObject> that is the representation" ;
+      lci:identificationByLiteral
+              "representation by information object" .
+
+lci:definitionByInformationContent
+      lci:definitionByLiteral
+              "<definitionBy> and <representationByInformationContent>" ;
+      lci:identificationByLiteral
+              "definition by information content" .
+
+lci:subNumberSpaceOf
+      lci:definitionByLiteral
+              "<NumberSpace> that is a subspace" ;
+      lci:identificationByLiteral
+              "sub number space of" .
+
+lci:valueBeginsOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <begins> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value begins occurrence" .
+
+lci:classBeginsOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <begins> relationship with a member of the object, and each member of the object has a <hasBeginning> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class begins occurrence" .
+
+lci:ClassOfPhysicalQuantity
+      lci:definitionByLiteral
+              "class that is the power class of <PhysicalQuantity>" ;
+      lci:identificationByLiteral
+              "class of physical quantity" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classBeforeValue
+      lci:definitionByLiteral
+              "each member of the subject has a <before> relationship with the object" ;
+      lci:identificationByLiteral
+              "class before value" .
+
+lci:ClassOfClassOfPhysicalObject
+      lci:definitionByLiteral
+              "class that is the power class of <ClassOfPhysicalObject>" ;
+      lci:identificationByLiteral
+              "class of class of physical object" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueReferencedByOccurrence
+      lci:definitionByLiteral
+              "the subject has a <referencedBy> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value referenced by occurrence" .
+
+lci:classHasCauseOfEndValue
+      lci:definitionByLiteral
+              "each member of the subject has a <hasCauseOfEnd> relationship with the object" ;
+      lci:identificationByLiteral
+              "class has cause of end value" .
+
+lci:classAfterValue
+      lci:definitionByLiteral
+              "each member of the subject has a <after> relationship with the object" ;
+      lci:identificationByLiteral
+              "class after value" .
+
+lci:Stream
+      lci:definitionByLiteral
+              "<PhysicalObject> where continuity of flow path is the basis of identity" ;
+      lci:identificationByLiteral
+              "stream" .
+
+lci:NumberRange
+      lci:definitionByLiteral
+              "<NumberSpace> that is all numbers within the containing <NumberSpace> that are greater than a lower bound, less than an upper bound, or both." ;
+      lci:identificationByLiteral
+              "number range" .
+
+lci:PointInSpace
+      lci:definitionByLiteral
+              "<Individual> that is all that exists in time at a point in space" ;
+      lci:identificationByLiteral
+              "point in space" ;
+      lci:noteByLiteral "A <PointInSpace> can be defined in any spatial frame. It can be defined with respect to a moving or moveable object, such as a ship or an equipment item." .
+
+lci:classCausesBeginningOfOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <causesBeginningOf> relationship with a member of the object, and each member of the object has a <hasCauseOfBeginning> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class causes beginning of occurrence" .
+
+lci:definitionByInformationObject
+      lci:definitionByLiteral
+              "<definitionBy> and <representationByInformationObject>" ;
+      lci:identificationByLiteral
+              "definition by information object" .
+
+lci:ListOfPhysicalQuantity
+      lci:definitionByLiteral
+              "<List> that has <PhysicalQuantity> as its range" ;
+      lci:identificationByLiteral
+              "list of physical quantity" .
+
+lci:definitionBy
+      lci:definitionByLiteral
+              "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that defines" ;
+      lci:descriptionOfExampleByLiteral
+              "The class Pump has a <definitionBy> relationship with 'A physical object that adds or removes mechanical energy to a fluid, either constantly or periodically. '. The class 'project plan P101 version 3' has a <definitionBy> relationship with the OWL graph with URI http://www.bloggs-engineering.com/plans/P-101-v3." ;
+      lci:identificationByLiteral
+              "definition by" ;
+      lci:noteByLiteral "<definitionBy> has the same meaning as the SKOS property 'definition'." .
+
+lci:integerAsLiteral
+      lci:definitionByLiteral
+              "<numberAsLiteral> that represents the <Integer> in decimal" ;
+      lci:identificationByLiteral
+              "integer as literal" .
+
+lci:Non-arrangedIndividual
+      lci:definitionByLiteral
+              "<Individual> that is not an <ArrangedIndividual>" ;
+      lci:descriptionOfExampleByLiteral
+              "The 2015 production run of pump model 'WBX-456A' a <PhysicalObject> and a <Non-arrangedIndividual>. A particular pump within the production run is an <ArrangedIndividual>." ;
+      lci:identificationByLiteral
+              "non-arranged individual" .
+
+lci:OrderedPairOfQuantity
+      lci:definitionByLiteral
+              "<OrderedPair> that is an order pair of <Quantity>" ;
+      lci:descriptionOfExampleByLiteral
+              "('50 hours', '200 hours') is an <OrderedPairOfQuantity>." ;
+      lci:identificationByLiteral
+              "ordered pair of quantity" .
+
+lci:classConnectedToOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <connectedTo> relationship with a member of the object, and each member of the object has a <connectedTo> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class connected to occurrence" .
+
+lci:classHasBeginningOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <hasBeginning> relationship with a member of the object, and each member of the object has a <begins> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class has beginning occurrence" .
+
+lci:Individual
+      lci:definitionByLiteral
+              "<Thing> that exists in space and time and that has variation defined in 4D" ;
+      lci:identificationByLiteral
+              "individual" ;
+      lci:noteByLiteral "The class <Individual> includes:things where any of the space-time dimensions are vanishingly small; things that are either all space for a period of time, or all time for a region of space; the entirety of all space-time; things that actually exist, or have existed; things that are fictional or conjectured and possibly exist in the past, present or future; temporal parts (states) of other individuals; things that have a specific position, but zero extent in one or more dimensions, such as points, lines, and surfaces." .
+
+lci:ClassOfOrderedPair
+      lci:definitionByLiteral
+              "class that is the power class of <OrderedPair>" ;
+      lci:identificationByLiteral
+              "class of ordered pair" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classPartOfOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <partOf> relationship with a member of the object, and each member of the object has a <hasPart> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class part of occurrence" .
+
+lci:temporalBoundOf
+      lci:definitionByLiteral
+              "<Individual> that begins or ends" ;
+      lci:identificationByLiteral
+              "temporal bound of" .
+
+lci:TimeDuration
+      lci:definitionByLiteral
+              "<PhysicalQuantity> that is a time duration" ;
+      lci:descriptionOfExampleByLiteral
+              "10 seconds is a <TimeDuration>." ;
+      lci:identificationByLiteral
+              "time duration" .
+
+lci:classTemporalPartOfOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <temporalPartOf> relationship with a member of the object, and each member of the object has a <hasTemporalPart> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class temporal part of occurrence" .
+
+lci:List
+      lci:definitionByLiteral
+              "<MathematicalFunction>that has the integer interval [0, n] for some <Integer> n as its domain" ;
+      lci:identificationByLiteral
+              "list" ;
+      lci:noteByLiteral "The definition of List as a function makes it a 1D 'table function' as defined in ISO 15926-50." .
+
+lci:SubAtomicParticle
+      lci:definitionByLiteral
+              "<PhysicalObject> that is or can be a part of an atom" ;
+      lci:identificationByLiteral
+              "subatomic particle" ;
+      lci:noteByLiteral "Proton, electron, meson, neutron, positron, muon, quark, and neutrino are subclasses of <SubAtomicParticle>." .
+
+lci:QuantityKind
+      lci:definitionByLiteral
+              "<ClassOfQuantity> that is all instances of <Quantity> of the same kind" ;
+      lci:descriptionOfExampleByLiteral
+              "The class 'monetary amount' is subclass of <QuantityKind>. The class 'euro amount' is a member of 'monetary amount' and <QuantityKind>." ;
+      lci:identificationByLiteral
+              "quantity kind" ;
+      lci:noteByLiteral "The different currencies with codes defined in ISO 3166 are all members of 'monetary amount' and <QuantityKind>." .
+
+lci:causes
+      lci:definitionByLiteral
+              "<Event> that is caused" ;
+      lci:descriptionOfExampleByLiteral
+              "The <Event> 'tanker T_101 full on 2014-04-11' has a <causes> relationship with the <Activity> 'load tanker T_101 on 2014-04-11'." ;
+      lci:identificationByLiteral
+              "causes" .
+
+lci:NumberSpace
+      lci:definitionByLiteral
+              "<AbstractObject> that is a system of numbers" ;
+      lci:descriptionOfExampleByLiteral
+              "The system of real numbers is an <NumberSpace>.The system of integer numbers is a <NumberSpace>." ;
+      lci:identificationByLiteral
+              "number space" .
+
+lci:valueBeforeOccurrence
+      lci:definitionByLiteral
+              "the subject has a <before> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value before occurrence" .
+
+lci:ClassOfSubAtomicParticle
+      lci:definitionByLiteral
+              "class that is the power class of <SubAtomicParticle>" ;
+      lci:identificationByLiteral
+              "class of sub atomic particle" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueConnectedToOccurrence
+      lci:definitionByLiteral
+              "the subject has a <connectedTo> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value connected to occurrence" .
+
+lci:hasPart
+      lci:definitionByLiteral
+              "<Individual> that is a part of the whole" ;
+      lci:identificationByLiteral
+              "has part" .
+
+lci:OrderedPair
+      lci:definitionByLiteral
+              "<AbstractObject> that is an ordered pair" ;
+      lci:descriptionOfExampleByLiteral
+              "('50 hours', '200 hours') is an <OrderedPair>." ;
+      lci:identificationByLiteral
+              "ordered pair" .
+
+lci:DocumentType
+      lci:definitionByLiteral
+              "<ClassOfInformationContent> that has the purpose of the <InformationContent> as the criterion for membership" ;
+      lci:descriptionOfExampleByLiteral
+              "'Material Certificate' is a <DocumentType>.'Material certificate to EN 10204' is a <DocumentType>." ;
+      lci:identificationByLiteral
+              "document type" .
+
+lci:classReferencedByOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <referencedBy> relationship with a member of the object, and each member of the object has a <references> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class referenced by occurrence" .
+
+lci:ClassOfListOfQuantity
+      lci:definitionByLiteral
+              "class that is the power class of <ListOfQuantity>" ;
+      lci:identificationByLiteral
+              "class of list of quantity" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfStream
+      lci:definitionByLiteral
+              "class that is the power class of <Stream>" ;
+      lci:identificationByLiteral
+              "class of stream" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classCausesOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <causes> relationship with a member of the object, and each member of the object has a <hasCause> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "classCausesOccurrence" .
+
+lci:ClassOfClassOfIndividual
+      lci:definitionByLiteral
+              "class that is the power class of <ClassOfIndividual>" ;
+      lci:identificationByLiteral
+              "class of class of individual" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:RangeTimeDuration
+      lci:definitionByLiteral
+              "<RangePhysicalQuantity> that is all members of all instances of <TimeDuration> within a range" ;
+      lci:descriptionOfExampleByLiteral
+              "The instances of <PeriodInTime> with a duration greater than 1 hour is a <RangeTimeDuration>." ;
+      lci:identificationByLiteral
+              "range time duration" .
+
+lci:DefinitionSpace
+      lci:definitionByLiteral
+              "<RepresentationSpace> that has members that define" ;
+      lci:identificationByLiteral
+              "definition space" ;
+      lci:noteByLiteral "A member of <DefinitionSpace> is implemented in this part of ISO 15926 as an owl:AnnotationProperty that is a subproperty of <definitionBy>." .
+
+lci:classHasBeginningValue
+      lci:definitionByLiteral
+              "each member of the subject has a <hasBeginning> relationship with the object" ;
+      lci:identificationByLiteral
+              "class has beginning value" .
+
+lci:Ratio
+      lci:definitionByLiteral
+              "<ClassOfOrderedPair> that is a ratio" ;
+      lci:descriptionOfExampleByLiteral
+              "50:200' is a <Ratio>. This ration can also be identified by '5:20' and '1:4'." ;
+      lci:identificationByLiteral
+              "ratio" .
+
+lci:classHasCauseValue
+      lci:definitionByLiteral
+              "each member of the subject has a <hasCause> relationship with the object" ;
+      lci:identificationByLiteral
+              "class has cause value" .
+
+lci:DescriptionSpace
+      lci:definitionByLiteral
+              "<RepresentationSpace> that has members that describe" ;
+      lci:identificationByLiteral
+              "description space" ;
+      lci:noteByLiteral "A member of <DescriptionSpace> is implemented in this part of ISO 15926 as an owl:AnnotationProperty that is a subproperty of <descriptionBy>." .
+
+lci:ClassOfFeature
+      lci:definitionByLiteral
+              "class that is the power class of <Feature>" ;
+      lci:identificationByLiteral
+              "class of feature" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:PhysicalObject
+      lci:definitionByLiteral
+              "<Individual> that is a distribution of energy, matter or both" ;
+      lci:descriptionOfExampleByLiteral
+              "Pump P_101 is a <PhysicalObject>." ;
+      lci:identificationByLiteral
+              "physical object" .
+
+lci:PhysicalQuantity
+      lci:definitionByLiteral
+              "<Quantity> that is measurable or observable" ;
+      lci:descriptionOfExampleByLiteral
+              "The mass 10 kilograms is a <Quantity>." ;
+      lci:identificationByLiteral
+              "physical quantity" .
+
+lci:CartesianProductOfQuantityKind
+      lci:definitionByLiteral
+              "<ClassOfListOfQuantity> that is the Cartesian product of instances of <QuantityKind>" ;
+      lci:identificationByLiteral
+              "cartesian product of quantity kind" .
+
+lci:WholeLifeIndividual
+      lci:definitionByLiteral
+              "<Individual> that is a that is an entire lifetime as defined by its basis for identity" ;
+      lci:descriptionOfExampleByLiteral
+              "The plastic cup on the desk of Fred Bloggs (bounded by its creation and destruction events) is a <WholeLifeIndividual>. The cup whilst it stands on that desk is a temporal part of the <WholeLifeIndividual>." ;
+      lci:identificationByLiteral
+              "whole life individual" .
+
+lci:ClassOfPeriodInTime
+      lci:definitionByLiteral
+              "class that is the power class of <PeriodInTime>" ;
+      lci:identificationByLiteral
+              "class of period in time" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:after
+      lci:definitionByLiteral
+              "<Individual> that is after and does not overlap" ;
+      lci:descriptionOfExampleByLiteral
+              "The <Individual> 'F_101 under commissioning' has an <after> relationship with the <Individual> 'F_101 under construction'." ;
+      lci:identificationByLiteral
+              "after" .
+
+lci:Isomorphism
+      lci:definitionByLiteral
+              "<MathematicalFunction> that is an isomorphism" ;
+      lci:identificationByLiteral
+              "isomorphism" .
+
+lci:hasSecondInPair
+      lci:definitionByLiteral
+              "thing that is the second item in the <OrderedPair>" ;
+      lci:descriptionOfExampleByLiteral
+              "The <OrderedPair> ('50 hours', '200 hours') has a <hasSecondInPair> relationship with the <TimeDuration> '200 hours'." ;
+      lci:identificationByLiteral
+              "has second in pair" .
+
+lci:hasFeature
+      lci:definitionByLiteral
+              "<Feature> that is a part" ;
+      lci:descriptionOfExampleByLiteral
+              "Flange F_101 has a <hasFeature> relationship with its face.Vessel V_101 has a <hasFeature> relationship with nozzle N_101/1." ;
+      lci:identificationByLiteral
+              "has feature" .
+
+lci:classHasEndOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <hasEnd> relationship with a member of the object, and each member of the object has a <ends> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class has end occurrence" .
+
+lci:classEndsOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <ends> relationship with a member of the object, and each member of the object has a <hasEnd> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class ends occurrence" .
+
+lci:ClassOfMapping
+      lci:definitionByLiteral
+              "class that is the power class of <Mapping>" ;
+      lci:identificationByLiteral
+              "class of mapping" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classHasEndValue
+      lci:definitionByLiteral
+              "each member of the subject has a <hasEnd> relationship with the object" ;
+      lci:identificationByLiteral
+              "class has end value" .
+
+lci:descriptionBy
+      lci:definitionByLiteral
+              "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that describes" ;
+      lci:descriptionOfExampleByLiteral
+              "The <Activity> 'drilling of wellbore WB-1234 on 2014-07-10' has a <descriptionBy> relationship with the XML content with URI http://www.bloggs-drilling.com/WB-1234/daily-drilling-report/2014-07-10 .In this example the URI identifies the <ComputerFileContent>, rather than a particular <ComputerFile>." ;
+      lci:identificationByLiteral
+              "description by" ;
+      lci:noteByLiteral "<descriptionBy> has the same meaning as the Dublin Core property 'description'." .
+
+lci:AbstractObject
+      lci:definitionByLiteral
+              "<Thing> that does not exist in space and time" ;
+      lci:identificationByLiteral
+              "abstract object" ;
+      lci:noteByLiteral "An <AbstractObject> does not exist in space and time, and does not have properties or relationships that change.Most instances of <AbstractObject> are classes, but there are a few mostly to do with mathematics that are not." .
+
+lci:ClassOfOrderedPairOfTimeDuration
+      lci:definitionByLiteral
+              "class that is the power class of <OrderedPairOfTimeDuration>" ;
+      lci:identificationByLiteral
+              "class of ordered pair of time duration" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Event
+      lci:definitionByLiteral
+              "<Individual> that has zero extent in time" ;
+      lci:descriptionOfExampleByLiteral
+              "The connection of power to pump P_101 is an <Event>. This event that marks the beginning of a temporal part of pump P_101." ;
+      lci:identificationByLiteral
+              "event" ;
+      lci:noteByLiteral "An <Event> is the temporal boundary of one or more instances of <Individual> although there may be no knowledge of them." .
+
+lci:RepresentationSpace
+      lci:definitionByLiteral
+              "<AbstractObject> that is a relationship between members of <Thing> and either literals, members of <InformationObject>, or members of <InformationContent>" ;
+      lci:identificationByLiteral
+              "representation space" ;
+      lci:noteByLiteral "A member of <IdentificationSpace> is implemented in this part of ISO 15926 as an owl:AnnotationProperty." .
+
+lci:InformationContent
+      lci:definitionByLiteral
+              "<ClassOfInformationObject> that has the information that is intended to be conveyed as the criterion for membership" ;
+      lci:descriptionOfExampleByLiteral
+              "The content of the material certificate issued by the Schmidt Stahl inspector for material product M-101-1234 produced by Schmidt Stahl is <InformationContent>. The information is represented on the ink on paper material certificate for M-101-1234, which bears the signature of the Schmidt Stahl inspector; the PDF file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.pdf, which contains a scan of the ink on paper material certificate; the XML file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.xml, which is in accordance with the standard XML material certificate schema auto-gration_messages.xsd.Permission to proceed past railway signal VS1234 between 10:02:30 and 10:02:45 on 2014-05-19 is an item of <InformationContent>. The information is represented by the state of railway signal VS1234 between 10:02:30 and 10:02:45 on 2014-05-19." ;
+      lci:identificationByLiteral
+              "information content" ;
+      lci:noteByLiteral "Different instances of <InformationContent> can form a class hierarchy. Hence there can be 'material certificate for M-101-1234' with subclasses 'material certificate for M-101-1234 with inspector signature' and 'material certificate for M-101-1234 without inspector signature'. A signed ink and paper document and its scanned image as a PDF file are members of the former. An XML file representation of the material certificate is a member of the latter.Different encodings for <InformationContent>, such as PDF, XML, RDF graph, and <TextString>, are subclasses of <InformationContent>." .
+
+lci:indirectlyConnectedTo
+      lci:definitionByLiteral
+              "<Individual> that is indirectly connected" ;
+      lci:descriptionOfExampleByLiteral
+              "Vessel V_101 has an <indirectlyConnectedTo> relationship with pump P_101. There is a length of pipe between the two." ;
+      lci:identificationByLiteral
+              "indirectly connected to" .
+
+lci:valueHasCauseOccurrence
+      lci:definitionByLiteral
+              "the subject has a <hasCause> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value has cause occurrence" .
+
+lci:CrystallineStructure
+      lci:definitionByLiteral
+              "<ClassOfArrangedIndividual> that has its criterion for membership the nature of the regular aggregation of simple elements and their compounds by the operation of natural affinity" ;
+      lci:descriptionOfExampleByLiteral
+              "Ferritic, martensitic, and austenitic are instances of <CrystallineStructure>." ;
+      lci:identificationByLiteral
+              "crystalline structure" .
+
+lci:temporalPartOf
+      lci:definitionByLiteral
+              "<Individual> that is consists of the part and nothing else during a period of time or at an instant in time" ;
+      lci:identificationByLiteral
+              "temporal part of" ;
+      lci:noteByLiteral "Since <temporalPartOf> is transitive a hierarchy of temporal parts is possible, with a <WholeLifeIndividual> at the top." .
+
+lci:valueHasPartOccurrence
+      lci:definitionByLiteral
+              "the subject has a <hasPart> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value has part occurrence" .
+
+lci:Person
+      lci:definitionByLiteral
+              "<Organism> that is a person" ;
+      lci:descriptionOfExampleByLiteral
+              "Nils Sandsmark, Tim Berners-Lee and Ian Horrocks instances of <Person>." ;
+      lci:identificationByLiteral
+              "person" ;
+      lci:noteByLiteral "Engineer, plant manager, student, male, female, senior citizen, adult, girl, and boy are subclasses of <Person>." .
+
+lci:contains
+      lci:definitionByLiteral
+              "<Individual> that is contained, but that is not part of the container" ;
+      lci:descriptionOfExampleByLiteral
+              "Tank T_101 during 2014-04-11 has a <contains> relationship with the batch of oil B_101 during 2014-04-11 ." ;
+      lci:identificationByLiteral
+              "contains" .
+
+lci:ClassOfRegionInSpace
+      lci:definitionByLiteral
+              "class that is the power class of <RegionInSpace>" ;
+      lci:identificationByLiteral
+              "class of region in space" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:referencedBy
+      lci:definitionByLiteral
+              "<Activity> that makes reference" ;
+      lci:descriptionOfExampleByLiteral
+              "The <InformationContent> that is the material certificate with URI http://schmidt-stahl.de/material-certificate/M-101-1234 has a <referencedBy> relationship with the <Activity> 'accept delivery of material product M-101-1234'. The URI identifies the content of the certificate, which can be physical represented as ink on paper, PDF or XML.The <ClassOfActivity> that is plan P-101-2 has a <referencedBy> relationship with the <Activity> 'issue work order for planned activity P-101-2'." ;
+      lci:identificationByLiteral
+              "referenced by" .
+
+lci:TimeDurationRatio
+      lci:definitionByLiteral
+              "<PhysicalQuantityRatio> that is a <ClassOfOrderedPairOfTimeDuration>" ;
+      lci:descriptionOfExampleByLiteral
+              "10 seconds in each hour' is a <TimeDurationRatio>." ;
+      lci:identificationByLiteral
+              "time duration ratio" .
+
+lci:identificationByInformationContent
+      lci:definitionByLiteral
+              "<identificationBy> and <representationByInformationContent>" ;
+      lci:identificationByLiteral
+              "identification by information content" .
+
+lci:hasEnd
+      lci:definitionByLiteral
+              "<Event> that is the end" ;
+      lci:descriptionOfExampleByLiteral
+              "The <PeriodInTime> June 1999 has a <hasEnd> relationship with the <PointInTime> 1999-07-01T00:00.The <Individual> 'loading plant operating on 2014-04-11' has a <hasEnd> relationship with the <Event> 'loading L_101 on 2014-04-11 complete'." ;
+      lci:identificationByLiteral
+              "has end" .
+
+lci:causesBeginningOf
+      lci:definitionByLiteral
+              "<Individual> that has its beginning caused" ;
+      lci:descriptionOfExampleByLiteral
+              "Forging activity F_101 has a <causesBeginningOf> relationship with pump casing PC_101." ;
+      lci:identificationByLiteral
+              "causes beginning of" .
+
+lci:valueHasTemporalPartOccurrence
+      lci:definitionByLiteral
+              "the subject has a <hasTemporalPart> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value has temporal part occurrence" .
+
+lci:realAsLiteral
+      lci:definitionByLiteral
+              "<numberAsLiteral> that represents the <Real> in decimal" ;
+      lci:identificationByLiteral
+              "real as literal" .
+
+lci:Thing
+      lci:definitionByLiteral
+              "an <Individual> or <AbstractObject>" ;
+      lci:identificationByLiteral
+              "thing" ;
+      lci:noteByLiteral "An owl:Thing can be something other than an <Individual> or <AbstractObject>. Therefore <Thing> is a subclass of owl:Thing." .
+
+lci:BiologicalMatter
+      lci:definitionByLiteral
+              "<PhysicalObject> that that consists of all or part of one or more biological cells alive or dead" ;
+      lci:identificationByLiteral
+              "biological matter" ;
+      lci:noteByLiteral "Blood, enzyme and plazma are subclasses of <BiologicalMatter>." .
+
+lci:ClassOfBiologicalMatter
+      lci:definitionByLiteral
+              "class that is the power class of <BiologicalMatter>" ;
+      lci:identificationByLiteral
+              "class of biological matter" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:textStringAsLiteral
+      lci:definitionByLiteral
+              "text string literal that represents the <TextString>" ;
+      lci:descriptionOfExampleByLiteral
+              "The <TextString> that defines the testing requirement for pump P-101 has a <textStringAsLiteral> relationship with the literal 'To be tested before 08:00, and a test report filed'." ;
+      lci:identificationByLiteral
+              "text string as literal" .
+
+lci:iso8601IdentificationOfPeriodInTime
+      lci:definitionByLiteral
+              "text that identifies a <PeriodInTime> in accordance with ISO 8601" ;
+      lci:descriptionOfExampleByLiteral
+              "The <PeriodInTime> that is the 1st July 1999 has a <iso8601IdentificationOfPeriodInTime> relationship with the text '1999-07-01'The <PeriodInTime> that is from ten o'clock until quarter past ten on the 1st July 1999 as defined by UTC has a <iso8601IdentificationOfPeriodInTime> relationship with the text '1999-07-01T10:00:00Z/1999-07-01T10:15:00Z'" ;
+      lci:identificationByLiteral
+              "ISO 8601 identification of period in time" .
+
+lci:powerClassOf
+      lci:definitionByLiteral
+              "<Class> that the power class is obtained from" ;
+      lci:identificationByLiteral
+              "power class of" ;
+      lci:noteByLiteral "The power class 'Class of A' of the class 'A' is set of all subclasses of A, including A itself. The use of power class relationships in an ontology is not supported by inferencing, but is an aid to to rigorous structuring of an ontology.A powerclass can be defined as an OWL Restriction class on the property rdfs:subClassOf." .
+
+lci:PhysicalQuantityRange
+      lci:definitionByLiteral
+              "<PhysicalQuantitySpace> and <QuantityRange>" ;
+      lci:descriptionOfExampleByLiteral
+              "The instances of mass that are greater than 10 kilograms and less than 15 kilograms is a <PhysicalQuantityRange>" ;
+      lci:identificationByLiteral
+              "physical quantity range" .
+
+lci:PointInTime
+      lci:definitionByLiteral
+              "<Individual> that is all that exists in space at an instant in time" ;
+      lci:descriptionOfExampleByLiteral
+              "1999-05-13T16:31:23.56Z' is an identification of a <PointInTime>, which is defined by ISO 8601." ;
+      lci:identificationByLiteral
+              "point in time" ;
+      lci:noteByLiteral "A <PointInTime> can be regarded as an unbounded 3D 'plane' within 4D space-time that has a zero temporal extent." .
+
+lci:hasCause
+      lci:definitionByLiteral
+              "<Activity> that is a cause" ;
+      lci:descriptionOfExampleByLiteral
+              "The <Activity> 'load tanker T_101 on 2014-04-11' has a <hasCause> relationship with the <Event> 'tanker T_101 full on 2014-04-11'." ;
+      lci:identificationByLiteral
+              "has cause" .
+
+lci:descriptionOfExampleByLiteral
+      lci:definitionByLiteral
+              "<descriptionOfExampleBy> and <representationByLiteral>" ;
+      lci:identificationByLiteral
+              "description of example by literal" .
+
+lci:connectedTo
+      lci:definitionByLiteral
+              "<Individual> that is connected directly or indirectly, such that matter, energy or load or a combination of these can be transferred" ;
+      lci:identificationByLiteral
+              "connected to" .
+
+lci:valueHasBeginningOccurrence
+      lci:definitionByLiteral
+              "the subject has a <hasBeginning> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value has beginning occurrence" .
+
+lci:Integer
+      lci:definitionByLiteral
+              "<Number> that is a member of the system of integer numbers" ;
+      lci:descriptionOfExampleByLiteral
+              "27 is an <Integer>." ;
+      lci:identificationByLiteral
+              "integer" .
+
+lci:classCausesValue
+      lci:definitionByLiteral
+              "each member of the subject has a <causes> relationship with the object" ;
+      lci:identificationByLiteral
+              "class causes value" .
+
+lci:before
+      lci:definitionByLiteral
+              "<Individual> that is before and does not overlap" ;
+      lci:descriptionOfExampleByLiteral
+              "The <Individual> 'F_101 under construction' has a <before> relationship with the <Individual> 'F_101 under commissioning'." ;
+      lci:identificationByLiteral
+              "before" .
+
+lci:Phase
+      lci:definitionByLiteral
+              "<ClassOfArrangedIndividual> that has its criterion for membership the nature of the boundary behaviour of a material resulting from its atomic or molecular bonding" ;
+      lci:descriptionOfExampleByLiteral
+              "Liquid and solid are instances of <Phase>." ;
+      lci:identificationByLiteral
+              "phase" .
+
+lci:ActualIndividual
+      lci:definitionByLiteral
+              "<Individual> that actually exists in the real world" ;
+      lci:descriptionOfExampleByLiteral
+              "The 25 gallon per minute pump that was required for the Omega production system from 21 March 1998 is a <Individual>.The pump manufactured in July of 1998 that has a capacity of 28 gallon per minute is an <ActualIndividual>." ;
+      lci:identificationByLiteral
+              "actual individual" .
+
+lci:classHasCauseOfBeginningOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <hasCauseOfBeginning> relationship with a member of the object, and each member of the object has a <causesBeginningOf> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class has cause of beginning occurrence" .
+
+lci:QuantityRatio
+      lci:definitionByLiteral
+              "<Ratio> that is a <ClassOfOrderedPairOfQuantity>" ;
+      lci:identificationByLiteral
+              "quantity ratio" .
+
+lci:iso8601IdentificationOfPointInTime
+      lci:definitionByLiteral
+              "text that identifies a <PointInTime> in accordance with ISO 8601" ;
+      lci:descriptionOfExampleByLiteral
+              "The <PointInTime> that is the beginning of the 1st July 1999 as defined by UTC has a <iso8601IdentificationOfPointInTime> relationship with the text '1999-07-01T00:00:00Z'" ;
+      lci:identificationByLiteral
+              "ISO 8601 identification of point in time" .
+
+lci:classLocatedRelativeToValue
+      lci:definitionByLiteral
+              "each member of the subject has a <locatedRelativeTo> relationship with the object" ;
+      lci:identificationByLiteral
+              "class located relative to value" .
+
+lci:begins
+      lci:definitionByLiteral
+              "<Individual> that begins" ;
+      lci:descriptionOfExampleByLiteral
+              "The <PointInTime> 1999-07-01T00:00 has a <begins> relationship with the <PeriodInTime> July 1999.The <Event> 'loading L_101 on 2014-04-11 complete' has a <begins> relationship with the <Individual> 'loading plant idle on 2014-04-11'." ;
+      lci:identificationByLiteral
+              "begins" .
+
+lci:ClassOfClassOfActivity
+      lci:definitionByLiteral
+              "class that is the power class of <ClassOfActivity>" ;
+      lci:identificationByLiteral
+              "class of class of activity" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ParticulateMaterial
+      lci:definitionByLiteral
+              "<PhysicalObject> that is an amount of super-molecular sized objects" ;
+      lci:descriptionOfExampleByLiteral
+              "The load of sand delivered on 2014-03-31 is a <ParticulateMaterial>." ;
+      lci:identificationByLiteral
+              "particulate material" ;
+      lci:noteByLiteral "The super-molecular sized objects can be of the same or different types." .
+
+lci:representationBy
+      lci:definitionByLiteral
+              "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that represents" ;
+      lci:identificationByLiteral
+              "representation by" ;
+      lci:noteByLiteral "An 'description' attribute of ISO 10303-41 entity such as 'product' is an <representationBy> relationship." .
+
+lci:CompositeMaterial
+      lci:definitionByLiteral
+              "<PhysicalObject> that is an arrangement of separable compounds" ;
+      lci:identificationByLiteral
+              "composite material" ;
+      lci:noteByLiteral "Plywood and glass reinforced plastic are subclasses of <CompositeMaterial>." .
+
+lci:Real
+      lci:definitionByLiteral
+              "<Number> that is a member of the system of real numbers" ;
+      lci:descriptionOfExampleByLiteral
+              "9.5 is an <Real>." ;
+      lci:identificationByLiteral
+              "real" .
+
+lci:hasFirstInPair
+      lci:definitionByLiteral
+              "thing that is the first item in the <OrderedPair>" ;
+      lci:descriptionOfExampleByLiteral
+              "The <OrderedPair> ('50 hours', '200 hours') has a <hasFirstInPair> relationship with the <TimeDuration> '50 hours'." ;
+      lci:identificationByLiteral
+              "has first in pair" .
+
+lci:participantIn
+      lci:definitionByLiteral
+              "<Activity> that is participated in" ;
+      lci:descriptionOfExampleByLiteral
+              "Pump P_101 during 2002-12-02 has a <participantIn> relationship with the activity 'discharge of motor vessel Murex on 2002-12-02'." ;
+      lci:identificationByLiteral
+              "participant in" .
+
+lci:ClassOfEvent
+      lci:definitionByLiteral
+              "class that is the power class of <Event>" ;
+      lci:identificationByLiteral
+              "class of event" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfPointInSpace
+      lci:definitionByLiteral
+              "class that is the power class of <PointInSpace>" ;
+      lci:identificationByLiteral
+              "class of point in space" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:RangePhysicalQuantity
+      lci:definitionByLiteral
+              "<RangeQuantity> that is all members of all instances of <PhysicalQuantity> within a <PhysicalQuantityRange>" ;
+      lci:descriptionOfExampleByLiteral
+              "The instances of <Individual> with a mass greater than 10 kilograms and less than 15 kilograms is a <RangePhysicalQuantity>." ;
+      lci:identificationByLiteral
+              "range physical quantity" .
+
+lci:subPhysicalQuantitySpaceOf
+      lci:definitionByLiteral
+              "<PhysicalQuantitySpace> that is a subspace" ;
+      lci:identificationByLiteral
+              "sub physical quantity space of" .
+
+lci:ClassOfIndividual
+      lci:definitionByLiteral
+              "class that is the power class of <Individual>" ;
+      lci:identificationByLiteral
+              "class of individual" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:representationSpaceAssignedBy
+      lci:definitionByLiteral
+              "<Individual> that is responsible for the representations" ;
+      lci:identificationByLiteral
+              "representation space has responsible" .
+
+lci:PeriodInTime
+      lci:definitionByLiteral
+              "<Individual> that is all that exists in space for a period in time" ;
+      lci:descriptionOfExampleByLiteral
+              "From 2000-11-21T06:00Z to 2000-11-21T11:53Z is a <PeriodInTime>." ;
+      lci:identificationByLiteral
+              "period in time" ;
+      lci:noteByLiteral "A <PeriodInTime> is bounded by a start <PointInTime> and an end <PointInTime>." .
+
+lci:identificationByInformationObject
+      lci:definitionByLiteral
+              "<identificationBy> and <representationByInformationObject>" ;
+      lci:identificationByLiteral
+              "identification by information object" .
+
+lci:hasArrangedPart
+      lci:definitionByLiteral
+              "<Individual> that is an arranged part of the whole with a distinct role" ;
+      lci:descriptionOfExampleByLiteral
+              "Formation F_101 from 2014-04-11T10:50 to 2014-04-11T12:15 has an <hasArrangedPart> relationship with Aircraft A_101 from 2014-04-11T10:50 to 2014-04-11T12:15, which it is flying within it.Warehouse W_101 has an <hasArrangedPart> relationship with Bin B_101, which it is a part of the layout." ;
+      lci:identificationByLiteral
+              "has arranged part" ;
+      lci:noteByLiteral "An <hasArrangedPart> relationship says a part has a particular role with respect to the whole. The nature of this role is not specified by this relationship, but must be specified by a classification of the part." .
+
+lci:PhysicalProperty
+      lci:definitionByLiteral
+              "<QuantityMeasure> that has a <PhysicalQuantitySpace> as its range" ;
+      lci:descriptionOfExampleByLiteral
+              "'Maximum allowable working temperature' is a <PhysicalProperty>. The relationship between stream S-101 and its maximum allowable working temperature of 300 degrees Celsius is not a classification of the stream. Instead it is a classification of a hypothetical limit state. 'Internal pressure' is a <PhysicalProperty>. The relationship between vessel V-101 at 2016-03-09T12:30Z and its internal pressure of 1.5 bar is not a classification of the vessel at 2016-03-09T12:30Z. Instead it is a classification of the fluid within vessel V-101 at 2016-03-09T12:30Z." ;
+      lci:identificationByLiteral
+              "physical property" ;
+      lci:noteByLiteral "A member of <PhysicalProperty> is implemented in this part of ISO 15926 as an owl:ObjectProperty with the range <PhysicalQuantity>." .
+
+lci:quantityRangeHasUpperBound
+      lci:definitionByLiteral
+              "<Quantity> that is the upper bound" ;
+      lci:identificationByLiteral
+              "quantity range has upper bound" .
+
+lci:TextString
+      lci:definitionByLiteral
+              "<ClassOfInformationContent> that is a sequence of person interpretable characters, symbols or spaces" ;
+      lci:descriptionOfExampleByLiteral
+              "'To be tested before 08:00, and a test report filed' is a <TextString>." ;
+      lci:identificationByLiteral
+              "text string" ;
+      lci:noteByLiteral "The class <TextString> is included to allow meta-data, such as a source, to be specified for a text string. This is not possible if the text string is represented as an RDF literal. The content of a <TextString> can be specified by the property <textStringAsLiteral>." .
+
+lci:descriptionByInformationContent
+      lci:definitionByLiteral
+              "<descriptionBy> and <representationByInformationContent>" ;
+      lci:identificationByLiteral
+              "description by information content" .
+
+lci:noteBy
+      lci:definitionByLiteral
+              "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that is a note" ;
+      lci:identificationByLiteral
+              "note by" ;
+      lci:noteByLiteral "<noteBy> has the same meaning as the SKOS property 'scopeNote'." .
+
+lci:descriptionByLiteral
+      lci:definitionByLiteral
+              "<descriptionBy> and <representationByLiteral>" ;
+      lci:identificationByLiteral
+              "description by literal" .
+
+lci:valueEndsOccurrence
+      lci:definitionByLiteral
+              "the subject has a <ends> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value ends occurrence" .
+
+lci:hasBeginning
+      lci:definitionByLiteral
+              "<Event> that is the beginning" ;
+      lci:descriptionOfExampleByLiteral
+              "The <PeriodInTime> July 1999 has a <hasBeginning> relationship with the <PointInTime> 1999-07-01T00:00.The <Individual> 'loading plant idle on 2014-04-11' has a <hasBeginning> relationship with the <Event> 'loading L_101 on 2014-04-11 complete'." ;
+      lci:identificationByLiteral
+              "has beginning" .
+
+lci:ComputerFileContent
+      lci:definitionByLiteral
+              "<ClassOfComputerFile> that has the sequence of bytes as its criterion for membership" ;
+      lci:descriptionOfExampleByLiteral
+              "The sequence of bytes that is a particular scan of the ink on paper material certificate for material product M-101-1234 as a PDF file is a <ComputerFileContent>. The file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.pdf is a member of this class. The copy of the file on the laptop belonging to Henry Dubois is also a member of this class." ;
+      lci:identificationByLiteral
+              "computer file content" ;
+      lci:noteByLiteral "XML, TURTLE and PDF are subclasses of <ComputerFileContent>." .
+
+lci:ClassOfMathematicalFunction
+      lci:definitionByLiteral
+              "class that is the power class of <MathematicalFunction>" ;
+      lci:identificationByLiteral
+              "class of mathematical function" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:causesEndOf
+      lci:definitionByLiteral
+              "<Individual> that has its end caused" ;
+      lci:descriptionOfExampleByLiteral
+              "Refurbishment activity R_101 has a <causesEndOf> relationship with Pump tag P_101, which is replaced by two pumps P_101A and P_101B." ;
+      lci:identificationByLiteral
+              "causes end of" .
+
+lci:hasAssembledPart
+      lci:definitionByLiteral
+              "<Individual> that is an assembled part of the whole" ;
+      lci:descriptionOfExampleByLiteral
+              "Pump P_101 during 2013 has an <hasAssembledPart> relationship with Impeller I_345 during 2013." ;
+      lci:identificationByLiteral
+              "has assembled part" .
+
+lci:classReferencesOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <references> relationship with a member of the object, and each member of the object has a <referencedBy> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class references occurrence" .
+
+lci:classBeginsValue
+      lci:definitionByLiteral
+              "each member of the subject has a <begins> relationship with the object" ;
+      lci:identificationByLiteral
+              "class begins value" .
+
+lci:Quantity
+      lci:definitionByLiteral
+              "<ClassOfIndividual> that has the degree or magnitude of a quality or characteristic as the criterion for membership" ;
+      lci:descriptionOfExampleByLiteral
+              "The mass 10 kilograms is a <Quantity>.The monetary amount 10 euro is a <Quantity>." ;
+      lci:identificationByLiteral
+              "quantity" .
+
+lci:numberRangeHasLowerBound
+      lci:definitionByLiteral
+              "<Number> that is the lower bound" ;
+      lci:identificationByLiteral
+              "number range has lower bound" .
+
+lci:ClassOfPhysicalProperty
+      lci:definitionByLiteral
+              "class that is the power class of <PhysicalProperty>" ;
+      lci:identificationByLiteral
+              "class of physical property" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Non-actualIndividual
+      lci:definitionByLiteral
+              "<Individual> that is not an <ActualIndividual>" ;
+      lci:descriptionOfExampleByLiteral
+              "The planned 'Hinkley Point C' power station is a <PhysicalObject> and a <Non-actualIndividual>" ;
+      lci:identificationByLiteral
+              "non-actual individual" .
+
+lci:ClassOfInformationContent
+      lci:definitionByLiteral
+              "class that is the power class of <InformationContent>" ;
+      lci:identificationByLiteral
+              "class of information content" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueAfterOccurrence
+      lci:definitionByLiteral
+              "the subject has a <after> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value after occurrence" .
+
+lci:valueReferencesOccurrence
+      lci:definitionByLiteral
+              "the subject has a <references> relationship with each member of the object" ;
+      lci:identificationByLiteral
+              "value references occurrence" .
+
+lci:representationSpaceUsedBy
+      lci:definitionByLiteral
+              "<Individual> that uses the representations" ;
+      lci:identificationByLiteral
+              "representation space used by" .
+
+lci:Atom
+      lci:definitionByLiteral
+              "<PhysicalObject> that is an atom" ;
+      lci:identificationByLiteral
+              "atom" ;
+      lci:noteByLiteral "An atom is the basic unit of matter that consists of a dense central nucleus surrounded by a cloud of negatively charged electrons (wikipedia).All entries in the periodic table of elements are subclasses of <Atom>." .
+
+lci:RegionInSpace
+      lci:definitionByLiteral
+              "<Individual> that is all that exists in time for a region in space" ;
+      lci:identificationByLiteral
+              "region in space" ;
+      lci:noteByLiteral "A <RegionInSpace> can be defined in any spatial frame. It can be defined with respect to a moving or moveable object, such as a ship or an equipment item.License block, construction area, country, air corridor, maritime traffic zone, and hazard control zone are subclasses of <RegionInSpace>." .
+
+lci:classCausesEndOfOccurrence
+      lci:definitionByLiteral
+              "each member of the subject has a <causesEndOf> relationship with a member of the object, and each member of the object has a <hasCauseOfEnd> relationship with a member of the subject" ;
+      lci:identificationByLiteral
+              "class causes end of occurrence" .
+
+lci:definitionByLiteral
+      lci:definitionByLiteral
+              "<definitionBy> and <representationByLiteral>" ;
+      lci:identificationByLiteral
+              "definition by literal" .
+
+lci:Status
+      lci:definitionByLiteral
+              "<ClassOfIndividual> that is a member of a set of discrete, unordered values with related criteria for membership" ;
+      lci:descriptionOfExampleByLiteral
+              "'Open' and 'closed' are instances of <Status>.'Running', 'on standby' and 'unavailable' are instances of <Status>." ;
+      lci:identificationByLiteral
+              "status" ;
+      lci:noteByLiteral "It is usually necessary to create a subclass of <Status> that contains the classes with related criteria for membership. Hence the subclass of <Status> 'Open or closed' has the classes 'open' and 'closed' as members.The class Mass has the classes 1.1 kg and 1.2 kg as members. These two classes have related criteria for membership, but they are not members of <Status> because mass is not regarded as discrete at engineering scales. Instead masses are members of <PhysicalQuantity>." .
+
+lci:RepresentationFormat
+      lci:definitionByLiteral
+              "<ClassOfInformationContent> that has the format used for encoding the <InformationContent> as the criterion for membership" ;
+      lci:descriptionOfExampleByLiteral
+              "XML, TURTLE, PDF and <TextString> are members of a <RepresentationFormat>.The standard material certificate XML schema auto-gration_messages.xsd is a <RepresentationFormat>." ;
+      lci:identificationByLiteral
+              "representation format" ;
+      lci:noteByLiteral "The instances of <InformationObject> than hold an item of <InformationContent> are members." .
+
+lci:hasTemporalPart
+      lci:definitionByLiteral
+              "<Individual> that is all of the whole during a period of time or at an instant in time" ;
+      lci:identificationByLiteral
+              "has temporal part" ;
+      lci:noteByLiteral "Since <hasTemporalPart> is transitive a hierarchy of temporal parts is possible, with a <WholeLifeIndividual> at the top." .
+
+lci:directlyConnectedTo
+      lci:definitionByLiteral
+              "<Individual> that is directly connected" ;
+      lci:descriptionOfExampleByLiteral
+              "End 1 of cable C_101 during 2014 has a <directlyConnectedTo> relationship with terminal T_101 of distribution box DB_101 during 2014." ;
+      lci:identificationByLiteral
+              "directly connected to" .
+
+lci:ClassOfAbstractObject
+      lci:definitionByLiteral
+              "class that is the power class of <AbstractObject>" ;
+      lci:identificationByLiteral
+              "class of abstract object" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfQuantity
+      lci:definitionByLiteral
+              "class that is the power class of <PhysicalQuantity>" ;
+      lci:identificationByLiteral
+              "class of quantity" ;
+      lci:noteByLiteral "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:hasCauseOfEnd
+      lci:definitionByLiteral
+              "<Activity> that causes the end" ;
+      lci:descriptionOfExampleByLiteral
+              "Pump tag P_101 has a <hasCauseOfEnd> relationship with refurbishment activity R_101, which replaces it with two pumps P_101A and P_101B." ;
+      lci:identificationByLiteral
+              "has cause of end" .

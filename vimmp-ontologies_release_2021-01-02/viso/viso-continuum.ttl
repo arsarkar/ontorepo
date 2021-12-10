@@ -1,0 +1,340 @@
+
+########################################################################################
+#                                                                                      #
+#              Branch of VISO for (RoMM-)CONTINUUM MODELS/SOLVERS                      #
+#                                                                                      #
+########################################################################################
+
+@prefix viso: <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>.
+@prefix viso-co: <https://purl.vimmp.eu/semantics/viso/viso-continuum.ttl#>.
+@prefix viprs: <https://purl.vimmp.eu/semantics/alignment/viprs.ttl#>.
+@prefix vov: <https://purl.vimmp.eu/semantics/vov/vov.ttl#>.
+
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xs: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+
+<https://purl.vimmp.eu/semantics/viso/viso-continuum.ttl#> a owl:Ontology.
+
+############################  Ontology header  #########################################
+
+<https://purl.vimmp.eu/semantics/viso/viso-continuum.ttl#>
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>;
+  dcterms:title "VISO-CO: Branch of VISO for (RoMM-)COntinuum models/solvers"^^xs:string;
+  dcterms:modified "2020-06-19"^^xs:string;
+  dcterms:creator "Gianluca Boccardo (ORCID 0000-0003-1264-8237)"^^xs:string;
+  dcterms:creator "Martin T. Horsch (ORCID 0000-0002-9464-6739)"^^xs:string;
+  dcterms:creator "Silvia Chiacchiera (ORCID 0000-0003-0422-7870)"^^xs:string;
+  dcterms:creator "Michael A. Seaton (ORCID 0000-0002-4708-573X)"^^xs:string;
+  dcterms:creator "Ilian T. Todorov (ORCID 0000-0001-7275-1784)"^^xs:string;
+  dcterms:creator "Mara Chiricotto (ORCID 0000-0003-1609-5254)"^^xs:string;
+  dcterms:creator "Joshua D. Elliott (ORCID 0000-0002-0729-246X)"^^xs:string;
+  dcterms:contributor "Welchy Leite Cavalcanti"^^xs:string;
+  dcterms:contributor "Gerhard Goldbeck (ORCID 0000-0002-4181-2852)"^^xs:string;
+  dcterms:contributor "Daniele Toti (ORCID 0000-0002-9668-6961)"^^xs:string;	
+  dcterms:license "GNU Lesser General Public License (LGPL) version 3"^^xs:string;
+  dcterms:description """VISO-CO expands on the model types, model and solver features for
+Continuum (as per RoMM) models."""^^xs:string;
+  dcterms:bibliographicCitation "10.1021/acs.jced.9b00739"^^xs:string;
+  rdfs:comment """The authors acknowledge funding from the European Union's Horizon 2020 research and
+innovation programme under grant agreement no. 760907, Virtual Materials Marketplace (VIMMP)."""^^xs:string.
+
+##############  Continuum model types ##################################
+
+viso-co:computational_fluid_dynamics a owl:Class;
+  rdfs:subClassOf viso:co_model_type;
+  rdfs:comment "Computational Fluid Dynamics."^^xs:string.
+
+viso-co:equation_of_state_method a owl:Class;
+  rdfs:subClassOf viso:co_model_type;
+  rdfs:comment "Equation of State Method."^^xs:string.
+
+viso-co:CFD a viso-co:computational_fluid_dynamics;
+   viso:has_osmo_pe_type_id "CO.2";
+   viso:has_pe [a viso-co:transport_equation].
+
+viso-co:EOS_METHOD a viso-co:equation_of_state_method;
+   viso:has_osmo_pe_type_id "CO.5";
+   viso:has_pe [a viso-co:equation_of_state].
+
+##############  Continuum Model feature ###############################
+#######################################################################
+#######################################################################
+
+viso-co:continuum_domain a owl:Class;
+  rdfs:subClassOf viso:co_materials_relation_trait;
+  rdfs:subClassOf viso:co_physical_equation_trait.
+
+viso-co:domain_3d a owl:Class;
+  rdfs:subClassOf viso-co:continuum_domain;
+  rdfs:comment "3D description of the problem."^^xs:string.
+
+viso-co:domain_2d a owl:Class;
+  rdfs:subClassOf viso-co:continuum_domain;
+  rdfs:comment "2D description of the problem."^^xs:string.
+
+viso-co:domain_1d a owl:Class;
+  rdfs:subClassOf viso-co:continuum_domain;
+  rdfs:comment "1D description of the problem."^^xs:string.
+
+viso-co:boundary_condition a owl:Class;
+  rdfs:subClassOf viso:co_external_condition_trait.
+
+viso-co:external_force a owl:Class;
+  rdfs:subClassOf viso:co_external_condition_trait.
+
+viso-co:neumann_bc a owl:Class;
+  rdfs:subClassOf viso-co:boundary_condition;
+  rdfs:comment "Boundary condition where the value of a quantity is set on the specified boundary."^^xs:string.
+
+viso-co:dirichlet_bc a owl:Class;
+  rdfs:subClassOf viso-co:boundary_condition;
+rdfs:comment "Boundary condition where the value of a quantity is set on the specified boundary."^^xs:string.
+
+## Physical Equations
+
+# PE for CFD
+
+viso-co:transport_equation a owl:Class;
+  rdfs:subClassOf viso:co_physical_equation.
+
+viso-co:mass_transport_equation a owl:Class;
+  rdfs:subClassOf viso-co:transport_equation.
+
+viso-co:momentum_transport_equation a owl:Class;
+  rdfs:subClassOf viso-co:transport_equation.
+
+viso-co:energy_transport_equation a owl:Class;
+  rdfs:subClassOf viso-co:transport_equation.
+
+# PE for Continuum Thermodynamics
+
+viso-co:equation_of_state a owl:Class;
+  rdfs:subClassOf viso:co_physical_equation. 
+
+viso-co:fundamental_eos a owl:Class;
+  rdfs:comment "An equation of state (EOS) referring to a free energy (e.g., Helmhotz free energy) is denoted as a fundamental EOS."^^xs:string;
+  rdfs:subClassOf viso-co:equation_of_state.
+
+viso-co:thermal_eos a owl:Class;
+  rdfs:comment "An equation of state (EOS) involving pressure, density, temperature, composition is denoted as a thermal EOS."^^xs:string;
+  rdfs:subClassOf viso-co:equation_of_state.
+
+## Material Relations
+
+# MR for CFD
+
+viso-co:momentum_mat_rel a owl:Class;
+  rdfs:subClassOf viso:co_materials_relation.
+
+viso-co:energy_mat_rel a owl:Class;
+  rdfs:subClassOf viso:co_materials_relation.
+
+viso-co:mass_mat_rel a owl:Class;
+  rdfs:subClassOf viso:co_materials_relation.  
+
+# MR for Continuum Thermodynamics
+
+viso-co:eos_mat_rel a owl:Class;
+  rdfs:subClassOf viso:co_materials_relation.
+
+viso-co:molecular_eos a owl:Class;
+  rdfs:subClassOf viso-co:eos_mat_rel.
+
+viso-co:empirical_eos a owl:Class;
+  rdfs:subClassOf viso-co:eos_mat_rel.
+
+viso-co:saft a owl:Class;
+  rdfs:comment "Statistical Associating Fluid Theory."^^xs:string;
+  rdfs:seeAlso "Walter G. Chapman, Keith E. Gubbins, George Jackson, Maciej Radosz, New reference equation of state for associating liquids, Ind. Eng. Chem. Res. 29, 1709--1721, 1990."^^xs:string;
+  rdfs:subClassOf viso-co:molecular_eos.
+
+viso-co:lct a owl:Class;
+  rdfs:subClassOf viso-co:molecular_eos;
+  rdfs:comment "Lattice Cluster Theory."^^xs:string;
+  rdfs:seeAlso """Jacek Dudowicz and Karl F. Freed, Effect of monomer structure and compressibility on the properties of multicomponent polymer blends and solutions: 1. Lattice
+cluster theory of compressible systems, Macromol. 24, 5076--5095, 1991."""^^xs:string.
+
+##############  Continuum Model Object   ###############################
+
+viso-co:model_object a owl:Class;
+  rdfs:subClassOf viso:co_materials_relation_trait;
+  rdfs:subClassOf viso:model_object;
+  rdfs:comment "Type of object entering the model (e.g., a fluid or an interaction surface)."^^xs:string;
+  owl:disjointUnionOf (viso-co:structureless_object viso-co:composite_object).
+    
+viso-co:structureless_object a owl:Class;
+  rdfs:subClassOf viso-co:model_object.
+
+viso-co:cell a owl:Class;
+  rdfs:comment "A cell, i.e., an elementary volume element"^^xs:string;
+  rdfs:subClassOf viso-co:structureless_object.
+
+viso-co:face a owl:Class;
+  rdfs:comment "A face of a cell, i.e., an elementary surface element"^^xs:string;
+  rdfs:subClassOf viso-co:structureless_object.
+
+viso-co:interaction_surface a owl:Class;
+  rdfs:subClassOf viso-co:structureless_object;
+  rdfs:comment "A surface which affects interactions, for example a wall. It is described as a continuum surface, not in terms of elementary faces."^^xs:string;
+  rdfs:seeAlso "See also the interaction_surface class in VISO-AM"^^xs:string.
+
+viso-co:composite_object a owl:Class;
+rdfs:subClassOf viso-co:model_object;
+rdfs:subClassOf [a owl:Restriction;
+        	owl:onProperty viso:has_part;
+	      	owl:minQualifiedCardinality 2;
+	        owl:onClass viso-co:structureless_object].
+		    
+viso-co:continuum_domain rdfs:subClassOf viso-co:composite_object.
+viso-co:fluid rdfs:subClassOf viso-co:composite_object.
+viso-co:solid rdfs:subClassOf viso-co:composite_object.
+
+##############  Connection of model_type to model_object  #############################
+
+viso:co_model_type rdfs:subClassOf [a owl:Restriction;
+                  owl:onProperty vov:involves_object;
+		  owl:someValuesFrom viso-co:continuum_domain].
+
+##############  Continuum Solver feature ###############################
+#######################################################################
+#######################################################################
+
+
+viso-co:continuum_mesh a owl:Class;
+  rdfs:subClassOf viso:co_solver_feature.
+
+viso-co:mesh_3d a owl:Class;
+  rdfs:subClassOf viso-co:continuum_mesh;
+  rdfs:comment "3D continuum mesh."^^xs:string.
+
+viso-co:mesh_2d a owl:Class;
+  rdfs:subClassOf viso-co:continuum_mesh;
+  rdfs:comment "2D continuum mesh."^^xs:string.
+
+viso-co:mesh_1d a owl:Class;
+  rdfs:subClassOf viso-co:continuum_mesh;
+  rdfs:comment "1D continuum mesh."^^xs:string.
+
+
+viso-co:spatial_discretization_scheme a owl:Class;
+  rdfs:subClassOf viso:co_solver_feature;
+  rdfs:comment "Schemes for discretization of quantities in space."^^xs:string.
+
+viso-co:temporal_discretization_scheme a owl:Class;
+  rdfs:subClassOf viso:co_solver_feature;
+  rdfs:comment "Schemes for discretization of quantities in time."^^xs:string.
+
+viso-co:divergence_scheme a owl:Class;
+  rdfs:subClassOf viso-co:spatial_discretization_scheme;
+  rdfs:comment "Schemes for discretization of the divergence of quantities."^^xs:string.
+
+viso-co:gradient_scheme a owl:Class;
+  rdfs:subClassOf viso-co:spatial_discretization_scheme;
+  rdfs:comment "Schemes for discretization of the gradient of quantities."^^xs:string.
+
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+###  DATATYPE PROPERTIES
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+# No necessary datatypes for viso-continuum.
+
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+###  OBJECT PROPERTIES
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+viso-co:has_closure a owl:ObjectProperty;
+  rdfs:domain viso:co_physical_equation;
+  rdfs:range viso:co_materials_relation;
+  rdfs:subPropertyOf viso:is_connected_to;
+  rdfs:subPropertyOf viprs:has_requirement_satisfied_by.
+
+viso-co:is_closure_of a owl:ObjectProperty;
+  rdfs:domain viso:co_materials_relation;
+  rdfs:range viso:co_physical_equation;
+  owl:inverseOf viso-co:has_closure;
+  rdfs:subPropertyOf viso:is_connected_to;
+  rdfs:subPropertyOf viprs:satisfies_requirement_of.
+  
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+###  INSTANCES DEFINITION and DECLARATION OF DIFFERENCES
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+# Physical Equations
+
+viso-co:NAVIER_STOKES a viso-co:momentum_transport_equation;
+viso-co:has_closure viso-co:NEWTONIAN_STRESS_TENSOR;
+  rdfs:comment "Navier-Stokes transport equation for momentum."^^xs:string.
+
+viso-co:ADVECTION_DIFFUSION a viso-co:mass_transport_equation;
+viso-co:has_closure viso-co:DIFFUSION_EINSTEIN_EQUATION;
+  rdfs:comment "Advection-Diffusion equation (i.e.: drift-diffusion equation) for transport of a mass scalar quantity (e.g. concentration)."^^xs:string.
+
+# Material Relations
+
+viso-co:NEWTONIAN_STRESS_TENSOR a viso-co:momentum_mat_rel;
+viso-co:is_closure_of viso-co:NAVIER_STOKES;
+  rdfs:comment "Stress tensor with constant viscosity."^^xs:string.
+
+viso-co:DIFFUSION_EINSTEIN_EQUATION a viso-co:mass_mat_rel;
+viso-co:is_closure_of viso-co:ADVECTION_DIFFUSION;
+  rdfs:comment "Einstein equation for molecular diffusion of spherical particles."^^xs:string.
+
+# Continuum Schemes
+
+viso-co:FIRST_ORDER_UPWIND a viso-co:divergence_scheme;
+  rdfs:comment "First order upwind discretization scheme."^^xs:string.
+
+viso-co:SECOND_ORDER_UPWIND a viso-co:divergence_scheme;
+  rdfs:comment "Second-order upwind discretization scheme."^^xs:string.
+
+viso-co:CENTRAL_DIFFERENCE_SCHEME a viso-co:divergence_scheme;
+  rdfs:comment "Second-order central discretization scheme."^^xs:string.
+
+viso-co:GRADIENT_GAUSS a viso-co:gradient_scheme;
+  rdfs:comment "Second order, Gaussian integration."^^xs:string.
+
+viso-co:GRADIENT_LEAST_SQUARES a viso-co:gradient_scheme;
+  rdfs:comment "Second order, least squares"^^xs:string.
+
+viso-co:GRADIENT_FOURTH a viso-co:gradient_scheme;
+  rdfs:comment "Fourth order, least squares."^^xs:string.
+
+viso-co:EULER a viso-co:temporal_discretization_scheme;
+  rdfs:comment "Transient, first order, implicit, bounded."^^xs:string.
+
+viso-co:BACKWARD a viso-co:temporal_discretization_scheme;
+  rdfs:comment "Transient, second order implicit, potentially unbounded."^^xs:string.
+
+viso-co:CRANK_NICOLSON a viso-co:temporal_discretization_scheme;
+  rdfs:comment "Transient, second order implicit, bounded."^^xs:string.
+
+# Boundary Conditions
+
+viso-co:CYCLIC_BC a viso-co:boundary_condition.
+
+viso-co:ROBIN_BC a viso-co:boundary_condition.
+
+viso-co:SYMMETRY_BC a viso-co:boundary_condition;
+rdfs:comment "Defines a mirror boundary (the solution is mirrored along that boundary)."^^xs:string.
+
+viso-co:ZERO_GRADIENT a viso-co:neumann_bc.
+
+viso-co:GENERIC_NEUMANN_BC a viso-co:neumann_bc.
+
+viso-co:NO_SLIP a viso-co:dirichlet_bc.
+
+viso-co:GENERIC_DIRICHLET_BC a viso-co:dirichlet_bc.
+
+# External Force
+
+viso-co:GRAVITY a viso-co:external_force.
+
+

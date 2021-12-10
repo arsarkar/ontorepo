@@ -1,0 +1,211 @@
+# baseURI: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/document-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/abstract-object-v-1.0
+
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix lci:     <http://standards.iso.org/iso/15926/ontology/life-cycle-integration/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/document-v-1.0>
+      dc:rights "Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the ontology, to use, copy, modify, merge and distribute free of charge, copies of the ontology for the purposes of developing, implementing, installing and using software based on the ontology, and to permit persons to whom the on-tology is furnished to do so, subject to the following conditions: THE ONTOLOGY IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL ISO, OR ANY OTHER LICENSOR THAT GRANTS THE RIGHT UNDER THE ABOVE PERMISSION TO USE THE ONTOLOGY, BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE ONTOLOGY OR THE USE OR OTHER DEALINGS IN THE ONTOLOGY. In addition, any modified copy of the ontology shall include the following notice: THIS ONTOLOGY HAS BEEN MODIFIED FROM THE ONTOLOGY DEFINED IN ISO 15926-12, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD. "^^xsd:string ;
+      rdf:type owl:Ontology ;
+      owl:imports <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/abstract-object-v-1.0> .
+
+lci:ClassOfClassOfInformationObject
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfClassOfIndividual ;
+      lci:powerClassOf lci:ClassOfInformationObject .
+
+lci:ClassOfComputerFile
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfInformationObject , lci:ClassOfPhysicalObject ;
+      lci:powerClassOf lci:ComputerFile .
+
+lci:ClassOfInformationContent
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfClassOfInformationObject ;
+      lci:powerClassOf lci:InformationContent .
+
+lci:ClassOfInformationObject
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfIndividual ;
+      lci:powerClassOf lci:InformationObject .
+
+lci:ComputerFile
+      rdf:type owl:Class , lci:PhysicalRepresentationType ;
+      rdfs:subClassOf lci:FunctionalPhysicalObject , lci:InformationObject .
+
+lci:ComputerFileContent
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfComputerFile .
+
+lci:ComputerFileFormat
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfComputerFile , lci:PhysicalRepresentationType .
+
+lci:DefinitionSpace
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:RepresentationSpace .
+
+lci:DescriptionSpace
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:RepresentationSpace .
+
+lci:DocumentType
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfInformationContent .
+
+lci:IdentificationSpace
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:RepresentationSpace .
+
+lci:InformationContent
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfInformationObject .
+
+lci:InformationObject
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:Individual .
+
+lci:Language
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfInformationContent .
+
+lci:PhysicalRepresentationType
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfInformationObject .
+
+lci:RepresentationFormat
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfInformationContent .
+
+lci:RepresentationSpace
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:Mapping .
+
+lci:TextString
+      rdf:type owl:Class , lci:RepresentationFormat ;
+      rdfs:subClassOf lci:InformationContent .
+
+lci:definitionBy
+      rdf:type owl:AnnotationProperty , lci:DefinitionSpace ;
+      rdfs:domain lci:Class ;
+      rdfs:subPropertyOf lci:representationBy .
+
+lci:definitionByInformationContent
+      rdf:type owl:AnnotationProperty , lci:DefinitionSpace ;
+      rdfs:subPropertyOf lci:representationByInformationContent , lci:definitionBy .
+
+lci:definitionByInformationObject
+      rdf:type owl:AnnotationProperty , lci:DefinitionSpace ;
+      rdfs:subPropertyOf lci:definitionBy , lci:representationByInformationObject .
+
+lci:definitionByLiteral
+      rdf:type owl:AnnotationProperty , lci:DefinitionSpace ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf lci:definitionBy , lci:representationByLiteral .
+
+lci:descriptionBy
+      rdf:type owl:AnnotationProperty , lci:DescriptionSpace ;
+      rdfs:subPropertyOf lci:representationBy .
+
+lci:descriptionByInformationContent
+      rdf:type owl:AnnotationProperty , lci:DescriptionSpace ;
+      rdfs:subPropertyOf lci:representationByInformationContent , lci:descriptionBy .
+
+lci:descriptionByInformationObject
+      rdf:type owl:AnnotationProperty , lci:DescriptionSpace ;
+      rdfs:subPropertyOf lci:descriptionBy , lci:representationByInformationObject .
+
+lci:descriptionByLiteral
+      rdf:type owl:AnnotationProperty , lci:DescriptionSpace ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf lci:descriptionBy , lci:representationByLiteral .
+
+lci:descriptionOfExampleBy
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:domain lci:Class ;
+      rdfs:subPropertyOf lci:representationBy .
+
+lci:descriptionOfExampleByInformationContent
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:subPropertyOf lci:representationByInformationContent , lci:descriptionOfExampleBy .
+
+lci:descriptionOfExampleByInformationObject
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:subPropertyOf lci:representationByInformationObject , lci:descriptionOfExampleBy .
+
+lci:descriptionOfExampleByLiteral
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf lci:descriptionOfExampleBy , lci:representationByLiteral .
+
+lci:identificationBy
+      rdf:type lci:IdentificationSpace .
+
+lci:identificationByInformationContent
+      rdf:type owl:AnnotationProperty , lci:IdentificationSpace ;
+      rdfs:subPropertyOf lci:identificationBy , lci:representationByInformationContent .
+
+lci:identificationByInformationObject
+      rdf:type owl:AnnotationProperty , lci:IdentificationSpace ;
+      rdfs:subPropertyOf lci:identificationBy , lci:representationByInformationObject .
+
+lci:identificationByLiteral
+      rdf:type lci:IdentificationSpace .
+
+lci:noteBy
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:subPropertyOf lci:representationBy .
+
+lci:noteByInformationContent
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:subPropertyOf lci:noteBy , lci:representationByInformationContent .
+
+lci:noteByInformationObject
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:subPropertyOf lci:noteBy , lci:representationByInformationObject .
+
+lci:noteByLiteral
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf lci:noteBy , lci:representationByLiteral .
+
+lci:representationBy
+      rdf:type owl:AnnotationProperty , lci:RepresentationSpace ;
+      rdfs:domain lci:Thing .
+
+lci:representationByInformationContent
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:range lci:InformationContent ;
+      rdfs:subPropertyOf lci:representationBy .
+
+lci:representationByInformationObject
+      rdf:type lci:RepresentationSpace , owl:AnnotationProperty ;
+      rdfs:range lci:InformationObject ;
+      rdfs:subPropertyOf lci:representationBy .
+
+lci:representationByLiteral
+      rdf:type lci:RepresentationSpace .
+
+lci:representationSpaceAssignedBy
+      rdf:type owl:FunctionalProperty , owl:ObjectProperty ;
+      rdfs:domain lci:RepresentationSpace ;
+      rdfs:range lci:Individual .
+
+lci:representationSpaceUsedBy
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:RepresentationSpace ;
+      rdfs:range lci:Individual .
+
+lci:textStringAsLiteral
+      rdf:type owl:AnnotationProperty ;
+      rdfs:domain lci:TextString ;
+      rdfs:range xsd:string .
+
+lci:translationOf
+      rdf:type owl:ObjectProperty , owl:SymmetricProperty , owl:TransitiveProperty ;
+      rdfs:domain lci:InformationContent ;
+      rdfs:range lci:InformationContent .

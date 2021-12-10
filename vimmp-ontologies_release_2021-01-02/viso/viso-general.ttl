@@ -1,0 +1,1653 @@
+########################################################################################
+#                                                                                      #
+#                             VISO-GENERAL                                             #
+#              UPPER PART OF VIMMP SOFTWARE ONTOLOGY - VISO                            #
+#                                                                                      #
+# Authors of viso-general:                                                             #
+#                                                                                      #
+# Silvia Chiacchiera, Martin T. Horsch (STFC/UKRI, Daresbury Laboratory, UK)           #
+# Michael A. Seaton, Ilian T. Todorov (STFC/UKRI, Daresbury Laboratory, UK)            #
+# Mara Chiricotto, Joshua D. Elliott (University of Manchester, UK)                    #
+# Gianluca Boccardo (Politecnico di Torino, Italy)                                     #
+#                                                                                      #
+# version 1.0.4, date: 26 November 2020                                                #
+########################################################################################
+
+@prefix viso: <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>.
+
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xs: <http://www.w3.org/2001/XMLSchema#>.
+@prefix osmo: <https://purl.vimmp.eu/semantics/osmo/osmo.ttl#>.
+@prefix evmpo: <https://emmc.eu/semantics/evmpo/evmpo.ttl#>.
+@prefix swo: <http://www.ebi.ac.uk/swo/>.
+@prefix swo-license: <http://www.ebi.ac.uk/swo/license/>.
+@prefix vov: <https://purl.vimmp.eu/semantics/vov/vov.ttl#>. 
+@prefix viprs: <https://purl.vimmp.eu/semantics/alignment/viprs.ttl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix vcl: <https://purl.vimmp.eu/semantics/alignment/vcl.ttl#>.
+
+<https://purl.vimmp.eu/semantics/viso/viso-general.ttl#> a owl:Ontology.
+
+# For SWO:
+# Permanent URL, leading to version 1.7:  http://purl.obolibrary.org/obo/swo.owl
+# URL for version 1.7: https://raw.githubusercontent.com/allysonlister/swo/master/release/swo-inferred.owl
+
+############################  Ontology header  #########################################
+
+<https://purl.vimmp.eu/semantics/viso/viso-general.ttl#> dcterms:title "VISO - VImmp Software Ontology"^^xs:string;
+  owl:versionInfo "version 1.0.4"^^xs:string;
+  dcterms:modified "2020-11-26"^^xs:string;
+#  owl:imports <https://emmc.eu/semantics/evmpo/evmpo.ttl#>;
+  dcterms:creator "Silvia Chiacchiera (ORCID 0000-0003-0422-7870)"^^xs:string;
+  dcterms:creator "Martin T. Horsch (ORCID 0000-0002-9464-6739)"^^xs:string;
+  dcterms:creator "Michael A. Seaton (ORCID 0000-0002-4708-573X)"^^xs:string;
+  dcterms:creator "Ilian T. Todorov (ORCID 0000-0001-7275-1784)"^^xs:string;
+  dcterms:creator "Mara Chiricotto (ORCID 0000-0003-1609-5254)"^^xs:string;
+  dcterms:creator "Joshua D. Elliott (ORCID 0000-0002-0729-246X)"^^xs:string;
+  dcterms:creator "Gianluca Boccardo (ORCID 0000-0003-1264-8237)"^^xs:string;
+  dcterms:contributor "Welchy Leite Cavalcanti"^^xs:string;
+  dcterms:contributor "Gerhard Goldbeck (ORCID 0000-0002-4181-2852)"^^xs:string;
+  dcterms:contributor "Daniele Toti (ORCID 0000-0002-9668-6961)"^^xs:string;			     
+  dcterms:license "VISO is provided under a GNU Lesser General Public License (LGPL) version 3 (https://www.gnu.org/licenses/lgpl-3.0.html)."^^xs:string;
+  dcterms:description """The aim of VISO is to characterize software tools in the area of materials modelling, 
+especially their features (i.e., capabilities), intended both at the model and solver level, but also their 
+technical requirements, compatibility with other tools and licensing aspects."""^^xs:string;
+  dcterms:bibliographicCitation "10.1021/acs.jced.9b00739"^^xs:string;
+  rdfs:comment """The authors acknowledge funding from the European Union's Horizon 2020 research and 
+innovation programme under grant agreement no. 760907, Virtual Materials Marketplace (VIMMP)."""^^xs:string.
+
+##############  (1) agent ########################################
+
+viso:agent a owl:Class;
+  rdfs:subClassOf evmpo:interpreter;
+  rdfs:comment "An entity (individual, group, institution) that can potentially act on a virtual marketplace."^^xs:string;
+  owl:equivalentClass evmpo:agent.
+
+####
+
+# NOTE: EVMPO and VICO have a much richer sublcass structure for "agent", this
+# is a simpflied version for what is needed here, and that is redundant
+# if EVMPO/VICO are loaded
+
+viso:human_agent rdfs:subClassOf viso:agent;
+  owl:equivalentClass evmpo:human_agent.
+
+viso:institution rdfs:subClassOf viso:agent;
+  owl:disjointWith viso:human_agent;
+  owl:equivalentClass evmpo:institution.
+  
+##############  (2) software  ####################################
+
+viso:software a owl:Class;
+  rdfs:comment "A computer program. Can be a software tool, a compiler (lower level, closer to the hardware) or an operating system."^^xs:string;
+  rdfs:subClassOf evmpo:software_infrastructure;
+  rdfs:subClassOf evmpo:information_content_entity.
+  
+viso:software_tool a owl:Class; 
+  rdfs:subClassOf viso:software.
+
+viso:compiler a owl:Class; 
+  rdfs:subClassOf viso:software.
+
+viso:operating_system a owl:Class; 
+  rdfs:subClassOf viso:software.
+
+viso:software owl:disjointUnionOf (viso:software_tool viso:compiler viso:operating_system). 
+
+viso:windows a owl:Class; 
+  rdfs:subClassOf viso:operating_system. 
+
+viso:linux a owl:Class; 
+  rdfs:subClassOf viso:operating_system.
+
+viso:macos a owl:Class; 
+  rdfs:subClassOf viso:operating_system.
+
+viso:operating_system owl:disjointUnionOf (viso:windows viso:linux viso:macos).
+
+viso:simulation_engine a owl:Class;
+   rdfs:subClassOf viso:software_tool;
+   rdfs:comment "A tool that solves the governing equations."^^xs:string.
+   
+viso:pre_processing_tool a owl:Class;
+   rdfs:subClassOf viso:software_tool;
+   rdfs:comment "A tool that helps in setting up a simulation (e.g., to generate the initial configuration)."^^xs:string.
+
+viso:post_processing_tool a owl:Class;
+   rdfs:subClassOf viso:software_tool;
+   rdfs:comment """A tool that processes the raw data obtained solving the governing equations. 
+   		Note that this splitting between solving and processing is a logical one (cf. RoMM),
+		it does not necessarily imply the existence of a separate piece of software. 
+		In fact, some of these post-processing functionalities are often embedded in the simulation engine itself 
+		(e.g., the calculation of the system energy in a MD simulation is typically done on the fly by the solver itself)."""^^xs:string.
+
+viso:visualizer a owl:Class;
+   rdfs:subClassOf viso:post_processing_tool;
+      rdfs:comment "A tool to read and visualize data (with no changes or additions to the data, cf. RoMM)."^^xs:string.
+
+viso:converter a owl:Class;
+   rdfs:subClassOf viso:post_processing_tool;
+      rdfs:comment """A tool that changes the data without altering the physical state itself
+                (e.g., it changes the numerical representation of a state, cf. RoMM)."""^^xs:string.
+
+viso:extractor a owl:Class;
+   rdfs:subClassOf viso:post_processing_tool;
+      rdfs:comment """A tool that enriches the dataset/state description by further information 
+      		   calculated based on the information already contained in the state. 
+		   Examples include averaging, interpolation and the calculation of physical quantities (cf. RoMM)."""^^xs:string.
+
+viso:software_tool owl:unionOf (viso:simulation_engine viso:pre_processing_tool  viso:post_processing_tool).
+
+##############  (3a) license and (3b) license clause  ####################################
+
+viso:license a owl:Class;
+  rdfs:comment "Regulation of the right to use, modify and distribute something, in this case software."^^xs:string;
+  rdfs:comment "Software license, as characterized in the Software Ontology (SWO)"^^xs:string;
+  rdfs:subClassOf evmpo:legal_document;
+  owl:equivalentClass swo:SWO_0000002. # <-> SWO 'software licence' 
+swo:SWO_0000002 rdfs:subClassOf evmpo:legal_document.
+
+viso:license_clause a owl:Class;
+  rdfs:comment "License clause, as characterized in the Software Ontology (SWO)"^^xs:string;
+  rdfs:subClassOf evmpo:information_content_entity;
+  owl:equivalentClass swo:SWO_9000005. # <-> SWO 'licence clause' 
+swo:SWO_9000005 rdfs:subClassOf evmpo:information_content_entity.
+
+# definition of individuals (and Zontal codelist) for license. Generated from SWO via the Owlready2 python module.
+
+viso:INDIVIDUAL_OF_SWO_1000006 a viso:license, vcl:codelist_license, swo-license:SWO_1000006;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Academic_Free_License_version_3"^^xs:string, "Academic_Free_License_version_3"@en;
+  skos:prefLabel "Academic Free License version 3"^^xs:string.
+swo-license:SWO_1000006 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000005 a viso:license, vcl:codelist_license, swo-license:SWO_1000005;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Apache_License_Version_2.0"^^xs:string, "Apache_License_Version_2.0"@en;
+  skos:prefLabel "Apache License Version 2.0"^^xs:string.
+swo-license:SWO_1000005 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000056 a viso:license, vcl:codelist_license, swo-license:SWO_1000056;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Artistic_License"^^xs:string, "Artistic_License"@en;
+  skos:prefLabel "Artistic License"^^xs:string.
+swo-license:SWO_1000056 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_9000082 a viso:license, vcl:codelist_license, swo-license:SWO_9000082;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Artistic_License_1.0"^^xs:string, "Artistic_License_1.0"@en;
+  skos:prefLabel "Artistic License 1.0"^^xs:string.
+swo-license:SWO_9000082 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000057 a viso:license, vcl:codelist_license, swo-license:SWO_1000057;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Artistic_License_2.0"^^xs:string, "Artistic_License_2.0"@en;
+  skos:prefLabel "Artistic License 2.0"^^xs:string.
+swo-license:SWO_1000057 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000050 a viso:license, vcl:codelist_license, swo-license:SWO_1000050;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY_2.0"^^xs:string, "CC_BY_2.0"@en;
+  skos:prefLabel "CC BY 2.0"^^xs:string.
+swo-license:SWO_1000050 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000067 a viso:license, vcl:codelist_license, swo-license:SWO_1000067;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY_2.0_UK"^^xs:string, "CC_BY_2.0_UK"@en;
+  skos:prefLabel "CC BY 2.0 UK"^^xs:string.
+swo-license:SWO_1000067 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000072 a viso:license, vcl:codelist_license, swo-license:SWO_1000072;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY_2.1_JP"^^xs:string, "CC_BY_2.1_JP"@en;
+  skos:prefLabel "CC BY 2.1 JP"^^xs:string.
+swo-license:SWO_1000072 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000073 a viso:license, vcl:codelist_license, swo-license:SWO_1000073;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY_2.5"^^xs:string, "CC_BY_2.5"@en;
+  skos:prefLabel "CC BY 2.5"^^xs:string.
+swo-license:SWO_1000073 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000075 a viso:license, vcl:codelist_license, swo-license:SWO_1000075;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY_3.0"^^xs:string, "CC_BY_3.0"@en;
+  skos:prefLabel "CC BY 3.0"^^xs:string.
+swo-license:SWO_1000075 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000074 a viso:license, vcl:codelist_license, swo-license:SWO_1000074;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY_3.0_AU"^^xs:string, "CC_BY_3.0_AU"@en;
+  skos:prefLabel "CC BY 3.0 AU"^^xs:string.
+swo-license:SWO_1000074 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000076 a viso:license, vcl:codelist_license, swo-license:SWO_1000076;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY_3.0_US"^^xs:string, "CC_BY_3.0_US"@en;
+  skos:prefLabel "CC BY 3.0 US"^^xs:string.
+swo-license:SWO_1000076 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000065 a viso:license, vcl:codelist_license, swo-license:SWO_1000065;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY_4.0"^^xs:string, "CC_BY_4.0"@en;
+  skos:prefLabel "CC BY 4.0"^^xs:string.
+swo-license:SWO_1000065 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000079 a viso:license, vcl:codelist_license, swo-license:SWO_1000079;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC_3.0"^^xs:string, "CC_BY-NC_3.0"@en;
+  skos:prefLabel "CC BY-NC 3.0"^^xs:string.
+swo-license:SWO_1000079 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000080 a viso:license, vcl:codelist_license, swo-license:SWO_1000080;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC_4.0"^^xs:string, "CC_BY-NC_4.0"@en;
+  skos:prefLabel "CC BY-NC 4.0"^^xs:string.
+swo-license:SWO_1000080 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000083 a viso:license, vcl:codelist_license, swo-license:SWO_1000083;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC-ND_2.5"^^xs:string, "CC_BY-NC-ND_2.5"@en;
+  skos:prefLabel "CC BY-NC-ND 2.5"^^xs:string.
+swo-license:SWO_1000083 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000084 a viso:license, vcl:codelist_license, swo-license:SWO_1000084;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC-ND_2.5_CH"^^xs:string, "CC_BY-NC-ND_2.5_CH"@en;
+  skos:prefLabel "CC BY-NC-ND 2.5 CH"^^xs:string.
+swo-license:SWO_1000084 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000081 a viso:license, vcl:codelist_license, swo-license:SWO_1000081;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC-ND_3.0"^^xs:string, "CC_BY-NC-ND_3.0"@en;
+  skos:prefLabel "CC BY-NC-ND 3.0"^^xs:string.
+swo-license:SWO_1000081 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000085 a viso:license, vcl:codelist_license, swo-license:SWO_1000085;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC-ND_4.0"^^xs:string, "CC_BY-NC-ND_4.0"@en;
+  skos:prefLabel "CC BY-NC-ND 4.0"^^xs:string.
+swo-license:SWO_1000085 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000086 a viso:license, vcl:codelist_license, swo-license:SWO_1000086;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC-SA_2.5"^^xs:string, "CC_BY-NC-SA_2.5"@en;
+  skos:prefLabel "CC BY-NC-SA 2.5"^^xs:string.
+swo-license:SWO_1000086 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000089 a viso:license, vcl:codelist_license, swo-license:SWO_1000089;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC-SA_2.5_IN"^^xs:string, "CC_BY-NC-SA_2.5_IN"@en;
+  skos:prefLabel "CC BY-NC-SA 2.5 IN"^^xs:string.
+swo-license:SWO_1000089 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000087 a viso:license, vcl:codelist_license, swo-license:SWO_1000087;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC-SA_3.0"^^xs:string, "CC_BY-NC-SA_3.0"@en;
+  skos:prefLabel "CC BY-NC-SA 3.0"^^xs:string.
+swo-license:SWO_1000087 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000088 a viso:license, vcl:codelist_license, swo-license:SWO_1000088;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC-SA_3.0_US"^^xs:string, "CC_BY-NC-SA_3.0_US"@en;
+  skos:prefLabel "CC BY-NC-SA 3.0 US"^^xs:string.
+swo-license:SWO_1000088 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000090 a viso:license, vcl:codelist_license, swo-license:SWO_1000090;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-NC-SA_4.0"^^xs:string, "CC_BY-NC-SA_4.0"@en;
+  skos:prefLabel "CC BY-NC-SA 4.0"^^xs:string.
+swo-license:SWO_1000090 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000077 a viso:license, vcl:codelist_license, swo-license:SWO_1000077;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-ND_3.0"^^xs:string, "CC_BY-ND_3.0"@en;
+  skos:prefLabel "CC BY-ND 3.0"^^xs:string.
+swo-license:SWO_1000077 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000078 a viso:license, vcl:codelist_license, swo-license:SWO_1000078;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-ND_4.0"^^xs:string, "CC_BY-ND_4.0"@en;
+  skos:prefLabel "CC BY-ND 4.0"^^xs:string.
+swo-license:SWO_1000078 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000052 a viso:license, vcl:codelist_license, swo-license:SWO_1000052;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-SA_2.0"^^xs:string, "CC_BY-SA_2.0"@en;
+  skos:prefLabel "CC BY-SA 2.0"^^xs:string.
+swo-license:SWO_1000052 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000091 a viso:license, vcl:codelist_license, swo-license:SWO_1000091;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-SA_2.1_JP"^^xs:string, "CC_BY-SA_2.1_JP"@en;
+  skos:prefLabel "CC BY-SA 2.1 JP"^^xs:string.
+swo-license:SWO_1000091 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000092 a viso:license, vcl:codelist_license, swo-license:SWO_1000092;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-SA_3.0"^^xs:string, "CC_BY-SA_3.0"@en;
+  skos:prefLabel "CC BY-SA 3.0"^^xs:string.
+swo-license:SWO_1000092 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000093 a viso:license, vcl:codelist_license, swo-license:SWO_1000093;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-SA_3.0_US"^^xs:string, "CC_BY-SA_3.0_US"@en;
+  skos:prefLabel "CC BY-SA 3.0 US"^^xs:string.
+swo-license:SWO_1000093 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000094 a viso:license, vcl:codelist_license, swo-license:SWO_1000094;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC_BY-SA_4.0"^^xs:string, "CC_BY-SA_4.0"@en;
+  skos:prefLabel "CC BY-SA 4.0"^^xs:string.
+swo-license:SWO_1000094 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000049 a viso:license, vcl:codelist_license, swo-license:SWO_1000049;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "CC0_1.0"^^xs:string, "CC0_1.0"@en;
+  skos:prefLabel "CC0 1.0"^^xs:string.
+swo-license:SWO_1000049 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000001 a viso:license, vcl:codelist_license, swo-license:SWO_1000001;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Creative_Commons"^^xs:string, "Creative_Commons"@en;
+  skos:prefLabel "Creative Commons"^^xs:string.
+swo-license:SWO_1000001 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000097 a viso:license, vcl:codelist_license, swo-license:SWO_1000097;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "DbCL_v1.0"^^xs:string, "DbCL_v1.0"@en;
+  skos:prefLabel "DbCL v1.0"^^xs:string.
+swo-license:SWO_1000097 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000147 a viso:license, vcl:codelist_license, swo-license:SWO_1000147;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Design_Science_License"^^xs:string, "Design_Science_License"@en;
+  skos:prefLabel "Design Science License"^^xs:string.
+swo-license:SWO_1000147 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_9000084 a viso:license, vcl:codelist_license, swo-license:SWO_9000084;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "EPL_v1"^^xs:string, "EPL_v1"@en;
+  skos:prefLabel "EPL v1"^^xs:string.
+swo-license:SWO_9000084 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000137 a viso:license, vcl:codelist_license, swo-license:SWO_1000137;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Fee-Based_Commercial_License"^^xs:string, "Fee-Based_Commercial_License"@en;
+  skos:prefLabel "Fee-Based Commercial License"^^xs:string.
+swo-license:SWO_1000137 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000007 a viso:license, vcl:codelist_license, swo-license:SWO_1000007;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "FreeBSD"^^xs:string, "FreeBSD"@en;
+  skos:prefLabel "FreeBSD"^^xs:string.
+swo-license:SWO_1000007 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000069 a viso:license, vcl:codelist_license, swo-license:SWO_1000069;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_AGPL"^^xs:string, "GNU_AGPL"@en;
+  skos:prefLabel "GNU AGPL"^^xs:string.
+swo-license:SWO_1000069 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000070 a viso:license, vcl:codelist_license, swo-license:SWO_1000070;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_AGPL_v3"^^xs:string, "GNU_AGPL_v3"@en;
+  skos:prefLabel "GNU AGPL v3"^^xs:string.
+swo-license:SWO_1000070 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000004 a viso:license, vcl:codelist_license, swo-license:SWO_1000004;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_GPL"^^xs:string, "GNU_GPL"@en;
+  skos:prefLabel "GNU GPL"^^xs:string.
+swo-license:SWO_1000004 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000044 a viso:license, vcl:codelist_license, swo-license:SWO_1000044;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_GPL_Compatible_License_Type"^^xs:string, "GNU_GPL_Compatible_License_Type"@en;
+  skos:prefLabel "GNU GPL Compatible License Type"^^xs:string.
+swo-license:SWO_1000044 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000047 a viso:license, vcl:codelist_license, swo-license:SWO_1000047;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_GPL_v2"^^xs:string, "GNU_GPL_v2"@en;
+  skos:prefLabel "GNU GPL v2"^^xs:string.
+swo-license:SWO_1000047 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000046 a viso:license, vcl:codelist_license, swo-license:SWO_1000046;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_GPL_v3"^^xs:string, "GNU_GPL_v3"@en;
+  skos:prefLabel "GNU GPL v3"^^xs:string.
+swo-license:SWO_1000046 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_9000080 a viso:license, vcl:codelist_license, swo-license:SWO_9000080;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_LGPL"^^xs:string, "GNU_LGPL"@en;
+  skos:prefLabel "GNU LGPL"^^xs:string.
+swo-license:SWO_9000080 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000071 a viso:license, vcl:codelist_license, swo-license:SWO_1000071;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_LGPL_v2.1"^^xs:string, "GNU_LGPL_v2.1"@en;
+  skos:prefLabel "GNU LGPL v2.1"^^xs:string.
+swo-license:SWO_1000071 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000068 a viso:license, vcl:codelist_license, swo-license:SWO_1000068;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_LGPL_v3"^^xs:string, "GNU_LGPL_v3"@en;
+  skos:prefLabel "GNU LGPL v3"^^xs:string.
+swo-license:SWO_1000068 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000043 a viso:license, vcl:codelist_license, swo-license:SWO_1000043;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "GNU_Project_Free_License_Type"^^xs:string, "GNU_Project_Free_License_Type"@en;
+  skos:prefLabel "GNU Project Free License Type"^^xs:string.
+swo-license:SWO_1000043 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_9000086 a viso:license, vcl:codelist_license, swo-license:SWO_9000086;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "LPPL"^^xs:string, "LPPL"@en;
+  skos:prefLabel "LPPL"^^xs:string.
+swo-license:SWO_9000086 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000054 a viso:license, vcl:codelist_license, swo-license:SWO_1000054;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "LPPL_v1.2"^^xs:string, "LPPL_v1.2"@en;
+  skos:prefLabel "LPPL v1.2"^^xs:string.
+swo-license:SWO_1000054 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000053 a viso:license, vcl:codelist_license, swo-license:SWO_1000053;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "LPPL_v1.3c"^^xs:string, "LPPL_v1.3c"@en;
+  skos:prefLabel "LPPL v1.3c"^^xs:string.
+swo-license:SWO_1000053 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000009 a viso:license, vcl:codelist_license, swo-license:SWO_1000009;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "License_without_restrictions_on_derivatives"^^xs:string, "License_without_restrictions_on_derivatives"@en;
+  skos:prefLabel "License without restrictions on derivatives"^^xs:string.
+swo-license:SWO_1000009 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_9000074 a viso:license, vcl:codelist_license, swo-license:SWO_9000074;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "MIT_License"^^xs:string, "MIT_License"@en;
+  skos:prefLabel "MIT License"^^xs:string.
+swo-license:SWO_9000074 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_9000088 a viso:license, vcl:codelist_license, swo-license:SWO_9000088;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "MPL"^^xs:string, "MPL"@en;
+  skos:prefLabel "MPL"^^xs:string.
+swo-license:SWO_9000088 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000003 a viso:license, vcl:codelist_license, swo-license:SWO_1000003;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "MPL_v1.1"^^xs:string, "MPL_v1.1"@en;
+  skos:prefLabel "MPL v1.1"^^xs:string.
+swo-license:SWO_1000003 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_9000085 a viso:license, vcl:codelist_license, swo-license:SWO_9000085;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Modified_BSD"^^xs:string, "Modified_BSD"@en;
+  skos:prefLabel "Modified BSD"^^xs:string.
+swo-license:SWO_9000085 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000055 a viso:license, vcl:codelist_license, swo-license:SWO_1000055;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "MPL_v2.0"^^xs:string, "MPL_v2.0"@en;
+  skos:prefLabel "MPL v2.0"^^xs:string.
+swo-license:SWO_1000055 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000140 a viso:license, vcl:codelist_license, swo-license:SWO_1000140;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Non-Commercial_No-Fee_License"^^xs:string, "Non-Commercial_No-Fee_License"@en;
+  skos:prefLabel "Non-Commercial No-Fee License"^^xs:string.
+swo-license:SWO_1000140 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000100 a viso:license, vcl:codelist_license, swo-license:SWO_1000100;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "ODC-By_v1.0"^^xs:string, "ODC-By_v1.0"@en;
+  skos:prefLabel "ODC-By v1.0"^^xs:string.
+swo-license:SWO_1000100 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000096 a viso:license, vcl:codelist_license, swo-license:SWO_1000096;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "ODbL_v1.0"^^xs:string, "ODbL_v1.0"@en;
+  skos:prefLabel "ODbL v1.0"^^xs:string.
+swo-license:SWO_1000096 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_9000087 a viso:license, vcl:codelist_license, swo-license:SWO_9000087;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "OPL_v1.0"^^xs:string, "OPL_v1.0"@en;
+  skos:prefLabel "OPL v1.0"^^xs:string.
+swo-license:SWO_9000087 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000095 a viso:license, vcl:codelist_license, swo-license:SWO_1000095;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Open_Data_Commons"^^xs:string, "Open_Data_Commons"@en;
+  skos:prefLabel "Open Data Commons"^^xs:string.
+swo-license:SWO_1000095 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000008 a viso:license, vcl:codelist_license, swo-license:SWO_1000008;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Open_source_software_license"^^xs:string, "Open_source_software_license"@en;
+  skos:prefLabel "Open source software license"^^xs:string.
+swo-license:SWO_1000008 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000101 a viso:license, vcl:codelist_license, swo-license:SWO_1000101;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "PDDL_v1.0"^^xs:string, "PDDL_v1.0"@en;
+  skos:prefLabel "PDDL v1.0"^^xs:string.
+swo-license:SWO_1000101 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000002 a viso:license, vcl:codelist_license, swo-license:SWO_1000002;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Proprietary_commercial_software_license"^^xs:string, "Proprietary_commercial_software_license"@en;
+  skos:prefLabel "Proprietary commercial software license"^^xs:string.
+swo-license:SWO_1000002 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000103 a viso:license, vcl:codelist_license, swo-license:SWO_1000103;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "Vendor-specific_License"^^xs:string, "Vendor-specific_License"@en;
+  skos:prefLabel "Vendor-specific License"^^xs:string.
+swo-license:SWO_1000103 rdfs:subClassOf swo:SWO_0000002.
+
+viso:INDIVIDUAL_OF_SWO_1000061 a viso:license, vcl:codelist_license, swo-license:SWO_1000061;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "free_to_use_license"^^xs:string, "free_to_use_license"@en;
+  skos:prefLabel "free to use license"^^xs:string.
+swo-license:SWO_1000061 rdfs:subClassOf swo:SWO_0000002.
+
+# the generic license
+viso:INDIVIDUAL_OF_SWO_0000002 a viso:license, vcl:codelist_license, swo:SWO_0000002;
+  skos:inScheme vcl:CL_LICENSE;
+  skos:notation "licence"^^xs:string, "licence"@en;
+  skos:prefLabel "licence"^^xs:string.
+
+# connection between classes and their representative individuals
+
+viso:license rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:INDIVIDUAL_OF_SWO_0000002].
+
+##############  (4) programming language #########################
+
+viso:programming_language a owl:Class;
+  rdfs:comment "A language that can be used to write software."^^xs:string;
+  rdfs:subClassOf evmpo:annotation.  
+
+viso:fortran a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:c_language a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:cpp a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:python a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:openmp a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:mpi a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:openmpi a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:cmake a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:opencl a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:cuda a owl:Class;
+  rdfs:subClassOf viso:programming_language.
+
+viso:programming_language owl:disjointUnionOf (viso:fortran viso:c_language viso:cpp viso:python viso:openmp viso:mpi viso:cmake viso:opencl viso:cuda).
+
+# definition of individuals (and Zontal codelist) for programming_language
+
+viso:FORTRAN a viso:fortran, vcl:codelist_programming_language;
+ skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+ skos:notation "Fortran"^^xs:string, "Fortran"@en;
+ skos:prefLabel "Fortran"^^xs:string.
+
+viso:FORTRAN90 a viso:fortran, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "Fortran90"^^xs:string, "Fortran90"@en;
+  skos:prefLabel "Fortran90"^^xs:string.
+
+viso:FORTRAN95 a viso:fortran, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "Fortran95"^^xs:string, "Fortran95"@en;
+  skos:prefLabel "Fortran95"^^xs:string.
+
+viso:FORTRAN2003 a viso:fortran, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "Fortran2003"^^xs:string, "Fortran2003"@en;
+  skos:prefLabel "Fortran2003"^^xs:string.
+
+viso:CPP a viso:cpp, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "C++"^^xs:string, "C++"@en;
+  skos:prefLabel "C++"^^xs:string.
+
+viso:C_LANGUAGE a viso:c_language, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "C_language"^^xs:string, "C_language"@en;
+  skos:prefLabel "C (language)"^^xs:string.
+
+viso:CMAKE a viso:cmake, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "CMake"^^xs:string, "CMake"@en;
+  skos:prefLabel "CMake"^^xs:string.
+
+viso:OPENMP a viso:openmp, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "OpenMP"^^xs:string, "OpenMP"@en;
+  skos:prefLabel "OpenMP"^^xs:string.
+
+viso:MPI a viso:mpi, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "MPI"^^xs:string, "MPI"@en;
+  skos:prefLabel "MPI"^^xs:string.
+
+viso:OPENMPI a viso:openmpi, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "OpenMPI"^^xs:string, "OpenMPI"@en;
+  skos:prefLabel "OpenMPI"^^xs:string.
+
+viso:OPENCL a viso:opencl, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "OpenCL"^^xs:string, "OpenCL"@en;
+  skos:prefLabel "OpenCL"^^xs:string.
+
+viso:CUDA a viso:cuda, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "Cuda"^^xs:string, "Cuda"@en;
+  skos:prefLabel "Cuda"^^xs:string.
+
+viso:PYTHON a viso:python, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "Python"^^xs:string, "Python"@en;
+  skos:prefLabel "Python"^^xs:string.
+
+viso:PYTHON_2.7 a viso:python, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "Python_2.7"^^xs:string, "Python_2.7"@en;
+  skos:prefLabel "Python 2.7"^^xs:string.
+
+viso:PYTHON_3 a viso:python, vcl:codelist_programming_language;
+  skos:inScheme vcl:CL_SCHEME_PROGRAMMING_LANGUAGE;
+  skos:notation "Python_3"^^xs:string, "Python_3"@en;
+  skos:prefLabel "Python 3"^^xs:string.
+
+# connection between classes and their representative individuals
+
+viso:fortran rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:FORTRAN].
+viso:cpp rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:CPP].
+viso:c_language rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:C_LANGUAGE].
+viso:cmake rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:CMAKE].
+viso:openmp rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:OPENMP].
+viso:mpi rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:MPI].
+viso:openmpi rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:OPENMPI].
+viso:opencl rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:OPENCL].
+viso:cuda rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:CUDA].
+viso:python rdfs:subClassOf [a owl:Restriction; owl:onProperty viprs:is_conceptualized_by; owl:hasValue viso:PYTHON].
+
+##############  (5) solver feature ###############################
+
+viso:solver_feature a owl:Class;
+  rdfs:comment "Capability of a software tool, intended as a numerical aspect or an algorithm which is implemented. ('solver' intended as in MODA)"^^xs:string;
+  rdfs:comment "An aspect of the numerical method used to solve the governing equations."^^xs:string;
+  rdfs:subClassOf evmpo:marketplace_related_entity.  
+
+viso:el_solver_feature a owl:Class;
+  rdfs:subClassOf viso:solver_feature;
+  owl:intersectionOf (viso:solver_feature viso:R_IS_ELECTRONIC).
+
+viso:am_solver_feature a owl:Class;
+  rdfs:subClassOf viso:solver_feature;
+  owl:intersectionOf (viso:solver_feature [a owl:Class; owl:unionOf (viso:R_IS_ATOMISTIC viso:R_IS_MESOSCOPIC)]).
+
+viso:co_solver_feature a owl:Class;
+  rdfs:subClassOf viso:solver_feature;
+  owl:intersectionOf (viso:solver_feature viso:R_IS_CONTINUUM).
+
+viso:execution_mode a owl:Class;
+  rdfs:subClassOf viso:solver_feature;
+  owl:oneOf (viso:SERIAL_EXECUTION viso:PARALLEL_EXECUTION).
+
+##############  (6) model feature ################################
+
+viso:model_feature a owl:Class; 
+  rdfs:comment "Capability of a software tool, intended as a model aspect that can be addressed. ('model' intended as in MODA)."^^xs:string;
+  rdfs:subClassOf evmpo:marketplace_related_entity.
+
+viso:el_model_feature a owl:Class;
+  rdfs:subClassOf viso:model_feature;
+  owl:intersectionOf (viso:model_feature viso:R_IS_ELECTRONIC).
+
+viso:el_materials_relation_trait a owl:Class;
+  rdfs:subClassOf viso:el_model_feature.
+
+viso:el_physical_equation_trait a owl:Class;
+  rdfs:subClassOf viso:el_model_feature.
+
+viso:el_external_condition_trait a owl:Class;
+  rdfs:subClassOf viso:el_model_feature.
+
+viso:el_materials_relation a owl:Class;
+  rdfs:subClassOf viso:el_materials_relation_trait.
+
+viso:el_physical_equation a owl:Class;
+  rdfs:subClassOf viso:el_physical_equation_trait.
+
+viso:am_model_feature a owl:Class;
+  rdfs:subClassOf viso:model_feature;
+  owl:intersectionOf (viso:model_feature [a owl:Class; owl:unionOf (viso:R_IS_ATOMISTIC viso:R_IS_MESOSCOPIC)]).
+
+viso:am_materials_relation_trait a owl:Class;
+  rdfs:subClassOf viso:am_model_feature.
+
+viso:am_physical_equation_trait a owl:Class;
+  rdfs:subClassOf viso:am_model_feature.
+
+viso:am_external_condition_trait a owl:Class;
+  rdfs:subClassOf viso:am_model_feature.
+
+viso:am_materials_relation a owl:Class;
+  rdfs:subClassOf viso:am_materials_relation_trait.
+
+viso:am_physical_equation a owl:Class;
+  rdfs:subClassOf viso:am_physical_equation_trait.
+
+viso:co_model_feature a owl:Class;
+  rdfs:subClassOf viso:model_feature;
+  owl:intersectionOf (viso:model_feature viso:R_IS_CONTINUUM).
+
+viso:co_materials_relation_trait a owl:Class;
+  rdfs:subClassOf viso:co_model_feature.
+
+viso:co_physical_equation_trait a owl:Class;
+  rdfs:subClassOf viso:co_model_feature.
+
+viso:co_external_condition_trait a owl:Class;
+  rdfs:subClassOf viso:co_model_feature.
+
+viso:co_materials_relation a owl:Class;
+  rdfs:subClassOf viso:co_materials_relation_trait.
+
+viso:co_physical_equation a owl:Class;
+  rdfs:subClassOf viso:co_physical_equation_trait.
+
+viso:physical_equation a owl:Class;
+  rdfs:subClassOf osmo:governing_equation;
+  owl:equivalentClass osmo:physical_equation;
+  owl:disjointUnionOf (viso:el_physical_equation viso:am_physical_equation viso:co_physical_equation).
+
+viso:materials_relation a owl:Class;
+  rdfs:subClassOf osmo:governing_equation;
+  owl:equivalentClass osmo:materials_relation;
+  owl:disjointUnionOf (viso:el_materials_relation viso:am_materials_relation viso:co_materials_relation).
+
+viso:materials_relation_trait a owl:Class;
+  rdfs:subClassOf evmpo:marketplace_related_entity;
+  owl:disjointUnionOf (viso:el_materials_relation_trait viso:am_materials_relation_trait viso:co_materials_relation_trait).
+
+viso:physical_equation_trait a owl:Class;
+  rdfs:subClassOf viso:model_feature;
+  owl:disjointUnionOf (viso:el_physical_equation_trait viso:am_physical_equation_trait viso:co_physical_equation_trait).
+
+viso:external_condition_trait a owl:Class;
+  rdfs:subClassOf viso:model_feature;
+  owl:disjointUnionOf (viso:el_external_condition_trait viso:am_external_condition_trait viso:co_external_condition_trait).
+
+viso:model_object a owl:Class;
+  rdfs:subClassOf viso:materials_relation_trait;
+  rdfs:comment "Type of object entering the model and carrying the degrees of freedom."^^xs:string;
+  rdfs:comment "E.g., composite or structureless, rigid or flexible, classical or quantum objects."^^xs:string.
+
+##############  (7) modeling related entity ######################
+
+viso:modeling_related_entity a owl:Class;
+  rdfs:comment"High level concept related to modelling, as statistical mechanics, the RoMM model types, fundamental physics equation, etc."^^xs:string;
+  rdfs:subClassOf evmpo:marketplace_related_entity.  
+
+viso:model_type a owl:Class;
+  rdfs:subClassOf viso:modeling_related_entity.
+
+viso:am_model_type a owl:Class;
+  rdfs:subClassOf viso:model_type;
+  owl:intersectionOf (viso:model_type [a owl:Class; owl:unionOf (viso:R_IS_ATOMISTIC viso:R_IS_MESOSCOPIC)]).
+
+viso:el_model_type a owl:Class;
+  rdfs:subClassOf viso:model_type;
+  owl:intersectionOf (viso:model_type viso:R_IS_ELECTRONIC).
+
+viso:co_model_type a owl:Class;
+  rdfs:subClassOf viso:model_type;
+  owl:intersectionOf (viso:model_type viso:R_IS_CONTINUUM).
+
+viso:model_type owl:disjointUnionOf (viso:am_model_type viso:el_model_type viso:co_model_type).
+
+##############  (8) Software update ##############################
+
+viso:software_update a owl:Class;
+   rdfs:subClassOf evmpo:process;
+   rdfs:comment "To describe (as text) the changes between versions of a software."^^xs:string;
+   rdfs:subClassOf [a owl:Restriction;
+  		   owl:onProperty viso:has_input;
+  		   owl:qualifiedCardinality 1;
+   		   owl:onClass viso:software];
+   rdfs:subClassOf [a owl:Restriction;
+  		   owl:onProperty viso:has_output;
+  		   owl:qualifiedCardinality 1;
+   		   owl:onClass viso:software];
+   rdfs:subClassOf [a owl:Restriction;
+  		   owl:onProperty viso:has_update_comment;
+ 		   owl:allValuesFrom xs:string].
+
+viso:software_tool_update a owl:Class; 
+  rdfs:subClassOf viso:software_update;
+  rdfs:comment "Allows to describe the addition/removal of features between versions of a software tool."^^xs:string;
+  rdfs:subClassOf [a owl:Restriction;
+  		   owl:onProperty viso:has_input;
+  		   owl:qualifiedCardinality 1;
+   		   owl:onClass viso:software_tool];
+   rdfs:subClassOf [a owl:Restriction;
+  		   owl:onProperty viso:has_output;
+  		   owl:qualifiedCardinality 1;
+   		   owl:onClass viso:software_tool];
+   rdfs:subClassOf [a owl:Restriction;
+   		   owl:onProperty viso:adds_feature;
+ 		   owl:allValuesFrom viso:software_tool_feature];
+   rdfs:subClassOf [a owl:Restriction;
+  		   owl:onProperty viso:removes_feature;
+ 		   owl:allValuesFrom viso:software_tool_feature];
+   rdfs:subClassOf [a owl:Restriction;
+  		   owl:onProperty viso:has_update_comment;
+ 		   owl:allValuesFrom xs:string].
+
+##############  (9) Software interface ###########################
+
+viso:software_interface a owl:Class;
+  rdfs:subClassOf evmpo:software_infrastructure; 
+  rdfs:comment "Interface between a software and a user or a client (i.e., a program or device)"^^xs:string;
+  rdfs:comment "Some sub-classes of this class are taken from the SWO software interface class (swo:SWO_9000050)"^^xs:string.
+
+viso:graphical_user_interface a owl:Class;
+  rdfs:comment "graphical user interface (GUI)"^^xs:string;
+  rdfs:subClassOf viso:software_interface;
+  owl:equivalentClass swo:SWO_9000052. # <-> "swo graphical user interface"
+swo:SWO_9000052 rdfs:subClassOf viso:software_interface.
+
+viso:command_line_interface a owl:Class;
+  rdfs:comment "command line interface (CLI)"^^xs:string;
+  rdfs:subClassOf viso:software_interface;
+  owl:disjointWith viso:graphical_user_interface;
+  owl:equivalentClass swo:SWO_9000053. # <-> "swo command line interface"
+swo:SWO_9000053 rdfs:subClassOf viso:software_interface.
+
+viso:application_programming_interface a owl:Class;
+  rdfs:comment "application programming interface (API)"^^xs:string;
+  rdfs:subClassOf viso:software_interface;
+  owl:equivalentClass swo:SWO_9000054. # <-> "swo application programming interface"
+swo:SWO_9000054 rdfs:subClassOf viso:software_interface.
+
+viso:wrapper a owl:Class;
+  rdfs:subClassOf viso:software_interface;
+  rdfs:comment """wrapper (interface): an outer (more abstract) 
+  layer as compared to an application programming interface, 
+  and usually providing a reduced and more specific set of 
+  functionalities"""^^xs:string.
+
+viso:data_interface a owl:Class; 
+  rdfs:comment "interface for data, can be file-based or stream-based"^^xs:string;
+  rdfs:subClassOf viso:software_interface.
+
+viso:file_based_io a owl:Class; 
+  rdfs:subClassOf viso:data_interface.
+
+viso:stream_based_io a owl:Class; 
+  rdfs:subClassOf viso:data_interface.
+
+# definition of individuals for software interface
+
+viso:TEXT_FILE_IO a viso:file_based_io.
+viso:BINARY_FILE_IO a viso:file_based_io.
+
+##############  (10) Classifier ###################################
+
+viso:classifier a owl:Class; 
+  rdfs:comment "A classifier (e.g., the granularity level) that is relevant for materials modelling software "^^xs:string;
+  rdfs:subClassOf evmpo:annotation.  
+
+viso:granularity_level rdfs:subClassOf viso:classifier;
+  owl:equivalentClass osmo:granularity_level;
+  owl:oneOf (osmo:ELECTRONIC osmo:ATOMISTIC osmo:MESOSCOPIC osmo:CONTINUUM).
+# NB: For convenience, I duplicate here the definitions of granularity given in OSMO
+# Can be removed if OSMO is loaded
+
+##################################################################
+
+### Datatype Properties ###
+
+####### VISO primitive (or fundamental) properties ###############
+
+# P1 - DP-Parthood #
+
+viso:parthood_dp_relation a owl:DatatypeProperty;
+  rdfs:subPropertyOf viprs:immanent_datatype_property;
+  rdfs:comment """Datatype property based on objects constitution (also in the sense of participants in a process).
+  	       It can be in both directions (i.e., having parts or being parts of something)."""^^xs:string.
+
+# P2 - DP-Dependence #
+
+viso:dependence_dp_relation a owl:DatatypeProperty;
+  rdfs:subPropertyOf viprs:immanent_datatype_property;
+  rdfs:comment """Datatype property based on any kind of dependence (e.g, functional dependence,	
+  	       legal dependence, causality, authorship). It can be in both directions 
+	       (i.e., depending on something or having dependents). """^^xs:string.
+
+# P3 - DP-Ability #
+
+viso:ability_dp_relation a owl:DatatypeProperty;
+  rdfs:subPropertyOf viprs:immanent_datatype_property;
+  rdfs:comment """Datatype property based on some functionality, capability, i.e., the potentiality to do something.
+  	       It concerns the functioning of an object. It can be in both directions 
+	       (i.e., having an ability or being an ability)."""^^xs:string.
+
+# P4 - DP-Documentation #
+
+viso:documentation_dp_relation a owl:DatatypeProperty;
+  rdfs:subPropertyOf viprs:immanent_datatype_property;
+  rdfs:comment """Datatype property based on documentation (e.g, descriptions, explanations or classifications).
+  	       It can be in both directions (i.e., having some documentation or being documentation of something)."""^^xs:string.
+
+# P5 - DP-Similarity #
+
+viso:similarity_dp_relation a owl:DatatypeProperty;
+  rdfs:subPropertyOf viprs:immanent_datatype_property;
+  rdfs:comment "Datatype property based on similarity, intended as some common aspect."^^xs:string.
+
+# P6 - Connection #
+
+viso:connection_dp_relation a owl:DatatypeProperty;
+  rdfs:subPropertyOf viprs:immanent_datatype_property;
+  rdfs:comment "Datatype property that is other than parthood, ability, dependence, similarity and documentation."^^xs:string.
+
+##################################################################
+
+viso:has_main_name a owl:DatatypeProperty;
+  a owl:FunctionalProperty;
+  rdfs:comment "identifies the main name of a software, without version information"^^xs:string;
+  rdfs:domain viso:software;
+  rdfs:range xs:string;
+  rdfs:subPropertyOf viso:documentation_dp_relation;
+  rdfs:subPropertyOf viprs:has_name.
+
+viso:has_version_identifier a owl:DatatypeProperty;
+  a owl:FunctionalProperty;
+  rdfs:comment "identifies the version of a software (can be a number or a suffix in the name)"^^xs:string;
+  rdfs:domain viso:software;
+  rdfs:range xs:string;
+  rdfs:subPropertyOf viso:documentation_dp_relation;
+  rdfs:subPropertyOf viprs:has_specifier.
+
+viso:has_release_date a owl:DatatypeProperty;
+  a owl:FunctionalProperty;
+  rdfs:domain viso:software;
+#  rdfs:range xs:date; # NB: This would be the appropriate datatype, but it is currently not recognized by FaCT++
+  rdfs:range xs:dateTime; 
+  rdfs:comment """Note: xs:date would be the appropriate datatype, we don't use it because it is currently not recognized by the FaCT++ reasoner.
+  	       Therefore, conventionally, we set the time as T00:00:00+00:00 for all individuals."""^^xs:string;
+  rdfs:subPropertyOf viso:documentation_dp_relation;
+  rdfs:subPropertyOf viprs:has_specifier.
+  
+viso:is_free a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:dependence_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:is_free_to_academic a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:dependence_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:has_a_gpu_version a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:ability_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:is_a_library a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software_tool;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:ability_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:is_open_source a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:seeAlso "https://opensource.org/osd"^^xs:string;
+  rdfs:comment """Open source means there is access to the source code, 
+  but also that the distribution terms comply with certain criteria 
+  (e.g., about re-distribution)"""^^xs:string;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:dependence_dp_relation;
+  rdfs:subPropertyOf viso:ability_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:has_a_gui a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:ability_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:has_a_manual a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:documentation_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:has_memory_requirement a owl:DatatypeProperty; 
+  rdfs:domain viso:software;
+  rdfs:range xs:string;
+  rdfs:comment "Generic memory requirement, can concern both storage and RAM"^^xs:string;
+  rdfs:subPropertyOf viso:dependence_dp_relation;
+  rdfs:subPropertyOf viprs:has_specifier.
+
+viso:has_model_classifier a owl:DatatypeProperty;
+  rdfs:domain viso:model_type;  
+  rdfs:range xs:string;
+  rdfs:subPropertyOf viso:documentation_dp_relation;
+  rdfs:subPropertyOf viprs:has_specifier.
+
+viso:has_osmo_pe_type_id a owl:DatatypeProperty;
+  rdfs:subPropertyOf viso:has_model_classifier;
+  rdfs:domain viso:model_type;  
+  rdfs:range xs:string.
+
+viso:has_update_comment a owl:DatatypeProperty;
+  rdfs:domain viso:software_update;
+  rdfs:range xs:string;
+  rdfs:subPropertyOf viso:parthood_dp_relation;
+  rdfs:subPropertyOf viso:documentation_dp_relation;
+  rdfs:subPropertyOf viprs:has_textual_content.
+
+viso:has_a_cli a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:ability_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:has_an_api a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:ability_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:has_a_wrapper a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:ability_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:has_a_data_interface a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:domain viso:software;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viso:ability_dp_relation;
+  rdfs:subPropertyOf viprs:has_flag.
+
+viso:has_accessible_exe a owl:DatatypeProperty, owl:FunctionalProperty;
+  rdfs:comment """the tool executable can be accessed. It implies there is a command line interface in the 
+  sense that the executable can be called from a terminal"""^^xs:string; 
+  rdfs:domain viso:software_tool;
+  rdfs:range xs:boolean;
+  rdfs:subPropertyOf viprs:has_flag.
+
+### Object Properties ###
+
+####### VISO primitive (or fundamental) properties ###############
+
+# P1 - Parthood #
+
+viso:parthood_relation a owl:ObjectProperty;
+  rdfs:subPropertyOf viprs:immanent_relation;  # overlap
+  rdfs:comment """Relates objects based on the their constitution (also in the sense of participants in a process).
+  	       It can be in both directions (i.e., having parts or being parts of something)."""^^xs:string.
+
+viso:has_part a owl:ObjectProperty; 
+  rdfs:comment "It concerns the constitution of an object (also in the sense of the participants of a process)."^^xs:string;
+  rdfs:subPropertyOf viso:parthood_relation, viprs:mereosemiotics_hp_ip.
+viprs:has_proper_part rdfs:subPropertyOf viso:has_part.
+
+viso:is_part_of a owl:ObjectProperty; 
+  owl:inverseOf viso:has_part;
+  rdfs:comment "It concerns the constitution of an object (also in the sense of the participants of a process)."^^xs:string;
+  rdfs:subPropertyOf viso:parthood_relation, viprs:mereosemiotics_hp_ip.
+viprs:is_proper_part_of rdfs:subPropertyOf viso:is_part_of.
+
+# P2 - Dependence #
+
+viso:dependence_relation a owl:ObjectProperty;
+  rdfs:subPropertyOf viprs:immanent_relation;
+  rdfs:comment """Relates objects with any kind of dependence (e.g, functional dependence,	
+  	       legal dependence, causality, authorship). It can be in both directions 
+	       (i.e., depending on something or having dependents). """^^xs:string.
+
+viso:depends_on a owl:ObjectProperty;
+  rdfs:comment """Refers to any kind of dependence. For example, functional dependence (e.g., a tool requires a library),	
+  	       legal dependence (e.g., a product is owned/distribued by an agent), 
+	       causality (e.g., something exists or happens after something else), authorship (e.g, a book has an author). """^^xs:string.
+
+viso:has_dependent a owl:ObjectProperty;
+  owl:inverseOf viso:depends_on;
+  rdfs:comment """Refers to any kind of dependence. For example, functional dependence (e.g., a library is required by a tool), 
+  	       legal dependence (e.g., an agent owns/distributes a product), 
+	       causality  (e.g., something exists or happens beofre something else), authorship (e.g, an author writes a book). """^^xs:string.
+
+# P3 - Ability #
+
+viso:ability_relation a owl:ObjectProperty;
+  rdfs:subPropertyOf viprs:immanent_relation;
+  rdfs:comment """Relates objects based on some functionality, capability, i.e., the potentiality to do something.
+  	       It concerns the functioning of an object. It can be in both directions (having an ability or being an ability)."""^^xs:string.
+
+viso:has_ability a owl:ObjectProperty;
+  rdfs:subPropertyOf viprs:enables_entity_containing.
+
+viso:is_ability_of a owl:ObjectProperty;
+  owl:inverseOf viso:has_ability;
+  rdfs:subPropertyOf viprs:is_proper_part_of_entity_enabled_by.
+
+# P4 - Documentation #
+
+viso:documentation_relation a owl:ObjectProperty;
+  rdfs:subPropertyOf viprs:immanent_relation;
+  rdfs:comment """Relates objects based on documentation (e.g, descriptions, explanations or classifications).
+  	       It can be in both directions (i.e., having some documentation or being documentation of something)."""^^xs:string.
+
+viso:has_documentation a owl:ObjectProperty;
+  rdfs:comment "Points to a description, explanation or classification of an object."^^xs:string;
+  rdfs:subPropertyOf viprs:has_sign.
+
+viso:is_documentation_of a owl:ObjectProperty;
+  owl:inverseOf viso:has_documentation;
+  rdfs:comment "Is a description, explanation or classification of an object."^^xs:string;
+  rdfs:subPropertyOf viprs:is_sign_for.
+
+# P5 - Similarity #
+
+viso:similarity_relation a owl:ObjectProperty;
+  rdfs:subPropertyOf viprs:immanent_relation;
+  rdfs:comment "Relates objects based on similarity, intended as some common aspect."^^xs:string.
+
+viso:is_similar_to a owl:ObjectProperty;
+#  a owl:ReflexiveProperty; # NB: Removed to avoid uninformative relations between individuals.
+  a owl:TransitiveProperty;
+  a owl:SymmetricProperty;
+  rdfs:comment """Refers to any kind of similarity, intended as some common aspect.
+  	       It is a transitive and symmetric property. We intentionally avoid reflexivity, since it would be uninformative."""^^xs:string.
+
+# P6 - Connection #
+
+viso:connection_relation a owl:ObjectProperty;
+  rdfs:subPropertyOf viprs:immanent_relation;
+  rdfs:comment "Relates objects in ways that are other than parthood, ability, dependence, similarity and documentation."^^xs:string.
+
+viso:is_connected_to a owl:ObjectProperty.
+
+##################################################################
+
+viso:depends_on rdfs:subPropertyOf viso:dependence_relation.
+viso:has_dependent rdfs:subPropertyOf viso:dependence_relation.
+
+viso:has_ability rdfs:subPropertyOf viso:ability_relation.
+viso:is_ability_of rdfs:subPropertyOf viso:ability_relation.
+
+viso:has_documentation rdfs:subPropertyOf viso:documentation_relation.
+viso:is_documentation_of rdfs:subPropertyOf viso:documentation_relation.
+
+viso:has_part rdfs:subPropertyOf viso:parthood_relation.
+viso:is_part_of rdfs:subPropertyOf viso:parthood_relation.
+
+viso:is_similar_to rdfs:subPropertyOf viso:similarity_relation.
+
+viso:is_connected_to rdfs:subPropertyOf viso:connection_relation.
+
+##################################################################
+
+viso:is_owner_of a owl:ObjectProperty;
+  rdfs:domain viso:agent;
+  rdfs:range viso:software;
+  rdfs:subPropertyOf viso:has_dependent;
+  rdfs:subPropertyOf viprs:n_loc_cor_rnoc.  
+
+viso:has_owner a owl:ObjectProperty;
+  rdfs:domain viso:software;
+  rdfs:range viso:agent;
+  owl:inverseOf viso:is_owner_of;
+  rdfs:subPropertyOf viso:depends_on;
+  rdfs:subPropertyOf viprs:n_lnoc_cor_roc.
+
+viso:is_distributor_of a owl:ObjectProperty;
+  rdfs:domain viso:agent;
+  rdfs:range viso:software;
+  owl:inverseOf viso:is_distributed_by;
+  rdfs:subPropertyOf viso:has_dependent;
+  rdfs:subPropertyOf viprs:n_loc_cor_rnoc.  
+
+viso:is_distributed_by a owl:ObjectProperty;
+  rdfs:domain viso:software;
+  rdfs:range viso:agent;
+  rdfs:subPropertyOf viso:depends_on;
+  rdfs:subPropertyOf viprs:n_lnoc_cor_roc.
+
+viso:has_license a owl:ObjectProperty;
+  rdfs:domain viso:software;
+  rdfs:range viso:license;
+  rdfs:subPropertyOf swo:has_license;
+  rdfs:subPropertyOf viso:depends_on;
+  rdfs:subPropertyOf viprs:n_lnoc_cor_roc.
+swo:has_license rdfs:subPropertyOf viprs:n_lnoc_cor_roc.
+
+viso:is_input_of a owl:ObjectProperty;
+  rdfs:domain viso:software;
+  rdfs:range viso:software_update;
+  owl:inverseOf viso:has_input;
+  rdfs:subPropertyOf viso:is_part_of.
+
+viso:is_output_of a owl:ObjectProperty;
+  rdfs:domain viso:software;
+  rdfs:range viso:software_update;
+  owl:inverseOf viso:has_output;
+  rdfs:subPropertyOf viso:is_part_of.
+
+viso:has_vimmp_contact a owl:ObjectProperty;  # NB: "internal" VIMMP property
+  rdfs:comment "points to the VIMMP human agent(s) to be contacted about the given software"^^xs:string;
+  rdfs:domain viso:software;
+  rdfs:range evmpo:human_agent;
+  rdfs:subPropertyOf viso:is_connected_to;
+  rdfs:subPropertyOf viprs:immanent_relation.
+
+viso:has_manual a owl:ObjectProperty;
+  rdfs:domain viso:software;
+  rdfs:range evmpo:training_document;
+  rdfs:subPropertyOf viso:has_documentation.
+
+viso:is_manual_of a owl:ObjectProperty; 
+  rdfs:domain evmpo:training_document;
+  rdfs:range viso:software;
+  owl:inverseOf viso:has_manual;
+  rdfs:subPropertyOf viso:is_documentation_of.
+
+viso:is_tool_for_model a owl:ObjectProperty;
+  rdfs:comment "Relates software tools and RoMM models."^^xs:string;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:model_type;
+  rdfs:subPropertyOf viso:has_ability.
+
+viso:has_feature a owl:ObjectProperty;
+  rdfs:comment "To describe the (solver and model) features of a software tool."^^xs:string;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:software_tool_feature;
+  rdfs:subPropertyOf viso:has_ability.
+
+viso:is_feature_of a owl:ObjectProperty;
+  rdfs:domain viso:software_tool_feature;
+  rdfs:range viso:software_tool;
+  owl:inverseOf viso:has_feature;
+  rdfs:subPropertyOf viso:is_ability_of.
+
+viso:uses_language a owl:ObjectProperty;
+  rdfs:domain [a owl:Class; owl:unionOf (viso:software_tool viso:software_interface)];
+  rdfs:range viso:programming_language;
+  rdfs:subPropertyOf viso:depends_on;
+  rdfs:subPropertyOf viprs:n_lnoc_or_roc.
+
+viso:is_compatible_with a owl:ObjectProperty,
+  owl:SymmetricProperty;
+  rdfs:comment "Asserts compatibility (i.e., the ability to exchange information directly, with no need to interface) between sofware tools."^^xs:string;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:software_tool;
+  rdfs:subPropertyOf viso:is_connected_to;
+  rdfs:subPropertyOf viprs:can_cooccur_with.
+
+viso:requires a owl:ObjectProperty;
+  rdfs:comment "Relates a software tool to libraries and/or operating systems."^^xs:string;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:software;
+  rdfs:subPropertyOf viso:depends_on;
+  rdfs:subPropertyOf viprs:n_lnoc_or_roc.
+
+viso:can_run_on a owl:ObjectProperty;
+  rdfs:comment "Relates a software tool to operating systems."^^xs:string;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:operating_system;
+  rdfs:subPropertyOf viso:depends_on;
+  rdfs:subPropertyOf viprs:n_lnoc_cor_roc.
+
+viso:has_not_feature a owl:ObjectProperty;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:software_tool_feature;
+  rdfs:comment "Note: this property should not be used as an alternative to a proper negation of has_feature. It was introduced to allow the reasoner to make deductions about non-features from the software_update entities. Also, it is supposed to be incompatible with (owl:propertyDisjointWith) has_feature, but the OWL language does not allow to impose this constraint"^^xs:string;
+  rdfs:subPropertyOf viprs:immanent_relation.
+
+viso:has_added_feature a owl:ObjectProperty;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:software_tool_feature;
+  rdfs:subPropertyOf viso:has_feature;
+  owl:propertyChainAxiom  (viso:is_output_of viso:adds_feature).
+
+viso:has_acted_upon_feature a owl:ObjectProperty;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:software_tool_feature;
+  rdfs:subPropertyOf viso:has_feature;
+  owl:propertyChainAxiom  (viso:is_input_of viso:removes_feature).
+
+viso:has_older_version a owl:ObjectProperty,
+  owl:TransitiveProperty;
+  rdfs:domain viso:software;
+  rdfs:range viso:software;
+  rdfs:comment "Note: this property is meant to be irreflexive (owl:IrreflexiveProperty), but the OWL language does not allow to impose this constraint"^^xs:string;
+  owl:propertyChainAxiom  (viso:is_output_of viso:has_input);
+  rdfs:subPropertyOf viso:has_other_version;
+  rdfs:subPropertyOf viso:depends_on.
+
+viso:has_newer_version a owl:ObjectProperty,
+  owl:TransitiveProperty;
+  rdfs:domain viso:software;
+  rdfs:range viso:software;
+  owl:propertyChainAxiom  (viso:is_input_of viso:has_output);
+  owl:inverseOf viso:has_older_version;
+  rdfs:subPropertyOf viso:has_other_version;
+  rdfs:subPropertyOf viso:has_dependent.
+
+viso:has_other_version a owl:ObjectProperty,
+  owl:TransitiveProperty;
+  a owl:SymmetricProperty;
+  rdfs:domain viso:software;
+  rdfs:range viso:software;
+  rdfs:subPropertyOf viso:is_similar_to;
+  rdfs:subPropertyOf viprs:shares_a_sign_with.
+
+viso:has_lost_feature a owl:ObjectProperty;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:software_tool_feature;
+  owl:propertyChainAxiom  (viso:is_output_of viso:removes_feature);
+  rdfs:subPropertyOf viso:has_not_feature.  
+  
+viso:has_missing_feature a owl:ObjectProperty;
+  rdfs:domain viso:software_tool;
+  rdfs:range viso:software_tool_feature;
+  owl:propertyChainAxiom  (viso:is_input_of viso:adds_feature);
+  rdfs:subPropertyOf viso:has_not_feature.  
+
+viso:is_modelling_twin_of a owl:ObjectProperty,
+  owl:SymmetricProperty,
+  owl:TransitiveProperty;
+  rdfs:comment "Relates two objects that (despite being possibly distinct individuals) are equivalent from the modelling point of view. For example, a DPD thermostat is equivalent to the combination of Random and Drag forces, and a hard sphere can be represented using an infinite potential."^^xs:string;
+  rdfs:subPropertyOf viso:is_similar_to;
+  rdfs:subPropertyOf viprs:immanent_relation.
+
+viso:involves a owl:ObjectProperty;
+  rdfs:domain [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)];
+  rdfs:range [a owl:Class; owl:unionOf (vov:variable vov:function viso:model_object)];
+  rdfs:comment "[X involves Y] means that there is a mathematical expression or an algorithmic formulation of X that contains the variable, function or model object Y"^^xs:string;
+  rdfs:subPropertyOf viso:has_part.
+
+viso:is_involved_in a owl:ObjectProperty;
+  rdfs:domain [a owl:Class; owl:unionOf (vov:variable vov:function viso:model_object)];
+  rdfs:range [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)];
+  owl:inverseOf viso:involves;
+  rdfs:subPropertyOf viso:is_part_of.
+
+viso:has_pe a owl:ObjectProperty;
+  rdfs:domain viso:model_type;  
+  rdfs:range viso:physical_equation;
+  rdfs:subPropertyOf viso:has_part.
+
+viso:is_pe_of a owl:ObjectProperty;
+  rdfs:domain viso:physical_equation;  
+  rdfs:range viso:model_type;
+  owl:inverseOf viso:has_pe;
+  rdfs:subPropertyOf viso:is_part_of.
+
+viso:is_added_by_update a owl:ObjectProperty;
+  rdfs:domain viso:software_tool_feature;
+  rdfs:range viso:software_tool_update; 
+  owl:inverseOf viso:adds_feature;
+  rdfs:subPropertyOf viso:is_part_of.
+
+viso:is_removed_by_update a owl:ObjectProperty;
+  rdfs:domain viso:software_tool_feature;
+  rdfs:range viso:software_tool_update; 
+  owl:inverseOf viso:removes_feature;
+  rdfs:subPropertyOf viso:is_part_of.
+
+viso:has_input a owl:ObjectProperty;
+  rdfs:domain viso:software_update;
+  rdfs:range viso:software;
+  rdfs:subPropertyOf viso:has_part.  # is_input_of [= is_part_of  =>  has_input [= has_part
+
+viso:has_output a owl:ObjectProperty;
+  rdfs:domain viso:software_update;
+  rdfs:range viso:software;
+  rdfs:subPropertyOf viso:has_part.  # is_output_of [= is_part_of  =>  has_output [= has_part
+
+viso:adds_feature a owl:ObjectProperty;
+  rdfs:domain viso:software_tool_update;
+  rdfs:range viso:software_tool_feature;
+  rdfs:subPropertyOf viso:has_part.
+
+viso:removes_feature a owl:ObjectProperty;
+  rdfs:domain viso:software_tool_update;
+  rdfs:range viso:software_tool_feature;
+  rdfs:subPropertyOf viso:has_part.
+
+viso:has_interface a owl:ObjectProperty;
+  rdfs:domain viso:software;
+  rdfs:range viso:software_interface;
+  rdfs:subPropertyOf viso:has_ability.
+
+viso:has_classifier a owl:ObjectProperty;
+  rdfs:domain [a owl:Class; owl:unionOf (viso:software_tool
+  	      viso:software_tool_feature viso:modeling_related_entity)];
+  rdfs:range viso:classifier;
+  rdfs:subPropertyOf viso:has_documentation.
+
+viso:has_clause a owl:ObjectProperty;
+  rdfs:domain viso:license;
+  rdfs:range viso:license_clause;
+  rdfs:subPropertyOf swo:SWO_9001002.  # <-> SWO 'has clause'
+  # rdfs:subPropertyOf viso:has_part.
+swo:SWO_9001002 rdfs:subPropertyOf viso:has_part.
+
+viso:is_mathematically_related_to a owl:ObjectProperty;
+  rdfs:comment """[X is_mathematically_related_to Y] if X and Y are related to each other by a mathematical transformation, 
+   	        such as, for example, differentiation, integration or Fourier transform."""^^xs:string;
+  rdfs:domain evmpo:marketplace_related_entity;
+  rdfs:range evmpo:marketplace_related_entity;
+  a owl:SymmetricProperty;
+  rdfs:subPropertyOf viso:is_connected_to;
+  rdfs:subPropertyOf viprs:immanent_relation.
+
+###################################################################
+#        Other relations between properties                       #
+###################################################################
+
+[a owl:Restriction;
+                   owl:onProperty viso:has_interface;
+                   owl:minQualifiedCardinality 1;
+                   owl:onClass viso:graphical_user_interface]
+		   rdfs:subClassOf
+		   [a owl:Restriction; 
+                   owl:onProperty viso:has_a_gui;
+                   owl:hasValue true].
+
+[a owl:Restriction;
+                   owl:onProperty viso:has_interface;
+                   owl:minQualifiedCardinality 1;
+                   owl:onClass viso:command_line_interface]
+		   rdfs:subClassOf
+		   [a owl:Restriction; 
+                   owl:onProperty viso:has_a_cli;
+                   owl:hasValue true].
+
+[a owl:Restriction;
+                   owl:onProperty viso:has_interface;
+                   owl:minQualifiedCardinality 1;
+                   owl:onClass viso:application_programming_interface]
+		   rdfs:subClassOf
+		   [a owl:Restriction; 
+                   owl:onProperty viso:has_an_api;
+                   owl:hasValue true].
+
+[a owl:Restriction;
+                   owl:onProperty viso:has_interface;
+                   owl:minQualifiedCardinality 1;
+                   owl:onClass viso:wrapper]
+		   rdfs:subClassOf
+		   [a owl:Restriction; 
+                   owl:onProperty viso:has_a_wrapper;
+                   owl:hasValue true].
+
+[a owl:Restriction;
+                   owl:onProperty viso:has_interface;
+                   owl:minQualifiedCardinality 1;
+                   owl:onClass viso:data_interface]
+		   rdfs:subClassOf
+		   [a owl:Restriction; 
+                   owl:onProperty viso:has_a_data_interface;
+                   owl:hasValue true].
+
+[a owl:Restriction;
+                  owl:onProperty viso:is_free;
+                  owl:hasValue true]
+		  rdfs:subClassOf [a owl:Restriction;
+                  owl:onProperty viso:is_free_to_academic;
+                  owl:hasValue true].
+
+[a owl:Restriction;
+                  owl:onProperty viso:is_free_to_academic;
+                  owl:hasValue false]
+		  rdfs:subClassOf [a owl:Restriction;
+                  owl:onProperty viso:is_free;
+                  owl:hasValue false].
+
+[a owl:Restriction;
+                   owl:onProperty viso:has_manual;
+                   owl:minCardinality 1]
+		   rdfs:subClassOf
+		   [a owl:Restriction; 
+                   owl:onProperty viso:has_a_manual;
+                   owl:hasValue true].
+
+[a owl:Restriction;
+                  owl:onProperty viso:has_accessible_exe;
+                  owl:hasValue true]
+		  rdfs:subClassOf [a owl:Restriction;
+                  owl:onProperty viso:has_a_cli;
+                  owl:hasValue true].
+
+[a owl:Restriction;
+                  owl:onProperty viso:has_a_cli;
+                  owl:hasValue false]
+		  rdfs:subClassOf [a owl:Restriction;
+                  owl:onProperty viso:has_accessible_exe;
+                  owl:hasValue false].
+
+###################################################################
+#        Some useful named restrictions                           #
+###################################################################
+
+viso:R_IS_ELECTRONIC owl:equivalentClass [a owl:Restriction;
+   owl:onProperty viso:has_classifier;
+   owl:hasValue osmo:ELECTRONIC];
+   rdfs:subClassOf vov:restriction.
+
+viso:R_IS_ATOMISTIC owl:equivalentClass [a owl:Restriction;
+   owl:onProperty viso:has_classifier;
+   owl:hasValue osmo:ATOMISTIC];
+   rdfs:subClassOf vov:restriction.
+
+viso:R_IS_MESOSCOPIC owl:equivalentClass [a owl:Restriction;
+   owl:onProperty viso:has_classifier;
+   owl:hasValue osmo:MESOSCOPIC];
+   rdfs:subClassOf vov:restriction.
+
+viso:R_IS_CONTINUUM owl:equivalentClass [a owl:Restriction;
+  owl:onProperty viso:has_classifier;
+  owl:hasValue osmo:CONTINUUM];
+   rdfs:subClassOf vov:restriction.
+   
+########################################################
+
+########################################################
+
+###  INSTANCES DEFINITION and DECLARATION OF DIFFERENCES
+
+_:C_EXECUTION_MODE rdf:type owl:AllDifferent;
+  owl:distinctMembers (viso:PARALLEL_EXECUTION viso:SERIAL_EXECUTION).
+
+####################################################
+
+viso:software_tool_feature a owl:Class; 
+  rdfs:subClassOf evmpo:marketplace_related_entity;
+  owl:disjointUnionOf (viso:solver_feature viso:model_feature). 
+
+###################################################################
+# NB: for convenience, some EVMPO statements are duplicated here  #
+###################################################################
+
+evmpo:legal_document rdfs:subClassOf evmpo:information_content_entity.
+evmpo:training_document rdfs:subClassOf evmpo:information_content_entity.
+evmpo:information_content_entity rdfs:subClassOf evmpo:marketplace_related_entity.
+evmpo:software_infrastructure rdfs:subClassOf evmpo:marketplace_related_entity.
+evmpo:agent rdfs:subClassOf evmpo:marketplace_related_entity.
+evmpo:process rdfs:subClassOf evmpo:marketplace_related_entity.
+
+evmpo:annotation rdfs:subClassOf evmpo:marketplace_related_entity.
+
+###
+
+vov:variable rdfs:subClassOf evmpo:marketplace_related_entity.
+vov:function rdfs:subClassOf evmpo:marketplace_related_entity.
+
+###################################################################
+#           Notes on the alignment with VIPRS                     #
+###################################################################
+# Parthood: 
+#
+# viso:has_part (viso:is_part_of) is sub-property of viprs:has_proper_part (viprs:is_proper_part_of).
+#
+# Dependence:
+#
+# sub-properties of viso:dependence_relation are conceptual or individual cooccurrence necessities:
+# more precisely, those under viso:depdends_on (viso:has_dependent) are sub-properties of
+# viprs:n_lnoc_cor_roc (viprs:n_loc_cor_rnoc) or of viprs:n_lnoc_or_roc (viprs:n_loc_or_rnoc) when 
+# stronger statements can be made. 
+#
+# Ability: 
+# 
+# viso:has_ability is a sub-property of viprs:enables_entity_containing
+# viso:is_ability_of is a sub-property of viprs:is_proper_part_of_entity_enabled_by
+#
+# For example: if a tool X has a feature Y, this allows to create an entity (a workflow, a simulation)
+# that contains feature Y
+#
+# Documentation:
+#
+# viso:has_documentation (viso:is_documentation_of) is sub-property of viprs:has_sign (viprs:is_sign_for).
+#
+# Similarity, Connection: alignment done on a case-by-case basis.
+#
+# Datatype properties:
+#
+# All boolean ones fall under viprs:has_flag; for the others, the alignment is done on a case-by-case basis.

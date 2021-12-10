@@ -1,0 +1,1195 @@
+########################################################################################
+#                                                                                      #
+#                             VOV - Vimmp Ontology of Variables                        #
+#                                                                                      #
+# Authors of VOV:                                                                      #
+#                                                                                      #
+# Silvia Chiacchiera, Martin T. Horsch (STFC/UKRI, Daresbury Laboratory, UK)           #
+# Michael A. Seaton, Ilian T. Todorov (STFC/UKRI, Daresbury Laboratory, UK)            #
+#                                                                                      #
+# version 1.0.5, date: 26 November 2020                                                 #
+########################################################################################
+
+@prefix vov: <https://purl.vimmp.eu/semantics/vov/vov.ttl#>.
+@prefix viso: <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>.
+@prefix viso-am: <https://purl.vimmp.eu/semantics/viso/viso-atomistic-mesoscopic.ttl#>.
+@prefix viso-el: <https://purl.vimmp.eu/semantics/viso/viso-electronic.ttl#>.
+@prefix viso-co: <https://purl.vimmp.eu/semantics/viso/viso-continuum.ttl#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xs: <http://www.w3.org/2001/XMLSchema#>.
+@prefix osmo: <https://purl.vimmp.eu/semantics/osmo/osmo.ttl#>.
+@prefix evmpo: <https://emmc.eu/semantics/evmpo/evmpo.ttl#>.
+@prefix qudt: <http://qudt.org/schema/qudt/>. 
+@prefix qudt-qk: <http://qudt.org/vocab/quantitykind/>. 
+@prefix viprs: <https://purl.vimmp.eu/semantics/alignment/viprs.ttl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+
+<https://purl.vimmp.eu/semantics/vov/vov.ttl#> a owl:Ontology.
+
+############################  Ontology header  #########################################
+
+<https://purl.vimmp.eu/semantics/vov/vov.ttl#>
+  dcterms:title "VOV - Vimmp Ontology of Variables"^^xs:string;
+  owl:versionInfo "version 1.0.5"^^xs:string;
+  dcterms:modified "2020-11-26"^^xs:string;
+  dcterms:creator "Silvia Chiacchiera (ORCID 0000-0003-0422-7870)"^^xs:string;
+  dcterms:creator "Martin T. Horsch (ORCID 0000-0002-9464-6739)"^^xs:string;
+  dcterms:creator "Michael A. Seaton (ORCID 0000-0002-4708-573X)"^^xs:string;
+  dcterms:creator "Ilian T. Todorov (ORCID 0000-0001-7275-1784)"^^xs:string;
+  dcterms:contributor "Joshua D. Elliott (ORCID 0000-0002-0729-246X)"^^xs:string;
+  dcterms:contributor "Welchy Leite Cavalcanti"^^xs:string;
+  dcterms:contributor "Gerhard Goldbeck (ORCID 0000-0002-4181-2852)"^^xs:string;
+  dcterms:contributor "Daniele Toti (ORCID 0000-0002-9668-6961)"^^xs:string;	
+  dcterms:license "VOV is provided under a GNU Lesser General Public License (LGPL) version 3 (https://www.gnu.org/licenses/lgpl-3.0.html)."^^xs:string;
+  dcterms:description """The purpose of VOV is to organize the variables (in a broad sense, including constants) 
+that appear in modelling and simulations of materials and to connect them to models and algorithms, 
+which are in turn described using concepts from VISO. 
+It may be used with VISO and OSMO to further specify models, algorithms and workflows."""^^xs:string;
+  dcterms:bibliographicCitation """Horsch, M.T., Chiacchiera, S., Seaton, M.A., Todorov, I.T. et al.,
+Ontologies for the Virtual Materials Marketplace. Künstl Intell (2020). 
+https://doi.org/10.1007/s13218-020-00648-9"""^^xs:string;
+  rdfs:comment """The authors acknowledge funding from the European Union's Horizon 2020 research and
+innovation programme under grant agreement no. 760907, Virtual Materials Marketplace (VIMMP)."""^^xs:string.
+
+<https://purl.vimmp.eu/semantics/vov/vov.ttl#>
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>;
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-electronic.ttl#>;
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-atomistic-mesoscopic.ttl#>;
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-continuum.ttl#>.
+
+vov:restriction a owl:Class;
+   rdfs:subClassOf evmpo:marketplace_related_entity.
+
+############################  (1) Variable  (Fundamental class) ########################
+
+vov:variable a owl:Class;
+  rdfs:comment "a variable in the mathematical sense, i.e. a symbol that stands for a quantity in a mathematical expression"^^xs:string;
+  rdfs:subClassOf evmpo:marketplace_related_entity;
+  rdfs:subClassOf osmo:logical_variable.
+
+vov:object_variable a owl:Class;
+  rdfs:subClassOf vov:variable;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty vov:has_scope;
+	    	  owl:hasValue "OBJECT"^^xs:string];
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty vov:is_variable_attached_to;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass viso:model_object].  
+
+vov:pair_variable a owl:Class;
+  rdfs:subClassOf vov:variable;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty vov:has_scope;
+	    	  owl:hasValue "PAIR"^^xs:string];
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty vov:is_variable_involved_in;
+		  owl:minQualifiedCardinality 2;
+		  owl:onClass viso:model_object].  
+
+vov:system_variable a owl:Class;
+  rdfs:subClassOf vov:variable;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty vov:has_scope;
+	    	  owl:hasValue "SYSTEM"^^xs:string]. 
+
+vov:universal_variable a owl:Class;
+  rdfs:subClassOf vov:variable;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty vov:has_scope;
+	    	  owl:hasValue "UNIVERSE"^^xs:string]. 
+
+vov:scalar_variable a owl:Class;
+  rdfs:subClassOf vov:variable;
+  rdfs:comment "A variable that is a scalar (with respect to real space)."^^xs:string;
+  rdfs:comment "Whatever the spatial dimension of a system is, it is specified by just one element."^^xs:string.
+
+vov:vector_variable a owl:Class;
+  rdfs:comment "A variable that is a vector (with respect to real space)."^^xs:string;
+  rdfs:comment "In a system of spatial dimension N, it is specified by N elements."^^xs:string;  
+  rdfs:subClassOf vov:variable.
+
+vov:tensor_variable a owl:Class;
+  rdfs:comment "A variable that is a tensor (with respect to real space)."^^xs:string;
+  rdfs:comment "In a system of spatial dimension N, it is specified by NxN elements."^^xs:string;  
+  rdfs:subClassOf vov:variable.
+
+vov:variable owl:disjointUnionOf (vov:object_variable vov:pair_variable vov:system_variable vov:universal_variable).
+vov:variable owl:disjointUnionOf (vov:scalar_variable vov:vector_variable vov:tensor_variable).
+
+vov:physical_variable a owl:Class;
+  rdfs:subClassOf vov:variable;
+  owl:equivalentClass [a owl:Restriction;
+  		  owl:onProperty vov:is_physical;
+	    	  owl:hasValue true];
+  rdfs:subClassOf evmpo:property.
+
+vov:model_variable a owl:Class;
+  owl:intersectionOf (vov:variable 
+    		     [a owl:Restriction;
+  		     owl:onProperty viso:is_involved_in;
+		     owl:someValuesFrom viso:model_feature]).
+
+vov:mr_trait_variable a owl:Class;
+  owl:intersectionOf (vov:variable 
+    		     [a owl:Restriction;
+  		     owl:onProperty viso:is_involved_in;
+		     owl:someValuesFrom viso:materials_relation_trait]).
+
+vov:pe_trait_variable a owl:Class;
+  owl:intersectionOf (vov:variable 
+    		     [a owl:Restriction;
+  		     owl:onProperty viso:is_involved_in;
+		     owl:someValuesFrom viso:physical_equation_trait]).
+
+vov:ext_cond_trait_variable a owl:Class;
+  owl:intersectionOf (vov:variable 
+    		     [a owl:Restriction;
+  		     owl:onProperty viso:is_involved_in;
+		     owl:someValuesFrom viso:external_condition_trait]).
+
+vov:solver_variable a owl:Class;
+  owl:intersectionOf (vov:variable 
+    		     [a owl:Restriction;
+  		     owl:onProperty viso:is_involved_in;
+		     owl:someValuesFrom viso:solver_feature]).
+
+vov:relative_variable a owl:Class;
+   rdfs:subClassOf vov:pair_variable.	
+
+vov:relative_position a owl:Class;
+   rdfs:subClassOf vov:position;
+   rdfs:subClassOf vov:relative_variable;	
+   rdfs:comment "The position of an object with respect to another one."^^xs:string;   
+   rdfs:subClassOf [a owl:Restriction;
+	       	   owl:onProperty vov:has_initial_point;
+		   owl:qualifiedCardinality 1;
+		   owl:onClass viso:model_object];
+   rdfs:subClassOf [a owl:Restriction;
+	       	   owl:onProperty vov:has_final_point;
+		   owl:qualifiedCardinality 1;
+		   owl:onClass viso:model_object].
+
+vov:relative_velocity a owl:Class;
+   rdfs:subClassOf vov:velocity;
+   rdfs:subClassOf vov:relative_variable;	
+   rdfs:comment "The velocity of an object with respect to another one."^^xs:string;   
+   rdfs:subClassOf [a owl:Restriction;
+	       	   owl:onProperty vov:has_initial_point;
+		   owl:qualifiedCardinality 1;
+		   owl:onClass viso:model_object];
+   rdfs:subClassOf [a owl:Restriction;
+	       	   owl:onProperty vov:has_final_point;
+		   owl:qualifiedCardinality 1;
+		   owl:onClass viso:model_object].
+
+############################  (2) Function (Fundamental class)  ########################
+
+vov:function a owl:Class;
+  rdfs:comment "A relation between two or more variables (e.g., the radial distribution function, the energy density of states)."^^xs:string;
+  rdfs:comment "It can be defined via a mathematical equation or via tabulated values."^^xs:string;  
+  rdfs:subClassOf evmpo:marketplace_related_entity;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:minQualifiedCardinality 2;
+		  owl:onClass vov:variable].  
+
+vov:pair_distribution_function a owl:Class;
+  rdfs:subClassOf vov:function;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:position].
+
+vov:radial_distribution_function a owl:Class;
+  rdfs:subClassOf vov:pair_distribution_function;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:radial_distance];
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:is_mathematically_related_to;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:isotropic_structure_factor].
+  
+vov:isotropic_structure_factor a owl:Class;
+  rdfs:subClassOf vov:function;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:is_mathematically_related_to;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:radial_distribution_function];
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:linear_momentum].
+
+vov:number_density_field a owl:Class;
+   rdfs:subClassOf vov:scalar_field;
+   rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:number_density]; 
+   rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:position].
+
+vov:trajectory a owl:Class;
+   rdfs:subClassOf vov:function;
+   rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:time]; 
+   rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:position].
+
+vov:autocorrelation_function a owl:Class;
+   rdfs:subClassOf vov:function;
+   rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:time].
+
+vov:density_of_states a owl:Class;
+   rdfs:subClassOf vov:function;
+   rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:energy].
+
+vov:field a owl:Class; 
+  rdfs:subClassOf vov:function;
+  rdfs:comment """A field is a function defining the values taken by a variable across space (i.e., as 
+  	         a function of position)."""^^xs:string;
+  rdfs:comment """Fields are mostly used in continuum descriptions, but also in others 
+  (e.g., in the post-processing of atomistic-mesoscopic descriptions)."""^^xs:string;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:position];
+  owl:disjointUnionOf (vov:scalar_field vov:vector_field vov:tensor_field).
+
+vov:scalar_field a owl:Class;
+  rdfs:subClassOf vov:field.
+
+vov:vector_field a owl:Class;
+  rdfs:subClassOf vov:field.
+
+vov:tensor_field a owl:Class;
+  rdfs:subClassOf vov:field.
+
+######     Functions that can only appear in electronic models     #####################
+
+vov:electronic_density_of_states a owl:Class;
+   rdfs:subClassOf vov:density_of_states;
+   rdfs:subClassOf viso:R_IS_ELECTRONIC.
+
+vov:electronic_density_field a owl:Class;
+  rdfs:subClassOf vov:number_density_field;
+  rdfs:subClassOf viso:R_IS_ELECTRONIC.
+
+vov:wavefunction a owl:Class;
+  rdfs:subClassOf vov:function; 
+  rdfs:subClassOf viso:R_IS_ELECTRONIC.
+
+vov:electronic_wavefunction a owl:Class;
+  rdfs:subClassOf vov:wavefunction; 
+  rdfs:subClassOf viso:R_IS_ELECTRONIC.
+
+######     Functions (fields) that appear in continuum models      #####################
+
+vov:temperature_field a owl:Class;
+  rdfs:subClassOf vov:scalar_field;
+  rdfs:subClassOf viso:R_IS_CONTINUUM;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:temperature].
+
+vov:pressure_field a owl:Class;
+  rdfs:comment "Hydrostatic pressure field."^^xs:string;
+  rdfs:subClassOf vov:scalar_field; 
+  rdfs:subClassOf viso:R_IS_CONTINUUM;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:pressure].
+
+vov:deviatoric_stress_tensor_field a owl:Class;
+  rdfs:subClassOf vov:tensor_field;
+  rdfs:subClassOf viso:R_IS_CONTINUUM;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:R_IS_PRESSURE].
+
+vov:stress_tensor_field a owl:Class;
+  rdfs:subClassOf vov:tensor_field; 
+  rdfs:subClassOf viso:R_IS_CONTINUUM;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:R_IS_PRESSURE].
+
+
+vov:mass_density_field a owl:Class;
+  rdfs:subClassOf vov:scalar_field;
+  rdfs:subClassOf viso:R_IS_CONTINUUM;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:mass_density].
+		  
+vov:velocity_field a owl:Class;
+  rdfs:subClassOf vov:vector_field;
+  rdfs:subClassOf viso:R_IS_CONTINUUM;
+  rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:velocity].
+
+vov:vorticity_field a owl:Class;
+  rdfs:subClassOf vov:vector_field;
+  rdfs:subClassOf viso:R_IS_CONTINUUM.
+
+vov:scalar_order_parameter_field a owl:Class;
+  rdfs:subClassOf vov:scalar_field;
+  rdfs:subClassOf viso:R_IS_CONTINUUM.
+
+######################  Restrictions based on qudt   ###################################
+
+vov:R_IS_MASS owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Mass];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_MOMENT_OF_INERTIA owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:MomentOfInertia];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_ELECTRIC_CHARGE owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:ElectricCharge];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_ELECTRIC_DIPOLE_MOMENT owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:ElectricDipoleMoment];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_ELECTRIC_QUADRUPOLE_MOMENT owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:ElectricQuadrupoleMoment];
+   rdfs:subClassOf vov:restriction. 
+
+vov:R_IS_POSITION_VECTOR owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:PositionVector];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_VELOCITY owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Velocity];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_ANGULAR_VELOCITY owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:AngularVelocity];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_FORCE owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Force];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_TEMPERATURE owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Temperature];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_PRESSURE owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Pressure];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_LENGTH owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Length];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_VOLUME owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Volume];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_ENERGY owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Energy];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_NUMBER_DENSITY owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:NumberDensity];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_MASS_DENSITY owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:MassDensity];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_RADIAL_DISTANCE owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:RadialDistance];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_TIME owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Time];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_DYNAMIC_VISCOSITY owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:DynamicViscosity];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_ANGLE owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Angle];
+   rdfs:subClassOf vov:restriction.
+
+vov:R_IS_DIMENSIONLESS owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:Dimensionless];
+   rdfs:subClassOf vov:restriction. 
+
+vov:R_IS_LINEAR_MOMENTUM owl:equivalentClass [a owl:Restriction;
+   owl:onProperty qudt:hasQuantityKind;
+   owl:hasValue qudt-qk:LinearMomentum];
+   rdfs:subClassOf vov:restriction. 
+
+######################   Object Properties      ########################################
+    
+vov:involves_object a owl:ObjectProperty; 
+  rdfs:domain [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)];
+  rdfs:range viso:model_object;
+  rdfs:subPropertyOf viso:involves.
+
+vov:involves_variable a owl:ObjectProperty;
+  rdfs:domain [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)];
+  rdfs:range vov:variable;
+  rdfs:comment "[X involves_variable Y] means that there is a mathematical expression or an algorithmic formulation of X that contains the variable Y"^^xs:string;
+  rdfs:subPropertyOf viso:involves.
+
+vov:involves_function a owl:ObjectProperty;
+  rdfs:domain [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)];
+  rdfs:range vov:function;
+  rdfs:comment "[X involves_function Y] means that there is a mathematical expression or an algorithmic formulation of X that contains the function Y"^^xs:string;
+  rdfs:subPropertyOf viso:involves.
+
+vov:is_object_involved_in a owl:ObjectProperty;
+  owl:inverseOf vov:involves_object;
+  rdfs:subPropertyOf viso:is_involved_in;
+  rdfs:domain viso:model_object;
+  rdfs:range [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)].
+ 
+vov:is_variable_involved_in a owl:ObjectProperty;
+   owl:inverseOf vov:involves_variable;
+   rdfs:subPropertyOf viso:is_involved_in;
+   rdfs:domain vov:variable;
+   rdfs:range [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)].
+
+vov:is_function_involved_in a owl:ObjectProperty;
+  owl:inverseOf vov:involves_function;
+  rdfs:subPropertyOf viso:is_involved_in;
+  rdfs:domain vov:function;
+  rdfs:range [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)].
+
+vov:has_attached_variable a owl:ObjectProperty;
+  rdfs:domain viso:model_object;
+  rdfs:range vov:object_variable;
+  rdfs:comment "[X has_attached_variable Y] means that the model object X (say, a particle) has an attached variable Y (say, its mass or velocity)"^^xs:string;
+  rdfs:subPropertyOf vov:involves_variable.
+
+vov:is_variable_attached_to a owl:ObjectProperty;
+  rdfs:domain vov:object_variable;
+  rdfs:range viso:model_object;
+  owl:inverseOf vov:has_attached_variable;
+  rdfs:subPropertyOf vov:is_variable_involved_in.
+
+vov:has_mass a owl:ObjectProperty;
+  a owl:FunctionalProperty;
+  rdfs:subPropertyOf vov:has_attached_variable;
+  rdfs:domain [a owl:Class; owl:unionOf (viso-am:model_object viso-el:model_object viso-co:model_object)];
+  rdfs:range vov:object_mass.
+
+vov:has_moment_of_inertia a owl:ObjectProperty;
+  a owl:FunctionalProperty;
+  rdfs:subPropertyOf vov:has_attached_variable;
+  rdfs:domain viso-am:model_object;
+  rdfs:range vov:object_moment_of_inertia.
+
+vov:has_electric_charge a owl:ObjectProperty;
+  a owl:FunctionalProperty;
+  rdfs:subPropertyOf vov:has_attached_variable;
+  rdfs:domain [a owl:Class; owl:unionOf (viso-am:model_object viso-el:model_object)];
+  rdfs:range vov:object_electric_charge.
+
+vov:has_electric_dipole_moment a owl:ObjectProperty;
+  a owl:FunctionalProperty;
+  rdfs:subPropertyOf vov:has_attached_variable;
+  rdfs:domain viso-am:model_object;
+  rdfs:range vov:object_electric_dipole_moment.
+
+vov:has_electric_quadrupole_moment a owl:ObjectProperty;
+  a owl:FunctionalProperty;
+  rdfs:subPropertyOf vov:has_attached_variable;
+  rdfs:domain viso-am:model_object;
+  rdfs:range vov:object_electric_quadrupole_moment.
+
+vov:has_position a owl:ObjectProperty;
+  rdfs:subPropertyOf vov:has_attached_variable;
+  rdfs:domain [a owl:Class; owl:unionOf (viso-am:model_object viso-el:classical_object viso-co:structureless_object)];
+  rdfs:comment "Points to the position of a point in space."^^xs:string;
+  rdfs:range vov:object_position.
+
+vov:has_velocity a owl:ObjectProperty;
+  rdfs:subPropertyOf vov:has_attached_variable;
+  rdfs:domain [a owl:Class; owl:unionOf (viso-am:model_object viso-co:structureless_object)];
+  rdfs:range vov:object_velocity.
+
+vov:has_force a owl:ObjectProperty;
+  rdfs:subPropertyOf vov:has_attached_variable;
+  rdfs:domain viso-am:model_object;
+  rdfs:range vov:object_force.
+
+vov:has_attached_function a owl:ObjectProperty;
+  rdfs:domain viso:model_object;
+  rdfs:range vov:function;
+  rdfs:comment "[X has_attached_function Y] means that the model object X (say, a particle or a fluid) has an attached function Y (say, a wavefunction or a velocity field)"^^xs:string;
+  rdfs:subPropertyOf vov:involves_function.
+
+vov:is_function_attached_to a owl:ObjectProperty;
+  rdfs:domain vov:function;
+  rdfs:range viso:model_object;
+  owl:inverseOf vov:has_attached_function;
+  rdfs:subPropertyOf vov:is_function_involved_in.
+
+vov:has_wavefunction a owl:ObjectProperty;
+  rdfs:domain viso-el:quantum_object;
+  rdfs:range vov:wavefunction;
+  rdfs:subPropertyOf vov:has_attached_function.
+
+vov:has_velocity_field a owl:ObjectProperty;
+  rdfs:domain viso:model_object;
+  rdfs:range vov:velocity_field;
+  rdfs:subPropertyOf vov:has_attached_function.
+
+vov:has_initial_point a owl:ObjectProperty;
+   rdfs:domain [a owl:Class; owl:unionOf (vov:relative_position vov:relative_velocity)];
+   rdfs:range viso:model_object;
+   rdfs:subPropertyOf viso:has_part.
+
+vov:has_final_point a owl:ObjectProperty;
+   rdfs:domain [a owl:Class; owl:unionOf (vov:relative_position vov:relative_velocity)];
+   rdfs:range viso:model_object;
+   rdfs:subPropertyOf viso:has_part.
+
+vov:has_modulus a owl:ObjectProperty; 
+  rdfs:domain vov:vector_variable;
+  rdfs:range vov:scalar_variable;
+  rdfs:subPropertyOf viso:has_part.
+
+vov:has_direction a owl:ObjectProperty;
+  rdfs:domain vov:vector_variable;
+  rdfs:range vov:versor;
+  rdfs:subPropertyOf viso:has_part.
+
+vov:shares_value_with a owl:ObjectProperty;
+  rdfs:domain vov:variable;
+  rdfs:range vov:variable;
+  a owl:SymmetricProperty;
+  a owl:TransitiveProperty;    
+  rdfs:subPropertyOf viprs:mereosemiotics_is_hs;
+  rdfs:subPropertyOf viso:is_similar_to;
+  owl:propertyChainAxiom (osmo:has_value [owl:inverseOf osmo:has_value]);
+  rdfs:comment "[X shares_value_with Y] means that the variables X and Y have the same numerical value"^^xs:string.
+
+vov:shares_role_with a owl:ObjectProperty;
+  rdfs:domain vov:variable;
+  rdfs:range vov:variable;
+  a owl:SymmetricProperty;
+  a owl:TransitiveProperty;
+  rdfs:subPropertyOf viprs:immanent_relation;
+  rdfs:subPropertyOf viso:is_similar_to;
+  rdfs:comment """[X shares_role_with Y] means that the variables X and Y have the same role in the model or solver. 
+This property can be used to instantiate variables that are already defined in VOV as individuals and to connect them to those.
+For example, it can be used to relate the epsilon parameters of multiple Lennard-Jones potentials to each other and to the 
+concept present in VOV."""^^xs:string.
+
+######################   Datatype Properties     #######################################
+
+vov:has_scope a owl:DatatypeProperty;
+  rdfs:domain vov:variable;
+  rdfs:range xs:string;
+  rdfs:comment "Points to the scope of a variable (e.g. OBJECT, PAIR, SYSTEM, UNIVERSE)"^^xs:string;
+  rdfs:subPropertyOf viprs:has_specifier.
+
+vov:has_label a owl:DatatypeProperty;  
+  rdfs:domain viso-am:model_object;
+  rdfs:range xs:string;
+  rdfs:subPropertyOf viprs:has_specifier.
+
+vov:has_species a owl:DatatypeProperty;
+  rdfs:comment "Species in a broad sense (chemical species in atomistic models, particle/object type in general)."^^xs:string;
+  rdfs:domain viso-am:model_object;
+  rdfs:range xs:string;
+  rdfs:subPropertyOf viprs:has_specifier.
+
+vov:has_index a owl:DatatypeProperty;
+  rdfs:domain viso-am:model_object;
+  rdfs:range xs:integer;
+  rdfs:subPropertyOf viprs:has_numerical_identifier.
+
+vov:is_physical a owl:DatatypeProperty;
+  rdfs:domain vov:variable;
+  rdfs:range xs:boolean;
+  rdfs:comment "Indicates whether a variable is a physical variable (i.e., an EMMO property) or not."^^xs:string;
+  rdfs:subPropertyOf viprs:has_flag.
+
+vov:is_frozen a owl:DatatypeProperty;
+  rdfs:domain viso-am:model_object;
+  rdfs:range xs:boolean;
+  rdfs:comment """Indicates whether the object is frozen (i.e., its position is fixed in time) or not. 
+  For example, frozen particles can be used in coarse-grained models to represent the system walls."""^^xs:string;
+  rdfs:subPropertyOf viprs:has_flag.
+
+########################################################################################
+
+vov:mass owl:intersectionOf (vov:variable vov:R_IS_MASS);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:moment_of_inertia owl:intersectionOf (vov:variable vov:R_IS_MOMENT_OF_INERTIA). 
+
+vov:electric_charge owl:intersectionOf (vov:variable vov:R_IS_ELECTRIC_CHARGE);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:electric_dipole_moment owl:intersectionOf (vov:variable vov:R_IS_ELECTRIC_DIPOLE_MOMENT);
+  rdfs:subClassOf vov:vector_variable.
+
+vov:electric_quadrupole_moment owl:intersectionOf (vov:variable vov:R_IS_ELECTRIC_QUADRUPOLE_MOMENT);
+  rdfs:subClassOf [a owl:Class; owl:unionOf (vov:tensor_variable vov:vector_variable)].
+
+vov:electric_linear_quadrupole_moment rdfs:subClassOf vov:electric_quadrupole_moment;
+  rdfs:subClassOf vov:vector_variable.
+
+vov:position owl:intersectionOf (vov:variable vov:R_IS_POSITION_VECTOR);
+  rdfs:subClassOf vov:vector_variable.
+
+vov:velocity owl:intersectionOf (vov:variable vov:R_IS_VELOCITY);
+  rdfs:subClassOf vov:vector_variable.
+
+vov:angular_velocity owl:intersectionOf (vov:variable vov:R_IS_ANGULAR_VELOCITY).
+
+vov:force owl:intersectionOf (vov:variable vov:R_IS_FORCE);
+  rdfs:subClassOf vov:vector_variable.
+
+vov:length owl:intersectionOf (vov:variable vov:R_IS_LENGTH).
+
+vov:volume owl:intersectionOf (vov:variable vov:R_IS_VOLUME);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:energy owl:intersectionOf (vov:variable vov:R_IS_ENERGY);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:temperature owl:intersectionOf (vov:variable vov:R_IS_TEMPERATURE);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:pressure owl:intersectionOf (vov:variable vov:R_IS_PRESSURE).
+
+vov:number_density owl:intersectionOf (vov:variable vov:R_IS_NUMBER_DENSITY);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:mass_density owl:intersectionOf (vov:variable vov:R_IS_MASS_DENSITY);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:radial_distance owl:intersectionOf (vov:variable vov:R_IS_RADIAL_DISTANCE);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:time owl:intersectionOf (vov:variable vov:R_IS_TIME);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:dynamic_viscosity owl:intersectionOf (vov:variable vov:R_IS_DYNAMIC_VISCOSITY);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:angle owl:intersectionOf (vov:variable vov:R_IS_ANGLE);
+  rdfs:subClassOf vov:scalar_variable.
+
+vov:linear_momentum owl:intersectionOf (vov:variable vov:R_IS_LINEAR_MOMENTUM);
+  rdfs:subClassOf vov:vector_variable.
+
+vov:versor a owl:Class;
+  rdfs:subClassOf vov:vector_variable;
+  rdfs:comment "A versor, i.e., a unit vector; it indicates a direction in real space."^^xs:string;
+  rdfs:comment "It can be univocally specified by two elements."^^xs:string.
+
+##############    More specific variables #######################################
+
+vov:potential_energy a owl:Class; 
+  rdfs:subClassOf vov:energy.
+
+vov:kinetic_energy a owl:Class; 
+  rdfs:subClassOf vov:energy.
+
+##################################################################################
+
+vov:object_mass a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:R_IS_MASS.
+
+vov:object_moment_of_inertia a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:R_IS_MOMENT_OF_INERTIA.
+
+vov:object_electric_charge a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:R_IS_ELECTRIC_CHARGE.  
+
+vov:object_electric_dipole_moment a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:R_IS_ELECTRIC_DIPOLE_MOMENT.  
+
+vov:object_electric_quadrupole_moment a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:R_IS_ELECTRIC_QUADRUPOLE_MOMENT.  
+
+vov:object_electric_linear_quadrupole_moment a owl:Class;
+  rdfs:subClassOf vov:object_electric_quadrupole_moment;
+  rdfs:subClassOf vov:electric_linear_quadrupole_moment.
+
+vov:object_position a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:position.
+
+vov:object_velocity a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:R_IS_VELOCITY.
+
+vov:object_angular_position a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:R_IS_ANGLE.
+
+vov:object_angular_velocity a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:R_IS_ANGULAR_VELOCITY.
+
+vov:object_force a owl:Class;
+  rdfs:subClassOf vov:object_variable;
+  rdfs:subClassOf vov:R_IS_FORCE.
+
+##############   DEFINITION OF INDIVIDUAL VARIABLES   ###################################
+
+vov:BOLTZMANN_CONSTANT a vov:universal_variable;
+  a vov:scalar_variable.
+
+vov:AVOGADRO_NUMBER a vov:universal_variable;
+  a vov:scalar_variable;
+  a vov:R_IS_DIMENSIONLESS.
+
+vov:SYSTEM_TOTAL_ENERGY a vov:system_variable;
+  a vov:R_IS_ENERGY.
+
+vov:SYSTEM_KINETIC_ENERGY a vov:system_variable;
+  a vov:kinetic_energy.
+
+vov:SYSTEM_POTENTIAL_ENERGY a vov:system_variable;
+  a vov:potential_energy.
+
+vov:SYSTEM_VOLUME a vov:system_variable;
+  a vov:R_IS_VOLUME.
+
+vov:TEMPERATURE a vov:system_variable;
+  a vov:R_IS_TEMPERATURE.
+
+vov:PRESSURE a vov:system_variable;
+  a vov:R_IS_PRESSURE.
+
+vov:STRESS_TENSOR a vov:system_variable;
+  a vov:R_IS_PRESSURE.
+
+vov:DEVIATORIC_STRESS_TENSOR a vov:system_variable;
+  a vov:R_IS_PRESSURE.
+
+vov:electrostatic_force_constant a owl:Class; 
+  rdfs:subClassOf vov:system_variable.
+
+vov:system_size a owl:Class; 
+  rdfs:subClassOf vov:system_variable;
+  rdfs:subClassOf vov:R_IS_LENGTH;
+  rdfs:comment "size of the simulation box"^^xs:string.
+
+vov:SYSTEM_SIZE_X a vov:system_size.
+vov:SYSTEM_SIZE_Y a vov:system_size.
+vov:SYSTEM_SIZE_Z a vov:system_size.
+
+vov:system_composition_variable a owl:Class; 
+  rdfs:subClassOf vov:system_variable;
+  rdfs:comment """a variable defining the composition of the system (e.g., the number of species, 
+in a broad sense, as particle/object types, and their populations/amounts). 
+Depending on the system (simulating a finite or an infinite medium) and the model type 
+(particle-based or continuum), populations, number/mass densities or others can be more appropriate."""^^xs:string.
+
+vov:TOTAL_NUMBER_OF_PARTICLES a vov:system_composition_variable;
+  a vov:R_IS_DIMENSIONLESS.
+
+vov:TOTAL_NUMBER_DENSITY a vov:system_composition_variable;
+  rdfs:comment """the total (not decomposed into species) number density of the system. 
+If the density is not uniform, this variable represents its spatial average."""^^xs:string; 
+  a vov:R_IS_NUMBER_DENSITY.
+
+vov:TOTAL_MASS_DENSITY a vov:system_composition_variable;
+  rdfs:comment """the total (not decomposed into species) mass density of the system. 
+If the density is not uniform, this variable represents its spatial average."""^^xs:string; 
+  a vov:R_IS_MASS_DENSITY.
+
+vov:NUMBER_OF_SPECIES a vov:system_composition_variable;
+  a vov:R_IS_DIMENSIONLESS.
+
+vov:FRACTIONAL_POPULATION_OF_SPECIES a vov:system_composition_variable;
+  a vov:R_IS_DIMENSIONLESS.
+
+vov:POPULATION_OF_SPECIES a vov:system_composition_variable;
+  a vov:R_IS_DIMENSIONLESS.
+
+vov:NUMBER_DENSITY_OF_SPECIES a vov:system_composition_variable;
+  rdfs:comment """the number density of each of the species in the system. 
+If the density is not uniform, this variable represents its spatial average."""^^xs:string; 
+  a vov:R_IS_NUMBER_DENSITY.
+
+vov:MASS_DENSITY_OF_SPECIES a vov:system_composition_variable;
+  rdfs:comment """the mass density of each of the species in the system. 
+If the density is not uniform, this variable represents its spatial average."""^^xs:string; 
+  a vov:R_IS_MASS_DENSITY.
+
+vov:NUMBER_OF_TIME_STEPS a vov:system_variable; 
+    a vov:R_IS_DIMENSIONLESS.
+
+vov:NUMBER_OF_EQUILIBRATION_TIME_STEPS a vov:system_variable;
+  a vov:R_IS_DIMENSIONLESS.
+
+vov:TIME_STEP a vov:system_variable;
+  a vov:R_IS_TIME.
+
+vov:BJERRUM_LENGTH a vov:system_variable;
+  a vov:R_IS_LENGTH;
+  a vov:electrostatic_force_constant.
+
+vov:PERMITTIVITY a vov:system_variable;
+  qudt:hasQuantityKind  qudt-qk:Permittivity;
+  a vov:electrostatic_force_constant.
+
+vov:RELATIVE_PERMITTIVITY a vov:system_variable;
+  qudt:hasQuantityKind  qudt-qk:RelativePermittivity;
+  a vov:electrostatic_force_constant.
+
+_:C_ELECTROSTATIC_FORCE_CONSTANT rdf:type owl:AllDifferent;
+  owl:distinctMembers (vov:BJERRUM_LENGTH vov:PERMITTIVITY vov:RELATIVE_PERMITTIVITY).
+
+vov:TARGET_TEMPERATURE a vov:system_variable;
+  a vov:R_IS_TEMPERATURE;
+  rdfs:comment "target temperature, i.e., the temperature that is imposed on the system via some constraint"^^xs:string.
+
+vov:TARGET_PRESSURE a vov:system_variable;
+  a vov:R_IS_PRESSURE;
+  rdfs:comment "target pressure, i.e., the pressure that is imposed on the system via some constraint"^^xs:string.
+
+vov:CHARGE_SMEARING_LENGTH a vov:system_variable;
+  a vov:R_IS_LENGTH.
+
+vov:SHEAR_VISCOSITY a vov:variable;
+  a vov:R_IS_DYNAMIC_VISCOSITY.
+
+vov:BULK_VISCOSITY a vov:variable;
+  a vov:R_IS_DYNAMIC_VISCOSITY.
+
+vov:RADIUS_OF_GYRATION a vov:object_variable; 
+  a vov:R_IS_LENGTH.
+
+vov:SPACE_DIMENSION a vov:system_variable;
+  a vov:R_IS_DIMENSIONLESS;
+  rdfs:comment """The spatial dimension of the considered system, i.e. the number of coordinates needed to 
+  	       univocally specify the position of a point in it."""^^xs:string;
+  rdfs:comment "It is typically 3, but can be 2 or 1 in some models."^^xs:string.
+
+########################################################################################
+#        INVDIVIDUAL VARIABLES THAT CAN APPEAR ONLY IN ELECTRONIC MODELS               #
+########################################################################################
+
+vov:ELECTRON_EXCHANGE_ENERGY a vov:variable;
+  a vov:energy;
+  a viso:R_IS_ELECTRONIC.
+
+vov:ELECTRON_CORRELATION_ENERGY a vov:variable;
+  a vov:energy;
+  a viso:R_IS_ELECTRONIC.
+
+vov:NUMBER_OF_VALENCE_STATES a vov:variable;
+  a vov:R_IS_DIMENSIONLESS;			     
+  a viso:R_IS_ELECTRONIC.
+
+vov:NUMBER_OF_CONDUCTION_STATES a vov:variable;
+  a vov:R_IS_DIMENSIONLESS;			     
+  a viso:R_IS_ELECTRONIC.
+
+vov:DIMENSION_OF_BASIS_SET a vov:variable;
+  a vov:R_IS_DIMENSIONLESS;			     
+  a viso:R_IS_ELECTRONIC.
+
+########################################################################################
+#            EXAMPLE of STATEMENTS CONNECTING VISO-AM with VOV                         #
+########################################################################################
+
+# Any integrator will involve: vov:NUMBER_OF_TIME_STEPS, vov:TIME_STEP.
+
+viso-am:integrator rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:NUMBER_OF_TIME_STEPS];
+      rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:TIME_STEP];
+      rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:NUMBER_OF_EQUILIBRATION_TIME_STEPS].
+
+viso-am:barostat rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:TARGET_PRESSURE].
+
+viso-am:thermostat rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:TARGET_TEMPERATURE].
+
+# Any electrostatic_solver will involve (exactly) one variable from the class
+# electrostatic_force_constant.
+
+viso-am:electrostatics_solver rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:electrostatic_force_constant]. 
+
+viso-am:electrostatic_potential rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:electrostatic_force_constant]. 
+
+viso-am:COULOMB_POTENTIAL a [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 2;
+      owl:onClass vov:object_electric_charge]. 
+
+viso-am:CHARGE_DIPOLE_POTENTIAL a [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_electric_charge];
+      a [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_electric_dipole_moment].
+
+viso-am:DIPOLE_DIPOLE_POTENTIAL a [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 2;
+      owl:onClass vov:object_electric_dipole_moment].
+
+viso-am:CHARGE_QUADRUPOLE_POTENTIAL a [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_electric_charge];
+      a [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_electric_quadrupole_moment].
+
+viso-am:DIPOLE_QUADRUPOLE_POTENTIAL a [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_electric_dipole_moment];
+      a [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_electric_quadrupole_moment].
+
+viso-am:QUADRUPOLE_QUADRUPOLE_POTENTIAL a [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:qualifiedCardinality 2;
+      owl:onClass vov:object_electric_quadrupole_moment].
+
+viso-am:charge_smearing rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:CHARGE_SMEARING_LENGTH].
+
+viso-am:NVT viso:involves vov:TARGET_TEMPERATURE.
+
+viso-am:NPT viso:involves vov:TARGET_TEMPERATURE,
+  vov:TARGET_PRESSURE.
+
+vov:DPD_THERMOSTAT_CUTOFF a vov:pair_variable;
+  a vov:R_IS_LENGTH.
+
+vov:DPD_THERMOSTAT_DRAG_COEFFICIENT a vov:pair_variable.
+
+vov:GROOT_WARREN_REPULSION a vov:pair_variable.
+
+vov:GROOT_WARREN_CUTOFF a vov:pair_variable;
+  a vov:R_IS_LENGTH.
+  
+viso-am:DPD_THERMOSTAT viso:involves vov:DPD_THERMOSTAT_CUTOFF,
+  vov:DPD_THERMOSTAT_DRAG_COEFFICIENT.
+
+viso-am:GROOT_WARREN viso:involves vov:GROOT_WARREN_REPULSION,
+  vov:GROOT_WARREN_CUTOFF.
+
+viso-am:LENNARD_JONES_12_6 viso:involves vov:LJ_12_6_SIGMA,
+  vov:LJ_12_6_EPSILON. 
+
+vov:LJ_12_6_SIGMA a vov:pair_variable;
+  a vov:length.
+
+vov:LJ_12_6_EPSILON a vov:pair_variable;
+  a vov:energy.
+
+viso-am:LENNARD_JONES_12_6 a viso-am:mie_potential.
+
+viso-am:mie_potential rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:MIE_REPULSIVE_EXPONENT];
+      rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:MIE_ATTRACTIVE_EXPONENT];
+      rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:MIE_SIGMA];
+      rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty viso:involves;
+      owl:hasValue vov:MIE_EPSILON].
+      
+vov:MIE_REPULSIVE_EXPONENT a vov:pair_variable;
+  a vov:R_IS_DIMENSIONLESS.
+
+vov:MIE_ATTRACTIVE_EXPONENT a vov:pair_variable;
+  a vov:R_IS_DIMENSIONLESS.
+
+vov:MIE_SIGMA a vov:pair_variable;
+  a vov:length.
+
+vov:MIE_EPSILON a vov:pair_variable;
+  a vov:energy.
+
+viso-am:mass_site rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty vov:has_attached_variable;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_mass].
+
+viso-am:charge_site rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty vov:has_attached_variable;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_electric_charge]. 
+
+viso-am:charge_dipole_site rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty vov:has_attached_variable;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_electric_dipole_moment]. 
+
+viso-am:charge_quadrupole_site rdfs:subClassOf [a owl:Restriction;
+      owl:onProperty vov:has_attached_variable;
+      owl:qualifiedCardinality 1;
+      owl:onClass vov:object_electric_quadrupole_moment]. 
+
+########################################################################################
+#            EXAMPLE of STATEMENTS CONNECTING VISO-EL with VOV                         #
+########################################################################################
+
+vov:electronic_wavefunction
+  rdfs:subClassOf [a owl:Restriction;
+               	  owl:onProperty vov:is_function_attached_to;
+		  owl:minQualifiedCardinality 1;
+		  owl:onClass viso-el:quantum_object].
+
+viso-el:basis_set rdfs:subClassOf [a owl:Restriction;
+  		  owl:onProperty viso:involves;
+		  owl:hasValue vov:DIMENSION_OF_BASIS_SET].
+
+########################################################################################
+#            EXAMPLE of STATEMENTS CONNECTING VISO-CO with VOV                         #
+########################################################################################
+
+viso-co:fluid
+  rdfs:subClassOf [a owl:Restriction;
+               	  owl:onProperty vov:has_attached_function;
+		  owl:qualifiedCardinality 1;
+		  owl:onClass vov:velocity_field];
+  rdfs:subClassOf [a owl:Restriction;
+                  owl:onProperty vov:has_attached_function;
+	 	  owl:qualifiedCardinality 1;
+		  owl:onClass vov:temperature_field];
+  rdfs:subClassOf [a owl:Restriction;
+                  owl:onProperty vov:has_attached_function;
+	 	  owl:qualifiedCardinality 1;
+		  owl:onClass vov:pressure_field];
+  rdfs:subClassOf [a owl:Restriction;
+                  owl:onProperty vov:has_attached_function;
+	 	  owl:qualifiedCardinality 1;
+		  owl:onClass vov:mass_density_field].
+
+viso-co:NEWTONIAN_STRESS_TENSOR a [a owl:Restriction;
+  owl:onProperty viso:involves;
+  owl:qualifiedCardinality 1;
+  owl:onClass vov:dynamic_viscosity].
+
+viso-co:continuum_mesh rdfs:subClassOf [a owl:Restriction;
+  owl:onProperty viso:involves;
+  owl:hasValue vov:TOTAL_NUMBER_OF_MESH_POINTS].
+
+vov:TOTAL_NUMBER_OF_MESH_POINTS a vov:system_variable;
+  a vov:R_IS_DIMENSIONLESS.
+      
+##################     ADDED HERE FROM QUDT  ##################################
+
+qudt:hasQuantityKind
+  rdf:type owl:ObjectProperty ;
+  rdfs:isDefinedBy <http://qudt.org/2.0/schema/qudt> ;
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:label "has quantity kind" ;
+  rdfs:range qudt:QuantityKind ;
+  owl:inverseOf qudt:isQuantityKindOf.
+qudt:hasQuantityKind rdfs:subPropertyOf viprs:has_sign.
+qudt:isQuantityKindOf rdfs:subPropertyOf viprs:is_sign_for.
+
+########## Needed properties from VISO  #######################################
+
+# NB: these two property definitions are redundant if VISO is loaded too.
+# They are defined here to allow (partial) reasoning even without loading VISO. 
+
+viso:involves a owl:ObjectProperty;
+  rdfs:domain [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)];
+  rdfs:range [a owl:Class; owl:unionOf (vov:variable vov:function viso:model_object)];
+  rdfs:comment "[X involves Y] means that there is a mathematical expression or an algorithmic formulation of X that contains the variable, function or model object Y"^^xs:string;
+  rdfs:subPropertyOf viso:has_part.
+
+viso:is_involved_in a owl:ObjectProperty;
+  rdfs:domain [a owl:Class; owl:unionOf (vov:variable vov:function viso:model_object)];
+  rdfs:range [a owl:Class; owl:unionOf (viso:software_tool_feature viso:modeling_related_entity)];
+  owl:inverseOf viso:involves;
+  rdfs:subPropertyOf viso:is_part_of.
+	
+viso:is_mathematically_related_to a owl:ObjectProperty;
+  rdfs:domain evmpo:marketplace_related_entity;
+  rdfs:range evmpo:marketplace_related_entity;
+  rdfs:subPropertyOf viso:is_connected_to;
+  rdfs:subPropertyOf viprs:immanent_relation.
+
+###############################################################################

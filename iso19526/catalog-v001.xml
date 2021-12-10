@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/collector-v-1.0" uri="collector-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-v-1.0" uri="individual-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/arranged-individual-v-1.0" uri="arranged-individual-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/quantity-v-1.0" uri="quantity-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/maths-v-1.0" uri="maths-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/class-of-arranged-individual-v-1.0" uri="class-of-arranged-individual-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-occurrence-relationship-v-1.0" uri="inverse-occurrence-relationship-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/occurrence-relationship-v-1.0" uri="occurrence-relationship-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-relationship-v-1.0" uri="inverse-relationship-v-1.0.ofn"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/relationship-v-1.0" uri="relationship-v-1.0.ofn"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/document-v-1.0" uri="document-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/abstract-object-v-1.0" uri="abstract-object-v-1.0.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/arranged-individual-v-1.0" uri="individual-v-1.0.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

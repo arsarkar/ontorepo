@@ -1,0 +1,22 @@
+# baseURI: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/collector-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/abstract-object-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/arranged-individual-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/class-of-arranged-individual-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/document-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-occurrence-relationship-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-relationship-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/maths-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/occurrence-relationship-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/quantity-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/relationship-v-1.0
+
+@prefix lci:     <http://standards.iso.org/iso/15926/ontology/life-cycle-integration/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/collector-v-1.0>
+      rdf:type owl:Ontology ;
+      owl:imports <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/arranged-individual-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/abstract-object-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/relationship-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/document-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-relationship-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/occurrence-relationship-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-occurrence-relationship-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/class-of-arranged-individual-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/maths-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/quantity-v-1.0> .

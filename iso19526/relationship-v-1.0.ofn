@@ -1,0 +1,141 @@
+Prefix(:=<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/relationship-v-1.0#>)
+Prefix(lci:=<http://standards.iso.org/iso/15926/ontology/life-cycle-integration/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/relationship-v-1.0>
+Import(<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-v-1.0>)
+
+Declaration(ObjectProperty(lci:after))
+Declaration(ObjectProperty(lci:connectedTo))
+Declaration(ObjectProperty(lci:contains))
+Declaration(ObjectProperty(lci:directlyConnectedTo))
+Declaration(ObjectProperty(lci:hasArrangedPart))
+Declaration(ObjectProperty(lci:hasAssembledPart))
+Declaration(ObjectProperty(lci:hasBeginning))
+Declaration(ObjectProperty(lci:hasCause))
+Declaration(ObjectProperty(lci:hasCauseOfBeginning))
+Declaration(ObjectProperty(lci:hasCauseOfEnd))
+Declaration(ObjectProperty(lci:hasEnd))
+Declaration(ObjectProperty(lci:hasFeature))
+Declaration(ObjectProperty(lci:hasPart))
+Declaration(ObjectProperty(lci:hasParticipant))
+Declaration(ObjectProperty(lci:hasTemporalBound))
+Declaration(ObjectProperty(lci:hasTemporalPart))
+Declaration(ObjectProperty(lci:indirectlyConnectedTo))
+Declaration(ObjectProperty(lci:locatedRelativeTo))
+Declaration(ObjectProperty(lci:references))
+############################
+#   Object Properties
+############################
+
+# Object Property: lci:after (lci:after)
+
+TransitiveObjectProperty(lci:after)
+ObjectPropertyDomain(lci:after lci:Individual)
+ObjectPropertyRange(lci:after lci:Individual)
+
+# Object Property: lci:connectedTo (lci:connectedTo)
+
+SymmetricObjectProperty(lci:connectedTo)
+TransitiveObjectProperty(lci:connectedTo)
+ObjectPropertyDomain(lci:connectedTo lci:Individual)
+ObjectPropertyRange(lci:connectedTo lci:Individual)
+
+# Object Property: lci:contains (lci:contains)
+
+SubObjectPropertyOf(lci:contains lci:locatedRelativeTo)
+TransitiveObjectProperty(lci:contains)
+
+# Object Property: lci:directlyConnectedTo (lci:directlyConnectedTo)
+
+SubObjectPropertyOf(lci:directlyConnectedTo lci:connectedTo)
+SymmetricObjectProperty(lci:directlyConnectedTo)
+
+# Object Property: lci:hasArrangedPart (lci:hasArrangedPart)
+
+SubObjectPropertyOf(lci:hasArrangedPart lci:hasPart)
+TransitiveObjectProperty(lci:hasArrangedPart)
+ObjectPropertyDomain(lci:hasArrangedPart lci:ArrangedIndividual)
+
+# Object Property: lci:hasAssembledPart (lci:hasAssembledPart)
+
+SubObjectPropertyOf(lci:hasAssembledPart lci:hasArrangedPart)
+TransitiveObjectProperty(lci:hasAssembledPart)
+
+# Object Property: lci:hasBeginning (lci:hasBeginning)
+
+SubObjectPropertyOf(lci:hasBeginning lci:hasTemporalBound)
+DisjointObjectProperties(lci:hasBeginning lci:hasEnd)
+
+# Object Property: lci:hasCause (lci:hasCause)
+
+ObjectPropertyDomain(lci:hasCause lci:Event)
+ObjectPropertyRange(lci:hasCause lci:Activity)
+
+# Object Property: lci:hasCauseOfBeginning (lci:hasCauseOfBeginning)
+
+ObjectPropertyDomain(lci:hasCauseOfBeginning lci:Individual)
+ObjectPropertyRange(lci:hasCauseOfBeginning lci:Activity)
+
+# Object Property: lci:hasCauseOfEnd (lci:hasCauseOfEnd)
+
+ObjectPropertyDomain(lci:hasCauseOfEnd lci:Individual)
+ObjectPropertyRange(lci:hasCauseOfEnd lci:Activity)
+
+# Object Property: lci:hasEnd (lci:hasEnd)
+
+SubObjectPropertyOf(lci:hasEnd lci:hasTemporalBound)
+
+# Object Property: lci:hasFeature (lci:hasFeature)
+
+SubObjectPropertyOf(lci:hasFeature lci:hasArrangedPart)
+TransitiveObjectProperty(lci:hasFeature)
+ObjectPropertyRange(lci:hasFeature lci:Feature)
+
+# Object Property: lci:hasPart (lci:hasPart)
+
+TransitiveObjectProperty(lci:hasPart)
+ObjectPropertyDomain(lci:hasPart lci:Individual)
+ObjectPropertyRange(lci:hasPart lci:Individual)
+
+# Object Property: lci:hasParticipant (lci:hasParticipant)
+
+SubObjectPropertyOf(lci:hasParticipant lci:hasPart)
+ObjectPropertyDomain(lci:hasParticipant lci:Activity)
+
+# Object Property: lci:hasTemporalBound (lci:hasTemporalBound)
+
+SubObjectPropertyOf(lci:hasTemporalBound lci:hasTemporalPart)
+ObjectPropertyRange(lci:hasTemporalBound lci:Event)
+
+# Object Property: lci:hasTemporalPart (lci:hasTemporalPart)
+
+SubObjectPropertyOf(lci:hasTemporalPart lci:hasPart)
+TransitiveObjectProperty(lci:hasTemporalPart)
+
+# Object Property: lci:indirectlyConnectedTo (lci:indirectlyConnectedTo)
+
+SubObjectPropertyOf(lci:indirectlyConnectedTo lci:connectedTo)
+SymmetricObjectProperty(lci:indirectlyConnectedTo)
+TransitiveObjectProperty(lci:indirectlyConnectedTo)
+
+# Object Property: lci:locatedRelativeTo (lci:locatedRelativeTo)
+
+SymmetricObjectProperty(lci:locatedRelativeTo)
+TransitiveObjectProperty(lci:locatedRelativeTo)
+ObjectPropertyDomain(lci:locatedRelativeTo lci:Individual)
+ObjectPropertyRange(lci:locatedRelativeTo lci:Individual)
+
+# Object Property: lci:references (lci:references)
+
+ObjectPropertyDomain(lci:references lci:Activity)
+ObjectPropertyRange(lci:references lci:Thing)
+
+
+
+)

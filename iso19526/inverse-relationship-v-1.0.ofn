@@ -1,0 +1,121 @@
+Prefix(:=<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-relationship-v-1.0#>)
+Prefix(lci:=<http://standards.iso.org/iso/15926/ontology/life-cycle-integration/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-relationship-v-1.0>
+Import(<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/relationship-v-1.0>)
+
+Declaration(ObjectProperty(lci:arrangedPartOf))
+Declaration(ObjectProperty(lci:assembledPartOf))
+Declaration(ObjectProperty(lci:before))
+Declaration(ObjectProperty(lci:begins))
+Declaration(ObjectProperty(lci:causes))
+Declaration(ObjectProperty(lci:causesBeginningOf))
+Declaration(ObjectProperty(lci:causesEndOf))
+Declaration(ObjectProperty(lci:containedBy))
+Declaration(ObjectProperty(lci:ends))
+Declaration(ObjectProperty(lci:featureOf))
+Declaration(ObjectProperty(lci:partOf))
+Declaration(ObjectProperty(lci:participantIn))
+Declaration(ObjectProperty(lci:referencedBy))
+Declaration(ObjectProperty(lci:temporalBoundOf))
+Declaration(ObjectProperty(lci:temporalPartOf))
+############################
+#   Object Properties
+############################
+
+# Object Property: lci:after (lci:after)
+
+InverseObjectProperties(lci:after lci:before)
+
+# Object Property: lci:arrangedPartOf (lci:arrangedPartOf)
+
+SubObjectPropertyOf(lci:arrangedPartOf lci:partOf)
+InverseObjectProperties(lci:arrangedPartOf lci:hasArrangedPart)
+TransitiveObjectProperty(lci:arrangedPartOf)
+
+# Object Property: lci:assembledPartOf (lci:assembledPartOf)
+
+SubObjectPropertyOf(lci:assembledPartOf lci:arrangedPartOf)
+InverseObjectProperties(lci:assembledPartOf lci:hasAssembledPart)
+TransitiveObjectProperty(lci:assembledPartOf)
+
+# Object Property: lci:begins (lci:begins)
+
+SubObjectPropertyOf(lci:begins lci:temporalBoundOf)
+InverseObjectProperties(lci:begins lci:hasBeginning)
+DisjointObjectProperties(lci:begins lci:ends)
+
+# Object Property: lci:causes (lci:causes)
+
+InverseObjectProperties(lci:causes lci:hasCause)
+
+# Object Property: lci:causesBeginningOf (lci:causesBeginningOf)
+
+InverseObjectProperties(lci:causesBeginningOf lci:hasCauseOfBeginning)
+
+# Object Property: lci:causesEndOf (lci:causesEndOf)
+
+InverseObjectProperties(lci:causesEndOf lci:hasCauseOfEnd)
+
+# Object Property: lci:containedBy (lci:containedBy)
+
+SubObjectPropertyOf(lci:containedBy lci:locatedRelativeTo)
+InverseObjectProperties(lci:containedBy lci:contains)
+TransitiveObjectProperty(lci:containedBy)
+
+# Object Property: lci:ends (lci:ends)
+
+SubObjectPropertyOf(lci:ends lci:temporalBoundOf)
+InverseObjectProperties(lci:ends lci:hasEnd)
+
+# Object Property: lci:featureOf (lci:featureOf)
+
+SubObjectPropertyOf(lci:featureOf lci:arrangedPartOf)
+InverseObjectProperties(lci:featureOf lci:hasFeature)
+TransitiveObjectProperty(lci:featureOf)
+
+# Object Property: lci:hasPart (lci:hasPart)
+
+InverseObjectProperties(lci:hasPart lci:partOf)
+
+# Object Property: lci:hasParticipant (lci:hasParticipant)
+
+InverseObjectProperties(lci:hasParticipant lci:participantIn)
+
+# Object Property: lci:hasTemporalBound (lci:hasTemporalBound)
+
+InverseObjectProperties(lci:hasTemporalBound lci:temporalBoundOf)
+
+# Object Property: lci:hasTemporalPart (lci:hasTemporalPart)
+
+InverseObjectProperties(lci:hasTemporalPart lci:temporalPartOf)
+
+# Object Property: lci:partOf (lci:partOf)
+
+TransitiveObjectProperty(lci:partOf)
+
+# Object Property: lci:participantIn (lci:participantIn)
+
+SubObjectPropertyOf(lci:participantIn lci:partOf)
+
+# Object Property: lci:referencedBy (lci:referencedBy)
+
+InverseObjectProperties(lci:referencedBy lci:references)
+
+# Object Property: lci:temporalBoundOf (lci:temporalBoundOf)
+
+SubObjectPropertyOf(lci:temporalBoundOf lci:temporalPartOf)
+
+# Object Property: lci:temporalPartOf (lci:temporalPartOf)
+
+SubObjectPropertyOf(lci:temporalPartOf lci:partOf)
+TransitiveObjectProperty(lci:temporalPartOf)
+
+
+)

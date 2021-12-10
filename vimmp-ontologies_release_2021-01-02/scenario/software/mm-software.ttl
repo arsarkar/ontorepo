@@ -1,0 +1,643 @@
+########################################################################################
+#          EXAMPLE FILE for the VIMMP SOFTWARE ONTOLOGY - VISO                         #
+#                                                                                      #
+# This file contains examples of statements that can be made with "viso-general.ttl"   #
+# (-> "viso") and its branches "viso-atomistic-mesoscopic.ttl" (-> "viso-am"),         #
+# "viso-electronic.ttl" (-> "viso-el"), "viso-continuum.ttl" (-> "viso-co").           #
+#                                                                                      #
+# Authors of the examples:                                                             #
+#                                                                                      #
+# Silvia Chiacchiera, Martin T. Horsch (STFC/UKRI, Daresbury Laboratory, UK)           #
+# Michael A. Seaton, Ilian T. Todorov (STFC/UKRI, Daresbury Laboratory, UK)            #
+# Mara Chiricotto (University of Manchester, UK)                                       #
+# Joshua D. Elliott (University of Manchester, UK)                                     #
+# Gianluca Boccardo (Politecnico di Torino, Italy)                                     #
+#                                                                                      #
+# version date: 1st July 2020                                                          #
+#                                                                                      #
+########################################################################################
+
+<https://purl.vimmp.eu/semantics/scenario/mm-software/mm-software.ttl#> a owl:Ontology.
+
+@prefix mmsw: <https://purl.vimmp.eu/semantics/scenario/mm-software/mm-software.ttl#>.
+
+@prefix viso: <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>.
+@prefix viso-am: <https://purl.vimmp.eu/semantics/viso/viso-atomistic-mesoscopic.ttl#>.
+@prefix viso-el: <https://purl.vimmp.eu/semantics/viso/viso-electronic.ttl#>.
+@prefix viso-co: <https://purl.vimmp.eu/semantics/viso/viso-continuum.ttl#>.
+@prefix otras: <https://purl.vimmp.eu/semantics/otras/otras.ttl#>.
+@prefix evmpo: <https://emmc.eu/semantics/evmpo/evmpo.ttl#>.
+@prefix swo: <http://www.ebi.ac.uk/swo/>.
+@prefix swo-license: <http://www.ebi.ac.uk/swo/license/>.
+
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xs: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+
+########################################################################################
+
+<https://purl.vimmp.eu/semantics/scenario/mm-software/mm-software.ttl#>
+  dcterms:title "Materials modelling software: an example file for VISO - VImmp Software Ontology"^^xs:string;
+  dcterms:modified "2020-07-01"^^xs:string;
+  dcterms:creator "Silvia Chiacchiera (ORCID 0000-0003-0422-7870)"^^xs:string;
+  dcterms:creator "Martin T. Horsch (ORCID 0000-0002-9464-6739)"^^xs:string;
+  dcterms:creator "Michael A. Seaton (ORCID 0000-0002-4708-573X)"^^xs:string;
+  dcterms:creator "Ilian T. Todorov (ORCID 0000-0001-7275-1784)"^^xs:string;
+  dcterms:creator "Mara Chiricotto (ORCID 0000-0003-1609-5254)"^^xs:string;
+  dcterms:creator "Joshua D. Elliott (ORCID 0000-0002-0729-246X)"^^xs:string;
+  dcterms:creator "Gianluca Boccardo (ORCID 0000-0003-1264-8237)"^^xs:string;		
+  rdfs:comment "Disclaimer: the purpose of this example is to illustrate the use of VISO, so the coverage 
+of the capabilities of the individual codes is not exhaustive. While we did our best to report correct 
+information about the software, this is provided with no guarantee."^^xs:string;
+  rdfs:comment "The authors acknowledge funding from the European Union's Horizon 2020 research and
+innovation programme under grant agreement no. 760907, Virtual Materials Marketplace (VIMMP)."^^xs:string.
+
+<https://purl.vimmp.eu/semantics/scenario/mm-software/mm-software.ttl#>
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>;
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-electronic.ttl#>;
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-atomistic-mesoscopic.ttl#>;
+  owl:imports <https://purl.vimmp.eu/semantics/viso/viso-continuum.ttl#>.
+
+########################################################################################
+#             Examples for atomistic and mesoscopic models                             #
+########################################################################################
+
+mmsw:STFC a viso:agent;
+  a evmpo:institution;
+  rdfs:comment "Science and Technology Facilities Council - UK Research and Innovation"^^xs:string;
+  rdfs:seeAlso "https://stfc.ukri.org/"^^xs:anyURI.
+
+mmsw:SANDIA a viso:agent;
+  a evmpo:institution;
+  rdfs:comment "Sandia National Laboratories - US"^^xs:string;
+  rdfs:seeAlso "https://www.sandia.gov/"^^xs:anyURI.
+
+mmsw:GROMACS_TEAM a viso:agent;
+  rdfs:comment "GROMACS development teams at the Royal Institute of Technology and Uppsala University, Sweden."^^xs:string;
+  rdfs:seeAlso "http://www.gromacs.org/Developer_Zone"^^xs:anyURI.
+
+mmsw:DL_MESO_DPD_2.7 a viso:software_tool;
+  viso:has_main_name "DL_MESO_DPD"^^xs:string;
+  viso:has_version_identifier "2.7"^^xs:string;
+#  viso:has_release_date "2018-12-11"^^xs:date;
+  viso:has_release_date "2018-12-11T00:00:00+00:00"^^xs:dateTime;
+  viso:is_free false;
+  viso:is_free_to_academic true;
+  viso:has_a_gui true;
+  viso:has_an_api false;
+  viso:has_interface viso:TEXT_FILE_IO;
+  viso:has_interface viso:BINARY_FILE_IO;
+  viso:has_accessible_exe true;
+  viso:is_a_library false;
+  viso:has_a_gpu_version true;
+  viso:is_open_source false;
+  viso:is_distributed_by mmsw:STFC;
+  viso:has_license [a swo-license:SWO_1000057]; # -> SWO 'Artistic License 2.0'
+  rdfs:seeAlso "http://www.ccp5.ac.uk/DL_MESO"^^xs:anyURI;
+  rdfs:seeAlso "M. A. Seaton, R. L. Anderson, S. Metz, and W. Smith, DL_MESO: highly scalable mesoscale simulations, Mol. Simul. 39, 796 (2013)."^^xs:string;
+  rdfs:comment "The Dissipative Particle Dynamics (DPD) part of DL_MESO, a general purpose mesoscale simulation package developed at Daresbury Laboratory (DL)."^^xs:string;
+  viso:is_tool_for_model viso-am:DPD;
+  viso:has_feature viso-am:DPD_THERMOSTAT;
+  viso:has_feature viso-am:LOWE_ANDERSEN_THERMOSTAT;
+  viso:has_feature viso-am:PETERS_THERMOSTAT;
+  viso:has_feature viso-am:STOYANOV_GROOT_THERMOSTAT;
+  viso:has_feature viso-am:LANGEVIN_BAROSTAT;
+  viso:has_feature viso-am:BERENDSEN_BAROSTAT;
+  viso:has_feature viso-am:DOMAIN_DECOMPOSITION;
+  viso:uses_language viso:FORTRAN2003;
+  viso:uses_language viso:MPI;
+  viso:uses_language viso:OPENMP;
+  viso:has_feature viso-am:SPME; #from version 2.7 
+  viso:has_feature viso-am:EWALD_SMEARED; 
+  viso:has_feature viso-am:NVT;
+  viso:has_feature viso-am:NPT;
+  viso:has_feature viso-am:LENNARD_JONES_12_6;
+  viso:has_feature viso-am:GROOT_WARREN;
+  viso:has_feature viso-am:MANYBODY_DPD;	
+  viso:has_feature [a viso-am:flexible_object];
+  viso:has_feature viso-am:VV;
+  viso:has_feature viso-am:DPD_VV;
+  viso:has_feature viso-am:LEES_EDWARDS_BOUNDARY_CONDITION;
+  viso:has_feature viso:SERIAL_EXECUTION;
+  viso:has_feature viso:PARALLEL_EXECUTION;
+  viso:can_run_on [a viso:linux];
+  viso:can_run_on [a viso:macos];
+  viso:can_run_on [a viso:windows];
+  viso:has_memory_requirement "~10 MB, 200 bytes per particle input"^^xs:string;
+  a viso:simulation_engine;
+  a viso:pre_processing_tool;
+  a viso:post_processing_tool.
+
+[a owl:NegativePropertyAssertion;
+  owl:sourceIndividual mmsw:DL_MESO_DPD_2.7;
+  owl:assertionProperty viso:has_feature;
+  owl:targetIndividual viso-am:NVE].  # <- example to state that a feature is NOT present
+
+[a owl:NegativePropertyAssertion;
+  owl:sourceIndividual mmsw:DL_MESO_DPD_2.7;
+  owl:assertionProperty viso:has_feature;
+  owl:targetIndividual viso-am:RIGID_BOND]. 
+
+mmsw:DL_POLY_4.09 a viso:software_tool;
+  viso:has_main_name "DL_POLY_4"^^xs:string;
+  viso:has_version_identifier "09"^^xs:string;
+#  viso:has_release_date "2018-09-10"^^xs:date; 
+  viso:has_release_date "2018-09-10T00:00:00+00:00"^^xs:dateTime;
+  viso:is_free false;
+  viso:is_free_to_academic true;
+  viso:has_a_gui true;
+  viso:has_an_api false;
+  viso:has_interface viso:TEXT_FILE_IO;
+  viso:has_interface viso:BINARY_FILE_IO;
+  viso:has_accessible_exe true;
+  viso:is_open_source false;
+  viso:is_a_library false;
+  viso:is_distributed_by mmsw:STFC;
+  viso:has_license [a swo-license:SWO_1000057]; # -> SWO 'Artistic License 2.0'
+  rdfs:seeAlso "https://www.scd.stfc.ac.uk/Pages/DL_POLY.aspx"^^xs:anyURI;
+  rdfs:comment "DL_POLY is a general purpose classical molecular dynamics simulation software developed at Daresbury Laboratory (DL)."^^xs:string;
+  viso:is_tool_for_model viso-am:MM;
+  viso:is_tool_for_model viso-am:MD;
+  viso:has_feature viso-am:DOMAIN_DECOMPOSITION;
+  viso:has_feature viso-am:DIRECT_COULOMB_SUM;
+  viso:has_feature viso-am:SPME;	
+  viso:uses_language viso:FORTRAN90;
+  viso:has_feature viso-am:NVE;
+  viso:has_feature viso-am:NVT;
+  viso:has_feature viso-am:NPT;
+  viso:has_feature viso-am:LENNARD_JONES_12_6;
+  viso:has_feature [a viso-am:rigid_object];
+  viso:has_feature [a viso-am:flexible_object];
+  viso:has_feature viso-am:RIGID_BOND;
+  viso:has_feature viso-am:VV;
+  viso:has_feature viso-am:LFV;
+  viso:has_feature viso-am:CONJUGATE_GRADIENT;
+  viso:is_compatible_with mmsw:PLUMED;
+  viso:is_compatible_with mmsw:OPENKIM;
+  viso:is_compatible_with mmsw:VMD_1.9.3;
+  viso:has_feature viso-am:FINNIS_SINCLAIR_POTENTIAL;
+  viso:can_run_on [a viso:linux];
+  viso:can_run_on [a viso:windows];
+  viso:can_run_on [a viso:macos];
+  viso:has_memory_requirement "RAM 0.1GB, 1GB per 0.2 million particle input"^^xs:string;
+  viso:has_feature viso:SERIAL_EXECUTION;
+  viso:has_feature viso:PARALLEL_EXECUTION;
+  a viso:simulation_engine;
+  a viso:pre_processing_tool;
+  a viso:post_processing_tool.
+
+mmsw:LAMMPS_5Jun2019 a viso:software_tool;
+  viso:has_main_name "LAMMPS"^^xs:string;
+  viso:has_version_identifier "stable_5Jun2019"^^xs:string;
+#  viso:has_release_date "2019-06-05"^^xs:date;
+  viso:has_release_date "2019-06-05T00:00:00+00:00"^^xs:dateTime; 
+  viso:is_free true;
+  viso:has_interface viso:TEXT_FILE_IO;
+  viso:has_accessible_exe true;
+  viso:has_interface [a viso:application_programming_interface; viso:uses_language viso:PYTHON];
+  viso:is_open_source true;
+  viso:is_a_library true;
+  viso:has_a_gpu_version true;
+  viso:is_distributed_by mmsw:SANDIA;
+  rdfs:seeAlso "https://lammps.sandia.gov/"^^xs:anyURI;
+  rdfs:comment "LAMMPS is a classical molecular dynamics code with a focus on materials modeling. 
+It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator."^^xs:string; 
+  viso:is_tool_for_model viso-am:MM;
+  viso:is_tool_for_model viso-am:MD;
+  viso:is_tool_for_model viso-am:DPD;	
+  viso:has_feature viso-am:DOMAIN_DECOMPOSITION;
+  viso:has_feature viso-am:EWALD;
+  viso:has_feature viso-am:P3M;	
+  viso:uses_language [a viso:cpp]; 
+  viso:has_license [a swo-license:SWO_1000004]; # -> SWO 'GNU GPL'
+  viso:has_feature viso-am:NVE;
+  viso:has_feature viso-am:NVT;
+  viso:has_feature viso-am:NPT;
+  viso:has_feature viso-am:LENNARD_JONES_12_6;
+  viso:has_feature [a viso-am:rigid_object];
+  viso:has_feature [a viso-am:flexible_object];
+  viso:has_feature viso-am:RIGID_BOND;
+  viso:has_feature viso-am:CONJUGATE_GRADIENT;
+  viso:has_feature viso-am:BFGS;
+  viso:has_feature viso-am:STEEPEST_DESCENT;  
+  viso:has_feature viso-am:FINNIS_SINCLAIR_POTENTIAL;
+  a viso:simulation_engine;
+  viso:is_compatible_with mmsw:OPENKIM;
+  viso:is_compatible_with mmsw:PIZZA.PY;
+  viso:can_run_on [a viso:linux];
+  viso:can_run_on [a viso:windows];
+  viso:can_run_on [a viso:macos];
+  viso:has_memory_requirement "4 GB"^^xs:string;
+  viso:has_feature viso:SERIAL_EXECUTION;
+  viso:has_feature viso:PARALLEL_EXECUTION.			     
+
+mmsw:PLUMED a viso:software_tool;
+  rdfs:comment "Library for free energy calculations in molecular systems."^^xs:string;
+  rdfs:seeAlso "http://www.plumed.org/"^^xs:anyURI;
+  viso:is_a_library true;
+  viso:is_free true;
+  viso:is_open_source true .
+
+mmsw:OPENKIM a viso:software_tool;
+  rdfs:comment "The KIM API is an Application Programming Interface for atomistic simulations. The API provides a standard for exchanging information between atomistic simulation codes (molecular dynamics, molecular statics, lattice dynamics, Monte Carlo, etc.) and interatomic models (potentials or force fields)."^^xs:string;
+  rdfs:seeAlso "https://openkim.org/kim-api/"^^xs:anyURI;
+  viso:is_a_library true;
+  viso:is_free true;
+  viso:is_open_source true .
+
+mmsw:PIZZA.PY a viso:software_tool;
+  rdfs:comment "Pizza.py is a loosely integrated collection of tools, many of which provide pre- and post-processing capability for the LAMMPS molecular dynamics, ChemCell cell modeling, and SPPARKS kinetic Monte Carlo packages. There are tools to create input files, convert between file formats, process log and dump files, create plots, and visualize and animate simulation snapshots. Software packages that are wrapped by Pizza.py, so they can be invoked from Python, include GnuPlot, MatLab, Raster3d, RasMol, and VMD."^^xs:string;
+  rdfs:seeAlso "https://pizza.sandia.gov/"^^xs:anyURI;
+  viso:is_a_library true;
+  viso:is_free true;
+  viso:is_open_source true;
+  viso:has_license [a swo-license:SWO_1000004]; # -> SWO 'GNU GPL'
+  a viso:pre_processing_tool;
+  a viso:post_processing_tool. 
+
+mmsw:VMD_1.9.3 a viso:software_tool;
+  viso:has_main_name "VMD"^^xs:string;
+  viso:has_version_identifier "1.9.3"^^xs:string;
+#  viso:has_release_date "2016-11-30"^^xs:date;
+  viso:has_release_date "2016-11-30T00:00:00+00:00"^^xs:dateTime;
+  rdfs:comment "VMD is a molecular graphics program designed for the interactive visualization and analysis of biopolymers such as proteins, nucleic acids"^^xs:string;
+  rdfs:seeAlso "http://www.ks.uiuc.edu/Research/vmd/"^^xs:anyURI;
+  viso:is_a_library true;
+  viso:is_open_source true;
+  viso:has_a_gui true;
+  a viso:pre_processing_tool;
+  a viso:post_processing_tool;
+  a viso:visualizer.
+
+mmsw:GROMACS_2016 a viso:software_tool;
+  viso:has_main_name "GROMACS"^^xs:string;
+  viso:has_version_identifier "2016"^^xs:string;
+#  viso:has_release_date "2016-08-04"^^xs:date;
+  viso:has_release_date "2016-08-04T00:00:00+00:00"^^xs:dateTime;
+  rdfs:seeAlso "http://www.gromacs.org/"^^xs:anyURI;
+  rdfs:comment "GROningen MAchine for Chemical Simulations (GROMACS) is a molecular dynamics package."^^xs:string;
+  viso:is_free true;
+  viso:has_a_gpu_version true;
+  viso:is_open_source true;
+  viso:has_license [a swo-license:SWO_1000071]; # -> SWO 'GNU LGPL v2.1' license
+  viso:can_run_on [a viso:linux];
+  viso:can_run_on [a viso:macos];
+  viso:can_run_on [a viso:windows];
+  viso:has_memory_requirement "System Memory 16-32 Gb"^^xs:string;
+  viso:requires mmsw:FFTW; 
+  viso:uses_language viso:CPP;
+  viso:uses_language viso:C_LANGUAGE;
+  viso:uses_language viso:CUDA;
+  viso:uses_language viso:OPENCL;
+  viso:uses_language viso:OPENMP; 
+  viso:uses_language viso:MPI; 
+  viso:uses_language viso:CMAKE;
+  viso:is_tool_for_model viso-am:MD;
+  viso:is_tool_for_model viso-am:MC;
+  viso:is_tool_for_model viso-am:MM;
+  viso:has_feature viso-am:DOMAIN_DECOMPOSITION;
+  viso:has_feature viso-am:DIRECT_COULOMB_SUM;
+  viso:has_feature viso-am:EWALD;
+  viso:has_feature viso-am:SPME;
+  viso:has_feature viso-am:P3M;
+  viso:has_feature viso-am:BERENDSEN_BAROSTAT;
+  viso:has_feature viso-am:PARRINELLO_RAHMAN_BAROSTAT;
+  viso:has_feature viso-am:BERENDSEN_THERMOSTAT;
+  viso:has_feature viso-am:NOSE_HOOVER_THERMOSTAT;
+  viso:has_feature viso-am:VELOCITY_RESCALE_THERMOSTAT;
+  viso:has_feature viso-am:NVE;
+  viso:has_feature viso-am:NVT;
+  viso:has_feature viso-am:NPT;
+  viso:has_feature viso-am:LENNARD_JONES_12_6;    
+  viso:has_feature viso-am:BUCKINGHAM;
+  viso:has_feature viso-am:CONJUGATE_GRADIENT;
+  viso:has_feature viso-am:BFGS;
+  viso:has_feature viso-am:STEEPEST_DESCENT;  
+  viso:is_compatible_with mmsw:VMD_1.9.3;
+  viso:is_compatible_with mmsw:GROMACS_LS_2016;  
+  viso:has_feature [a viso-am:opls_ff];    
+  viso:has_feature [a viso-am:amber_ff];    
+  viso:has_feature [a viso-am:charmm_ff];    
+  viso:has_feature [a viso-am:gromos_ff];    
+  viso:has_feature viso:SERIAL_EXECUTION;
+  viso:has_feature viso:PARALLEL_EXECUTION;
+  a viso:simulation_engine;
+  a viso:pre_processing_tool;
+  a viso:post_processing_tool.
+
+mmsw:GROMACS_LS_2016 a viso:software_tool;
+  viso:has_main_name "GROMACS-LS"^^xs:string;
+  viso:has_version_identifier "2016"^^xs:string; #Note: it is not a typo, actually the version name is different from release date
+#  viso:has_release_date "2019-02-23"^^xs:date;
+  viso:has_release_date "2019-02-23T00:00:00+00:00"^^xs:dateTime;  
+  rdfs:seeAlso "https://www.mdstress.org/index.php/gromacs-ls/"^^xs:anyURI;
+  rdfs:comment "GROMACS-LS is a custom version of GROMACS developed for local stress calculations from molecular simulations. 
+It is a post-processing tool to analyze existing trajectories to obtain stress fields in 3D."^^xs:string;
+  viso:is_free true;
+  viso:is_open_source true;
+  viso:can_run_on [a viso:linux];
+  viso:can_run_on [a viso:macos];
+  viso:can_run_on [a viso:windows];
+  viso:uses_language viso:CPP;
+  viso:uses_language viso:C_LANGUAGE;
+  viso:uses_language viso:CMAKE;
+  viso:is_tool_for_model viso-am:MD;
+  viso:has_feature viso-am:DOMAIN_DECOMPOSITION;
+  viso:has_feature viso-am:DIRECT_COULOMB_SUM;
+  viso:has_feature viso-am:BERENDSEN_BAROSTAT;
+  viso:has_feature viso-am:PARRINELLO_RAHMAN_BAROSTAT;
+  viso:has_feature viso-am:BERENDSEN_THERMOSTAT;
+  viso:has_feature viso-am:NOSE_HOOVER_THERMOSTAT;
+  viso:has_feature viso-am:VELOCITY_RESCALE_THERMOSTAT;
+  viso:has_feature viso-am:NVE;
+  viso:has_feature viso-am:NVT;
+  viso:has_feature viso-am:NPT;
+  viso:has_feature viso-am:LENNARD_JONES_12_6;    
+  viso:has_feature viso-am:BUCKINGHAM;
+  viso:has_feature viso-am:CONJUGATE_GRADIENT;
+  viso:has_feature viso-am:BFGS;
+  viso:has_feature viso-am:STEEPEST_DESCENT;  
+  viso:has_feature [a viso-am:opls_ff];    
+  viso:has_feature [a viso-am:amber_ff];    
+  viso:has_feature [a viso-am:charmm_ff];    
+  viso:has_feature [a viso-am:gromos_ff];    
+  viso:has_license [a swo-license:SWO_9000080]; # <-> SWO 'LGPL'
+  a viso:post_processing_tool.
+
+mmsw:FFTW a viso:software; 
+  rdfs:seeAlso "http://www.fftw.org/"^^xs:anyURI;
+  rdfs:comment "FFTW is a C subroutine library for computing the discrete
+Fourier transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data"^^xs:string;
+    rdfs:comment "The name (FFTW) stands for the title of 'Fastest Fourier Transform in the West.'"^^xs:string.
+
+##################### Examples for updates #############################################
+
+mmsw:UPDATE_DL_MESO_DPD_from_2.6_to_2.7 a viso:software_tool_update;
+  viso:has_input mmsw:DL_MESO_DPD_2.6;
+  viso:has_output mmsw:DL_MESO_DPD_2.7; 
+  viso:adds_feature viso-am:SPME;
+  viso:adds_feature viso-am:LINEAR_SMEARING;
+  viso:has_update_comment "Major changes to output file writing to produce single trajectory and restart files (using MPI-IO)"^^xs:string.
+
+#############  Examples for manuals, also using OTRAS citation concept #################
+
+mmsw:DL_MESO_MANUAL a evmpo:training_document;
+   viso:is_manual_of mmsw:DL_MESO_DPD_2.7.
+
+mmsw:DL_POLY_MANUAL a evmpo:training_document;
+   viso:is_manual_of mmsw:DL_POLY_4.09.
+
+mmsw:DL_MESO_MANUAL_CITATION a otras:citation; 
+   otras:is_about mmsw:DL_MESO_MANUAL;
+   otras:is_about mmsw:DL_MESO_2.7;
+   otras:has_url "https://www.scd.stfc.ac.uk/Pages/USRMAN.pdf"^^xs:string;
+   otras:has_first_author_surname "Seaton"^^xs:string;
+   otras:has_publication_year 2019;
+   otras:has_publication_title "DL_MESO User manual"^^xs:string.
+
+mmsw:DL_POLY_MANUAL_CITATION a otras:citation;
+   otras:is_about mmsw:DL_POLY_MANUAL;
+   otras:is_about mmsw:DL_POLY_4.09;
+   otras:has_url "ftp://ftp.dl.ac.uk/ccp5/DL_POLY/DL_POLY_4.0/DOCUMENTS/USRMAN4.pdf"^^xs:string;
+   otras:has_first_author_surname "Todorov"^^xs:string;
+   otras:has_publication_year 2018;
+   otras:has_publication_title "The DL_POLY_4 User manual"^^xs:string.
+
+########################################################################################
+#                         Examples for electronic models                               #
+########################################################################################
+
+mmsw:QE a viso:agent;
+  rdfs:comment "Quantum Espresso Foundation".
+
+mmsw:QUANTUM_ESPRESSO_6.4.1 a viso:software_tool;
+  viso:has_main_name "QUANTUM_ESPRESSO"^^xs:string;
+  viso:has_version_identifier "6.4.1"^^xs:string;
+  viso:has_release_date "2019-04-08T00:00:00+00:00"^^xs:dateTime;
+  viso:is_free true;
+  viso:is_free_to_academic true;
+  viso:is_a_library true;
+  viso:is_open_source true;
+  rdfs:seeAlso "https://www.quantum-espresso.org/";
+  rdfs:comment "Quantum ESPRESSO is an integrated suite of computer codes for electronic-structure calculations 
+and materials modeling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials."^^xs:string;
+  rdfs:seeAlso "J Phys: Condens Matter 21 (2009) 395502";
+  rdfs:seeAlso "J Phys: Condens Matter 29 (2017) 465901";
+  viso:is_tool_for_model viso-el:DFT;
+  viso:uses_language viso:FORTRAN90;
+  viso:uses_language viso:MPI;
+  viso:uses_language viso:OPENMP;
+  viso:has_license [a swo-license:SWO_1000004]; # -> SWO 'GNU GPL' license
+  viso:is_distributed_by mmsw:QE;
+  a viso:simulation_engine;
+  a viso:post_processing_tool;
+
+# Model Features
+  viso:has_feature viso-el:PERIODIC_BOUNDARY_CONDITIONS;
+
+# Wavefunction
+  viso:has_feature viso-el:PLANE_WAVE;
+  viso:has_feature viso-el:WANNIER_FUNCTION;
+
+  viso:has_feature viso-el:NORM_CONSERVING_PSEUDOPOTENTIAL;
+  viso:has_feature viso-el:ULTRA_SOFT_PSEUDOPOTENTIAL;
+  viso:has_feature viso-el:PROJECTOR_AUGMENTED_WAVE;
+
+  viso:has_feature viso-el:BRAVAIS_LATTICE;
+  viso:has_feature viso-el:NO_SYMMETRY;
+  viso:has_feature viso-el:MONKHORST_PACK;
+  viso:has_feature viso-el:HIGH_SYMMETRY;
+  viso:has_feature viso-el:GAMMA_POINT_ONLY;
+
+# Hamiltonian
+  viso:has_feature viso-el:NON_SPIN_POLARIZED;
+  viso:has_feature viso-el:SPIN_POLARIZED;
+  viso:has_feature viso-el:NON_COLLINEAR_SPIN;
+
+  viso:has_feature viso-el:PERDEW_ZUNGER;
+  viso:has_feature viso-el:PERDEW_WANG_92;
+  viso:has_feature viso-el:PBE;
+  viso:has_feature viso-el:BLYP;
+  viso:has_feature viso-el:B88;
+  viso:has_feature viso-el:PW91;
+  viso:has_feature viso-el:PBESOL;
+  viso:has_feature viso-el:PBE0;
+  viso:has_feature viso-el:HSE06;
+  viso:has_feature viso-el:B3LYP;
+  viso:has_feature viso-el:X3LYP;
+  viso:has_feature viso-el:HUBBARD_U;
+  viso:has_feature viso-el:HUBBARD_J;
+  viso:has_feature viso-el:VDWDF;
+  viso:has_feature viso-el:OPTB86;
+  viso:has_feature viso-el:OPTB88;
+
+  viso:has_feature viso-el:SAWTOOTH_POTENTIAL;
+  viso:has_feature viso-el:MODERN_THEORY_OF_POLARIZATION;
+
+# Electronic Solver Features 
+  viso:has_feature viso-el:DAVIDSON;
+  viso:has_feature viso-el:CONJUGATE_GRADIENT;
+  viso:has_feature viso-el:BFGS;
+
+  viso:has_feature viso-el:BROYDEN; 
+  viso:has_feature viso-el:THOMAS_FERMI; 
+  viso:has_feature viso-el:LOCAL_THOMAS_FERMI; 
+   
+  viso:has_feature viso-el:GAUSSIAN_SMEARING; 
+  viso:has_feature viso-el:METHFESSEL_PAXTON; 
+  viso:has_feature viso-el:MARZARI_VANDERBILT; 
+   
+  viso:has_feature viso-el:MONKHORST_PACK; 
+  viso:has_feature viso-el:GAMMA_POINT_ONLY; 
+  viso:has_feature viso-el:HIGH_SYMMETRY;
+
+  viso:has_feature viso-el:NO_SYMMETRY;
+  viso:has_feature viso-el:BRAVAIS_LATTICE;
+
+# interface
+
+  viso:has_a_gui true;
+  viso:has_an_api false;
+  viso:has_accessible_exe true;
+  viso:has_interface viso:TEXT_FILE_IO;
+  viso:has_interface viso:BINARY_FILE_IO;
+
+# requirements
+
+  viso:has_memory_requirement "1 GB RAM"^^xs:string;
+  viso:requires mmsw:LAPACK;
+  viso:requires mmsw:FFTW;
+  viso:requires mmsw:BLAS.
+ 
+[a owl:NegativePropertyAssertion;
+  owl:sourceIndividual mmsw:QUANTUM_ESPRESSO_6.4.1;
+  owl:assertionProperty viso:has_feature;
+  owl:targetIndividual viso-el:OPEN_BOUNDARY_CONDITIONS].
+
+[a owl:NegativePropertyAssertion;
+  owl:sourceIndividual mmsw:QUANTUM_ESPRESSO_6.4.1;
+  owl:assertionProperty viso:has_feature;
+  owl:targetIndividual viso-el:EXPLICIT_CORE_ELECTRONS].
+
+[a owl:NegativePropertyAssertion;
+  owl:sourceIndividual mmsw:QUANTUM_ESPRESSO_6.4.1;
+  owl:assertionProperty viso:has_feature;
+  owl:targetIndividual viso-el:GAUSSIAN_ORBITAL].
+
+[a owl:NegativePropertyAssertion;
+  owl:sourceIndividual mmsw:QUANTUM_ESPRESSO_6.4.1;
+  owl:assertionProperty viso:has_feature;
+  owl:targetIndividual viso-el:SLATER_TYPE_ORBITAL].
+
+mmsw:BLAS a viso:software;
+  rdfs:comment "Basic Linear Algebra Subprograms - BLAS"^^xs:string;
+    rdfs:seeAlso "http://www.netlib.org/blas/"^^xs:anyURI.
+
+mmsw:LAPACK a viso:software;
+  rdfs:comment "Linear Algebra PACKage - LAPACK"^^xs:string;
+    rdfs:seeAlso "http://www.netlib.org/lapack/"^^xs:anyURI.
+
+mmsw:FFTW a viso:software; 
+  rdfs:seeAlso "http://www.fftw.org/"^^xs:anyURI;
+  rdfs:comment "FFTW is a C subroutine library for computing the discrete
+Fourier transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data"^^xs:string;
+  rdfs:comment "The name (FFTW) stands for the title of 'Fastest Fourier Transform in the West.'"^^xs:string.
+
+########################################################################################
+#                          Examples for continuum models                               #
+########################################################################################
+
+mmsw:POLITO a viso:agent;
+  a evmpo:institution;
+  rdfs:comment "Politecnico di Torino, Italy"^^xs:string;
+  rdfs:seeAlso "https://www.polito.it"^^xs:anyURI.
+
+mmsw:OPENFOAM_FOUNDATION a viso:agent;
+  a evmpo:institution;
+  rdfs:comment "OpenFOAM Foundation"^^xs:string;
+  rdfs:seeAlso "https://www.openfoam.org/"^^xs:anyURI.
+
+mmsw:EDF a viso:agent;
+  a evmpo:institution;
+  rdfs:comment "Electricite de France (EDF)"^^xs:string;
+  rdfs:seeAlso "https://www.edf.fr/"^^xs:anyURI.
+
+mmsw:OPENFOAM_6 a viso:software_tool;
+  viso:has_main_name "OPENFOAM"^^xs:string;
+  viso:has_version_identifier "6"^^xs:string;
+  viso:has_release_date "2018-07-10T00:00:00+00:00"^^xs:dateTime;
+  viso:is_free true;
+  viso:is_free_to_academic true;
+  viso:has_a_gui false;
+  viso:has_accessible_exe true;
+  viso:is_a_library false;
+  viso:is_open_source true;
+  viso:is_distributed_by mmsw:OPENFOAM_FOUNDATION;
+  rdfs:seeAlso "https://www.openfoam.org/"^^xs:anyURI;
+  rdfs:seeAlso "H. G. Weller, G. Tabor, H. Jasak, C. Fureby, A tensorial approach to computational continuum mechanics using object-oriented techniques, COMPUTERS IN PHYSICS, VOL. 12, NO. 6, NOV/DEC 1998"^^xs:string;
+  rdfs:comment "OpenFOAM (for 'Open-source Field Operation And Manipulation') is a software for computational fluid dynamics."^^xs:string;
+  viso:is_tool_for_model viso-co:CFD;
+  viso:has_feature viso-co:NAVIER_STOKES;
+  viso:has_feature viso-co:ADVECTION_DIFFUSION;
+  viso:has_feature viso-co:FIRST_ORDER_UPWIND;
+  viso:has_feature viso-co:CENTRAL_DIFFERENCE_SCHEME;
+  viso:has_feature viso-co:GRADIENT_LEAST_SQUARES;
+  viso:has_feature viso-co:GRADIENT_GAUSS;
+  viso:has_license [a swo-license:SWO_1000046]; # -> SWO 'GNU GPL v3'
+  viso:uses_language viso:CPP;
+  viso:is_compatible_with mmsw:PARAVIEW;
+  viso:can_run_on [a viso:linux];
+  viso:can_run_on [a viso:macos];
+  a viso:simulation_engine;
+  a viso:pre_processing_tool;
+  a viso:post_processing_tool;
+  viso:has_memory_requirement "2 GB"^^xs:string;
+  viso:has_feature viso:SERIAL_EXECUTION;
+  viso:has_feature viso:PARALLEL_EXECUTION.
+						    
+[a owl:NegativePropertyAssertion;
+  owl:sourceIndividual mmsw:OPENFOAM_6;
+  owl:assertionProperty viso:is_tool_for_model;
+  owl:targetIndividual viso-am:DPD].
+
+mmsw:CODE_SATURNE_5.2 a viso:software_tool;
+  viso:has_main_name "CODE_SATURNE"^^xs:string;
+  viso:has_version_identifier "5.2"^^xs:string; #Release 5.2.0 (March 30 2018)
+  viso:has_release_date "2018-03-30T00:00:00+00:00"^^xs:dateTime; 
+  viso:is_free true;
+  viso:is_free_to_academic true;
+  viso:has_a_gui true;
+  viso:is_a_library false;
+  viso:is_open_source true;
+  viso:is_distributed_by mmsw:EDF;
+  rdfs:seeAlso "https://www.code-saturne.org/cms/"^^xs:anyURI;
+  viso:is_tool_for_model viso-co:CFD;
+  viso:has_license [a swo-license:SWO_1000047]; # -> SWO 'GNU GPL v2'
+  viso:has_license [a swo-license:SWO_1000004]; # -> SWO 'GNU GPL' license
+  viso:uses_language [a viso:c_language];
+  viso:uses_language [a viso:fortran];
+  viso:uses_language [a viso:cpp];
+  viso:uses_language [a viso:python];
+  viso:has_accessible_exe true;
+  viso:has_memory_requirement "Approximately 50 Mb + 2MB/million cells"^^xs:string;
+  viso:has_feature viso:SERIAL_EXECUTION;
+  viso:has_feature viso:PARALLEL_EXECUTION.
+ 
+mmsw:PARAVIEW a viso:post_processing_tool;
+  a viso:visualizer;
+  rdfs:seeAlso "https://www.paraview.org/"^^xs:anyURI;
+  viso:is_free true;
+  viso:is_free_to_academic true;
+  viso:has_a_gui true;
+  viso:is_a_library false;
+  viso:is_open_source true;
+  viso:is_distributed_by mmsw:SANDIA;
+  viso:has_license [a swo-license:SWO_9000085]; # <-> SWO 'Modified BSD' or '3 clause BSD' license
+  viso:uses_language [a viso:python];
+  viso:is_compatible_with mmsw:OPENFOAM_6.
+
+

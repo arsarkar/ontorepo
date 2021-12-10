@@ -1,0 +1,178 @@
+# baseURI: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/occurrence-relationship-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/abstract-object-v-1.0
+
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix lci:     <http://standards.iso.org/iso/15926/ontology/life-cycle-integration/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/occurrence-relationship-v-1.0>
+      dc:rights "Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the ontology, to use, copy, modify, merge and distribute free of charge, copies of the ontology for the purposes of developing, implementing, installing and using software based on the ontology, and to permit persons to whom the on-tology is furnished to do so, subject to the following conditions: THE ONTOLOGY IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL ISO, OR ANY OTHER LICENSOR THAT GRANTS THE RIGHT UNDER THE ABOVE PERMISSION TO USE THE ONTOLOGY, BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE ONTOLOGY OR THE USE OR OTHER DEALINGS IN THE ONTOLOGY. In addition, any modified copy of the ontology shall include the following notice: THIS ONTOLOGY HAS BEEN MODIFIED FROM THE ONTOLOGY DEFINED IN ISO 15926-12, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD. "^^xsd:string ;
+      rdf:type owl:Ontology ;
+      owl:imports <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/abstract-object-v-1.0> .
+
+lci:classAfterOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:ClassOfIndividual .
+
+lci:classAfterValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:Individual .
+
+lci:classConnectedToOccurrence
+      rdf:type owl:SymmetricProperty , owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:ClassOfIndividual .
+
+lci:classConnectedToValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:Individual ;
+      owl:inverseOf lci:valueConnectedToOccurrence .
+
+lci:classHasBeginningOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:range lci:ClassOfEvent ;
+      rdfs:subPropertyOf lci:classHasTemporalPartOccurrence .
+
+lci:classHasBeginningValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:range lci:Event ;
+      rdfs:subPropertyOf lci:classHasTemporalPartValue .
+
+lci:classHasCauseOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfEvent ;
+      rdfs:range lci:ClassOfActivity .
+
+lci:classHasCauseOfBeginningOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:ClassOfActivity .
+
+lci:classHasCauseOfBeginningValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:Activity .
+
+lci:classHasCauseOfEndOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:ClassOfActivity .
+
+lci:classHasCauseOfEndValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:Activity .
+
+lci:classHasCauseValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfEvent ;
+      rdfs:range lci:Activity .
+
+lci:classHasEndOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:range lci:ClassOfEvent ;
+      rdfs:subPropertyOf lci:classHasTemporalPartOccurrence .
+
+lci:classHasEndValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:range lci:Event ;
+      rdfs:subPropertyOf lci:classHasTemporalPartValue .
+
+lci:classHasPartOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:ClassOfIndividual .
+
+lci:classHasPartValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:Individual .
+
+lci:classHasTemporalPartOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf lci:classHasPartOccurrence .
+
+lci:classHasTemporalPartValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf lci:classHasPartValue .
+
+lci:classLocatedRelativeToOccurrence
+      rdf:type owl:SymmetricProperty , owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:ClassOfIndividual .
+
+lci:classLocatedRelativeToValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfIndividual ;
+      rdfs:range lci:Individual ;
+      owl:inverseOf lci:valueLocatedRelativeToOccurrence .
+
+lci:classReferencesOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfActivity ;
+      rdfs:range lci:Class .
+
+lci:classReferencesValue
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:ClassOfActivity ;
+      rdfs:range lci:Thing .
+
+lci:valueAfterOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:Individual ;
+      rdfs:range lci:ClassOfIndividual .
+
+lci:valueConnectedToOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:Individual ;
+      rdfs:range lci:ClassOfIndividual .
+
+lci:valueHasBeginningOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:range lci:ClassOfEvent ;
+      rdfs:subPropertyOf lci:valueHasTemporalPartOccurrence .
+
+lci:valueHasCauseOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:Event ;
+      rdfs:range lci:ClassOfActivity .
+
+lci:valueHasCauseOfBeginningOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:Individual ;
+      rdfs:range lci:ClassOfActivity .
+
+lci:valueHasCauseOfEndOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:Individual ;
+      rdfs:range lci:ClassOfActivity .
+
+lci:valueHasEndOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:range lci:ClassOfEvent ;
+      rdfs:subPropertyOf lci:valueHasTemporalPartOccurrence .
+
+lci:valueHasPartOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:Individual ;
+      rdfs:range lci:ClassOfIndividual .
+
+lci:valueHasTemporalPartOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf lci:valueHasPartOccurrence .
+
+lci:valueLocatedRelativeToOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:Individual ;
+      rdfs:range lci:ClassOfIndividual .
+
+lci:valueReferencesOccurrence
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:Activity ;
+      rdfs:range lci:Class .

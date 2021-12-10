@@ -1,0 +1,1318 @@
+# baseURI: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/annotation-skos-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/collector-v-1.0
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix lci:     <http://standards.iso.org/iso/15926/ontology/life-cycle-integration/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/annotation-skos-v-1.0>
+      rdf:type owl:Ontology ;
+      owl:imports <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/collector-v-1.0> ,
+      <http://www.w3.org/2004/02/skos/core> .
+      
+lci:ComputerFile
+      skos:definition "<InformationObject> that is a file within a computer system" ;
+      skos:example "The following are members of <ComputerFile>: the PDF file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.pdf, which contains a scan of the ink on paper material certificate for material product M-101-1234 produced by Schmidt Stahl; the XML file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.xml, which contains the material certificate in accordance with the standard material certificate XML schema auto-gration_messages.xsd." ;
+      skos:prefLabel "computer file" ;
+      skos:scopeNote "A <ComputerFile> is a <Individual> because it exists in space and time as a physical state of an electronic storage medium. A <ComputerFile> is a <FunctionalPhysicalObject> because the electronic storage medium that holds a computer file can change from time to time.PDF, file, XML file, and TURTLE file are subclasses of <ComputerFile>." .
+
+lci:Feature
+      skos:definition "<PhysicalObject> that is a contiguous, non-separable part of a <Individual> and that has an incompletely defined separating bound" ;
+      skos:prefLabel "feature" ;
+      skos:scopeNote "Mountain, groove, rim, nozzle, nose, and raised face are subclasses of <Feature>." .
+
+lci:noteByInformationContent
+      skos:definition "<noteBy> and <representationByInformationContent>" ;
+      skos:prefLabel "note by information content" .
+
+lci:classReferencedByValue
+      skos:definition "each member of the subject has a <referencedBy> relationship with the object" ;
+      skos:prefLabel "class referenced by value" .
+
+lci:ListOfQuantity
+      skos:definition "<List> that has <Quantity> as its range" ;
+      skos:prefLabel "list of quantity" ;
+      skos:scopeNote "This class is defined in the ontology solely to provide structure." .
+
+lci:Organism
+      skos:definition "<PhysicalObject> that is a single living organism" ;
+      skos:prefLabel "organism" .
+
+lci:ClassOfPhysicalObject
+      skos:definition "class that is the power class of <PhysicalObject>" ;
+      skos:prefLabel "class of physical object" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:noteByInformationObject
+      skos:definition "<noteBy> and <representationByInformationObject>" ;
+      skos:prefLabel "note by information object" .
+
+lci:identificationBy
+      skos:definition "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that identifies" ;
+      skos:example "The <PhysicalObject> delivered by Schmidt Stahl on 2014-09-15 has an <identificationBy> relationship with 'M-101-1234' ." ;
+      skos:prefLabel "identification by" ;
+      skos:scopeNote "An 'id' attribute of ISO 10303-41 entity such as 'product' is an <identificationBy> relationship." .
+
+lci:valuePartOfOccurrence
+      skos:definition "the subject has a <partOf> relationship with each member of the object" ;
+      skos:prefLabel "value part of occurrence" .
+
+lci:numberAsLiteral
+      skos:definition "text string literal that represents the <Number> in decimal" ;
+      skos:prefLabel "number as literal" .
+
+lci:ClassOfIsomorphism
+      skos:definition "class that is the power class of <Isomorphism>" ;
+      skos:prefLabel "class of isomorphism" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Organization
+      skos:definition "<PhysicalObject> that consists of people and other assets and that is organized with a particular purpose" ;
+      skos:example "POSC Caesar Association, Fiatech, Bechtel and TopQuadrant are instances of <Organization>." ;
+      skos:prefLabel "organization" ;
+      skos:scopeNote "Company, government, and project team are subclasses of <Organization>." .
+
+lci:descriptionOfExampleBy
+      skos:definition "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that is a description of an example" ;
+      skos:prefLabel "description of example by" ;
+      skos:scopeNote "<noteBy> has the same meaning as the SKOS property 'example'." .
+
+lci:ClassOfPerson
+      skos:definition "class that is the power class of <Person>" ;
+      skos:prefLabel "class of person" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfPhysicalObjectByFunction
+      skos:definition "<ClassOfPhysicalObject> that has as its criterion for membership a function or purpose" ;
+      skos:example "Pump, valve, and car are subclasses of <PhysicalObject> and instances of <ClassOfPhysicalObjectByFunction>." ;
+      skos:prefLabel "class of physical object by function" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:MaterializedPhysicalObject
+      skos:definition "<PhysicalObject> that has matter continuity, energy continuity of both as its basis of identity" ;
+      skos:example "The shell and tube heat exchanger with manufacture's serial number ES/1234 is a <MaterializedPhysicalObject>." ;
+      skos:prefLabel "materialized physical object" ;
+      skos:scopeNote "A <MaterializedPhysicalObject> has some continuity of matter or energy between adjacent temporal parts. However, the eeplacement of some components from time to time does not create a new identity." .
+
+lci:ClassOfScale
+      skos:definition "class that is the power class of <Scale>" ;
+      skos:prefLabel "class of scale" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classHasCauseOfBeginningValue
+      skos:definition "each member of the subject has a <hasCauseOfBeginning> relationship with the object" ;
+      skos:prefLabel "class has cause of beginning value" .
+
+lci:QuantityMeasure
+      skos:definition "<MathematicalFunction> that has a subclass of <Individual> as its domain and a <QuantitySpace> as its range, and that is not classification" ;
+      skos:example "'cost of certification' is a <QuantityMeasure>. The 'cost of certification' relationship between the vessel with serial number V1234/89 and 10000 euro is not a classification of the vessel. Instead it is a classification of the certification activity that is required for the vessel." ;
+      skos:prefLabel "quantity measure" ;
+      skos:scopeNote "A member of <QuantityMeasure> is implemented in this part of ISO 15926 as an owl:ObjectProperty with the range <Quantity>." .
+
+lci:ClassOfCompound
+      skos:definition "class that is the power class of <Compound>" ;
+      skos:prefLabel "class of compound" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfOrderedPairOfQuantity
+      skos:definition "class that is the power class of <OrderedPairOfQuantity>" ;
+      skos:prefLabel "class of ordered pair of quantity" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Class
+      skos:definition "set of instances of <Thing/span>" ;
+      skos:prefLabel "class" ;
+      skos:scopeNote "A <Class> can be defined by enumerating its members or by criteria that separate instances of <Thing> into those which are members and those which are not.The members of a <Class> do not change with time. If the members are different, then it is a different <Class>.The object <Class> is a subclass of <Thing>. The object <Class> is not a subclass of owl:Class because this would prevent the use of OWL inferencing." .
+
+lci:classReferencesValue
+      skos:definition "each member of the subject has a <references> relationship with the object" ;
+      skos:prefLabel "class references value" .
+
+lci:classPartOfValue
+      skos:definition "each member of the subject has a <partOf> relationship with the object" ;
+      skos:prefLabel "class part of value" .
+
+lci:locatedRelativeTo
+      skos:definition "<Individual> that has a relative location" ;
+      skos:example "The level gauge I-L-101-2 has a <locatedRelativeTo> relationship with tank T_101." ;
+      skos:prefLabel "located relative to" ;
+      skos:scopeNote "A subproperty, such as 'above' or 'beside', can indicate the nature of the relative location" .
+
+lci:featureOf
+      skos:definition "<Individual> that has the <Feature> as a part" ;
+      skos:example "The face of flange F_101 has a <featureOf> relationship with flange F_101 as a whole.Nozzle N_101/1 has a <featureOf> relationship with vessel V_101." ;
+      skos:prefLabel "feature of" .
+
+lci:references
+      skos:definition "thing that is referenced" ;
+      skos:example "The <Activity> 'accept delivery of material product M-101-1234' <references> the <InformationContent> that is the material certificate with URI http://schmidt-stahl.de/material-certificate/M-101-1234. This URI identifies the content of the certificate, which can be physical represented as ink on paper, PDF or XML.The <Activity> 'issue work order for planned activity P-101-2' <references> the <ClassOfActivity> that is plan P-101-2." ;
+      skos:prefLabel "references" .
+
+lci:classHasPartOccurrence
+      skos:definition "each member of the subject has a <hasPart> relationship with a member of the object, and each member of the object has a <partOf> relationship with a member of the subject" ;
+      skos:prefLabel "class has part occurrence" .
+
+lci:translationOf
+      skos:definition "<InformationContent> that has the same meaning in a different <Language>" ;
+      skos:example "The <InformationContent> that is the Universal declaration of human rights in English has a <translationOf> relationship with the <InformationContent> that is the Universal declaration of human rights in French." ;
+      skos:prefLabel "translation of" ;
+      skos:scopeNote "The relationship <translationOf> is symmetric, and does not imply the source. The process of translation can be recorded by a translation <Activity>." .
+
+lci:identificationByLiteral
+      skos:definition "<identificationBy> and <representationByLiteral>" ;
+      skos:prefLabel "identification by literal" .
+
+lci:FunctionalPhysicalObject
+      skos:definition "<PhysicalObject> that has functional continuity as its basis of identity" ;
+      skos:example "The heat exchanger system known as tag E-4507 is a <FunctionalPhysicalObject>." ;
+      skos:prefLabel "functional physical object" ;
+      skos:scopeNote "A <FunctionalPhysicalObject> has functional, rather than material, continuity as its basis for identity. Adjacent temporal parts of a <FunctionalPhysicalObject> need not have common matter or energy, provided the matter or energy of each temporal part fulfils the same function" .
+
+lci:valueHasCauseOfEndOccurrence
+      skos:definition "the subject has a <hasCauseOfEnd> relationship with each member of the object" ;
+      skos:prefLabel "value has cause of end occurrence" .
+
+lci:classHasTemporalPartOccurrence
+      skos:definition "each member of the subject has a <hasTemporalPart> relationship with a member of the object, and each member of the object has a <temporalPartOf> relationship with a member of the subject" ;
+      skos:prefLabel "class has temporal part occurrence" .
+
+lci:Compound
+      skos:definition "<PhysicalObject> that is an arrangement of molecules of the same or different types bound together by intermolecular forces" ;
+      skos:prefLabel "compound" ;
+      skos:scopeNote "Water, sulphuric acid, sand, limestone and steel are subclasses of <Compound>." .
+
+lci:ClassOfOrganism
+      skos:definition "class that is the power class of <Organism>" ;
+      skos:prefLabel "class of organism" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classLocatedRelativeToOccurrence
+      skos:definition "each member of the subject has a <locatedRelativeTo> relationship with a member of the object, and each member of the object has a <locatedRelativeTo> relationship with a member of the subject" ;
+      skos:prefLabel "class located relative to occurrence" .
+
+lci:hasTemporalBound
+      skos:definition "<Event> that is the beginning or end" ;
+      skos:prefLabel "has temporal bound" .
+
+lci:unionOfAllMembersOf
+      skos:definition "<Class> that is the union of all members" ;
+      skos:example "The <RangePhysicalQuantity> that is all instances of <Individual> with a mass greater than 10 kilograms and less than 15 kilograms is the <unionOfAllMembersOf> the <RangePhysicalQuantity> that is all instances of mass greater than 10 kilograms and less than 15 kilograms." ;
+      skos:prefLabel "union of all members of" ;
+      skos:scopeNote "For an enumerated set of classes the union of all members can be defined using owl:unionOf. However the <unionOfAllMembersOf> relationship is required where the members of the set are not enumerated." .
+
+lci:quantityRangeHasLowerBound
+      skos:definition "<Quantity> that is the lower bound" ;
+      skos:prefLabel "quantity range has lower bound" .
+
+lci:containedBy
+      skos:definition "<Individual> that contains, but does not have the contained as a part" ;
+      skos:example "The batch of oil B_101 during 2014-04-11 has a <containedBy> relationship with tank T_101 during 2014-04-11." ;
+      skos:prefLabel "contained by" .
+
+lci:ClassOfPointInTime
+      skos:definition "class that is the power class of <PointInTime>" ;
+      skos:prefLabel "class of point in time" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfOrderedPairOfPhysicalQuantity
+      skos:definition "class that is the power class of <OrderedPairOfPhysicalQuantity>" ;
+      skos:prefLabel "class of ordered pair of physical quantity" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:OrderedPairOfTimeDuration
+      skos:definition "<OrderedPairOfPhysicalQuantity> that is an ordered pair of <TimeDuration>" ;
+      skos:example "('50 hours', '200 hours') is an <OrderedPairOfTimeDuration>." ;
+      skos:prefLabel "ordered pair of time duration" .
+
+lci:classCausesEndOfValue
+      skos:definition "each member of the subject has a <causesEndOf> relationship with the object" ;
+      skos:prefLabel "class causes end of value" .
+
+lci:ComputerFileFormat
+      skos:definition "<ClassOfComputerFile> that has the format of the file as its criterion for membership" ;
+      skos:example "XML file, PDF file and TURTLE file are members of <ComputerFileFormat>." ;
+      skos:prefLabel "computer file format" ;
+      skos:scopeNote "XML, TURTLE and PDF are members of <RepresentationFormat>." .
+
+lci:partOf
+      skos:definition "<Individual> that is a whole for the part" ;
+      skos:prefLabel "part of" .
+
+lci:InformationObject
+      skos:definition "<Individual> that is intended to convey information" ;
+      skos:example "The following are members of <InformationObject>: the ink on paper material certificate for material product M-101-1234 produced by Schmidt Stahl, which bears the signature of the Schmidt Stahl inspector; the PDF file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.pdf, which contains a scan of the ink on paper material certificate for M-101-1234; the XML file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.xml, which contains the material certificate for M-101-1234 in accordance with the standard material certificate XML schema auto-gration_messages.xsd; the state of railway signal VS1234 between 10:02:30 and 10:02:45 on 2014-05-19" ;
+      skos:prefLabel "information object" .
+
+lci:Molecule
+      skos:definition "<PhysicalObject> that is a molecule" ;
+      skos:prefLabel "molecule" ;
+      skos:scopeNote "A molecule is an electrically neutral group of two or more atoms held together by covalent chemical bonds. Molecules are distinguished from ions by their lack of electrical charge (wikipedia). <br/><br/>H2O, H2SO4, and DNA are subclasses of <Molecule>." .
+
+lci:Mapping
+      skos:definition "<AbstractObject> that is a relationship between a domain <Class> and a range <Class>, and that defines a set of (domain member, range member) pairs" ;
+      skos:prefLabel "mapping" .
+
+lci:iso8601IdentificationOfDuration
+      skos:definition "text that identifies a <TimeDuration> in accordance with ISO 8601" ;
+      skos:example "The <TimeDuration> that is 1 day and 12 hours has a <iso8601IdentificationOfDuration> relationship with the text 'P1DT12H'. This is 36 hours, unless daylight saving time begins or ends at the end of the day." ;
+      skos:prefLabel "ISO 8601 identification of duration" .
+
+lci:valueCausesEndOfOccurrence
+      skos:definition "the subject has a <causesEndOf> relationship with each member of the object" ;
+      skos:prefLabel "value causes end of occurrence" .
+
+lci:SubspaceOfCartesianProductOfQuantityKind
+      skos:definition "<ClassOfListOfQuantity> that is a subspace of a <CartesianProductOfQuantityKind>" ;
+      skos:prefLabel "subspace of cartesian product of quantity kind" .
+
+lci:classHasTemporalPartValue
+      skos:definition "each member of the subject has a <hasTemporalPart> relationship with the object" ;
+      skos:prefLabel "class has temporal part value" .
+
+lci:Scale
+      skos:definition "<Isomorphism> between a <PhysicalQuantitySpace> and a <NumberSpace>" ;
+      skos:example "Celsius is a <Scale> that is an isomorphism between the <PhysicalQuantitySpace> thermodynamic temperature and the <NumberRange> that is reals greater than -273.15." ;
+      skos:prefLabel "scale" ;
+      skos:scopeNote "A member of <Scale> is implemented in this part of ISO 15926 as an owl:DatatypeProperty with domain <PhysicalQuantity>." .
+
+lci:ClassOfParticulateMaterial
+      skos:definition "class that is the power class of <ParticulateMaterial>" ;
+      skos:prefLabel "class of particulate material" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfCompositeMaterial
+      skos:definition "class that is the power class of <CompositeMaterial>" ;
+      skos:prefLabel "class of composite material" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classEndsValue
+      skos:definition "each member of the subject has a <ends> relationship with the object" ;
+      skos:prefLabel "class ends value" .
+
+lci:ClassOfMolecule
+      skos:definition "class that is the power class of <Molecule>" ;
+      skos:prefLabel "class of molecule" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:PhysicalQuantitySpace
+      skos:definition "<ClassOfPhysicalQuantity> that is a subspace of, or all of, a <PhysicalQuantityKind>" ;
+      skos:example "mass is a <PhysicalQuantitySpace>." ;
+      skos:prefLabel "physical quantity space" .
+
+lci:representationByInformationContent
+      skos:definition "<InformationContent> that is the representation" ;
+      skos:prefLabel "representation by information content" .
+
+lci:ClassOfAtom
+      skos:definition "class that is the power class of <Atom>" ;
+      skos:prefLabel "class of atom" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ends
+      skos:definition "<Individual> that ends" ;
+      skos:example "The <PointInTime> 1999-07-01T00:00 has a <ends> relationship with the <PeriodInTime> June 1999.The <Event> 'loading L_101 on 2014-04-11 complete' has a <ends> relationship with the <Individual> 'loading plant operating on 2014-04-11'." ;
+      skos:prefLabel "ends" .
+
+lci:hasParticipant
+      skos:definition "<Individual> that is a participant" ;
+      skos:example "The activity 'discharge of motor vessel Murex on 2002-12-02' has a <hasParticipant> relationship with pump P_101 during 2002-12-02." ;
+      skos:prefLabel "has participant" .
+
+lci:Language
+      skos:definition "<ClassOfInformationContent> that has the language used for the <InformationContent> as the criterion for membership" ;
+      skos:example "'US English' is a <Language>." ;
+      skos:prefLabel "language" ;
+      skos:scopeNote "The codes assigned by the parts of ISO 639 'Codes for the representation of names of languages' identify members of <Language>.If text is represented as an xsd:string, then a language tag can be specified as defined in IETF RFC 3066. If text is specified as an <InformationContent>, then it can be classified as a member of a <Language>." .
+
+lci:Number
+      skos:definition "<AbstractObject> that is a member of a <NumberSpace>" ;
+      skos:example "27 is an <Number>.29.5 is a <Number>." ;
+      skos:prefLabel "number" .
+
+lci:ClassOfActivity
+      skos:definition "class that is the power class of <Activity>" ;
+      skos:prefLabel "class of activity" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:RangeQuantity
+      skos:definition "<ClassOfIndividual> that is all members of all instances of <Quantity> within a <QuantityRange>" ;
+      skos:example "The instances of <Individual> with a mass greater than 10 kilograms and less than 15 kilograms is a <RangeQuantity>.The instances of <Individual> costing a monetary amount greater than 10 euro and less than 15 euro is a <RangeQuantity>." ;
+      skos:prefLabel "range quantity" .
+
+lci:IdentificationSpace
+      skos:definition "<RepresentationSpace> that has members that identify" ;
+      skos:example "Identification by UK vehicle registration number' is an <IdentificationSpace>." ;
+      skos:prefLabel "identification space" ;
+      skos:scopeNote "A member of <IdentificationSpace> is implemented in this part of ISO 15926 as an owl:AnnotationProperty that is a subproperty of <identificationBy>." .
+
+lci:Activity
+      skos:definition "<Individual> that is something happening or changing" ;
+      skos:prefLabel "activity" ;
+      skos:scopeNote "An <Activity> is a space-time extension in which other instances of <Individual> and <Event> participate." .
+
+lci:classTemporalPartOfValue
+      skos:definition "each member of the subject has a <temporalPartOf> relationship with the object" ;
+      skos:prefLabel "class temporal part of value" .
+
+lci:ClassOfOrganization
+      skos:definition "class that is the power class of <Organization>" ;
+      skos:prefLabel "class of organization" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Boolean
+      skos:definition "<Number> that is one of {true, false}" ;
+      skos:prefLabel "boolean" .
+
+lci:OrderedPairOfPhysicalQuantity
+      skos:definition "<OrderedPairOfQuantity> that is an ordered pair of <PhysicalQuantity>" ;
+      skos:example "('50 hours', '200 hours') is an <OrderedPairOfPhysicalQuantity>." ;
+      skos:prefLabel "ordered pair of physical quantity" .
+
+lci:ClassOfComputerFile
+      skos:definition "class that is the power class of <ComputerFile>" ;
+      skos:prefLabel "class of computer file" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:hasCauseOfBeginning
+      skos:definition "<Activity> that causes the beginning" ;
+      skos:example "Pump casing PC_101 has a <hasCauseOfBeginning> relationship with forging activity F_101." ;
+      skos:prefLabel "has cause of beginning" .
+
+lci:classHasPartValue
+      skos:definition "each member of the subject has a <hasPart> relationship with the object" ;
+      skos:prefLabel "class has part value" .
+
+lci:ClassOfClassOfInformationObject
+      skos:definition "<ClassOfClassOfIndividual> that is the power class of <ClassOfInformationObject>" ;
+      skos:prefLabel "class of class of information object" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Non-wholeLifeIndividual
+      skos:definition "<Individual> that is not an <WholeLifeIndividual>" ;
+      skos:example "The temporal part of the pump with serial number 'P-98/1234' that is installed as pump tag '20-P-101' is a <MaterializedPhysicalObject> and a <Non-wholeLifeIndividual>.The temporal part of pump tag '20-P-101' that has the pump with serial number 'P-98/1234' installed is a <FunctionalPhysicalObject> and a <Non-wholeLifeIndividual>." ;
+      skos:prefLabel "non-whole life individual" .
+
+lci:PhysicalQuantityRatio
+      skos:definition "<QuantityRatio> that is a <ClassOfOrderedPairOfPhysicalQuantity>" ;
+      skos:prefLabel "physical quantity ratio" .
+
+lci:classConnectedToValue
+      skos:definition "each member of the subject has a <connectedTo> relationship with the object" ;
+      skos:prefLabel "class connected to value" .
+
+lci:valueHasCauseOfBeginningOccurrence
+      skos:definition "the subject has a <hasCauseOfBeginning> relationship with each member of the object" ;
+      skos:prefLabel "value has cause of beginning occurrence" .
+
+lci:classCausesBeginningOfValue
+      skos:definition "each member of the subject has a <causesBeginningOf> relationship with the object" ;
+      skos:prefLabel "class causes beginning of value" .
+
+lci:noteByLiteral
+      skos:definition "<noteBy> and <representationByLiteral>" ;
+      skos:prefLabel "note by literal" .
+
+lci:InanimatePhysicalObject
+      skos:definition "<PhysicalObject> that is not one or more instances of <Organism>" ;
+      skos:prefLabel "inanimate physical object" ;
+      skos:scopeNote "Oil is a subclass of <InanimatePhysicalObject>." .
+
+lci:PhysicalQuantityKind
+      skos:definition "<PhysicalQuantitySpace> and a <QuantityKind>" ;
+      skos:example "mass is a <PhysicalQuantityKind>." ;
+      skos:prefLabel "physical quantity kind" .
+
+lci:classAfterOccurrence
+      skos:definition "each member of the subject has a <after> relationship with a member of the object, and each member of the object has a <before> relationship with a member of the subject" ;
+      skos:prefLabel "class after occurrence" .
+
+lci:ClassOfStatus
+      skos:definition "class that is the power class of <Status>" ;
+      skos:prefLabel "class of status" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:assembledPartOf
+      skos:definition "<ArrangedIndividual> that is a whole for the assembled part" ;
+      skos:example "Impeller I_345 during 2013 has an <assembledPartOf> relationship with pump P_101 during 2013." ;
+      skos:prefLabel "assembled part of" .
+
+lci:fraction
+      skos:definition "number that identifies a <Ratio> as a fraction" ;
+      skos:example "The <Ratio> that is 50:200 has a <fraction> relationship with the number 0.25." ;
+      skos:prefLabel "fraction" .
+
+lci:valueTemporalPartOfOccurrence
+      skos:definition "the subject has a <temporalPartOf> relationship with each member of the object" ;
+      skos:prefLabel "value temporal part of occurrence" .
+
+lci:ClassOfInformationObject
+      skos:definition "<ClassOfIndividual> that is the power class of <InformationObject>" ;
+      skos:prefLabel "class of information object" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfList
+      skos:definition "class that is the power class of <List>" ;
+      skos:prefLabel "class of list" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueLocatedRelativeToOccurrence
+      skos:definition "the subject has a <locatedRelativeTo> relationship with each member of the object" ;
+      skos:prefLabel "value connected to occurrence" .
+
+lci:representationByLiteral
+      skos:definition "text string literal that is the representation" ;
+      skos:prefLabel "representation by literal" ;
+      skos:scopeNote "The owl:AnnotationProperty <representationByLiteral> collects all sub-properties of <representationBy> that have xsd:string as the range." .
+
+lci:ClassOfListOfPhysicalQuantity
+      skos:definition "class that is the power class of <ListOfPhysicalQuantity>" ;
+      skos:prefLabel "class of list of physical quantity" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueHasEndOccurrence
+      skos:definition "the subject has a <hasEnd> relationship with each member of the object" ;
+      skos:prefLabel "value has end occurrence" .
+
+lci:numberRangeHasUpperBound
+      skos:definition "<Number> that is the upper bound" ;
+      skos:prefLabel "number range has upper bound" .
+
+lci:PhysicalRepresentationType
+      skos:definition "<ClassOfInformationObject> that has the method used to create a physical representation of the information as the criterion for membership" ;
+      skos:example "The following are members of <PhysicalRepresentationType>:ink on paper document; ink on paper document with A4 paper; computer file; PDF file; coloured light railway signal." ;
+      skos:prefLabel "physical representation type" ;
+      skos:scopeNote "Computer file format, with members such as XML file and PDF file, is a subclass of <PhysicalRepresentationType>.Paper document format, with members such as A4 and foolscap, is a subclass of <PhysicalRepresentationType>." .
+
+lci:percent
+      skos:definition "number that identifies a <Ratio> as a percentage" ;
+      skos:example "The <Ratio> that is 50:200 has a <percent> relationship with the number 25." ;
+      skos:prefLabel "percent" .
+
+lci:classHasCauseOfEndOccurrence
+      skos:definition "each member of the subject has a <hasCauseOfEnd> relationship with a member of the object, and each member of the object has a <causesEndOf> relationship with a member of the subject" ;
+      skos:prefLabel "class has cause of end occurrence" .
+
+lci:Logical
+      skos:definition "<Number> that is one of {true, false, unknown}" ;
+      skos:prefLabel "logical" .
+
+lci:descriptionOfExampleByInformationObject
+      skos:definition "<descriptionOfExampleBy> and <representationByInformationObject>" ;
+      skos:prefLabel "description of example by information object" .
+
+lci:QuantityRange
+      skos:definition "<ClassOfQuantity> that is all instances of <Quantity> that are greater than a lower bound, or less than an upper bound, or both" ;
+      skos:example "The instances of mass that are greater than 10 kilograms and less than 15 kilograms is a <QuantityRange>The instances of monetary amount that are greater than 10 euro and less than 15 euro is a <QuantityRange>" ;
+      skos:prefLabel "quantity range" .
+
+lci:ClassOfArrangedIndividual
+      skos:definition "<ClassOfIndividual> that is the power class of <ArrangedIndividual>" ;
+      skos:prefLabel "class of arranged individual" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfClass
+      skos:definition "class that is the power class of <Class>" ;
+      skos:prefLabel "class of class" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:descriptionOfExampleByInformationContent
+      skos:definition "<descriptionOfExampleBy> and <representationByInformationContent>" ;
+      skos:prefLabel "description of example by information content" .
+
+lci:classHasCauseOccurrence
+      skos:definition "each member of the subject has a <hasCause> relationship with a member of the object, and each member of the object has a <causes> relationship with a member of the subject" ;
+      skos:prefLabel "class has cause occurrence" .
+
+lci:descriptionByInformationObject
+      skos:definition "<descriptionBy> and <representationByInformationObject>" ;
+      skos:prefLabel "description by information object" .
+
+lci:ClassOfInanimatePhysicalObject
+      skos:definition "class that is the power class of <InanimatePhysicalObject>" ;
+      skos:prefLabel "class of inanimate physical object" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ArrangedIndividual
+      skos:definition "<Individual> that has parts with a particular organization or arrangement" ;
+      skos:prefLabel "arranged individual" ;
+      skos:scopeNote "The properties, characteristics and behaviours of an <ArrangedIndividual> are different from those of its individual parts." .
+
+lci:classBeforeOccurrence
+      skos:definition "each member of the subject has a <before> relationship with a member of the object, and each member of the object has a <after> relationship with a member of the subject" ;
+      skos:prefLabel "class before occurrence" .
+
+lci:QuantitySpace
+      skos:definition "<ClassOfQuantity> that is a subspace of, or all of, a <QuantityKind>" ;
+      skos:example "Monetary amount is a <QuantitySpace>.Mass is a <QuantitySpace>." ;
+      skos:prefLabel "quantity space" .
+
+lci:MathematicalFunction
+      skos:definition "<Mapping> that has one member of the range for each member of the domain" ;
+      skos:prefLabel "mathematical function" .
+
+lci:valueCausesOccurrence
+      skos:definition "the subject has a <causes> relationship with each member of the object" ;
+      skos:prefLabel "value causes occurrence" .
+
+lci:valueCausesBeginningOfOccurrence
+      skos:definition "the subject has a <causesBeginningOf> relationship with each member of the object" ;
+      skos:prefLabel "value causes beginning of occurrence" .
+
+lci:booleanAsLiteral
+      skos:definition "<numberAsLiteral> that represents the <Boolean> as 'T' or 'F'" ;
+      skos:prefLabel "boolean as literal" .
+
+lci:logicalAsLiteral
+      skos:definition "<numberAsLiteral> that represents the <Boolean> as 'T', 'F' or 'U'" ;
+      skos:prefLabel "logical as literal" .
+
+lci:arrangedPartOf
+      skos:definition "<ArrangedIndividual> that is a whole for the arranged part with a distinct role" ;
+      skos:example "Aircraft A_101 from 2014-04-11T10:50 to 2014-04-11T12:15 has an <arrangedPartOf> relationship with formation F_101 from 2014-04-11T10:50 to 2014-04-11T12:15, within which it is flying.Bin B_101 has an <arrangedPartOf> relationship with Warehouse W_101, within which it is a part of the layout." ;
+      skos:prefLabel "arranged part of" ;
+      skos:scopeNote "An <arrangedPartOf> relationship says a part has a particular role with respect to the whole. The nature of this role is not specified by this relationship, but must be specified by a classification of the part." .
+
+lci:representationByInformationObject
+      skos:definition "<InformationObject> that is the representation" ;
+      skos:prefLabel "representation by information object" .
+
+lci:definitionByInformationContent
+      skos:definition "<definitionBy> and <representationByInformationContent>" ;
+      skos:prefLabel "definition by information content" .
+
+lci:subNumberSpaceOf
+      skos:definition "<NumberSpace> that is a subspace" ;
+      skos:prefLabel "sub number space of" .
+
+lci:valueBeginsOccurrence
+      skos:definition "each member of the subject has a <begins> relationship with each member of the object" ;
+      skos:prefLabel "value begins occurrence" .
+
+lci:classBeginsOccurrence
+      skos:definition "each member of the subject has a <begins> relationship with a member of the object, and each member of the object has a <hasBeginning> relationship with a member of the subject" ;
+      skos:prefLabel "class begins occurrence" .
+
+lci:ClassOfPhysicalQuantity
+      skos:definition "class that is the power class of <PhysicalQuantity>" ;
+      skos:prefLabel "class of physical quantity" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classBeforeValue
+      skos:definition "each member of the subject has a <before> relationship with the object" ;
+      skos:prefLabel "class before value" .
+
+lci:ClassOfClassOfPhysicalObject
+      skos:definition "class that is the power class of <ClassOfPhysicalObject>" ;
+      skos:prefLabel "class of class of physical object" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueReferencedByOccurrence
+      skos:definition "the subject has a <referencedBy> relationship with each member of the object" ;
+      skos:prefLabel "value referenced by occurrence" .
+
+lci:classHasCauseOfEndValue
+      skos:definition "each member of the subject has a <hasCauseOfEnd> relationship with the object" ;
+      skos:prefLabel "class has cause of end value" .
+
+lci:classAfterValue
+      skos:definition "each member of the subject has a <after> relationship with the object" ;
+      skos:prefLabel "class after value" .
+
+lci:Stream
+      skos:definition "<PhysicalObject> where continuity of flow path is the basis of identity" ;
+      skos:prefLabel "stream" .
+
+lci:NumberRange
+      skos:definition "<NumberSpace> that is all numbers within the containing <NumberSpace> that are greater than a lower bound, less than an upper bound, or both." ;
+      skos:prefLabel "number range" .
+
+lci:PointInSpace
+      skos:definition "<Individual> that is all that exists in time at a point in space" ;
+      skos:prefLabel "point in space" ;
+      skos:scopeNote "A <PointInSpace> can be defined in any spatial frame. It can be defined with respect to a moving or moveable object, such as a ship or an equipment item." .
+
+lci:classCausesBeginningOfOccurrence
+      skos:definition "each member of the subject has a <causesBeginningOf> relationship with a member of the object, and each member of the object has a <hasCauseOfBeginning> relationship with a member of the subject" ;
+      skos:prefLabel "class causes beginning of occurrence" .
+
+lci:definitionByInformationObject
+      skos:definition "<definitionBy> and <representationByInformationObject>" ;
+      skos:prefLabel "definition by information object" .
+
+lci:ListOfPhysicalQuantity
+      skos:definition "<List> that has <PhysicalQuantity> as its range" ;
+      skos:prefLabel "list of physical quantity" .
+
+lci:definitionBy
+      skos:definition "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that defines" ;
+      skos:example "The class Pump has a <definitionBy> relationship with 'A physical object that adds or removes mechanical energy to a fluid, either constantly or periodically. '. The class 'project plan P101 version 3' has a <definitionBy> relationship with the OWL graph with URI http://www.bloggs-engineering.com/plans/P-101-v3." ;
+      skos:prefLabel "definition by" ;
+      skos:scopeNote "<definitionBy> has the same meaning as the SKOS property 'definition'." .
+
+lci:integerAsLiteral
+      skos:definition "<numberAsLiteral> that represents the <Integer> in decimal" ;
+      skos:prefLabel "integer as literal" .
+
+lci:Non-arrangedIndividual
+      skos:definition "<Individual> that is not an <ArrangedIndividual>" ;
+      skos:example "The 2015 production run of pump model 'WBX-456A' a <PhysicalObject> and a <Non-arrangedIndividual>. A particular pump within the production run is an <ArrangedIndividual>." ;
+      skos:prefLabel "non-arranged individual" .
+
+lci:OrderedPairOfQuantity
+      skos:definition "<OrderedPair> that is an order pair of <Quantity>" ;
+      skos:example "('50 hours', '200 hours') is an <OrderedPairOfQuantity>." ;
+      skos:prefLabel "ordered pair of quantity" .
+
+lci:classConnectedToOccurrence
+      skos:definition "each member of the subject has a <connectedTo> relationship with a member of the object, and each member of the object has a <connectedTo> relationship with a member of the subject" ;
+      skos:prefLabel "class connected to occurrence" .
+
+lci:classHasBeginningOccurrence
+      skos:definition "each member of the subject has a <hasBeginning> relationship with a member of the object, and each member of the object has a <begins> relationship with a member of the subject" ;
+      skos:prefLabel "class has beginning occurrence" .
+
+lci:Individual
+      skos:definition "<Thing> that exists in space and time and that has variation defined in 4D" ;
+      skos:prefLabel "individual" ;
+      skos:scopeNote "The class <Individual> includes:things where any of the space-time dimensions are vanishingly small; things that are either all space for a period of time, or all time for a region of space; the entirety of all space-time; things that actually exist, or have existed; things that are fictional or conjectured and possibly exist in the past, present or future; temporal parts (states) of other individuals; things that have a specific position, but zero extent in one or more dimensions, such as points, lines, and surfaces." .
+
+lci:ClassOfOrderedPair
+      skos:definition "class that is the power class of <OrderedPair>" ;
+      skos:prefLabel "class of ordered pair" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classPartOfOccurrence
+      skos:definition "each member of the subject has a <partOf> relationship with a member of the object, and each member of the object has a <hasPart> relationship with a member of the subject" ;
+      skos:prefLabel "class part of occurrence" .
+
+lci:temporalBoundOf
+      skos:definition "<Individual> that begins or ends" ;
+      skos:prefLabel "temporal bound of" .
+
+lci:TimeDuration
+      skos:definition "<PhysicalQuantity> that is a time duration" ;
+      skos:example "10 seconds is a <TimeDuration>." ;
+      skos:prefLabel "time duration" .
+
+lci:classTemporalPartOfOccurrence
+      skos:definition "each member of the subject has a <temporalPartOf> relationship with a member of the object, and each member of the object has a <hasTemporalPart> relationship with a member of the subject" ;
+      skos:prefLabel "class temporal part of occurrence" .
+
+lci:List
+      skos:definition "<MathematicalFunction>that has the integer interval [0, n] for some <Integer> n as its domain" ;
+      skos:prefLabel "list" ;
+      skos:scopeNote "The definition of List as a function makes it a 1D 'table function' as defined in ISO 15926-50." .
+
+lci:SubAtomicParticle
+      skos:definition "<PhysicalObject> that is or can be a part of an atom" ;
+      skos:prefLabel "subatomic particle" ;
+      skos:scopeNote "Proton, electron, meson, neutron, positron, muon, quark, and neutrino are subclasses of <SubAtomicParticle>." .
+
+lci:QuantityKind
+      skos:definition "<ClassOfQuantity> that is all instances of <Quantity> of the same kind" ;
+      skos:example "The class 'monetary amount' is subclass of <QuantityKind>. The class 'euro amount' is a member of 'monetary amount' and <QuantityKind>." ;
+      skos:prefLabel "quantity kind" ;
+      skos:scopeNote "The different currencies with codes defined in ISO 3166 are all members of 'monetary amount' and <QuantityKind>." .
+
+lci:causes
+      skos:definition "<Event> that is caused" ;
+      skos:example "The <Event> 'tanker T_101 full on 2014-04-11' has a <causes> relationship with the <Activity> 'load tanker T_101 on 2014-04-11'." ;
+      skos:prefLabel "causes" .
+
+lci:NumberSpace
+      skos:definition "<AbstractObject> that is a system of numbers" ;
+      skos:example "The system of real numbers is an <NumberSpace>.The system of integer numbers is a <NumberSpace>." ;
+      skos:prefLabel "number space" .
+
+lci:valueBeforeOccurrence
+      skos:definition "the subject has a <before> relationship with each member of the object" ;
+      skos:prefLabel "value before occurrence" .
+
+lci:ClassOfSubAtomicParticle
+      skos:definition "class that is the power class of <SubAtomicParticle>" ;
+      skos:prefLabel "class of sub atomic particle" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueConnectedToOccurrence
+      skos:definition "the subject has a <connectedTo> relationship with each member of the object" ;
+      skos:prefLabel "value connected to occurrence" .
+
+lci:hasPart
+      skos:definition "<Individual> that is a part of the whole" ;
+      skos:prefLabel "has part" .
+
+lci:OrderedPair
+      skos:definition "<AbstractObject> that is an ordered pair" ;
+      skos:example "('50 hours', '200 hours') is an <OrderedPair>." ;
+      skos:prefLabel "ordered pair" .
+
+lci:DocumentType
+      skos:definition "<ClassOfInformationContent> that has the purpose of the <InformationContent> as the criterion for membership" ;
+      skos:example "'Material Certificate' is a <DocumentType>.'Material certificate to EN 10204' is a <DocumentType>." ;
+      skos:prefLabel "document type" .
+
+lci:classReferencedByOccurrence
+      skos:definition "each member of the subject has a <referencedBy> relationship with a member of the object, and each member of the object has a <references> relationship with a member of the subject" ;
+      skos:prefLabel "class referenced by occurrence" .
+
+lci:ClassOfListOfQuantity
+      skos:definition "class that is the power class of <ListOfQuantity>" ;
+      skos:prefLabel "class of list of quantity" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfStream
+      skos:definition "class that is the power class of <Stream>" ;
+      skos:prefLabel "class of stream" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classCausesOccurrence
+      skos:definition "each member of the subject has a <causes> relationship with a member of the object, and each member of the object has a <hasCause> relationship with a member of the subject" ;
+      skos:prefLabel "classCausesOccurrence" .
+
+lci:ClassOfClassOfIndividual
+      skos:definition "class that is the power class of <ClassOfIndividual>" ;
+      skos:prefLabel "class of class of individual" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:RangeTimeDuration
+      skos:definition "<RangePhysicalQuantity> that is all members of all instances of <TimeDuration> within a range" ;
+      skos:example "The instances of <PeriodInTime> with a duration greater than 1 hour is a <RangeTimeDuration>." ;
+      skos:prefLabel "range time duration" .
+
+lci:DefinitionSpace
+      skos:definition "<RepresentationSpace> that has members that define" ;
+      skos:prefLabel "definition space" ;
+      skos:scopeNote "A member of <DefinitionSpace> is implemented in this part of ISO 15926 as an owl:AnnotationProperty that is a subproperty of <definitionBy>." .
+
+lci:classHasBeginningValue
+      skos:definition "each member of the subject has a <hasBeginning> relationship with the object" ;
+      skos:prefLabel "class has beginning value" .
+
+lci:Ratio
+      skos:definition "<ClassOfOrderedPair> that is a ratio" ;
+      skos:example "50:200' is a <Ratio>. This ration can also be identified by '5:20' and '1:4'." ;
+      skos:prefLabel "ratio" .
+
+lci:classHasCauseValue
+      skos:definition "each member of the subject has a <hasCause> relationship with the object" ;
+      skos:prefLabel "class has cause value" .
+
+lci:DescriptionSpace
+      skos:definition "<RepresentationSpace> that has members that describe" ;
+      skos:prefLabel "description space" ;
+      skos:scopeNote "A member of <DescriptionSpace> is implemented in this part of ISO 15926 as an owl:AnnotationProperty that is a subproperty of <descriptionBy>." .
+
+lci:ClassOfFeature
+      skos:definition "class that is the power class of <Feature>" ;
+      skos:prefLabel "class of feature" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:PhysicalObject
+      skos:definition "<Individual> that is a distribution of energy, matter or both" ;
+      skos:example "Pump P_101 is a <PhysicalObject>." ;
+      skos:prefLabel "physical object" .
+
+lci:PhysicalQuantity
+      skos:definition "<Quantity> that is measurable or observable" ;
+      skos:example "The mass 10 kilograms is a <Quantity>." ;
+      skos:prefLabel "physical quantity" .
+
+lci:CartesianProductOfQuantityKind
+      skos:definition "<ClassOfListOfQuantity> that is the Cartesian product of instances of <QuantityKind>" ;
+      skos:prefLabel "cartesian product of quantity kind" .
+
+lci:WholeLifeIndividual
+      skos:definition "<Individual> that is a that is an entire lifetime as defined by its basis for identity" ;
+      skos:example "The plastic cup on the desk of Fred Bloggs (bounded by its creation and destruction events) is a <WholeLifeIndividual>. The cup whilst it stands on that desk is a temporal part of the <WholeLifeIndividual>." ;
+      skos:prefLabel "whole life individual" .
+
+lci:ClassOfPeriodInTime
+      skos:definition "class that is the power class of <PeriodInTime>" ;
+      skos:prefLabel "class of period in time" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:after
+      skos:definition "<Individual> that is after and does not overlap" ;
+      skos:example "The <Individual> 'F_101 under commissioning' has an <after> relationship with the <Individual> 'F_101 under construction'." ;
+      skos:prefLabel "after" .
+
+lci:Isomorphism
+      skos:definition "<MathematicalFunction> that is an isomorphism" ;
+      skos:prefLabel "isomorphism" .
+
+lci:hasSecondInPair
+      skos:definition "thing that is the second item in the <OrderedPair>" ;
+      skos:example "The <OrderedPair> ('50 hours', '200 hours') has a <hasSecondInPair> relationship with the <TimeDuration> '200 hours'." ;
+      skos:prefLabel "has second in pair" .
+
+lci:hasFeature
+      skos:definition "<Feature> that is a part" ;
+      skos:example "Flange F_101 has a <hasFeature> relationship with its face.Vessel V_101 has a <hasFeature> relationship with nozzle N_101/1." ;
+      skos:prefLabel "has feature" .
+
+lci:classHasEndOccurrence
+      skos:definition "each member of the subject has a <hasEnd> relationship with a member of the object, and each member of the object has a <ends> relationship with a member of the subject" ;
+      skos:prefLabel "class has end occurrence" .
+
+lci:classEndsOccurrence
+      skos:definition "each member of the subject has a <ends> relationship with a member of the object, and each member of the object has a <hasEnd> relationship with a member of the subject" ;
+      skos:prefLabel "class ends occurrence" .
+
+lci:ClassOfMapping
+      skos:definition "class that is the power class of <Mapping>" ;
+      skos:prefLabel "class of mapping" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:classHasEndValue
+      skos:definition "each member of the subject has a <hasEnd> relationship with the object" ;
+      skos:prefLabel "class has end value" .
+
+lci:descriptionBy
+      skos:definition "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that describes" ;
+      skos:example "The <Activity> 'drilling of wellbore WB-1234 on 2014-07-10' has a <descriptionBy> relationship with the XML content with URI http://www.bloggs-drilling.com/WB-1234/daily-drilling-report/2014-07-10 .In this example the URI identifies the <ComputerFileContent>, rather than a particular <ComputerFile>." ;
+      skos:prefLabel "description by" ;
+      skos:scopeNote "<descriptionBy> has the same meaning as the Dublin Core property 'description'." .
+
+lci:AbstractObject
+      skos:definition "<Thing> that does not exist in space and time" ;
+      skos:prefLabel "abstract object" ;
+      skos:scopeNote "An <AbstractObject> does not exist in space and time, and does not have properties or relationships that change.Most instances of <AbstractObject> are classes, but there are a few mostly to do with mathematics that are not." .
+
+lci:ClassOfOrderedPairOfTimeDuration
+      skos:definition "class that is the power class of <OrderedPairOfTimeDuration>" ;
+      skos:prefLabel "class of ordered pair of time duration" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Event
+      skos:definition "<Individual> that has zero extent in time" ;
+      skos:example "The connection of power to pump P_101 is an <Event>. This event that marks the beginning of a temporal part of pump P_101." ;
+      skos:prefLabel "event" ;
+      skos:scopeNote "An <Event> is the temporal boundary of one or more instances of <Individual> although there may be no knowledge of them." .
+
+lci:RepresentationSpace
+      skos:definition "<AbstractObject> that is a relationship between members of <Thing> and either literals, members of <InformationObject>, or members of <InformationContent>" ;
+      skos:prefLabel "representation space" ;
+      skos:scopeNote "A member of <IdentificationSpace> is implemented in this part of ISO 15926 as an owl:AnnotationProperty." .
+
+lci:InformationContent
+      skos:definition "<ClassOfInformationObject> that has the information that is intended to be conveyed as the criterion for membership" ;
+      skos:example "The content of the material certificate issued by the Schmidt Stahl inspector for material product M-101-1234 produced by Schmidt Stahl is <InformationContent>. The information is represented on the ink on paper material certificate for M-101-1234, which bears the signature of the Schmidt Stahl inspector; the PDF file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.pdf, which contains a scan of the ink on paper material certificate; the XML file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.xml, which is in accordance with the standard XML material certificate schema auto-gration_messages.xsd.Permission to proceed past railway signal VS1234 between 10:02:30 and 10:02:45 on 2014-05-19 is an item of <InformationContent>. The information is represented by the state of railway signal VS1234 between 10:02:30 and 10:02:45 on 2014-05-19." ;
+      skos:prefLabel "information content" ;
+      skos:scopeNote "Different instances of <InformationContent> can form a class hierarchy. Hence there can be 'material certificate for M-101-1234' with subclasses 'material certificate for M-101-1234 with inspector signature' and 'material certificate for M-101-1234 without inspector signature'. A signed ink and paper document and its scanned image as a PDF file are members of the former. An XML file representation of the material certificate is a member of the latter.Different encodings for <InformationContent>, such as PDF, XML, RDF graph, and <TextString>, are subclasses of <InformationContent>." .
+
+lci:indirectlyConnectedTo
+      skos:definition "<Individual> that is indirectly connected" ;
+      skos:example "Vessel V_101 has an <indirectlyConnectedTo> relationship with pump P_101. There is a length of pipe between the two." ;
+      skos:prefLabel "indirectly connected to" .
+
+lci:valueHasCauseOccurrence
+      skos:definition "the subject has a <hasCause> relationship with each member of the object" ;
+      skos:prefLabel "value has cause occurrence" .
+
+lci:CrystallineStructure
+      skos:definition "<ClassOfArrangedIndividual> that has its criterion for membership the nature of the regular aggregation of simple elements and their compounds by the operation of natural affinity" ;
+      skos:example "Ferritic, martensitic, and austenitic are instances of <CrystallineStructure>." ;
+      skos:prefLabel "crystalline structure" .
+
+lci:temporalPartOf
+      skos:definition "<Individual> that is consists of the part and nothing else during a period of time or at an instant in time" ;
+      skos:prefLabel "temporal part of" ;
+      skos:scopeNote "Since <temporalPartOf> is transitive a hierarchy of temporal parts is possible, with a <WholeLifeIndividual> at the top." .
+
+lci:valueHasPartOccurrence
+      skos:definition "the subject has a <hasPart> relationship with each member of the object" ;
+      skos:prefLabel "value has part occurrence" .
+
+lci:Person
+      skos:definition "<Organism> that is a person" ;
+      skos:example "Nils Sandsmark, Tim Berners-Lee and Ian Horrocks instances of <Person>." ;
+      skos:prefLabel "person" ;
+      skos:scopeNote "Engineer, plant manager, student, male, female, senior citizen, adult, girl, and boy are subclasses of <Person>." .
+
+lci:contains
+      skos:definition "<Individual> that is contained, but that is not part of the container" ;
+      skos:example "Tank T_101 during 2014-04-11 has a <contains> relationship with the batch of oil B_101 during 2014-04-11 ." ;
+      skos:prefLabel "contains" .
+
+lci:ClassOfRegionInSpace
+      skos:definition "class that is the power class of <RegionInSpace>" ;
+      skos:prefLabel "class of region in space" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:referencedBy
+      skos:definition "<Activity> that makes reference" ;
+      skos:example "The <InformationContent> that is the material certificate with URI http://schmidt-stahl.de/material-certificate/M-101-1234 has a <referencedBy> relationship with the <Activity> 'accept delivery of material product M-101-1234'. The URI identifies the content of the certificate, which can be physical represented as ink on paper, PDF or XML.The <ClassOfActivity> that is plan P-101-2 has a <referencedBy> relationship with the <Activity> 'issue work order for planned activity P-101-2'." ;
+      skos:prefLabel "referenced by" .
+
+lci:TimeDurationRatio
+      skos:definition "<PhysicalQuantityRatio> that is a <ClassOfOrderedPairOfTimeDuration>" ;
+      skos:example "10 seconds in each hour' is a <TimeDurationRatio>." ;
+      skos:prefLabel "time duration ratio" .
+
+lci:identificationByInformationContent
+      skos:definition "<identificationBy> and <representationByInformationContent>" ;
+      skos:prefLabel "identification by information content" .
+
+lci:hasEnd
+      skos:definition "<Event> that is the end" ;
+      skos:example "The <PeriodInTime> June 1999 has a <hasEnd> relationship with the <PointInTime> 1999-07-01T00:00.The <Individual> 'loading plant operating on 2014-04-11' has a <hasEnd> relationship with the <Event> 'loading L_101 on 2014-04-11 complete'." ;
+      skos:prefLabel "has end" .
+
+lci:causesBeginningOf
+      skos:definition "<Individual> that has its beginning caused" ;
+      skos:example "Forging activity F_101 has a <causesBeginningOf> relationship with pump casing PC_101." ;
+      skos:prefLabel "causes beginning of" .
+
+lci:valueHasTemporalPartOccurrence
+      skos:definition "the subject has a <hasTemporalPart> relationship with each member of the object" ;
+      skos:prefLabel "value has temporal part occurrence" .
+
+lci:realAsLiteral
+      skos:definition "<numberAsLiteral> that represents the <Real> in decimal" ;
+      skos:prefLabel "real as literal" .
+
+lci:Thing
+      skos:definition "an <Individual> or <AbstractObject>" ;
+      skos:prefLabel "thing" ;
+      skos:scopeNote "An owl:Thing can be something other than an <Individual> or <AbstractObject>. Therefore <Thing> is a subclass of owl:Thing." .
+
+lci:BiologicalMatter
+      skos:definition "<PhysicalObject> that that consists of all or part of one or more biological cells alive or dead" ;
+      skos:prefLabel "biological matter" ;
+      skos:scopeNote "Blood, enzyme and plazma are subclasses of <BiologicalMatter>." .
+
+lci:ClassOfBiologicalMatter
+      skos:definition "class that is the power class of <BiologicalMatter>" ;
+      skos:prefLabel "class of biological matter" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:textStringAsLiteral
+      skos:definition "text string literal that represents the <TextString>" ;
+      skos:example "The <TextString> that defines the testing requirement for pump P-101 has a <textStringAsLiteral> relationship with the literal 'To be tested before 08:00, and a test report filed'." ;
+      skos:prefLabel "text string as literal" .
+
+lci:iso8601IdentificationOfPeriodInTime
+      skos:definition "text that identifies a <PeriodInTime> in accordance with ISO 8601" ;
+      skos:example "The <PeriodInTime> that is the 1st July 1999 has a <iso8601IdentificationOfPeriodInTime> relationship with the text '1999-07-01'The <PeriodInTime> that is from ten o'clock until quarter past ten on the 1st July 1999 as defined by UTC has a <iso8601IdentificationOfPeriodInTime> relationship with the text '1999-07-01T10:00:00Z/1999-07-01T10:15:00Z'" ;
+      skos:prefLabel "ISO 8601 identification of period in time" .
+
+lci:powerClassOf
+      skos:definition "<Class> that the power class is obtained from" ;
+      skos:prefLabel "power class of" ;
+      skos:scopeNote "The power class 'Class of A' of the class 'A' is set of all subclasses of A, including A itself. The use of power class relationships in an ontology is not supported by inferencing, but is an aid to to rigorous structuring of an ontology.A powerclass can be defined as an OWL Restriction class on the property rdfs:subClassOf." .
+
+lci:PhysicalQuantityRange
+      skos:definition "<PhysicalQuantitySpace> and <QuantityRange>" ;
+      skos:example "The instances of mass that are greater than 10 kilograms and less than 15 kilograms is a <PhysicalQuantityRange>" ;
+      skos:prefLabel "physical quantity range" .
+
+lci:PointInTime
+      skos:definition "<Individual> that is all that exists in space at an instant in time" ;
+      skos:example "1999-05-13T16:31:23.56Z' is an identification of a <PointInTime>, which is defined by ISO 8601." ;
+      skos:prefLabel "point in time" ;
+      skos:scopeNote "A <PointInTime> can be regarded as an unbounded 3D 'plane' within 4D space-time that has a zero temporal extent." .
+
+lci:hasCause
+      skos:definition "<Activity> that is a cause" ;
+      skos:example "The <Activity> 'load tanker T_101 on 2014-04-11' has a <hasCause> relationship with the <Event> 'tanker T_101 full on 2014-04-11'." ;
+      skos:prefLabel "has cause" .
+
+lci:descriptionOfExampleByLiteral
+      skos:definition "<descriptionOfExampleBy> and <representationByLiteral>" ;
+      skos:prefLabel "description of example by literal" .
+
+lci:connectedTo
+      skos:definition "<Individual> that is connected directly or indirectly, such that matter, energy or load or a combination of these can be transferred" ;
+      skos:prefLabel "connected to" .
+
+lci:valueHasBeginningOccurrence
+      skos:definition "the subject has a <hasBeginning> relationship with each member of the object" ;
+      skos:prefLabel "value has beginning occurrence" .
+
+lci:Integer
+      skos:definition "<Number> that is a member of the system of integer numbers" ;
+      skos:example "27 is an <Integer>." ;
+      skos:prefLabel "integer" .
+
+lci:classCausesValue
+      skos:definition "each member of the subject has a <causes> relationship with the object" ;
+      skos:prefLabel "class causes value" .
+
+lci:before
+      skos:definition "<Individual> that is before and does not overlap" ;
+      skos:example "The <Individual> 'F_101 under construction' has a <before> relationship with the <Individual> 'F_101 under commissioning'." ;
+      skos:prefLabel "before" .
+
+lci:Phase
+      skos:definition "<ClassOfArrangedIndividual> that has its criterion for membership the nature of the boundary behaviour of a material resulting from its atomic or molecular bonding" ;
+      skos:example "Liquid and solid are instances of <Phase>." ;
+      skos:prefLabel "phase" .
+
+lci:ActualIndividual
+      skos:definition "<Individual> that actually exists in the real world" ;
+      skos:example "The 25 gallon per minute pump that was required for the Omega production system from 21 March 1998 is a <Individual>.The pump manufactured in July of 1998 that has a capacity of 28 gallon per minute is an <ActualIndividual>." ;
+      skos:prefLabel "actual individual" .
+
+lci:classHasCauseOfBeginningOccurrence
+      skos:definition "each member of the subject has a <hasCauseOfBeginning> relationship with a member of the object, and each member of the object has a <causesBeginningOf> relationship with a member of the subject" ;
+      skos:prefLabel "class has cause of beginning occurrence" .
+
+lci:QuantityRatio
+      skos:definition "<Ratio> that is a <ClassOfOrderedPairOfQuantity>" ;
+      skos:prefLabel "quantity ratio" .
+
+lci:iso8601IdentificationOfPointInTime
+      skos:definition "text that identifies a <PointInTime> in accordance with ISO 8601" ;
+      skos:example "The <PointInTime> that is the beginning of the 1st July 1999 as defined by UTC has a <iso8601IdentificationOfPointInTime> relationship with the text '1999-07-01T00:00:00Z'" ;
+      skos:prefLabel "ISO 8601 identification of point in time" .
+
+lci:classLocatedRelativeToValue
+      skos:definition "each member of the subject has a <locatedRelativeTo> relationship with the object" ;
+      skos:prefLabel "class located relative to value" .
+
+lci:begins
+      skos:definition "<Individual> that begins" ;
+      skos:example "The <PointInTime> 1999-07-01T00:00 has a <begins> relationship with the <PeriodInTime> July 1999.The <Event> 'loading L_101 on 2014-04-11 complete' has a <begins> relationship with the <Individual> 'loading plant idle on 2014-04-11'." ;
+      skos:prefLabel "begins" .
+
+lci:ClassOfClassOfActivity
+      skos:definition "class that is the power class of <ClassOfActivity>" ;
+      skos:prefLabel "class of class of activity" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ParticulateMaterial
+      skos:definition "<PhysicalObject> that is an amount of super-molecular sized objects" ;
+      skos:example "The load of sand delivered on 2014-03-31 is a <ParticulateMaterial>." ;
+      skos:prefLabel "particulate material" ;
+      skos:scopeNote "The super-molecular sized objects can be of the same or different types." .
+
+lci:representationBy
+      skos:definition "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that represents" ;
+      skos:prefLabel "representation by" ;
+      skos:scopeNote "An 'description' attribute of ISO 10303-41 entity such as 'product' is an <representationBy> relationship." .
+
+lci:CompositeMaterial
+      skos:definition "<PhysicalObject> that is an arrangement of separable compounds" ;
+      skos:prefLabel "composite material" ;
+      skos:scopeNote "Plywood and glass reinforced plastic are subclasses of <CompositeMaterial>." .
+
+lci:Real
+      skos:definition "<Number> that is a member of the system of real numbers" ;
+      skos:example "9.5 is an <Real>." ;
+      skos:prefLabel "real" .
+
+lci:hasFirstInPair
+      skos:definition "thing that is the first item in the <OrderedPair>" ;
+      skos:example "The <OrderedPair> ('50 hours', '200 hours') has a <hasFirstInPair> relationship with the <TimeDuration> '50 hours'." ;
+      skos:prefLabel "has first in pair" .
+
+lci:participantIn
+      skos:definition "<Activity> that is participated in" ;
+      skos:example "Pump P_101 during 2002-12-02 has a <participantIn> relationship with the activity 'discharge of motor vessel Murex on 2002-12-02'." ;
+      skos:prefLabel "participant in" .
+
+lci:ClassOfEvent
+      skos:definition "class that is the power class of <Event>" ;
+      skos:prefLabel "class of event" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfPointInSpace
+      skos:definition "class that is the power class of <PointInSpace>" ;
+      skos:prefLabel "class of point in space" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:RangePhysicalQuantity
+      skos:definition "<RangeQuantity> that is all members of all instances of <PhysicalQuantity> within a <PhysicalQuantityRange>" ;
+      skos:example "The instances of <Individual> with a mass greater than 10 kilograms and less than 15 kilograms is a <RangePhysicalQuantity>." ;
+      skos:prefLabel "range physical quantity" .
+
+lci:subPhysicalQuantitySpaceOf
+      skos:definition "<PhysicalQuantitySpace> that is a subspace" ;
+      skos:prefLabel "sub physical quantity space of" .
+
+lci:ClassOfIndividual
+      skos:definition "class that is the power class of <Individual>" ;
+      skos:prefLabel "class of individual" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:representationSpaceAssignedBy
+      skos:definition "<Individual> that is responsible for the representations" ;
+      skos:prefLabel "representation space has responsible" .
+
+lci:PeriodInTime
+      skos:definition "<Individual> that is all that exists in space for a period in time" ;
+      skos:example "From 2000-11-21T06:00Z to 2000-11-21T11:53Z is a <PeriodInTime>." ;
+      skos:prefLabel "period in time" ;
+      skos:scopeNote "A <PeriodInTime> is bounded by a start <PointInTime> and an end <PointInTime>." .
+
+lci:identificationByInformationObject
+      skos:definition "<identificationBy> and <representationByInformationObject>" ;
+      skos:prefLabel "identification by information object" .
+
+lci:hasArrangedPart
+      skos:definition "<Individual> that is an arranged part of the whole with a distinct role" ;
+      skos:example "Formation F_101 from 2014-04-11T10:50 to 2014-04-11T12:15 has an <hasArrangedPart> relationship with Aircraft A_101 from 2014-04-11T10:50 to 2014-04-11T12:15, which it is flying within it.Warehouse W_101 has an <hasArrangedPart> relationship with Bin B_101, which it is a part of the layout." ;
+      skos:prefLabel "has arranged part" ;
+      skos:scopeNote "An <hasArrangedPart> relationship says a part has a particular role with respect to the whole. The nature of this role is not specified by this relationship, but must be specified by a classification of the part." .
+
+lci:PhysicalProperty
+      skos:definition "<QuantityMeasure> that has a <PhysicalQuantitySpace> as its range" ;
+      skos:example "'Maximum allowable working temperature' is a <PhysicalProperty>. The relationship between stream S-101 and its maximum allowable working temperature of 300 degrees Celsius is not a classification of the stream. Instead it is a classification of a hypothetical limit state. 'Internal pressure' is a <PhysicalProperty>. The relationship between vessel V-101 at 2016-03-09T12:30Z and its internal pressure of 1.5 bar is not a classification of the vessel at 2016-03-09T12:30Z. Instead it is a classification of the fluid within vessel V-101 at 2016-03-09T12:30Z." ;
+      skos:prefLabel "physical property" ;
+      skos:scopeNote "A member of <PhysicalProperty> is implemented in this part of ISO 15926 as an owl:ObjectProperty with the range <PhysicalQuantity>." .
+
+lci:quantityRangeHasUpperBound
+      skos:definition "<Quantity> that is the upper bound" ;
+      skos:prefLabel "quantity range has upper bound" .
+
+lci:TextString
+      skos:definition "<ClassOfInformationContent> that is a sequence of person interpretable characters, symbols or spaces" ;
+      skos:example "'To be tested before 08:00, and a test report filed' is a <TextString>." ;
+      skos:prefLabel "text string" ;
+      skos:scopeNote "The class <TextString> is included to allow meta-data, such as a source, to be specified for a text string. This is not possible if the text string is represented as an RDF literal. The content of a <TextString> can be specified by the property <textStringAsLiteral>." .
+
+lci:descriptionByInformationContent
+      skos:definition "<descriptionBy> and <representationByInformationContent>" ;
+      skos:prefLabel "description by information content" .
+
+lci:noteBy
+      skos:definition "information (as an <InformationObject>, <InformationContent>, or as a text string literal) that is a note" ;
+      skos:prefLabel "note by" ;
+      skos:scopeNote "<noteBy> has the same meaning as the SKOS property 'scopeNote'." .
+
+lci:descriptionByLiteral
+      skos:definition "<descriptionBy> and <representationByLiteral>" ;
+      skos:prefLabel "description by literal" .
+
+lci:valueEndsOccurrence
+      skos:definition "the subject has a <ends> relationship with each member of the object" ;
+      skos:prefLabel "value ends occurrence" .
+
+lci:hasBeginning
+      skos:definition "<Event> that is the beginning" ;
+      skos:example "The <PeriodInTime> July 1999 has a <hasBeginning> relationship with the <PointInTime> 1999-07-01T00:00.The <Individual> 'loading plant idle on 2014-04-11' has a <hasBeginning> relationship with the <Event> 'loading L_101 on 2014-04-11 complete'." ;
+      skos:prefLabel "has beginning" .
+
+lci:ComputerFileContent
+      skos:definition "<ClassOfComputerFile> that has the sequence of bytes as its criterion for membership" ;
+      skos:example "The sequence of bytes that is a particular scan of the ink on paper material certificate for material product M-101-1234 as a PDF file is a <ComputerFileContent>. The file with URI http://schmidt-stahl.de/material-certificate/M-101-1234.pdf is a member of this class. The copy of the file on the laptop belonging to Henry Dubois is also a member of this class." ;
+      skos:prefLabel "computer file content" ;
+      skos:scopeNote "XML, TURTLE and PDF are subclasses of <ComputerFileContent>." .
+
+lci:ClassOfMathematicalFunction
+      skos:definition "class that is the power class of <MathematicalFunction>" ;
+      skos:prefLabel "class of mathematical function" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:causesEndOf
+      skos:definition "<Individual> that has its end caused" ;
+      skos:example "Refurbishment activity R_101 has a <causesEndOf> relationship with Pump tag P_101, which is replaced by two pumps P_101A and P_101B." ;
+      skos:prefLabel "causes end of" .
+
+lci:hasAssembledPart
+      skos:definition "<Individual> that is an assembled part of the whole" ;
+      skos:example "Pump P_101 during 2013 has an <hasAssembledPart> relationship with Impeller I_345 during 2013." ;
+      skos:prefLabel "has assembled part" .
+
+lci:classReferencesOccurrence
+      skos:definition "each member of the subject has a <references> relationship with a member of the object, and each member of the object has a <referencedBy> relationship with a member of the subject" ;
+      skos:prefLabel "class references occurrence" .
+
+lci:classBeginsValue
+      skos:definition "each member of the subject has a <begins> relationship with the object" ;
+      skos:prefLabel "class begins value" .
+
+lci:Quantity
+      skos:definition "<ClassOfIndividual> that has the degree or magnitude of a quality or characteristic as the criterion for membership" ;
+      skos:example "The mass 10 kilograms is a <Quantity>.The monetary amount 10 euro is a <Quantity>." ;
+      skos:prefLabel "quantity" .
+
+lci:numberRangeHasLowerBound
+      skos:definition "<Number> that is the lower bound" ;
+      skos:prefLabel "number range has lower bound" .
+
+lci:ClassOfPhysicalProperty
+      skos:definition "class that is the power class of <PhysicalProperty>" ;
+      skos:prefLabel "class of physical property" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:Non-actualIndividual
+      skos:definition "<Individual> that is not an <ActualIndividual>" ;
+      skos:example "The planned 'Hinkley Point C' power station is a <PhysicalObject> and a <Non-actualIndividual>" ;
+      skos:prefLabel "non-actual individual" .
+
+lci:ClassOfInformationContent
+      skos:definition "class that is the power class of <InformationContent>" ;
+      skos:prefLabel "class of information content" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:valueAfterOccurrence
+      skos:definition "the subject has a <after> relationship with each member of the object" ;
+      skos:prefLabel "value after occurrence" .
+
+lci:valueReferencesOccurrence
+      skos:definition "the subject has a <references> relationship with each member of the object" ;
+      skos:prefLabel "value references occurrence" .
+
+lci:representationSpaceUsedBy
+      skos:definition "<Individual> that uses the representations" ;
+      skos:prefLabel "representation space used by" .
+
+lci:Atom
+      skos:definition "<PhysicalObject> that is an atom" ;
+      skos:prefLabel "atom" ;
+      skos:scopeNote "An atom is the basic unit of matter that consists of a dense central nucleus surrounded by a cloud of negatively charged electrons (wikipedia).All entries in the periodic table of elements are subclasses of <Atom>." .
+
+lci:RegionInSpace
+      skos:definition "<Individual> that is all that exists in time for a region in space" ;
+      skos:prefLabel "region in space" ;
+      skos:scopeNote "A <RegionInSpace> can be defined in any spatial frame. It can be defined with respect to a moving or moveable object, such as a ship or an equipment item.License block, construction area, country, air corridor, maritime traffic zone, and hazard control zone are subclasses of <RegionInSpace>." .
+
+lci:classCausesEndOfOccurrence
+      skos:definition "each member of the subject has a <causesEndOf> relationship with a member of the object, and each member of the object has a <hasCauseOfEnd> relationship with a member of the subject" ;
+      skos:prefLabel "class causes end of occurrence" .
+
+lci:definitionByLiteral
+      skos:definition "<definitionBy> and <representationByLiteral>" ;
+      skos:prefLabel "definition by literal" .
+
+lci:Status
+      skos:definition "<ClassOfIndividual> that is a member of a set of discrete, unordered values with related criteria for membership" ;
+      skos:example "'Open' and 'closed' are instances of <Status>.'Running', 'on standby' and 'unavailable' are instances of <Status>." ;
+      skos:prefLabel "status" ;
+      skos:scopeNote "It is usually necessary to create a subclass of <Status> that contains the classes with related criteria for membership. Hence the subclass of <Status> 'Open or closed' has the classes 'open' and 'closed' as members.The class Mass has the classes 1.1 kg and 1.2 kg as members. These two classes have related criteria for membership, but they are not members of <Status> because mass is not regarded as discrete at engineering scales. Instead masses are members of <PhysicalQuantity>." .
+
+lci:RepresentationFormat
+      skos:definition "<ClassOfInformationContent> that has the format used for encoding the <InformationContent> as the criterion for membership" ;
+      skos:example "XML, TURTLE, PDF and <TextString> are members of a <RepresentationFormat>.The standard material certificate XML schema auto-gration_messages.xsd is a <RepresentationFormat>." ;
+      skos:prefLabel "representation format" ;
+      skos:scopeNote "The instances of <InformationObject> than hold an item of <InformationContent> are members." .
+
+lci:hasTemporalPart
+      skos:definition "<Individual> that is all of the whole during a period of time or at an instant in time" ;
+      skos:prefLabel "has temporal part" ;
+      skos:scopeNote "Since <hasTemporalPart> is transitive a hierarchy of temporal parts is possible, with a <WholeLifeIndividual> at the top." .
+
+lci:directlyConnectedTo
+      skos:definition "<Individual> that is directly connected" ;
+      skos:example "End 1 of cable C_101 during 2014 has a <directlyConnectedTo> relationship with terminal T_101 of distribution box DB_101 during 2014." ;
+      skos:prefLabel "directly connected to" .
+
+lci:ClassOfAbstractObject
+      skos:definition "class that is the power class of <AbstractObject>" ;
+      skos:prefLabel "class of abstract object" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:ClassOfQuantity
+      skos:definition "class that is the power class of <PhysicalQuantity>" ;
+      skos:prefLabel "class of quantity" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:hasCauseOfEnd
+      skos:definition "<Activity> that causes the end" ;
+      skos:example "Pump tag P_101 has a <hasCauseOfEnd> relationship with refurbishment activity R_101, which replaces it with two pumps P_101A and P_101B." ;
+      skos:prefLabel "has cause of end" .

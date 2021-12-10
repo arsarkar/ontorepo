@@ -1,0 +1,343 @@
+# baseURI: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-subset-annotation-skos-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-subset-v-1.0
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix lci:     <http://standards.iso.org/iso/15926/ontology/life-cycle-integration/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-subset-annotation-skos-v-1.0>
+      rdf:type owl:Ontology ;
+      owl:imports <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-subset-v-1.0> ,
+      <http://www.w3.org/2004/02/skos/core> .
+
+lci:Feature
+      skos:definition "<PhysicalObject> that is a contiguous, non-separable part of a <Individual> and that has an incompletely defined separating bound" ;
+      skos:prefLabel "feature" ;
+      skos:scopeNote "Mountain, groove, rim, nozzle, nose, and raised face are subclasses of <Feature>." .
+
+lci:hasTemporalBound
+      skos:definition "<Event> that is the beginning or end" ;
+      skos:prefLabel "has temporal bound" .
+
+lci:Organism
+      skos:definition "<PhysicalObject> that is a single living organism" ;
+      skos:prefLabel "organism" .
+
+lci:Organization
+      skos:definition "<PhysicalObject> that consists of people and other assets and that is organized with a particular purpose" ;
+      skos:example "POSC Caesar Association, Fiatech, Bechtel and TopQuadrant are instances of <Organization>." ;
+      skos:prefLabel "organization" ;
+      skos:scopeNote "Company, government, and project team are subclasses of <Organization>." .
+
+lci:MaterializedPhysicalObject
+      skos:definition "<PhysicalObject> that has matter continuity, energy continuity of both as its basis of identity" ;
+      skos:example "The shell and tube heat exchanger with manufacture's serial number ES/1234 is a <MaterializedPhysicalObject>." ;
+      skos:prefLabel "materialized physical object" ;
+      skos:scopeNote "A <MaterializedPhysicalObject> has some continuity of matter or energy between adjacent temporal parts. However, the eeplacement of some components from time to time does not create a new identity." .
+
+lci:locatedRelativeTo
+      skos:definition "<Individual> that has a relative location" ;
+      skos:example "The level gauge I-L-101-2 has a <locatedRelativeTo> relationship with tank T_101." ;
+      skos:prefLabel "located relative to" ;
+      skos:scopeNote "A subproperty, such as 'above' or 'beside', can indicate the nature of the relative location" .
+
+lci:featureOf
+      skos:definition "<Individual> that has the <Feature> as a part" ;
+      skos:example "The face of flange F_101 has a <featureOf> relationship with flange F_101 as a whole.Nozzle N_101/1 has a <featureOf> relationship with vessel V_101." ;
+      skos:prefLabel "feature of" .
+
+lci:references
+      skos:definition "thing that is referenced" ;
+      skos:example "The <Activity> 'accept delivery of material product M-101-1234' <references> the <InformationContent> that is the material certificate with URI http://schmidt-stahl.de/material-certificate/M-101-1234. This URI identifies the content of the certificate, which can be physical represented as ink on paper, PDF or XML.The <Activity> 'issue work order for planned activity P-101-2' <references> the <ClassOfActivity> that is plan P-101-2." ;
+      skos:prefLabel "references" .
+
+lci:FunctionalPhysicalObject
+      skos:definition "<PhysicalObject> that has functional continuity as its basis of identity" ;
+      skos:example "The heat exchanger system known as tag E-4507 is a <FunctionalPhysicalObject>." ;
+      skos:prefLabel "functional physical object" ;
+      skos:scopeNote "A <FunctionalPhysicalObject> has functional, rather than material, continuity as its basis for identity. Adjacent temporal parts of a <FunctionalPhysicalObject> need not have common matter or energy, provided the matter or energy of each temporal part fulfils the same function" .
+
+lci:containedBy
+      skos:definition "<Individual> that contains, but does not have the contained as a part" ;
+      skos:example "The batch of oil B_101 during 2014-04-11 has a <containedBy> relationship with tank T_101 during 2014-04-11." ;
+      skos:prefLabel "contained by" .
+
+lci:partOf
+      skos:definition "<Individual> that is a whole for the part" ;
+      skos:prefLabel "part of" .
+
+lci:iso8601IdentificationOfDuration
+      skos:definition "text that identifies a <TimeDuration> in accordance with ISO 8601" ;
+      skos:example "The <TimeDuration> that is 1 day and 12 hours has a <iso8601IdentificationOfDuration> relationship with the text 'P1DT12H'. This is 36 hours, unless daylight saving time begins or ends at the end of the day." ;
+      skos:prefLabel "ISO 8601 identification of duration" .
+
+lci:ends
+      skos:definition "<Individual> that ends" ;
+      skos:example "The <PointInTime> 1999-07-01T00:00 has a <ends> relationship with the <PeriodInTime> June 1999.The <Event> 'loading L_101 on 2014-04-11 complete' has a <ends> relationship with the <Individual> 'loading plant operating on 2014-04-11'." ;
+      skos:prefLabel "ends" .
+
+lci:hasParticipant
+      skos:definition "<Individual> that is a participant" ;
+      skos:example "The activity 'discharge of motor vessel Murex on 2002-12-02' has a <hasParticipant> relationship with pump P_101 during 2002-12-02." ;
+      skos:prefLabel "has participant" .
+
+lci:Activity
+      skos:definition "<Individual> that is something happening or changing" ;
+      skos:prefLabel "activity" ;
+      skos:scopeNote "An <Activity> is a space-time extension in which other instances of <Individual> and <Event> participate." .
+
+lci:hasCauseOfBeginning
+      skos:definition "<Activity> that causes the beginning" ;
+      skos:example "Pump casing PC_101 has a <hasCauseOfBeginning> relationship with forging activity F_101." ;
+      skos:prefLabel "has cause of beginning" .
+
+lci:Non-wholeLifeIndividual
+      skos:definition "<Individual> that is not an <WholeLifeIndividual>" ;
+      skos:example "The temporal part of the pump with serial number 'P-98/1234' that is installed as pump tag '20-P-101' is a <MaterializedPhysicalObject> and a <Non-wholeLifeIndividual>.The temporal part of pump tag '20-P-101' that has the pump with serial number 'P-98/1234' installed is a <FunctionalPhysicalObject> and a <Non-wholeLifeIndividual>." ;
+      skos:prefLabel "non-whole life individual" .
+
+lci:InanimatePhysicalObject
+      skos:definition "<PhysicalObject> that is not one or more instances of <Organism>" ;
+      skos:prefLabel "inanimate physical object" ;
+      skos:scopeNote "Oil is a subclass of <InanimatePhysicalObject>." .
+
+lci:assembledPartOf
+      skos:definition "<ArrangedIndividual> that is a whole for the assembled part" ;
+      skos:example "Impeller I_345 during 2013 has an <assembledPartOf> relationship with pump P_101 during 2013." ;
+      skos:prefLabel "assembled part of" .
+
+lci:ArrangedIndividual
+      skos:definition "<Individual> that has parts with a particular organization or arrangement" ;
+      skos:prefLabel "arranged individual" ;
+      skos:scopeNote "The properties, characteristics and behaviours of an <ArrangedIndividual> are different from those of its individual parts." .
+
+lci:arrangedPartOf
+      skos:definition "<ArrangedIndividual> that is a whole for the arranged part with a distinct role" ;
+      skos:example "Aircraft A_101 from 2014-04-11T10:50 to 2014-04-11T12:15 has an <arrangedPartOf> relationship with formation F_101 from 2014-04-11T10:50 to 2014-04-11T12:15, within which it is flying.Bin B_101 has an <arrangedPartOf> relationship with Warehouse W_101, within which it is a part of the layout." ;
+      skos:prefLabel "arranged part of" ;
+      skos:scopeNote "An <arrangedPartOf> relationship says a part has a particular role with respect to the whole. The nature of this role is not specified by this relationship, but must be specified by a classification of the part." .
+
+lci:Stream
+      skos:definition "<PhysicalObject> where continuity of flow path is the basis of identity" ;
+      skos:prefLabel "stream" .
+
+lci:PointInSpace
+      skos:definition "<Individual> that is all that exists in time at a point in space" ;
+      skos:prefLabel "point in space" ;
+      skos:scopeNote "A <PointInSpace> can be defined in any spatial frame. It can be defined with respect to a moving or moveable object, such as a ship or an equipment item." .
+
+lci:Non-arrangedIndividual
+      skos:definition "<Individual> that is not an <ArrangedIndividual>" ;
+      skos:example "The 2015 production run of pump model 'WBX-456A' a <PhysicalObject> and a <Non-arrangedIndividual>. A particular pump within the production run is an <ArrangedIndividual>." ;
+      skos:prefLabel "non-arranged individual" .
+
+lci:Individual
+      skos:definition "<Thing> that exists in space and time and that has variation defined in 4D" ;
+      skos:prefLabel "individual" ;
+      skos:scopeNote "The class <Individual> includes:things where any of the space-time dimensions are vanishingly small; things that are either all space for a period of time, or all time for a region of space; the entirety of all space-time; things that actually exist, or have existed; things that are fictional or conjectured and possibly exist in the past, present or future; temporal parts (states) of other individuals; things that have a specific position, but zero extent in one or more dimensions, such as points, lines, and surfaces." .
+
+lci:temporalBoundOf
+      skos:definition "<Individual> that begins or ends" ;
+      skos:prefLabel "temporal bound of" .
+
+lci:TimeDuration
+      skos:definition "<PhysicalQuantity> that is a time duration" ;
+      skos:example "10 seconds is a <TimeDuration>." ;
+      skos:prefLabel "time duration" .
+
+lci:causes
+      skos:definition "<Event> that is caused" ;
+      skos:example "The <Event> 'tanker T_101 full on 2014-04-11' has a <causes> relationship with the <Activity> 'load tanker T_101 on 2014-04-11'." ;
+      skos:prefLabel "causes" .
+
+lci:hasPart
+      skos:definition "<Individual> that is a part of the whole" ;
+      skos:prefLabel "has part" .
+
+lci:PhysicalObject
+      skos:definition "<Individual> that is a distribution of energy, matter or both" ;
+      skos:example "Pump P_101 is a <PhysicalObject>." ;
+      skos:prefLabel "physical object" .
+
+lci:PhysicalQuantity
+      skos:definition "<Quantity> that is measurable or observable" ;
+      skos:example "The mass 10 kilograms is a <Quantity>." ;
+      skos:prefLabel "physical quantity" .
+
+lci:WholeLifeIndividual
+      skos:definition "<Individual> that is a that is an entire lifetime as defined by its basis for identity" ;
+      skos:example "The plastic cup on the desk of Fred Bloggs (bounded by its creation and destruction events) is a <WholeLifeIndividual>. The cup whilst it stands on that desk is a temporal part of the <WholeLifeIndividual>." ;
+      skos:prefLabel "whole life individual" .
+
+lci:after
+      skos:definition "<Individual> that is after and does not overlap" ;
+      skos:example "The <Individual> 'F_101 under commissioning' has an <after> relationship with the <Individual> 'F_101 under construction'." ;
+      skos:prefLabel "after" .
+
+lci:hasFeature
+      skos:definition "<Feature> that is a part" ;
+      skos:example "Flange F_101 has a <hasFeature> relationship with its face.Vessel V_101 has a <hasFeature> relationship with nozzle N_101/1." ;
+      skos:prefLabel "has feature" .
+
+lci:AbstractObject
+      skos:definition "<Thing> that does not exist in space and time" ;
+      skos:prefLabel "abstract object" ;
+      skos:scopeNote "An <AbstractObject> does not exist in space and time, and does not have properties or relationships that change.Most instances of <AbstractObject> are classes, but there are a few mostly to do with mathematics that are not." .
+
+lci:Event
+      skos:definition "<Individual> that has zero extent in time" ;
+      skos:example "The connection of power to pump P_101 is an <Event>. This event that marks the beginning of a temporal part of pump P_101." ;
+      skos:prefLabel "event" ;
+      skos:scopeNote "An <Event> is the temporal boundary of one or more instances of <Individual> although there may be no knowledge of them." .
+
+lci:indirectlyConnectedTo
+      skos:definition "<Individual> that is indirectly connected" ;
+      skos:example "Vessel V_101 has an <indirectlyConnectedTo> relationship with pump P_101. There is a length of pipe between the two." ;
+      skos:prefLabel "indirectly connected to" .
+
+lci:temporalPartOf
+      skos:definition "<Individual> that is consists of the part and nothing else during a period of time or at an instant in time" ;
+      skos:prefLabel "temporal part of" ;
+      skos:scopeNote "Since <temporalPartOf> is transitive a hierarchy of temporal parts is possible, with a <WholeLifeIndividual> at the top." .
+
+lci:Person
+      skos:definition "<Organism> that is a person" ;
+      skos:example "Nils Sandsmark, Tim Berners-Lee and Ian Horrocks instances of <Person>." ;
+      skos:prefLabel "person" ;
+      skos:scopeNote "Engineer, plant manager, student, male, female, senior citizen, adult, girl, and boy are subclasses of <Person>." .
+
+lci:contains
+      skos:definition "<Individual> that is contained, but that is not part of the container" ;
+      skos:example "Tank T_101 during 2014-04-11 has a <contains> relationship with the batch of oil B_101 during 2014-04-11 ." ;
+      skos:prefLabel "contains" .
+
+lci:referencedBy
+      skos:definition "<Activity> that makes reference" ;
+      skos:example "The <InformationContent> that is the material certificate with URI http://schmidt-stahl.de/material-certificate/M-101-1234 has a <referencedBy> relationship with the <Activity> 'accept delivery of material product M-101-1234'. The URI identifies the content of the certificate, which can be physical represented as ink on paper, PDF or XML.The <ClassOfActivity> that is plan P-101-2 has a <referencedBy> relationship with the <Activity> 'issue work order for planned activity P-101-2'." ;
+      skos:prefLabel "referenced by" .
+
+lci:hasEnd
+      skos:definition "<Event> that is the end" ;
+      skos:example "The <PeriodInTime> June 1999 has a <hasEnd> relationship with the <PointInTime> 1999-07-01T00:00.The <Individual> 'loading plant operating on 2014-04-11' has a <hasEnd> relationship with the <Event> 'loading L_101 on 2014-04-11 complete'." ;
+      skos:prefLabel "has end" .
+
+lci:causesBeginningOf
+      skos:definition "<Individual> that has its beginning caused" ;
+      skos:example "Forging activity F_101 has a <causesBeginningOf> relationship with pump casing PC_101." ;
+      skos:prefLabel "causes beginning of" .
+
+lci:Thing
+      skos:definition "an <Individual> or <AbstractObject>" ;
+      skos:prefLabel "thing" ;
+      skos:scopeNote "An owl:Thing can be something other than an <Individual> or <AbstractObject>. Therefore <Thing> is a subclass of owl:Thing." .
+
+lci:iso8601IdentificationOfPeriodInTime
+      skos:definition "text that identifies a <PeriodInTime> in accordance with ISO 8601" ;
+      skos:example "The <PeriodInTime> that is the 1st July 1999 has a <iso8601IdentificationOfPeriodInTime> relationship with the text '1999-07-01'The <PeriodInTime> that is from ten o'clock until quarter past ten on the 1st July 1999 as defined by UTC has a <iso8601IdentificationOfPeriodInTime> relationship with the text '1999-07-01T10:00:00Z/1999-07-01T10:15:00Z'" ;
+      skos:prefLabel "ISO 8601 identification of period in time" .
+
+lci:PointInTime
+      skos:definition "<Individual> that is all that exists in space at an instant in time" ;
+      skos:example "1999-05-13T16:31:23.56Z' is an identification of a <PointInTime>, which is defined by ISO 8601." ;
+      skos:prefLabel "point in time" ;
+      skos:scopeNote "A <PointInTime> can be regarded as an unbounded 3D 'plane' within 4D space-time that has a zero temporal extent." .
+
+lci:hasCause
+      skos:definition "<Activity> that is a cause" ;
+      skos:example "The <Activity> 'load tanker T_101 on 2014-04-11' has a <hasCause> relationship with the <Event> 'tanker T_101 full on 2014-04-11'." ;
+      skos:prefLabel "has cause" .
+
+lci:connectedTo
+      skos:definition "<Individual> that is connected directly or indirectly, such that matter, energy or load or a combination of these can be transferred" ;
+      skos:prefLabel "connected to" .
+
+lci:before
+      skos:definition "<Individual> that is before and does not overlap" ;
+      skos:example "The <Individual> 'F_101 under construction' has a <before> relationship with the <Individual> 'F_101 under commissioning'." ;
+      skos:prefLabel "before" .
+
+lci:ActualIndividual
+      skos:definition "<Individual> that actually exists in the real world" ;
+      skos:example "The 25 gallon per minute pump that was required for the Omega production system from 21 March 1998 is a <Individual>.The pump manufactured in July of 1998 that has a capacity of 28 gallon per minute is an <ActualIndividual>." ;
+      skos:prefLabel "actual individual" .
+
+lci:iso8601IdentificationOfPointInTime
+      skos:definition "text that identifies a <PointInTime> in accordance with ISO 8601" ;
+      skos:example "The <PointInTime> that is the beginning of the 1st July 1999 as defined by UTC has a <iso8601IdentificationOfPointInTime> relationship with the text '1999-07-01T00:00:00Z'" ;
+      skos:prefLabel "ISO 8601 identification of point in time" .
+
+lci:begins
+      skos:definition "<Individual> that begins" ;
+      skos:example "The <PointInTime> 1999-07-01T00:00 has a <begins> relationship with the <PeriodInTime> July 1999.The <Event> 'loading L_101 on 2014-04-11 complete' has a <begins> relationship with the <Individual> 'loading plant idle on 2014-04-11'." ;
+      skos:prefLabel "begins" .
+
+lci:participantIn
+      skos:definition "<Activity> that is participated in" ;
+      skos:example "Pump P_101 during 2002-12-02 has a <participantIn> relationship with the activity 'discharge of motor vessel Murex on 2002-12-02'." ;
+      skos:prefLabel "participant in" .
+
+lci:ClassOfIndividual
+      skos:definition "class that is the power class of <Individual>" ;
+      skos:prefLabel "class of individual" ;
+      skos:scopeNote "An explanation of power class if given in ISO 15926-12 Clause B.3." .
+
+lci:PeriodInTime
+      skos:definition "<Individual> that is all that exists in space for a period in time" ;
+      skos:example "From 2000-11-21T06:00Z to 2000-11-21T11:53Z is a <PeriodInTime>." ;
+      skos:prefLabel "period in time" ;
+      skos:scopeNote "A <PeriodInTime> is bounded by a start <PointInTime> and an end <PointInTime>." .
+
+lci:hasArrangedPart
+      skos:definition "<Individual> that is an arranged part of the whole with a distinct role" ;
+      skos:example "Formation F_101 from 2014-04-11T10:50 to 2014-04-11T12:15 has an <hasArrangedPart> relationship with Aircraft A_101 from 2014-04-11T10:50 to 2014-04-11T12:15, which it is flying within it.Warehouse W_101 has an <hasArrangedPart> relationship with Bin B_101, which it is a part of the layout." ;
+      skos:prefLabel "has arranged part" ;
+      skos:scopeNote "An <hasArrangedPart> relationship says a part has a particular role with respect to the whole. The nature of this role is not specified by this relationship, but must be specified by a classification of the part." .
+
+lci:hasBeginning
+      skos:definition "<Event> that is the beginning" ;
+      skos:example "The <PeriodInTime> July 1999 has a <hasBeginning> relationship with the <PointInTime> 1999-07-01T00:00.The <Individual> 'loading plant idle on 2014-04-11' has a <hasBeginning> relationship with the <Event> 'loading L_101 on 2014-04-11 complete'." ;
+      skos:prefLabel "has beginning" .
+
+lci:causesEndOf
+      skos:definition "<Individual> that has its end caused" ;
+      skos:example "Refurbishment activity R_101 has a <causesEndOf> relationship with Pump tag P_101, which is replaced by two pumps P_101A and P_101B." ;
+      skos:prefLabel "causes end of" .
+
+lci:hasAssembledPart
+      skos:definition "<Individual> that is an assembled part of the whole" ;
+      skos:example "Pump P_101 during 2013 has an <hasAssembledPart> relationship with Impeller I_345 during 2013." ;
+      skos:prefLabel "has assembled part" .
+
+lci:Quantity
+      skos:definition "<ClassOfIndividual> that has the degree or magnitude of a quality or characteristic as the criterion for membership" ;
+      skos:example "The mass 10 kilograms is a <Quantity>.The monetary amount 10 euro is a <Quantity>." ;
+      skos:prefLabel "quantity" .
+
+lci:Non-actualIndividual
+      skos:definition "<Individual> that is not an <ActualIndividual>" ;
+      skos:example "The planned 'Hinkley Point C' power station is a <PhysicalObject> and a <Non-actualIndividual>" ;
+      skos:prefLabel "non-actual individual" .
+
+lci:RegionInSpace
+      skos:definition "<Individual> that is all that exists in time for a region in space" ;
+      skos:prefLabel "region in space" ;
+      skos:scopeNote "A <RegionInSpace> can be defined in any spatial frame. It can be defined with respect to a moving or moveable object, such as a ship or an equipment item.License block, construction area, country, air corridor, maritime traffic zone, and hazard control zone are subclasses of <RegionInSpace>." .
+
+lci:hasTemporalPart
+      skos:definition "<Individual> that is all of the whole during a period of time or at an instant in time" ;
+      skos:prefLabel "has temporal part" ;
+      skos:scopeNote "Since <hasTemporalPart> is transitive a hierarchy of temporal parts is possible, with a <WholeLifeIndividual> at the top." .
+
+lci:directlyConnectedTo
+      skos:definition "<Individual> that is directly connected" ;
+      skos:example "End 1 of cable C_101 during 2014 has a <directlyConnectedTo> relationship with terminal T_101 of distribution box DB_101 during 2014." ;
+      skos:prefLabel "directly connected to" .
+
+lci:hasCauseOfEnd
+      skos:definition "<Activity> that causes the end" ;
+      skos:example "Pump tag P_101 has a <hasCauseOfEnd> relationship with refurbishment activity R_101, which replaces it with two pumps P_101A and P_101B." ;
+      skos:prefLabel "has cause of end" .

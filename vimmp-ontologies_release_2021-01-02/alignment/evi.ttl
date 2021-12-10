@@ -1,0 +1,550 @@
+
+### EMMO-VIMMP INTEGRATION (EVI) ###
+
+### VERSION 1.1.9 ###
+
+### DATED 4TH NOVEMBER 2020 ###
+
+@prefix evi: <https://purl.vimmp.eu/semantics/alignment/evi.ttl#>.
+
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix emmo1s: <https://purl.vimmp.eu/semantics/alignment/emmo1s.ttl#>.
+@prefix evmpo: <https://emmc.eu/semantics/evmpo/evmpo.ttl#>.
+@prefix macro: <https://purl.vimmp.eu/semantics/macro/macro.ttl#>.
+@prefix mmto: <https://purl.vimmp.eu/semantics/mmto/mmto.ttl#>.
+@prefix osmo: <https://purl.vimmp.eu/semantics/osmo/osmo.ttl#>.
+@prefix otras: <https://purl.vimmp.eu/semantics/otras/otras.ttl#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix owl2: <http://www.w3.org/2006/12/owl2#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix viprs: <https://purl.vimmp.eu/semantics/alignment/viprs.ttl#>.
+@prefix viso: <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>.
+@prefix viso-am: <https://purl.vimmp.eu/semantics/viso/viso-atomistic-mesoscopic.ttl#>.
+@prefix vivo: <https://purl.vimmp.eu/semantics/vivo/vivo.ttl#>.
+@prefix vov: <https://purl.vimmp.eu/semantics/vov/vov.ttl#>.
+@prefix xs: <http://www.w3.org/2001/XMLSchema#>.
+
+<https://purl.vimmp.eu/semantics/alignment/evi.ttl> a owl:Ontology;
+   dcterms:title "EVI: EMMO-VIMMP Integration"^^xs:string;
+   owl:versionInfo "version 1.1.9"^^xs:string;
+   dcterms:modified "2020-11-04"^^xs:date;
+   dcterms:publisher "Virtual Materials Marketplace (VIMMP) project consortium"^^xs:string;
+   dcterms:license "GNU Lesser General Public License (LGPL) version 3"^^xs:string;
+   dcterms:bibliographicCitation "doi:10.1007/s13218-020-00648-9"^^xs:string;
+   dcterms:creator "Martin Thomas Horsch (ORCID 0000-0002-9464-6739)"^^xs:string;
+   dcterms:creator "Silvia Chiacchiera (ORCID 0000-0003-0422-7870)"^^xs:string;
+   dcterms:creator "Michael A. Seaton (ORCID 0000-0002-4708-573X)"^^xs:string;
+   dcterms:creator "Ilian T. Todorov (ORCID 0000-0001-7275-1784)"^^xs:string;
+   dcterms:contributor "Welchy Leite Cavalcanti"^^xs:string;
+   dcterms:contributor "Gerhard Goldbeck (ORCID 0000-0002-4181-2852)"^^xs:string;
+   dcterms:contributor "Daniele Toti (ORCID 0000-0002-9668-6961)"^^xs:string.
+
+
+#########################
+# METAONTOLOGICAL LEVEL #
+#########################
+
+evi:meta_emmo a owl:Class;
+   rdfs:subClassOf owl:NamedIndividual;
+   owl:disjointUnionOf (emmo1s:EMMO evi:non_emmo);
+   rdfs:comment "this class contains EMMO entities as well as non-spacetime entities that are not covered by the EMMO"^^xs:string.
+emmo1s:EMMO rdfs:subClassOf evi:meta_emmo.
+evi:non_emmo a owl:Class;
+   rdfs:subClassOf evi:meta_emmo;
+   rdfs:comment "any non-spacetime entities (hence, not covered by the EMMO) are to be subsumed under this class"^^xs:string.
+emmo1s:EMMORelation rdfs:subPropertyOf viprs:immanent_relation.
+
+
+#########
+# VIPRS #
+#########
+
+viprs:top_entity a owl:Class;
+   owl:sameAs evi:meta_emmo;
+   owl:equivalentClass evi:meta_emmo.
+viprs:transcendent_entity a owl:Class;
+   rdfs:subClassOf viprs:top_entity;
+   owl:disjointWith emmo1s:EMMO, viprs:immanent_entity.
+viprs:immanent_entity a owl:Class;
+   rdfs:subClassOf viprs:top_entity.
+emmo1s:EMMO rdfs:subClassOf viprs:immanent_entity, evi:meta_emmo.
+viprs:conceptualization a owl:Class;
+   rdfs:subClassOf viprs:immanent_entity, emmo1s:Sign.
+
+viprs:has_proper_part a owl:ObjectProperty;
+   owl:inverseOf viprs:is_proper_part_of;
+   # owl:equivalentProperty emmo1s:hasProperPart;
+   rdfs:subPropertyOf emmo1s:hasProperPart.
+viprs:has_sign a owl:ObjectProperty;
+   owl:inverseOf viprs:is_sign_for;
+   owl:equivalentProperty emmo1s:hasSign.
+viprs:is_proper_part_of a owl:ObjectProperty;
+   owl:inverseOf emmo1s:hasProperPart, viprs:has_proper_part.
+viprs:is_sign_for a owl:ObjectProperty;
+   owl:inverseOf emmo1s:hasSign, viprs:has_sign.
+
+viprs:has_model a owl:ObjectProperty;
+   rdfs:subProperty viprs:has_sign;
+   owl:equivalentProperty emmo1s:hasModel.
+viprs:is_model_for a owl:ObjectProperty;
+   rdfs:subPropertyOf viprs:is_sign_for;
+   owl:inverseOf emmo1s:hasModel, viprs:has_model.
+
+viprs:mereosemiotics_hp_ip a owl:ObjectProperty;
+   # owl:equivalentProperty emmo1s:hasOverlapWith;
+   rdfs:subPropertyOf emmo1s:hasOverlapWith.
+
+   
+####################
+# EVMPO CATEGORIES #
+####################
+
+evmpo:marketplace_related_entity a owl:Class;
+   rdfs:subClassOf viprs:immanent_entity, emmo1s:Physical.  # explanation: all subclasses are under Physical
+evmpo:paradigmatic_entity a owl:Class;
+   rdfs:subClassOf evmpo:marketplace_related_entity.
+
+# category (1): assessment
+#
+evmpo:assessment a owl:Class;
+   rdfs:subClassOf emmo1s:Sign, evmpo:paradigmatic_entity.
+
+# category (2): calendar_event
+#
+evmpo:calendar_event a owl:Class;
+   rdfs:subClassOf emmo1s:Sign, evmpo:paradigmatic_entity;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Process
+   ].
+
+# category (3): communication
+#
+evmpo:communication a owl:Class;
+   rdfs:subClassOf emmo1s:Symbolic, evmpo:paradigmatic_entity.
+
+# category (4): information_content_entity
+#
+evmpo:information_content_entity a owl:Class;
+   rdfs:subClassOf emmo1s:Symbolic, evmpo:paradigmatic_entity.
+evmpo:document a owl:Class;
+   rdfs:subClassOf evmpo:information_content_entity.
+
+# category (5): infrastructure
+#
+evmpo:infrastructure a owl:Class;
+   rdfs:subClassOf emmo1s:Engineered, evmpo:paradigmatic_entity.
+
+# category (6): interpreter
+#
+evmpo:interpreter a owl:Class;
+   owl:equivalentClass emmo1s:Interpreter;
+   owl:sameAs emmo1s:Interpreter;
+   rdfs:subClassOf evmpo:paradigmatic_entity.
+
+# category (7): material
+#
+evmpo:material a owl:Class;
+   owl:equivalentClass emmo1s:Material;
+   owl:sameAs emmo1s:Material;
+   rdfs:subClassOf evmpo:paradigmatic_entity.
+
+# category (8): model
+#
+evmpo:model a owl:Class;
+   owl:equivalentClass emmo1s:Model;
+   owl:sameAs emmo1s:Model;
+   rdfs:subClassOf evmpo:paradigmatic_entity.
+
+# category (9): process
+#
+evmpo:process a owl:Class;
+   rdfs:subClassOf evmpo:paradigmatic_entity, emmo1s:Physical, [
+      owl:unionOf (emmo1s:Model emmo1s:Process)
+   ].
+evmpo:business_process a owl:Class;
+   rdfs:subClassOf evmpo:model, evmpo:process;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasModel];
+      owl:someValuesFrom emmo1s:Process
+   ].
+evmpo:physical_process a owl:Class;
+   owl:equivalentClass emmo1s:Process;
+   owl:sameAs emmo1s:Process;
+   rdfs:subClassOf evmpo:process.
+evmpo:simulation a owl:Class;
+   rdfs:subClassOf emmo1s:Semiosis, evmpo:process.
+
+# category (10): product
+#
+evmpo:product a owl:Class;
+   rdfs:subClassOf evmpo:paradigmatic_entity, emmo1s:Physical, [
+      owl:unionOf (emmo1s:Engineered emmo1s:Sign)
+   ].
+evmpo:good a owl:Class;
+   rdfs:subClassOf emmo1s:Engineered, evmpo:product.
+#
+# a service is a sign for a process (by which the service is carried out or provided)
+#
+evmpo:service a owl:Class;
+   rdfs:subClassOf emmo1s:Sign, evmpo:product;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Process
+   ].
+
+# category (11): property
+#
+evmpo:property a owl:Class;
+   owl:equivalentClass emmo1s:Property;
+   owl:sameAs emmo1s:Property;
+   rdfs:subClassOf evmpo:paradigmatic_entity.
+#
+# a material_property is a property that (inverse of hasProperty) some material
+#
+evmpo:material_property a owl:Class;
+   rdfs:subClassOf evmpo:property, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasProperty];
+      owl:someValuesFrom emmo1s:Material
+   ].
+
+# category (0): annotation
+#
+# an annotation is a symbolic part of a sign
+#
+evmpo:annotation a owl:Class;
+   rdfs:subClassOf evmpo:marketplace_related_entity, emmo1s:Symbolic, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasPart];
+      owl:someValuesFrom emmo1s:Sign
+   ].
+
+
+##########################
+# MACRO-EMMO INTEGRATION #
+##########################
+
+# Channels: A channel is an engineered process that hasPart some semiosis
+#
+macro:channel a owl:Class;
+   rdfs:subClassOf macro:computational_resource, emmo1s:Process, [
+      a owl:Restriction;
+      owl:onProperty emmo1s:hasPart;
+      owl:someValuesFrom emmo1s:Semiosis
+   ].
+macro:has_channel_member a owl:ObjectProperty;
+   rdfs:subPropertyOf emmo1s:hasProperParticipant.
+
+# Computational resources: As an infrastructure, a computational resource is an engineered entity and, hence, a participant
+#
+macro:computational_resource a owl:Class;
+   rdfs:subClassOf evmpo:infrastructure.
+
+# I/O formats: An I/O format is a language and, hence, a symbolic entity; it is also a conventional sign (descriptor of a pattern for words)
+#
+macro:io_format a owl:Class;
+   rdfs:subClassOf evmpo:annotation, emmo1s:Language, emmo1s:Conventional.
+
+# Services: A service is a sign for a process (in the process, the service is provided/carried out)
+# An infrastructure_service (is_sign_for o has_part) an engineered entity (namely, an infrastructure)
+#
+macro:infrastructure_service a owl:Class;
+   rdfs:subClassOf evmpo:service, [
+      a owl:Restriction;
+      owl:onProperty viprs:mereosemiotics_is_hp;
+      owl:someValuesFrom emmo1s:Engineered
+   ].
+
+#########################
+# MMTO-EMMO INTEGRATION #
+#########################
+
+# A kpi_model is a model for a property
+#
+mmto:kpi_model a owl:Class;
+   rdfs:subClassOf evmpo:model, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasModel];
+      owl:someValuesFrom emmo1s:Property
+   ].
+
+# An indicator is a property
+# An objective_kpi is an objective property, and a subjective_kpi is a subjective_property
+#
+mmto:indicator a owl:Class;
+   rdfs:subClassOf evmpo:property.
+mmto:objective_kpi a owl:Class;
+   rdfs:subClassOf mmto:indicator, emmo1s:ObjectiveProperty.
+mmto:subjective_kpi a owl:Class;
+   rdfs:subClassOf mmto:indicator, emmo1s:SubjectiveProperty.
+
+
+#########################
+# OSMO-EMMO INTEGRATION #
+#########################
+
+# An application_case is a sign
+#
+osmo:application_case a owl:Class;
+   rdfs:subClassOf evmpo:annotation, osmo:section, emmo1s:Sign.
+
+# A condition is a mathematical entity
+#
+osmo:condition a owl:Class;
+   rdfs:subClassOf evmpo:marketplace_related_entity, emmo1s:Mathematical.
+
+# A logical array is an array
+#
+osmo:logical_array a owl:Class;
+   rdfs:subClassOf osmo:logical_variable;
+   owl:sameAs emmo1s:Array;
+   owl:equivalentClass emmo1s:Array.
+
+# A logical term is a symbolic entity
+#
+osmo:logical_term a owl:Class;
+   rdfs:subClassOf emmo1s:Symbolic.
+
+# A logical variable is a variable
+#
+osmo:logical_variable a owl:Class;
+   rdfs:subClassOf osmo:logical_term;
+   owl:sameAs emmo1s:Variable;
+   owl:equivalentClass emmo1s:Variable.
+
+# A materials_model_classifier is a sign for a materials model
+#
+osmo:materials_model_classifier a owl:Class;
+   rdfs:subClassOf evmpo:annotation, emmo1s:Sign, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Model
+   ].
+
+# the OSMO concept "materials_relation" and the EMMO concept "material_relation"
+# both refer to the same entity, namely, a materials relation (MR) according to RoMM
+#
+osmo:materials_relation a owl:Class;
+   rdfs:subClassOf evmpo:marketplace_related_entity;
+   owl:equivalentClass emmo1s:MaterialRelation;
+   owl:sameAs emmo1s:MaterialRelation.
+
+# A section is a symbolic entity (via workflow_resource)
+#
+osmo:section a owl:Class; rdfs:subClassOf osmo:workflow_resource.
+
+# A section_aspect is a symbolic entity
+#
+osmo:section_aspect a owl:Class;
+   rdfs:subClassOf evmpo:marketplace_related_entity, emmo1s:Symbolic.
+
+# a simulation is a semiosis (process), and a simulation overview is a sign for a simulation
+#
+osmo:simulation_overview a owl:Class;
+   rdfs:subClassOf osmo:section, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Semiosis
+   ].
+
+# a workflow_resource is a symbolic entity
+# a workflow_graph is a well-formed symbolic entity
+# a simulation is a semiosis (process), and a simulation_workflow is a sign for a simulation
+#
+osmo:workflow_resource a owl:Class;
+   rdfs:subClassOf evmpo:marketplace_related_entity, emmo1s:Symbolic.
+osmo:workflow_graph a owl:Class;
+   rdfs:subClassOf osmo:workflow_resource, emmo1s:WellFormedSymbolic.
+osmo:simulation_workflow a owl:Class;
+   rdfs:subClassOf osmo:workflow_resource, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Semiosis
+   ].
+
+# has_value is a subproperty of [owl:inverseOf hasConvention]
+#
+osmo:has_value rdfs:subPropertyOf [owl:inverseOf emmo1s:hasConvention].
+
+# has_variable_unit is a subproperty of hasReferenceUnit
+#
+osmo:has_variable_unit rdfs:subPropertyOf emmo1s:hasReferenceUnit.
+
+
+##########################
+# OTRAS-EMMO INTEGRATION #
+##########################
+
+# a citation is a sign for an information content entity
+#
+otras:citation a owl:Class;
+   rdfs:subClassOf emmo1s:Sign, evmpo:information_content_entity;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom evmpo:information_content_entity
+   ].
+
+# a course is a process
+#
+otras:course a owl:Class;
+   rdfs:subClassOf emmo1s:Process, evmpo:process.
+
+# a focus is a symbolic entity
+#
+otras:focus a owl:Class;
+   rdfs:subClassOf emmo1s:Symbolic, evmpo:annotation.
+
+# a topic is a sign
+#
+otras:topic a owl:Class;
+   rdfs:subClassOf emmo1s:Sign, otras:focus.
+
+
+#########################
+# VISO-EMMO INTEGRATION #
+#########################
+
+# an interaction site is a symbol
+# (i.e., it is an element of the alphabet for an appropriately specified formal language)
+#
+viso-am:interaction_site a owl:Class;
+   rdfs:subClassOf emmo1s:Symbol, viso:model_object.
+
+# a model object is a symbolic entity
+#
+viso:model_object a owl:Class;
+   rdfs:subClassOf emmo1s:Symbolic, evmpo:marketplace_related_entity.
+
+viso:programming_language rdfs:subClassOf emmo1s:Language, evmpo:annotation.
+viso:software_update rdfs:subClassOf emmo1s:Process, evmpo:process.
+viso:model_type rdfs:subClassOf emmo1s:Symbolic, evmpo:marketplace_related_entity.
+
+
+#########################
+# VIVO-EMMO INTEGRATION #
+#########################
+
+# An assertion is a symbolic entity
+# an accuracy_assertion is a mathematical entity
+# a material_assertion is also a sign for a material
+# a material_property_information is also a sign for a property, and a sign for a sign for a material
+#
+vivo:assertion a owl:Class;
+   rdfs:subClassOf evmpo:information_content_entity, emmo1s:Symbolic.
+vivo:accuracy_assertion a owl:Class;
+   rdfs:subClassOf vivo:assertion, emmo1s:Mathematical.
+vivo:material_assertion a owl:Class;
+   rdfs:subClassOf vivo:assertion, emmo1s:Sign, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Material
+   ].
+vivo:material_property_information a owl:Class;
+   rdfs:subClassOf vivo:material_assertion, emmo1s:Sign, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Property
+   ], [
+      a owl:Restriction;
+      owl:onProperty viprs:mereosemiotics_is_is;
+      owl:someValuesFrom emmo1s:Material
+   ].
+
+# An assessment is a sign; specifically:
+#    an agent_assessment is a sign for an agent (i.e., for an interpreter)
+#    a data_item_assessment is a sign for a data item (i.e., for a symbolic entity)
+#    a document_assessment is a sign for a document (i.e., for a symbolic entity)
+#    an event_assessment is a sign for a calendar event (i.e., for a sign that represents a process)
+#    an infrastructure_assessment is a sign for an infrastructure (i.e., for an engineered entity)
+#    a model_assessment is a sign for a model
+#    a project_assessment is a sign for a project (i.e., for a process)
+#    a service_assessment is a sign for a service (i.e., for a sign that represents a process)
+#    a workflow_assessment is a sign for a simulation workflow (i.e., for a symbolic entity that is also a sign for a semiosis)
+#
+vivo:agent_assessment a owl:Class;
+   rdfs:subClassOf evmpo:assessment, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Interpreter
+   ].
+vivo:data_item_assessment a owl:Class;
+   rdfs:subClassOf evmpo:assessment, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Symbolic
+   ].
+vivo:document_assessment a owl:Class;
+   rdfs:subClassOf evmpo:assessment, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Symbolic
+   ].
+vivo:event_assessment a owl:Class;
+   rdfs:subClassOf evmpo:assessment, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Sign
+   ], [
+      a owl:Restriction;
+      owl:onProperty viprs:mereosemiotics_is_is;
+      owl:someValuesFrom emmo1s:Process
+   ].
+vivo:infrastructure_assessment a owl:Class;
+   rdfs:subClassOf evmpo:assessment, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Engineered
+   ].
+vivo:model_assessment a owl:Class;
+   rdfs:subClassOf evmpo:assessment, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Model
+   ].
+vivo:project_assessment a owl:Class;
+   rdfs:subClassOf evmpo:assessment, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Process
+   ].
+vivo:service_assessment a owl:Class;
+   rdfs:subClassOf evmpo:assessment, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom emmo1s:Sign
+   ], [
+      a owl:Restriction;
+      owl:onProperty viprs:mereosemiotics_is_is;
+      owl:someValuesFrom emmo1s:Process
+   ].
+vivo:workflow_assessment a owl:Class;
+   rdfs:subClassOf evmpo:assessment, [
+      a owl:Restriction;
+      owl:onProperty [owl:inverseOf emmo1s:hasSign];
+      owl:someValuesFrom [owl:intersectionOf (emmo1s:Sign emmo1s:Symbolic)]
+   ], [
+      a owl:Restriction;
+      owl:onProperty viprs:mereosemiotics_is_is;
+      owl:someValuesFrom emmo1s:Semiosis
+   ].
+
+# the classes vivo:unit and emmo1s:ReferenceUnit are the same
+#
+vivo:unit a owl:Class;
+   rdfs:subClassOf evmpo:annotation;
+   owl:equivalentClass emmo1s:ReferenceUnit;
+   owl:sameAs emmo1s:ReferenceUnit.
+
+
+########################
+# VOV-EMMO INTEGRATION #
+########################
+
+vov:variable rdfs:subClassOf emmo1s:Variable, evmpo:marketplace_related_entity.
+vov:function rdfs:subClassOf emmo1s:Graphical, evmpo:marketplace_related_entity.

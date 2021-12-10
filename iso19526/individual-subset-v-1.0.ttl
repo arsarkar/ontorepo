@@ -1,0 +1,52 @@
+# baseURI: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-subset-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-relationship-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/relationship-v-1.0
+
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix lci:     <http://standards.iso.org/iso/15926/ontology/life-cycle-integration/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-subset-v-1.0>
+      dc:rights "Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the ontology, to use, copy, modify, merge and distribute free of charge, copies of the ontology for the purposes of developing, implementing, installing and using software based on the ontology, and to permit persons to whom the on-tology is furnished to do so, subject to the following conditions: THE ONTOLOGY IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL ISO, OR ANY OTHER LICENSOR THAT GRANTS THE RIGHT UNDER THE ABOVE PERMISSION TO USE THE ONTOLOGY, BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE ONTOLOGY OR THE USE OR OTHER DEALINGS IN THE ONTOLOGY. In addition, any modified copy of the ontology shall include the following notice: THIS ONTOLOGY HAS BEEN MODIFIED FROM THE ONTOLOGY DEFINED IN ISO 15926-12, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD. "^^xsd:string ;
+      rdf:type owl:Ontology ;
+      owl:imports <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/individual-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/relationship-v-1.0> , <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/inverse-relationship-v-1.0> .
+
+lci:AbstractObject
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:Thing ; 
+      owl:disjointWith lci:Individual .
+
+lci:ClassOfIndividual
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:AbstractObject .
+
+lci:PhysicalQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:Quantity .
+
+lci:Quantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfIndividual .
+
+lci:TimeDuration
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:PhysicalQuantity .
+
+lci:iso8601IdentificationOfDuration
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain lci:TimeDuration ;
+      rdfs:range xsd:duration .
+
+lci:iso8601IdentificationOfPeriodInTime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain lci:PeriodInTime ;
+      rdfs:range xsd:string .
+
+lci:iso8601IdentificationOfPointInTime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain lci:PointInTime ;
+      rdfs:range xsd:dateTime .

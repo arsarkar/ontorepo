@@ -1,0 +1,608 @@
+
+### MARKETPLACE-ACCESSIBLE COMPUTATIONAL RESOURCE ONTOLOGY (MACRO) ###
+
+### VERSION 1.1.7 ###
+
+### DATED 20TH NOVEMBER 2020 ###
+
+@prefix macro: <https://purl.vimmp.eu/semantics/macro/macro.ttl#>.
+
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix edam: <http://edamontology.org/>.
+@prefix evmpo: <https://emmc.eu/semantics/evmpo/evmpo.ttl#>.
+@prefix osmo: <https://purl.vimmp.eu/semantics/osmo/osmo.ttl#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix paasport: <http://lpis.csd.auth.gr/ontologies/paasport/paasport1.owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix vico: <https://purl.vimmp.eu/semantics/vico/vico.ttl#>.
+@prefix viprs: <https://purl.vimmp.eu/semantics/alignment/viprs.ttl#>.
+@prefix viso: <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>.
+@prefix xs: <http://www.w3.org/2001/XMLSchema#>.
+
+<https://purl.vimmp.eu/semantics/macro/macro.ttl> a owl:Ontology;
+   dcterms:title "MACRO: Marketplace-Accessible Computational Resource Ontology"^^xs:string;
+   owl:versionInfo "version 1.1.7"^^xs:string;
+   dcterms:modified "2020-11-20"^^xs:date;
+   dcterms:publisher "Virtual Materials Marketplace (VIMMP) project consortium"^^xs:string;
+   dcterms:license "GNU Lesser General Public License (LGPL) version 3"^^xs:string;
+   dcterms:bibliographicCitation "doi:10.1007/s13218-020-00648-9"^^xs:string;
+   dcterms:creator "Martin Thomas Horsch (ORCID 0000-0002-9464-6739)"^^xs:string;
+   dcterms:creator "Silvia Chiacchiera (ORCID 0000-0003-0422-7870)"^^xs:string;
+   dcterms:creator "Michael A. Seaton (ORCID 0000-0002-4708-573X)"^^xs:string;
+   dcterms:creator "Ilian T. Todorov (ORCID 0000-0001-7275-1784)"^^xs:string;
+   dcterms:contributor "Welchy Leite Cavalcanti"^^xs:string;
+   dcterms:contributor "Éric Fayolle"^^xs:string;
+   dcterms:contributor "Andreas Fiseni"^^xs:string;
+   dcterms:contributor "Yvan Fournier"^^xs:string;
+   dcterms:contributor "Gerhard Goldbeck (ORCID 0000-0002-4181-2852)"^^xs:string;
+   dcterms:contributor "Helge Krieg"^^xs:string;
+   dcterms:contributor "Jean-Pierre Minier"^^xs:string;
+   dcterms:contributor "Pascale Noyret"^^xs:string;
+   dcterms:contributor "Vincent Stobiac"^^xs:string;
+   dcterms:contributor "Daniele Toti (ORCID 0000-0002-9668-6961)"^^xs:string.
+
+macro:computational_resource a owl:Class;
+   rdfs:subClassOf evmpo:infrastructure;
+   rdfs:comment "computational resource, i.e., an infrastructure that can be accessed by means of data, hardware, or software related services"^^xs:string.
+
+macro:has_agent a owl:ObjectProperty;
+   rdfs:domain macro:computational_resource;
+   rdfs:range evmpo:agent;
+   rdfs:subPropertyOf viprs:has_proper_part;
+   owl:inverseOf vico:acts_at.
+macro:has_cr_name a owl:DatatypeProperty;
+   rdfs:domain macro:computational_resource;
+   rdfs:range xs:string;
+   rdfs:comment "specifies a/the name of a computational resource"^^xs:string.
+
+macro:computational_resource owl:unionOf (evmpo:data_infrastructure evmpo:hardware_infrastructure evmpo:software_infrastructure).
+
+evmpo:data_infrastructure rdfs:subClassOf macro:computational_resource.
+evmpo:hardware_infrastructure rdfs:subClassOf macro:computational_resource.
+evmpo:software_infrastructure rdfs:subClassOf macro:computational_resource.
+
+macro:hpc_infrastructure a owl:Class;
+   rdfs:subClassOf evmpo:hardware_infrastructure.
+
+macro:supercomputer a owl:Class;
+   rdfs:subClassOf macro:hpc_infrastructure.
+
+macro:cloud_infrastructure a owl:Class;
+   rdfs:subClassOf macro:hpc_infrastructure.
+
+viso:software_tool rdfs:subClassOf evmpo:software_infrastructure.
+
+macro:repository a owl:Class;
+   rdfs:subClassOf evmpo:data_infrastructure, evmpo:hardware_infrastructure, evmpo:agent.
+
+macro:VIMMP_CERTIFICATE_REGISTRY a macro:repository;
+   vico:acts_at macro:VIMMP_MARKETPLACE;
+   vico:has_agent_name "VIMMP Marketplace Certificate Registry"^^xs:string.
+
+macro:model_database a owl:Class;
+   rdfs:subClassOf macro:repository, evmpo:model_provider;
+   rdfs:comment "model database, i.e., a repository that can act as a model provider"^^xs:string.
+
+macro:BOTTLED_SAFT a macro:model_database;
+   vico:acts_at macro:VIMMP_MARKETPLACE;
+   vico:has_agent_name "Bottled SAFT"^^xs:string.
+
+macro:channel a owl:Class;
+   rdfs:subClassOf evmpo:data_infrastructure, evmpo:process;
+   rdfs:comment "channel (for communication), i.e., a data infrastructure in which communication processes (semioses) occur"^^xs:string.
+
+macro:has_channel_member a owl:ObjectProperty;
+   rdfs:domain macro:channel;
+   rdfs:range evmpo:agent;
+   rdfs:subPropertyOf macro:has_agent;
+   owl:inverseOf vico:has_access_to;
+   rdfs:comment "points to an agent that participates in connunicating through a channel"^^xs:string.
+macro:has_channel_name a owl:DatatypeProperty;
+   rdfs:domain macro:channel;
+   rdfs:range xs:string;
+   rdfs:subPropertyOf macro:has_cr_name.
+
+macro:channel owl:disjointUnionOf (macro:unidirectional_channel macro:bidirectional_channel).
+
+macro:unidirectional_channel a owl:Class;
+   rdfs:subClassOf macro:channel.
+
+macro:has_channel_owner a owl:ObjectProperty;
+   rdfs:domain macro:unidirectional_channel;
+   rdfs:range evmpo:agent;
+   rdfs:subPropertyOf macro:has_channel_member;
+   owl:inverseOf vico:is_owner_of.
+macro:has_channel_subscriber a owl:ObjectProperty;
+   rdfs:domain macro:unidirectional_channel;
+   rdfs:range evmpo:agent;
+   rdfs:subPropertyOf macro:has_channel_member;
+   owl:inverseOf vico:is_subscribed_to.
+
+macro:newsletter a owl:Class;
+   rdfs:subClassOf macro:unidirectional_channel.
+
+macro:EMMC_NEWSLETTER a macro:newsletter;
+   macro:has_channel_name "EMMC Newsletter"^^xs:string.
+macro:VIMMP_NEWSLETTER a macro:newsletter;
+   macro:has_channel_name "VIMMP Newsletter"^^xs:string.
+
+_:C_NEWSLETTER a owl:AllDifferent;
+   owl:members (macro:EMMC_NEWSLETTER macro:VIMMP_NEWSLETTER).
+
+macro:bidirectional_channel a owl:Class;
+   rdfs:subClassOf macro:channel.
+
+macro:digital_marketplace a owl:Class;
+   rdfs:subClassOf macro:bidirectional_channel.
+
+macro:has_marketplace_participant a owl:ObjectProperty;
+   rdfs:domain macro:digital_marketplace;
+   rdfs:range evmpo:agent;
+   rdfs:subPropertyOf macro:has_channel_member.
+
+macro:VIMMP_MARKETPLACE a macro:digital_marketplace.
+macro:MARKETPLACE_MARKETPLACE a macro:digital_marketplace.
+macro:MARKET40_MARKETPLACE a macro:digital_marketplace.
+
+_:C_digital_marketplace a owl:AllDifferent;
+   owl:members (macro:VIMMP_MARKETPLACE macro:MARKETPLACE_MARKETPLACE macro:MARKET40_MARKETPLACE).
+
+macro:infrastructure_service a owl:Class;
+   rdfs:subClassOf paasport:Service;
+   rdfs:comment "infrastructure service, i.e., a service providing access to (or use of) an infrastructure"^^xs:string.
+
+macro:provides_access_to a owl:ObjectProperty;
+   rdfs:domain macro:infrastructure_service;
+   rdfs:range evmpo:infrastructure;
+   rdfs:subPropertyOf viprs:mereosemiotics_is_hp, viprs:satisfies_requirement_of.
+macro:infrastructure_service rdfs:subClassOf [a owl:Restriction; owl:onProperty macro:provides_access_to; owl:someValuesFrom evmpo:infrastructure].
+
+macro:cr_service a owl:Class;
+   rdfs:subClassOf macro:infrastructure_service;
+   owl:intersectionOf (macro:infrastructure_service [a owl:Restriction; owl:onProperty macro:provides_access_to; owl:someValuesFrom macro:computational_resource]);
+   rdfs:comment "computational resource service, i.e., an infrastructure service providing access to (or use of) a computational resource"^^xs:string.
+
+macro:data_service a owl:Class;
+   rdfs:subClassOf macro:cr_service;
+   owl:intersectionOf (macro:cr_service [a owl:Restriction; owl:onProperty macro:provides_access_to; owl:someValuesFrom evmpo:data_infrastructure]).
+
+macro:hardware_service a owl:Class;
+   rdfs:subClassOf macro:cr_service;
+   owl:intersectionOf (macro:cr_service [a owl:Restriction; owl:onProperty macro:provides_access_to; owl:someValuesFrom evmpo:hardware_infrastructure]).
+
+macro:hpc_service a owl:Class;
+   rdfs:subClassOf macro:hardware_service;
+   owl:intersectionOf (macro:hardware_service [a owl:Restriction; owl:onProperty macro:provides_access_to; owl:someValuesFrom macro:hpc_infrastructure]).
+
+macro:hpc_scheduler a owl:Class;
+   rdfs:subClassOf macro:hpc_service;
+   rdfs:comment "a scheduling/queueing service on an HPC infrastructure, e.g. following the IEEE 1003.1-2008 standard, providing access to that HPC infrastructure"^^xs:string.
+
+macro:hpc_job_parameters a owl:Class;
+   rdfs:subClassOf osmo:logical_structure, [
+      a owl:Restriction;
+      owl:onProperty macro:has_job_id;
+      owl:cardinality 1
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_job_name;
+      owl:cardinality 1
+   ];
+   rdfs:comment "HPC job parameters, i.e., a logical structure containing a name, a numerical ID, and possible additional elements such as a locator or file name of the submitted batch script"^^xs:string.
+
+macro:has_job_id a owl:ObjectProperty;
+   rdfs:domain macro:hpc_job_parameters;
+   rdfs:range macro:hpc_job_id;
+   rdfs:subPropertyOf osmo:has_structure_element;
+   rdfs:comment "relates an hpc_job_parameters structure to its hpc_job_id element"^^xs:string.
+macro:has_job_name a owl:ObjectProperty;
+   rdfs:domain macro:hpc_job_parameters;
+   rdfs:range macro:hpc_job_name;
+   rdfs:subPropertyOf osmo:has_structure_element;
+   rdfs:comment "relates an hpc_job_parameters structure to its hpc_job_name element"^^xs:string.
+macro:has_job_data_locator a owl:ObjectProperty;
+   rdfs:domain macro:hpc_job_parameters;
+   rdfs:range macro:hpc_job_data_locator;
+   rdfs:subPropertyOf osmo:has_structure_element;
+   rdfs:comment "relates an hpc_job_parameters structure to an HPC job data locator"^^xs:string.
+
+macro:hpc_job_id a owl:Class;
+   rdfs:subClassOf osmo:unique_elementary;
+   rdfs:comment "HPC job ID, i.e., a unique elementary logical variable containing the ID from the scheduler"^^xs:string.
+macro:hpc_job_name a owl:Class;
+   rdfs:subClassOf osmo:unique_elementary;
+   rdfs:comment "HPC job name, i.e., a unique elementary logical variable containing the name of a job submitted to the scheduler"^^xs:string.
+macro:hpc_job_data_locator a owl:Class;
+   rdfs:subClassOf osmo:unique_elementary;
+   rdfs:comment "HPC job data locator, i.e., URL or file name of the batch script and/or other data pertaining to an HPC job"^^xs:string.
+
+macro:software_service a owl:Class;
+   rdfs:subClassOf macro:cr_service;
+   owl:intersectionOf (macro:cr_service [a owl:Restriction; owl:onProperty macro:provides_access_to; owl:someValuesFrom evmpo:software_infrastructure]).
+
+macro:io_format a owl:Class;
+   rdfs:subClassOf evmpo:annotation;
+   rdfs:comment "I/O format, i.e., syntactical convention to which a technical I/O implementation can adhere"^^xs:string.
+
+macro:has_definition_uri a owl:DatatypeProperty;
+   rdfs:domain macro:io_format;
+   rdfs:range xs:string.
+macro:has_format_abbreviation a owl:DatatypeProperty;
+   rdfs:domain macro:io_format;
+   rdfs:range xs:string.
+macro:has_format_name a owl:DatatypeProperty;
+   rdfs:domain macro:io_format;
+   rdfs:range xs:string.
+macro:has_format_version a owl:DatatypeProperty;
+   rdfs:domain macro:io_format;
+   rdfs:range xs:string.
+macro:is_io_format_of a owl:ObjectProperty;
+   rdfs:domain macro:io_format;
+   rdfs:range viso:software_tool;
+   rdfs:subPropertyOf viprs:is_sign_for_potential_cooccurrent_of;
+   rdfs:comment "points to a software tool that can process files in a given I/O format"^^xs:string.
+macro:is_input_format_of a owl:ObjectProperty;
+   rdfs:domain macro:io_format;
+   rdfs:range viso:software_tool;
+   rdfs:subPropertyOf macro:is_io_format_of.
+macro:is_output_format_of a owl:ObjectProperty;
+   rdfs:domain macro:io_format;
+   rdfs:range viso:software_tool;
+   rdfs:subPropertyOf macro:is_io_format_of.
+
+macro:io_format owl:unionOf (macro:file_format macro:stream_format).
+
+macro:file_format a owl:Class;
+   rdfs:subClassOf macro:io_format;
+   owl:sameAs edam:format_1915;
+   owl:equivalentClass edam:format_1915;  # "Format" in EDAM
+   rdfs:comment "file format, i.e., a syntactical standard for files"^^xs:string.
+edam:format_1915 rdfs:subClassOf macro:io_format.
+
+macro:has_file_ending a owl:DatatypeProperty;
+   rdfs:domain macro:file_format;
+   rdfs:range xs:string.
+
+macro:file_format owl:disjointUnionOf (macro:binary_file_format macro:textual_file_format).
+
+macro:textual_file_format a owl:Class;
+   rdfs:subClassOf macro:file_format;
+   owl:sameAs edam:format_2330;  # "Textual format" in EDAM
+   owl:equivalentClass edam:format_2330;  # "Textual format" in EDAM
+   rdfs:comment "textual file format, i.e., any file format encoded in ASCII, Unicode, or comparable"^^xs:string.
+edam:format_2330 rdfs:subClassOf macro:file_format.
+
+macro:textual_xml_format a owl:Class;
+   rdfs:subClassOf macro:textual_file_format, edam:format_2332;  # "XML" in EDAM
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty macro:has_file_ending;
+      owl:hasValue "xml"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_abbreviation;
+      owl:hasValue "XML"^^xs:string
+   ];
+   rdfs:comment "textual XML format, i.e., an XML-based textual file format"^^xs:string.
+edam:format_2332 rdfs:subClassOf macro:file_format.
+
+macro:textual_csv_format a owl:Class;
+   rdfs:subClassOf macro:textual_file_format;
+   owl:sameAs edam:format_3752;  # "CSV" in EDAM
+   owl:equivalentClass edam:format_3752;  # "CSV" in EDAM
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty macro:has_file_ending;
+      owl:hasValue "csv"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_abbreviation;
+      owl:hasValue "CSV"^^xs:string
+   ];
+   rdfs:comment "CSV format, i.e., comma-separated values (table-like)"^^xs:string.
+edam:format_3752 rdfs:subClassOf macro:file_format.
+
+macro:binary_file_format a owl:Class;
+   rdfs:subClassOf macro:file_format;
+   owl:sameAs edam:format_2333;  # "Binary format" in EDAM
+   owl:equivalentClass edam:format_2333;  # "Binary format" in EDAM
+   rdfs:comment "binary file format, i.e., any file format not encoded in ASCII, Unicode, or comparable"^^xs:string.
+edam:format_2333 rdfs:subClassOf macro:file_format.
+
+macro:image_format a owl:Class;
+   rdfs:subClassOf macro:file_format;
+   owl:sameAs edam:format_3547;  # "Image format" in EDAM
+   owl:equivalentClass edam:format_3547;  # "Image format" in EDAM
+   rdfs:comment "format for representing images/graphics"^^xs:string.
+edam:format_3547 rdfs:subClassOf macro:file_format.
+
+macro:png_format a owl:Class;
+   rdfs:subClassOf macro:image_format, macro:binary_file_format;
+   owl:sameAs edam:format_3602;  # "PNG" in EDAM
+   owl:equivalentClass edam:format_3602;  # "PNG" in EDAM
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty macro:has_file_ending;
+      owl:hasValue "png"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_abbreviation;
+      owl:hasValue "PNG"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_name;
+      owl:hasValue "portable network graphics"^^xs:string
+   ];
+   rdfs:comment "PNG graphics format"^^xs:string.
+edam:format_3602 rdfs:subClassOf macro:image_format, macro:binary_file_format.
+
+macro:PNG_FORMAT_ISO a macro:png_format;
+   macro:has_definition_uri "https://www.iso.org/standard/29581.html"^^xs:string.
+
+macro:stream_format a owl:Class;
+   rdfs:subClassOf macro:io_format;
+   rdfs:comment "stream format, i.e., a syntactical standard for streams"^^xs:string.
+
+macro:materials_modelling_format a owl:Class;
+   rdfs:subClassOf macro:io_format;
+   rdfs:comment "materials modelling format, i.e., an I/O format that represents entities occurring within a model, solver, processor, or workflow in materials modelling"^^xs:string.
+
+macro:has_granularity a owl:ObjectProperty;
+   rdfs:domain macro:materials_modelling_format;
+   rdfs:range osmo:granularity_level;
+   rdfs:subPropertyOf evmpo:has_meta_annotation, viprs:mereosemiotics_is_hp_hs;
+   rdfs:comment "points to the granularity level to which the entities represented in the file format belong"^^xs:string.
+
+macro:materials_relation_format a owl:Class;
+   rdfs:subClassOf macro:materials_modelling_format;
+   rdfs:comment "materials relation format, i.e., an I/O format that encodes a materials relation or part of a materials relation"^^xs:string.
+
+macro:force_field_format a owl:Class;
+   rdfs:subClassOf macro:materials_relation_format;
+   rdfs:comment "force field format, i.e., a format representing an atomistic or mesoscopic materials relation (force field)"^^xs:string.
+
+macro:force_field_format owl:disjointWith [
+      a owl:Restriction;
+      owl:onProperty macro:has_granularity;
+      owl:hasValue osmo:ATOMISTIC
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_granularity;
+      owl:hasValue osmo:CONTINUUM
+   ].
+
+macro:solver_parameter_format a owl:Class;
+   rdfs:subClassOf macro:materials_modelling_format;
+   rdfs:comment "solver parameter format, i.e., an I/O format that is used to steer or parameterize a solver"^^xs:string.
+
+#####################################################
+# CODE-SPECIFIC FILE FORMAT CLASSES AND INDIVIDUALS #
+#####################################################
+
+macro:quesp_in_format a owl:Class;
+   rdfs:subClassOf macro:textual_file_format, macro:solver_parameter_format;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty macro:has_file_ending;
+      owl:hasValue "in"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_abbreviation;
+      owl:hasValue "IN (Quantum Espresso)"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_name;
+      owl:hasValue "Quantum Espresso parameter format"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_granularity;
+      owl:hasValue osmo:ELECTRONIC
+   ];
+   rdfs:comment "Quantum Espresso parameter format"^^xs:string.
+
+macro:QUESP_IN_FORMAT a macro:quesp_in_format.
+
+macro:quesp_upf_format a owl:Class;
+   rdfs:subClassOf macro:textual_file_format, macro:materials_relation_format;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty macro:has_file_ending;
+      owl:hasValue "upf"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_abbreviation;
+      owl:hasValue "UPF"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_name;
+      owl:hasValue "unified pseudopotential format"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_granularity;
+      owl:hasValue osmo:ELECTRONIC
+   ];
+   rdfs:comment "Quantum Espresso pseudopotential format"^^xs:string.
+
+macro:QUESP_UPF_FORMAT a macro:quesp_upf_format.
+
+macro:quesp_out_format a owl:Class;
+   rdfs:subClassOf macro:textual_file_format, macro:materials_modelling_format;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty macro:has_file_ending;
+      owl:hasValue "out"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_abbreviation;
+      owl:hasValue "OUT (Quantum Espresso)"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_name;
+      owl:hasValue "Quantum Espresso output format"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_granularity;
+      owl:hasValue osmo:ELECTRONIC
+   ];
+   rdfs:comment "Quantum Espresso output format"^^xs:string.
+
+macro:QUESP_OUT_FORMAT a macro:quesp_out_format.
+
+macro:STARCCM_PLUS_CSV_FORMAT a macro:textual_csv_format, macro:materials_relation_format, macro:solver_parameter_format;
+   macro:has_format_name "StarCCM+ input format"^^xs:string;
+   macro:has_granularity osmo:CONTINUUM.
+
+macro:starccm_plus_sim_format a owl:Class;
+   rdfs:subClassOf macro:binary_file_format, macro:materials_modelling_format;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty macro:has_file_ending;
+      owl:hasValue "sim"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_abbreviation;
+      owl:hasValue "SIM (StarCCM+)"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_name;
+      owl:hasValue "StarCCM+ simulation output format"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_granularity;
+      owl:hasValue osmo:CONTINUUM
+   ];
+   rdfs:comment "StarCCM+ simulation output format"^^xs:string.
+
+macro:STARCCM_PLUS_SIM_FORMAT a macro:starccm_plus_sim_format.
+
+macro:vocta_data_format a owl:Class;
+   rdfs:subClassOf macro:force_field_format, macro:textual_file_format;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty macro:has_file_ending;
+      owl:hasValue "data"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_abbreviation;
+      owl:hasValue "VOCTA"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_format_name;
+      owl:hasValue "VOCTA potential/force format"^^xs:string
+   ], [
+      a owl:Restriction;
+      owl:onProperty macro:has_granularity;
+      owl:hasValue osmo:MESOSCOPIC
+   ];
+   rdfs:comment "VOCTA potential/force format"^^xs:string.
+
+macro:VOCTA_DATA_FORMAT a macro:vocta_data_format.
+
+macro:VOCTA_XML_FORMAT a macro:solver_parameter_format, macro:textual_xml_format;
+   macro:has_format_name "VOCTA control/settings format"^^xs:string;
+   macro:has_granularity osmo:MESOSCOPIC.
+
+####################
+# explicit imports #
+####################
+
+paasport:Network a owl:Class;
+   rdfs:subClassOf evmpo:hardware_infrastructure, paasport:Resource, [
+      a owl:Restriction;
+      owl:onProperty paasport:hasParameter;
+      owl:allValuesFrom paasport:NetworkParameter
+   ];
+   rdfs:comment "network as a hardware infrastructure and PaaS resource (Network [= Resource [= PaaSCharacteristic)"^^xs:string.
+paasport:NetworkParameter a owl:Class;
+   rdfs:subClassOf osmo:logical_variable;
+   rdfs:comment "network parameter 'of an offering' (here, specifically a Network) according to the PaaSPort ontology; taxonomically, NetworkParameter [= ResourceParameter [= NonFunctionalParameter [= MatchmakingParameter [= PaaSParameter"^^xs:string.
+paasport:Resource a owl:Class;
+   rdfs:subClassOf evmpo:marketplace_related_entity.
+evmpo:infrastructure rdfs:subClassOf paasport:Resource.
+paasport:Service a owl:Class;
+   rdfs:subClassOf evmpo:service.
+
+paasport:hasParameter a owl:ObjectProperty;
+   rdfs:subPropertyOf viprs:is_sign_for;
+   rdfs:comment "relates a PaaSPort 'Characteristic' to a 'PaaSParameter'"^^xs:string.
+paasport:hasParameterDataValue a owl:DatatypeProperty;
+   rdfs:comment "relates a PaaSParameter to an elementary data value"^^xs:string.
+
+####################################################################
+# software tool individuals - details to be sorted out within VISO #
+####################################################################
+
+macro:SOFTWARE_TOOL_QUANTUM_ESPRESSO a viso:software_tool.
+macro:QUESP_IN_FORMAT macro:is_input_format_of macro:SOFTWARE_TOOL_QUANTUM_ESPRESSO.
+macro:QUESP_UPF_FORMAT macro:is_input_format_of macro:SOFTWARE_TOOL_QUANTUM_ESPRESSO.
+macro:QUESP_OUT_FORMAT macro:is_output_format_of macro:SOFTWARE_TOOL_QUANTUM_ESPRESSO.
+
+macro:SOFTWARE_TOOL_STARCCM_PLUS a viso:software_tool.
+macro:STARCCM_PLUS_CSV_FORMAT macro:is_input_format_of macro:SOFTWARE_TOOL_STARCCM_PLUS.
+macro:STARCCM_PLUS_SIM_FORMAT macro:is_output_format_of macro:SOFTWARE_TOOL_STARCCM_PLUS.
+macro:PNG_FORMAT_ISO macro:is_output_format_of macro:SOFTWARE_TOOL_STARCCM_PLUS.
+
+macro:SOFTWARE_TOOL_VOCTA a viso:software_tool.
+macro:VOCTA_DATA_FORMAT macro:is_input_format_of macro:SOFTWARE_TOOL_VOCTA.
+macro:VOCTA_XML_FORMAT macro:is_input_format_of macro:SOFTWARE_TOOL_VOCTA.
+
+###
+# DATATYPE PROPERTIES
+###
+
+macro:has_definition_uri rdfs:subPropertyOf viprs:has_standardized_reference.
+macro:has_cr_name rdfs:subPropertyOf viprs:has_name.
+macro:has_format_name rdfs:subPropertyOf viprs:has_name.
+macro:has_format_abbreviation rdfs:subPropertyOf viprs:has_file_metadata_item.
+macro:has_format_version rdfs:subPropertyOf viprs:has_file_metadata_item.
+macro:has_file_ending rdfs:subPropertyOf viprs:has_file_metadata_item.
+
+paasport:hasParameterDataValue rdfs:subPropertyOf viprs:has_content.
+
+###
+# NOTES ON ALIGNMENT
+###
+
+# Channels: A channel is an engineered process that hasPart some semiosis
+
+# Computational resources: As an infrastructure, a computational resource is an engineered entity and, hence, a participant
+
+# I/O formats: An I/O format is a language and, hence, a symbolic entity; it is also a conventional sign (descriptor of a pattern for words) for the file, stream, or communicated content
+
+# Services: A service is a sign for a process (in the process, the service is provided/carried out)
+# An infrastructure_service (is_sign_for o has_part) an engineered entity (namely, an infrastructure)
+
+# A macro:has_granularity B, where A is a materials_modelling_format, B is a granularity_level
+#
+# There is a file C, adhering to format A
+# That file has contents D, which are at granularity level B
+#
+# A is_sign_for C
+# C has_proper_part D
+# D has_sign B
+# ==
+# A mereosemiotics_is_hp_hs B
+
+# A is_io_format_of B, where A is an io_format, B is a software_tool:
+#
+# There can be a process (e.g., a simulation, execution of the software, or similar)
+# In this process, there is an input/output item C (a file, stream, or similar)
+# There are interpretation (semiosis) processes, e.g., parsing, by which it is checked whether C conforms to A
+# In such a process, the sign is A, the object is C, and the interpretant is success/failure of parsing
+#
+# A is_sign_for C
+# C can co-occur with B
+# ==
+# A is_sign_for_potential_coocurrent_of B
+
+# A provides_access_to B, where A is a service, B is an infrastructure
+#
+# A satisfies_requirement_of B
+#   (assuming that here, "occurrence of a service" means that the service is provided)
+#   (assuming that here, "occurrence of an infrastructure" means that the infrastructure is accessed)
+# additionally, where C is the service-provision process in which B participates:
+# A is_sign_for C
+# C has_proper_part B
+# ==
+# A mereosemiotics_is_hp B

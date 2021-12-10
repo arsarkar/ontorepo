@@ -1,0 +1,147 @@
+
+### VIMMP CODELISTS (VCL) FOR ZONTAL ###
+
+### VERSION 0.3.6 ###
+
+### DATED 2ND DECEMBER 2020 ###
+
+@prefix vcl: <https://purl.vimmp.eu/semantics/alignment/vcl.ttl#>.
+
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix evmpo: <https://emmc.eu/semantics/evmpo/evmpo.ttl#>.
+@prefix mmto: <https://purl.vimmp.eu/semantics/mmto/mmto.ttl#>.
+@prefix osmo: <https://purl.vimmp.eu/semantics/osmo/osmo.ttl#>.
+@prefix otras: <https://purl.vimmp.eu/semantics/otras/otras.ttl#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix owl2: <http://www.w3.org/2006/12/owl2#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix vico: <https://purl.vimmp.eu/semantics/vico/vico.ttl#>.
+@prefix viprs: <https://purl.vimmp.eu/semantics/alignment/viprs.ttl#>.
+@prefix viso: <https://purl.vimmp.eu/semantics/viso/viso-general.ttl#>.
+@prefix xs: <http://www.w3.org/2001/XMLSchema#>.
+
+<https://purl.vimmp.eu/semantics/alignment/vcl.ttl> a owl:Ontology;
+   dcterms:title "VCL: VIMMP Codelists"^^xs:string;
+   owl:versionInfo "version 0.3.6"^^xs:string;
+   dcterms:modified "2020-12-02"^^xs:date;
+   dcterms:publisher "Virtual Materials Marketplace (VIMMP) project consortium"^^xs:string;
+   dcterms:license "GNU Lesser General Public License (LGPL) version 3"^^xs:string;
+   dcterms:creator "Martin Thomas Horsch (ORCID 0000-0002-9464-6739)"^^xs:string;
+   dcterms:creator "Silvia Chiacchiera (ORCID 0000-0003-0422-7870)"^^xs:string;
+   dcterms:creator "Michael A. Seaton (ORCID 0000-0002-4708-573X)"^^xs:string;
+   dcterms:creator "Ilian T. Todorov (ORCID 0000-0001-7275-1784)"^^xs:string;
+   dcterms:contributor "Welchy Leite Cavalcanti"^^xs:string;
+   dcterms:contributor "Andreas Fiseni"^^xs:string.
+
+vcl:codelist_mm_topic a owl:Class;
+   rdfs:subClassOf evmpo:marketplace_related_entity, viprs:conceptualization;
+   owl:equivalentClass otras:mm_topic, [
+      a owl:Restriction;
+      owl:onProperty skos:inScheme;
+      owl:hasValue vcl:CL_SCHEME_MM_TOPIC
+   ];
+   rdfs:comment "materials modelling topic"^^xs:string.
+vcl:CL_SCHEME_MM_TOPIC a skos:ConceptScheme;
+   skos:prefLabel "mm_topic"^^xs:string;
+   skos:definition "materials modelling topic"^^xs:string.
+
+vcl:codelist_interlocutor_group a owl:Class;
+   rdfs:subClassOf evmpo:annotation, viprs:conceptualization;
+   owl:equivalentClass vico:interlocutor_group, [
+      a owl:Restriction;
+      owl:onProperty skos:inScheme;
+      owl:hasValue vcl:CL_SCHEME_INTERLOCUTOR_GROUP
+   ];
+   rdfs:comment "interlocutor group"^^xs:string.
+vcl:CL_SCHEME_INTERLOCUTOR_GROUP a skos:ConceptScheme;
+   skos:prefLabel "interlocutor_group"^^xs:string;
+   skos:definition "interlocutor group"^^xs:string.
+
+vcl:codelist_programming_language a owl:Class;
+   rdfs:subClassOf evmpo:annotation;
+   owl:equivalentClass viso:programming_language, [
+      a owl:Restriction;
+      owl:onProperty skos:inScheme;
+      owl:hasValue vcl:CL_SCHEME_PROGRAMMING_LANGUAGE
+      ];
+      rdfs:comment "programming language"^^xs:string.
+
+vcl:CL_SCHEME_PROGRAMMING_LANGUAGE a skos:ConceptScheme;
+   skos:prefLabel "programming_language"^^xs:string;
+   skos:definition "programming language"^^xs:string.
+
+vcl:codelist_license a owl:Class;
+   rdfs:subClassOf evmpo:legal_document;
+   owl:equivalentClass viso:license, [
+      a owl:Restriction;
+      owl:onProperty skos:inScheme;
+      owl:hasValue vcl:CL_SCHEME_LICENSE
+      ];
+      rdfs:comment "license"^^xs:string.
+
+vcl:CL_SCHEME_LICENSE a skos:ConceptScheme;
+   skos:prefLabel "license"^^xs:string;
+   skos:definition "license"^^xs:string.
+
+vcl:codelist_pe_type a owl:Class;
+   rdfs:subClassOf evmpo:annotation;
+   owl:equivalentClass osmo:physical_equation_type, [
+      a owl:Restriction;
+      owl:onProperty skos:inScheme;
+      owl:hasValue vcl:CL_SCHEME_PE_TYPE
+      ];
+      rdfs:comment "Physical Equation (PE) type"^^xs:string.
+
+vcl:CL_SCHEME_PE_TYPE a skos:ConceptScheme;
+   skos:prefLabel "Physical Equation (PE) type"^^xs:string;
+   skos:definition "Physical Equation (PE) type"^^xs:string.
+
+vcl:codelist_operator_level a owl:Class;
+   rdfs:subClassOf evmpo:annotation;
+   owl:equivalentClass otras:operator_level, [
+      a owl:Restriction;
+      owl:onProperty skos:inScheme;
+      owl:hasValue vcl:CL_SCHEME_OPERATOR_LEVEL
+      ];
+      rdfs:comment "Operator level (i.e., competency level)"^^xs:string.
+
+vcl:CL_SCHEME_OPERATOR_LEVEL a skos:ConceptScheme;
+   skos:prefLabel "Operator level"^^xs:string;
+   skos:definition "Operator level (i.e., competency level)"^^xs:string.
+
+vcl:codelist_project_size a owl:Class;
+   rdfs:subClassOf evmpo:annotation;
+   owl:equivalentClass mmto:project_size, [
+      a owl:Restriction;
+      owl:onProperty skos:inScheme;
+      owl:hasValue vcl:CL_SCHEME_PROJECT_SIZE
+      ];
+      rdfs:comment "Project size"^^xs:string.
+
+vcl:CL_SCHEME_PROJECT_SIZE a skos:ConceptScheme;
+   skos:prefLabel "Project size"^^xs:string;
+   skos:definition "Project size"^^xs:string.
+
+###
+# EXPLICIT IMPORTS
+###
+
+skos:ConceptScheme a owl:Class;
+   rdfs:subClassOf evmpo:annotation.
+
+skos:inScheme a owl:ObjectProperty;
+   rdfs:subPropertyOf viprs:has_sign, evmpo:has_annotation.
+
+viso:license a owl:Class;
+   rdfs:subClassOf evmpo:legal_document.
+
+###
+# DATATYPE PROPERTIES
+###
+
+skos:definition a owl:DatatypeProperty;
+   rdfs:subPropertyOf viprs:has_descriptor.
+skos:prefLabel a owl:DatatypeProperty;
+   rdfs:subPropertyOf viprs:has_label.

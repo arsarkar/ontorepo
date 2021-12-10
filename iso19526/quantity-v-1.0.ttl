@@ -1,0 +1,194 @@
+# baseURI: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/quantity-v-1.0
+# imports: https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/maths-v-1.0
+
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix lci:     <http://standards.iso.org/iso/15926/ontology/life-cycle-integration/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/quantity-v-1.0>
+      dc:rights "Permission is hereby granted, free of charge in perpetuity, to any person obtaining a copy of the ontology, to use, copy, modify, merge and distribute free of charge, copies of the ontology for the purposes of developing, implementing, installing and using software based on the ontology, and to permit persons to whom the on-tology is furnished to do so, subject to the following conditions: THE ONTOLOGY IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL ISO, OR ANY OTHER LICENSOR THAT GRANTS THE RIGHT UNDER THE ABOVE PERMISSION TO USE THE ONTOLOGY, BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE ONTOLOGY OR THE USE OR OTHER DEALINGS IN THE ONTOLOGY. In addition, any modified copy of the ontology shall include the following notice: THIS ONTOLOGY HAS BEEN MODIFIED FROM THE ONTOLOGY DEFINED IN ISO 15926-12, AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD. "^^xsd:string ;
+      rdf:type owl:Ontology ;
+      owl:imports <https://standards.iso.org/iso/ts/15926/-12/ed-1/en/tech/ontology/maths-v-1.0> .
+
+lci:CartesianProductOfQuantityKind
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfListOfQuantity .
+
+lci:ClassOfIsomorphism
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfMathematicalFunction ;
+      lci:powerClassOf lci:Mapping .
+
+lci:ClassOfListOfPhysicalQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfListOfQuantity .
+
+lci:ClassOfListOfQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfList ;
+      lci:powerClassOf lci:ListOfQuantity .
+
+lci:ClassOfMathematicalFunction
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfMapping ;
+      lci:powerClassOf lci:Mapping .
+
+lci:ClassOfOrderedPairOfPhysicalQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfOrderedPairOfQuantity .
+
+lci:ClassOfOrderedPairOfQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfOrderedPair .
+
+lci:ClassOfOrderedPairOfTimeDuration
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfOrderedPairOfPhysicalQuantity .
+
+lci:ClassOfPhysicalProperty
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfMapping ;
+      lci:powerClassOf lci:PhysicalProperty .
+
+lci:ClassOfPhysicalQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfQuantity .
+
+lci:ClassOfQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfClassOfIndividual ;
+      lci:powerClassOf lci:Quantity .
+
+lci:ClassOfScale
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfIsomorphism ;
+      lci:powerClassOf lci:Scale .
+
+lci:ListOfPhysicalQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ListOfQuantity .
+
+lci:ListOfQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:List .
+
+lci:OrderedPairOfPhysicalQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:OrderedPairOfQuantity .
+
+lci:OrderedPairOfQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:OrderedPair .
+
+lci:OrderedPairOfTimeDuration
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:OrderedPairOfPhysicalQuantity .
+
+lci:PhysicalProperty
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:Mapping .
+
+lci:PhysicalQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:Quantity .
+
+lci:PhysicalQuantityKind
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:QuantityKind , lci:PhysicalQuantitySpace .
+
+lci:PhysicalQuantityRange
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:PhysicalQuantitySpace , lci:QuantityRange .
+
+lci:PhysicalQuantityRatio
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:QuantityRatio , lci:ClassOfOrderedPairOfPhysicalQuantity .
+
+lci:PhysicalQuantitySpace
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfPhysicalQuantity , lci:QuantitySpace .
+
+lci:Quantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfIndividual .
+
+lci:QuantityKind
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:QuantitySpace .
+
+lci:QuantityMeasure
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:MathematicalFunction .
+
+lci:QuantityRange
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:QuantitySpace .
+
+lci:QuantityRatio
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:Ratio , lci:ClassOfOrderedPairOfQuantity .
+
+lci:QuantitySpace
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfQuantity .
+
+lci:RangePhysicalQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:RangeQuantity .
+
+lci:RangeQuantity
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfIndividual .
+
+lci:RangeTimeDuration
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:RangePhysicalQuantity .
+
+lci:Scale
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:Isomorphism .
+
+lci:SubspaceOfCartesianProductOfQuantityKind
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:ClassOfListOfQuantity .
+
+lci:TimeDuration
+      rdf:type lci:PhysicalQuantityKind , owl:Class ;
+      rdfs:subClassOf lci:PhysicalQuantity .
+
+lci:TimeDurationRatio
+      rdf:type owl:Class ;
+      rdfs:subClassOf lci:PhysicalQuantityRatio , lci:ClassOfOrderedPairOfTimeDuration .
+
+lci:iso8601IdentificationOfDuration
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain lci:TimeDuration ;
+      rdfs:range xsd:duration .
+
+lci:iso8601IdentificationOfPeriodInTime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain lci:PeriodInTime ;
+      rdfs:range xsd:string .
+
+lci:iso8601IdentificationOfPointInTime
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain lci:PointInTime ;
+      rdfs:range xsd:dateTime .
+
+lci:quantityRangeHasLowerBound
+      rdf:type owl:ObjectProperty , owl:FunctionalProperty ;
+      rdfs:domain lci:PhysicalQuantityRange ;
+      rdfs:range lci:Quantity .
+
+lci:quantityRangeHasUpperBound
+      rdf:type owl:ObjectProperty , owl:FunctionalProperty ;
+      rdfs:domain lci:PhysicalQuantityRange ;
+      rdfs:range lci:Quantity .
+
+lci:subPhysicalQuantitySpaceOf
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain lci:PhysicalQuantitySpace ;
+      rdfs:range lci:PhysicalQuantitySpace .

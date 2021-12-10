@@ -1,0 +1,667 @@
+@prefix : <https://w3id.org/respond##> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/respond#> .
+
+<https://w3id.org/respond#> rdf:type owl:Ontology ;
+                             owl:imports <https://saref.etsi.org/core/v3.1.1/> ,
+                                         <https://w3id.org/bot-0.3.2> ,
+                                         <https://w3id.org/seas/FeatureOfInterestOntology> ;
+                             <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/> ;
+                             <http://purl.org/dc/terms/created> "2019-03-15"^^xsd:string ;
+                             <http://purl.org/dc/terms/creator> """Iker Esnaola-Gonzalez <mailto:iker.esnaola@tekniker.es>
+Francisco Javier Diez <mailto:francisco.diez@tekniker.es>"""^^xsd:string ;
+                             <http://purl.org/dc/terms/description> "The RESPOND project aims to deploy an interoperable energy automation, monitoring and control solution to deliver DR programs at a dwelling, building and district level."@en ;
+                             <http://purl.org/dc/terms/modified> "2020-04-14"^^xsd:string ;
+                             <http://purl.org/dc/terms/title> "RESPOND"^^xsd:string ;
+                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "respond"^^xsd:string ;
+                             <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/respond> ;
+                             owl:versionInfo 1.0 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/respond#connectsToInternetThrough
+:connectsToInternetThrough rdf:type owl:ObjectProperty ;
+                           rdfs:range :Gateway ;
+                           rdfs:comment "Relates an Object with the Gateway with which it is connected to the Internet."@en ;
+                           rdfs:isDefinedBy <https://w3id.org/respond> ;
+                           rdfs:label "connectsToInternetThrough"@en ;
+                           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#forecastsProperty
+:forecastsProperty rdf:type owl:ObjectProperty ;
+                   rdfs:domain <https://w3id.org/seas/Property> ;
+                   rdfs:range <https://w3id.org/saref#Property> ;
+                   rdfs:comment "Relates a Property that can be forecasted with a certain thing that forecasts it. Inspired by SAREF ontology's saref:measuresProperty and saref:controlsProperty."@en ;
+                   rdfs:isDefinedBy <https://w3id.org/respond> ;
+                   rdfs:label "forecasts Property"@en ;
+                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#hasDataSendingMethod
+:hasDataSendingMethod rdf:type owl:ObjectProperty ;
+                      rdfs:comment "Relates a Device with its method to send data (e.g. on regular intervals or on value change)."@en ;
+                      rdfs:isDefinedBy <https://w3id.org/respond> ;
+                      rdfs:label "has Data Sending Method"@en ;
+                      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#hasIcon
+:hasIcon rdf:type owl:ObjectProperty ;
+         rdfs:range :Icon ;
+         rdfs:comment "A resource's corresponding icon shown in the RESPOND Mobile app."@en ;
+         rdfs:isDefinedBy <https://w3id.org/respond> ;
+         rdfs:label "has Icon"@en ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#providesServiceToLocation
+:providesServiceToLocation rdf:type owl:ObjectProperty ;
+                           rdfs:comment "Relates a Service with the location to which it applies."@en ;
+                           rdfs:isDefinedBy <https://w3id.org/respond> ;
+                           rdfs:label "provides Service To Location"@en ;
+                           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/seas/isPropertyOf
+<https://w3id.org/seas/isPropertyOf> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://qudt.org/schema/qudt#symbol
+<http://qudt.org/schema/qudt#symbol> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/respond#hasDBQuery
+:hasDBQuery rdf:type owl:DatatypeProperty ;
+            rdfs:domain <https://w3id.org/saref#Property> ;
+            rdfs:comment "The quey with which values of a given Property can be extracted from a database."@en ;
+            rdfs:isDefinedBy <https://w3id.org/respond> ;
+            rdfs:label "hasDatabaseQuery"@en ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#hasHouseholdMembersQuantity
+:hasHouseholdMembersQuantity rdf:type owl:DatatypeProperty ;
+                             rdfs:range xsd:int ;
+                             rdfs:comment "The number of houshehold members living in a household."@en ;
+                             rdfs:isDefinedBy <https://w3id.org/respond> ;
+                             rdfs:label "hasHouseholdMembersQuantity"@en ;
+                             <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#hasInfluxDBQuery
+:hasInfluxDBQuery rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :hasDBQuery ;
+                  rdfs:domain <https://w3id.org/saref#Property> ;
+                  rdfs:comment "The quey with which values of a given Property can be extracted from an InfluxDB."@en ;
+                  rdfs:isDefinedBy <https://w3id.org/respond> ;
+                  rdfs:label "hasInfluxDBQuery"@en ;
+                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#hasNetPlannedArea
+:hasNetPlannedArea rdf:type owl:DatatypeProperty ;
+                   rdfs:comment "Total planned net area for the space."@en ;
+                   rdfs:isDefinedBy <http://www.buildingsmart-tech.org/ifc/IFC4/Add2/html/> ;
+                   rdfs:label "hasNetPlannedArea"@en ;
+                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#hasNetVolume
+:hasNetVolume rdf:type owl:DatatypeProperty ;
+              rdfs:comment "Total net volume of a given space."@en ;
+              rdfs:isDefinedBy <https://w3id.org/respond> ;
+              rdfs:label "hasNetVolume"@en ;
+              <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/iot/vocab/m3-lite#Energy
+<http://purl.org/iot/vocab/m3-lite#Energy> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/saref#Property> .
+
+
+###  http://purl.org/iot/vocab/m3-lite#Power
+<http://purl.org/iot/vocab/m3-lite#Power> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://w3id.org/saref#Property> .
+
+
+###  http://purl.org/vocommons/voaf#Vocabulary
+<http://purl.org/vocommons/voaf#Vocabulary> rdf:type owl:Class .
+
+
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Element
+<https://w3id.org/bot#Element> rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Space
+<https://w3id.org/bot#Space> rdf:type owl:Class ;
+                             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                               owl:onProperty :hasHouseholdMembersQuantity ;
+                                               owl:someValuesFrom xsd:integer
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :hasNetPlannedArea ;
+                                               owl:someValuesFrom xsd:double
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :hasNetVolume ;
+                                               owl:someValuesFrom xsd:double
+                                             ] .
+
+
+###  https://w3id.org/bot#Zone
+<https://w3id.org/bot#Zone> rdf:type owl:Class ;
+                            rdfs:subClassOf <https://w3id.org/seas/FeatureOfInterest> .
+
+
+###  https://w3id.org/respond#ACFrequency
+:ACFrequency rdf:type owl:Class ;
+             rdfs:subClassOf <https://w3id.org/saref#Property> ;
+             rdfs:comment "AC frequency is the number of cycles per second in an alternating current (AC) sine wave."@en ;
+             rdfs:isDefinedBy <https://w3id.org/respond> ;
+             rdfs:label "AC Frequency"@en ;
+             <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#AirConditioner
+:AirConditioner rdf:type owl:Class ;
+                rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+                rdfs:comment "A machine that keeps the air in a building cool."@en ;
+                rdfs:isDefinedBy <https://w3id.org/respond> ;
+                rdfs:label "Air Conditioner"@en ;
+                <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#AlarmProperty
+:AlarmProperty rdf:type owl:Class ;
+               rdfs:subClassOf <https://w3id.org/saref#Property> ;
+               rdfs:comment "A warning of danger or potential undesired situation."@en ;
+               rdfs:isDefinedBy <https://w3id.org/respond> ;
+               rdfs:label "Alarm"@en ;
+               <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Boiler
+:Boiler rdf:type owl:Class ;
+        rdfs:subClassOf :HeatingDevice ;
+        rdfs:comment "A device that heats water, especially to provide heating and hot water in a house."@en ;
+        rdfs:isDefinedBy <https://w3id.org/respond> ;
+        rdfs:label "Boiler"@en ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#CommonArea
+:CommonArea rdf:type owl:Class ;
+            rdfs:subClassOf <https://w3id.org/bot#Space> ;
+            rdfs:comment "Amenities such as corridors, hallways, lobby, pool, toilets provided for the comfort and use of all occupants, owners, tenants, or users of a building or building complex."@en ;
+            rdfs:isDefinedBy <https://w3id.org/respond> ;
+            rdfs:label "Common Area"@en ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Current
+:Current rdf:type owl:Class ;
+         rdfs:subClassOf <https://w3id.org/saref#Property> ;
+         rdfs:comment "The movement of electricity in a particular direction."@en ;
+         rdfs:isDefinedBy <https://w3id.org/respond> ;
+         rdfs:label "Current"@en ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#DayType
+:DayType rdf:type owl:Class ;
+         rdfs:subClassOf <https://w3id.org/saref#Property> ;
+         rdfs:comment "Represents the type of weather for a given location (e.g. sunny, cloudy,...)."@en ;
+         rdfs:isDefinedBy <https://w3id.org/respond> ;
+         rdfs:label "Day Type"@en ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Dishwasher
+:Dishwasher rdf:type owl:Class ;
+            rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+            rdfs:comment "A machine for washing dishes."@en ;
+            rdfs:isDefinedBy <https://w3id.org/respond> ;
+            rdfs:label "Dishwasher"@en ;
+            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#DomesticColdWaterConsumption
+:DomesticColdWaterConsumption rdf:type owl:Class ;
+                              rdfs:subClassOf :WaterConsumption ;
+                              rdfs:comment "The amount of domestic cold water consumed."@en ;
+                              rdfs:isDefinedBy <https://w3id.org/respond> ;
+                              rdfs:label "Domestic Cold Water Consumption"@en ;
+                              <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#DomesticHotWaterConsumption
+:DomesticHotWaterConsumption rdf:type owl:Class ;
+                             rdfs:subClassOf :WaterConsumption ;
+                             rdfs:comment "The amount of domestic hot water consumed."@en ;
+                             rdfs:isDefinedBy <https://w3id.org/respond> ;
+                             rdfs:label "Domestic Hot Water Consumption"@en ;
+                             <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Dwelling
+:Dwelling rdf:type owl:Class ;
+          rdfs:subClassOf <https://w3id.org/bot#Space> ;
+          rdfs:comment "Place where a person or group of people live."@en ;
+          rdfs:isDefinedBy <https://w3id.org/respond> ;
+          rdfs:label "Dwelling"@en ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#ElectricConsumption
+:ElectricConsumption rdf:type owl:Class ;
+                     rdfs:subClassOf <http://purl.org/iot/vocab/m3-lite#Power> ;
+                     rdfs:comment "The rate, per unit time, at which energy is consumed."@en ;
+                     rdfs:isDefinedBy <https://w3id.org/respond> ;
+                     rdfs:label "Power Consumption"@en ;
+                     <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#EnergyConsumption
+:EnergyConsumption rdf:type owl:Class ;
+                   rdfs:subClassOf <http://purl.org/iot/vocab/m3-lite#Energy> ;
+                   rdfs:comment "The amount of energy consumed."@en ;
+                   rdfs:isDefinedBy <https://w3id.org/respond> ;
+                   rdfs:label "Energy Consumption"@en ;
+                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#EnergyProduction
+:EnergyProduction rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.org/iot/vocab/m3-lite#Energy> ;
+                  rdfs:isDefinedBy <https://w3id.org/respond> ;
+                  rdfs:label "Energy Production"@en ,
+                             "The amount of energy generated."@en ;
+                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#GasConsumption
+:GasConsumption rdf:type owl:Class ;
+                rdfs:subClassOf <https://w3id.org/saref#Property> ;
+                rdfs:comment "The amount of gas consumed."@en ;
+                rdfs:isDefinedBy <https://w3id.org/respond> ;
+                rdfs:label "Gas Consumption"@en ;
+                <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Gateway
+:Gateway rdf:type owl:Class ;
+         rdfs:subClassOf <https://w3id.org/saref#Device> ;
+         rdfs:comment "A gateway is a piece of networking hardware used in telecommunications for telecommunications networks that allows data to flow from one discrete network to another."@en ;
+         rdfs:isDefinedBy <https://w3id.org/respond> ;
+         rdfs:label "Gateway"^^xsd:string ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#HeatConsumption
+:HeatConsumption rdf:type owl:Class ;
+                 rdfs:subClassOf <https://w3id.org/saref#Property> ;
+                 rdfs:comment "The amount of heat consumed."@en ;
+                 rdfs:isDefinedBy <https://w3id.org/respond> ;
+                 rdfs:label "Heat Consumption"@en ;
+                 <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#HeatPump
+:HeatPump rdf:type owl:Class ;
+          rdfs:subClassOf :HeatingDevice ;
+          rdfs:comment "A heat pump is a device that transfers heat energy from a source of heat to what is called a heat sink."@en ;
+          rdfs:isDefinedBy <https://w3id.org/respond> ;
+          rdfs:label "Heat Pump"@en ;
+          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#HeatingDevice
+:HeatingDevice rdf:type owl:Class ;
+               rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+               rdfs:comment "A device that produces heat."@en ;
+               rdfs:isDefinedBy <https://w3id.org/respond> ;
+               rdfs:label "Heating Device"@en ;
+               <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#IT
+:IT rdf:type owl:Class ;
+    rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+    rdfs:comment "An appliance related to IT (Information Technology) such as computer, printer, etc."@en ;
+    rdfs:isDefinedBy <https://w3id.org/respond> ;
+    rdfs:label "IT"@en ;
+    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Icon
+:Icon rdf:type owl:Class ;
+      rdfs:comment "A small picture or symbol that represents a resource."@en ;
+      rdfs:isDefinedBy <https://w3id.org/respond> ;
+      rdfs:label "Icon"@en ;
+      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Lamp
+:Lamp rdf:type owl:Class ;
+      rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+      rdfs:comment "A device for giving light, especially one that has a covering or is contained within something."@en ;
+      rdfs:isDefinedBy <https://w3id.org/respond> ;
+      rdfs:label "Lamp"@en ;
+      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Laptop
+:Laptop rdf:type owl:Class ;
+        rdfs:subClassOf :IT ;
+        rdfs:comment "A computer that is portable and suitable for use while travelling."@en ;
+        rdfs:isDefinedBy <https://w3id.org/respond> ;
+        rdfs:label "Laptop"@en ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#NetworkLinkStrength
+:NetworkLinkStrength rdf:type owl:Class ;
+                     rdfs:subClassOf <https://w3id.org/saref#Property> ;
+                     rdfs:comment "The strength of a network link"@en ;
+                     rdfs:isDefinedBy <https://w3id.org/respond> ;
+                     rdfs:label "Network Link Strength"@en ;
+                     <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Occupancy
+:Occupancy rdf:type owl:Class ;
+           rdfs:subClassOf <https://w3id.org/saref#Property> ;
+           rdfs:comment "Usage of a space."@en ;
+           rdfs:isDefinedBy <https://w3id.org/respond> ;
+           rdfs:label "Occupancy"@en ;
+           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#OnOffProperty
+:OnOffProperty rdf:type owl:Class ;
+               rdfs:subClassOf <https://w3id.org/saref#Property> ;
+               rdfs:comment "A property that determines if something is activated (on) or not (off)."@en ;
+               rdfs:isDefinedBy <https://w3id.org/respond> ;
+               rdfs:label "On Off"@en ;
+               <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#PhotovoltaicSystem
+:PhotovoltaicSystem rdf:type owl:Class ;
+                    rdfs:subClassOf <https://w3id.org/saref#Generator> ;
+                    rdfs:comment "A power system designed to supply usable solar power by means of photovoltaics."@en ;
+                    rdfs:isDefinedBy <https://w3id.org/respond> ;
+                    rdfs:label "Photovoltaic System"@en ;
+                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#PowerConsumption
+:PowerConsumption rdf:type owl:Class ;
+                  rdfs:subClassOf <https://w3id.org/saref#Property> ;
+                  rdfs:comment "The amount of power consumed."@en ;
+                  rdfs:isDefinedBy <https://w3id.org/respond> ;
+                  rdfs:label "Power Consumption"@en ;
+                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#PowerSupply
+:PowerSupply rdf:type owl:Class ;
+             rdfs:subClassOf <https://w3id.org/saref#Property> ;
+             rdfs:comment "Power supplied to a load."@en ;
+             rdfs:isDefinedBy <https://w3id.org/respond> ;
+             rdfs:label "Power Supply"@en ;
+             <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Printer
+:Printer rdf:type owl:Class ;
+         rdfs:subClassOf :IT ;
+         rdfs:comment "A machine that is connected to a computer and prints onto paper using ink."@en ;
+         rdfs:isDefinedBy <https://w3id.org/respond> ;
+         rdfs:label "Printer"@en ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#RSSI
+:RSSI rdf:type owl:Class ;
+      rdfs:subClassOf <https://w3id.org/saref#Property> ;
+      rdfs:comment "Received Signal Strength Indicator"@en ;
+      rdfs:isDefinedBy <https://w3id.org/respond> ;
+      rdfs:label "RSSI"@en ;
+      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#StoveOven
+:StoveOven rdf:type owl:Class ;
+           rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+           rdfs:comment "A piece of equipment that burns fuel or uses electricity in order to heat a place."@en ;
+           rdfs:isDefinedBy <https://w3id.org/respond> ;
+           rdfs:label "Stove Oven"@en ;
+           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#TV
+:TV rdf:type owl:Class ;
+    rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+    rdfs:comment "A device shaped like a box with a screen that receives electrical signals and changes them into moving images and sound, or the method or business of sending images and sound by electrical signals."@en ;
+    rdfs:isDefinedBy <https://w3id.org/respond> ;
+    rdfs:label "TV"@en ;
+    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#TemperatureSetpoint
+:TemperatureSetpoint rdf:type owl:Class ;
+                     rdfs:subClassOf <https://w3id.org/saref#Property> ;
+                     rdfs:comment "The target value at which a controller attempts to maintain the temperature."@en ;
+                     rdfs:isDefinedBy <https://w3id.org/respond> ;
+                     rdfs:label "Temperature Setpoint"@en ;
+                     <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#ThermoSolarSystem
+:ThermoSolarSystem rdf:type owl:Class ;
+                   rdfs:subClassOf <https://w3id.org/saref#Generator> ;
+                   rdfs:comment "A power system designed to supply thermal energy by means of solar energy."@en ;
+                   rdfs:isDefinedBy <https://w3id.org/respond> ;
+                   rdfs:label "Thermo Solar System"@en ;
+                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#TumbleDryer
+:TumbleDryer rdf:type owl:Class ;
+             rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+             rdfs:comment "A machine that dries washed clothes by spinning them in hot air inside a rotating drum."@en ;
+             rdfs:isDefinedBy <https://w3id.org/respond> ;
+             rdfs:label "Tumble Dryer"@en ;
+             <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#VOC
+:VOC rdf:type owl:Class ;
+     rdfs:subClassOf <https://w3id.org/saref#Property> ;
+     rdfs:comment "A property that determines the Volatile Organic Compounds (VOC)."@en ;
+     rdfs:isDefinedBy <https://w3id.org/respond> ;
+     rdfs:label "VOC"@en ;
+     <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#Voltage
+:Voltage rdf:type owl:Class ;
+         rdfs:subClassOf <https://w3id.org/saref#Property> ;
+         rdfs:comment "The force of an electric current, measured in volts."@en ;
+         rdfs:isDefinedBy <https://w3id.org/respond> ;
+         rdfs:label "Voltage"@en ;
+         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#WashingMachine
+:WashingMachine rdf:type owl:Class ;
+                owl:equivalentClass <https://w3id.org/saref#WashingMachine> ;
+                rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+                rdfs:comment "A home appliance for washing clothes and linens automatically."@en ;
+                rdfs:isDefinedBy <https://w3id.org/respond> ;
+                rdfs:label "Washing Machine"@en ;
+                <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#WaterConsumption
+:WaterConsumption rdf:type owl:Class ;
+                  rdfs:subClassOf <https://w3id.org/saref#Property> ;
+                  rdfs:comment "The amount of water consumed."@en ;
+                  rdfs:isDefinedBy <https://w3id.org/respond> ;
+                  rdfs:label "Water Consumption"@en ;
+                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#WeatherForecastingService
+:WeatherForecastingService rdf:type owl:Class ;
+                           rdfs:comment "Represents a service that provides weather forecast to specific locations."@en ;
+                           rdfs:isDefinedBy <https://w3id.org/respond> ;
+                           rdfs:label "Weather Forecasting Service"@en ;
+                           <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/saref#Appliance
+<https://w3id.org/saref#Appliance> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://w3id.org/seas/FeatureOfInterest> .
+
+
+###  https://w3id.org/saref#Device
+<https://w3id.org/saref#Device> rdf:type owl:Class ;
+                                rdfs:subClassOf <https://w3id.org/bot#Element> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :connectsToInternetThrough ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :Gateway
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasIcon ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onClass :Icon
+                                                ] .
+
+
+###  https://w3id.org/saref#Generator
+<https://w3id.org/saref#Generator> rdf:type owl:Class .
+
+
+###  https://w3id.org/saref#Property
+<https://w3id.org/saref#Property> rdf:type owl:Class ;
+                                  owl:equivalentClass <https://w3id.org/seas/Property> .
+
+
+###  https://w3id.org/saref#WashingMachine
+<https://w3id.org/saref#WashingMachine> rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/FeatureOfInterest
+<https://w3id.org/seas/FeatureOfInterest> rdf:type owl:Class .
+
+
+###  https://w3id.org/seas/Property
+<https://w3id.org/seas/Property> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/respond#binary
+:binary rdf:type owl:NamedIndividual ,
+                 <http://qudt.org/schema/qudt/Unit> ;
+        <http://qudt.org/schema/qudt#symbol> "0-1"^^xsd:string ;
+        rdfs:isDefinedBy <https://w3id.org/respond> ,
+                         "This measurement is binary (true or false)."@en ;
+        rdfs:label "binary"@en ;
+        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#ppb
+:ppb rdf:type owl:NamedIndividual ,
+              <http://qudt.org/schema/qudt/Unit> ;
+     <http://qudt.org/schema/qudt#symbol> "ppb"^^xsd:string ;
+     rdfs:comment "This measurement is the mass of a chemical or contaminate per 1000 million units volume of water."@en ;
+     rdfs:isDefinedBy <https://w3id.org/respond> ;
+     rdfs:label "ppb"@en ;
+     <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond#ppm
+:ppm rdf:type owl:NamedIndividual ,
+              <http://qudt.org/schema/qudt/Unit> ;
+     <http://qudt.org/schema/qudt#symbol> "ppm"^^xsd:string ;
+     rdfs:comment "This measurement is the mass of a chemical or contaminate per unit volume of water."@en ;
+     rdfs:isDefinedBy <https://w3id.org/respond> ;
+     rdfs:label "ppm"@en ;
+     <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable"^^xsd:string .
+
+
+###  https://w3id.org/respond/
+<https://w3id.org/respond/> rdf:type owl:NamedIndividual ,
+                                     <http://purl.org/vocommons/voaf#Vocabulary> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,2276 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://ontohub.org/scheduling-ontology-network/SROnetwork"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://ontohub.org/scheduling-ontology-network/SROnetwork">
+    <Prefix name="" IRI="https://ontohub.org/scheduling-ontology-network/SROnetwork"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#AlgebraicEq"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#BeginNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#BooleanEq"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#CIP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Condition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlModule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#DataSerie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#DataSet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#DataType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#DecisionNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EndNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Energy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EnvironmentalImpact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Equation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentModule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentProceduralElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentPropertyType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentRelation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentRequirement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ExplicitTransition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Flow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ForkNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Formula"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Header"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ImplicitTransiiton"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#InputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#InputQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Interaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#JoinNOde"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Link"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#LogicalConnection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Manpower"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MasterRecipe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MaterialTranfer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MergeNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Node"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Number"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OperationLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OutputQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSEF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ParameterType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PermanentConnection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PhaseLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PhysicalConnection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcedureLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcedureStep"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessCell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Reference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ScalingFactor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Step"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Syncronization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#TemporalConection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Transition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Unit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#UnitProcedureLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#UnitofMeasure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Utility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ValueType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#CIP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Clean"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#CleaningTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Connection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#DedicatedStorageUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#MeasurableQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputConnection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Personnel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#ProcessingTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#ProcessingUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#SharedStorageUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Store"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#TranferTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Utility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Value"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#AvailabilityProfile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#BatchSize"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#Constraint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#CriticalTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#FixedTaskDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#LimitingResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#ObjectiveFuntion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingDetailLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingModel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#TaskDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#TimeHorizon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#TimeRepresentation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#VariableTaskDuration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#From"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasCondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasElement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasEquipmentRequirement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasFormula"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasLevel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProceduralSTR"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProcedureLevel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasQuantity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasScalingFactor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasStepLevel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#To"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#TransformableInto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#composedOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#definesValuesOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#folows"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#hasUnitOfMeasure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isAllocatedInto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isComponentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isContainedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isLevelOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isMadeUpOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isQuantityOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isReferencedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isReferencedByAnother"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isRefinedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isStructureOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#mayBeFulfilledBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#nextLevel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#precedes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#quantityOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#references"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#referencesAnother"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#structuralPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canPerform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canStore"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#consumes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#describeBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#durationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasAvailabilityProfile"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasCapacity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasOutput"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#inputValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnOutputOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isConsumedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isProducedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isProfileOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isRequiredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#levelOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#onlyStores"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#outputValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#produces"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#requires"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#describeBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#durationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#hasAvailabilityProfile"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#hasConstraints"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#isProfileOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#levelOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#modelAt"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#hasValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasUnitOfMeasure"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isCritical"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isLimited"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#isCritical"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#isLimited"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#CIP"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#CIP"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Equation"/>
+        <ObjectUnionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#AlgebraicEq"/>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#BooleanEq"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentModule"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#contains"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlModule"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Manpower"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Personnel"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Material"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcedureStep"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasStepLevel"/>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcedureLevel"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessCell"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#contains"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlModule"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#contains"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentModule"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#contains"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Unit"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#MeasurableQuantity"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Unit"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#contains"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlModule"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#contains"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentModule"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ValueType"/>
+        <ObjectUnionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Equation"/>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Number"/>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSEF"/>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Reference"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#DedicatedStorageUnit"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageUnit"/>
+            <ObjectExactCardinality cardinality="0">
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canStore"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#onlyStores"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputMaterial"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isConsumedBy"/>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputMaterial"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isProducedBy"/>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#ProcessingUnit"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasRole"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Process"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#SharedStorageUnit"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageUnit"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canStore"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageUnit"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasRole"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Store"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Utility"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Energy"/>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Utility"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#LimitingResource"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasAvailabilityProfile"/>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#AvailabilityProfile"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#AlgebraicEq"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Equation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#BeginNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#BooleanEq"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Equation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#CIP"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Condition"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlModule"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Node"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlRecipe"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#DataSerie"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ParameterType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#DataSet"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ParameterType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#DataType"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ParameterType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#DecisionNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EndNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Energy"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EnvironmentalImpact"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Equation"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ValueType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentModule"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentRequirement"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ExplicitTransition"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Transition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ForkNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Header"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ImplicitTransiiton"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Transition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#InputParameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#InputQuantity"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Interaction"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Syncronization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#JoinNOde"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Link"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#LogicalConnection"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentRelation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Manpower"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MasterRecipe"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Material"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MaterialTranfer"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Syncronization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MergeNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Node"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Number"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ValueType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OperationLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OutputParameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OutputQuantity"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSEF"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ValueType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSElement"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ParameterType"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PermanentConnection"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PhysicalConnection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PhaseLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PhysicalConnection"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentRelation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcedureLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcedureStep"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Step"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessCell"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessParameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessQuantity"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Reference"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ValueType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ScalingFactor"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Step"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Node"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Syncronization"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Link"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#TemporalConection"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PhysicalConnection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Transition"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Link"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Unit"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#UnitProcedureLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#UnitofMeasure"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Utility"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ValueType"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#CIP"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Clean"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#CleaningTask"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#DedicatedStorageUnit"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Connection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputMaterial"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputConnection"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Connection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputMaterial"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Personnel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Process"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#ProcessingTask"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#ProcessingUnit"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#SharedStorageUnit"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageTask"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageUnit"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Store"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#TranferTask"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Utility"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#BatchSize"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#CriticalTask"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#FixedTaskDuration"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#TaskDuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#LimitingResource"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#TaskDuration"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#TimeHorizon"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#TimeRepresentation"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#VariableTaskDuration"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#TaskDuration"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#AlgebraicEq"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#BooleanEq"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#BeginNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#DecisionNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EndNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ForkNode"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#JoinNOde"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MergeNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlRecipe"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MasterRecipe"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Equation"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Number"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSEF"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Reference"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#InputParameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OutputParameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessParameter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OperationLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PhaseLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcedureLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#UnitProcedureLevel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#CleaningTask"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#ProcessingTask"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageTask"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#TranferTask"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#DedicatedStorageUnit"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#SharedStorageUnit"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#InputParameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OutputParameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcessParameter"/>
+    </DisjointUnion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isComponentOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isQuantityOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canStore"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasLevel"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isLevelOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProceduralSTR"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isStructureOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#contains"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isContainedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#folows"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#precedes"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isReferencedBy"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#references"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isReferencedByAnother"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#referencesAnother"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#consumes"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isConsumedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasAvailabilityProfile"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isProfileOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isProducedBy"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#produces"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isRequiredBy"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#requires"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#hasAvailabilityProfile"/>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#isProfileOf"/>
+    </InverseObjectProperties>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasEquipmentRequirement"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasParameter"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProceduralSTR"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasQuantity"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasScalingFactor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasStepLevel"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#hasUnitOfMeasure"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isMadeUpOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#nextLevel"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canPerform"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canStore"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#describeBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#durationOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasCapacity"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasOutput"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#inputValue"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnOutputOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#onlyStores"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#outputValue"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#produces"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#requires"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#describeBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#durationOf"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasEquipmentRequirement"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasParameter"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProceduralSTR"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasQuantity"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasScalingFactor"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasStepLevel"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#hasUnitOfMeasure"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isMadeUpOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canPerform"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canStore"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#describeBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#durationOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasCapacity"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasOutput"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#inputValue"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnOutputOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#onlyStores"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#outputValue"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#produces"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#requires"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#describeBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#durationOf"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#From"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Link"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasCondition"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ExplicitTransition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasElement"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasEquipmentRequirement"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasFormula"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasParameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Formula"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProceduralSTR"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProcedureLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasQuantity"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasScalingFactor"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasStepLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Step"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#To"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Link"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#TransformableInto"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MasterRecipe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#composedOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#definesValuesOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentProperty"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#folows"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#hasUnitOfMeasure"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isAllocatedInto"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlRecipe"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isComponentOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isLevelOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isMadeUpOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isQuantityOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isReferencedBy"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentRelation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isReferencedByAnother"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isRefinedBy"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Step"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isStructureOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#mayBeFulfilledBy"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentRequirement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#nextLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#quantityOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#structuralPartOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canPerform"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#ProcessingUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canStore"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#SharedStorageUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#consumes"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasAvailabilityProfile"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasCapacity"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasOutput"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#inputValue"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnOutputOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#onlyStores"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#DedicatedStorageUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#outputValue"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputConnection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#produces"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#requires"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#describeBy"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#durationOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#TaskDuration"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#hasConstraints"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingModel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#levelOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingDetailLevel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#modelAt"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingDetailLevel"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#From"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasCondition"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Condition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasElement"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSElement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasEquipmentRequirement"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentRequirement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasFormula"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Formula"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasParameter"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProceduralSTR"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProcedureLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasQuantity"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasScalingFactor"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ScalingFactor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasStepLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#To"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#TransformableInto"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ControlRecipe"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#composedOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#definesValuesOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentPropertyType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#folows"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#hasUnitOfMeasure"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#UnitofMeasure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isAllocatedInto"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentProceduralElement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isComponentOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isLevelOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isMadeUpOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isQuantityOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isReferencedBy"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isReferencedByAnother"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentRelation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isRefinedBy"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isStructureOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#mayBeFulfilledBy"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#EquipmentProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#nextLevel"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Level"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#quantityOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#structuralPartOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#PSElement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canPerform"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canStore"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#consumes"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#durationOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasOutput"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputConnection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#inputValue"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Value"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnOutputOf"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputConnection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#onlyStores"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#outputValue"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Value"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#produces"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#requires"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#describeBy"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#SchedulingParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#hasAvailabilityProfile"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#AvailabilityProfile"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#hasConstraints"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#Constraint"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#hasValue"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isCritical"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isLimited"/>
+        <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#AvailableResource"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#hasValue"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isCritical"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isLimited"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#isCritical"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/smodo#isLimited"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+                <Variable IRI="urn:swrl:var#iq"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#InputParameter"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Formula"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+                <Variable IRI="urn:swrl:var#re"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Step"/>
+                <Variable IRI="urn:swrl:var#s"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+                <Variable IRI="urn:swrl:var#ps"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasFormula"/>
+                <Variable IRI="urn:swrl:var#re"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProceduralSTR"/>
+                <Variable IRI="urn:swrl:var#re"/>
+                <Variable IRI="urn:swrl:var#ps"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasParameter"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasQuantity"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#iq"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#quantityOf"/>
+                <Variable IRI="urn:swrl:var#iq"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isRefinedBy"/>
+                <Variable IRI="urn:swrl:var#s"/>
+                <Variable IRI="urn:swrl:var#ps"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+                <Variable IRI="urn:swrl:var#r"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+                <Variable IRI="urn:swrl:var#s"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Quantity"/>
+                <Variable IRI="urn:swrl:var#iq"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#OutputParameter"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Formula"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+                <Variable IRI="urn:swrl:var#re"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#Step"/>
+                <Variable IRI="urn:swrl:var#s"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProceduralStructure"/>
+                <Variable IRI="urn:swrl:var#ps"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasFormula"/>
+                <Variable IRI="urn:swrl:var#re"/>
+                <Variable IRI="urn:swrl:var#f"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasProceduralSTR"/>
+                <Variable IRI="urn:swrl:var#re"/>
+                <Variable IRI="urn:swrl:var#ps"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasParameter"/>
+                <Variable IRI="urn:swrl:var#f"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasQuantity"/>
+                <Variable IRI="urn:swrl:var#p"/>
+                <Variable IRI="urn:swrl:var#iq"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#quantityOf"/>
+                <Variable IRI="urn:swrl:var#iq"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#isRefinedBy"/>
+                <Variable IRI="urn:swrl:var#s"/>
+                <Variable IRI="urn:swrl:var#ps"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputConnection"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnOutputOf"/>
+                <Variable IRI="urn:swrl:var#r"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasOutput"/>
+                <Variable IRI="urn:swrl:var#s"/>
+                <Variable IRI="urn:swrl:var#p"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#HasLevel"/>
+                <Variable IRI="urn:swrl:var#re"/>
+                <Variable IRI="urn:swrl:var#l"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#RecipeEntity"/>
+                <Variable IRI="urn:swrl:var#re"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#ProcedureLevel"/>
+                <Variable IRI="urn:swrl:var#l"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/ISA88O#MasterRecipe"/>
+                <Variable IRI="urn:swrl:var#re"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#CIP"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+                <Variable IRI="urn:swrl:var#r"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canPerform"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#CleaningTask"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isCritical"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#CriticalTask"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+                <Variable IRI="urn:swrl:var#r"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#consumes"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Personnel"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+                <Variable IRI="urn:swrl:var#r"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#requires"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#ProcessingUnit"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+                <Variable IRI="urn:swrl:var#r"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canPerform"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageUnit"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+                <Variable IRI="urn:swrl:var#r"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#canPerform"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnInputOf"/>
+                <Variable IRI="urn:swrl:var#r"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasInput"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#InputConnection"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Utility"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#requires"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#OutputConnection"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Task"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#Material"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isAnOutputOf"/>
+                <Variable IRI="urn:swrl:var#r"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#hasOutput"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#ic"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#produces"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#r"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#ProcessingTask"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#CriticalTask"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#StorageTask"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isCritical"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#CriticalTask"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/rtno#TranferTask"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="https://ontohub.org/scheduling-ontology-network/rtno#isCritical"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="https://ontohub.org/scheduling-ontology-network/smodo#CriticalTask"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://ontohub.org/scheduling-ontology-network/ISA88O#PSEF</IRI>
+        <Literal>PSEF=Product Specific Entry Forms
+</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
